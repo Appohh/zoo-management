@@ -1,0 +1,9 @@
+Keep track of employees, Animals and clients.
+-- Employees Schedule
+Animals food cycle.
+some tasks like cleaning
+ticket sales
+costumer service
+-- animal care
+
+priority, managing employees and the animals care
