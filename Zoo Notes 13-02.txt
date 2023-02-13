@@ -1,0 +1,10 @@
+We wrote what they want. But we need to write what the problem is. 
+We wrote solutions but first need to declaire the problem.
+Make the projectplan less complex, we wrote too much in detail.
+Make the application specific for the function the user has. 
+Explain the way we work like waterfall, Appointments with the client.
+Remove Project definition.
+Mention the zoo is the client and maaike is the representor. 
+Remove the risk page.
+Moscow follows analyzes.
+Can chart for the first 6 weeks, after git lab. 
