@@ -1,0 +1,42 @@
+Zoo Notes 27/02/2023
+
+Agenda make it with rows instead of large text.
+After each row (describe who is going to tell what)
+No dear client. 
+Opening who is there I who is not. 
+What we going to talk about.
+What we discussed in the previous talk,
+What we want to 
+
+volgorde
+opening
+vast stellen van agenda
+vast stellen van vorige module.
+
+
+Minutes
+Mention who is going to get a copy of the minutes.
+miss the structure
+miss minutes of the last meeting.
+
+project plan
+Write contact information of team member
+Problem definination: Problem is management form animals and employees. dont type to much text.
+Project goal: Explain different way. We are making the application not work on the zoo.
+
+deliverables
+Type what you going to deliver to the cleint
+such as. Webapplication, documation, test results, Project plan, presentation slides, software files
+
+non-deliverables:
+source code (possible), Hardware, user manuals, training
+
+constrains: Deadline 23 march 
+Tools: C#, database, Razorblade
+client must be 1 time a week available.
+
+
+waterfall, Describe what you going to do, giving the exact hours of each thing we have to do. Making a timeline of all the events. 
+
+describe words in the sence of the client for example, we going to seperate the application in 2 ...... and not the zoo bazaar is seperated in 2......
+
