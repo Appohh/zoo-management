@@ -1,0 +1,9 @@
+Change the data for employees. (contracts)
+ 
+schedule animals is for zoo keepers, Should not be able to change data.
+Notes
+Employee management, 1
+Animal care, 2
+but both
+
+10:30 NEXT meetings.

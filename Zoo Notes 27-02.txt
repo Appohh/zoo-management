@@ -1,5 +1,6 @@
 Zoo Notes 27/02/2023
 
+Agenda
 Agenda make it with rows instead of large text.
 After each row (describe who is going to tell what)
 No dear client. 
