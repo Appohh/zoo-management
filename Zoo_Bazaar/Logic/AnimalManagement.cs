@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    internal class AnimalManagement
+    public class AnimalManagement : IAnimalManagement
     {
+        public void AssignCaretaker(Animal animal, Employee emp)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Create(Animal animal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Animal animal)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
