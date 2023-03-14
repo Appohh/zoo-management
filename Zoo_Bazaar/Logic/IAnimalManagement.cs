@@ -8,9 +8,9 @@ namespace Logic
 {
     public interface IAnimalManagement
     {
-        void Create(Animal animal);
-        void Update(Animal animal);
-        void AssignCaretaker(Animal animal, Employee emp);
+        //void Create(Animal animal);
+        //void Update(Animal animal);
+        //void AssignCaretaker(Animal animal, Employee emp);
 
 
     }
