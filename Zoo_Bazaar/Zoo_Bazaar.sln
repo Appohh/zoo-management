@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo_Bazaar", "Zoo_Bazaar\Zoo_Bazaar.csproj", "{C7DC3976-13F1-437A-B4DF-692177445237}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zoo_Bazaar", "Zoo_Bazaar\Zoo_Bazaar.csproj", "{C7DC3976-13F1-437A-B4DF-692177445237}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo_Bazaar_forms", "Zoo_Bazaar_forms\Zoo_Bazaar_forms.csproj", "{F2441677-F4B6-44ED-8260-CB82D3F5F4D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{D4280C97-7332-452B-939D-ED00A5196D97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{2FFF061F-F36F-438E-BA2B-C45B565EEC48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{F2441677-F4B6-44ED-8260-CB82D3F5F4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2441677-F4B6-44ED-8260-CB82D3F5F4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2441677-F4B6-44ED-8260-CB82D3F5F4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4280C97-7332-452B-939D-ED00A5196D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4280C97-7332-452B-939D-ED00A5196D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4280C97-7332-452B-939D-ED00A5196D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4280C97-7332-452B-939D-ED00A5196D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFF061F-F36F-438E-BA2B-C45B565EEC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFF061F-F36F-438E-BA2B-C45B565EEC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFF061F-F36F-438E-BA2B-C45B565EEC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFF061F-F36F-438E-BA2B-C45B565EEC48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
