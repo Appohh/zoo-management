@@ -12,4 +12,9 @@ public partial class Form1 : Form
         lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
         lbx_test2.Items.Add(String.Format(stdDetails, "Image", "Animal", "Habitat", "Age","sex","", "Status"));
     }
+
+    private void lbx_Employees_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //hello
+    }
 }
