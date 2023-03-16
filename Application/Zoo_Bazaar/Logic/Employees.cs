@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class Employees
+    public class Employees : User
     {
-        //test
+        public string SpouseName { get; set; }
+        public int SpousePhone { get; set; }
+        public string EmergencyName { get; set; }
+        public int EmergencyPhone { get; set;}
+        public int BSN { get; set; }
+        public int Contractstatus { get; set; }
+
+        public Employees(string SpouseName, int SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, int id, string firstName, string surName, string userName, string password, string email) :  base(id, firstName, surName, userName, password, email)
+        {
+
+        }
     }
 }
