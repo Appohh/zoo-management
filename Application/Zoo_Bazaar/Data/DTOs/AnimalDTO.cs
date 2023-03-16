@@ -1,13 +1,19 @@
-﻿namespace Logic
-{
-    public class Animal
-    {
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
+namespace DataCL.DTOs
+{
+    public class AnimalDTO
+    {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public DateTime Dob { get; set; }
+        public string Dob { get; set; }
 
         public string BirthPlace { get; set; }
 
@@ -19,18 +25,18 @@
 
         public int DietId { get; set; }
 
-        public string Species { get; set; }
+        public int Species { get; set; }
 
         public string Type { get; set; }
 
-        public string Sickness { get; set; }
+        public int Sickness { get; set; }
 
         public string Notes { get; set; }
 
-        public DateTime DeceasedDate { get; set; }
+        public string DeceasedDate { get; set; }
+        public string ImageUrl { get; set; }
 
-
-        public Animal(int id, string name, DateTime dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate, string imageUrl)
+        public AnimalDTO(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, int species, string type, int sickness, string notes, string deceasedDate, string imageUrl)
         {
             Id = id;
             Name = name;

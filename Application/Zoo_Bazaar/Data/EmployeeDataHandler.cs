@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataCL
 {
-    public class EmployeeDataHandler : BaseDAL, IDataHandler
+    public class EmployeeDataHandler : BaseDAL//, IDataHandler
     {
-        public void Connect()
+        private IDbConnection con;
+
+        public EmployeeDataHandler()
         {
-            throw new NotImplementedException();
+            this.con = base.GetConnection();
         }
 
-        public void Disconnect()
+        public void Delete()
         {
             throw new NotImplementedException();
         }
@@ -25,6 +28,7 @@ namespace DataCL
 
         public void executeQuery()
         {
+            con.Open();
             throw new NotImplementedException();
         }
     }
