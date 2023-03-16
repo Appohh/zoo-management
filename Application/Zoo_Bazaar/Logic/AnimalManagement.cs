@@ -8,31 +8,34 @@ namespace Logic
 {
     public class AnimalManagement
     {
-        List<Animal> animals;
+        private List<Animal> animals;
+
+        private List<Animal> deadAnimals;
+
+        private List<Animal> movedAnimals;
 
         public AnimalManagement()
         {
             animals = new List<Animal>();
-
         }
+
         public void AddAnimal(Animal animal)
         {
-            throw new NotImplementedException();
+            animals.Add(animal);
         }
 
-        public List<Animal> GetAllAnimalList()
+        public Animal[] GetAllAnimalList()
         {
-            throw new NotImplementedException();
+            return animals.ToArray();
         }
 
-        public void RemoveAnimal(Animal animal)
+        public void RemoveAnimal(int index)
         {
-            throw new NotImplementedException();
+            animals.RemoveAt(index);
         }
 
-        public void TerminateAnimal(Animal animal)
+        public void DeadAnimal(Animal animal)
         {
-            throw new NotImplementedException();
         }
     }
 }
