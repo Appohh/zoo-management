@@ -15,7 +15,7 @@ namespace LogicCL
         } 
         public void getAllEmployees()
         {
-
+         //   EmployeeManagement.getallusers type of employee
         }
         public void AddEmployee()                             
         {

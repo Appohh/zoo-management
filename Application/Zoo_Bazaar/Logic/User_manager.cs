@@ -11,13 +11,18 @@ namespace LogicCL
     {
         public List<User> users;
 
+        public void getData()
+        {
+
+        }
+
         public void AddUser()
         {
 
         }
-        public void GetAllUsers()
+        public List<User> GetAllUsers()
         {
-
+            return users;
         }
         public void SaveChanges()
         {
