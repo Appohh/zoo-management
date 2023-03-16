@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class Employee
+    public class Employees
     {
         //test
     }
