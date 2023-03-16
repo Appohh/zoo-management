@@ -18,9 +18,9 @@
 
         public int DietId { get; set; }
 
-        public Species Species { get; set; }
+        public string Species { get; set; }
 
-        public Type Type { get; set; }
+        public string Type { get; set; }
 
         public string Sickness { get; set; }
 
