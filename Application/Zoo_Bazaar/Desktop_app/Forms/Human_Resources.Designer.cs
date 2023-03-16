@@ -119,7 +119,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(978, 59);
+            this.label3.Location = new System.Drawing.Point(979, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 25);
             this.label3.TabIndex = 7;
@@ -130,10 +130,10 @@
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.lb_more_details);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(963, 118);
+            this.panel2.Location = new System.Drawing.Point(963, 153);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 534);
+            this.panel2.Size = new System.Drawing.Size(269, 479);
             this.panel2.TabIndex = 8;
             // 
             // lb_more_details
@@ -141,7 +141,7 @@
             this.lb_more_details.AutoSize = true;
             this.lb_more_details.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.lb_more_details.ForeColor = System.Drawing.Color.White;
-            this.lb_more_details.Location = new System.Drawing.Point(69, 458);
+            this.lb_more_details.Location = new System.Drawing.Point(67, 425);
             this.lb_more_details.Name = "lb_more_details";
             this.lb_more_details.Size = new System.Drawing.Size(147, 32);
             this.lb_more_details.TabIndex = 1;
