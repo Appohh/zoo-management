@@ -17,4 +17,9 @@ public partial class Form1 : Form
     {
         //hello
     }
+
+    private void lb_see_more_Click(object sender, EventArgs e)
+    {
+
+    }
 }
