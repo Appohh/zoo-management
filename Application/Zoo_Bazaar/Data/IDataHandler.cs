@@ -8,5 +8,10 @@ namespace DataCL
 {
     public interface IDataHandler
     {
+        void Connect();
+
+        void Disconnect();
+
+        void Update();
     }
 }
