@@ -6,19 +6,31 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class AnimalManagement : IAnimalManagement
+    public class AnimalManagement
     {
-        public void AssignCaretaker(Animal animal, Employee emp)
+        List<Animal> animals;
+
+        public AnimalManagement()
+        {
+            animals = new List<Animal>();
+
+        }
+        public void AddAnimal(Animal animal)
         {
             throw new NotImplementedException();
         }
 
-        public void Create(Animal animal)
+        public List<Animal> GetAllAnimalList()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Animal animal)
+        public void RemoveAnimal(Animal animal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TerminateAnimal(Animal animal)
         {
             throw new NotImplementedException();
         }
