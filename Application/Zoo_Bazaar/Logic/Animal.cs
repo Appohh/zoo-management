@@ -28,7 +28,7 @@
 
         public DateTime DeceasedDate { get; set; }
 
-        public Animal(int id, string name, DateTime dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, Species species, Type type, string sickness, string notes, DateTime deceasedDate)
+        public Animal(int id, string name, DateTime dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate)
         {
             Id = id;
             Name = name;
