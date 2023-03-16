@@ -25,5 +25,10 @@ namespace DataCL
         {
             throw new NotImplementedException();
         }
+
+        public void executeQuery()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
