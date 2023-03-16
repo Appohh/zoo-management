@@ -13,5 +13,7 @@ namespace DataCL
         void Disconnect();
 
         void Update();
+
+        void executeQuery();    
     }
 }
