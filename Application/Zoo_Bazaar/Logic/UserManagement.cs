@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LogicCL
 {
-    public class User_management
+    public class UserManagement
     {
         public List<User> users;
 

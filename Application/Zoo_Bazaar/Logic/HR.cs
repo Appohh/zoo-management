@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LogicCL
 {
-    public class HR : Employees
+    public class HR : Employee
     {
         public HR(string SpouseName, int SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, string Image, int id, string firstName, string surName, string userName, string password, string email) : base(SpouseName, SpousePhone, EmergencyName, EmergencyPhone, BSN, Contractstatus, Image, id, firstName, surName, userName, password, email)
         {
