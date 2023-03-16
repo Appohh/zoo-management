@@ -8,6 +8,7 @@ namespace Logic
 {
     public abstract class User
     {
+        public string Image { get; set; }
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string SurName { get; set; }
@@ -19,7 +20,7 @@ namespace Logic
         public string address { get; set; }
         public string City { get; set; }
 
-        public User (int id, string firstName, string surName, string userName, string password, string email)
+        public User (string Image, int id, string firstName, string surName, string userName, string password, string email)
         {
 
         }

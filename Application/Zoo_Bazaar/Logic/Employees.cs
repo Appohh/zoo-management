@@ -15,7 +15,7 @@ namespace Logic
         public int BSN { get; set; }
         public int Contractstatus { get; set; }
 
-        public Employees(string SpouseName, int SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, int id, string firstName, string surName, string userName, string password, string email) :  base(id, firstName, surName, userName, password, email)
+        public Employees(string SpouseName, int SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, string Image, int id, string firstName, string surName, string userName, string password, string email) :  base(Image, id, firstName, surName, userName, password, email)
         {
 
         }
