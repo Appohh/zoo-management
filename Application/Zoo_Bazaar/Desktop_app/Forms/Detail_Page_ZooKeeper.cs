@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desktop_app
+namespace Desktop_app.Forms
 {
-    public partial class Detail_Page_HR : Form
+    public partial class Detail_Page_ZooKeeper : Form
     {
-        public Detail_Page_HR()
+        public Detail_Page_ZooKeeper()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
