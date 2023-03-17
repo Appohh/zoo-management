@@ -312,6 +312,7 @@
             this.update_btn.TabIndex = 31;
             this.update_btn.Text = "Update ";
             this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // comboBox1
             // 
@@ -331,7 +332,7 @@
             this.label15.TabIndex = 33;
             this.label15.Text = "Details of Employee";
             // 
-            // Detail_Page_HR
+            // Detail_HR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -367,7 +368,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Detail_Page_HR";
+            this.Name = "Detail_HR";
             this.Text = "Detail_Page_HR";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
