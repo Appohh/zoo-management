@@ -1,6 +1,6 @@
 ﻿namespace Desktop_app.Forms
 {
-    partial class Detail_Page_ZooKeeper
+    partial class Add_Employee_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Add_Employee_Form
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Detail_Page_ZooKeeper";
+            this.ClientSize = new System.Drawing.Size(1198, 719);
+            this.Name = "Add_Employee_Form";
+            this.Text = "Add_Employee_Form";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
