@@ -20,7 +20,7 @@ namespace DataCL
             this.con = base.GetConnection();
         }
 
-        public DataTable RetrieveAnimalData() //read
+        public DataTable ReadData() //read
         {
             DataTable result = new DataTable();
             using (var connection = con)
@@ -54,15 +54,6 @@ namespace DataCL
             }
         }
 
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

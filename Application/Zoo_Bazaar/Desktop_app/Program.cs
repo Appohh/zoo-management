@@ -1,3 +1,5 @@
+using Desktop_app.Forms;
+
 namespace Desktop_app
 {
     internal static class Program

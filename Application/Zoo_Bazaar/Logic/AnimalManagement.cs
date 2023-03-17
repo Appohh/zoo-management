@@ -29,13 +29,5 @@ namespace Logic
             return animals.ToArray();
         }
 
-        public void RemoveAnimal(int index)
-        {
-            animals.RemoveAt(index);
-        }
-
-        public void DeadAnimal(Animal animal)
-        {
-        }
     }
 }
