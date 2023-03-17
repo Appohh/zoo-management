@@ -2,7 +2,6 @@
 {
     public class Animal
     {
-
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -29,8 +28,7 @@
 
         public DateTime DeceasedDate { get; set; }
 
-
-        public Animal(int id, string name, DateTime dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate, string imageUrl)
+        public Animal(int id, string name, DateTime dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate)
         {
             Id = id;
             Name = name;
@@ -45,7 +43,6 @@
             Sickness = sickness;
             Notes = notes;
             DeceasedDate = deceasedDate;
-            ImageUrl = imageUrl;
         }
     }
 }
