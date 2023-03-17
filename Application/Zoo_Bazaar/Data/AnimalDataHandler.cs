@@ -20,7 +20,7 @@ namespace DataCL
             this.con = base.GetConnection();
         }
 
-        public DataTable RetrieveAnimalData()
+        public DataTable RetrieveAnimalData() //read
         {
             DataTable result = new DataTable();
             using (var connection = con)

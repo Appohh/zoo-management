@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\DataCL.csproj" />
+    <ProjectReference Include="..\Logic\LogicCL.csproj" />
   </ItemGroup>
 
 </Project>

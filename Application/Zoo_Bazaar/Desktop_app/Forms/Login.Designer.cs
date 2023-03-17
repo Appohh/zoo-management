@@ -1,4 +1,4 @@
-﻿namespace Desktop_app
+﻿namespace Desktop_app.Forms
 {
     partial class Login
     {
@@ -28,46 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTestConn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // btnTestConn
-            // 
-            this.btnTestConn.Location = new System.Drawing.Point(172, 174);
-            this.btnTestConn.Name = "btnTestConn";
-            this.btnTestConn.Size = new System.Drawing.Size(106, 29);
-            this.btnTestConn.TabIndex = 0;
-            this.btnTestConn.Text = "Test conn";
-            this.btnTestConn.UseVisualStyleBackColor = true;
-            this.btnTestConn.Click += new System.EventHandler(this.btnTestConn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(347, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Test conn";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Login
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnTestConn);
-            this.Name = "Login";
             this.Text = "Login";
-            this.ResumeLayout(false);
-
         }
 
         #endregion
-
-        private Button btnTestConn;
-        private Button button1;
     }
 }

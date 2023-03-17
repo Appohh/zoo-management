@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataCL;
+using DataCL.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +10,8 @@ namespace Logic
 {
     public class AnimalManagement
     {
+        private AnimalDataTraffic AnimalDataTraffic = new AnimalDataTraffic();
         private List<Animal> animals;
-
-        private List<Animal> deadAnimals;
-
-        private List<Animal> movedAnimals;
 
         public AnimalManagement()
         {
@@ -26,6 +25,7 @@ namespace Logic
 
         public Animal[] GetAllAnimalList()
         {
+            List<AnimalDTO> animalDTOs = this.AnimalDataTraffic.getAnimals();
             return animals.ToArray();
         }
 

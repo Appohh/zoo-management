@@ -22,7 +22,7 @@ namespace DataCL
             List<AnimalDTO> Animals = new List<AnimalDTO>();
             //get table from database
             DataTable table = base.RetrieveAnimalData();
-
+        
             //itterate trough all rows of given database -> datatable
             foreach (DataRow dr in table.Rows)
             {
@@ -30,5 +30,6 @@ namespace DataCL
             }
             return Animals;
         }
+
     }
 }
