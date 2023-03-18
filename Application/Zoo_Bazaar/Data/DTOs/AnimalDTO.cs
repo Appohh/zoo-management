@@ -17,9 +17,9 @@ namespace DataCL.DTOs
 
         public string BirthPlace { get; set; }
 
-        public int FatherId { get; set; }
+        public int ?FatherId { get; set; }
 
-        public int MotherId { get; set; }
+        public int ?MotherId { get; set; }
 
         public int LocationId { get; set; }
 
@@ -33,7 +33,7 @@ namespace DataCL.DTOs
 
         public string Notes { get; set; }
 
-        public string DeceasedDate { get; set; }
+        public string ?DeceasedDate { get; set; }
         public string ImageUrl { get; set; }
 
         public AnimalDTO(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, int species, string type, int sickness, string notes, string deceasedDate, string imageUrl)

@@ -23,10 +23,10 @@ namespace Logic
             animals.Add(animal);
         }
 
-        public Animal[] GetAllAnimalList()
+        public List<AnimalDTO> GetAllAnimal()
         {
             List<AnimalDTO> animalDTOs = this.AnimalDataTraffic.getAnimals();
-            return animals.ToArray();
+            return animalDTOs;
         }
 
         //savechanges()
