@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_see_more = new System.Windows.Forms.Label();
-            this.btn_add_employee = new System.Windows.Forms.Button();
+            this.btn_add_employee_HR = new System.Windows.Forms.Button();
             this.lbx_Employees = new System.Windows.Forms.ListBox();
             this.lbx_test = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lb_see_more);
-            this.panel1.Controls.Add(this.btn_add_employee);
+            this.panel1.Controls.Add(this.btn_add_employee_HR);
             this.panel1.Location = new System.Drawing.Point(11, 31);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -78,16 +78,16 @@
             this.lb_see_more.TabIndex = 1;
             this.lb_see_more.Text = "See more Employees";
             // 
-            // btn_add_employee
+            // btn_add_employee_HR
             // 
-            this.btn_add_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.btn_add_employee.Location = new System.Drawing.Point(659, 54);
-            this.btn_add_employee.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_add_employee.Name = "btn_add_employee";
-            this.btn_add_employee.Size = new System.Drawing.Size(159, 36);
-            this.btn_add_employee.TabIndex = 0;
-            this.btn_add_employee.Text = "Add new employee";
-            this.btn_add_employee.UseVisualStyleBackColor = false;
+            this.btn_add_employee_HR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btn_add_employee_HR.Location = new System.Drawing.Point(659, 54);
+            this.btn_add_employee_HR.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_add_employee_HR.Name = "btn_add_employee_HR";
+            this.btn_add_employee_HR.Size = new System.Drawing.Size(159, 36);
+            this.btn_add_employee_HR.TabIndex = 0;
+            this.btn_add_employee_HR.Text = "Add new employee";
+            this.btn_add_employee_HR.UseVisualStyleBackColor = false;
             // 
             // lbx_Employees
             // 
@@ -183,7 +183,7 @@
         private Panel panel1;
         private Label label2;
         private Label lb_see_more;
-        private Button btn_add_employee;
+        private Button btn_add_employee_HR;
         private ListBox lbx_Employees;
         private ListBox lbx_test;
         private Label label3;

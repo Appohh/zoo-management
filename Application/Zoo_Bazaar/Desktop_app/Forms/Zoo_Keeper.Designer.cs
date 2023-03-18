@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_see_more = new System.Windows.Forms.Label();
-            this.btn_add_animal = new System.Windows.Forms.Button();
+            this.btn_add_animal_ZooKeeper = new System.Windows.Forms.Button();
             this.lbx_test_animals = new System.Windows.Forms.ListBox();
             this.lbx_animals = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,7 +47,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lb_see_more);
-            this.panel1.Controls.Add(this.btn_add_animal);
+            this.panel1.Controls.Add(this.btn_add_animal_ZooKeeper);
             this.panel1.Location = new System.Drawing.Point(11, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -78,16 +78,16 @@
             this.lb_see_more.TabIndex = 1;
             this.lb_see_more.Text = "See more Animals";
             // 
-            // btn_add_animal
+            // btn_add_animal_ZooKeeper
             // 
-            this.btn_add_animal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.btn_add_animal.Location = new System.Drawing.Point(659, 54);
-            this.btn_add_animal.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_add_animal.Name = "btn_add_animal";
-            this.btn_add_animal.Size = new System.Drawing.Size(159, 36);
-            this.btn_add_animal.TabIndex = 0;
-            this.btn_add_animal.Text = "Add new animal";
-            this.btn_add_animal.UseVisualStyleBackColor = false;
+            this.btn_add_animal_ZooKeeper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btn_add_animal_ZooKeeper.Location = new System.Drawing.Point(659, 54);
+            this.btn_add_animal_ZooKeeper.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_add_animal_ZooKeeper.Name = "btn_add_animal_ZooKeeper";
+            this.btn_add_animal_ZooKeeper.Size = new System.Drawing.Size(159, 36);
+            this.btn_add_animal_ZooKeeper.TabIndex = 0;
+            this.btn_add_animal_ZooKeeper.Text = "Add new animal";
+            this.btn_add_animal_ZooKeeper.UseVisualStyleBackColor = false;
             // 
             // lbx_test_animals
             // 
@@ -183,7 +183,7 @@
         private Panel panel1;
         private Label label2;
         private Label lb_see_more;
-        private Button btn_add_animal;
+        private Button btn_add_animal_ZooKeeper;
         private ListBox lbx_test_animals;
         private ListBox lbx_animals;
         private Panel panel2;
