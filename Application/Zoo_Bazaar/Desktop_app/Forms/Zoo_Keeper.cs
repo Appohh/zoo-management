@@ -17,7 +17,7 @@ namespace Desktop_app
         {
             InitializeComponent();
             this.Size = new Size(1521, 910);
-            lbx_animals.Items.Add(String.Format(stdDetails, "Image", "Name", "Species", "Location", "Health", "History"));
+            lbx_animals.Items.Add(("Image", "Name", "Species", "Location", "Health", "History"));
         }
     }
 }
