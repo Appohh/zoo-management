@@ -11,7 +11,7 @@ namespace LogicCL
     {
         private AnimalManagement animalManagement;
 
-        public Zookeeper(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus)
+        public Zookeeper(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city)
         {
             animalManagement = new AnimalManagement();
         }

@@ -19,13 +19,15 @@ namespace LogicCL
         
         public UserManagement()
         {
-            refreshUserData();
+            //refreshUserData();
         }
 
 
         public void refreshUserData()
         {
-            List<UserDTO> usersDTOs = this.userDataTraffic.retrieveUsers();
+            List<UserDTO> usersDTOs = new List<UserDTO>();
+            usersDTOs.AddRange(this.userDataTraffic.retrieveUsers());
+            
             List<User> newUsers = new List<User>();
 
             users.Clear();
@@ -36,12 +38,12 @@ namespace LogicCL
             {
                 if(userDto.Role == 1)
                 {
-                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus);
+                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City);
                     newUsers.Add(hr);
                 }
                 if(userDto.Role == 2)
                 {
-                    User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus);
+                    User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City);
                     newUsers.Add(zookeeper);
                 }
             }
@@ -57,8 +59,9 @@ namespace LogicCL
         public List<User> getUserList([Optional] Type type, [Optional] List<Type> types)
         {
             //Returns list of users based on type, able to be provided with one type, a list of types or nothing
+            refreshUserData();
 
-            if(types != null)
+            if (types != null)
             {
                 List<User> filteredUsers = new List<User>();
                 filteredUsers.AddRange(users.Where(user => types.Contains(user.GetType())));

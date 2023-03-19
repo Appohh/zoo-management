@@ -16,7 +16,8 @@ namespace Logic
         public string BSN { get; set; }
         public int Contractstatus { get; set; } //needs custom set for name with if's
 
-        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus)
+
+        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city )
         {
             SpouseName = spouseName;
             SpousePhone = spousePhone;

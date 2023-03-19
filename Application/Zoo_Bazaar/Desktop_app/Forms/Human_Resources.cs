@@ -25,7 +25,7 @@ namespace Desktop_app
             List<Type> types = new List<Type>();
             types.Add(typeof(string));
             types.Add(typeof(int));
-            foreach (var user in userManagement.getUserList(typeof(User)))
+            foreach (var user in userManagement.getUserList(typeof(Zookeeper)))
             {
                 lbx_Employees.Items.Add((user.City, user.FirstName, user.Email, user.address));
             }
