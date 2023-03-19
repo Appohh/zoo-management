@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 namespace LogicCL
 {
@@ -21,10 +22,6 @@ namespace LogicCL
             refreshUserData();
         }
 
-        public void AddUser(User user)
-        {
-            users.Add(user);
-        }
 
         public void refreshUserData()
         {
@@ -34,6 +31,10 @@ namespace LogicCL
 
 
             this.userDataTraffic.retrieveUsers();
+        }
+        public void AddUser(User user)
+        {
+            users.Add(user);
         }
 
         public List<User> getUserList([Optional] Type type, [Optional] List<Type> types)
@@ -56,5 +57,15 @@ namespace LogicCL
 
             return users;
         }
+
+        public User? validateUserCredentials(string username, string password)
+        {
+            //validates & returns User that tries to login
+            List<User> userFound = new List<User>();
+            userFound = (List<User>)users.Where(user => username == user.UserName && password == user.Password);
+
+            if (userFound.Count == 1) return userFound.First(); else { return null; }   
+        }
+
     }
 }

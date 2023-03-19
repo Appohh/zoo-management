@@ -21,7 +21,6 @@ namespace Logic
 
         }
 
-        public abstract int Login();
 
     }
 }
