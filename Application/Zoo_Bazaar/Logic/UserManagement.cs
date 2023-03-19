@@ -16,7 +16,7 @@ namespace LogicCL
     {
         private UserDataTraffic userDataTraffic = new UserDataTraffic();
         private List<User> users = new List<User>();
-
+        
         public UserManagement()
         {
             refreshUserData();
@@ -25,12 +25,29 @@ namespace LogicCL
 
         public void refreshUserData()
         {
+            List<UserDTO> usersDTOs = this.userDataTraffic.retrieveUsers();
+            List<User> newUsers = new List<User>();
+
             users.Clear();
             //!!!!!!
             //still needs converting from DTO to userfriendly User class with selected fields
 
+            foreach(UserDTO userDto in usersDTOs)
+            {
+                if(userDto.Role == 1)
+                {
+                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus);
+                    newUsers.Add(hr);
+                }
+                if(userDto.Role == 2)
+                {
+                    User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus);
+                    newUsers.Add(zookeeper);
+                }
+            }
+            users.AddRange(newUsers);
 
-            this.userDataTraffic.retrieveUsers();
+            
         }
         public void AddUser(User user)
         {

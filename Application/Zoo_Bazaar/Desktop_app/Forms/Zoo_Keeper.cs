@@ -23,7 +23,7 @@ namespace Desktop_app
             lbx_animals.Items.Add(("anus", "ridho", "skunk", "bin", "worst", "bad"));
             foreach (var animal in animalManagement.getAnimalList())
             {
-                lbx_animals.Items.Add((animal.Sickness, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.Birthdate));
+                lbx_animals.Items.Add((animal.Sickness, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.BirthPlace));
             }
 
 

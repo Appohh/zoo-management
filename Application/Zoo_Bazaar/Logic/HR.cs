@@ -10,7 +10,8 @@ namespace LogicCL
     public class HR : Employee
     {
         private UserManagement userManagement;
-        public HR(string SpouseName, int SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, string Image, int id, string firstName, string surName, string userName, string password, string email) : base(SpouseName, SpousePhone, EmergencyName, EmergencyPhone, BSN, Contractstatus, Image, id, firstName, surName, userName, password, email)
+
+        public HR(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus)
         {
             userManagement = new UserManagement();
         }

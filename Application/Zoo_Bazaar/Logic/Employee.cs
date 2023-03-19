@@ -16,11 +16,14 @@ namespace Logic
         public string BSN { get; set; }
         public int Contractstatus { get; set; } //needs custom set for name with if's
 
-        public Employee(string? SpouseName, int? SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, string Image, int id, string firstName, string surName, string userName, string password, string email) :  base(Image, id, firstName, surName, userName, password, email)
+        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus)
         {
-
+            SpouseName = spouseName;
+            SpousePhone = spousePhone;
+            EmergencyName = emergencyName;
+            EmergencyPhone = emergencyPhone;
+            BSN = bSN;
+            Contractstatus = contractstatus;
         }
-
-
     }
 }
