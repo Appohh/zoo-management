@@ -9,15 +9,24 @@ namespace LogicCL
 {
     public class HR : Employee
     {
+        private UserManagement userManagement;
         public HR(string SpouseName, int SpousePhone, string EmergencyName, int EmergencyPhone, int BSN, int Contractstatus, string Image, int id, string firstName, string surName, string userName, string password, string email) : base(SpouseName, SpousePhone, EmergencyName, EmergencyPhone, BSN, Contractstatus, Image, id, firstName, surName, userName, password, email)
         {
-            
-        } 
-        public void getAllEmployees()
-        {
-         //   EmployeeManagement.getallusers type of employee
+            userManagement = new UserManagement();
         }
-        public void AddEmployee()                             
+
+        public override int Login()
+        {
+            //Oskar
+            //Login -> validate -> return 0/1
+            throw new NotImplementedException();
+        }
+
+        public List<User> getAllEmployees()
+        {
+            return userManagement.getUserList(typeof(Employee));
+        }
+        public void RegisterNewEmployee()                             
         {
 
         }
@@ -25,7 +34,7 @@ namespace LogicCL
         {
             
         }
-        public void UpdateEmployee()
+        public void ChangeEmployeeData()
         {
 
         }
@@ -37,5 +46,7 @@ namespace LogicCL
         {
 
         }
+
+
     }
 }

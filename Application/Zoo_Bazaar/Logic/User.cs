@@ -8,6 +8,7 @@ namespace Logic
 {
     public abstract class User
     {
+        //needs to be redone and must match database names and order
         public string Image { get; set; }
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -20,15 +21,5 @@ namespace Logic
         public string address { get; set; }
         public string City { get; set; }
 
-        public User (string Image, int id, string firstName, string surName, string userName, string password, string email)
-        {
-
-        }
-
-
-        public void login()
-        {
-            
-        }
     }
 }

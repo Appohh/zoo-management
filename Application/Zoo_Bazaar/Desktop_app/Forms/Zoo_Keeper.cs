@@ -21,9 +21,9 @@ namespace Desktop_app
             this.Size = new Size(1521, 910);
             lbx_animals.Items.Add(("Image", "Name", "Species", "Location", "Health", "History"));
             lbx_animals.Items.Add(("anus", "ridho", "skunk", "bin", "worst", "bad"));
-            foreach(var animal in animalManagement.GetAllAnimal())
+            foreach (var animal in animalManagement.getAnimalList())
             {
-                lbx_animals.Items.Add((animal.Sickness, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.Dob));
+                lbx_animals.Items.Add((animal.Sickness, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.Birthdate));
             }
 
 

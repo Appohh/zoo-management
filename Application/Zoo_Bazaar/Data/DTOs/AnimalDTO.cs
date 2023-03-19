@@ -13,13 +13,13 @@ namespace DataCL.DTOs
 
         public string Name { get; set; }
 
-        public string Dob { get; set; }
+        public string Birthdate { get; set; }
 
         public string BirthPlace { get; set; }
 
-        public int ?FatherId { get; set; }
+        public int? FatherId { get; set; }
 
-        public int ?MotherId { get; set; }
+        public int? MotherId { get; set; }
 
         public int LocationId { get; set; }
 
@@ -27,20 +27,26 @@ namespace DataCL.DTOs
 
         public int Species { get; set; }
 
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         public int Sickness { get; set; }
 
-        public string Notes { get; set; }
+        public string? Notes { get; set; }
 
-        public string ?DeceasedDate { get; set; }
+        public string? Deathdate { get; set; }
+
         public string ImageUrl { get; set; }
 
-        public AnimalDTO(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, int species, string type, int sickness, string notes, string deceasedDate, string imageUrl)
+        public AnimalDTO()
+        {
+
+        }
+
+        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, int locationId, int dietId, int species, string? type, int sickness, string? notes, string? deathdate, string imageUrl)
         {
             Id = id;
             Name = name;
-            Dob = dob;
+            Birthdate = dob;
             BirthPlace = birthPlace;
             FatherId = fatherId;
             MotherId = motherId;
@@ -50,7 +56,7 @@ namespace DataCL.DTOs
             Type = type;
             Sickness = sickness;
             Notes = notes;
-            DeceasedDate = deceasedDate;
+            Deathdate = deathdate;
             ImageUrl = imageUrl;
         }
     }

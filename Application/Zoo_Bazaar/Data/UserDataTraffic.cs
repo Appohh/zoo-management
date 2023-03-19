@@ -11,18 +11,18 @@ using System.Xml.Linq;
 
 namespace DataCL
 {
-    public class AnimalDataTraffic : AnimalDataHandler
+    public class UserDataTraffic : UserDataHandler
     {
         protected override string cmd
         {
             get
             {
-                return "select * from Animals";
+                return "select * from Employees";
             }
         }
-        public List<AnimalDTO> retrieveAnimals()
+        public List<UserDTO> retrieveUsers()
         {
-            List<AnimalDTO> Animals = new List<AnimalDTO>();
+            List<UserDTO> Users = new List<UserDTO>();
 
             //get datatable of queried data
             DataTable table = base.ReadData();
@@ -30,27 +30,22 @@ namespace DataCL
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)
             {
-                Animals.Add(DataConvertingMethods.ConvertDataRowToObject<AnimalDTO>(dr));
+                Users.Add(DataConvertingMethods.ConvertDataRowToObject<UserDTO>(dr));
             }
 
             //return collection of DTOs
-            return Animals;
+            return Users;
         }
 
-        public void addAnimal()
+        public void addUser()
         {
             //string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
             //return executeQuery(query);
         }
-        public void AnimalSickStatus(AnimalDTO animal, int sick)
-        {
-            string query = $"UPDATE Animal SET Sick={sick} WHERE Id={animal.Id}";
-            //return executeQuery(query);
-        }
 
-        public void SetAnimalNote(AnimalDTO animal, string note)
+        public void Update(UserDTO user, int sick)
         {
-            string query = $"UPDATE Animal SET Notes={note} WHERE Id={animal.Id}";
+            //string query = $"UPDATE Animal SET Sick={sick} WHERE Id={}";
             //return executeQuery(query);
         }
 

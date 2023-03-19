@@ -3,6 +3,7 @@ using DataCL.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,12 +11,12 @@ namespace Logic
 {
     public class AnimalManagement
     {
-        private AnimalDataTraffic AnimalDataTraffic = new AnimalDataTraffic();
-        private List<Animal> animals;
+        private AnimalDataTraffic animalDataTraffic = new AnimalDataTraffic();
+        private List<Animal> animals = new List<Animal>();
 
         public AnimalManagement()
         {
-            animals = new List<Animal>();
+            refreshAnimalData();
         }
 
         public void AddAnimal(Animal animal)
@@ -23,13 +24,37 @@ namespace Logic
             animals.Add(animal);
         }
 
-        public List<AnimalDTO> GetAllAnimal()
+        public void refreshAnimalData()
         {
-            List<AnimalDTO> animalDTOs = this.AnimalDataTraffic.getAnimals();
-            return animalDTOs;
+            animals.Clear();
+            //!!!!!!
+            //still needs converting from DTO to userfriendly Animal class with selected fields
+
+
+            this.animalDataTraffic.retrieveAnimals();
         }
 
-        //savechanges()
+        public List<Animal> getAnimalList([Optional] Type type, [Optional] List<Type> types)
+        {
+            //Returns list of animals based on type, able to be provided with one type, a list of types or nothing
+
+            if (types != null)
+            {
+                List<Animal> filteredAnimals = new List<Animal>();
+                filteredAnimals.AddRange(animals.Where(animal => types.Contains(animal.GetType())));
+                return filteredAnimals;
+            }
+
+            if (type != null)
+            {
+                List<Animal> filteredAnimals = new List<Animal>();
+                filteredAnimals.AddRange(animals.Where(animal => type == animal.GetType()));
+                return filteredAnimals;
+            }
+
+            return animals;
+        }
+
 
     }
 }

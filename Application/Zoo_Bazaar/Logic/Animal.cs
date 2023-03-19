@@ -2,6 +2,7 @@
 {
     public class Animal
     {
+        //NEEDS TO BE UPDATED, USERFRIENDLY
         public int Id { get; set; }
 
         public string Name { get; set; }
