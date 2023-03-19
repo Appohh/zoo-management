@@ -15,13 +15,6 @@ namespace LogicCL
             userManagement = new UserManagement();
         }
 
-        public override int Login()
-        {
-            //Oskar
-            //Login -> validate -> return 0/1
-            throw new NotImplementedException();
-        }
-
         public List<User> getAllEmployees()
         {
             return userManagement.getUserList(typeof(Employee));
