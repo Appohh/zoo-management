@@ -1,4 +1,5 @@
 ﻿using Logic;
+using LogicCL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,10 @@ namespace Desktop_app
     public partial class Zoo_Keeper : Form
     {
         //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
-        public Zoo_Keeper()
+        private Zookeeper zookeeper;
+        public Zoo_Keeper(User user)
         {
+            zookeeper = (Zookeeper) user;
             AnimalManagement animalManagement = new AnimalManagement();
             InitializeComponent();
             this.Size = new Size(1521, 910);
@@ -27,6 +30,11 @@ namespace Desktop_app
             }
 
 
+
+        }
+
+        private void btn_add_animal_ZooKeeper_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -25,17 +25,29 @@ namespace DataCL
             DataTable result = new DataTable();
             using (var connection = con)
             {
-                connection.Open();
-                using (var command = new SqlCommand())
+                try
                 {
-                    command.Connection = (SqlConnection)connection;
-                    //get command
-                    command.CommandText = this.cmd;
-                    //get data
-                    var data = command.ExecuteReader();
-                    //fill datatable with querried data
-                    result.Load(data);
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = (SqlConnection)connection;
+                        //get command
+                        command.CommandText = this.cmd;
+                        //get data
+                        var data = command.ExecuteReader();
+                        //fill datatable with querried data
+                        result.Load(data);
+                    }
                 }
+                catch
+                {
+                    return null;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                
             }
             return result;
         }
