@@ -21,6 +21,7 @@ namespace LogicCL
         public void MakeActive()
         {
             repository = new EmployeeRepository();
+            Repository = repository;
 
         }
 
