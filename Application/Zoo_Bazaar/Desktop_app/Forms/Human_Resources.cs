@@ -24,9 +24,7 @@ namespace Desktop_app
             InitializeComponent();
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
-            List<Type> types = new List<Type>();
-            types.Add(typeof(string));
-            types.Add(typeof(int));
+
             foreach (var user in hr.Repository.GetUserList(typeof(Zookeeper)))
             {
                 lbx_Employees.Items.Add((user.City, user.FirstName, user.Email, user.address));

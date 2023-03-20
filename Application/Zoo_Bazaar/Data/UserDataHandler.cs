@@ -23,14 +23,13 @@ namespace DataCL
         public DataTable ReadData() //read
         {
             DataTable result = new DataTable();
-            using (var connection = con)
-            {
+
                 try
                 {
-                    connection.Open();
+                con.Open();
                     using (var command = new SqlCommand())
                     {
-                        command.Connection = (SqlConnection)connection;
+                        command.Connection = (SqlConnection)con;
                         //get command
                         command.CommandText = this.cmd;
                         //get data
@@ -45,11 +44,11 @@ namespace DataCL
                 }
                 finally
                 {
-                    connection.Close();
+                    con.Close();
                 }
                 
-            }
             return result;
+            
         }
 
         public int executeQuery(string query)
