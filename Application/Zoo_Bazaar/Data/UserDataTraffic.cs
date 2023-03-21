@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace DataCL
 {
-    public class UserDataTraffic : UserDataHandler
+    public class UserDataTraffic : DataHandler
     {
         protected override string cmd
         {

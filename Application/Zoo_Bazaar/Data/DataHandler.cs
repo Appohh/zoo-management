@@ -1,21 +1,19 @@
-﻿using DataCL.DTOs;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataCL
 {
-    public class AnimalDataHandler : BaseDAL, IDataHandler
+    public class DataHandler : BaseDAL, IDataHandler
     {
         private IDbConnection con;
         protected virtual string cmd { get; }
 
-        public AnimalDataHandler()
+        public DataHandler()
         {
             this.con = base.GetConnection();
         }
