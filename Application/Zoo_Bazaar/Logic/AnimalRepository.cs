@@ -35,32 +35,32 @@ namespace LogicCL
             foreach (AnimalDTO animalDto in animalDTOs)
             {
                     
-                    Animal animal = new Animal(animalDto.Id, );
-                    newUsers.Add(zookeeper);      
+                    Animal animal = new Animal(animalDto.Id,  animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.LocationId, animalDto.DietId, animalDto.Species, animalDto.Type, animalDto.Sickness, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
+                    newAnimals.Add(animal);      
             }
-            users.AddRange(newUsers);
+            animals.AddRange(newAnimals);
 
         }
 
-        public List<User> GetUserList([Optional] Type type, [Optional] List<Type> types)
+        public List<Animal> GetAnimalList([Optional] Type type, [Optional] List<Type> types)
         {
-            //Returns list of users based on type, able to be provided with one type, a list of types or nothing
-            List<User> filteredUsers = new List<User>();
+            //Returns list of animals based on type, able to be provided with one type, a list of types or nothing
+            List<Animal> filteredAnimals = new List<Animal>();
             if (types != null)
             {
 
-                filteredUsers.AddRange(Users.Where(user => types.Contains(user.GetType())));
-                return filteredUsers;
+                filteredAnimals.AddRange(Animals.Where(animal => types.Contains(animal.GetType())));
+                return filteredAnimals;
             }
 
             if (type != null)
             {
 
-                filteredUsers.AddRange(Users.Where(user => type == user.GetType()));
-                return filteredUsers;
+                filteredAnimals.AddRange(Animals.Where(animal => type == animal.GetType()));
+                return filteredAnimals;
             }
 
-            return filteredUsers;
+            return filteredAnimals;
         }
 
 

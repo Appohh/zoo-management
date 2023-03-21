@@ -27,11 +27,11 @@ namespace DataCL.DTOs
 
         public int Species { get; set; }
 
-        public string? Type { get; set; }
+        public string Type { get; set; }
 
         public int Sickness { get; set; }
 
-        public string? Notes { get; set; }
+        public string Notes { get; set; }
 
         public string? Deathdate { get; set; }
 

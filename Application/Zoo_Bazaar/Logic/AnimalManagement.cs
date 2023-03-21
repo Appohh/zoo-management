@@ -35,10 +35,10 @@ namespace Logic
 
             foreach (AnimalDTO animalDto in animalDTOs)
             {
-                if (userDto.Role == 1)
+                if (animalDto.Role == 1)
                 {
                     Animal animal = new Animal(animalDto.Id, animalDto.Name, )
-                    newUsers.Add(hr);
+                    newa.Add(hr);
                 }
             }
             users.AddRange(newUsers);
