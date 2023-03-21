@@ -69,7 +69,11 @@ namespace LogicCL
 
             return filteredUsers;
         }
-
+        
+        public bool AddNew(UserDTO userDTO)
+        {
+            return userDataTraffic.addUser(userDTO);
+        }
 
     }
 }

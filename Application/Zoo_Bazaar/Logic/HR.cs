@@ -1,4 +1,5 @@
 ﻿using DataCL;
+using DataCL.DTOs;
 using Logic;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,18 @@ namespace LogicCL
             Repository = new EmployeeRepository();
         }
 
-        public void RegisterNewEmployee()
+        public void GetJobList()
         {
 
+        }
+
+        public bool RegisterNewEmployee(UserDTO userDTO)
+        {
+            if (Repository.AddNew(userDTO))
+            {
+                return true;
+            }
+            return false;
         }
         public void RemoveEmployee()
         {

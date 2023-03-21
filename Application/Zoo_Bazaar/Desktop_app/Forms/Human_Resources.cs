@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using Desktop_app.Forms;
+using Logic;
 using LogicCL;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,19 @@ namespace Desktop_app
 
         private void btn_add_employee_HR_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var add_Employee_Form = new Add_Employee_Form(hr);
+            add_Employee_Form.ShowDialog();
+            if (add_Employee_Form.DialogResult == DialogResult.OK)
+            {
+                add_Employee_Form.Dispose();
+            }
+            else if (add_Employee_Form.DialogResult == DialogResult.Cancel)
+            {
+                MessageBox.Show("Operation Canceled");
+                add_Employee_Form.Dispose();          
+            }
+            this.Show();
         }
 
         private void lbx_Employees_DrawItem(object sender, DrawItemEventArgs e)

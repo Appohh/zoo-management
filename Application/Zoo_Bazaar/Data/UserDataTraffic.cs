@@ -37,10 +37,16 @@ namespace DataCL
             return Users;
         }
 
-        public void addUser()
+        public void RetrieveJobs()
+        {
+            
+        }
+
+        public bool addUser(UserDTO user)
         {
             //string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
             //return executeQuery(query);
+            return true;
         }
 
         public void Update(UserDTO user, int sick)
