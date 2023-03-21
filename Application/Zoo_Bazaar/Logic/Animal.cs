@@ -7,7 +7,7 @@
 
         public string Name { get; set; }
 
-        public DateTime Dob { get; set; }
+        public string Birthdate { get; set; }
 
         public string BirthPlace { get; set; }
 
@@ -23,13 +23,13 @@
 
         public string Type { get; set; }
 
-        public string Sickness { get; set; }
+        public string Sick { get; set; }
 
         public string Notes { get; set; }
 
         public string DeceasedDate { get; set; }
 
-        public Animal(int id, string name, DateTime dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate)
+        public Animal(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate)
         {
             Id = id;
             Name = name;
