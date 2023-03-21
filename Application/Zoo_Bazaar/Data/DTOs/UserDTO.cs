@@ -26,7 +26,7 @@ namespace DataCL.DTOs
         public int ContractStatus { get; set; }
         public int? ContactType { get; set; }
         public string ImageUrl { get; set; }
-        public int Role { get; set; }
+        public int JobId { get; set; }
         public UserDTO()
         {
 
@@ -52,7 +52,7 @@ namespace DataCL.DTOs
             ContractStatus = contractStatus;
             ContactType = contactType;
             ImageUrl = imageUrl;
-            Role = role;
+            JobId = role;
         }
     }
 }

@@ -23,9 +23,9 @@ namespace LogicCL
             Repository = new EmployeeRepository();
         }
 
-        public void GetJobList()
+        public List<Job> GetJobList()
         {
-
+            return Repository.GetJobList();
         }
 
         public bool RegisterNewEmployee(UserDTO userDTO)

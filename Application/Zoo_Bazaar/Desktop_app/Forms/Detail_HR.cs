@@ -35,7 +35,7 @@ namespace Desktop_app
         {
             //validation for _employee
 
-            UserManagement userManagement = new UserManagement();
+          
 
             //userManagement saveEmployee(_employee)
         }

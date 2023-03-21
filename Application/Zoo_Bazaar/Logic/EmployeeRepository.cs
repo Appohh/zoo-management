@@ -13,6 +13,7 @@ namespace LogicCL
     public class EmployeeRepository
     {
         private UserDataTraffic userDataTraffic = new UserDataTraffic();
+        private JobDataTraffic jobDataTraffic = new JobDataTraffic();
         private List<User> users = new List<User>();
 
         public List<User> Users { get { return users; } }
@@ -34,12 +35,12 @@ namespace LogicCL
 
             foreach (UserDTO userDto in usersDTOs)
             {
-                if (userDto.Role == 1)
+                if (userDto.JobId == 1)
                 {
                     User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City);
                     newUsers.Add(hr);
                 }
-                if (userDto.Role == 2)
+                if (userDto.JobId == 2)
                 {
                     User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City);
                     newUsers.Add(zookeeper);
@@ -70,9 +71,19 @@ namespace LogicCL
             return filteredUsers;
         }
         
+        public List<Job> GetJobList()
+        {
+            List<JobDTO> jobDTOs = jobDataTraffic.retrieveJobs();
+            List<Job> jobs = new List<Job>();
+            foreach(JobDTO jobDTO in jobDTOs)
+            {
+                jobs.Add(new Job(jobDTO.Id, jobDTO.Name));
+            }
+            return jobs;
+        }
         public bool AddNew(UserDTO userDTO)
         {
-            return userDataTraffic.addUser(userDTO);
+            return false;
         }
 
     }
