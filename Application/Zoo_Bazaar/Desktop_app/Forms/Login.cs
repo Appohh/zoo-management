@@ -26,7 +26,7 @@ namespace Desktop_app.Forms
 
         //This is a void for creating the method, someone convert this in a button please.
 
-        private void B_LoginLogin_Click(object sender, EventArgs e)
+        private void Btn_Login_Click(object sender, EventArgs e)
         {
             User? loggedInUser = loginService.validateUserCredentials(TB_UsernameLogin.Text, TB_PasswordLogin.Text);
 
@@ -40,7 +40,7 @@ namespace Desktop_app.Forms
                     HR_form.ShowDialog();
                     this.Close();
                 }
- 
+
 
                 else if (loggedInUser.GetType() == typeof(Zookeeper))
                 {
@@ -56,17 +56,8 @@ namespace Desktop_app.Forms
                 //if user is null and there is no user with given credentials
             }
         }
-
-        private void TB_PasswordLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CB_ShowPasswordLogin_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-    
     }
 }
+
+
+
