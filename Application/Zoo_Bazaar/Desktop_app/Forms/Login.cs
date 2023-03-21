@@ -56,5 +56,17 @@ namespace Desktop_app.Forms
                 //if user is null and there is no user with given credentials
             }
         }
+
+        private void TB_PasswordLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CB_ShowPasswordLogin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }

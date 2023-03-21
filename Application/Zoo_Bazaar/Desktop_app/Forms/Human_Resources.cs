@@ -14,7 +14,6 @@ namespace Desktop_app
 {
     public partial class Human_Resources : Form
     {
-        //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
         private HR hr;
         
         public Human_Resources(User loggedInUser)//needs parameter later
