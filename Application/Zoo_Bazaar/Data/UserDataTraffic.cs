@@ -42,7 +42,7 @@ namespace DataCL
             
         }
 
-        public bool addUser(UserDTO user)
+        public bool AddUser(UserDTO user)
         {
             //string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
             //return executeQuery(query);

@@ -18,16 +18,16 @@ namespace Desktop_app
         private Zookeeper zookeeper;
         public Zoo_Keeper(User loggedInUser)
         {
-            zookeeper = (Zookeeper) user;
-            AnimalManagement animalManagement = new AnimalManagement();
+            
+            
             InitializeComponent();
             this.Size = new Size(1521, 910);
             lbx_animals.Items.Add(("Image", "Name", "Species", "Location", "Health", "History"));
             lbx_animals.Items.Add(("anus", "ridho", "skunk", "bin", "worst", "bad"));
-            foreach (var animal in AnimalRepository.getAnimalList())
+            /*foreach (var animal in AnimalRepository.getAnimalList())
             {
                 lbx_animals.Items.Add((animal.Sickness, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.BirthPlace));
-            }
+            }*/
 
 
 

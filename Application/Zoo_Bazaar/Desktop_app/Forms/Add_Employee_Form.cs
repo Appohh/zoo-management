@@ -21,6 +21,7 @@ namespace Desktop_app.Forms
         {
             _hr = hr;   
             InitializeComponent();
+            PopulateJobCombobox();
         }
         
         private void PopulateJobCombobox()
