@@ -10,40 +10,33 @@ using System.Threading.Tasks;
 
 namespace LogicCL
 {
-    public class EmployeeRepository
+    public class AnimalRepository
     {
-        private UserDataTraffic userDataTraffic = new UserDataTraffic();
-        private List<User> users = new List<User>();
+        private AnimalDataTraffic animalDataTraffic = new AnimalDataTraffic();
+        private List<Animal> animals = new List<Animal>();
 
-        public List<User> Users { get { return users; } }
+        public List<Animal> Animals { get { return animals; } }
 
-        public EmployeeRepository() 
+        public AnimalRepository() 
         {
             refreshUserData();
         }
         private void refreshUserData()
         {
-            List<UserDTO> usersDTOs = new List<UserDTO>();
-            usersDTOs.AddRange(this.userDataTraffic.retrieveUsers());
+            List<AnimalDTO> animalDTOs = new List<AnimalDTO>();
+            animalDTOs.AddRange(this.animalDataTraffic.retrieveAnimals());
 
-            List<User> newUsers = new List<User>();
+            List<Animal> newAnimals = new List<Animal>();
 
-            users.Clear();
+            animals.Clear();
             //!!!!!!
-            //still needs converting from DTO to userfriendly User class with selected fields
+            //still needs converting from DTO to userfriendly Animal class with selected fields
 
-            foreach (UserDTO userDto in usersDTOs)
+            foreach (AnimalDTO animalDto in animalDTOs)
             {
-                if (userDto.Role == 1)
-                {
-                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City);
-                    newUsers.Add(hr);
-                }
-                if (userDto.Role == 2)
-                {
-                    User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City);
-                    newUsers.Add(zookeeper);
-                }
+                    
+                    Animal animal = new Animal(animalDto.Id, );
+                    newUsers.Add(zookeeper);      
             }
             users.AddRange(newUsers);
 
