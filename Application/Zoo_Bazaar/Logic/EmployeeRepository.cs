@@ -73,7 +73,13 @@ namespace LogicCL
         
         public List<Job> GetJobList()
         {
-            List<JobDTO> jobs = jobDataTraffic.retrieveJobs();
+            List<JobDTO> jobDTOs = jobDataTraffic.retrieveJobs();
+            List<Job> jobs = new List<Job>();
+            foreach(JobDTO jobDTO in jobDTOs)
+            {
+                jobs.Add(new Job(jobDTO.Id, jobDTO.Name));
+            }
+            return jobs;
         }
         public bool AddNew(UserDTO userDTO)
         {
