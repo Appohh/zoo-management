@@ -23,7 +23,7 @@ namespace Desktop_app
 
         private void label1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)
@@ -35,9 +35,14 @@ namespace Desktop_app
         {
             //validation for _employee
 
-          
+
 
             //userManagement saveEmployee(_employee)
+        }
+
+        private void Detail_HR_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
