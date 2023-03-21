@@ -13,9 +13,10 @@ namespace LogicCL
     public class EmployeeRepository
     {
         private UserDataTraffic userDataTraffic = new UserDataTraffic();
+        private JobDataTraffic jobDataTraffic = new JobDataTraffic();
         private List<User> users = new List<User>();
 
-        public List<User> Users { get { return users; } }
+        public List<User> Users { get; }
 
         public EmployeeRepository() 
         {
@@ -70,6 +71,10 @@ namespace LogicCL
             return filteredUsers;
         }
         
+        public List<Job> GetJobList()
+        {
+            List<JobDTO> jobs = jobDataTraffic.retrieveJobs();
+        }
         public bool AddNew(UserDTO userDTO)
         {
             return userDataTraffic.addUser(userDTO);
