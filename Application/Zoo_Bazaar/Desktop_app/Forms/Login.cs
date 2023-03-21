@@ -54,7 +54,7 @@ namespace Desktop_app.Forms
             }
             else
             {
-                //if user is null and there is no user with given credentials
+                MessageBox.Show("Wrong Credentials");
             }
         }
 

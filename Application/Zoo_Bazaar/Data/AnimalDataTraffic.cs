@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace DataCL
 {
-    public class AnimalDataTraffic : AnimalDataHandler
+    public class AnimalDataTraffic : DataHandler
     {
         protected override string cmd
         {

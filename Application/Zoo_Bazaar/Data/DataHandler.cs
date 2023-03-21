@@ -1,21 +1,19 @@
-﻿using DataCL.DTOs;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataCL
 {
-    public class AnimalDataHandler : BaseDAL, IDataHandler
+    public class DataHandler : BaseDAL, IDataHandler
     {
         private IDbConnection con;
         protected virtual string cmd { get; }
 
-        public AnimalDataHandler()
+        public DataHandler()
         {
             this.con = base.GetConnection();
         }
@@ -23,12 +21,12 @@ namespace DataCL
         public DataTable ReadData() //read
         {
             DataTable result = new DataTable();
-            using (var connection = con)
+            try
             {
-                connection.Open();
+                con.Open();
                 using (var command = new SqlCommand())
                 {
-                    command.Connection = (SqlConnection)connection;
+                    command.Connection = (SqlConnection)con;
                     //get command
                     command.CommandText = this.cmd;
                     //get data
@@ -36,6 +34,14 @@ namespace DataCL
                     //fill datatable with querried data
                     result.Load(data);
                 }
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
             }
             return result;
         }
