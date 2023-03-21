@@ -68,7 +68,7 @@ namespace LogicCL
                 return filteredUsers;
             }
 
-            return filteredUsers;
+            return Users;
         }
         
         public List<Job> GetJobList()

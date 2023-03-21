@@ -61,7 +61,7 @@ namespace LogicCL
                 return filteredAnimals;
             }
 
-            return filteredAnimals;
+            return Animals;
         }
 
 

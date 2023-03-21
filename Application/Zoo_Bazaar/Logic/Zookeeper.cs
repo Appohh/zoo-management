@@ -20,5 +20,15 @@ namespace LogicCL
         {
             Repository = new AnimalRepository();
         }
+
+        public bool WriteAnimalNote(Animal animal)
+        {
+            Repository = new AnimalRepository();
+        }
+
+        public void ReportAnimalSick()
+        {
+            Repository = new AnimalRepository();
+        }
     }
 }
