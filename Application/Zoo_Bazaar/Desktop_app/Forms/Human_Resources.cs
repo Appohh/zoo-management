@@ -23,6 +23,9 @@ namespace Desktop_app
             hr.MakeActive();
             InitializeComponent();
             lv_Employees.Items.Add($"{"gsga"}, {"gsga"}, {"gsga"}, {"gsga"}, {"gsga"} ");
+            var item2 = new ListViewItem(new[] { "sa", "saasa", "safas" });
+            lv_Employees.Items.Add(item2);
+
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
 
