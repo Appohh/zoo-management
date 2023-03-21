@@ -21,6 +21,7 @@ namespace LogicCL
         {
             refreshUserData();
         }
+
         private void refreshUserData()
         {
             List<AnimalDTO> animalDTOs = new List<AnimalDTO>();
