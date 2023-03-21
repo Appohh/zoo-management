@@ -11,39 +11,43 @@
 
         public string BirthPlace { get; set; }
 
-        public int FatherId { get; set; }
+        public int? FatherId { get; set; }
 
-        public int MotherId { get; set; }
+        public int? MotherId { get; set; }
 
         public int LocationId { get; set; }
 
         public int DietId { get; set; }
 
-        public string Species { get; set; }
+        public int Species { get; set; }
 
         public string Type { get; set; }
 
-        public string Sick { get; set; }
+        public int Sick { get; set; }
 
         public string Notes { get; set; }
 
-        public string DeceasedDate { get; set; }
+        public string? DeceasedDate { get; set; }
+        public string ImageUrl { get; set; }
 
-        public Animal(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int locationId, int dietId, string species, string type, string sickness, string notes, DateTime deceasedDate)
+
+
+        public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, int locationId, int dietId, int speciesId, string type, int sick, string notes, string? deathdate, string imageUrl)
         {
             Id = id;
             Name = name;
-            Dob = dob;
+            Birthdate = birthdate;
             BirthPlace = birthPlace;
             FatherId = fatherId;
             MotherId = motherId;
             LocationId = locationId;
             DietId = dietId;
-            Species = species;
+            Species = speciesId;
             Type = type;
-            Sickness = sickness;
+            Sick = sick;
             Notes = notes;
-            DeceasedDate = deceasedDate;
+            DeceasedDate = deathdate;
+            ImageUrl = imageUrl;
         }
     }
 }

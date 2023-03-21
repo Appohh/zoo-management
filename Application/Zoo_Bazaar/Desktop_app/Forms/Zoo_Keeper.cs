@@ -16,7 +16,7 @@ namespace Desktop_app
     {
         //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
         private Zookeeper zookeeper;
-        public Zoo_Keeper(User user)
+        public Zoo_Keeper(User loggedInUser)
         {
             zookeeper = (Zookeeper) user;
             AnimalManagement animalManagement = new AnimalManagement();
@@ -24,7 +24,7 @@ namespace Desktop_app
             this.Size = new Size(1521, 910);
             lbx_animals.Items.Add(("Image", "Name", "Species", "Location", "Health", "History"));
             lbx_animals.Items.Add(("anus", "ridho", "skunk", "bin", "worst", "bad"));
-            foreach (var animal in animalManagement.getAnimalList())
+            foreach (var animal in AnimalRepository.getAnimalList())
             {
                 lbx_animals.Items.Add((animal.Sickness, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.BirthPlace));
             }
