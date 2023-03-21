@@ -21,6 +21,7 @@ namespace Desktop_app
             hr = (HR) loggedInUser;
             hr.MakeActive();
             InitializeComponent();
+            lv_Employees.Items.Add($"{"gsga"}, {"gsga"}, {"gsga"}, {"gsga"}, {"gsga"} ");
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
 
@@ -37,11 +38,9 @@ namespace Desktop_app
 
         }
 
-        private void lbx_Employees_DrawItem(object sender, DrawItemEventArgs e)
+        private void lb_more_details_Click(object sender, EventArgs e)
         {
-            // Set the background and foreground color based on the row index
-            Color backgroundColor = e.Index == 0 ? Color.Black : Color.White;
-            Color foregroundColor = e.Index == 0 ? Color.White : Color.Black;
+
         }
     }
 }
