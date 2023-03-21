@@ -21,9 +21,10 @@ namespace LogicCL
             Repository = new AnimalRepository();
         }
 
-        public bool WriteAnimalNote(Animal animal)
+        public bool WriteAnimalNote(Animal selectedAnimal)
         {
-            Repository = new AnimalRepository();
+           // Animal animal = Repository.GetAnimalList().Find(animal => selectedAnimal == animal);
+           throw new NotImplementedException();
         }
 
         public void ReportAnimalSick()
