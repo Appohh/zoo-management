@@ -17,7 +17,7 @@ namespace DataCL
         {
             get
             {
-                return "select * from Animals";
+                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [dietId] as 'diet', [speciesId] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
             }
         }
         public List<AnimalDTO> retrieveAnimals()
