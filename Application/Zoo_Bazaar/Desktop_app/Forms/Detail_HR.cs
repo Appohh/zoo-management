@@ -68,5 +68,18 @@ namespace Desktop_app
             SpouseBoxHR.Text = _employee.SpouseName;
             SpouseContactBoxHR.Text = _employee.SpousePhone;
         }
+
+        private void btn_update_employee_Click(object sender, EventArgs e)
+        {
+            if(_hr.Repository.changeEmployeeDetails(_employee.Id, NameBoxHR.Text, LastnameBoxHR.Text, PhoneNumberBoxHR.Text, AdressBoxHR.Text, "city", EmailBoxHR.Text, SpouseBoxHR.Text, SpouseContactBoxHR.Text, EmergencyContactNameBoxHR.Text, EmergencyContactBoxHR.Text, BirthDateBoxHR.Value.ToString("yyyy-mm-dd"), BSNBoxHR.Text, Convert.ToInt32(ContractBoxHR.SelectedValue)))
+            {
+                MessageBox.Show("Succes");
+                this.DialogResult = DialogResult.OK;
+            } else
+            {
+                MessageBox.Show("Oops something went wrong, please contact an administrator");
+                this.DialogResult = DialogResult.Cancel;
+            }
+        }
     }
 }

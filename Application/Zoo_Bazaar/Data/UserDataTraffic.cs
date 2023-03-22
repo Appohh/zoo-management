@@ -50,9 +50,9 @@ namespace DataCL
             return executeQuery(query) == 0 ? false : true;
         }
 
-        public bool Update(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int contractType)
+        public bool UpdateEmployee(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus)
         {
-            string query = $"UPDATE Employees SET firstname={firstname}, lastname='{lastname}',phone={phone}, address='{address}',city={city}, email='{email}',spouseName={spouseName}, spousePhone='{spousePhone}',emergencyName={emergencyName}, emergencyPhone='{emergencyPhone}',birthdate={birthdate}, bsn='{bsn}',contractStatus={contractStatus}, contractType='{contractType}' WHERE Id={employeeid}";
+            string query = $"UPDATE Employees SET firstname={firstname}, lastname='{lastname}',phone={phone}, address='{address}',city={city}, email='{email}',spouseName={spouseName}, spousePhone='{spousePhone}',emergencyName={emergencyName}, emergencyPhone='{emergencyPhone}',birthdate={birthdate}, bsn='{bsn}',contractStatus={contractStatus} WHERE Id={employeeid}";
             return executeQuery(query) == 0 ? false : true;
         }
 
