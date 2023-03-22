@@ -88,7 +88,12 @@ namespace LogicCL
 
         public bool AddNew(UserDTO userDTO)
         {
-            return userDataTraffic.AddUser(userDTO);
+            if (userDataTraffic.AddUser(userDTO))
+            {
+                refreshUserData();
+                return true;
+            };
+            return false;
         }
 
         public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus)
