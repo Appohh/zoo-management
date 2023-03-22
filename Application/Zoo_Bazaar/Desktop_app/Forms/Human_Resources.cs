@@ -86,22 +86,5 @@ namespace Desktop_app
             }
             this.Show();
         }
-
-        private void btn_all_employees_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            All_Employees_Form all_Employees_Form = new All_Employees_Form();
-            all_Employees_Form.ShowDialog();
-            if (all_Employees_Form.DialogResult == DialogResult.OK)
-            {
-                all_Employees_Form.Dispose();
-            }
-            else if (all_Employees_Form.DialogResult == DialogResult.Cancel)
-            {
-                all_Employees_Form.Dispose();
-            }
-            this.Show();
-
-        }
     }
 }

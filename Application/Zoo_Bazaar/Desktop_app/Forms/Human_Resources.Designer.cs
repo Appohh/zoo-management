@@ -44,7 +44,6 @@
             this.lb_see_more = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.artanPanel3 = new Desktop_app.ArtanPanel();
-            this.btn_all_employees = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Lbl_search = new System.Windows.Forms.Label();
@@ -149,7 +148,7 @@
             this.lv_Employees.ForeColor = System.Drawing.Color.White;
             this.lv_Employees.FullRowSelect = true;
             this.lv_Employees.Location = new System.Drawing.Point(15, 190);
-            this.lv_Employees.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lv_Employees.Margin = new System.Windows.Forms.Padding(5);
             this.lv_Employees.Name = "lv_Employees";
             this.lv_Employees.Size = new System.Drawing.Size(1089, 600);
             this.lv_Employees.TabIndex = 20;
@@ -205,7 +204,6 @@
             // 
             this.artanPanel3.BackColor = System.Drawing.Color.Black;
             this.artanPanel3.BorderRadius = 30;
-            this.artanPanel3.Controls.Add(this.btn_all_employees);
             this.artanPanel3.Controls.Add(this.button1);
             this.artanPanel3.ForeColor = System.Drawing.Color.Black;
             this.artanPanel3.GradientAngle = 90F;
@@ -216,19 +214,6 @@
             this.artanPanel3.Name = "artanPanel3";
             this.artanPanel3.Size = new System.Drawing.Size(1089, 105);
             this.artanPanel3.TabIndex = 23;
-            // 
-            // btn_all_employees
-            // 
-            this.btn_all_employees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.btn_all_employees.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_all_employees.Location = new System.Drawing.Point(855, 11);
-            this.btn_all_employees.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_all_employees.Name = "btn_all_employees";
-            this.btn_all_employees.Size = new System.Drawing.Size(211, 36);
-            this.btn_all_employees.TabIndex = 1;
-            this.btn_all_employees.Text = "See all employees";
-            this.btn_all_employees.UseVisualStyleBackColor = false;
-            this.btn_all_employees.Click += new System.EventHandler(this.btn_all_employees_Click);
             // 
             // button1
             // 
@@ -347,7 +332,6 @@
         private ArtanPanel artanPanel2;
         private ColumnHeader EmployeeJob;
         private ArtanPanel artanPanel3;
-        private Button btn_all_employees;
         private Button button1;
         private TextBox textBox1;
         private Label Lbl_search;
