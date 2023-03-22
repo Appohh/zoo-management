@@ -1,6 +1,6 @@
 ﻿namespace Desktop_app.Forms
 {
-    partial class Test
+    partial class All_Employees_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,7 @@
             this.LV_HumanResources.ForeColor = System.Drawing.SystemColors.MenuText;
             this.LV_HumanResources.GridLines = true;
             this.LV_HumanResources.Location = new System.Drawing.Point(4, 181);
-            this.LV_HumanResources.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LV_HumanResources.Margin = new System.Windows.Forms.Padding(4);
             this.LV_HumanResources.Name = "LV_HumanResources";
             this.LV_HumanResources.Size = new System.Drawing.Size(779, 482);
             this.LV_HumanResources.TabIndex = 19;
@@ -114,7 +114,7 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(16, 102);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(155, 31);
             this.textBox1.TabIndex = 23;
@@ -174,7 +174,7 @@
             this.ClientSize = new System.Drawing.Size(1402, 731);
             this.Controls.Add(this.NameBoxHR);
             this.Controls.Add(this.LV_HumanResources);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Test";
             this.Text = "Test";
             this.NameBoxHR.ResumeLayout(false);

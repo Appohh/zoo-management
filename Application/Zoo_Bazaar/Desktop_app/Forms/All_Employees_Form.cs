@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Desktop_app.Forms
 {
-    public partial class Test : Form
+    public partial class All_Employees_Form : Form
     {
-        public Test()
+        public All_Employees_Form()
         {
             InitializeComponent();
-        }
-
-        private void LV_StudentsAdmin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
