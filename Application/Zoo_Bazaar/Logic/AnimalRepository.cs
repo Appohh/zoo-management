@@ -69,6 +69,7 @@ namespace LogicCL
         public bool updateAnimal(Animal selectedAnimal, string note)
         {
             animalDataTraffic.SetAnimalNote(selectedAnimal.Id, note);
+            throw new NotImplementedException();
         }
 
 

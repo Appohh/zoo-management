@@ -49,7 +49,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.FunctionBoxAddEmployee = new System.Windows.Forms.TextBox();
             this.BSNBoxAddEmployee = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BirthDateBoxAddEmployee = new System.Windows.Forms.DateTimePicker();
@@ -64,6 +63,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_add_employee = new System.Windows.Forms.Button();
             this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
+            this.cbJob = new System.Windows.Forms.ComboBox();
             this.Contact.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -199,6 +199,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.groupBox2.Controls.Add(this.cbJob);
             this.groupBox2.Controls.Add(this.UsernameBoxAddEmployee);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.PasswordBoxAddEmployee);
@@ -207,7 +208,6 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.FunctionBoxAddEmployee);
             this.groupBox2.Controls.Add(this.BSNBoxAddEmployee);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -299,19 +299,9 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label13.Location = new System.Drawing.Point(16, 230);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 25);
+            this.label13.Size = new System.Drawing.Size(45, 25);
             this.label13.TabIndex = 13;
-            this.label13.Text = "Function:";
-            // 
-            // FunctionBoxAddEmployee
-            // 
-            this.FunctionBoxAddEmployee.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.FunctionBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FunctionBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FunctionBoxAddEmployee.Location = new System.Drawing.Point(16, 258);
-            this.FunctionBoxAddEmployee.Name = "FunctionBoxAddEmployee";
-            this.FunctionBoxAddEmployee.Size = new System.Drawing.Size(289, 27);
-            this.FunctionBoxAddEmployee.TabIndex = 29;
+            this.label13.Text = "Job:";
             // 
             // BSNBoxAddEmployee
             // 
@@ -476,6 +466,16 @@
             this.PictureBoxAddEmployee.TabIndex = 72;
             this.PictureBoxAddEmployee.TabStop = false;
             // 
+            // cbJob
+            // 
+            this.cbJob.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbJob.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbJob.FormattingEnabled = true;
+            this.cbJob.Location = new System.Drawing.Point(16, 267);
+            this.cbJob.Name = "cbJob";
+            this.cbJob.Size = new System.Drawing.Size(289, 28);
+            this.cbJob.TabIndex = 33;
+            // 
             // Add_Employee_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -522,7 +522,6 @@
         private Label label11;
         private Label label14;
         private Label label13;
-        private TextBox FunctionBoxAddEmployee;
         private TextBox BSNBoxAddEmployee;
         private GroupBox groupBox1;
         private DateTimePicker BirthDateBoxAddEmployee;
@@ -537,5 +536,6 @@
         private Label label3;
         private Button btn_add_employee;
         private PictureBox PictureBoxAddEmployee;
+        private ComboBox cbJob;
     }
 }

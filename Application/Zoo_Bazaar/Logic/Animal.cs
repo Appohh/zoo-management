@@ -11,9 +11,9 @@
 
         public string BirthPlace { get; set; }
 
-        public Animal? FatherId { get; set; }
+        public int? FatherId { get; set; }
 
-        public Animal? MotherId { get; set; }
+        public int? MotherId { get; set; }
 
         public int LocationId { get; set; }
 
@@ -33,7 +33,7 @@
 
 
 
-        public Animal(int id, string name, string birthdate, string birthPlace, Animal? fatherId, Animal? motherId, int locationId, int dietId, int speciesId, string type, int sick, string notes, string? deathdate, string imageUrl)
+        public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, int locationId, int dietId, int speciesId, string type, int sick, string notes, string? deathdate, string imageUrl)
         {
             Id = id;
             Name = name;
