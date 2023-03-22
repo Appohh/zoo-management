@@ -17,9 +17,10 @@ namespace DataCL
         {
             get
             {
-                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [dietId] as 'diet', [Species].[name] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
+                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [Diet].[name] as 'diet', [Species].[name] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
             }
         }
+
         public List<AnimalDTO> retrieveAnimals()
         {
             List<AnimalDTO> Animals = new List<AnimalDTO>();
@@ -42,11 +43,11 @@ namespace DataCL
             //string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
             //return executeQuery(query);
         }
+
         public bool UpdateAnimalSickAndNote(int animalId, int sick, string note)
         {
             string query = $"UPDATE Animals SET sick={sick}, notes='{note}' WHERE Id={animalId}";
             return executeQuery(query) == 0 ? false : true;
         }
-
     }
 }
