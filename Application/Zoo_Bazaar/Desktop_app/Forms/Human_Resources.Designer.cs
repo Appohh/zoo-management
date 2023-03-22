@@ -210,7 +210,7 @@
             this.btn_see_animals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_see_animals.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_see_animals.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_see_animals.Location = new System.Drawing.Point(660, 86);
+            this.btn_see_animals.Location = new System.Drawing.Point(696, 100);
             this.btn_see_animals.Name = "btn_see_animals";
             this.btn_see_animals.Size = new System.Drawing.Size(185, 32);
             this.btn_see_animals.TabIndex = 25;
