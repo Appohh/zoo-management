@@ -63,5 +63,15 @@ namespace Desktop_app
             }
             this.Show();
         }
+
+        private void lb_more_details_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_add_animal_HR_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
