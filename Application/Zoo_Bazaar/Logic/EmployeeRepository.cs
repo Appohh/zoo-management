@@ -70,6 +70,7 @@ namespace LogicCL
 
             return Users;
         }
+
         
         public List<Job> GetJobList()
         {

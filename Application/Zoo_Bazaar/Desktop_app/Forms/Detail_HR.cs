@@ -14,12 +14,17 @@ namespace Desktop_app
 {
     public partial class Detail_HR : Form
     {
-        Employee _employee;
+        HR _hr;
+        Employee _selectedEmployee;
 
-        public Detail_HR(Employee employee)
+
+        public Detail_HR(HR hr, Employee selectedEmployee)
         {
-            _employee = employee;
+            _hr = hr;
+            _selectedEmployee = selectedEmployee;
+
             InitializeComponent();
+            PopulateEmployeeDetails();
         }
 
 
@@ -28,6 +33,12 @@ namespace Desktop_app
 /*            User user;
             Human_Resources human = new Human_Resources(user);
 */            
+        }
+
+        private void PopulateEmployeeDetails()
+        {
+            NameBoxHR.Text = _selectedEmployee.FirstName;
+            NameBoxHR.Text = _selectedEmployee.Jobname;
         }
     }
 }

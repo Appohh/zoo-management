@@ -38,8 +38,8 @@
             this.Namez = new System.Windows.Forms.ColumnHeader();
             this.EmployeePhoneNumber = new System.Windows.Forms.ColumnHeader();
             this.lv_Employees = new System.Windows.Forms.ListView();
-            this.EmployeeJob = new System.Windows.Forms.ColumnHeader();
             this.BirthDate = new System.Windows.Forms.ColumnHeader();
+            this.EmployeeJob = new System.Windows.Forms.ColumnHeader();
             this.btn_add_employee_HR = new System.Windows.Forms.Button();
             this.lb_see_more = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +58,6 @@
             // 
             // EmployeeEmail
             // 
-            EmployeeEmail.DisplayIndex = 1;
             EmployeeEmail.Text = "City";
             EmployeeEmail.Width = 150;
             // 
@@ -122,13 +121,11 @@
             // 
             // Name
             // 
-            this.Name.DisplayIndex = 5;
             this.Name.Text = "Spouse";
             this.Name.Width = 120;
             // 
             // Namez
             // 
-            this.Namez.DisplayIndex = 0;
             this.Namez.Text = "Name";
             this.Namez.Width = 150;
             // 
@@ -160,16 +157,15 @@
             this.lv_Employees.View = System.Windows.Forms.View.Details;
             this.lv_Employees.SelectedIndexChanged += new System.EventHandler(this.lv_Employees_SelectedIndexChanged);
             // 
+            // BirthDate
+            // 
+            this.BirthDate.Text = "BirthDate";
+            this.BirthDate.Width = 150;
+            // 
             // EmployeeJob
             // 
             this.EmployeeJob.Text = "Job";
             this.EmployeeJob.Width = 150;
-            // 
-            // BirthDate
-            // 
-            this.BirthDate.DisplayIndex = 2;
-            this.BirthDate.Text = "BirthDate";
-            this.BirthDate.Width = 150;
             // 
             // btn_add_employee_HR
             // 
@@ -294,6 +290,7 @@
             this.btn_ViewDetails.TabIndex = 0;
             this.btn_ViewDetails.Text = "View Details";
             this.btn_ViewDetails.UseVisualStyleBackColor = false;
+            this.btn_ViewDetails.Click += new System.EventHandler(this.btn_ViewDetails_Click);
             // 
             // label3
             // 
@@ -323,7 +320,6 @@
             this.Controls.Add(this.lv_Employees);
             this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            //this.Name = "Human_Resources";
             this.Text = "Human_Resources";
             this.artanPanel3.ResumeLayout(false);
             this.artanPanel4.ResumeLayout(false);
