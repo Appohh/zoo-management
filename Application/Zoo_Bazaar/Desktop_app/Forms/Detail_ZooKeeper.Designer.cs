@@ -59,6 +59,7 @@
             this.BirthDateBoxZooKeeper = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDeatailZooKeeper)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -415,12 +416,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Condition";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Red;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogOut.Location = new System.Drawing.Point(1002, 30);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(172, 33);
+            this.btnLogOut.TabIndex = 69;
+            this.btnLogOut.Text = "Back";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // Detail_ZooKeeper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1274, 630);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_update_animal);
             this.Controls.Add(this.PictureDeatailZooKeeper);
@@ -467,5 +483,6 @@
         private DateTimePicker BirthDateBoxZooKeeper;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private Button btnLogOut;
     }
 }
