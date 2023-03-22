@@ -21,5 +21,10 @@ namespace Desktop_app.Forms
         {
 
         }
+
+        private void Detail_ZooKeeper_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

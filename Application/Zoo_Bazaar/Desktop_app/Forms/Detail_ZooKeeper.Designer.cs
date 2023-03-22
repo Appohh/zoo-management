@@ -425,6 +425,7 @@
             this.Controls.Add(this.btn_update_animal);
             this.Controls.Add(this.PictureDeatailZooKeeper);
             this.Name = "Detail_ZooKeeper";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detail_ZooKeeper_FormClosing);
             this.Load += new System.EventHandler(this.Detail_ZooKeeper_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureDeatailZooKeeper)).EndInit();
             this.groupBox1.ResumeLayout(false);

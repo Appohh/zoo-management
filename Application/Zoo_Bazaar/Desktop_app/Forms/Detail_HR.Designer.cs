@@ -496,6 +496,7 @@
             this.Controls.Add(this.PictureDetailEmployee);
             this.Name = "Detail_HR";
             this.Text = "Detail_Page_HR";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detail_HR_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PictureDetailEmployee)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

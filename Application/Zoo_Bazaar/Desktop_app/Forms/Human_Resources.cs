@@ -59,9 +59,28 @@ namespace Desktop_app
 
         }
 
-        private void btn_add_animal_HR_Click(object sender, EventArgs e)
+        private void Human_Resources_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void btn_ViewDetails_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            //Detail_HR detail_HR = new Detail_HR();
+            //detail_HR.ShowDialog();
+        }
+
+        private void lv_Employees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_Employees.SelectedItems.Count > 0)
+            {
+                EmployeeNameLabel.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                EmployeeNameLabel.Text = "";
+            }
         }
     }
 }
