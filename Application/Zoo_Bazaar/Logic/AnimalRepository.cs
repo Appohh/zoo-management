@@ -38,7 +38,7 @@ namespace LogicCL
             {
                     
                     //Diet dietOfThisAnimal = animals.where(diet => animal.dietid = dietId)
-                    Animal animal = new Animal(animalDto.Id,  animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.LocationId, animalDto.DietId, animalDto.Species, animalDto.Type, animalDto.Sickness, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
+                    Animal animal = new Animal(animalDto.Id,  animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.Location, animalDto.Diet, animalDto.Species, animalDto.Type, animalDto.Sickness, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
                     newAnimals.Add(animal);      
             }
             animals.AddRange(newAnimals);

@@ -21,11 +21,11 @@ namespace DataCL.DTOs
 
         public int? MotherId { get; set; }
 
-        public int LocationId { get; set; }
+        public string Location { get; set; }
 
-        public int DietId { get; set; }
+        public string Diet { get; set; }
 
-        public int Species { get; set; }
+        public string Species { get; set; }
 
         public string Type { get; set; }
 
@@ -42,7 +42,7 @@ namespace DataCL.DTOs
 
         }
 
-        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, int locationId, int dietId, int species, string? type, int sickness, string? notes, string? deathdate, string imageUrl)
+        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sickness, string? notes, string? deathdate, string imageUrl)
         {
             Id = id;
             Name = name;
@@ -50,8 +50,8 @@ namespace DataCL.DTOs
             BirthPlace = birthPlace;
             FatherId = fatherId;
             MotherId = motherId;
-            LocationId = locationId;
-            DietId = dietId;
+            Location = location;
+            Diet = diet;
             Species = species;
             Type = type;
             Sickness = sickness;

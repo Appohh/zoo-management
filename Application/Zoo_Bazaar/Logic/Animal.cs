@@ -13,13 +13,13 @@
 
         public int? FatherId { get; set; }
 
-        public int? MotherId { get; set; }
+        public int? Mother { get; set; }
 
-        public int LocationId { get; set; }
+        public string Location { get; set; }
 
-        public int DietId { get; set; }
+        public string Diet { get; set; }
 
-        public int Species { get; set; }
+        public string Species { get; set; }
 
         public string Type { get; set; }
 
@@ -33,17 +33,17 @@
 
 
 
-        public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, int locationId, int dietId, int speciesId, string type, int sick, string notes, string? deathdate, string imageUrl)
+        public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string type, int sick, string notes, string? deathdate, string imageUrl)
         {
             Id = id;
             Name = name;
             Birthdate = birthdate;
             BirthPlace = birthPlace;
             FatherId = fatherId;
-            MotherId = motherId;
-            LocationId = locationId;
-            DietId = dietId;
-            Species = speciesId;
+            Mother = motherId;
+            Location = location;
+            Diet = diet;
+            Species = species;
             Type = type;
             Sick = sick;
             Notes = notes;
