@@ -24,15 +24,17 @@ namespace Desktop_app
             zookeeper.MakeActive();
             InitializeComponent();
             this.Size = new Size(1521, 910);
+            refreshAnimalList();
+        }
+
+        private void refreshAnimalList()
+        {
             foreach (Animal animal in zookeeper.Repository.GetAnimalList())
             {
                 var animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location, animal.BirthPlace });
                 animalInfo.Tag = animal.Id.ToString();
                 lv_Animals.Items.Add(animalInfo);
             }
-
-
-
         }
 
         private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,6 +76,11 @@ namespace Desktop_app
             this.Hide();
             Add_Animal_Form add_Animal_Form = new Add_Animal_Form();
             add_Animal_Form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            refreshAnimalList();
         }
     }
 }

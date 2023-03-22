@@ -68,7 +68,7 @@ namespace LogicCL
 
         public bool ChangeAnimalSickAndNote(int id, int sick, string note)
         {
-            if (animalDataTraffic.UpdateAnimalSickAndNote(id, sick, note)) { return true; } else { return false; }
+            if (animalDataTraffic.UpdateAnimalSickAndNote(id, sick, note)) { refreshUserData(); return true; } else { return false; }
         }
 
     }

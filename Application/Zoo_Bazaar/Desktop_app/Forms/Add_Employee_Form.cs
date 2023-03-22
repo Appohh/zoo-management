@@ -48,6 +48,7 @@ namespace Desktop_app.Forms
             if (_hr.RegisterNewEmployee(dto))
             {
                 MessageBox.Show("Successful");
+                
             }
             else
             {

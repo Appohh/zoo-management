@@ -54,6 +54,7 @@ namespace Desktop_app.Forms
             if(_zookeeper.Repository.ChangeAnimalSickAndNote(_animal.Id, sick, NoteBoxZooKeeper.Text))
             {
                 this.DialogResult = DialogResult.OK;
+                _zookeeper.Repository.GetAnimalList();
                 MessageBox.Show("Success");
             }
             else
