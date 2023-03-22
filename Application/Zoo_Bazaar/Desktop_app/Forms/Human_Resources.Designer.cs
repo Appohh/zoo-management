@@ -43,10 +43,16 @@
             this.btn_add_employee_HR = new System.Windows.Forms.Button();
             this.lb_see_more = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_see_animals = new System.Windows.Forms.Button();
-            this.btn_add_animal_HR = new System.Windows.Forms.Button();
+            this.artanPanel3 = new Desktop_app.ArtanPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Lbl_search = new System.Windows.Forms.Label();
+            this.artanPanel4 = new Desktop_app.ArtanPanel();
+            this.btn_ViewDetails = new System.Windows.Forms.Button();
             EmployeeEmail = new System.Windows.Forms.ColumnHeader();
+            this.artanPanel3.SuspendLayout();
+            this.artanPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmployeeEmail
@@ -59,9 +65,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(979, 72);
+            this.label3.Location = new System.Drawing.Point(855, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 25);
+            this.label3.Size = new System.Drawing.Size(166, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Selected Employee info";
             // 
@@ -93,10 +99,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(10, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 25);
+            this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 21;
             this.label1.Text = "Zoo Bazaar - HR /";
             // 
@@ -105,10 +111,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(166, 7);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(146, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 25);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 22;
             this.label4.Text = "Home";
             // 
@@ -141,10 +147,10 @@
             this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lv_Employees.ForeColor = System.Drawing.Color.White;
             this.lv_Employees.FullRowSelect = true;
-            this.lv_Employees.Location = new System.Drawing.Point(11, 152);
-            this.lv_Employees.Margin = new System.Windows.Forms.Padding(4);
+            this.lv_Employees.Location = new System.Drawing.Point(10, 114);
+            this.lv_Employees.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lv_Employees.Name = "lv_Employees";
-            this.lv_Employees.Size = new System.Drawing.Size(870, 480);
+            this.lv_Employees.Size = new System.Drawing.Size(762, 360);
             this.lv_Employees.TabIndex = 20;
             this.lv_Employees.UseCompatibleStateImageBehavior = false;
             this.lv_Employees.View = System.Windows.Forms.View.Details;
@@ -194,60 +200,113 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Welcome ......";
             // 
-            // label5
+            // artanPanel3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(12, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 25);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Name";
+            this.artanPanel3.BackColor = System.Drawing.Color.Black;
+            this.artanPanel3.BorderRadius = 30;
+            this.artanPanel3.Controls.Add(this.button2);
+            this.artanPanel3.Controls.Add(this.button1);
+            this.artanPanel3.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel3.GradientAngle = 90F;
+            this.artanPanel3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.artanPanel3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.artanPanel3.Location = new System.Drawing.Point(10, 38);
+            this.artanPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.artanPanel3.Name = "artanPanel3";
+            this.artanPanel3.Size = new System.Drawing.Size(762, 63);
+            this.artanPanel3.TabIndex = 23;
             // 
-            // btn_see_animals
+            // button2
             // 
-            this.btn_see_animals.BackColor = System.Drawing.Color.Red;
-            this.btn_see_animals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_see_animals.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_see_animals.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_see_animals.Location = new System.Drawing.Point(696, 100);
-            this.btn_see_animals.Name = "btn_see_animals";
-            this.btn_see_animals.Size = new System.Drawing.Size(185, 32);
-            this.btn_see_animals.TabIndex = 25;
-            this.btn_see_animals.Text = "See All Animals";
-            this.btn_see_animals.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(598, 7);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 22);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "See all employees";
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // btn_add_animal_HR
+            // button1
             // 
-            this.btn_add_animal_HR.BackColor = System.Drawing.Color.Red;
-            this.btn_add_animal_HR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_animal_HR.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_add_animal_HR.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_add_animal_HR.Location = new System.Drawing.Point(696, 48);
-            this.btn_add_animal_HR.Name = "btn_add_animal_HR";
-            this.btn_add_animal_HR.Size = new System.Drawing.Size(185, 32);
-            this.btn_add_animal_HR.TabIndex = 26;
-            this.btn_add_animal_HR.Text = "Add Animal";
-            this.btn_add_animal_HR.UseVisualStyleBackColor = false;
-            this.btn_add_animal_HR.Click += new System.EventHandler(this.btn_add_animal_HR_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(598, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 22);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add Employee";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.textBox1.Location = new System.Drawing.Point(368, 7);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(172, 23);
+            this.textBox1.TabIndex = 24;
+            // 
+            // Lbl_search
+            // 
+            this.Lbl_search.AutoSize = true;
+            this.Lbl_search.BackColor = System.Drawing.Color.Transparent;
+            this.Lbl_search.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbl_search.ForeColor = System.Drawing.Color.White;
+            this.Lbl_search.Location = new System.Drawing.Point(312, 8);
+            this.Lbl_search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_search.Name = "Lbl_search";
+            this.Lbl_search.Size = new System.Drawing.Size(52, 19);
+            this.Lbl_search.TabIndex = 25;
+            this.Lbl_search.Text = "Search:";
+            // 
+            // artanPanel4
+            // 
+            this.artanPanel4.BackColor = System.Drawing.Color.DimGray;
+            this.artanPanel4.BorderRadius = 40;
+            this.artanPanel4.Controls.Add(this.btn_ViewDetails);
+            this.artanPanel4.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel4.GradientAngle = 90F;
+            this.artanPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.artanPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.artanPanel4.Location = new System.Drawing.Point(797, 86);
+            this.artanPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.artanPanel4.Name = "artanPanel4";
+            this.artanPanel4.Size = new System.Drawing.Size(284, 388);
+            this.artanPanel4.TabIndex = 26;
+            // 
+            // btn_ViewDetails
+            // 
+            this.btn_ViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btn_ViewDetails.Location = new System.Drawing.Point(97, 346);
+            this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ViewDetails.Name = "btn_ViewDetails";
+            this.btn_ViewDetails.Size = new System.Drawing.Size(104, 26);
+            this.btn_ViewDetails.TabIndex = 0;
+            this.btn_ViewDetails.Text = "View Details";
+            this.btn_ViewDetails.UseVisualStyleBackColor = false;
             // 
             // Human_Resources
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(1258, 678);
-            this.Controls.Add(this.btn_add_animal_HR);
-            this.Controls.Add(this.btn_see_animals);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(1058, 514);
+            this.Controls.Add(this.artanPanel4);
+            this.Controls.Add(this.Lbl_search);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.artanPanel3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lv_Employees);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.Name = "Human_Resources";
             this.Text = "Human_Resources";
+            this.artanPanel3.ResumeLayout(false);
+            this.artanPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,8 +329,12 @@
         private ArtanPanel artanPanel2;
         private ColumnHeader Employee_Role;
         private ColumnHeader EmployeeLastName;
-        private Label label5;
-        private Button btn_see_animals;
-        private Button btn_add_animal_HR;
+        private ArtanPanel artanPanel3;
+        private Button button2;
+        private Button button1;
+        private TextBox textBox1;
+        private Label Lbl_search;
+        private ArtanPanel artanPanel4;
+        private Button btn_ViewDetails;
     }
 }

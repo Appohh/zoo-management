@@ -57,24 +57,26 @@
             this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.artanPanel1.Location = new System.Drawing.Point(338, 161);
             this.artanPanel1.Name = "artanPanel1";
-            this.artanPanel1.Size = new System.Drawing.Size(594, 579);
+            this.artanPanel1.Size = new System.Drawing.Size(594, 551);
             this.artanPanel1.TabIndex = 1;
             // 
             // Btn_Login
             // 
-            this.Btn_Login.Location = new System.Drawing.Point(213, 325);
+            this.Btn_Login.BackColor = System.Drawing.Color.Black;
+            this.Btn_Login.ForeColor = System.Drawing.Color.White;
+            this.Btn_Login.Location = new System.Drawing.Point(168, 351);
             this.Btn_Login.Name = "Btn_Login";
-            this.Btn_Login.Size = new System.Drawing.Size(175, 37);
+            this.Btn_Login.Size = new System.Drawing.Size(269, 37);
             this.Btn_Login.TabIndex = 6;
-            this.Btn_Login.Text = "button1";
-            this.Btn_Login.UseVisualStyleBackColor = true;
+            this.Btn_Login.Text = "Login";
+            this.Btn_Login.UseVisualStyleBackColor = false;
             this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(155, 239);
+            this.label4.Location = new System.Drawing.Point(155, 268);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 5;
@@ -83,7 +85,7 @@
             // TB_PasswordLogin
             // 
             this.TB_PasswordLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TB_PasswordLogin.Location = new System.Drawing.Point(155, 267);
+            this.TB_PasswordLogin.Location = new System.Drawing.Point(155, 296);
             this.TB_PasswordLogin.Name = "TB_PasswordLogin";
             this.TB_PasswordLogin.Size = new System.Drawing.Size(297, 34);
             this.TB_PasswordLogin.TabIndex = 4;
@@ -92,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(155, 169);
+            this.label3.Location = new System.Drawing.Point(155, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 25);
             this.label3.TabIndex = 3;
@@ -101,7 +103,7 @@
             // TB_UsernameLogin
             // 
             this.TB_UsernameLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TB_UsernameLogin.Location = new System.Drawing.Point(155, 197);
+            this.TB_UsernameLogin.Location = new System.Drawing.Point(155, 214);
             this.TB_UsernameLogin.Name = "TB_UsernameLogin";
             this.TB_UsernameLogin.Size = new System.Drawing.Size(297, 34);
             this.TB_UsernameLogin.TabIndex = 2;
@@ -122,10 +124,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(168, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 32);
+            this.label1.Size = new System.Drawing.Size(293, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to Zoo Bazaar!";
             // 
