@@ -17,7 +17,7 @@ namespace DataCL
         {
             get
             {
-                return "select * from Employees";
+                return "SELECT Employees.id ,[firstname] ,[lastname] ,[username] ,[password] ,[phone] ,[address] ,[city] ,[email] ,[spouseName] ,[spousePhone] ,[emergencyName] ,[emergencyPhone] ,[birthdate] ,[bsn] ,[imageUrl] ,[contractStatus] ,[contractType] ,[jobId], Jobs.name as 'jobname' FROM Employees INNER JOIN Jobs on Employees.jobId = Jobs.id";
             }
         }
         public List<UserDTO> retrieveUsers()

@@ -15,9 +15,11 @@ namespace Logic
         public string EmergencyPhone { get; set;}
         public string BSN { get; set; }
         public int Contractstatus { get; set; } //needs custom set for name with if's
+        public string Jobname { get; set; }
 
 
-        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city )
+
+        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city)
         {
             SpouseName = spouseName;
             SpousePhone = spousePhone;
@@ -25,6 +27,7 @@ namespace Logic
             EmergencyPhone = emergencyPhone;
             BSN = bSN;
             Contractstatus = contractstatus;
+            Jobname = jobname;
         }
     }
 }

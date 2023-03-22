@@ -22,16 +22,13 @@ namespace Desktop_app
             hr = (HR) loggedInUser;
             hr.MakeActive();
             InitializeComponent();
-            lv_Employees.Items.Add($"{"gsga"}, {"gsga"}, {"gsga"}, {"gsga"}, {"gsga"} ");
-            var item2 = new ListViewItem(new[] { "sa", "saasa", "safas" });
-            lv_Employees.Items.Add(item2);
 
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
-
-            foreach (var user in hr.Repository.GetUserList(typeof(Zookeeper)))
+            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
-                //lbx_Employees.Items.Add((user.City, user.FirstName, user.Email, user.address));
+                var userInfo = new ListViewItem(new[] {employee.FirstName + " " + employee.LastName, employee.City, employee.BirthDate, employee.Phone, employee.Jobname, employee.SpouseName });
+                lv_Employees.Items.Add(userInfo);
             }
 
             //UserLoggedIn.GetList<Employee>();

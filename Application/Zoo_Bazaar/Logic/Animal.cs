@@ -33,6 +33,7 @@
 
 
 
+
         public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string type, int sick, string notes, string? deathdate, string imageUrl)
         {
             Id = id;
@@ -49,6 +50,7 @@
             Notes = notes;
             DeceasedDate = deathdate;
             ImageUrl = imageUrl;
+
         }
     }
 }
