@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -49,10 +50,10 @@ namespace DataCL
             return executeQuery(query) == 0 ? false : true;
         }
 
-        public void Update(UserDTO user, int sick)
+        public bool Update(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int contractType)
         {
-            //string query = $"UPDATE Animal SET Sick={sick} WHERE Id={}";
-            //return executeQuery(query);
+            string query = $"UPDATE Employees SET firstname={firstname}, lastname='{lastname}',phone={phone}, address='{address}',city={city}, email='{email}',spouseName={spouseName}, spousePhone='{spousePhone}',emergencyName={emergencyName}, emergencyPhone='{emergencyPhone}',birthdate={birthdate}, bsn='{bsn}',contractStatus={contractStatus}, contractType='{contractType}' WHERE Id={employeeid}";
+            return executeQuery(query) == 0 ? false : true;
         }
 
     }
