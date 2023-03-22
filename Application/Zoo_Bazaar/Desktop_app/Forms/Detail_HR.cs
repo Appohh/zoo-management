@@ -15,6 +15,7 @@ namespace Desktop_app
     public partial class Detail_HR : Form
     {
         Employee _employee;
+
         public Detail_HR(Employee employee)
         {
             _employee = employee;
@@ -43,6 +44,13 @@ namespace Desktop_app
         private void Detail_HR_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Detail_HR_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            User user;
+            Human_Resources human = new Human_Resources(user);
+            
         }
     }
 }
