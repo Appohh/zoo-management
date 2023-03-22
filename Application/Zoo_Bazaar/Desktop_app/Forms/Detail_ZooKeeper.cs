@@ -16,5 +16,10 @@ namespace Desktop_app.Forms
         {
             InitializeComponent();
         }
+
+        private void Detail_ZooKeeper_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

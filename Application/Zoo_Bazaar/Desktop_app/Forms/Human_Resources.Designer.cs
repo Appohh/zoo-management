@@ -141,9 +141,9 @@
             this.lv_Employees.ForeColor = System.Drawing.Color.White;
             this.lv_Employees.FullRowSelect = true;
             this.lv_Employees.Location = new System.Drawing.Point(11, 152);
-            this.lv_Employees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lv_Employees.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Employees.Name = "lv_Employees";
-            this.lv_Employees.Size = new System.Drawing.Size(894, 480);
+            this.lv_Employees.Size = new System.Drawing.Size(870, 480);
             this.lv_Employees.TabIndex = 20;
             this.lv_Employees.UseCompatibleStateImageBehavior = false;
             this.lv_Employees.View = System.Windows.Forms.View.Details;
@@ -210,7 +210,7 @@
             this.btn_see_animals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_see_animals.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_see_animals.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_see_animals.Location = new System.Drawing.Point(720, 97);
+            this.btn_see_animals.Location = new System.Drawing.Point(660, 86);
             this.btn_see_animals.Name = "btn_see_animals";
             this.btn_see_animals.Size = new System.Drawing.Size(185, 32);
             this.btn_see_animals.TabIndex = 25;
