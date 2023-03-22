@@ -21,14 +21,9 @@ namespace LogicCL
             Repository = new AnimalRepository();
         }
 
-        public bool WriteAnimalNote(Animal selectedAnimal, string note)
+        public bool UpdateAnimal(Animal selectedAnimal, int sick, string note)
         {
-           if(Repository.ChangeAnimalNote(selectedAnimal.Id, note)) { return true; } else { return false; }
-        }
-
-        public bool ReportAnimalSick(Animal selectedAnimal, int sick)
-        {
-            if (Repository.ChangeAnimalSick(selectedAnimal.Id, sick)) { return true; } else { return false; }
+           if(Repository.ChangeAnimalSickAndNote(selectedAnimal.Id, sick, note)) { return true; } else { return false; }
         }
     }
 }

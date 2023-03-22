@@ -42,15 +42,9 @@ namespace DataCL
             //string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
             //return executeQuery(query);
         }
-        public bool UpdateAnimalSick(int animalId, int sick)
+        public bool UpdateAnimalSickAndNote(int animalId, int sick, string note)
         {
-            string query = $"UPDATE Animal SET Sick={sick} WHERE Id={animalId}";
-            return executeQuery(query) == 0 ? false : true;
-        }
-
-        public bool UpdateAnimalNote(int animalId, string note)
-        {
-            string query = $"UPDATE Animal SET Notes={note} WHERE Id={animalId}";
+            string query = $"UPDATE Animals SET sick={sick}, notes='{note}' WHERE Id={animalId}";
             return executeQuery(query) == 0 ? false : true;
         }
 

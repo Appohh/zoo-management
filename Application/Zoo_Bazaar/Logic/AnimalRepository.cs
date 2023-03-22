@@ -66,16 +66,10 @@ namespace LogicCL
             return Animals;
         }
 
-        public bool ChangeAnimalSick(int id, int value)
+        public bool ChangeAnimalSickAndNote(int id, int sick, string note)
         {
-            if (animalDataTraffic.UpdateAnimalSick(id, value)) { return true; } else { return false; }
+            if (animalDataTraffic.UpdateAnimalSickAndNote(id, sick, note)) { return true; } else { return false; }
         }
-
-        public bool ChangeAnimalNote(int id, string value)
-        {
-            if(animalDataTraffic.UpdateAnimalNote(id, value)) { return true; } else { return false; }
-        }
-
 
     }
 }

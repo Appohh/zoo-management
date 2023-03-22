@@ -59,7 +59,6 @@ namespace Desktop_app
             detail_ZooKeeper.ShowDialog();
             if (detail_ZooKeeper.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show("Yes");
                 detail_ZooKeeper.Dispose();
             }
             else if (detail_ZooKeeper.DialogResult == DialogResult.Cancel)

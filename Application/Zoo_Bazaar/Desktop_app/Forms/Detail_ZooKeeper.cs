@@ -39,6 +39,7 @@ namespace Desktop_app.Forms
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+            MessageBox.Show("No changes have been saved.");
         }
 
         private void PopulateAnimalInfo()
@@ -46,5 +47,21 @@ namespace Desktop_app.Forms
             NameBoxZooKeeper.Text = _animal.Name;
             LocationBoxZooKeeper.Text = _animal.Location;
         }
+
+        private void btn_update_animal_Click(object sender, EventArgs e)
+        {
+            int sick = CheckboxSick.Checked ? 1 : 0;
+            if(_zookeeper.Repository.ChangeAnimalSickAndNote(_animal.Id, sick, NoteBoxZooKeeper.Text))
+            {
+                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("Success");
+            }
+            else
+            {
+                MessageBox.Show("Can not save changes");
+            }
+            
+        }
     }
 }
+
