@@ -20,7 +20,7 @@ namespace Desktop_app
         private Zookeeper zookeeper;
         public Zoo_Keeper(User loggedInUser)
         {
-            zookeeper = (Zookeeper )loggedInUser;
+            zookeeper = (Zookeeper)loggedInUser;
             zookeeper.MakeActive();
             InitializeComponent();
             this.Size = new Size(1521, 910);
@@ -40,7 +40,7 @@ namespace Desktop_app
 
         private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (lv_Animals.SelectedItems.Count > 0)
             {
                 AnimalNameLabel.Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
@@ -49,7 +49,7 @@ namespace Desktop_app
             {
                 AnimalNameLabel.Text = "";
             }
-            
+
         }
 
         private void btn_details_zookeeper_Click(object sender, EventArgs e)

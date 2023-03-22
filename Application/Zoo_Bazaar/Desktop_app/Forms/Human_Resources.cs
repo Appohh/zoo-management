@@ -16,16 +16,16 @@ namespace Desktop_app
     public partial class Human_Resources : Form
     {
         private HR hr;
-        
+
         public Human_Resources(User loggedInUser)//needs parameter later
         {
-            hr = (HR) loggedInUser;
+            hr = (HR)loggedInUser;
             hr.MakeActive();
             InitializeComponent();
 
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
-            
+
 
             //UserLoggedIn.GetList<Employee>();
             Refresh();
@@ -77,8 +77,8 @@ namespace Desktop_app
             this.Hide();
             List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
 
-            User selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag)) ;
-            
+            User selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag));
+
             Detail_HR detail_HR = new Detail_HR(hr, selectedUser);
             detail_HR.ShowDialog();
             if (detail_HR.DialogResult == DialogResult.OK)
