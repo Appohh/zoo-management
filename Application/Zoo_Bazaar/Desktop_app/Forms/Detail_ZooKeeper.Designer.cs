@@ -422,7 +422,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogOut.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogOut.Location = new System.Drawing.Point(1002, 30);
+            this.btnLogOut.Location = new System.Drawing.Point(47, 36);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(172, 33);
             this.btnLogOut.TabIndex = 69;
