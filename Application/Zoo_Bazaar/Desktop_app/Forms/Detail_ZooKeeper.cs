@@ -22,6 +22,7 @@ namespace Desktop_app.Forms
             _zookeeper = loggedInUser;
             _animal = anmial;
             InitializeComponent();
+            PopulateAnimalInfo();
             
         }
 
