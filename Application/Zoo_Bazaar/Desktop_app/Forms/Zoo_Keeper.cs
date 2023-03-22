@@ -17,10 +17,10 @@ namespace Desktop_app
     public partial class Zoo_Keeper : Form
     {
         //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
-        private User zookeeper;
+        private Zookeeper zookeeper;
         public Zoo_Keeper(User loggedInUser)
         {
-            zookeeper = loggedInUser;
+            zookeeper = (Zookeeper )loggedInUser;
             zookeeper.MakeActive();
             InitializeComponent();
             this.Size = new Size(1521, 910);
@@ -54,7 +54,17 @@ namespace Desktop_app
             this.Hide();
             Detail_ZooKeeper detail_ZooKeeper = new Detail_ZooKeeper(zookeeper);
             detail_ZooKeeper.ShowDialog();
-            
+            if (detail_ZooKeeper.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Yes");
+                detail_ZooKeeper.Dispose();
+            }
+            else if (detail_ZooKeeper.DialogResult == DialogResult.Cancel)
+            {
+                detail_ZooKeeper.Dispose();
+            }
+            this.Show();
+
         }
 
         private void btn_add_animal_HR_Click(object sender, EventArgs e)

@@ -33,9 +33,7 @@ namespace Desktop_app.Forms
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Zoo_Keeper zoo_Keeper = new Zoo_Keeper(userLoggedIn);
-            zoo_Keeper.Show();
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }
