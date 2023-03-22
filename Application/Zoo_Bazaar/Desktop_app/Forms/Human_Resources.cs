@@ -68,11 +68,10 @@ namespace Desktop_app
         private void btn_ViewDetails_Click(object sender, EventArgs e)
         {
             this.Hide();
+            List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+
+            User selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag)) ;
             
-            Employee? selectedUser;
-            List<Employee> employeeList = new List<Employee>();
-            employeeList.AddRange((IEnumerable<Employee>)hr.Repository.GetUserList(typeof(Employee)));
-            selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag)) ;
             Detail_HR detail_HR = new Detail_HR(hr, selectedUser);
             detail_HR.ShowDialog();
             if (detail_HR.DialogResult == DialogResult.OK)
