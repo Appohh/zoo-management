@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail_HR));
             this.PictureDetailEmployee = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,7 +73,6 @@
             // 
             this.PictureDetailEmployee.BackColor = System.Drawing.Color.Gray;
             this.PictureDetailEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureDetailEmployee.Image = ((System.Drawing.Image)(resources.GetObject("PictureDetailEmployee.Image")));
             this.PictureDetailEmployee.Location = new System.Drawing.Point(28, 25);
             this.PictureDetailEmployee.Name = "PictureDetailEmployee";
             this.PictureDetailEmployee.Size = new System.Drawing.Size(326, 289);
