@@ -28,14 +28,16 @@ namespace LogicCL
             animalDTOs.AddRange(this.animalDataTraffic.retrieveAnimals());
 
             List<Animal> newAnimals = new List<Animal>();
+            //list<diets> diets; 
+
 
             animals.Clear();
             //!!!!!!
             //still needs converting from DTO to userfriendly Animal class with selected fields
-
             foreach (AnimalDTO animalDto in animalDTOs)
             {
                     
+                    //Diet dietOfThisAnimal = animals.where(diet => animal.dietid = dietId)
                     Animal animal = new Animal(animalDto.Id,  animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.LocationId, animalDto.DietId, animalDto.Species, animalDto.Type, animalDto.Sickness, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
                     newAnimals.Add(animal);      
             }
@@ -62,6 +64,11 @@ namespace LogicCL
             }
 
             return Animals;
+        }
+
+        public bool updateAnimal(Animal selectedAnimal, string note)
+        {
+            animalDataTraffic.SetAnimalNote(selectedAnimal.Id, note);
         }
 
 
