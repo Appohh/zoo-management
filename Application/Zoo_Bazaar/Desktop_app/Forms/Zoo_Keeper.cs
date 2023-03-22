@@ -29,6 +29,7 @@ namespace Desktop_app
 
         private void refreshAnimalList()
         {
+            lv_Animals.Items.Clear();
             foreach (Animal animal in zookeeper.Repository.GetAnimalList())
             {
                 var animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location, animal.BirthPlace });
@@ -80,6 +81,7 @@ namespace Desktop_app
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             refreshAnimalList();
         }
     }

@@ -29,7 +29,7 @@ namespace DataCL.DTOs
 
         public string Type { get; set; }
 
-        public int Sickness { get; set; }
+        public int Sick { get; set; }
 
         public string Notes { get; set; }
 
@@ -42,7 +42,7 @@ namespace DataCL.DTOs
 
         }
 
-        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sickness, string? notes, string? deathdate, string imageUrl)
+        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl)
         {
             Id = id;
             Name = name;
@@ -54,7 +54,7 @@ namespace DataCL.DTOs
             Diet = diet;
             Species = species;
             Type = type;
-            Sickness = sickness;
+            Sick = sick;
             Notes = notes;
             Deathdate = deathdate;
             ImageUrl = imageUrl;

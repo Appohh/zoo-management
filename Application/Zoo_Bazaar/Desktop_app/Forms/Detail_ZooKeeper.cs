@@ -47,6 +47,7 @@ namespace Desktop_app.Forms
             NameBoxZooKeeper.Text = _animal.Name;
             LocationBoxZooKeeper.Text = _animal.Location;
             NoteBoxZooKeeper.Text = _animal.Notes;
+            if(_animal.Sick == 0) { CheckboxSick.Checked = false; } else { CheckboxSick.Checked = true; }
         }
 
         private void btn_update_animal_Click(object sender, EventArgs e)
