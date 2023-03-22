@@ -52,7 +52,7 @@ namespace Desktop_app
         private void btn_details_zookeeper_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Detail_ZooKeeper detail_ZooKeeper = new Detail_ZooKeeper();
+            Detail_ZooKeeper detail_ZooKeeper = new Detail_ZooKeeper(zookeeper);
             detail_ZooKeeper.ShowDialog();
             
         }
