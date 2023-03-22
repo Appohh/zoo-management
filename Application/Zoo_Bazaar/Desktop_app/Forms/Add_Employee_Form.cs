@@ -32,6 +32,7 @@ namespace Desktop_app.Forms
             cbJob.DataSource = jobs;
             cbJob.DisplayMember = "Name";
             cbJob.ValueMember = "Id";
+            
         }
 
         private void ContractBoxAddEmployee_SelectedIndexChanged(object sender, EventArgs e)

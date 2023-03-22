@@ -25,14 +25,21 @@ namespace Desktop_app
 
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
+            
+
+            //UserLoggedIn.GetList<Employee>();
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            lv_Employees.Items.Clear();
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
-                ListViewItem userInfo = new ListViewItem(new[] {employee.FirstName + " " + employee.LastName, employee.City, employee.BirthDate, employee.Phone, employee.Jobname, employee.SpouseName });
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, employee.BirthDate, employee.Phone, employee.Jobname, employee.SpouseName });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
-
-            //UserLoggedIn.GetList<Employee>();
         }
 
 
@@ -84,6 +91,11 @@ namespace Desktop_app
                 detail_HR.Dispose();
             }
             this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }
