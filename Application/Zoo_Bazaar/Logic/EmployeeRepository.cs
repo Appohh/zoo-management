@@ -71,7 +71,10 @@ namespace LogicCL
             return Users;
         }
 
-        
+        public User? getUserById(int id)
+        {
+            return Users.Find(user => user.Id == id);
+        }        
         public List<Job> GetJobList()
         {
             List<JobDTO> jobDTOs = jobDataTraffic.retrieveJobs();
