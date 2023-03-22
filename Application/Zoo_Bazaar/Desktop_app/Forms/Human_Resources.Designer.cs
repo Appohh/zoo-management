@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_see_animals = new System.Windows.Forms.Button();
+            this.btn_add_animal_HR = new System.Windows.Forms.Button();
             EmployeeEmail = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
@@ -217,12 +218,27 @@
             this.btn_see_animals.Text = "See All Animals";
             this.btn_see_animals.UseVisualStyleBackColor = false;
             // 
+            // btn_add_animal_HR
+            // 
+            this.btn_add_animal_HR.BackColor = System.Drawing.Color.Red;
+            this.btn_add_animal_HR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_animal_HR.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_add_animal_HR.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_add_animal_HR.Location = new System.Drawing.Point(696, 48);
+            this.btn_add_animal_HR.Name = "btn_add_animal_HR";
+            this.btn_add_animal_HR.Size = new System.Drawing.Size(185, 32);
+            this.btn_add_animal_HR.TabIndex = 26;
+            this.btn_add_animal_HR.Text = "Add Animal";
+            this.btn_add_animal_HR.UseVisualStyleBackColor = false;
+            this.btn_add_animal_HR.Click += new System.EventHandler(this.btn_add_animal_HR_Click);
+            // 
             // Human_Resources
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(1258, 678);
+            this.Controls.Add(this.btn_add_animal_HR);
             this.Controls.Add(this.btn_see_animals);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -256,5 +272,6 @@
         private ColumnHeader EmployeeLastName;
         private Label label5;
         private Button btn_see_animals;
+        private Button btn_add_animal_HR;
     }
 }

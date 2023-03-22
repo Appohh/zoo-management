@@ -49,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureDeatailZooKeeper = new System.Windows.Forms.PictureBox();
             this.NoteBoxZooKeeper = new System.Windows.Forms.RichTextBox();
             this.btn_update_animal = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -59,7 +59,7 @@
             this.BirthDateBoxZooKeeper = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureDeatailZooKeeper)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -275,16 +275,16 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Name:";
             // 
-            // pictureBox1
+            // PictureDeatailZooKeeper
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(47, 95);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 445);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
+            this.PictureDeatailZooKeeper.BackColor = System.Drawing.Color.DimGray;
+            this.PictureDeatailZooKeeper.Image = ((System.Drawing.Image)(resources.GetObject("PictureDeatailZooKeeper.Image")));
+            this.PictureDeatailZooKeeper.Location = new System.Drawing.Point(47, 95);
+            this.PictureDeatailZooKeeper.Name = "PictureDeatailZooKeeper";
+            this.PictureDeatailZooKeeper.Size = new System.Drawing.Size(220, 445);
+            this.PictureDeatailZooKeeper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PictureDeatailZooKeeper.TabIndex = 33;
+            this.PictureDeatailZooKeeper.TabStop = false;
             // 
             // NoteBoxZooKeeper
             // 
@@ -423,10 +423,10 @@
             this.ClientSize = new System.Drawing.Size(1274, 630);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_update_animal);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PictureDeatailZooKeeper);
             this.Name = "Detail_ZooKeeper";
             this.Load += new System.EventHandler(this.Detail_ZooKeeper_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureDeatailZooKeeper)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -456,7 +456,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private PictureBox pictureBox1;
+        private PictureBox PictureDeatailZooKeeper;
         private RichTextBox NoteBoxZooKeeper;
         private Button btn_update_animal;
         private TextBox textBox1;

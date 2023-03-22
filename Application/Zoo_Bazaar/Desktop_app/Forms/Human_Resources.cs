@@ -58,5 +58,10 @@ namespace Desktop_app
         {
 
         }
+
+        private void btn_add_animal_HR_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

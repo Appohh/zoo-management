@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail_HR));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureDetailEmployee = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,23 +64,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Contact = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureDetailEmployee)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Contact.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PictureDetailEmployee
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(326, 289);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.PictureDetailEmployee.BackColor = System.Drawing.Color.Gray;
+            this.PictureDetailEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureDetailEmployee.Image = ((System.Drawing.Image)(resources.GetObject("PictureDetailEmployee.Image")));
+            this.PictureDetailEmployee.Location = new System.Drawing.Point(28, 25);
+            this.PictureDetailEmployee.Name = "PictureDetailEmployee";
+            this.PictureDetailEmployee.Size = new System.Drawing.Size(326, 289);
+            this.PictureDetailEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureDetailEmployee.TabIndex = 0;
+            this.PictureDetailEmployee.TabStop = false;
             // 
             // label1
             // 
@@ -493,10 +493,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_update_employee);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PictureDetailEmployee);
             this.Name = "Detail_HR";
             this.Text = "Detail_Page_HR";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureDetailEmployee)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -509,7 +509,7 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox PictureDetailEmployee;
         private Label label1;
         private Label label2;
         private Label label3;

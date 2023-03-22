@@ -63,11 +63,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_add_employee = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
             this.Contact.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // Contact
@@ -464,17 +464,17 @@
             this.btn_add_employee.Text = "Add Employee";
             this.btn_add_employee.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // PictureBoxAddEmployee
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(46, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(326, 289);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 72;
-            this.pictureBox1.TabStop = false;
+            this.PictureBoxAddEmployee.BackColor = System.Drawing.Color.Gray;
+            this.PictureBoxAddEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxAddEmployee.Image")));
+            this.PictureBoxAddEmployee.Location = new System.Drawing.Point(46, 37);
+            this.PictureBoxAddEmployee.Name = "PictureBoxAddEmployee";
+            this.PictureBoxAddEmployee.Size = new System.Drawing.Size(326, 289);
+            this.PictureBoxAddEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxAddEmployee.TabIndex = 72;
+            this.PictureBoxAddEmployee.TabStop = false;
             // 
             // Add_Employee_Form
             // 
@@ -486,7 +486,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_add_employee);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PictureBoxAddEmployee);
             this.Name = "Add_Employee_Form";
             this.Text = "Add_Employee_Form";
             this.Contact.ResumeLayout(false);
@@ -495,7 +495,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,6 +536,6 @@
         private Label label1;
         private Label label3;
         private Button btn_add_employee;
-        private PictureBox pictureBox1;
+        private PictureBox PictureBoxAddEmployee;
     }
 }
