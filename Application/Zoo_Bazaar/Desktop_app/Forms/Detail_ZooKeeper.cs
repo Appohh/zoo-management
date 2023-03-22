@@ -46,6 +46,7 @@ namespace Desktop_app.Forms
         {
             NameBoxZooKeeper.Text = _animal.Name;
             LocationBoxZooKeeper.Text = _animal.Location;
+            NoteBoxZooKeeper.Text = _animal.Notes;
         }
 
         private void btn_update_animal_Click(object sender, EventArgs e)
