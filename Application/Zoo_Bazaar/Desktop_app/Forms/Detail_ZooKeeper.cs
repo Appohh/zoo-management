@@ -14,11 +14,15 @@ namespace Desktop_app.Forms
 {
     public partial class Detail_ZooKeeper : Form
     {
-        User userLoggedIn;
-        public Detail_ZooKeeper(User loggedInUser)
+        Zookeeper _zookeeper;
+        Animal _animal;
+
+        public Detail_ZooKeeper(Zookeeper loggedInUser, Animal anmial)
         {
+            _zookeeper = loggedInUser;
+            _animal = anmial;
             InitializeComponent();
-            userLoggedIn = loggedInUser;
+            
         }
 
         private void Detail_ZooKeeper_Load(object sender, EventArgs e)
@@ -34,6 +38,12 @@ namespace Desktop_app.Forms
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void PopulateAnimalInfo()
+        {
+            NameBoxZooKeeper.Text = _animal.Name;
+            LocationBoxZooKeeper.Text = _animal.Location;
         }
     }
 }

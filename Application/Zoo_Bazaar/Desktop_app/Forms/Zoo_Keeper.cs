@@ -27,6 +27,7 @@ namespace Desktop_app
             foreach (Animal animal in zookeeper.Repository.GetAnimalList())
             {
                 var animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location, animal.BirthPlace });
+                animalInfo.Tag = animal.Id.ToString();
                 lv_Animals.Items.Add(animalInfo);
             }
 
@@ -51,7 +52,10 @@ namespace Desktop_app
         private void btn_details_zookeeper_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Detail_ZooKeeper detail_ZooKeeper = new Detail_ZooKeeper(zookeeper);
+            List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
+
+            Animal selectedAnimal = animalList.Find(employee => employee.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+            Detail_ZooKeeper detail_ZooKeeper = new Detail_ZooKeeper(zookeeper, selectedAnimal);
             detail_ZooKeeper.ShowDialog();
             if (detail_ZooKeeper.DialogResult == DialogResult.OK)
             {
