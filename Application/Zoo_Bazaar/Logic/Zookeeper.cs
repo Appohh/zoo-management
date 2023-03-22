@@ -23,13 +23,12 @@ namespace LogicCL
 
         public bool WriteAnimalNote(Animal selectedAnimal, string note)
         {
-           Animal animal = Repository.GetAnimalList().Find(animal => selectedAnimal == animal);
-           throw new NotImplementedException();
+           if(Repository.ChangeAnimalNote(selectedAnimal.Id, note)) { return true; } else { return false; }
         }
 
-        public void ReportAnimalSick()
+        public bool ReportAnimalSick(Animal selectedAnimal, int sick)
         {
-            Repository = new AnimalRepository();
+            if (Repository.ChangeAnimalSick(selectedAnimal.Id, sick)) { return true; } else { return false; }
         }
     }
 }
