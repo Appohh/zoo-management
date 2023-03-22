@@ -64,14 +64,16 @@ namespace Desktop_app
             this.Show();
         }
 
-        private void lb_more_details_Click(object sender, EventArgs e)
+        private void lv_Employees_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_add_animal_HR_Click(object sender, EventArgs e)
-        {
-           
+            if (lv_Employees.SelectedItems.Count > 0)
+            {
+                EmployeeNameLabel.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                EmployeeNameLabel.Text = "";
+            }
         }
     }
 }
