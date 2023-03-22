@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Desktop_app
 {
@@ -41,8 +42,11 @@ namespace Desktop_app
             //Combobox
             ContractBoxHR.Items.Clear();
 
-            ContractBoxHR.Items.Add(new { Text = "Active", Value = 1 });
-            ContractBoxHR.Items.Add(new { Text = "Inactive", Value = 0 });
+            ContractBoxHR.DisplayMember = "Key";
+            ContractBoxHR.ValueMember = "Value";
+            ContractBoxHR.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+            ContractBoxHR.Items.Add(new KeyValuePair<string, int>("Active", 1));
+            ContractBoxHR.SelectedIndex = _employee.Contractstatus;
 
             //Employee Details
             UsernameBoxHR.Text = _employee.UserName;

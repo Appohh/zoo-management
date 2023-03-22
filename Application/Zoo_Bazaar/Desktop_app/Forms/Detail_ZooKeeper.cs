@@ -48,6 +48,9 @@ namespace Desktop_app.Forms
             LocationBoxZooKeeper.Text = _animal.Location;
             NoteBoxZooKeeper.Text = _animal.Notes;
             if(_animal.Sick == 0) { CheckboxSick.Checked = false; } else { CheckboxSick.Checked = true; }
+            if(_animal.DeceasedDate == null) { DeathDateBoxXooKeeper.Visible = false; }
+
+            //implement here V
         }
 
         private void btn_update_animal_Click(object sender, EventArgs e)
