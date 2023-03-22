@@ -27,7 +27,7 @@ namespace Desktop_app
 
 
 
-            pbProfilePic.ImageLocation = "https://cdn.britannica.com/69/65969-050-8E4B0AB9/Orangutan.jpg";
+           // pbProfilePic.ImageLocation = "https://cdn.britannica.com/69/65969-050-8E4B0AB9/Orangutan.jpg";
 
 
             InitializeComponent();
