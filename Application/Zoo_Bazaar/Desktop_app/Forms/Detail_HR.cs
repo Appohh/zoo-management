@@ -22,35 +22,12 @@ namespace Desktop_app
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void update_btn_Click(object sender, EventArgs e)
-        {
-            //validation for _employee
-
-
-
-            //userManagement saveEmployee(_employee)
-        }
-
-        private void Detail_HR_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void Detail_HR_FormClosing(object sender, FormClosingEventArgs e)
         {
-            User user;
+/*            User user;
             Human_Resources human = new Human_Resources(user);
-            
+*/            
         }
     }
 }
