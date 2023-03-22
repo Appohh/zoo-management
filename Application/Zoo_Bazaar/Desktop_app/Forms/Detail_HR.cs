@@ -23,19 +23,11 @@ namespace Desktop_app
         {
             _hr = hr;
             _employee = selecteduser as Employee;
-           
 
-            string imageNameWithExtension = "appa.jpg"; // Retrieve from database
-            string imagePath = Path.Combine(Application.StartupPath, "Images", imageNameWithExtension);
-            if (File.Exists(imagePath))
-            {
-                Bitmap image = new Bitmap(imagePath);
-                PictureDetailEmployee.Image = image;
-            }
-            else
-            {
-                MessageBox.Show("Image file not found.");
-            }
+
+
+
+            pbProfilePic.ImageLocation = "https://cdn.britannica.com/69/65969-050-8E4B0AB9/Orangutan.jpg";
 
 
             InitializeComponent();

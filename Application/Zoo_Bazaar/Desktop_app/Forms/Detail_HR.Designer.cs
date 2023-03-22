@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PictureDetailEmployee = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,22 +62,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Contact = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureDetailEmployee)).BeginInit();
+            this.pbProfilePic = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Contact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PictureDetailEmployee
-            // 
-            this.PictureDetailEmployee.BackColor = System.Drawing.Color.Gray;
-            this.PictureDetailEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureDetailEmployee.Location = new System.Drawing.Point(28, 25);
-            this.PictureDetailEmployee.Name = "PictureDetailEmployee";
-            this.PictureDetailEmployee.Size = new System.Drawing.Size(326, 289);
-            this.PictureDetailEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureDetailEmployee.TabIndex = 0;
-            this.PictureDetailEmployee.TabStop = false;
             // 
             // label1
             // 
@@ -481,34 +470,41 @@
             this.Contact.TabStop = false;
             this.Contact.Text = "Contact";
             // 
+            // pbProfilePic
+            // 
+            this.pbProfilePic.BackColor = System.Drawing.Color.Gray;
+            this.pbProfilePic.Location = new System.Drawing.Point(28, 25);
+            this.pbProfilePic.Name = "pbProfilePic";
+            this.pbProfilePic.Size = new System.Drawing.Size(326, 289);
+            this.pbProfilePic.TabIndex = 72;
+            this.pbProfilePic.TabStop = false;
+            // 
             // Detail_HR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1223, 800);
+            this.Controls.Add(this.pbProfilePic);
             this.Controls.Add(this.Contact);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_update_employee);
-            this.Controls.Add(this.PictureDetailEmployee);
             this.Name = "Detail_HR";
             this.Text = "Detail_Page_HR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detail_HR_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureDetailEmployee)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.Contact.ResumeLayout(false);
             this.Contact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private PictureBox PictureDetailEmployee;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -543,5 +539,6 @@
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private GroupBox Contact;
+        private PictureBox pbProfilePic;
     }
 }
