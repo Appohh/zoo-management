@@ -67,12 +67,10 @@
             this.EmployeeNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.EmployeeNameLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmployeeNameLabel.ForeColor = System.Drawing.Color.White;
-            this.EmployeeNameLabel.Location = new System.Drawing.Point(68, 37);
+            this.EmployeeNameLabel.Location = new System.Drawing.Point(129, 48);
             this.EmployeeNameLabel.Name = "EmployeeNameLabel";
-            this.EmployeeNameLabel.Size = new System.Drawing.Size(189, 25);
+            this.EmployeeNameLabel.Size = new System.Drawing.Size(0, 25);
             this.EmployeeNameLabel.TabIndex = 7;
-            this.EmployeeNameLabel.Text = "EmployeeNameLabel";
-            this.EmployeeNameLabel.Visible = false;
             // 
             // lb_more_details
             // 

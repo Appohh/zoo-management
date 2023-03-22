@@ -172,12 +172,10 @@
             this.AnimalNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.AnimalNameLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AnimalNameLabel.ForeColor = System.Drawing.Color.White;
-            this.AnimalNameLabel.Location = new System.Drawing.Point(71, 30);
+            this.AnimalNameLabel.Location = new System.Drawing.Point(132, 38);
             this.AnimalNameLabel.Name = "AnimalNameLabel";
-            this.AnimalNameLabel.Size = new System.Drawing.Size(208, 25);
+            this.AnimalNameLabel.Size = new System.Drawing.Size(0, 25);
             this.AnimalNameLabel.TabIndex = 27;
-            this.AnimalNameLabel.Text = "Selected Employee info";
-            this.AnimalNameLabel.Visible = false;
             // 
             // artanPanel1
             // 
@@ -243,9 +241,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(945, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 25);
+            this.label3.Size = new System.Drawing.Size(185, 25);
             this.label3.TabIndex = 37;
-            this.label3.Text = "Selected Employee info";
+            this.label3.Text = "Selected Animal info";
             // 
             // Lbl_search
             // 
