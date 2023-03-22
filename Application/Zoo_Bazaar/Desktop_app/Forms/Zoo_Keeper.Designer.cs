@@ -35,11 +35,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lv_Animals = new System.Windows.Forms.ListView();
-            this.Profile = new System.Windows.Forms.ColumnHeader();
-            this.AnimalFirstName = new System.Windows.Forms.ColumnHeader();
-            this.AnimalTypee = new System.Windows.Forms.ColumnHeader();
+            this.Name = new System.Windows.Forms.ColumnHeader();
+            this.Birthdate = new System.Windows.Forms.ColumnHeader();
+            this.AnimalType = new System.Windows.Forms.ColumnHeader();
             this.AnimalLocation = new System.Windows.Forms.ColumnHeader();
-            this.AnimalStatus = new System.Windows.Forms.ColumnHeader();
+            this.Birthplace = new System.Windows.Forms.ColumnHeader();
             this.AnimalNameLabel = new System.Windows.Forms.Label();
             this.artanPanel1 = new Desktop_app.ArtanPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -123,12 +123,12 @@
             this.lv_Animals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.lv_Animals.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lv_Animals.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Profile,
-            this.AnimalFirstName,
-            this.AnimalTypee,
+            this.Name,
+            this.Birthdate,
+            this.AnimalType,
             AnimalSpecies,
             this.AnimalLocation,
-            this.AnimalStatus});
+            this.Birthplace});
             this.lv_Animals.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lv_Animals.ForeColor = System.Drawing.Color.White;
             this.lv_Animals.FullRowSelect = true;
@@ -141,30 +141,30 @@
             this.lv_Animals.View = System.Windows.Forms.View.Details;
             this.lv_Animals.SelectedIndexChanged += new System.EventHandler(this.lv_Animals_SelectedIndexChanged);
             // 
-            // Profile
+            // Name
             // 
-            this.Profile.Text = "Profile";
-            this.Profile.Width = 120;
+            this.Name.Text = "Name";
+            this.Name.Width = 150;
             // 
-            // AnimalFirstName
+            // Birthdate
             // 
-            this.AnimalFirstName.Text = "Name";
-            this.AnimalFirstName.Width = 150;
+            this.Birthdate.Text = "Birthdate";
+            this.Birthdate.Width = 150;
             // 
-            // AnimalTypee
+            // AnimalType
             // 
-            this.AnimalTypee.Text = "Type";
-            this.AnimalTypee.Width = 150;
+            this.AnimalType.Text = "Type";
+            this.AnimalType.Width = 150;
             // 
             // AnimalLocation
             // 
             this.AnimalLocation.Text = "Location";
             this.AnimalLocation.Width = 150;
             // 
-            // AnimalStatus
+            // Birthplace
             // 
-            this.AnimalStatus.Text = "Status";
-            this.AnimalStatus.Width = 150;
+            this.Birthplace.Text = "Birthplace";
+            this.Birthplace.Width = 150;
             // 
             // AnimalNameLabel
             // 
@@ -282,7 +282,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lv_Animals);
-            this.Name = "Zoo_Keeper";
+            //this.Name = "Zoo_Keeper";
             this.Text = "Zoo_Keeper";
             this.artanPanel1.ResumeLayout(false);
             this.artanPanel1.PerformLayout();
@@ -301,18 +301,18 @@
         private Label label4;
         private Label label1;
         private ListView lv_Animals;
-        private ColumnHeader Profile;
-        private ColumnHeader AnimalFirstName;
-        private ColumnHeader AnimalTypee;
+        private ColumnHeader Name;
+        private ColumnHeader AnimalType;
         private ColumnHeader AnimalLocation;
         private Label AnimalNameLabel;
         private ArtanPanel artanPanel1;
         private Label label2;
         private ArtanPanel artanPanel2;
         private Button btn_details_zookeeper;
-        private ColumnHeader AnimalStatus;
+        private ColumnHeader Birthdate;
         private Label label3;
         private Label Lbl_search;
         private TextBox textBox1;
+        private ColumnHeader Birthplace;
     }
 }

@@ -24,11 +24,10 @@ namespace Desktop_app
             zookeeper.MakeActive();
             InitializeComponent();
             this.Size = new Size(1521, 910);
-            var item2 = new ListViewItem(new[] { "sa", "saasa", "safas" });
-            lv_Animals.Items.Add(item2);
             foreach (Animal animal in zookeeper.Repository.GetAnimalList())
             {
-                //lbx_animals.Items.Add((animal.Sick, animal.Name, animal.Type, animal.Species, animal.LocationId, animal.DietId, animal.BirthPlace));
+                var animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location, animal.BirthPlace });
+                lv_Animals.Items.Add(animalInfo);
             }
 
 
