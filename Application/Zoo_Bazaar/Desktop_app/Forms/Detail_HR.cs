@@ -42,7 +42,7 @@ namespace Desktop_app
         private void PopulateEmployeeDetails()
         {
             NameBoxHR.Text = _employee.FirstName;
-            AdressBoxHR.Text = _employee.address
+            AdressBoxHR.Text = _employee.address;
         }
     }
 }
