@@ -37,7 +37,17 @@ namespace Desktop_app
             //UserLoggedIn.GetList<Employee>();
         }
 
-        private void btn_add_employee_HR_Click(object sender, EventArgs e)
+        private void lb_more_details_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_add_animal_HR_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             var add_Employee_Form = new Add_Employee_Form(hr);
@@ -49,19 +59,9 @@ namespace Desktop_app
             else if (add_Employee_Form.DialogResult == DialogResult.Cancel)
             {
                 MessageBox.Show("Operation Canceled");
-                add_Employee_Form.Dispose();          
+                add_Employee_Form.Dispose();
             }
             this.Show();
-        }
-
-        private void lb_more_details_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_add_animal_HR_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

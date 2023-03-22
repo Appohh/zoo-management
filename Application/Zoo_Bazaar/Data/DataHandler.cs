@@ -47,16 +47,24 @@ namespace DataCL
         }
 
         public int executeQuery(string query)
-        {
-            using (var connection = con)
+        {          
+            try
             {
-                connection.Open();
+                con.Open();
                 using (var command = new SqlCommand())
                 {
-                    command.Connection = (SqlConnection)connection;
+                    command.Connection = (SqlConnection)con;
                     command.CommandText = query;
                     return command.ExecuteNonQuery();
                 }
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                con.Close();
             }
         }
 

@@ -81,9 +81,10 @@ namespace LogicCL
             }
             return jobs;
         }
+
         public bool AddNew(UserDTO userDTO)
         {
-            return false;
+            return userDataTraffic.AddUser(userDTO);
         }
 
     }

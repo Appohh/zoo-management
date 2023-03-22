@@ -30,11 +30,7 @@ namespace LogicCL
 
         public bool RegisterNewEmployee(UserDTO userDTO)
         {
-            if (Repository.AddNew(userDTO))
-            {
-                return true;
-            }
-            return false;
+            return Repository.AddNew(userDTO);
         }
         public void RemoveEmployee()
         {
