@@ -33,18 +33,22 @@ namespace Desktop_app.Forms
             cbJob.DataSource = jobs;
             cbJob.DisplayMember = "Name";
             cbJob.ValueMember = "Id";
+            ContractBoxAddEmployee.DisplayMember = "Key";
+            ContractBoxAddEmployee.ValueMember = "Value";
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Active", 1));
         }
 
         private void ContractBoxAddEmployee_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
-        private void btn_add_employee_Click_1(object sender, EventArgs e)
+        private void btn_add_employee_Click(object sender, EventArgs e)
         {
             int selected = Int16.Parse(cbJob.SelectedValue.ToString());
             UserDTO dto = new UserDTO(0, NameBoxAddEmployee.Text, SurnameBoxAddEmployee.Text, UsernameBoxAddEmployee.Text, PasswordBoxAddEmployee.Text,
-                PhoneNumberBoxAddEmployee.Text, AdressBoxAddEmployee.Text, "Eindhoven", EmailBoxAddEmployee.Text, null,
-                null, EmergencyContactNameBoxAddEmployee.Text, EmergencyContactBoxAddEmployee.Text, BirthDateBoxAddEmployee.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxAddEmployee.Text, 0, 0, "", selected, "");
+                PhoneNumberBoxAddEmployee.Text, AdressBoxAddEmployee.Text, "Eindhoven", EmailBoxAddEmployee.Text, SpouseBoxAddEmployee.Text,
+                SpouseContactBoxAddEmployee.Text, EmergencyContactNameBoxAddEmployee.Text, EmergencyContactBoxAddEmployee.Text, BirthDateBoxAddEmployee.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxAddEmployee.Text, ContractBoxAddEmployee.SelectedIndex, 0, "", selected, "");
             if (_hr.RegisterNewEmployee(dto))
             {
                 MessageBox.Show("Successful");
