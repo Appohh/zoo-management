@@ -89,6 +89,7 @@
             this.TB_PasswordLogin.Name = "TB_PasswordLogin";
             this.TB_PasswordLogin.Size = new System.Drawing.Size(297, 34);
             this.TB_PasswordLogin.TabIndex = 4;
+            this.TB_PasswordLogin.PasswordChar = '*';
             // 
             // label3
             // 
