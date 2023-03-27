@@ -55,18 +55,20 @@
             this.artanPanel1.GradientAngle = 90F;
             this.artanPanel1.GradientBottomColor = System.Drawing.Color.DarkGray;
             this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.artanPanel1.Location = new System.Drawing.Point(338, 161);
+            this.artanPanel1.Location = new System.Drawing.Point(270, 129);
+            this.artanPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.artanPanel1.Name = "artanPanel1";
-            this.artanPanel1.Size = new System.Drawing.Size(594, 551);
+            this.artanPanel1.Size = new System.Drawing.Size(475, 441);
             this.artanPanel1.TabIndex = 1;
             // 
             // Btn_Login
             // 
             this.Btn_Login.BackColor = System.Drawing.Color.Black;
             this.Btn_Login.ForeColor = System.Drawing.Color.White;
-            this.Btn_Login.Location = new System.Drawing.Point(168, 351);
+            this.Btn_Login.Location = new System.Drawing.Point(134, 281);
+            this.Btn_Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_Login.Name = "Btn_Login";
-            this.Btn_Login.Size = new System.Drawing.Size(269, 37);
+            this.Btn_Login.Size = new System.Drawing.Size(215, 30);
             this.Btn_Login.TabIndex = 6;
             this.Btn_Login.Text = "Login";
             this.Btn_Login.UseVisualStyleBackColor = false;
@@ -76,37 +78,42 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(155, 268);
+            this.label4.Location = new System.Drawing.Point(124, 214);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 25);
+            this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Password";
             // 
             // TB_PasswordLogin
             // 
             this.TB_PasswordLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TB_PasswordLogin.Location = new System.Drawing.Point(155, 296);
+            this.TB_PasswordLogin.Location = new System.Drawing.Point(124, 237);
+            this.TB_PasswordLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TB_PasswordLogin.Name = "TB_PasswordLogin";
-            this.TB_PasswordLogin.Size = new System.Drawing.Size(297, 34);
-            this.TB_PasswordLogin.TabIndex = 4;
             this.TB_PasswordLogin.PasswordChar = '*';
+            this.TB_PasswordLogin.Size = new System.Drawing.Size(238, 30);
+            this.TB_PasswordLogin.TabIndex = 4;
+            this.TB_PasswordLogin.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(155, 186);
+            this.label3.Location = new System.Drawing.Point(124, 149);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 25);
+            this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Username";
             // 
             // TB_UsernameLogin
             // 
             this.TB_UsernameLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TB_UsernameLogin.Location = new System.Drawing.Point(155, 214);
+            this.TB_UsernameLogin.Location = new System.Drawing.Point(124, 171);
+            this.TB_UsernameLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TB_UsernameLogin.Name = "TB_UsernameLogin";
-            this.TB_UsernameLogin.Size = new System.Drawing.Size(297, 34);
+            this.TB_UsernameLogin.Size = new System.Drawing.Size(238, 30);
             this.TB_UsernameLogin.TabIndex = 2;
             // 
             // label2
@@ -115,9 +122,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(213, 112);
+            this.label2.Location = new System.Drawing.Point(170, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 25);
+            this.label2.Size = new System.Drawing.Size(147, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Login with your details";
             // 
@@ -126,21 +134,22 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(168, 80);
+            this.label1.Location = new System.Drawing.Point(134, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 32);
+            this.label1.Size = new System.Drawing.Size(244, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to Zoo Bazaar!";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1234, 873);
+            this.ClientSize = new System.Drawing.Size(987, 698);
             this.Controls.Add(this.artanPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
