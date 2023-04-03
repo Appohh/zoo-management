@@ -1,0 +1,19 @@
+27/03/2023
+---------------------------------------------
+
+
+Mail testplan to the other group (Group 2) for feedback
+
+Leave the project plan how it is.
+
+URS
+----------------------------
+URS error table of content.
+missing wireframes and designs in URS
+Functional recuirement is what the client desired. 
+Update the URS every week.
+
+Design
+----------------------------
+Make multiple functional wireframes. 1 page for adding employees, 1 page for updating employees, etc etc.
+Before showing all animals in a list first make a filter. 
