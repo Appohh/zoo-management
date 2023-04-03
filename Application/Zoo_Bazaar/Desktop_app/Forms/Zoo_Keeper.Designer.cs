@@ -45,6 +45,7 @@
             this.artanPanel2 = new Desktop_app.ArtanPanel();
             this.btn_details_zookeeper = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             AnimalSpecies = new System.Windows.Forms.ColumnHeader();
             this.artanPanel1.SuspendLayout();
             this.artanPanel2.SuspendLayout();
@@ -60,9 +61,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(4, 46);
+            this.label5.Location = new System.Drawing.Point(7, 98);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
+            this.label5.Size = new System.Drawing.Size(95, 40);
             this.label5.TabIndex = 31;
             this.label5.Text = "Name";
             // 
@@ -71,10 +73,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(193, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(358, 13);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.Size = new System.Drawing.Size(99, 41);
             this.label4.TabIndex = 30;
             this.label4.Text = "Home";
             // 
@@ -83,10 +85,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 20);
+            this.label1.Size = new System.Drawing.Size(359, 41);
             this.label1.TabIndex = 29;
             this.label1.Text = "Zoo Bazaar - ZooKeeper /";
             // 
@@ -104,10 +106,10 @@
             this.lv_Animals.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lv_Animals.ForeColor = System.Drawing.Color.White;
             this.lv_Animals.FullRowSelect = true;
-            this.lv_Animals.Location = new System.Drawing.Point(4, 122);
-            this.lv_Animals.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lv_Animals.Location = new System.Drawing.Point(7, 260);
+            this.lv_Animals.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lv_Animals.Name = "lv_Animals";
-            this.lv_Animals.Size = new System.Drawing.Size(761, 360);
+            this.lv_Animals.Size = new System.Drawing.Size(1413, 768);
             this.lv_Animals.TabIndex = 28;
             this.lv_Animals.UseCompatibleStateImageBehavior = false;
             this.lv_Animals.View = System.Windows.Forms.View.Details;
@@ -143,9 +145,10 @@
             this.AnimalNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.AnimalNameLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AnimalNameLabel.ForeColor = System.Drawing.Color.White;
-            this.AnimalNameLabel.Location = new System.Drawing.Point(66, 27);
+            this.AnimalNameLabel.Location = new System.Drawing.Point(123, 58);
+            this.AnimalNameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.AnimalNameLabel.Name = "AnimalNameLabel";
-            this.AnimalNameLabel.Size = new System.Drawing.Size(0, 20);
+            this.AnimalNameLabel.Size = new System.Drawing.Size(0, 41);
             this.AnimalNameLabel.TabIndex = 27;
             // 
             // artanPanel1
@@ -158,10 +161,10 @@
             this.artanPanel1.GradientAngle = 90F;
             this.artanPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.artanPanel1.Location = new System.Drawing.Point(4, 42);
-            this.artanPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.artanPanel1.Location = new System.Drawing.Point(7, 90);
+            this.artanPanel1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.artanPanel1.Name = "artanPanel1";
-            this.artanPanel1.Size = new System.Drawing.Size(761, 74);
+            this.artanPanel1.Size = new System.Drawing.Size(1413, 158);
             this.artanPanel1.TabIndex = 34;
             // 
             // button1
@@ -169,10 +172,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(596, 36);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(1107, 77);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 24);
+            this.button1.Size = new System.Drawing.Size(301, 51);
             this.button1.TabIndex = 35;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = false;
@@ -183,9 +186,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 28);
+            this.label2.Location = new System.Drawing.Point(67, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(139, 40);
             this.label2.TabIndex = 34;
             this.label2.Text = "Welcome";
             // 
@@ -199,10 +203,10 @@
             this.artanPanel2.GradientAngle = 90F;
             this.artanPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.artanPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.artanPanel2.Location = new System.Drawing.Point(785, 78);
-            this.artanPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.artanPanel2.Location = new System.Drawing.Point(1458, 166);
+            this.artanPanel2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.artanPanel2.Name = "artanPanel2";
-            this.artanPanel2.Size = new System.Drawing.Size(268, 404);
+            this.artanPanel2.Size = new System.Drawing.Size(498, 862);
             this.artanPanel2.TabIndex = 35;
             // 
             // btn_details_zookeeper
@@ -210,10 +214,10 @@
             this.btn_details_zookeeper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.btn_details_zookeeper.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_details_zookeeper.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_details_zookeeper.Location = new System.Drawing.Point(58, 332);
-            this.btn_details_zookeeper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_details_zookeeper.Location = new System.Drawing.Point(108, 708);
+            this.btn_details_zookeeper.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btn_details_zookeeper.Name = "btn_details_zookeeper";
-            this.btn_details_zookeeper.Size = new System.Drawing.Size(162, 24);
+            this.btn_details_zookeeper.Size = new System.Drawing.Size(301, 51);
             this.btn_details_zookeeper.TabIndex = 36;
             this.btn_details_zookeeper.Text = "View Details";
             this.btn_details_zookeeper.UseVisualStyleBackColor = false;
@@ -225,18 +229,34 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(843, 57);
+            this.label3.Location = new System.Drawing.Point(1566, 122);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 20);
+            this.label3.Size = new System.Drawing.Size(289, 41);
             this.label3.TabIndex = 37;
             this.label3.Text = "Selected Animal info";
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogout.Location = new System.Drawing.Point(1737, 23);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(179, 51);
+            this.btnLogout.TabIndex = 38;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Zoo_Keeper
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1060, 488);
+            this.ClientSize = new System.Drawing.Size(1969, 1041);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.artanPanel2);
             this.Controls.Add(this.artanPanel1);
@@ -244,7 +264,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lv_Animals);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Text = "Zoo_Keeper";
             this.artanPanel1.ResumeLayout(false);
             this.artanPanel1.PerformLayout();
@@ -272,5 +292,6 @@
         private Label label3;
         private ColumnHeader Birthplace;
         private Button button1;
+        private Button btnLogout;
     }
 }

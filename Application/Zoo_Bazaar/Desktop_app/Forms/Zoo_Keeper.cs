@@ -89,5 +89,10 @@ namespace Desktop_app
             }
             this.Show();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

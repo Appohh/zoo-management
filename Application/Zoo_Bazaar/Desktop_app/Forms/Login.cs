@@ -38,8 +38,7 @@ namespace Desktop_app.Forms
                 {
                     this.Hide();
                     var HR_form = new Human_Resources(loggedInUser);
-                    HR_form.ShowDialog();
-                    this.Close();
+                    HR_form.Show();
                 }
 
 
@@ -47,8 +46,7 @@ namespace Desktop_app.Forms
                 {
                     this.Hide();
                     var HR_form = new Zoo_Keeper(loggedInUser);
-                    HR_form.ShowDialog();
-                    this.Close();
+                    HR_form.Show();
                 }
 
             }
