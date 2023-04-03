@@ -54,6 +54,25 @@ namespace Desktop_app
 
         private void btn_details_zookeeper_Click(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void btn_add_animal_HR_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Add_Animal_Form add_Animal_Form = new Add_Animal_Form();
+            add_Animal_Form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            refreshAnimalList();
+        }
+
+        private void btn_details_zookeeper_Click_1(object sender, EventArgs e)
+        {
             this.Hide();
             List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
 
@@ -69,20 +88,6 @@ namespace Desktop_app
                 detail_ZooKeeper.Dispose();
             }
             this.Show();
-
-        }
-
-        private void btn_add_animal_HR_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Add_Animal_Form add_Animal_Form = new Add_Animal_Form();
-            add_Animal_Form.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            refreshAnimalList();
         }
     }
 }

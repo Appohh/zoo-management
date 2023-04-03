@@ -217,6 +217,7 @@
             this.btn_details_zookeeper.TabIndex = 36;
             this.btn_details_zookeeper.Text = "View Details";
             this.btn_details_zookeeper.UseVisualStyleBackColor = false;
+            this.btn_details_zookeeper.Click += new System.EventHandler(this.btn_details_zookeeper_Click_1);
             // 
             // label3
             // 
