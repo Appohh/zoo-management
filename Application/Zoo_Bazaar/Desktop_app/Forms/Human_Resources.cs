@@ -36,7 +36,8 @@ namespace Desktop_app
             lv_Employees.Items.Clear();
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, employee.BirthDate, employee.Phone, employee.Jobname, employee.SpouseName });
+                string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, dateFriendly, employee.Phone, employee.Jobname, employee.SpouseName });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
@@ -60,19 +61,23 @@ namespace Desktop_app
             this.Show();
         }
 
-        private void lv_Employees_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+
+
+        
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (lv_Employees.SelectedItems.Count > 0)
-            {
-                EmployeeNameLabel.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
-            }
-            else
-            {
-                EmployeeNameLabel.Text = "";
-            }
+            Application.Restart();
         }
 
-        private void btn_ViewDetails_Click(object sender, EventArgs e)
+        private void artanPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_ViewDetails_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
@@ -93,14 +98,21 @@ namespace Desktop_app
             this.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void lbEmployeeName_Click(object sender, EventArgs e)
         {
-            Refresh();
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            Application.Restart();
+            if (lv_Employees.SelectedItems.Count > 0)
+            {
+                EmployeeNameLabel.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                EmployeeNameLabel.Text = "";
+            }
         }
     }
 }

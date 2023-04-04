@@ -1,0 +1,32 @@
+30/03/2023
+------------------------------------------------------
+
+Evulation
+It pops up and you feel like you are out of application. Change it to tabs. 
+Expant contracts, Begin date end date. weekly side
+Same thing for animals. 
+
+colors, Green brown. Presentation look
+Search option, (filter)
+
+Make a dashbord, after view you get empty list and when you filter or search you will see a list. Therefor you dont see the entire list yet.
+
+Entrance employee
+entertainment
+ticket booth
+resource planners (schedule)
+Animal administration (change the name)
+
+first week minor changes
+next 5 weeks. create schedule and create the animal management page.
+Tickets sale.
+
+webapplication: for schedule and Customer
+schedule. morning, afternoon, evening shift.
+useally you work 2 shifts a day. 
+1 hour breaks. We just need to mention the morning afternoon or evening shifts not the exact time.
+evening 5 ; 8 
+morning 8 ; 12
+afternoon 1 ; 5 
+
+Schedule has priority.
