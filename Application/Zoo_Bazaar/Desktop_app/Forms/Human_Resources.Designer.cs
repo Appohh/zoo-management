@@ -50,11 +50,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.artanPanel4 = new Desktop_app.ArtanPanel();
+            this.lbEmployeeName = new System.Windows.Forms.Label();
             this.btn_ViewDetails = new System.Windows.Forms.Button();
-            this.EmployeeNameLabel = new System.Windows.Forms.Label();
             this.Tab_Add_Employee = new System.Windows.Forms.TabPage();
             this.Tab_Update_Employee = new System.Windows.Forms.TabPage();
-            this.lbEmployeeName = new System.Windows.Forms.Label();
             EmployeeEmail = new System.Windows.Forms.ColumnHeader();
             this.tabControl1.SuspendLayout();
             this.Tab_Overview.SuspendLayout();
@@ -63,8 +62,8 @@
             // 
             // EmployeeEmail
             // 
-            EmployeeEmail.Text = "City";
-            EmployeeEmail.Width = 300;
+            EmployeeEmail.Text = "Email";
+            EmployeeEmail.Width = 250;
             // 
             // lb_more_details
             // 
@@ -93,10 +92,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 30);
+            this.label1.Size = new System.Drawing.Size(161, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Zoo Bazaar - HR /";
             // 
@@ -105,10 +104,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(208, 10);
+            this.label4.Location = new System.Drawing.Point(166, 8);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 30);
+            this.label4.Size = new System.Drawing.Size(62, 25);
             this.label4.TabIndex = 22;
             this.label4.Text = "Home";
             // 
@@ -120,7 +119,7 @@
             // Namez
             // 
             this.Namez.Text = "Name";
-            this.Namez.Width = 300;
+            this.Namez.Width = 250;
             // 
             // EmployeePhoneNumber
             // 
@@ -138,13 +137,13 @@
             this.EmployeePhoneNumber,
             this.EmployeeJob,
             this.Name});
-            this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lv_Employees.ForeColor = System.Drawing.Color.White;
             this.lv_Employees.FullRowSelect = true;
-            this.lv_Employees.Location = new System.Drawing.Point(42, 203);
-            this.lv_Employees.Margin = new System.Windows.Forms.Padding(5);
+            this.lv_Employees.Location = new System.Drawing.Point(34, 162);
+            this.lv_Employees.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Employees.Name = "lv_Employees";
-            this.lv_Employees.Size = new System.Drawing.Size(1844, 1027);
+            this.lv_Employees.Size = new System.Drawing.Size(1317, 651);
             this.lv_Employees.TabIndex = 20;
             this.lv_Employees.UseCompatibleStateImageBehavior = false;
             this.lv_Employees.View = System.Windows.Forms.View.Details;
@@ -200,10 +199,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(2028, 146);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(1430, 100);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(335, 45);
+            this.label3.Size = new System.Drawing.Size(280, 37);
             this.label3.TabIndex = 27;
             this.label3.Text = "Employee Information";
             // 
@@ -211,10 +210,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(1621, 70);
+            this.button3.Location = new System.Drawing.Point(1181, 37);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 53);
+            this.button3.Size = new System.Drawing.Size(170, 42);
             this.button3.TabIndex = 28;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = false;
@@ -227,9 +226,10 @@
             this.tabControl1.Controls.Add(this.Tab_Update_Employee);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2483, 1224);
+            this.tabControl1.Size = new System.Drawing.Size(1865, 1029);
             this.tabControl1.TabIndex = 27;
             // 
             // Tab_Overview
@@ -244,10 +244,11 @@
             this.Tab_Overview.Controls.Add(this.label3);
             this.Tab_Overview.Controls.Add(this.artanPanel4);
             this.Tab_Overview.ForeColor = System.Drawing.Color.White;
-            this.Tab_Overview.Location = new System.Drawing.Point(4, 34);
+            this.Tab_Overview.Location = new System.Drawing.Point(4, 29);
+            this.Tab_Overview.Margin = new System.Windows.Forms.Padding(2);
             this.Tab_Overview.Name = "Tab_Overview";
-            this.Tab_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Overview.Size = new System.Drawing.Size(2475, 1186);
+            this.Tab_Overview.Padding = new System.Windows.Forms.Padding(2);
+            this.Tab_Overview.Size = new System.Drawing.Size(1857, 996);
             this.Tab_Overview.TabIndex = 0;
             this.Tab_Overview.Text = "Overview";
             // 
@@ -256,17 +257,19 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(71, 78);
+            this.label5.Location = new System.Drawing.Point(57, 62);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 45);
+            this.label5.Size = new System.Drawing.Size(95, 37);
             this.label5.TabIndex = 29;
             this.label5.Text = "Search";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(217, 87);
+            this.textBox1.Location = new System.Drawing.Point(174, 70);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 31);
+            this.textBox1.Size = new System.Drawing.Size(193, 27);
             this.textBox1.TabIndex = 28;
             // 
             // artanPanel4
@@ -275,86 +278,76 @@
             this.artanPanel4.BorderRadius = 40;
             this.artanPanel4.Controls.Add(this.lbEmployeeName);
             this.artanPanel4.Controls.Add(this.btn_ViewDetails);
-            this.artanPanel4.Controls.Add(this.EmployeeNameLabel);
             this.artanPanel4.ForeColor = System.Drawing.Color.Black;
             this.artanPanel4.GradientAngle = 90F;
             this.artanPanel4.GradientBottomColor = System.Drawing.Color.DimGray;
             this.artanPanel4.GradientTopColor = System.Drawing.Color.DeepSkyBlue;
-            this.artanPanel4.Location = new System.Drawing.Point(1960, 236);
+            this.artanPanel4.Location = new System.Drawing.Point(1380, 162);
             this.artanPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.artanPanel4.Name = "artanPanel4";
-            this.artanPanel4.Size = new System.Drawing.Size(472, 994);
+            this.artanPanel4.Size = new System.Drawing.Size(378, 651);
             this.artanPanel4.TabIndex = 26;
             this.artanPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.artanPanel4_Paint);
+            // 
+            // lbEmployeeName
+            // 
+            this.lbEmployeeName.AutoSize = true;
+            this.lbEmployeeName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbEmployeeName.ForeColor = System.Drawing.Color.White;
+            this.lbEmployeeName.Location = new System.Drawing.Point(135, 58);
+            this.lbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbEmployeeName.Name = "lbEmployeeName";
+            this.lbEmployeeName.Size = new System.Drawing.Size(0, 35);
+            this.lbEmployeeName.TabIndex = 30;
+            this.lbEmployeeName.Click += new System.EventHandler(this.lbEmployeeName_Click);
             // 
             // btn_ViewDetails
             // 
             this.btn_ViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_ViewDetails.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ViewDetails.Location = new System.Drawing.Point(131, 884);
+            this.btn_ViewDetails.Location = new System.Drawing.Point(103, 522);
             this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ViewDetails.Name = "btn_ViewDetails";
-            this.btn_ViewDetails.Size = new System.Drawing.Size(230, 55);
+            this.btn_ViewDetails.Size = new System.Drawing.Size(184, 44);
             this.btn_ViewDetails.TabIndex = 0;
             this.btn_ViewDetails.Text = "View Details";
             this.btn_ViewDetails.UseVisualStyleBackColor = false;
             this.btn_ViewDetails.Click += new System.EventHandler(this.btn_ViewDetails_Click_1);
             // 
-            // EmployeeNameLabel
-            // 
-            this.EmployeeNameLabel.AutoSize = true;
-            this.EmployeeNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.EmployeeNameLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmployeeNameLabel.ForeColor = System.Drawing.Color.White;
-            this.EmployeeNameLabel.Location = new System.Drawing.Point(108, 73);
-            this.EmployeeNameLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.EmployeeNameLabel.Name = "EmployeeNameLabel";
-            this.EmployeeNameLabel.Size = new System.Drawing.Size(0, 31);
-            this.EmployeeNameLabel.TabIndex = 7;
-            // 
             // Tab_Add_Employee
             // 
-            this.Tab_Add_Employee.Location = new System.Drawing.Point(4, 34);
+            this.Tab_Add_Employee.Location = new System.Drawing.Point(4, 29);
+            this.Tab_Add_Employee.Margin = new System.Windows.Forms.Padding(2);
             this.Tab_Add_Employee.Name = "Tab_Add_Employee";
-            this.Tab_Add_Employee.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Add_Employee.Size = new System.Drawing.Size(2475, 1186);
+            this.Tab_Add_Employee.Padding = new System.Windows.Forms.Padding(2);
+            this.Tab_Add_Employee.Size = new System.Drawing.Size(1916, 996);
             this.Tab_Add_Employee.TabIndex = 1;
             this.Tab_Add_Employee.Text = "Add Employee";
             this.Tab_Add_Employee.UseVisualStyleBackColor = true;
             // 
             // Tab_Update_Employee
             // 
-            this.Tab_Update_Employee.Location = new System.Drawing.Point(4, 34);
+            this.Tab_Update_Employee.Location = new System.Drawing.Point(4, 29);
+            this.Tab_Update_Employee.Margin = new System.Windows.Forms.Padding(2);
             this.Tab_Update_Employee.Name = "Tab_Update_Employee";
-            this.Tab_Update_Employee.Size = new System.Drawing.Size(2475, 1186);
+            this.Tab_Update_Employee.Size = new System.Drawing.Size(1916, 996);
             this.Tab_Update_Employee.TabIndex = 2;
             this.Tab_Update_Employee.Text = "Update Employee";
             this.Tab_Update_Employee.UseVisualStyleBackColor = true;
             // 
-            // lbEmployeeName
-            // 
-            this.lbEmployeeName.AutoSize = true;
-            this.lbEmployeeName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEmployeeName.ForeColor = System.Drawing.Color.White;
-            this.lbEmployeeName.Location = new System.Drawing.Point(169, 73);
-            this.lbEmployeeName.Name = "lbEmployeeName";
-            this.lbEmployeeName.Size = new System.Drawing.Size(0, 45);
-            this.lbEmployeeName.TabIndex = 30;
-            this.lbEmployeeName.Click += new System.EventHandler(this.lbEmployeeName_Click);
-            // 
             // Human_Resources
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2483, 1224);
+            this.ClientSize = new System.Drawing.Size(1865, 1029);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             
             this.Text = "Human_Resources";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -392,7 +385,6 @@
         private TextBox textBox1;
         private ArtanPanel artanPanel4;
         private Button btn_ViewDetails;
-        private Label EmployeeNameLabel;
         private TabPage Tab_Add_Employee;
         private TabPage Tab_Update_Employee;
         private Label lbEmployeeName;

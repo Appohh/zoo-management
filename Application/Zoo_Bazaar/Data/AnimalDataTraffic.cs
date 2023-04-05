@@ -16,7 +16,7 @@ namespace DataCL
         protected override string cmd
         {
             get
-            {
+            { 
                 return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [Diet].[name] as 'diet', [Species].[name] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
             }
         }

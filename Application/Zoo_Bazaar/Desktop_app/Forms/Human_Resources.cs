@@ -107,11 +107,11 @@ namespace Desktop_app
         {
             if (lv_Employees.SelectedItems.Count > 0)
             {
-                EmployeeNameLabel.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
+                lbEmployeeName.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
             }
             else
             {
-                EmployeeNameLabel.Text = "";
+                lbEmployeeName.Text = "";
             }
         }
     }
