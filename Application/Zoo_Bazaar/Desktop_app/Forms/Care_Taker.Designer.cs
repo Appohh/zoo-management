@@ -47,7 +47,6 @@
             this.lbEmployeeName = new System.Windows.Forms.Label();
             this.btn_ViewDetails = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,6 +57,7 @@
             this.NoteBoxZooKeeper = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.FatherIdBoxZooKeeper = new System.Windows.Forms.TextBox();
+            this.btn_update_animal = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.MotherIdBoxZooKeeper = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,8 +75,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.LocationBoxZooKeeper = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_update_animal = new System.Windows.Forms.Button();
             this.PictureDeatailZooKeeper = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_search_Animal = new System.Windows.Forms.Button();
             BirthDateAnimal = new System.Windows.Forms.ColumnHeader();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.btn_search_Animal);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.textBox1);
@@ -139,17 +141,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(60, 59);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(37, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 37);
+            this.label5.Size = new System.Drawing.Size(136, 28);
             this.label5.TabIndex = 35;
-            this.label5.Text = "Search";
+            this.label5.Text = "Search Animal";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 67);
+            this.textBox1.Location = new System.Drawing.Point(37, 98);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 27);
@@ -280,16 +283,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1780, 900);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnLogOut
             // 
@@ -432,6 +425,19 @@
             this.FatherIdBoxZooKeeper.Name = "FatherIdBoxZooKeeper";
             this.FatherIdBoxZooKeeper.Size = new System.Drawing.Size(170, 36);
             this.FatherIdBoxZooKeeper.TabIndex = 56;
+            // 
+            // btn_update_animal
+            // 
+            this.btn_update_animal.BackColor = System.Drawing.Color.Red;
+            this.btn_update_animal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update_animal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_update_animal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_update_animal.Location = new System.Drawing.Point(951, 603);
+            this.btn_update_animal.Name = "btn_update_animal";
+            this.btn_update_animal.Size = new System.Drawing.Size(172, 33);
+            this.btn_update_animal.TabIndex = 71;
+            this.btn_update_animal.Text = "Update";
+            this.btn_update_animal.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -621,19 +627,6 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "Diet:";
             // 
-            // btn_update_animal
-            // 
-            this.btn_update_animal.BackColor = System.Drawing.Color.Red;
-            this.btn_update_animal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_update_animal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_update_animal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_update_animal.Location = new System.Drawing.Point(951, 603);
-            this.btn_update_animal.Name = "btn_update_animal";
-            this.btn_update_animal.Size = new System.Drawing.Size(172, 33);
-            this.btn_update_animal.TabIndex = 71;
-            this.btn_update_animal.Text = "Update";
-            this.btn_update_animal.UseVisualStyleBackColor = false;
-            // 
             // PictureDeatailZooKeeper
             // 
             this.PictureDeatailZooKeeper.BackColor = System.Drawing.Color.SkyBlue;
@@ -645,7 +638,27 @@
             this.PictureDeatailZooKeeper.TabIndex = 70;
             this.PictureDeatailZooKeeper.TabStop = false;
             // 
-            // Zoo_Keeper
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1833, 884);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_search_Animal
+            // 
+            this.btn_search_Animal.ForeColor = System.Drawing.Color.Black;
+            this.btn_search_Animal.Location = new System.Drawing.Point(255, 96);
+            this.btn_search_Animal.Name = "btn_search_Animal";
+            this.btn_search_Animal.Size = new System.Drawing.Size(94, 29);
+            this.btn_search_Animal.TabIndex = 36;
+            this.btn_search_Animal.Text = "Search";
+            this.btn_search_Animal.UseVisualStyleBackColor = true;
+            // 
+            // Care_Taker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -653,7 +666,7 @@
             this.ClientSize = new System.Drawing.Size(1841, 917);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.Name = "Zoo_Keeper";
+            this.Name = "Care_Taker";
             this.Text = "Zoo_Keeper";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
@@ -720,5 +733,6 @@
         private TextBox LocationBoxZooKeeper;
         private Label label9;
         private PictureBox PictureDeatailZooKeeper;
+        private Button btn_search_Animal;
     }
 }

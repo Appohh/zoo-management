@@ -1343,7 +1343,7 @@
 			this.Controls.Add(this.label1);
 			this.DoubleBuffered = true;
 			this.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
-			this.Name = "Human_Resources";
+		
 			this.Text = "Human_Resources";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Tab_Add_Employee.ResumeLayout(false);
