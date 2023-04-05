@@ -45,7 +45,7 @@ namespace Desktop_app.Forms
                 else if (loggedInUser.GetType() == typeof(Zookeeper))
                 {
                     this.Hide();
-                    var HR_form = new Zoo_Keeper(loggedInUser);
+                    var HR_form = new Care_Taker(loggedInUser);
                     HR_form.Show();
                 }
 

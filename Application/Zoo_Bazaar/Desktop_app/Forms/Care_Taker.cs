@@ -14,11 +14,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Desktop_app
 {
-    public partial class Zoo_Keeper : Form
+    public partial class Care_Taker : Form
     {
         //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
         private Zookeeper zookeeper;
-        public Zoo_Keeper(User loggedInUser)
+        public Care_Taker(User loggedInUser)
         {
             zookeeper = (Zookeeper)loggedInUser;
             zookeeper.MakeActive();
@@ -38,32 +38,9 @@ namespace Desktop_app
             }
         }
 
-        private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-            if (lv_Animals.SelectedItems.Count > 0)
-            {
-                AnimalNameLabel.Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
-            }
-            else
-            {
-                AnimalNameLabel.Text = "";
-            }
-
-        }
-
-        private void btn_details_zookeeper_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void btn_add_animal_HR_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Add_Animal_Form add_Animal_Form = new Add_Animal_Form();
-            add_Animal_Form.ShowDialog();
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -90,7 +67,21 @@ namespace Desktop_app
             this.Show();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+     
+
+        private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lv_Animals.SelectedItems.Count > 0)
+            {
+                lbAnimal.Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                lbAnimal.Text = "";
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
