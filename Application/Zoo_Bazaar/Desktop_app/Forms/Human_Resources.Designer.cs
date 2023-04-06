@@ -89,8 +89,6 @@
             this.lbEmployeeName = new System.Windows.Forms.Label();
             this.btn_ViewDetails = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Tab_Welcome = new System.Windows.Forms.TabPage();
-            this.txt_Welcome = new System.Windows.Forms.Label();
             this.Tab_Update_Employee = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -127,6 +125,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Tab_Welcome = new System.Windows.Forms.TabPage();
+            this.txt_Welcome = new System.Windows.Forms.Label();
+            this.welcome = new System.Windows.Forms.TabPage();
+            this.welcome_txt = new System.Windows.Forms.Label();
             EmployeeEmail = new System.Windows.Forms.ColumnHeader();
             this.Tab_Add_Employee.SuspendLayout();
             this.Gp_Contact_Employee.SuspendLayout();
@@ -136,12 +138,12 @@
             this.Tab_Overview.SuspendLayout();
             this.artanPanel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.Tab_Welcome.SuspendLayout();
             this.Tab_Update_Employee.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.welcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmployeeEmail
@@ -768,611 +770,652 @@
             this.EmployeePhoneNumber,
             this.EmployeeJob,
             this.Name});
-			this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lv_Employees.ForeColor = System.Drawing.Color.White;
-			this.lv_Employees.FullRowSelect = true;
-			this.lv_Employees.Location = new System.Drawing.Point(158, 206);
-			this.lv_Employees.Margin = new System.Windows.Forms.Padding(5);
-			this.lv_Employees.Name = "lv_Employees";
-			this.lv_Employees.Size = new System.Drawing.Size(1636, 814);
-			this.lv_Employees.TabIndex = 20;
-			this.lv_Employees.UseCompatibleStateImageBehavior = false;
-			this.lv_Employees.View = System.Windows.Forms.View.Details;
-			this.lv_Employees.SelectedIndexChanged += new System.EventHandler(this.lv_Employees_SelectedIndexChanged_1);
-			// 
-			// Namez
-			// 
-			this.Namez.Text = "Name";
-			this.Namez.Width = 250;
-			// 
-			// BirthDate
-			// 
-			this.BirthDate.Text = "BirthDate";
-			this.BirthDate.Width = 300;
-			// 
-			// EmployeePhoneNumber
-			// 
-			this.EmployeePhoneNumber.Text = "Phone Number";
-			this.EmployeePhoneNumber.Width = 350;
-			// 
-			// EmployeeJob
-			// 
-			this.EmployeeJob.Text = "Job";
-			this.EmployeeJob.Width = 300;
-			// 
-			// Name
-			// 
-			this.Name.Text = "Spouse";
-			this.Name.Width = 300;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.BackColor = System.Drawing.Color.Transparent;
-			this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(1894, 129);
-			this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(335, 45);
-			this.label3.TabIndex = 27;
-			this.label3.Text = "Employee Information";
-			// 
-			// artanPanel4
-			// 
-			this.artanPanel4.BackColor = System.Drawing.Color.Transparent;
-			this.artanPanel4.BorderRadius = 40;
-			this.artanPanel4.Controls.Add(this.lbEmployeeName);
-			this.artanPanel4.Controls.Add(this.btn_ViewDetails);
-			this.artanPanel4.ForeColor = System.Drawing.Color.Black;
-			this.artanPanel4.GradientAngle = 90F;
-			this.artanPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.artanPanel4.GradientTopColor = System.Drawing.SystemColors.ControlDark;
-			this.artanPanel4.Location = new System.Drawing.Point(1831, 206);
-			this.artanPanel4.Margin = new System.Windows.Forms.Padding(2);
-			this.artanPanel4.Name = "artanPanel4";
-			this.artanPanel4.Size = new System.Drawing.Size(472, 814);
-			this.artanPanel4.TabIndex = 26;
-			this.artanPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.artanPanel4_Paint);
-			// 
-			// lbEmployeeName
-			// 
-			this.lbEmployeeName.AutoSize = true;
-			this.lbEmployeeName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbEmployeeName.ForeColor = System.Drawing.Color.White;
-			this.lbEmployeeName.Location = new System.Drawing.Point(169, 72);
-			this.lbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbEmployeeName.Name = "lbEmployeeName";
-			this.lbEmployeeName.Size = new System.Drawing.Size(0, 41);
-			this.lbEmployeeName.TabIndex = 30;
-			this.lbEmployeeName.Click += new System.EventHandler(this.lbEmployeeName_Click);
-			// 
-			// btn_ViewDetails
-			// 
-			this.btn_ViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btn_ViewDetails.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.btn_ViewDetails.Location = new System.Drawing.Point(129, 652);
-			this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(2);
-			this.btn_ViewDetails.Name = "btn_ViewDetails";
-			this.btn_ViewDetails.Size = new System.Drawing.Size(230, 55);
-			this.btn_ViewDetails.TabIndex = 0;
-			this.btn_ViewDetails.Text = "View Details";
-			this.btn_ViewDetails.UseVisualStyleBackColor = false;
-			this.btn_ViewDetails.Click += new System.EventHandler(this.btn_ViewDetails_Click_1);
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Controls.Add(this.Tab_Overview);
-			this.tabControl1.Controls.Add(this.Tab_Add_Employee);
-			this.tabControl1.Controls.Add(this.Tab_Update_Employee);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(2331, 1286);
-			this.tabControl1.TabIndex = 27;
-			// 
-			// Tab_Update_Employee
-			// 
-			this.Tab_Update_Employee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Tab_Update_Employee.BackgroundImage")));
-			this.Tab_Update_Employee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.Tab_Update_Employee.Controls.Add(this.groupBox3);
-			this.Tab_Update_Employee.Controls.Add(this.groupBox2);
-			this.Tab_Update_Employee.Controls.Add(this.pictureBox1);
-			this.Tab_Update_Employee.Controls.Add(this.groupBox1);
-			this.Tab_Update_Employee.Location = new System.Drawing.Point(4, 34);
-			this.Tab_Update_Employee.Margin = new System.Windows.Forms.Padding(2);
-			this.Tab_Update_Employee.Name = "Tab_Update_Employee";
-			this.Tab_Update_Employee.Size = new System.Drawing.Size(2323, 1248);
-			this.Tab_Update_Employee.TabIndex = 2;
-			this.Tab_Update_Employee.Text = "Update Employee";
-			this.Tab_Update_Employee.UseVisualStyleBackColor = true;
-			// 
-			// groupBox3
-			// 
-			this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.groupBox3.Controls.Add(this.button1);
-			this.groupBox3.Controls.Add(this.textBox9);
-			this.groupBox3.Controls.Add(this.label31);
-			this.groupBox3.Controls.Add(this.textBox10);
-			this.groupBox3.Controls.Add(this.label32);
-			this.groupBox3.Controls.Add(this.textBox11);
-			this.groupBox3.Controls.Add(this.label33);
-			this.groupBox3.Controls.Add(this.label34);
-			this.groupBox3.Controls.Add(this.textBox12);
-			this.groupBox3.Controls.Add(this.label35);
-			this.groupBox3.Controls.Add(this.textBox13);
-			this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.groupBox3.Location = new System.Drawing.Point(944, 572);
-			this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.groupBox3.Size = new System.Drawing.Size(1019, 523);
-			this.groupBox3.TabIndex = 80;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "Contact";
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.Red;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.button1.Location = new System.Drawing.Point(779, 445);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(199, 47);
-			this.button1.TabIndex = 74;
-			this.button1.Text = "Add Employee";
-			this.button1.UseVisualStyleBackColor = false;
-			// 
-			// textBox9
-			// 
-			this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox9.Location = new System.Drawing.Point(493, 330);
-			this.textBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(403, 31);
-			this.textBox9.TabIndex = 27;
-			// 
-			// label31
-			// 
-			this.label31.AutoSize = true;
-			this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label31.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label31.Location = new System.Drawing.Point(33, 33);
-			this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label31.Name = "label31";
-			this.label31.Size = new System.Drawing.Size(165, 30);
-			this.label31.TabIndex = 5;
-			this.label31.Text = "Phone Number";
-			// 
-			// textBox10
-			// 
-			this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox10.Location = new System.Drawing.Point(37, 75);
-			this.textBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox10.Name = "textBox10";
-			this.textBox10.Size = new System.Drawing.Size(423, 31);
-			this.textBox10.TabIndex = 24;
-			// 
-			// label32
-			// 
-			this.label32.AutoSize = true;
-			this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label32.Location = new System.Drawing.Point(39, 295);
-			this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label32.Name = "label32";
-			this.label32.Size = new System.Drawing.Size(168, 30);
-			this.label32.TabIndex = 12;
-			this.label32.Text = "Spouse Contact";
-			// 
-			// textBox11
-			// 
-			this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox11.Location = new System.Drawing.Point(493, 197);
-			this.textBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox11.Name = "textBox11";
-			this.textBox11.Size = new System.Drawing.Size(403, 31);
-			this.textBox11.TabIndex = 25;
-			// 
-			// label33
-			// 
-			this.label33.AutoSize = true;
-			this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label33.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label33.Location = new System.Drawing.Point(495, 295);
-			this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label33.Name = "label33";
-			this.label33.Size = new System.Drawing.Size(85, 30);
-			this.label33.TabIndex = 9;
-			this.label33.Text = "Spouse";
-			// 
-			// label34
-			// 
-			this.label34.AutoSize = true;
-			this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label34.Location = new System.Drawing.Point(33, 163);
-			this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label34.Name = "label34";
-			this.label34.Size = new System.Drawing.Size(155, 30);
-			this.label34.TabIndex = 36;
-			this.label34.Text = "Contact Name";
-			// 
-			// textBox12
-			// 
-			this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox12.Location = new System.Drawing.Point(37, 330);
-			this.textBox12.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox12.Name = "textBox12";
-			this.textBox12.Size = new System.Drawing.Size(423, 31);
-			this.textBox12.TabIndex = 28;
-			// 
-			// label35
-			// 
-			this.label35.AutoSize = true;
-			this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label35.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label35.Location = new System.Drawing.Point(495, 160);
-			this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(201, 30);
-			this.label35.TabIndex = 10;
-			this.label35.Text = "Emergency contact";
-			// 
-			// textBox13
-			// 
-			this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox13.Location = new System.Drawing.Point(37, 197);
-			this.textBox13.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox13.Name = "textBox13";
-			this.textBox13.Size = new System.Drawing.Size(423, 31);
-			this.textBox13.TabIndex = 37;
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.groupBox2.Controls.Add(this.dateTimePicker1);
-			this.groupBox2.Controls.Add(this.textBox5);
-			this.groupBox2.Controls.Add(this.label26);
-			this.groupBox2.Controls.Add(this.textBox6);
-			this.groupBox2.Controls.Add(this.textBox7);
-			this.groupBox2.Controls.Add(this.label27);
-			this.groupBox2.Controls.Add(this.textBox8);
-			this.groupBox2.Controls.Add(this.label28);
-			this.groupBox2.Controls.Add(this.label29);
-			this.groupBox2.Controls.Add(this.label30);
-			this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.groupBox2.Location = new System.Drawing.Point(944, 142);
-			this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.groupBox2.Size = new System.Drawing.Size(1019, 362);
-			this.groupBox2.TabIndex = 79;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Details of Employee";
-			// 
-			// dateTimePicker1
-			// 
-			this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-			this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker1.Location = new System.Drawing.Point(37, 157);
-			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(423, 31);
-			this.dateTimePicker1.TabIndex = 68;
-			// 
-			// textBox5
-			// 
-			this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox5.Location = new System.Drawing.Point(493, 63);
-			this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(403, 31);
-			this.textBox5.TabIndex = 35;
-			// 
-			// label26
-			// 
-			this.label26.AutoSize = true;
-			this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label26.Location = new System.Drawing.Point(488, 28);
-			this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label26.Name = "label26";
-			this.label26.Size = new System.Drawing.Size(118, 30);
-			this.label26.TabIndex = 34;
-			this.label26.Text = "Last name:";
-			// 
-			// textBox6
-			// 
-			this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox6.Location = new System.Drawing.Point(37, 258);
-			this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(858, 31);
-			this.textBox6.TabIndex = 22;
-			// 
-			// textBox7
-			// 
-			this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox7.Location = new System.Drawing.Point(37, 63);
-			this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(423, 31);
-			this.textBox7.TabIndex = 18;
-			// 
-			// label27
-			// 
-			this.label27.AutoSize = true;
-			this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label27.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label27.Location = new System.Drawing.Point(33, 123);
-			this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label27.Name = "label27";
-			this.label27.Size = new System.Drawing.Size(120, 30);
-			this.label27.TabIndex = 8;
-			this.label27.Text = "Birth Date:";
-			// 
-			// textBox8
-			// 
-			this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.textBox8.Location = new System.Drawing.Point(493, 157);
-			this.textBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(403, 31);
-			this.textBox8.TabIndex = 20;
-			// 
-			// label28
-			// 
-			this.label28.AutoSize = true;
-			this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label28.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label28.Location = new System.Drawing.Point(33, 223);
-			this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label28.Name = "label28";
-			this.label28.Size = new System.Drawing.Size(92, 30);
-			this.label28.TabIndex = 7;
-			this.label28.Text = "Adrress:";
-			// 
-			// label29
-			// 
-			this.label29.AutoSize = true;
-			this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label29.Location = new System.Drawing.Point(33, 28);
-			this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label29.Name = "label29";
-			this.label29.Size = new System.Drawing.Size(125, 30);
-			this.label29.TabIndex = 1;
-			this.label29.Text = "First Name:";
-			// 
-			// label30
-			// 
-			this.label30.AutoSize = true;
-			this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label30.Location = new System.Drawing.Point(495, 123);
-			this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label30.Name = "label30";
-			this.label30.Size = new System.Drawing.Size(71, 30);
-			this.label30.TabIndex = 3;
-			this.label30.Text = "Email:";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(448, 142);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(407, 362);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 78;
-			this.pictureBox1.TabStop = false;
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.groupBox1.Controls.Add(this.comboBox1);
-			this.groupBox1.Controls.Add(this.textBox2);
-			this.groupBox1.Controls.Add(this.label21);
-			this.groupBox1.Controls.Add(this.textBox3);
-			this.groupBox1.Controls.Add(this.label22);
-			this.groupBox1.Controls.Add(this.comboBox2);
-			this.groupBox1.Controls.Add(this.label23);
-			this.groupBox1.Controls.Add(this.label24);
-			this.groupBox1.Controls.Add(this.label25);
-			this.groupBox1.Controls.Add(this.textBox4);
-			this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.groupBox1.Location = new System.Drawing.Point(448, 572);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.groupBox1.Size = new System.Drawing.Size(407, 515);
-			this.groupBox1.TabIndex = 77;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Employee Details";
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.BackColor = System.Drawing.Color.Gainsboro;
-			this.comboBox1.ForeColor = System.Drawing.Color.Black;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(20, 333);
-			this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(360, 33);
-			this.comboBox1.TabIndex = 33;
-			// 
-			// textBox2
-			// 
-			this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox2.ForeColor = System.Drawing.Color.Black;
-			this.textBox2.Location = new System.Drawing.Point(20, 75);
-			this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(361, 31);
-			this.textBox2.TabIndex = 19;
-			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label21.Location = new System.Drawing.Point(22, 40);
-			this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(117, 30);
-			this.label21.TabIndex = 2;
-			this.label21.Text = "Username:";
-			// 
-			// textBox3
-			// 
-			this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox3.ForeColor = System.Drawing.Color.Black;
-			this.textBox3.Location = new System.Drawing.Point(20, 155);
-			this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(361, 31);
-			this.textBox3.TabIndex = 21;
-			// 
-			// label22
-			// 
-			this.label22.AutoSize = true;
-			this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label22.Location = new System.Drawing.Point(22, 120);
-			this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(110, 30);
-			this.label22.TabIndex = 4;
-			this.label22.Text = "Password:";
-			// 
-			// comboBox2
-			// 
-			this.comboBox2.BackColor = System.Drawing.Color.Gainsboro;
-			this.comboBox2.ForeColor = System.Drawing.Color.Black;
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(20, 422);
-			this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(360, 33);
-			this.comboBox2.TabIndex = 32;
-			// 
-			// label23
-			// 
-			this.label23.AutoSize = true;
-			this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label23.Location = new System.Drawing.Point(22, 208);
-			this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label23.Name = "label23";
-			this.label23.Size = new System.Drawing.Size(60, 30);
-			this.label23.TabIndex = 11;
-			this.label23.Text = "BSN:";
-			// 
-			// label24
-			// 
-			this.label24.AutoSize = true;
-			this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label24.Location = new System.Drawing.Point(22, 387);
-			this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(103, 30);
-			this.label24.TabIndex = 14;
-			this.label24.Text = "Contract:";
-			// 
-			// label25
-			// 
-			this.label25.AutoSize = true;
-			this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label25.Location = new System.Drawing.Point(22, 287);
-			this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(53, 30);
-			this.label25.TabIndex = 13;
-			this.label25.Text = "Job:";
-			// 
-			// textBox4
-			// 
-			this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-			this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox4.ForeColor = System.Drawing.Color.Black;
-			this.textBox4.Location = new System.Drawing.Point(20, 243);
-			this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(361, 31);
-			this.textBox4.TabIndex = 26;
-			// 
-			// Human_Resources
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
-			this.BackColor = System.Drawing.Color.SteelBlue;
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(2331, 1286);
-			this.Controls.Add(this.tabControl1);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label1);
-			this.DoubleBuffered = true;
-			this.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
-			this.Name = "Human_Resources";
-			this.Text = "Human_Resources";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.Tab_Add_Employee.ResumeLayout(false);
-			this.Gp_Contact_Employee.ResumeLayout(false);
-			this.Gp_Contact_Employee.PerformLayout();
-			this.Gp_Detail_Employees.ResumeLayout(false);
-			this.Gp_Detail_Employees.PerformLayout();
-			this.Gb_Details_employee.ResumeLayout(false);
-			this.Gb_Details_employee.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).EndInit();
-			this.Tab_Overview.ResumeLayout(false);
-			this.Tab_Overview.PerformLayout();
-			this.artanPanel4.ResumeLayout(false);
-			this.artanPanel4.PerformLayout();
-			this.tabControl1.ResumeLayout(false);
-			this.Tab_Update_Employee.ResumeLayout(false);
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox3.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lv_Employees.ForeColor = System.Drawing.Color.White;
+            this.lv_Employees.FullRowSelect = true;
+            this.lv_Employees.Location = new System.Drawing.Point(158, 206);
+            this.lv_Employees.Margin = new System.Windows.Forms.Padding(5);
+            this.lv_Employees.Name = "lv_Employees";
+            this.lv_Employees.Size = new System.Drawing.Size(1636, 814);
+            this.lv_Employees.TabIndex = 20;
+            this.lv_Employees.UseCompatibleStateImageBehavior = false;
+            this.lv_Employees.View = System.Windows.Forms.View.Details;
+            this.lv_Employees.SelectedIndexChanged += new System.EventHandler(this.lv_Employees_SelectedIndexChanged_1);
+            // 
+            // Namez
+            // 
+            this.Namez.Text = "Name";
+            this.Namez.Width = 250;
+            // 
+            // BirthDate
+            // 
+            this.BirthDate.Text = "BirthDate";
+            this.BirthDate.Width = 300;
+            // 
+            // EmployeePhoneNumber
+            // 
+            this.EmployeePhoneNumber.Text = "Phone Number";
+            this.EmployeePhoneNumber.Width = 350;
+            // 
+            // EmployeeJob
+            // 
+            this.EmployeeJob.Text = "Job";
+            this.EmployeeJob.Width = 300;
+            // 
+            // Name
+            // 
+            this.Name.Text = "Spouse";
+            this.Name.Width = 300;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(1894, 129);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(335, 45);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Employee Information";
+            // 
+            // artanPanel4
+            // 
+            this.artanPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.artanPanel4.BorderRadius = 40;
+            this.artanPanel4.Controls.Add(this.lbEmployeeName);
+            this.artanPanel4.Controls.Add(this.btn_ViewDetails);
+            this.artanPanel4.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel4.GradientAngle = 90F;
+            this.artanPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.artanPanel4.GradientTopColor = System.Drawing.SystemColors.ControlDark;
+            this.artanPanel4.Location = new System.Drawing.Point(1831, 206);
+            this.artanPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.artanPanel4.Name = "artanPanel4";
+            this.artanPanel4.Size = new System.Drawing.Size(472, 814);
+            this.artanPanel4.TabIndex = 26;
+            this.artanPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.artanPanel4_Paint);
+            // 
+            // lbEmployeeName
+            // 
+            this.lbEmployeeName.AutoSize = true;
+            this.lbEmployeeName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbEmployeeName.ForeColor = System.Drawing.Color.White;
+            this.lbEmployeeName.Location = new System.Drawing.Point(169, 72);
+            this.lbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbEmployeeName.Name = "lbEmployeeName";
+            this.lbEmployeeName.Size = new System.Drawing.Size(0, 41);
+            this.lbEmployeeName.TabIndex = 30;
+            this.lbEmployeeName.Click += new System.EventHandler(this.lbEmployeeName_Click);
+            // 
+            // btn_ViewDetails
+            // 
+            this.btn_ViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_ViewDetails.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_ViewDetails.Location = new System.Drawing.Point(129, 652);
+            this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ViewDetails.Name = "btn_ViewDetails";
+            this.btn_ViewDetails.Size = new System.Drawing.Size(230, 55);
+            this.btn_ViewDetails.TabIndex = 0;
+            this.btn_ViewDetails.Text = "View Details";
+            this.btn_ViewDetails.UseVisualStyleBackColor = false;
+            this.btn_ViewDetails.Click += new System.EventHandler(this.btn_ViewDetails_Click_1);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.welcome);
+            this.tabControl1.Controls.Add(this.Tab_Overview);
+            this.tabControl1.Controls.Add(this.Tab_Add_Employee);
+            this.tabControl1.Controls.Add(this.Tab_Update_Employee);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(2331, 1286);
+            this.tabControl1.TabIndex = 27;
+            // 
+            // Tab_Update_Employee
+            // 
+            this.Tab_Update_Employee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Tab_Update_Employee.BackgroundImage")));
+            this.Tab_Update_Employee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Tab_Update_Employee.Controls.Add(this.groupBox3);
+            this.Tab_Update_Employee.Controls.Add(this.groupBox2);
+            this.Tab_Update_Employee.Controls.Add(this.pictureBox1);
+            this.Tab_Update_Employee.Controls.Add(this.groupBox1);
+            this.Tab_Update_Employee.Location = new System.Drawing.Point(4, 45);
+            this.Tab_Update_Employee.Margin = new System.Windows.Forms.Padding(2);
+            this.Tab_Update_Employee.Name = "Tab_Update_Employee";
+            this.Tab_Update_Employee.Size = new System.Drawing.Size(2323, 1237);
+            this.Tab_Update_Employee.TabIndex = 2;
+            this.Tab_Update_Employee.Text = "Update Employee";
+            this.Tab_Update_Employee.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.label34);
+            this.groupBox3.Controls.Add(this.textBox12);
+            this.groupBox3.Controls.Add(this.label35);
+            this.groupBox3.Controls.Add(this.textBox13);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox3.Location = new System.Drawing.Point(944, 572);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox3.Size = new System.Drawing.Size(1019, 523);
+            this.groupBox3.TabIndex = 80;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Contact";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(779, 445);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(199, 47);
+            this.button1.TabIndex = 74;
+            this.button1.Text = "Add Employee";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox9.Location = new System.Drawing.Point(493, 330);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(403, 42);
+            this.textBox9.TabIndex = 27;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label31.Location = new System.Drawing.Point(33, 33);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(165, 30);
+            this.label31.TabIndex = 5;
+            this.label31.Text = "Phone Number";
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox10.Location = new System.Drawing.Point(37, 75);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(423, 42);
+            this.textBox10.TabIndex = 24;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label32.Location = new System.Drawing.Point(39, 295);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(168, 30);
+            this.label32.TabIndex = 12;
+            this.label32.Text = "Spouse Contact";
+            // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox11.Location = new System.Drawing.Point(493, 197);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(403, 42);
+            this.textBox11.TabIndex = 25;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label33.Location = new System.Drawing.Point(495, 295);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(85, 30);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Spouse";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label34.Location = new System.Drawing.Point(33, 163);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(155, 30);
+            this.label34.TabIndex = 36;
+            this.label34.Text = "Contact Name";
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox12.Location = new System.Drawing.Point(37, 330);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(423, 42);
+            this.textBox12.TabIndex = 28;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label35.Location = new System.Drawing.Point(495, 160);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(201, 30);
+            this.label35.TabIndex = 10;
+            this.label35.Text = "Emergency contact";
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox13.Location = new System.Drawing.Point(37, 197);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(423, 42);
+            this.textBox13.TabIndex = 37;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.label27);
+            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.label30);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox2.Location = new System.Drawing.Point(944, 142);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox2.Size = new System.Drawing.Size(1019, 362);
+            this.groupBox2.TabIndex = 79;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Details of Employee";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(37, 157);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(423, 42);
+            this.dateTimePicker1.TabIndex = 68;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox5.Location = new System.Drawing.Point(493, 63);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(403, 42);
+            this.textBox5.TabIndex = 35;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label26.Location = new System.Drawing.Point(488, 28);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(118, 30);
+            this.label26.TabIndex = 34;
+            this.label26.Text = "Last name:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox6.Location = new System.Drawing.Point(37, 258);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(858, 42);
+            this.textBox6.TabIndex = 22;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox7.Location = new System.Drawing.Point(37, 63);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(423, 42);
+            this.textBox7.TabIndex = 18;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label27.Location = new System.Drawing.Point(33, 123);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(120, 30);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Birth Date:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox8.Location = new System.Drawing.Point(493, 157);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(403, 42);
+            this.textBox8.TabIndex = 20;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label28.Location = new System.Drawing.Point(33, 223);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(92, 30);
+            this.label28.TabIndex = 7;
+            this.label28.Text = "Adrress:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label29.Location = new System.Drawing.Point(33, 28);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(125, 30);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "First Name:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label30.Location = new System.Drawing.Point(495, 123);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(71, 30);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "Email:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(448, 142);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(407, 362);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 78;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Location = new System.Drawing.Point(448, 572);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(407, 515);
+            this.groupBox1.TabIndex = 77;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Employee Details";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(20, 333);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(360, 33);
+            this.comboBox1.TabIndex = 33;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
+            this.textBox2.Location = new System.Drawing.Point(20, 75);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(361, 31);
+            this.textBox2.TabIndex = 19;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label21.Location = new System.Drawing.Point(22, 40);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(117, 30);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Username:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.ForeColor = System.Drawing.Color.Black;
+            this.textBox3.Location = new System.Drawing.Point(20, 155);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(361, 31);
+            this.textBox3.TabIndex = 21;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label22.Location = new System.Drawing.Point(22, 120);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(110, 30);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Password:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.comboBox2.ForeColor = System.Drawing.Color.Black;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(20, 422);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(360, 33);
+            this.comboBox2.TabIndex = 32;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label23.Location = new System.Drawing.Point(22, 208);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(60, 30);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "BSN:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label24.Location = new System.Drawing.Point(22, 387);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(103, 30);
+            this.label24.TabIndex = 14;
+            this.label24.Text = "Contract:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label25.Location = new System.Drawing.Point(22, 287);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 30);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "Job:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.ForeColor = System.Drawing.Color.Black;
+            this.textBox4.Location = new System.Drawing.Point(20, 243);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(361, 31);
+            this.textBox4.TabIndex = 26;
+            // 
+            // Tab_Welcome
+            // 
+            this.Tab_Welcome.Location = new System.Drawing.Point(0, 0);
+            this.Tab_Welcome.Name = "Tab_Welcome";
+            this.Tab_Welcome.Size = new System.Drawing.Size(200, 100);
+            this.Tab_Welcome.TabIndex = 0;
+            // 
+            // txt_Welcome
+            // 
+            this.txt_Welcome.Location = new System.Drawing.Point(0, 0);
+            this.txt_Welcome.Name = "txt_Welcome";
+            this.txt_Welcome.Size = new System.Drawing.Size(100, 23);
+            this.txt_Welcome.TabIndex = 0;
+            // 
+            // welcome
+            // 
+            this.welcome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("welcome.BackgroundImage")));
+            this.welcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.welcome.Controls.Add(this.welcome_txt);
+            this.welcome.Location = new System.Drawing.Point(4, 45);
+            this.welcome.Name = "welcome";
+            this.welcome.Padding = new System.Windows.Forms.Padding(3);
+            this.welcome.Size = new System.Drawing.Size(2323, 1237);
+            this.welcome.TabIndex = 3;
+            this.welcome.Text = "Welcome";
+            this.welcome.UseVisualStyleBackColor = true;
+            // 
+            // welcome_txt
+            // 
+            this.welcome_txt.AutoSize = true;
+            this.welcome_txt.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.welcome_txt.ForeColor = System.Drawing.Color.Maroon;
+            this.welcome_txt.Location = new System.Drawing.Point(623, 207);
+            this.welcome_txt.Name = "welcome_txt";
+            this.welcome_txt.Size = new System.Drawing.Size(446, 128);
+            this.welcome_txt.TabIndex = 0;
+            this.welcome_txt.Text = "Welcome";
+            // 
+            // Human_Resources
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(2331, 1286);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.Text = "Human_Resources";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Tab_Add_Employee.ResumeLayout(false);
+            this.Gp_Contact_Employee.ResumeLayout(false);
+            this.Gp_Contact_Employee.PerformLayout();
+            this.Gp_Detail_Employees.ResumeLayout(false);
+            this.Gp_Detail_Employees.PerformLayout();
+            this.Gb_Details_employee.ResumeLayout(false);
+            this.Gb_Details_employee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).EndInit();
+            this.Tab_Overview.ResumeLayout(false);
+            this.Tab_Overview.PerformLayout();
+            this.artanPanel4.ResumeLayout(false);
+            this.artanPanel4.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.Tab_Update_Employee.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.welcome.ResumeLayout(false);
+            this.welcome.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1475,5 +1518,7 @@
 		private TextBox textBox13;
         private TabPage Tab_Welcome;
         private Label txt_Welcome;
+        private TabPage welcome;
+        private Label welcome_txt;
     }
 }

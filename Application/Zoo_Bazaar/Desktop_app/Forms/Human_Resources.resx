@@ -4175,7 +4175,7 @@
         qvz/kUhWtb5lqAAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Tab_Welcome.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="welcome.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACgAAAAWeCAYAAACscHwCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAA/7JJREFUeF7s/eebXNWZL/zX//Bcv7eeuezzYuzjZ+zJ53c9DgSBEgIBQjknJHKO

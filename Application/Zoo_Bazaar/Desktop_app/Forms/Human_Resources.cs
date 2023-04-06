@@ -26,7 +26,7 @@ namespace Desktop_app
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
 
-            txt_Welcome.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
+            welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
 
             //UserLoggedIn.GetList<Employee>();
             
