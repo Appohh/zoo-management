@@ -26,9 +26,10 @@ namespace Desktop_app
             this.Size = new Size(1521, 910);
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
 
+            txt_Welcome.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
 
             //UserLoggedIn.GetList<Employee>();
-            Refresh();
+            
         }
 
         private void Refresh()
@@ -41,6 +42,19 @@ namespace Desktop_app
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
+        }
+
+        public void FilterHr(string search)
+        {
+            lv_Employees.Items.Clear();
+            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => !e.Jobname.ToLower().Contains("hr") && (e.FirstName + " " + e.LastName).ToLower().Contains(search.ToLower()) || e.Email.ToLower().Contains(search.ToLower())).ToList())
+            {
+                string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, dateFriendly, employee.Phone, employee.Jobname, employee.SpouseName });
+                userInfo.Tag = employee.Id.ToString();
+                lv_Employees.Items.Add(userInfo);
+            }
+            
         }
 
 
@@ -114,5 +128,21 @@ namespace Desktop_app
                 lbEmployeeName.Text = "";
             }
         }
-	}
+
+        private void txt_Welcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tab_Welcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_search_Employee_Click(object sender, EventArgs e)
+        {
+            FilterHr(txt_search.Text);
+
+        }
+    }
 }
