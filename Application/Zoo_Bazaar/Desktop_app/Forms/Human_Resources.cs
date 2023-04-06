@@ -136,7 +136,7 @@ namespace Desktop_app
 
         private void Tab_Welcome_Click(object sender, EventArgs e)
         {
-
+            //test
         }
 
         private void btn_search_Employee_Click(object sender, EventArgs e)
