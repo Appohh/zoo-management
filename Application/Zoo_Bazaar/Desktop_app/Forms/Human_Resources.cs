@@ -29,6 +29,7 @@ namespace Desktop_app
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
 
             //UserLoggedIn.GetList<Employee>();
+            //test
             
         }
 
