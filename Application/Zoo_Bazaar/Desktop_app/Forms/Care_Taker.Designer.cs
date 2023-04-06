@@ -31,7 +31,8 @@
             System.Windows.Forms.ColumnHeader BirthDateAnimal;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Care_Taker));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Overview = new System.Windows.Forms.TabPage();
+            this.btn_search_Animal = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.lbAnimal = new System.Windows.Forms.Label();
             this.lbEmployeeName = new System.Windows.Forms.Label();
             this.btn_ViewDetails = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Update = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -76,16 +77,18 @@
             this.LocationBoxZooKeeper = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.PictureDeatailZooKeeper = new System.Windows.Forms.PictureBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btn_search_Animal = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Welcome = new System.Windows.Forms.TabPage();
+            this.welcome_txt = new System.Windows.Forms.Label();
             BirthDateAnimal = new System.Windows.Forms.ColumnHeader();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.Overview.SuspendLayout();
             this.artanPanel4.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.Update.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDeatailZooKeeper)).BeginInit();
+            this.Welcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // BirthDateAnimal
@@ -95,9 +98,10 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.Welcome);
+            this.tabControl1.Controls.Add(this.Overview);
+            this.tabControl1.Controls.Add(this.Update);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -105,24 +109,34 @@
             this.tabControl1.Size = new System.Drawing.Size(1841, 917);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // Overview
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.btn_search_Animal);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.lv_Animals);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.artanPanel4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1833, 884);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Overview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Overview.BackgroundImage")));
+            this.Overview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Overview.Controls.Add(this.btn_search_Animal);
+            this.Overview.Controls.Add(this.button3);
+            this.Overview.Controls.Add(this.label5);
+            this.Overview.Controls.Add(this.textBox1);
+            this.Overview.Controls.Add(this.lv_Animals);
+            this.Overview.Controls.Add(this.label3);
+            this.Overview.Controls.Add(this.artanPanel4);
+            this.Overview.Location = new System.Drawing.Point(4, 29);
+            this.Overview.Name = "Overview";
+            this.Overview.Padding = new System.Windows.Forms.Padding(3);
+            this.Overview.Size = new System.Drawing.Size(1833, 884);
+            this.Overview.TabIndex = 0;
+            this.Overview.Text = "Overview";
+            this.Overview.UseVisualStyleBackColor = true;
+            // 
+            // btn_search_Animal
+            // 
+            this.btn_search_Animal.ForeColor = System.Drawing.Color.Black;
+            this.btn_search_Animal.Location = new System.Drawing.Point(255, 96);
+            this.btn_search_Animal.Name = "btn_search_Animal";
+            this.btn_search_Animal.Size = new System.Drawing.Size(94, 29);
+            this.btn_search_Animal.TabIndex = 36;
+            this.btn_search_Animal.Text = "Search";
+            this.btn_search_Animal.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -268,21 +282,22 @@
             this.btn_ViewDetails.TabIndex = 0;
             this.btn_ViewDetails.Text = "View Details";
             this.btn_ViewDetails.UseVisualStyleBackColor = false;
+            this.btn_ViewDetails.Click += new System.EventHandler(this.btn_ViewDetails_Click);
             // 
-            // tabPage2
+            // Update
             // 
-            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
-            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.btnLogOut);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.PictureDeatailZooKeeper);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1833, 884);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Update.BackgroundImage")));
+            this.Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Update.Controls.Add(this.btnLogOut);
+            this.Update.Controls.Add(this.groupBox1);
+            this.Update.Controls.Add(this.PictureDeatailZooKeeper);
+            this.Update.Location = new System.Drawing.Point(4, 29);
+            this.Update.Name = "Update";
+            this.Update.Padding = new System.Windows.Forms.Padding(3);
+            this.Update.Size = new System.Drawing.Size(1833, 884);
+            this.Update.TabIndex = 1;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = true;
             // 
             // btnLogOut
             // 
@@ -638,25 +653,39 @@
             this.PictureDeatailZooKeeper.TabIndex = 70;
             this.PictureDeatailZooKeeper.TabStop = false;
             // 
-            // tabPage3
+            // tabPage4
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1833, 884);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1833, 884);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "tabPage3";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // btn_search_Animal
+            // Welcome
             // 
-            this.btn_search_Animal.ForeColor = System.Drawing.Color.Black;
-            this.btn_search_Animal.Location = new System.Drawing.Point(255, 96);
-            this.btn_search_Animal.Name = "btn_search_Animal";
-            this.btn_search_Animal.Size = new System.Drawing.Size(94, 29);
-            this.btn_search_Animal.TabIndex = 36;
-            this.btn_search_Animal.Text = "Search";
-            this.btn_search_Animal.UseVisualStyleBackColor = true;
+            this.Welcome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Welcome.BackgroundImage")));
+            this.Welcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Welcome.Controls.Add(this.welcome_txt);
+            this.Welcome.Location = new System.Drawing.Point(4, 29);
+            this.Welcome.Name = "Welcome";
+            this.Welcome.Size = new System.Drawing.Size(1833, 884);
+            this.Welcome.TabIndex = 3;
+            this.Welcome.Text = "Welcome";
+            this.Welcome.UseVisualStyleBackColor = true;
+            // 
+            // welcome_txt
+            // 
+            this.welcome_txt.AutoSize = true;
+            this.welcome_txt.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.welcome_txt.ForeColor = System.Drawing.Color.Maroon;
+            this.welcome_txt.Location = new System.Drawing.Point(661, 160);
+            this.welcome_txt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.welcome_txt.Name = "welcome_txt";
+            this.welcome_txt.Size = new System.Drawing.Size(373, 106);
+            this.welcome_txt.TabIndex = 1;
+            this.welcome_txt.Text = "Welcome";
             // 
             // Care_Taker
             // 
@@ -670,16 +699,18 @@
             this.Text = "Zoo_Keeper";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Overview.ResumeLayout(false);
+            this.Overview.PerformLayout();
             this.artanPanel4.ResumeLayout(false);
             this.artanPanel4.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.Update.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDeatailZooKeeper)).EndInit();
+            this.Welcome.ResumeLayout(false);
+            this.Welcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -687,8 +718,8 @@
         #endregion
 
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage Overview;
+        private TabPage Update;
         private Button button3;
         private Label label5;
         private TextBox textBox1;
@@ -703,7 +734,7 @@
         private Label lbEmployeeName;
         private Button btn_ViewDetails;
         private Label lbAnimal;
-        private TabPage tabPage3;
+        private TabPage tabPage4;
         private Button btnLogOut;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
@@ -734,5 +765,7 @@
         private Label label9;
         private PictureBox PictureDeatailZooKeeper;
         private Button btn_search_Animal;
+        private TabPage Welcome;
+        private Label welcome_txt;
     }
 }

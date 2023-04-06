@@ -85,5 +85,10 @@ namespace Desktop_app
         {
             Application.Restart();
         }
+
+        private void btn_ViewDetails_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
