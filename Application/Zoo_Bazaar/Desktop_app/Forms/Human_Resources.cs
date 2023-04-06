@@ -48,14 +48,13 @@ namespace Desktop_app
         public void FilterHr(string search)
         {
             lv_Employees.Items.Clear();
-            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => !e.Jobname.ToLower().Contains("hr") && (e.FirstName + " " + e.LastName).ToLower().Contains(search.ToLower()) || e.Email.ToLower().Contains(search.ToLower())).ToList())
+            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => !e.Jobname.ToLower().Contains(search) && (e.FirstName + " " + e.LastName).ToLower().Contains(search.ToLower()) || e.Email.ToLower().Contains(search.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, dateFriendly, employee.Phone, employee.Jobname, employee.SpouseName });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
-            
         }
 
 
