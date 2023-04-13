@@ -71,9 +71,10 @@ namespace Desktop_app
 
         private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            //Here there has to be when u send info to the panel
             if (lv_Animals.SelectedItems.Count > 0)
             {
-                lbAnimal.Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
+                .Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
             }
             else
             {
