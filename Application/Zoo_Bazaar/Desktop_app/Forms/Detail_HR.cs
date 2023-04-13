@@ -71,11 +71,12 @@ namespace Desktop_app
 
         private void btn_update_employee_Click(object sender, EventArgs e)
         {
-            if(_hr.Repository.changeEmployeeDetails(_employee.Id, NameBoxHR.Text, LastnameBoxHR.Text, PhoneNumberBoxHR.Text, AdressBoxHR.Text, "city", EmailBoxHR.Text, SpouseBoxHR.Text, SpouseContactBoxHR.Text, EmergencyContactNameBoxHR.Text, EmergencyContactBoxHR.Text, BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxHR.Text, Convert.ToInt32(ContractBoxHR.SelectedValue)))
+            if (_hr.Repository.changeEmployeeDetails(_employee.Id, NameBoxHR.Text, LastnameBoxHR.Text, PhoneNumberBoxHR.Text, AdressBoxHR.Text, "city", EmailBoxHR.Text, SpouseBoxHR.Text, SpouseContactBoxHR.Text, EmergencyContactNameBoxHR.Text, EmergencyContactBoxHR.Text, BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxHR.Text, Convert.ToInt32(ContractBoxHR.SelectedValue)))
             {
                 MessageBox.Show("Succes");
                 this.DialogResult = DialogResult.OK;
-            } else
+            }
+            else
             {
                 MessageBox.Show("Oops something went wrong, please contact an administrator");
                 this.DialogResult = DialogResult.Cancel;

@@ -21,6 +21,7 @@ namespace DataCL
                 return "SELECT Employees.id ,[firstname] ,[lastname] ,[username] ,[password] ,[phone] ,[address] ,[city] ,[email] ,[spouseName] ,[spousePhone] ,[emergencyName] ,[emergencyPhone] ,[birthdate] ,[bsn] ,[imageUrl] ,[contractStatus] ,[contractType] ,[jobId], Jobs.name as 'jobname' FROM Employees INNER JOIN Jobs on Employees.jobId = Jobs.id";
             }
         }
+
         public List<UserDTO> retrieveUsers()
         {
             List<UserDTO> Users = new List<UserDTO>();
@@ -40,7 +41,6 @@ namespace DataCL
 
         public void RetrieveJobs()
         {
-            
         }
 
         public bool AddUser(UserDTO user)
@@ -55,6 +55,5 @@ namespace DataCL
             string query = $"UPDATE Employees SET firstname='{firstname}', lastname='{lastname}',phone='{phone}', address='{address}',city='{city}', email='{email}',spouseName='{spouseName}', spousePhone='{spousePhone}',emergencyName='{emergencyName}', emergencyPhone='{emergencyPhone}',birthdate='{birthdate}', bsn='{bsn}',contractStatus={contractStatus} WHERE Id={employeeid}";
             return executeQuery(query) == 0 ? false : true;
         }
-
     }
 }
