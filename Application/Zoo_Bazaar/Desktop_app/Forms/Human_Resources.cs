@@ -144,5 +144,10 @@ namespace Desktop_app
             FilterHr(txt_search.Text);
 
         }
+
+        private void lbl_firstname_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
