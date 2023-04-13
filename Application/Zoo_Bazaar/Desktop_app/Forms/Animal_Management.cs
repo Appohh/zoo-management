@@ -16,5 +16,5 @@ namespace Desktop_app.Forms
 		{
 			InitializeComponent();
 		}
-	}
+    }
 }
