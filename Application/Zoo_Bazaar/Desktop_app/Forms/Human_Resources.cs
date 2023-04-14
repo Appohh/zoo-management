@@ -16,6 +16,7 @@ namespace Desktop_app
     public partial class Human_Resources : Form
     {
         private HR hr;
+        private Employee _employee;
 
         public Human_Resources(User loggedInUser)//needs parameter later
         {
@@ -78,10 +79,6 @@ namespace Desktop_app
             Application.Restart();
         }
 
-        private void artanPanel4_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         private void btn_ViewDetails_Click_1(object sender, EventArgs e)
         {
             this.Hide();
@@ -103,9 +100,6 @@ namespace Desktop_app
             this.Show();
         }
 
-        private void lbEmployeeName_Click(object sender, EventArgs e)
-        {
-        }
 
         private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -119,74 +113,100 @@ namespace Desktop_app
             }
         }
 
-        private void txt_Welcome_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Tab_Welcome_Click(object sender, EventArgs e)
-        {
-            //test
-        }
-
-        private void btn_search_Employee_Click(object sender, EventArgs e)
+        private void btn_search_Employee_Click_1(object sender, EventArgs e)
         {
             FilterHr(txt_search.Text);
         }
 
-        private void lbl_firstname_Click(object sender, EventArgs e)
+        private void updateBTHR_Click_1(object sender, EventArgs e)
         {
-        }
-
-        private void updateBTHR_Click(object sender, EventArgs e)
-        {
-            //selected index - please check oskar
-            int selectedIndex = lv_Employees.SelectedIndices.Count;// unsure
-
-            //acc details
-            string userName = TB_Username.Text;
-            string password = TB_Password.Text;
-
-            //employee details
-            string firstName = TB_Firstname.Text;
-            string lastName = TB_Lastname.Text;
-
-            string address = TB_Address.Text;
-            string city = TB_City.Text;
-
-            string emailAddress = TB_EmailAddress.Text;
-
-            string birthDate = BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
-
-            string bsn = TB_BSN.Text;
-
-            string job = TB_Job.Text;
-
-            int contract = TB_Contact.TabIndex;// unsure
-
-            //contact details
-            string phoneNumber = TB_Phone.Text;
-            string contactName = TB_ContactName.Text;
-
-            string emergency = TB_Emregency.Text;
-            string emergencyContact = TB_Emergencycontact.Text;
-
-            string spouse = TB_Spouse.Text;
-            string spouseContact = TB_SpouseContact.Text;
-
-            if (hr.Repository.changeEmployeeDetails(selectedIndex, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract))
             {
-                MessageBox.Show("Success");
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                MessageBox.Show("Oops something went wrong, please contact an administrator");
-                this.DialogResult = DialogResult.Cancel;
+                //selected index - please check oskar
+                //int selectedIndex = lv_Employees.SelectedIndices.Count;// unsure
+
+                //acc details
+                string userName = TB_Username.Text;
+                string password = TB_Password.Text;
+
+                //employee details
+                string firstName = TB_Firstname.Text;
+                string lastName = TB_Lastname.Text;
+
+                string address = TB_Address.Text;
+                string city = TB_City.Text;
+
+                string emailAddress = TB_EmailAddress.Text;
+
+                string birthDate = BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+                string bsn = TB_BSN.Text;
+
+                string job = TB_Job.Text;
+
+                int contract = CB_Contract.TabIndex;// unsure
+
+                //contact details
+                string phoneNumber = TB_Phone.Text;
+                string contactName = TB_ContactName.Text;
+
+                string emergency = TB_Emregency.Text;
+                string emergencyContact = TB_Emergencycontact.Text;
+
+                string spouse = TB_Spouse.Text;
+                string spouseContact = TB_SpouseContact.Text;
+
+                if (hr.Repository.changeEmployeeDetails(0, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract))
+                {
+                    MessageBox.Show("Success");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Oops something went wrong, please contact an administrator");
+                    this.DialogResult = DialogResult.Cancel;
+                }
             }
         }
 
-        private void label31_Click(object sender, EventArgs e)
+        private void lv_Employees_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (lv_Employees.SelectedItems.Count > 0)
+            {
+                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+
+                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag));
+
+                CB_Contract.Items.Clear();
+
+                CB_Contract.DisplayMember = "Key";
+                CB_Contract.ValueMember = "Value";
+                CB_Contract.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+                CB_Contract.Items.Add(new KeyValuePair<string, int>("Active", 1));
+                //CB_Contract.SelectedIndex = _employee.Contractstatus;
+
+                //Employee Details
+                TB_Username.Text = selectedUser.UserName;
+                TB_Password.Text = selectedUser.Password;
+                TB_BSN.Text = selectedUser.BSN;
+                TB_Job.Text = selectedUser.Jobname;
+                CB_Contract.Text = Convert.ToString(selectedUser.Contractstatus);
+
+                //Details of employee
+                TB_Firstname.Text = selectedUser.FirstName;
+                TB_Lastname.Text = selectedUser.LastName;
+                BirthDateBoxHR.Value = DateTime.Parse(selectedUser.BirthDate);
+                TB_EmailAddress.Text = selectedUser.Email;
+                TB_City.Text = selectedUser.City;
+                TB_Address.Text = selectedUser.address;
+
+                //Contact
+                TB_Phone.Text = selectedUser.Phone;
+                TB_Emergencycontact.Text = selectedUser.EmergencyName;
+                TB_Emregency.Text = selectedUser.EmergencyPhone;
+                TB_Spouse.Text = selectedUser.SpouseName;
+                TB_SpouseContact.Text = selectedUser.SpousePhone;
+            }
         }
     }
 }

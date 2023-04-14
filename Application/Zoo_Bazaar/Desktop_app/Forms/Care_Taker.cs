@@ -74,11 +74,11 @@ namespace Desktop_app
             //Here there has to be when u send info to the panel
             if (lv_Animals.SelectedItems.Count > 0)
             {
-                .Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
+               // .Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
             }
             else
             {
-                lbAnimal.Text = "";
+                //lbAnimal.Text = "";
             }
         }
 
@@ -88,6 +88,11 @@ namespace Desktop_app
         }
 
         private void btn_ViewDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Overview_Click(object sender, EventArgs e)
         {
 
         }
