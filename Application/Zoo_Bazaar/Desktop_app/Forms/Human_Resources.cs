@@ -17,6 +17,7 @@ namespace Desktop_app
     {
         private HR hr;
         private Employee _employee;
+        private int selectedEmployeeId;
 
         public Human_Resources(User loggedInUser)//needs parameter later
         {
@@ -143,7 +144,7 @@ namespace Desktop_app
 
                 string job = TB_Job.Text;
 
-                int contract = CB_Contract.TabIndex;// unsure
+                int contract = Convert.ToInt32(CB_Contract.SelectedValue);
 
                 //contact details
                 string phoneNumber = TB_Phone.Text;
@@ -155,7 +156,7 @@ namespace Desktop_app
                 string spouse = TB_Spouse.Text;
                 string spouseContact = TB_SpouseContact.Text;
 
-                if (hr.Repository.changeEmployeeDetails(0, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract))
+                if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract))
                 {
                     MessageBox.Show("Success");
                     this.DialogResult = DialogResult.OK;
@@ -183,14 +184,15 @@ namespace Desktop_app
                 CB_Contract.ValueMember = "Value";
                 CB_Contract.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
                 CB_Contract.Items.Add(new KeyValuePair<string, int>("Active", 1));
-                //CB_Contract.SelectedIndex = _employee.Contractstatus;
+                CB_Contract.SelectedIndex = selectedUser.Contractstatus;
 
                 //Employee Details
+                selectedEmployeeId = Convert.ToInt32(lv_Employees.SelectedItems[0].Tag);
                 TB_Username.Text = selectedUser.UserName;
                 TB_Password.Text = selectedUser.Password;
                 TB_BSN.Text = selectedUser.BSN;
                 TB_Job.Text = selectedUser.Jobname;
-                CB_Contract.Text = Convert.ToString(selectedUser.Contractstatus);
+                //CB_Contract.Text = Convert.ToString(selectedUser.Contractstatus);
 
                 //Details of employee
                 TB_Firstname.Text = selectedUser.FirstName;
