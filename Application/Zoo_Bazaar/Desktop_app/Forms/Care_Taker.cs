@@ -24,7 +24,7 @@ namespace Desktop_app
             zookeeper.MakeActive();
             InitializeComponent();
             this.Size = new Size(1521, 910);
-            refreshAnimalList();
+            
         }
 
         private void refreshAnimalList()
@@ -38,9 +38,19 @@ namespace Desktop_app
             }
         }
 
-        
+        public void FilterAnimal(string search)
+        {
+            lv_Animals.Items.Clear();
+            foreach (Animal animal in zookeeper.Repository.GetAnimalList().OfType<Animal>().Where(animal => !animal.Species.ToLower().Contains(search) && (animal.Name).ToLower().Contains(search.ToLower()) || animal.Type.ToLower().Contains(search.ToLower())).ToList())
+            {
+                string dateFriendly = DateTime.Parse(animal.Birthdate).ToString("dd-MMMM-yyyy");
+                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location });
+                animalInfo.Tag = animal.Id.ToString();
+                lv_Animals.Items.Add(animalInfo);
+            }
+        }
 
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -48,24 +58,7 @@ namespace Desktop_app
             refreshAnimalList();
         }
 
-        private void btn_details_zookeeper_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
-
-            Animal selectedAnimal = animalList.Find(employee => employee.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
-            Detail_ZooKeeper detail_ZooKeeper = new Detail_ZooKeeper(zookeeper, selectedAnimal);
-            detail_ZooKeeper.ShowDialog();
-            if (detail_ZooKeeper.DialogResult == DialogResult.OK)
-            {
-                detail_ZooKeeper.Dispose();
-            }
-            else if (detail_ZooKeeper.DialogResult == DialogResult.Cancel)
-            {
-                detail_ZooKeeper.Dispose();
-            }
-            this.Show();
-        }
+        
 
      
 
@@ -75,7 +68,7 @@ namespace Desktop_app
             {
                 List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
 
-                Animal selectedAnimal = animalList.Find(employee => employee.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+                Animal selectedAnimal = animalList.Find(animal =>animal.Id  == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
 
                 
 
@@ -114,6 +107,11 @@ namespace Desktop_app
         private void Overview_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_search_Animal_Click(object sender, EventArgs e)
+        {
+            FilterAnimal(txt_search.Text);
         }
     }
 }

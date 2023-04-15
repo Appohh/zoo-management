@@ -59,13 +59,12 @@
             this.TB_BirthPlace = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TB_Notes = new System.Windows.Forms.RichTextBox();
-            this.TB_Health = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.btn_search_Animal = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.lv_Animals = new System.Windows.Forms.ListView();
             this.Namez = new System.Windows.Forms.ColumnHeader();
             this.TypeAnimal = new System.Windows.Forms.ColumnHeader();
@@ -102,6 +101,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.PictureDeatailZooKeeper = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.CB_Sick = new System.Windows.Forms.ComboBox();
             BirthDateAnimal = new System.Windows.Forms.ColumnHeader();
             this.tabControl1.SuspendLayout();
             this.Welcome.SuspendLayout();
@@ -131,7 +131,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1539, 844);
+            this.tabControl1.Size = new System.Drawing.Size(1770, 844);
             this.tabControl1.TabIndex = 0;
             // 
             // Welcome
@@ -166,12 +166,12 @@
             this.Overview.Controls.Add(this.btn_search_Animal);
             this.Overview.Controls.Add(this.button3);
             this.Overview.Controls.Add(this.label5);
-            this.Overview.Controls.Add(this.textBox1);
+            this.Overview.Controls.Add(this.txt_search);
             this.Overview.Controls.Add(this.lv_Animals);
             this.Overview.Location = new System.Drawing.Point(4, 29);
             this.Overview.Name = "Overview";
-            this.Overview.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Overview.Size = new System.Drawing.Size(1531, 811);
+            this.Overview.Padding = new System.Windows.Forms.Padding(3);
+            this.Overview.Size = new System.Drawing.Size(1762, 811);
             this.Overview.TabIndex = 0;
             this.Overview.Text = "Overview";
             this.Overview.Click += new System.EventHandler(this.Overview_Click);
@@ -408,8 +408,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.CB_Sick);
             this.groupBox3.Controls.Add(this.TB_Notes);
-            this.groupBox3.Controls.Add(this.TB_Health);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -427,13 +427,6 @@
             this.TB_Notes.Size = new System.Drawing.Size(235, 194);
             this.TB_Notes.TabIndex = 23;
             this.TB_Notes.Text = "";
-            // 
-            // TB_Health
-            // 
-            this.TB_Health.Location = new System.Drawing.Point(28, 93);
-            this.TB_Health.Name = "TB_Health";
-            this.TB_Health.Size = new System.Drawing.Size(235, 36);
-            this.TB_Health.TabIndex = 19;
             // 
             // label24
             // 
@@ -462,6 +455,7 @@
             this.btn_search_Animal.TabIndex = 36;
             this.btn_search_Animal.Text = "Search";
             this.btn_search_Animal.UseVisualStyleBackColor = true;
+            this.btn_search_Animal.Click += new System.EventHandler(this.btn_search_Animal_Click);
             // 
             // button3
             // 
@@ -489,13 +483,13 @@
             this.label5.TabIndex = 35;
             this.label5.Text = "Search Animal";
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 27);
-            this.textBox1.TabIndex = 34;
+            this.txt_search.Location = new System.Drawing.Point(37, 74);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(193, 27);
+            this.txt_search.TabIndex = 34;
             // 
             // lv_Animals
             // 
@@ -511,7 +505,7 @@
             this.lv_Animals.ForeColor = System.Drawing.Color.White;
             this.lv_Animals.FullRowSelect = true;
             this.lv_Animals.Location = new System.Drawing.Point(37, 132);
-            this.lv_Animals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lv_Animals.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Animals.Name = "lv_Animals";
             this.lv_Animals.Size = new System.Drawing.Size(920, 749);
             this.lv_Animals.TabIndex = 30;
@@ -548,8 +542,8 @@
             this.Update.Controls.Add(this.PictureDeatailZooKeeper);
             this.Update.Location = new System.Drawing.Point(4, 29);
             this.Update.Name = "Update";
-            this.Update.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Update.Size = new System.Drawing.Size(1808, 907);
+            this.Update.Padding = new System.Windows.Forms.Padding(3);
+            this.Update.Size = new System.Drawing.Size(1531, 811);
             this.Update.TabIndex = 1;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -912,18 +906,26 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(1808, 907);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1531, 811);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "tabPage3";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // CB_Sick
+            // 
+            this.CB_Sick.FormattingEnabled = true;
+            this.CB_Sick.Location = new System.Drawing.Point(28, 111);
+            this.CB_Sick.Name = "CB_Sick";
+            this.CB_Sick.Size = new System.Drawing.Size(235, 38);
+            this.CB_Sick.TabIndex = 24;
             // 
             // Care_Taker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1539, 844);
+            this.ClientSize = new System.Drawing.Size(1770, 844);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Care_Taker";
@@ -959,7 +961,7 @@
         private TabPage Update;
         private Button button3;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txt_search;
         private ListView lv_Animals;
         private ColumnHeader Namez;
         private ColumnHeader TypeAnimal;
@@ -999,7 +1001,6 @@
         private Label welcome_txt;
         private ColumnHeader AnimalLocation;
         private Label label26;
-        private TextBox TB_Health;
         private Label label24;
         private TextBox TB_Father;
         private Label label23;
@@ -1026,5 +1027,6 @@
         private GroupBox groupBox4;
         private Label label3;
         private Button btn_ViewDetails;
+        private ComboBox CB_Sick;
     }
 }
