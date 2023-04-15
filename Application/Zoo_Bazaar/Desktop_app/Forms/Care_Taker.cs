@@ -71,14 +71,33 @@ namespace Desktop_app
 
         private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //Here there has to be when u send info to the panel
             if (lv_Animals.SelectedItems.Count > 0)
             {
-               // .Text = lv_Animals.SelectedItems[0].SubItems[0].Text;
-            }
-            else
-            {
-                //lbAnimal.Text = "";
+                List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
+
+                Animal selectedAnimal = animalList.Find(employee => employee.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+
+                
+
+                //Animal
+                //selectedEmployeeId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
+                TB_Name.Text = selectedAnimal.Name;
+                TB_BirthDate.Value = DateTime.Parse(selectedAnimal.Birthdate);
+                TB_Father.Text = selectedAnimal.FatherId.ToString();
+                TB_Mother.Text = selectedAnimal.Mother.ToString();
+                TB_BirthPlace.Text =selectedAnimal.BirthPlace;
+
+                //Category
+                TB_Species.Text = selectedAnimal.Species;
+                TB_Location.Text = selectedAnimal.Location;
+                TB_Diet.Text = selectedAnimal.Diet;
+                TB_Type.Text = selectedAnimal.Type;
+
+                //Condition
+                TB_Health.Text = selectedAnimal.Sick.ToString();
+                TB_Notes.Text = selectedAnimal.Notes;
+               
+                
             }
         }
 
