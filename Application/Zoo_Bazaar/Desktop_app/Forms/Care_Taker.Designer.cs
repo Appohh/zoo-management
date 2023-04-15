@@ -58,7 +58,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.TB_BirthPlace = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.CB_Sick = new System.Windows.Forms.ComboBox();
             this.TB_Notes = new System.Windows.Forms.RichTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -102,6 +101,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.PictureDeatailZooKeeper = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.CHB_Sick = new System.Windows.Forms.CheckBox();
             BirthDateAnimal = new System.Windows.Forms.ColumnHeader();
             this.tabControl1.SuspendLayout();
             this.Welcome.SuspendLayout();
@@ -141,7 +141,7 @@
             this.Welcome.Controls.Add(this.welcome_txt);
             this.Welcome.Location = new System.Drawing.Point(4, 29);
             this.Welcome.Name = "Welcome";
-            this.Welcome.Size = new System.Drawing.Size(1762, 811);
+            this.Welcome.Size = new System.Drawing.Size(1762, 861);
             this.Welcome.TabIndex = 3;
             this.Welcome.Text = "Welcome";
             this.Welcome.UseVisualStyleBackColor = true;
@@ -409,7 +409,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.CB_Sick);
+            this.groupBox3.Controls.Add(this.CHB_Sick);
             this.groupBox3.Controls.Add(this.TB_Notes);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label26);
@@ -420,14 +420,6 @@
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Condition";
-            // 
-            // CB_Sick
-            // 
-            this.CB_Sick.FormattingEnabled = true;
-            this.CB_Sick.Location = new System.Drawing.Point(28, 111);
-            this.CB_Sick.Name = "CB_Sick";
-            this.CB_Sick.Size = new System.Drawing.Size(235, 38);
-            this.CB_Sick.TabIndex = 24;
             // 
             // TB_Notes
             // 
@@ -552,7 +544,7 @@
             this.Update.Location = new System.Drawing.Point(4, 29);
             this.Update.Name = "Update";
             this.Update.Padding = new System.Windows.Forms.Padding(3);
-            this.Update.Size = new System.Drawing.Size(1762, 811);
+            this.Update.Size = new System.Drawing.Size(1762, 861);
             this.Update.TabIndex = 1;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -916,10 +908,21 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1762, 811);
+            this.tabPage4.Size = new System.Drawing.Size(1762, 861);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "tabPage3";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // CHB_Sick
+            // 
+            this.CHB_Sick.AutoSize = true;
+            this.CHB_Sick.Location = new System.Drawing.Point(28, 100);
+            this.CHB_Sick.Margin = new System.Windows.Forms.Padding(2);
+            this.CHB_Sick.Name = "CHB_Sick";
+            this.CHB_Sick.Size = new System.Drawing.Size(162, 34);
+            this.CHB_Sick.TabIndex = 68;
+            this.CHB_Sick.Text = "Animal is sick";
+            this.CHB_Sick.UseVisualStyleBackColor = true;
             // 
             // Care_Taker
             // 
@@ -1028,6 +1031,6 @@
         private GroupBox groupBox4;
         private Label label3;
         private Button btn_ViewDetails;
-        private ComboBox CB_Sick;
+        private CheckBox CHB_Sick;
     }
 }

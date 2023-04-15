@@ -71,7 +71,7 @@ namespace Desktop_app
 
                 Animal selectedAnimal = animalList.Find(animal =>animal.Id  == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
 
-
+               
 
                 //Animal
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
@@ -88,13 +88,7 @@ namespace Desktop_app
                 TB_Type.Text = selectedAnimal.Type;
 
                 //Condition
-                CB_Sick.Items.Clear();
-
-                CB_Sick.DisplayMember = "Key";
-                CB_Sick.ValueMember = "Value";
-                CB_Sick.Items.Add(new KeyValuePair<string, int>("Healthy", 0));
-                CB_Sick.Items.Add(new KeyValuePair<string, int>("Sick", 1));
-                CB_Sick.SelectedIndex = selectedAnimal.Sick;
+                if (selectedAnimal.Sick == 0) { CHB_Sick.Checked = false; } else { CHB_Sick.Checked = true; }
                 TB_Notes.Text = selectedAnimal.Notes;
                
                 
@@ -123,10 +117,10 @@ namespace Desktop_app
 
         private void btn_ViewDetails_Click_1(object sender, EventArgs e)
         {
-          
+
 
             //Condition
-            int Sick = Convert.ToInt32(CB_Sick.SelectedValue);
+            int Sick = CHB_Sick.Checked ? 1 : 0;
             string Notes = TB_Notes.Text;
 
 
