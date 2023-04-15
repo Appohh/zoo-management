@@ -58,6 +58,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.TB_BirthPlace = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.CB_Sick = new System.Windows.Forms.ComboBox();
             this.TB_Notes = new System.Windows.Forms.RichTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -101,7 +102,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.PictureDeatailZooKeeper = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.CB_Sick = new System.Windows.Forms.ComboBox();
             BirthDateAnimal = new System.Windows.Forms.ColumnHeader();
             this.tabControl1.SuspendLayout();
             this.Welcome.SuspendLayout();
@@ -131,7 +131,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1770, 844);
+            this.tabControl1.Size = new System.Drawing.Size(1770, 894);
             this.tabControl1.TabIndex = 0;
             // 
             // Welcome
@@ -141,7 +141,7 @@
             this.Welcome.Controls.Add(this.welcome_txt);
             this.Welcome.Location = new System.Drawing.Point(4, 29);
             this.Welcome.Name = "Welcome";
-            this.Welcome.Size = new System.Drawing.Size(1531, 811);
+            this.Welcome.Size = new System.Drawing.Size(1762, 811);
             this.Welcome.TabIndex = 3;
             this.Welcome.Text = "Welcome";
             this.Welcome.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             this.Overview.Location = new System.Drawing.Point(4, 29);
             this.Overview.Name = "Overview";
             this.Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.Overview.Size = new System.Drawing.Size(1762, 811);
+            this.Overview.Size = new System.Drawing.Size(1762, 861);
             this.Overview.TabIndex = 0;
             this.Overview.Text = "Overview";
             this.Overview.Click += new System.EventHandler(this.Overview_Click);
@@ -206,6 +206,7 @@
             this.btn_ViewDetails.TabIndex = 29;
             this.btn_ViewDetails.Text = "Update";
             this.btn_ViewDetails.UseVisualStyleBackColor = false;
+            this.btn_ViewDetails.Click += new System.EventHandler(this.btn_ViewDetails_Click_1);
             // 
             // label3
             // 
@@ -420,11 +421,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Condition";
             // 
+            // CB_Sick
+            // 
+            this.CB_Sick.FormattingEnabled = true;
+            this.CB_Sick.Location = new System.Drawing.Point(28, 111);
+            this.CB_Sick.Name = "CB_Sick";
+            this.CB_Sick.Size = new System.Drawing.Size(235, 38);
+            this.CB_Sick.TabIndex = 24;
+            // 
             // TB_Notes
             // 
-            this.TB_Notes.Location = new System.Drawing.Point(28, 315);
+            this.TB_Notes.Location = new System.Drawing.Point(28, 247);
             this.TB_Notes.Name = "TB_Notes";
-            this.TB_Notes.Size = new System.Drawing.Size(235, 194);
+            this.TB_Notes.Size = new System.Drawing.Size(235, 262);
             this.TB_Notes.TabIndex = 23;
             this.TB_Notes.Text = "";
             // 
@@ -440,7 +449,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(28, 281);
+            this.label26.Location = new System.Drawing.Point(28, 198);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(75, 30);
             this.label26.TabIndex = 22;
@@ -543,7 +552,7 @@
             this.Update.Location = new System.Drawing.Point(4, 29);
             this.Update.Name = "Update";
             this.Update.Padding = new System.Windows.Forms.Padding(3);
-            this.Update.Size = new System.Drawing.Size(1531, 811);
+            this.Update.Size = new System.Drawing.Size(1762, 811);
             this.Update.TabIndex = 1;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -907,25 +916,17 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1531, 811);
+            this.tabPage4.Size = new System.Drawing.Size(1762, 811);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "tabPage3";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // CB_Sick
-            // 
-            this.CB_Sick.FormattingEnabled = true;
-            this.CB_Sick.Location = new System.Drawing.Point(28, 111);
-            this.CB_Sick.Name = "CB_Sick";
-            this.CB_Sick.Size = new System.Drawing.Size(235, 38);
-            this.CB_Sick.TabIndex = 24;
             // 
             // Care_Taker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1770, 844);
+            this.ClientSize = new System.Drawing.Size(1770, 894);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Care_Taker";

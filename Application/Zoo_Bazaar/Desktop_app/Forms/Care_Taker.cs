@@ -18,6 +18,7 @@ namespace Desktop_app
     {
         //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
         private Zookeeper zookeeper;
+        private int selectedAnimalId;
         public Care_Taker(User loggedInUser)
         {
             zookeeper = (Zookeeper)loggedInUser;
@@ -70,10 +71,10 @@ namespace Desktop_app
 
                 Animal selectedAnimal = animalList.Find(animal =>animal.Id  == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
 
-                
+
 
                 //Animal
-                //selectedEmployeeId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
+                selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
                 TB_Name.Text = selectedAnimal.Name;
                 TB_BirthDate.Value = DateTime.Parse(selectedAnimal.Birthdate);
                 TB_Father.Text = selectedAnimal.FatherId.ToString();
@@ -87,7 +88,13 @@ namespace Desktop_app
                 TB_Type.Text = selectedAnimal.Type;
 
                 //Condition
-                TB_Health.Text = selectedAnimal.Sick.ToString();
+                CB_Sick.Items.Clear();
+
+                CB_Sick.DisplayMember = "Key";
+                CB_Sick.ValueMember = "Value";
+                CB_Sick.Items.Add(new KeyValuePair<string, int>("Healthy", 0));
+                CB_Sick.Items.Add(new KeyValuePair<string, int>("Sick", 1));
+                CB_Sick.SelectedIndex = selectedAnimal.Sick;
                 TB_Notes.Text = selectedAnimal.Notes;
                
                 
@@ -112,6 +119,28 @@ namespace Desktop_app
         private void btn_search_Animal_Click(object sender, EventArgs e)
         {
             FilterAnimal(txt_search.Text);
+        }
+
+        private void btn_ViewDetails_Click_1(object sender, EventArgs e)
+        {
+          
+
+            //Condition
+            int Sick = Convert.ToInt32(CB_Sick.SelectedValue);
+            string Notes = TB_Notes.Text;
+
+
+
+            if (zookeeper.Repository.ChangeAnimalSickAndNote(selectedAnimalId, Sick, Notes))
+            {
+                MessageBox.Show("Success");
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Oops something went wrong, please contact an administrator");
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
     }
 }
