@@ -49,6 +49,13 @@ namespace Desktop_app.Forms
                     HR_form.Show();
                 }
 
+                else if (loggedInUser.GetType() ==typeof(AnimalManagement))
+                {
+                    this.Hide();
+                    var AnimalManagement = new Animal_Management(loggedInUser);
+                    AnimalManagement.Show();
+                }
+
             }
             else
             {

@@ -16,7 +16,7 @@ namespace DataCL.DataTraffic
         protected override string cmd
         {
             get
-            {
+            { 
                 return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [Diet].[name] as 'diet', [Species].[name] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
             }
         }
@@ -26,7 +26,7 @@ namespace DataCL.DataTraffic
             List<AnimalDTO> Animals = new List<AnimalDTO>();
 
             //get datatable of queried data
-            DataTable table = ReadData();
+            DataTable table = base.ReadData();
 
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)
@@ -38,10 +38,11 @@ namespace DataCL.DataTraffic
             return Animals;
         }
 
-        public void addAnimal()
+        public bool addAnimal(AnimalDTO animal)
         {
-            //string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
-            //return executeQuery(query);
+            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, speciesId, sick, notes, deathdate, type, imageUrl) "+
+            $"VALUES({animal.Name}, {animal.Birthdate}, {animal.BirthPlace}, {animal.FatherId}, {animal.MotherId}, {animal.Location}, {animal.Diet}, {animal.Species}, {animal.Sick}, {animal.Notes}, {animal.Deathdate}, {animal.Type}, {animal.ImageUrl})";
+            return executeQuery(query) == 0 ? false : true;
         }
 
         public bool UpdateAnimalSickAndNote(int animalId, int sick, string note)

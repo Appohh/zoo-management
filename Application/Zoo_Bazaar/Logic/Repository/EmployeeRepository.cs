@@ -1,4 +1,4 @@
-﻿using DataCL;
+﻿using DataCL.DataTraffic;
 using DataCL.DTOs;
 using LogicCL.Users;
 using System;
