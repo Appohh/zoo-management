@@ -2,6 +2,7 @@
 using DataCL.DTOs;
 using Logic;
 using LogicCL;
+using LogicCL.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

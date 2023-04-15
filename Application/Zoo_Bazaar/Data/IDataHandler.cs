@@ -11,6 +11,6 @@ namespace DataCL
     {
         DataTable ReadData();
 
-        int executeQuery(string query);    
+        int executeQuery(string query);
     }
 }

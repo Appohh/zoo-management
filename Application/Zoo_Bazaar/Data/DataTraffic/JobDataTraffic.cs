@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataCL
+namespace DataCL.DataTraffic
 {
     public class JobDataTraffic : DataHandler
     {
@@ -24,7 +24,7 @@ namespace DataCL
             List<JobDTO> jobs = new List<JobDTO>();
 
             //get datatable of queried data
-            DataTable table = base.ReadData();
+            DataTable table = ReadData();
 
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)
@@ -34,6 +34,6 @@ namespace DataCL
 
             //return collection of DTOs
             return jobs;
-        } 
+        }
     }
 }

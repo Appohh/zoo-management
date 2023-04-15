@@ -1,4 +1,4 @@
-﻿using DataCL;
+﻿using DataCL.DataTraffic;
 using DataCL.DTOs;
 using Logic;
 using System;
@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicCL
+namespace LogicCL.Repository
 {
     public class AnimalRepository
     {
@@ -17,15 +17,15 @@ namespace LogicCL
 
         public List<Animal> Animals { get { return animals; } }
 
-        public AnimalRepository() 
+        public AnimalRepository()
         {
-            refreshUserData();
+            refreshAnimalData();
         }
 
-        private void refreshUserData()
+        private void refreshAnimalData()
         {
             List<AnimalDTO> animalDTOs = new List<AnimalDTO>();
-            animalDTOs.AddRange(this.animalDataTraffic.retrieveAnimals());
+            animalDTOs.AddRange(animalDataTraffic.retrieveAnimals());
 
             List<Animal> newAnimals = new List<Animal>();
             //list<diets> diets; 
@@ -36,10 +36,10 @@ namespace LogicCL
             //still needs converting from DTO to userfriendly Animal class with selected fields
             foreach (AnimalDTO animalDto in animalDTOs)
             {
-                    
-                    //Diet dietOfThisAnimal = animals.where(diet => animal.dietid = dietId)
-                    Animal animal = new Animal(animalDto.Id,  animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.Location, animalDto.Diet, animalDto.Species, animalDto.Type, animalDto.Sick, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
-                    newAnimals.Add(animal);      
+
+                //Diet dietOfThisAnimal = animals.where(diet => animal.dietid = dietId)
+                Animal animal = new Animal(animalDto.Id, animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.Location, animalDto.Diet, animalDto.Species, animalDto.Type, animalDto.Sick, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
+                newAnimals.Add(animal);
             }
             animals.AddRange(newAnimals);
 
@@ -68,8 +68,17 @@ namespace LogicCL
 
         public bool ChangeAnimalSickAndNote(int id, int sick, string note)
         {
-            if (animalDataTraffic.UpdateAnimalSickAndNote(id, sick, note)) { refreshUserData(); return true; } else { return false; }
+            if (animalDataTraffic.UpdateAnimalSickAndNote(id, sick, note)) { refreshAnimalData(); return true; } else { return false; }
         }
 
+        public bool AddNewAnimal(AnimalDTO animalDTO)
+        {
+            if (animalDataTraffic.addAnimal(animalDTO))
+            {
+                refreshAnimalData();
+                return true;
+            };
+            return false;
+        }
     }
 }

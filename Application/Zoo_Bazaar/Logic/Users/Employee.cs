@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic
+namespace LogicCL.Users
 {
     public abstract class Employee : User
     {
         public string? SpouseName { get; set; }
         public string? SpousePhone { get; set; }
         public string EmergencyName { get; set; }
-        public string EmergencyPhone { get; set;}
+        public string EmergencyPhone { get; set; }
         public string BSN { get; set; }
         public int Contractstatus { get; set; } //needs custom set for name with if's
         public string Jobname { get; set; }

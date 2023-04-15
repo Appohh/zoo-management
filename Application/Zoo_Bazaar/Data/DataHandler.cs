@@ -15,7 +15,7 @@ namespace DataCL
 
         public DataHandler()
         {
-            this.con = base.GetConnection();
+            con = GetConnection();
         }
 
         public DataTable ReadData() //read
@@ -28,7 +28,7 @@ namespace DataCL
                 {
                     command.Connection = (SqlConnection)con;
                     //get command
-                    command.CommandText = this.cmd;
+                    command.CommandText = cmd;
                     //get data
                     var data = command.ExecuteReader();
                     //fill datatable with querried data
@@ -47,7 +47,7 @@ namespace DataCL
         }
 
         public int executeQuery(string query)
-        {          
+        {
             try
             {
                 con.Open();

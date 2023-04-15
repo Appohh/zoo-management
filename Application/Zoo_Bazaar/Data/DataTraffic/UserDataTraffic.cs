@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace DataCL
+namespace DataCL.DataTraffic
 {
     public class UserDataTraffic : DataHandler
     {
@@ -27,7 +27,7 @@ namespace DataCL
             List<UserDTO> Users = new List<UserDTO>();
 
             //get datatable of queried data
-            DataTable table = base.ReadData();
+            DataTable table = ReadData();
 
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)

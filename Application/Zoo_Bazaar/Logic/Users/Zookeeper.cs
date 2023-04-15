@@ -1,11 +1,12 @@
 ﻿using Logic;
+using LogicCL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicCL
+namespace LogicCL.Users
 {
     public class Zookeeper : Employee
     {
@@ -23,7 +24,7 @@ namespace LogicCL
 
         public bool UpdateAnimal(Animal selectedAnimal, int sick, string note)
         {
-           if(Repository.ChangeAnimalSickAndNote(selectedAnimal.Id, sick, note)) { return true; } else { return false; }
+            if (Repository.ChangeAnimalSickAndNote(selectedAnimal.Id, sick, note)) { return true; } else { return false; }
         }
     }
 }

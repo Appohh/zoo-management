@@ -1,6 +1,6 @@
-﻿using DataCL;
+﻿using DataCL.DataTraffic;
 using DataCL.DTOs;
-using Logic;
+using LogicCL.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;

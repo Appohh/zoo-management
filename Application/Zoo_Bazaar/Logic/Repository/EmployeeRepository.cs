@@ -1,6 +1,6 @@
 ﻿using DataCL;
 using DataCL.DTOs;
-using Logic;
+using LogicCL.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicCL
+namespace LogicCL.Repository
 {
     public class EmployeeRepository
     {

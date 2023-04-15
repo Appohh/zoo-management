@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace DataCL
+namespace DataCL.DataTraffic
 {
     public class AnimalDataTraffic : DataHandler
     {
         protected override string cmd
         {
             get
-            { 
+            {
                 return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [Diet].[name] as 'diet', [Species].[name] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
             }
         }
@@ -26,7 +26,7 @@ namespace DataCL
             List<AnimalDTO> Animals = new List<AnimalDTO>();
 
             //get datatable of queried data
-            DataTable table = base.ReadData();
+            DataTable table = ReadData();
 
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)

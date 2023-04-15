@@ -1,6 +1,6 @@
 ﻿using DataCL.DTOs;
-using Logic;
 using LogicCL;
+using LogicCL.Users;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
