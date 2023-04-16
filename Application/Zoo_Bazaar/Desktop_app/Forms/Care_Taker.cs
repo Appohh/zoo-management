@@ -42,10 +42,15 @@ namespace Desktop_app
         public void FilterAnimal(string search)
         {
             lv_Animals.Items.Clear();
-            foreach (Animal animal in zookeeper.Repository.GetAnimalList().OfType<Animal>().Where(animal => !animal.Species.ToLower().Contains(search) && (animal.Name).ToLower().Contains(search.ToLower()) || animal.Type.ToLower().Contains(search.ToLower())).ToList())
+            foreach (Animal animal in zookeeper.Repository.GetAnimalList().OfType<Animal>().Where(animal => !
+                                                                                                    animal.Location.ToLower().Contains(search.ToLower()) &&
+                                                                                                    (animal.Name).ToLower().Contains(search.ToLower()) ||
+                                                                                                    animal.Species.ToLower().Contains(search.ToLower()) ||
+                                                                                                    animal.Location.ToLower().Contains(search.ToLower()) 
+                                                                                                    || animal.Type.ToLower().Contains(search.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(animal.Birthdate).ToString("dd-MMMM-yyyy");
-                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location });
+                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Location,animal.Species });
                 animalInfo.Tag = animal.Id.ToString();
                 lv_Animals.Items.Add(animalInfo);
             }
