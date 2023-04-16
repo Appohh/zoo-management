@@ -47,11 +47,11 @@
             this.TB_Type = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.TB_BirthDate = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.TB_Mother = new System.Windows.Forms.TextBox();
             this.TB_Father = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.TB_BirthDate = new System.Windows.Forms.DateTimePicker();
             this.TB_Name = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -274,11 +274,11 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox4.Controls.Add(this.TB_BirthDate);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.TB_Mother);
             this.groupBox4.Controls.Add(this.TB_Father);
             this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.TB_BirthDate);
             this.groupBox4.Controls.Add(this.TB_Name);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.label22);
@@ -291,6 +291,14 @@
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Animal";
+            // 
+            // TB_BirthDate
+            // 
+            this.TB_BirthDate.Location = new System.Drawing.Point(204, 75);
+            this.TB_BirthDate.Name = "TB_BirthDate";
+            this.TB_BirthDate.ReadOnly = true;
+            this.TB_BirthDate.Size = new System.Drawing.Size(180, 36);
+            this.TB_BirthDate.TabIndex = 26;
             // 
             // label15
             // 
@@ -325,14 +333,6 @@
             this.label18.Size = new System.Drawing.Size(90, 30);
             this.label18.TabIndex = 6;
             this.label18.Text = "Mother:";
-            // 
-            // TB_BirthDate
-            // 
-            this.TB_BirthDate.Location = new System.Drawing.Point(204, 75);
-            this.TB_BirthDate.Name = "TB_BirthDate";
-            this.TB_BirthDate.Size = new System.Drawing.Size(180, 36);
-            this.TB_BirthDate.TabIndex = 25;
-            this.TB_BirthDate.Value = new System.DateTime(2023, 4, 13, 0, 0, 0, 0);
             // 
             // TB_Name
             // 
@@ -579,7 +579,6 @@
         private Label label16;
         private TextBox TB_Name;
         private Label label15;
-        private DateTimePicker TB_BirthDate;
         private GroupBox groupBox3;
         private RichTextBox TB_Notes;
         private ArtanPanel artanPanel1;
@@ -589,5 +588,6 @@
         private Button btn_ViewDetails;
         private CheckBox CHB_Sick;
         private ColumnHeader columnHeader1;
+        private TextBox TB_BirthDate;
     }
 }

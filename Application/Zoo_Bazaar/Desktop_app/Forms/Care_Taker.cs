@@ -81,7 +81,7 @@ namespace Desktop_app
                 //Animal
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
                 TB_Name.Text = selectedAnimal.Name;
-                TB_BirthDate.Value = DateTime.Parse(selectedAnimal.Birthdate);
+                TB_BirthDate.Text = DateTime.Parse(selectedAnimal.Birthdate).ToString();
                 TB_Father.Text = selectedAnimal.FatherId.ToString();
                 TB_Mother.Text = selectedAnimal.Mother.ToString();
                 TB_BirthPlace.Text =selectedAnimal.BirthPlace;
