@@ -20,6 +20,10 @@ namespace LogicCL
         public User? validateUserCredentials(string username, string password)
         {
             List<UserDTO> usersDTOs = new List<UserDTO>();
+            var retrievedUsers = this.userDataTraffic.retrieveUsers();
+
+            if(retrievedUsers == null) { return null; }
+
             usersDTOs.AddRange(this.userDataTraffic.retrieveUsers());
             User? foundUser = null;
             UserDTO? userDto = null;

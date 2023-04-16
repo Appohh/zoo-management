@@ -29,6 +29,8 @@ namespace DataCL.DataTraffic
             //get datatable of queried data
             DataTable table = ReadData();
 
+            if (table == null) { return null; }
+
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)
             {
