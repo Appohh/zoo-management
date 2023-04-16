@@ -31,7 +31,7 @@ namespace Desktop_app
 
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
             PopulateJobCombobox();
-
+            PopulateJobSearchCombobox();
             //UserLoggedIn.GetList<Employee>();
             //test
         }
@@ -39,6 +39,7 @@ namespace Desktop_app
         private void Refresh()
         {
             lv_Employees.Items.Clear();
+            int selected = Int16.Parse(cbbSearchEmpJob.SelectedValue.ToString());
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
                 string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
@@ -48,10 +49,11 @@ namespace Desktop_app
             }
         }
 
-        public void FilterHr(string search)
+        public void FilterHr(string name, string phone, string job)
         {
             lv_Employees.Items.Clear();
-            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => !e.Jobname.ToLower().Contains(search) && (e.FirstName + " " + e.LastName).ToLower().Contains(search.ToLower()) || e.Email.ToLower().Contains(search.ToLower())).ToList())
+
+            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => e.Jobname.ToLower().Equals(job.ToLower()) && (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower()) && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, dateFriendly, employee.Phone, employee.Jobname, employee.SpouseName });
@@ -75,11 +77,6 @@ namespace Desktop_app
                 add_Employee_Form.Dispose();
             }
             this.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
         }
 
         private void btn_ViewDetails_Click_1(object sender, EventArgs e)
@@ -118,7 +115,7 @@ namespace Desktop_app
 
         private void btn_search_Employee_Click_1(object sender, EventArgs e)
         {
-            FilterHr(txt_search.Text);
+            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text);
         }
 
         private void updateBTHR_Click_1(object sender, EventArgs e)
@@ -222,6 +219,7 @@ namespace Desktop_app
             if (hr.RegisterNewEmployee(dto))
             {
                 MessageBox.Show("Successful");
+                ClearInputAddEmployee();
             }
             else
             {
@@ -241,6 +239,37 @@ namespace Desktop_app
             ContractBoxAddEmployee.ValueMember = "Value";
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Active", 1));
+        }
+
+        private void PopulateJobSearchCombobox()
+        {
+            List<Job> jobs = hr.GetJobList();
+            cbbSearchEmpJob.Items.Clear();
+            cbbSearchEmpJob.DataSource = null;
+            cbbSearchEmpJob.DataSource = jobs;
+            cbbSearchEmpJob.DisplayMember = "Name";
+            cbbSearchEmpJob.ValueMember = "Id";
+        }
+
+        private void ClearInputAddEmployee()
+        {
+            foreach(Control control in tabAddEmployee.Controls)
+            {
+                if (control is TextBox)
+                {
+                    (control as TextBox).Text = string.Empty;
+                }
+                if(control is DateTimePicker)
+                {
+                    (control as DateTimePicker).Value = DateTime.Now;
+                }
+
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

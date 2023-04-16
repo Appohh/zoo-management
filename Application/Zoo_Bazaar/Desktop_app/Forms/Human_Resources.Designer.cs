@@ -80,10 +80,15 @@
             this.BSNBoxAddEmployee = new System.Windows.Forms.TextBox();
             this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
             this.Tab_Overview = new System.Windows.Forms.TabPage();
+            this.cbbSearchEmpJob = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tbSearchEmpPhone = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.btn_search_Employee = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_search = new System.Windows.Forms.TextBox();
+            this.tbSearchEmpName = new System.Windows.Forms.TextBox();
             this.lv_Employees = new System.Windows.Forms.ListView();
             this.Namez = new System.Windows.Forms.ColumnHeader();
             this.Phone = new System.Windows.Forms.ColumnHeader();
@@ -131,7 +136,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.welcome = new System.Windows.Forms.TabPage();
             this.welcome_txt = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabAddEmployee = new System.Windows.Forms.TabControl();
             Job = new System.Windows.Forms.ColumnHeader();
             this.Tab_Add_Employee.SuspendLayout();
             this.Gp_Contact_Employee.SuspendLayout();
@@ -144,7 +149,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.welcome.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabAddEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
             // Job
@@ -255,9 +260,9 @@
             this.Tab_Add_Employee.Controls.Add(this.Gb_Details_employee);
             this.Tab_Add_Employee.Controls.Add(this.PictureBoxAddEmployee);
             this.Tab_Add_Employee.Location = new System.Drawing.Point(4, 32);
-            this.Tab_Add_Employee.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Tab_Add_Employee.Margin = new System.Windows.Forms.Padding(1);
             this.Tab_Add_Employee.Name = "Tab_Add_Employee";
-            this.Tab_Add_Employee.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Tab_Add_Employee.Padding = new System.Windows.Forms.Padding(1);
             this.Tab_Add_Employee.Size = new System.Drawing.Size(1662, 758);
             this.Tab_Add_Employee.TabIndex = 1;
             this.Tab_Add_Employee.Text = "Add Employee";
@@ -358,7 +363,7 @@
             // 
             this.SpouseBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SpouseBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpouseBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SpouseBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SpouseBoxAddEmployee.Location = new System.Drawing.Point(344, 198);
             this.SpouseBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
@@ -369,7 +374,7 @@
             // 
             this.PhoneNumberBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PhoneNumberBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PhoneNumberBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PhoneNumberBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.PhoneNumberBoxAddEmployee.Location = new System.Drawing.Point(27, 45);
             this.PhoneNumberBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.PhoneNumberBoxAddEmployee.Name = "PhoneNumberBoxAddEmployee";
@@ -380,7 +385,7 @@
             // 
             this.EmergencyContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.EmergencyContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmergencyContactBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EmergencyContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.EmergencyContactBoxAddEmployee.Location = new System.Drawing.Point(344, 119);
             this.EmergencyContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EmergencyContactBoxAddEmployee.Name = "EmergencyContactBoxAddEmployee";
@@ -391,7 +396,7 @@
             // 
             this.SpouseContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SpouseContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpouseContactBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SpouseContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SpouseContactBoxAddEmployee.Location = new System.Drawing.Point(27, 198);
             this.SpouseContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
@@ -414,7 +419,7 @@
             // 
             this.EmergencyContactNameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.EmergencyContactNameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmergencyContactNameBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EmergencyContactNameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.EmergencyContactNameBoxAddEmployee.Location = new System.Drawing.Point(27, 119);
             this.EmergencyContactNameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EmergencyContactNameBoxAddEmployee.Name = "EmergencyContactNameBoxAddEmployee";
@@ -513,7 +518,7 @@
             // 
             this.SurnameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SurnameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SurnameBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SurnameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SurnameBoxAddEmployee.Location = new System.Drawing.Point(344, 37);
             this.SurnameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SurnameBoxAddEmployee.Name = "SurnameBoxAddEmployee";
@@ -524,7 +529,7 @@
             // 
             this.AdressBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.AdressBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AdressBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AdressBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.AdressBoxAddEmployee.Location = new System.Drawing.Point(27, 155);
             this.AdressBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.AdressBoxAddEmployee.Name = "AdressBoxAddEmployee";
@@ -535,7 +540,7 @@
             // 
             this.NameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.NameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.NameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.NameBoxAddEmployee.Location = new System.Drawing.Point(27, 37);
             this.NameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.NameBoxAddEmployee.Name = "NameBoxAddEmployee";
@@ -558,7 +563,7 @@
             // 
             this.EmailBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.EmailBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailBoxAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EmailBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.EmailBoxAddEmployee.Location = new System.Drawing.Point(344, 95);
             this.EmailBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EmailBoxAddEmployee.Name = "EmailBoxAddEmployee";
@@ -736,29 +741,80 @@
             // 
             this.Tab_Overview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.Tab_Overview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Tab_Overview.Controls.Add(this.cbbSearchEmpJob);
+            this.Tab_Overview.Controls.Add(this.label37);
+            this.Tab_Overview.Controls.Add(this.label36);
+            this.Tab_Overview.Controls.Add(this.tbSearchEmpPhone);
+            this.Tab_Overview.Controls.Add(this.label35);
             this.Tab_Overview.Controls.Add(this.btn_search_Employee);
             this.Tab_Overview.Controls.Add(this.button3);
             this.Tab_Overview.Controls.Add(this.label5);
-            this.Tab_Overview.Controls.Add(this.txt_search);
+            this.Tab_Overview.Controls.Add(this.tbSearchEmpName);
             this.Tab_Overview.Controls.Add(this.lv_Employees);
             this.Tab_Overview.Controls.Add(this.artanPanel4);
             this.Tab_Overview.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Tab_Overview.ForeColor = System.Drawing.Color.White;
             this.Tab_Overview.Location = new System.Drawing.Point(4, 32);
-            this.Tab_Overview.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Tab_Overview.Margin = new System.Windows.Forms.Padding(1);
             this.Tab_Overview.Name = "Tab_Overview";
-            this.Tab_Overview.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Tab_Overview.Padding = new System.Windows.Forms.Padding(1);
             this.Tab_Overview.Size = new System.Drawing.Size(1662, 758);
             this.Tab_Overview.TabIndex = 0;
             this.Tab_Overview.Text = "Overview";
             // 
+            // cbbSearchEmpJob
+            // 
+            this.cbbSearchEmpJob.FormattingEnabled = true;
+            this.cbbSearchEmpJob.Location = new System.Drawing.Point(344, 40);
+            this.cbbSearchEmpJob.Name = "cbbSearchEmpJob";
+            this.cbbSearchEmpJob.Size = new System.Drawing.Size(132, 25);
+            this.cbbSearchEmpJob.TabIndex = 35;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(305, 43);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(33, 19);
+            this.label37.TabIndex = 34;
+            this.label37.Text = "Job:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.Color.Black;
+            this.label36.Location = new System.Drawing.Point(52, 79);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(51, 19);
+            this.label36.TabIndex = 33;
+            this.label36.Text = "Phone:";
+            // 
+            // tbSearchEmpPhone
+            // 
+            this.tbSearchEmpPhone.Location = new System.Drawing.Point(115, 76);
+            this.tbSearchEmpPhone.Margin = new System.Windows.Forms.Padding(1);
+            this.tbSearchEmpPhone.Name = "tbSearchEmpPhone";
+            this.tbSearchEmpPhone.Size = new System.Drawing.Size(169, 25);
+            this.tbSearchEmpPhone.TabIndex = 32;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(52, 43);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(48, 19);
+            this.label35.TabIndex = 31;
+            this.label35.Text = "Name:";
+            // 
             // btn_search_Employee
             // 
             this.btn_search_Employee.ForeColor = System.Drawing.Color.Black;
-            this.btn_search_Employee.Location = new System.Drawing.Point(365, 85);
+            this.btn_search_Employee.Location = new System.Drawing.Point(511, 39);
             this.btn_search_Employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_search_Employee.Name = "btn_search_Employee";
-            this.btn_search_Employee.Size = new System.Drawing.Size(78, 20);
+            this.btn_search_Employee.Size = new System.Drawing.Size(78, 25);
             this.btn_search_Employee.TabIndex = 30;
             this.btn_search_Employee.Text = "Search";
             this.btn_search_Employee.UseVisualStyleBackColor = true;
@@ -769,32 +825,34 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(1441, 49);
-            this.button3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 31);
             this.button3.TabIndex = 28;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(150, 53);
+            this.label5.Location = new System.Drawing.Point(52, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 21);
             this.label5.TabIndex = 29;
             this.label5.Text = "Search Employee";
             // 
-            // txt_search
+            // tbSearchEmpName
             // 
-            this.txt_search.Location = new System.Drawing.Point(150, 85);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(169, 25);
-            this.txt_search.TabIndex = 28;
+            this.tbSearchEmpName.Location = new System.Drawing.Point(115, 40);
+            this.tbSearchEmpName.Margin = new System.Windows.Forms.Padding(1);
+            this.tbSearchEmpName.Name = "tbSearchEmpName";
+            this.tbSearchEmpName.Size = new System.Drawing.Size(169, 25);
+            this.tbSearchEmpName.TabIndex = 28;
+            this.tbSearchEmpName.Text = "os";
             // 
             // lv_Employees
             // 
@@ -808,7 +866,7 @@
             this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lv_Employees.ForeColor = System.Drawing.Color.Black;
             this.lv_Employees.FullRowSelect = true;
-            this.lv_Employees.Location = new System.Drawing.Point(52, 131);
+            this.lv_Employees.Location = new System.Drawing.Point(52, 132);
             this.lv_Employees.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lv_Employees.Name = "lv_Employees";
             this.lv_Employees.Size = new System.Drawing.Size(805, 542);
@@ -847,7 +905,7 @@
             this.artanPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
             this.artanPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
             this.artanPanel4.Location = new System.Drawing.Point(888, 124);
-            this.artanPanel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.artanPanel4.Margin = new System.Windows.Forms.Padding(1);
             this.artanPanel4.Name = "artanPanel4";
             this.artanPanel4.Size = new System.Drawing.Size(775, 563);
             this.artanPanel4.TabIndex = 26;
@@ -857,7 +915,7 @@
             this.updateBTHR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.updateBTHR.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.updateBTHR.Location = new System.Drawing.Point(565, 512);
-            this.updateBTHR.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.updateBTHR.Margin = new System.Windows.Forms.Padding(1);
             this.updateBTHR.Name = "updateBTHR";
             this.updateBTHR.Size = new System.Drawing.Size(148, 31);
             this.updateBTHR.TabIndex = 31;
@@ -1060,9 +1118,9 @@
             this.groupBox1.Controls.Add(this.TB_EmailAddress);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Location = new System.Drawing.Point(32, 205);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox1.Size = new System.Drawing.Size(412, 345);
             this.groupBox1.TabIndex = 70;
             this.groupBox1.TabStop = false;
@@ -1072,7 +1130,7 @@
             // 
             this.CB_Contract.FormattingEnabled = true;
             this.CB_Contract.Location = new System.Drawing.Point(18, 316);
-            this.CB_Contract.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CB_Contract.Margin = new System.Windows.Forms.Padding(2);
             this.CB_Contract.Name = "CB_Contract";
             this.CB_Contract.Size = new System.Drawing.Size(313, 25);
             this.CB_Contract.TabIndex = 31;
@@ -1234,7 +1292,7 @@
             this.btn_ViewDetails.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ViewDetails.ForeColor = System.Drawing.Color.White;
             this.btn_ViewDetails.Location = new System.Drawing.Point(370, 625);
-            this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(1);
             this.btn_ViewDetails.Name = "btn_ViewDetails";
             this.btn_ViewDetails.Size = new System.Drawing.Size(202, 41);
             this.btn_ViewDetails.TabIndex = 0;
@@ -1279,19 +1337,19 @@
             this.welcome_txt.TabIndex = 0;
             this.welcome_txt.Text = "Welcome";
             // 
-            // tabControl1
+            // tabAddEmployee
             // 
-            this.tabControl1.Controls.Add(this.welcome);
-            this.tabControl1.Controls.Add(this.Tab_Overview);
-            this.tabControl1.Controls.Add(this.Tab_Add_Employee);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1670, 794);
-            this.tabControl1.TabIndex = 27;
+            this.tabAddEmployee.Controls.Add(this.welcome);
+            this.tabAddEmployee.Controls.Add(this.Tab_Overview);
+            this.tabAddEmployee.Controls.Add(this.Tab_Add_Employee);
+            this.tabAddEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabAddEmployee.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabAddEmployee.Location = new System.Drawing.Point(0, 0);
+            this.tabAddEmployee.Margin = new System.Windows.Forms.Padding(1);
+            this.tabAddEmployee.Name = "tabAddEmployee";
+            this.tabAddEmployee.SelectedIndex = 0;
+            this.tabAddEmployee.Size = new System.Drawing.Size(1670, 794);
+            this.tabAddEmployee.TabIndex = 27;
             // 
             // Human_Resources
             // 
@@ -1301,7 +1359,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1670, 794);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabAddEmployee);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
@@ -1329,7 +1387,7 @@
             this.groupBox1.PerformLayout();
             this.welcome.ResumeLayout(false);
             this.welcome.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabAddEmployee.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1375,7 +1433,7 @@
         private Button btn_search_Employee;
         private Button button3;
         private Label label5;
-        private TextBox txt_search;
+        private TextBox tbSearchEmpName;
         private ListView lv_Employees;
         private ColumnHeader Namez;
         private ColumnHeader Phone;
@@ -1386,7 +1444,7 @@
         private Label label3;
         private TabPage welcome;
         private Label welcome_txt;
-        private TabControl tabControl1;
+        private TabControl tabAddEmployee;
         private Label lbl_lastname;
         private TextBox TB_Firstname;
         private Label lbl_firstname;
@@ -1440,5 +1498,10 @@
         private Label label10;
         private Label label34;
         private ComboBox CB_Contract;
+        private ComboBox cbbSearchEmpJob;
+        private Label label37;
+        private Label label36;
+        private TextBox tbSearchEmpPhone;
+        private Label label35;
     }
 }
