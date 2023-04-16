@@ -43,7 +43,8 @@ namespace Desktop_app
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
                 string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, dateFriendly, employee.Phone, employee.Jobname, employee.SpouseName });
+                string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
@@ -56,7 +57,8 @@ namespace Desktop_app
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => e.Jobname.ToLower().Equals(job.ToLower()) && (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower()) && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.City, dateFriendly, employee.Phone, employee.Jobname, employee.SpouseName });
+                string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
@@ -143,7 +145,7 @@ namespace Desktop_app
 
                 string job = TB_Job.Text;
 
-                int contract = Convert.ToInt32(CB_Contract.SelectedValue);
+                int contract = Convert.ToInt32(CB_Contract.SelectedIndex);
 
                 //contact details
                 string phoneNumber = TB_Phone.Text;

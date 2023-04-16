@@ -66,7 +66,7 @@ namespace LogicCL.Repository
             return Animals;
         }
 
-        public bool ChangeAnimalSickAndNote(int id, int sick, string note)
+        public bool ChangeAnimalSickAndNote(int id, int sick, [Optional] string note)
         {
             if (animalDataTraffic.UpdateAnimalSickAndNote(id, sick, note)) { refreshAnimalData(); return true; } else { return false; }
         }
@@ -80,5 +80,13 @@ namespace LogicCL.Repository
             };
             return false;
         }
+
+        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, int fatherId, int motherId, string location, string diet, string species, string type, int sick, string deathdate)
+        {
+            if (animalDataTraffic.UpdateAnimal(id, name, dob, birthPlace, fatherId, motherId, location, diet, species, type, sick, deathdate)) { refreshAnimalData(); return true; } else { return false; }
+        }
+
+
+      
     }
 }

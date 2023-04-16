@@ -17,7 +17,7 @@ namespace DataCL.DataTraffic
         {
             get
             { 
-                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], [Locations].[name] as 'location', [Diet].[name] as 'diet', [Species].[name] as 'species', [sick], [notes], [deathdate], [type], [imageUrl] FROM [Animals] INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id";
+                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], Locations.name AS location, Locations.id AS locationId, Diet.name AS diet, Diet.id AS dietId, Species.name AS species, Species.id AS speciesId, [sick], [notes], [deathdate], [type], [imageUrl] FROM Animals INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Species ON Animals.speciesId = Species.id;";
             }
         }
 
@@ -49,6 +49,13 @@ namespace DataCL.DataTraffic
         {
             string query = $"UPDATE Animals SET sick={sick}, notes='{note}' WHERE Id={animalId}";
             return executeQuery(query) == 0 ? false : true;
+        }
+
+        public bool UpdateAnimal(int id, string name, string dob, string birthPlace, int fatherId, int motherId, string location, string diet, string species, string type, int sick, string deathdate)
+        {
+            string query = $"UPDATE Animals SET name='{name}', birthdate='{dob}', birthplace='{birthPlace}', fatherId='{fatherId}', motherId='{motherId}', locationId='{location}', dietId='{diet}', speciesId='{species}', sick='{sick}', deathdate='{deathdate}', type='{type} WHERE id={id}";
+            return executeQuery(query) == 0 ? false : true;
+
         }
     }
 }
