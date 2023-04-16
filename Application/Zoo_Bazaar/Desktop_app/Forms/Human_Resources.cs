@@ -1,4 +1,6 @@
-﻿using Desktop_app.Forms;
+﻿using DataCL.DTOs;
+using Desktop_app.Forms;
+using LogicCL;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,7 @@ namespace Desktop_app
             //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
 
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
+            PopulateJobCombobox();
 
             //UserLoggedIn.GetList<Employee>();
             //test
@@ -208,6 +211,36 @@ namespace Desktop_app
                 TB_Spouse.Text = selectedUser.SpouseName;
                 TB_SpouseContact.Text = selectedUser.SpousePhone;
             }
+        }
+
+        private void btn_add_employee_Click(object sender, EventArgs e)
+        {
+            int selected = Int16.Parse(cbJob.SelectedValue.ToString());
+            UserDTO dto = new UserDTO(0, NameBoxAddEmployee.Text, SurnameBoxAddEmployee.Text, UsernameBoxAddEmployee.Text, PasswordBoxAddEmployee.Text,
+                PhoneNumberBoxAddEmployee.Text, AdressBoxAddEmployee.Text, AdressBoxAddEmployee.Text, EmailBoxAddEmployee.Text, SpouseBoxAddEmployee.Text,
+                SpouseContactBoxAddEmployee.Text, EmergencyContactNameBoxAddEmployee.Text, EmergencyContactBoxAddEmployee.Text, BirthDateBoxAddEmployee.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxAddEmployee.Text, ContractBoxAddEmployee.SelectedIndex, 0, "", selected, "");
+            if (hr.RegisterNewEmployee(dto))
+            {
+                MessageBox.Show("Successful");
+            }
+            else
+            {
+                MessageBox.Show("Unsuccessful");
+            }
+        }
+
+        private void PopulateJobCombobox()
+        {
+            List<Job> jobs = hr.GetJobList();
+            cbJob.Items.Clear();
+            cbJob.DataSource = null;
+            cbJob.DataSource = jobs;
+            cbJob.DisplayMember = "Name";
+            cbJob.ValueMember = "Id";
+            ContractBoxAddEmployee.DisplayMember = "Key";
+            ContractBoxAddEmployee.ValueMember = "Value";
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Active", 1));
         }
     }
 }
