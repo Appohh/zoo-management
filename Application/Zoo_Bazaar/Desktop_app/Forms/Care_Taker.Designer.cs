@@ -94,7 +94,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1832, 806);
+            this.tabControl1.Size = new System.Drawing.Size(1832, 928);
             this.tabControl1.TabIndex = 0;
             // 
             // Welcome
@@ -104,7 +104,7 @@
             this.Welcome.Controls.Add(this.welcome_txt);
             this.Welcome.Location = new System.Drawing.Point(4, 29);
             this.Welcome.Name = "Welcome";
-            this.Welcome.Size = new System.Drawing.Size(1824, 773);
+            this.Welcome.Size = new System.Drawing.Size(1824, 895);
             this.Welcome.TabIndex = 3;
             this.Welcome.Text = "Welcome";
             this.Welcome.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.Overview.Location = new System.Drawing.Point(4, 29);
             this.Overview.Name = "Overview";
             this.Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.Overview.Size = new System.Drawing.Size(1824, 773);
+            this.Overview.Size = new System.Drawing.Size(1824, 895);
             this.Overview.TabIndex = 0;
             this.Overview.Text = "Overview";
             this.Overview.Click += new System.EventHandler(this.Overview_Click);
@@ -159,7 +159,7 @@
             // 
             // btn_ViewDetails
             // 
-            this.btn_ViewDetails.BackColor = System.Drawing.Color.Black;
+            this.btn_ViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.btn_ViewDetails.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ViewDetails.ForeColor = System.Drawing.Color.White;
             this.btn_ViewDetails.Location = new System.Drawing.Point(343, 687);
@@ -444,7 +444,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(787, 58);
+            this.button3.Location = new System.Drawing.Point(1583, 59);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 45);
@@ -523,12 +523,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1832, 806);
+            this.ClientSize = new System.Drawing.Size(1832, 928);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Care_Taker";
             this.Text = "Zoo_Keeper";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Care_Taker_Load);
             this.tabControl1.ResumeLayout(false);
             this.Welcome.ResumeLayout(false);
             this.Welcome.PerformLayout();

@@ -21,11 +21,12 @@ namespace Desktop_app
         private int selectedAnimalId;
         public Care_Taker(User loggedInUser)
         {
+            
             zookeeper = (Zookeeper)loggedInUser;
             zookeeper.MakeActive();
             InitializeComponent();
             this.Size = new Size(1521, 910);
-            
+            welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
         }
 
         private void refreshAnimalList()
@@ -140,6 +141,11 @@ namespace Desktop_app
                 MessageBox.Show("Oops something went wrong, please contact an administrator");
                 this.DialogResult = DialogResult.Cancel;
             }
+        }
+
+        private void Care_Taker_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
