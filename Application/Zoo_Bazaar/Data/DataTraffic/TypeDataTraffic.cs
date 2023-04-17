@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace DataCL.DataTraffic
 {
-    public class LocationDataTraffic : DataHandler
+    public class TypeDataTraffic : DataHandler
     {
         protected override string cmd
         {
             get
             {
-                return "select * from Locations;" ;
+                return "select * from Type;";
             }
         }
 
-        public List<LocationDTO> retrieveLocation()
+        public List<TypeDTO> retrieveTypes()
         {
 
-            List<LocationDTO> location = new List<LocationDTO>();
+            List<TypeDTO> types = new List<TypeDTO>();
 
             //get datatable of queried data
             DataTable table = ReadData();
@@ -29,11 +29,12 @@ namespace DataCL.DataTraffic
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)
             {
-                location.Add(DataConvertingMethods.ConvertDataRowToObject<LocationDTO>(dr));
+                types.Add(DataConvertingMethods.ConvertDataRowToObject<TypeDTO>(dr));
             }
 
             //return collection of DTOs
-            return location;
+            return types;
         }
     }
 }
+

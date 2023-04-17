@@ -1,4 +1,5 @@
 ﻿using DataCL.DTOs;
+using LogicCL.AnimalMap;
 using LogicCL.Repository;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,21 @@ namespace LogicCL.Users
         public bool RegisterNewAnimal(AnimalDTO animalDTO)
         {
             return Repository.AddNewAnimal(animalDTO);
+        }
+
+        public List<Location> GetLocationList()
+        {
+            return Repository.GetLocationList();
+        }
+
+        public List <Species> GetSpeciesList()
+        {
+            return Repository.GetSpeciesList();
+        }
+
+        public List <Types> GetTypesList()
+        {
+            return Repository.GetTypesList();
         }
     }
 }

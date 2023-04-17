@@ -28,6 +28,8 @@ namespace Desktop_app.Forms
             AnimalManagement.MakeActive();
             InitializeComponent();
             PopulateLocationCombobox();
+            PopulateSpeciesCombobox();
+            PopulateTypesCombobox();
             this.Size = new Size(1521, 910);
         }
 
@@ -51,79 +53,6 @@ namespace Desktop_app.Forms
                 ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location });
                 animalInfo.Tag = animal.Id.ToString();
                 lv_Animals.Items.Add(animalInfo);
-            }
-        }
-
-        private void btn_search_Animal_Click(object sender, EventArgs e)
-        {
-            FilterAnimal(TB_SearchAnimal.Text);
-        }
-
-        private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lv_Animals.SelectedItems.Count > 0)
-            {
-                List<Animal> animalList = AnimalManagement.Repository.GetAnimalList().OfType<Animal>().ToList();
-
-                Animal selectedAnimal = animalList.Find(animal => animal.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
-
-
-
-                //Animal
-                selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
-                TB_Name.Text = selectedAnimal.Name;
-                CB_BirthDateBoxHR.Value = DateTime.Parse(selectedAnimal.Birthdate);
-                TB_Father.Text = selectedAnimal.FatherId.ToString();
-                TB_Mother.Text = selectedAnimal.Mother.ToString();
-                TB_BirthPlace.Text = selectedAnimal.BirthPlace;
-
-                //Category
-                TB_Species.Text = selectedAnimal.Species;
-                TB_Location.Text = selectedAnimal.Location;
-                TB_Diet.Text = selectedAnimal.Diet;
-                TB_Type.Text = selectedAnimal.Type;
-
-                //Condition
-                if (selectedAnimal.Sick == 0) { CHB_Sick.Checked = false; } else { CHB_Sick.Checked = true; }
-
-
-
-            }
-        }
-
-        private void btn_ViewDetails_Click(object sender, EventArgs e)
-        {
-            string name = TB_Name.Text;
-            string location = TB_Location.Text;
-            string birthdate = CB_BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string type = TB_Type.Text;
-            string species = TB_Species.Text;
-            string diet = TB_Diet.Text;
-
-            int motherId = Convert.ToInt32(TB_Mother.Text);
-            int fatherId = Convert.ToInt32(TB_Father.Text);
-            string birthplace = TB_BirthPlace.Text;
-
-
-            //Condition
-            int sick = CHB_Sick.Checked ? 1 : 0;
-            string deathdate = CB_DeathDateBox.Value.ToString("yyyy-MM-dd HH:mm:ss.ffff");
-
-            if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
-            {
-                MessageBox.Show("Success");
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                MessageBox.Show("Oops something went wrong, please contact an administrator");
-                this.DialogResult = DialogResult.Cancel;
-            }
-
-            if (AnimalManagement.Repository.updateAnimalDetails(selectedAnimalId, name, birthdate, birthplace, fatherId, motherId, location, diet, species, type, sick, deathdate))
-            {
-                MessageBox.Show("Success");
-                this.DialogResult = DialogResult.OK;
             }
         }
 
@@ -165,12 +94,125 @@ namespace Desktop_app.Forms
 
         private void PopulateLocationCombobox()
         {
-            List<Animal> location = AnimalManagement.Repository.GetAnimalList().OfType<Animal>().ToList(); ;
+            List<Location> location = AnimalManagement.GetLocationList();
+            //Populate add Location Comboboxes
             CB_LocationAdd.Items.Clear();
             CB_LocationAdd.DataSource = null;
             CB_LocationAdd.DataSource = location;
-            CB_LocationAdd.DisplayMember = "location";
-            CB_LocationAdd.ValueMember = "";
+            CB_LocationAdd.DisplayMember = "Name";
+            CB_LocationAdd.ValueMember = "Id";
+            //Populate update Location Comboboxes
+            CB_Location1.Items.Clear();
+            CB_Location1.DataSource = null;
+            CB_Location1.DataSource = location;
+            CB_Location1.DisplayMember = "Name";
+            CB_Location1.ValueMember = "Id";
+        }
+
+        private void PopulateSpeciesCombobox()
+        {
+            List<Species> species = AnimalManagement.GetSpeciesList();
+            //Populate add Location Comboboxes
+            CB_SpeciesBoxAdd.Items.Clear();
+            CB_SpeciesBoxAdd.DataSource = null;
+            CB_SpeciesBoxAdd.DataSource = species;
+            CB_SpeciesBoxAdd.DisplayMember = "Name";
+            CB_SpeciesBoxAdd.ValueMember = "Id";
+            //Populate update Location Comboboxes
+            CB_Species1.Items.Clear();
+            CB_Species1.DataSource = null;
+            CB_Species1.DataSource = species;
+            CB_Species1.DisplayMember = "Name";
+            CB_Species1.ValueMember = "Id";
+        }
+
+        private void PopulateTypesCombobox()
+        {
+            List<Types> types = AnimalManagement.GetTypesList();
+            //Populate add Location Comboboxes
+            CB_TypeBoxAdd.Items.Clear();
+            CB_TypeBoxAdd.DataSource = null;
+            CB_TypeBoxAdd.DataSource = types;
+            CB_TypeBoxAdd.DisplayMember = "Name";
+            CB_TypeBoxAdd.ValueMember = "Id";
+            //Populate update Location Comboboxes
+            CB_Type1.Items.Clear();
+            CB_Type1.DataSource = null;
+            CB_Type1.DataSource = types;
+            CB_Type1.DisplayMember = "Name";
+            CB_Type1.ValueMember = "Id";
+        }
+
+        private void BTN_updateAnimal_Click(object sender, EventArgs e)
+        {
+            string name = TB_name1.Text;
+            int location = Convert.ToInt32(CB_Location1.SelectedValue);
+            string birthdate = DT_Birthdate.Value.ToString("yyyy-MM-dd");
+            int type = CB_Type1.SelectedIndex;
+            int species = CB_Species1.SelectedIndex;
+            int diet = CB_Diet1.SelectedIndex;
+
+            int motherId = Convert.ToInt32(CB_Mother1.SelectedIndex);
+            int fatherId = Convert.ToInt32(CB_Father1.SelectedIndex.ToString());
+            string birthplace = TB_BirthPlace.Text;
+
+
+            //Condition
+            int sick = CHB_Sick.Checked ? 1 : 0;
+            string deathdate = CB_DeathDateBox.Value.ToString("yyyy-MM-dd HH:mm:ss.ffff");
+
+            if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Oops something went wrong, please contact an administrator");
+                this.DialogResult = DialogResult.Cancel;
+            }
+
+            if (AnimalManagement.Repository.updateAnimalDetails(selectedAnimalId, name, birthdate, birthplace, fatherId, motherId, location, diet, species, type, sick, deathdate))
+            {
+                MessageBox.Show("Success");
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void btn_search_Animal_Click_1(object sender, EventArgs e)
+        {
+            FilterAnimal(TB_SearchAnimal.Text);
+        }
+
+        private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lv_Animals.SelectedItems.Count > 0)
+            {
+                List<Animal> animalList = AnimalManagement.Repository.GetAnimalList().OfType<Animal>().ToList();
+
+                Animal selectedAnimal = animalList.Find(animal => animal.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+
+
+
+                //Animal
+                selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
+                TB_name1.Text = selectedAnimal.Name;
+                DT_Birthdate.Value = DateTime.Parse(selectedAnimal.Birthdate);
+                CB_Father1.Text = selectedAnimal.FatherId.ToString();
+                CB_Mother1.Text = selectedAnimal.Mother.ToString();
+                TB_BirthPlace1.Text = selectedAnimal.BirthPlace;
+
+                //Category
+                CB_Species1.Text = selectedAnimal.Species;
+                CB_Location1.Text = selectedAnimal.Location;
+                CB_Diet1.Text = selectedAnimal.Diet;
+                CB_Type1.Text = selectedAnimal.Type;
+
+                //Condition
+                if (selectedAnimal.Sick == 0) { CHB_Sick.Checked = false; } else { CHB_Sick.Checked = true; }
+
+
+
+            }
         }
     }
 }

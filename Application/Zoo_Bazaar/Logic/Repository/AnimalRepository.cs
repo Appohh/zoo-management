@@ -14,6 +14,8 @@ namespace LogicCL.Repository
     {
         private AnimalDataTraffic animalDataTraffic = new AnimalDataTraffic();
         private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
+        private SpeciesDataTraffic speciesDataTraffic = new SpeciesDataTraffic();
+        private TypeDataTraffic typeDataTraffic = new TypeDataTraffic();
         private List<Animal> animals = new List<Animal>();
 
         public List<Animal> Animals { get { return animals; } }
@@ -82,7 +84,7 @@ namespace LogicCL.Repository
             return false;
         }
 
-        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, int fatherId, int motherId, string location, string diet, string species, string type, int sick, string deathdate)
+        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int species, int type, int sick, string deathdate)
         {
             if (animalDataTraffic.UpdateAnimal(id, name, dob, birthPlace, fatherId, motherId, location, diet, species, type, sick, deathdate)) { refreshAnimalData(); return true; } else { return false; }
         }
@@ -97,6 +99,30 @@ namespace LogicCL.Repository
             }
             return locations;
         }
+
+        public List<Species> GetSpeciesList()
+        {
+            List<SpeciesDTO> speciesDTOs = speciesDataTraffic.retrieveSpecies();
+            List<Species> species = new List<Species>();
+            foreach (SpeciesDTO speciesdto in speciesDTOs)
+            {
+                species.Add(new Species(speciesdto.Id, speciesdto.Name));
+            }
+            return species;
+        }
+
+        public List <Types> GetTypesList()
+        {
+            List<TypeDTO> typeDTOs = typeDataTraffic.retrieveTypes();
+            List<Types> types = new List<Types>();
+            foreach (TypeDTO typedto in typeDTOs)
+            {
+                types.Add(new Types(typedto.Id, typedto.Name));
+            }
+            return types;
+        }
+
+
 
     }
 }
