@@ -1,4 +1,4 @@
-﻿using Logic;
+﻿using LogicCL.Animal;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿namespace Logic
+﻿namespace LogicCL.AnimalMap
 {
     public class Animal
     {

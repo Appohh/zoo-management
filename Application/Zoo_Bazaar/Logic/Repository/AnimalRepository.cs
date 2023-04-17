@@ -1,6 +1,6 @@
 ﻿using DataCL.DataTraffic;
 using DataCL.DTOs;
-using Logic;
+using LogicCL.AnimalMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,7 @@ namespace LogicCL.Repository
     public class AnimalRepository
     {
         private AnimalDataTraffic animalDataTraffic = new AnimalDataTraffic();
+        private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
         private List<Animal> animals = new List<Animal>();
 
         public List<Animal> Animals { get { return animals; } }
@@ -86,7 +87,16 @@ namespace LogicCL.Repository
             if (animalDataTraffic.UpdateAnimal(id, name, dob, birthPlace, fatherId, motherId, location, diet, species, type, sick, deathdate)) { refreshAnimalData(); return true; } else { return false; }
         }
 
+        public List<Location> GetLocationList()
+        {
+            List<LocationDTO> locationDTOs = locationDataTraffic.retrieveLocation();
+            List<Location> locations = new List<Location>();
+            foreach (LocationDTO locationdto in locationDTOs)
+            {
+                locations.Add(new Location(locationdto.Id, locationdto.Name));
+            }
+            return locations;
+        }
 
-      
     }
 }

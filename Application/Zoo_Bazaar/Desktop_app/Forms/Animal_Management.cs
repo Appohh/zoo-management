@@ -1,5 +1,4 @@
-﻿using Logic;
-using LogicCL.Users;
+﻿using LogicCL.Users;
 using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
@@ -15,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataCL.DTOs;
 using LogicCL;
+using LogicCL.Animal;
 
 namespace Desktop_app.Forms
 {

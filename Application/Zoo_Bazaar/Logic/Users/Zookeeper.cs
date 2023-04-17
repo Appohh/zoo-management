@@ -1,10 +1,10 @@
-﻿using Logic;
-using LogicCL.Repository;
+﻿using LogicCL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LogicCL.AnimalMap;
 
 namespace LogicCL.Users
 {
