@@ -852,7 +852,6 @@
             this.tbSearchEmpName.Name = "tbSearchEmpName";
             this.tbSearchEmpName.Size = new System.Drawing.Size(169, 25);
             this.tbSearchEmpName.TabIndex = 28;
-            this.tbSearchEmpName.Text = "os";
             // 
             // lv_Employees
             // 

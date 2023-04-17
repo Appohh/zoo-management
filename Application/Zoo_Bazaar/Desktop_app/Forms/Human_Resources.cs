@@ -52,9 +52,13 @@ namespace Desktop_app
 
         public void FilterHr(string name, string phone, string job)
         {
+            string jobname = "";
             lv_Employees.Items.Clear();
-
-            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => e.Jobname.ToLower().Equals(job.ToLower()) && (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower()) && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
+            if (job.ToLower() != "all")
+            {
+                jobname = job;
+            }
+            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => e.Jobname.ToLower().Contains(jobname.ToLower()) && (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower()) && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
                 string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
@@ -246,6 +250,7 @@ namespace Desktop_app
         private void PopulateJobSearchCombobox()
         {
             List<Job> jobs = hr.GetJobList();
+            jobs.Add(new Job(0, "All"));
             cbbSearchEmpJob.Items.Clear();
             cbbSearchEmpJob.DataSource = null;
             cbbSearchEmpJob.DataSource = jobs;
