@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataCL.DTOs;
 using LogicCL;
-using LogicCL.Animal;
+using LogicCL.AnimalMap;
 
 namespace Desktop_app.Forms
 {

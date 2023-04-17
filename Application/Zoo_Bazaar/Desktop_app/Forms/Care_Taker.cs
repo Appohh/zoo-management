@@ -1,5 +1,5 @@
 ﻿using Desktop_app.Forms;
-using LogicCL.Animal;
+using LogicCL.AnimalMap;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;

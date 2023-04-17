@@ -1,6 +1,5 @@
 ﻿using DataCL;
 using DataCL.DTOs;
-using Logic;
 using LogicCL;
 using LogicCL.Users;
 using System;
