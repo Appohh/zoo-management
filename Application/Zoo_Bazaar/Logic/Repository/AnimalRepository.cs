@@ -85,9 +85,9 @@ namespace LogicCL.Repository
             return false;
         }
 
-        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int species, int type, int sick, string deathdate)
+        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int type, int sick, string deathdate)
         {
-            if (animalDataTraffic.UpdateAnimal(id, name, dob, birthPlace, fatherId, motherId, location, diet, species, type, sick, deathdate)) { refreshAnimalData(); return true; } else { return false; }
+            if (animalDataTraffic.UpdateAnimal(id, name, dob, birthPlace, fatherId, motherId, location, diet, type, sick, deathdate)) { refreshAnimalData(); return true; } else { return false; }
         }
 
         public List<Location> GetLocationList()
