@@ -30,6 +30,7 @@ namespace Desktop_app.Forms
             PopulateLocationCombobox();
             PopulateSpeciesCombobox();
             PopulateTypesCombobox();
+            PopulateDietCombobox();
             this.Size = new Size(1521, 910);
         }
 
@@ -64,34 +65,33 @@ namespace Desktop_app.Forms
                 MessageBox.Show("Success");
                 this.DialogResult = DialogResult.OK;
             }
-        }
 
-        //    AnimalDTO dto = new AnimalDTO(
-        //    0,
-        //    TB_NameAdd.Text,
-        //    DT_BirthDateAdd.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"),
-        //    TB_BirthPlace.Text,
-        //    Convert.ToInt32(CB_FatherAdd.Text),
-        //    Convert.ToInt32(CB_MotherAdd.Text),
-        //    CB_LocationAdd.Text,
-        //    CB_DietAdd.Text,
-        //    CB_SpeciesBoxAdd.Text,
-        //    CB_TypeBoxAdd.Text,
-        //    sick,
-        //    null,
-        //    DT_DeathAdd.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"),
-        //    null
-        //    ); ;
-        //    //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
-        //    if (AnimalManagement.RegisterNewAnimal(dto))
-        //    {
-        //        MessageBox.Show("Successful");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Unsuccessful");
-        //    }
-        //}
+            AnimalDTO dto = new AnimalDTO(
+            0,
+            TB_NameAdd.Text,
+            DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
+            TB_BirthPlace.Text,
+            Convert.ToInt32(CB_FatherAdd.Text),
+            Convert.ToInt32(CB_MotherAdd.Text),
+            CB_LocationAdd.SelectedIndex.ToString(),
+            CB_DietAdd.SelectedIndex.ToString(),
+            CB_SpeciesBoxAdd.SelectedIndex.ToString(),
+            CB_TypeBoxAdd.SelectedIndex.ToString(),
+            sick,
+            null,
+            DT_DeathAdd.Value.ToString("yyyy-MM-dd"),
+            null
+            ); ;
+            //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
+            if (AnimalManagement.RegisterNewAnimal(dto))
+            {
+                MessageBox.Show("Successful");
+            }
+            else
+            {
+                MessageBox.Show("Unsuccessful");
+            }
+        }
 
         private void PopulateLocationCombobox()
         {
@@ -147,6 +147,20 @@ namespace Desktop_app.Forms
             CB_Type1.ValueMember = "Id";
         }
 
+        private void PopulateDietCombobox()
+        {
+            List<Diet> diets = AnimalManagement.GetDietList();
+            CB_DietAdd.DataSource= null;
+            CB_DietAdd.DataSource = diets;
+            CB_DietAdd.DisplayMember = "Name";
+            CB_DietAdd.ValueMember= "Id";
+
+            CB_Diet1.Items.Clear();
+            CB_Diet1.DataSource = diets;
+            CB_Diet1.DisplayMember= "Name";
+            CB_Diet1.ValueMember = "Id";
+        }
+
         private void BTN_updateAnimal_Click(object sender, EventArgs e)
         {
             string name = TB_name1.Text;
@@ -157,13 +171,13 @@ namespace Desktop_app.Forms
             int diet = CB_Diet1.SelectedIndex;
 
             int motherId = Convert.ToInt32(CB_Mother1.SelectedIndex);
-            int fatherId = Convert.ToInt32(CB_Father1.SelectedIndex.ToString());
-            string birthplace = TB_BirthPlace.Text;
+            int fatherId = Convert.ToInt32(CB_Father1.SelectedIndex);
+            string birthplace = TB_BirthPlace1.Text;
 
 
             //Condition
             int sick = CHB_Sick.Checked ? 1 : 0;
-            string deathdate = CB_DeathDateBox.Value.ToString("yyyy-MM-dd HH:mm:ss.ffff");
+            string deathdate = CB_DeathDateBox.Value.ToString("yyyy-MM-dd");
 
             if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
             {

@@ -16,6 +16,7 @@ namespace LogicCL.Repository
         private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
         private SpeciesDataTraffic speciesDataTraffic = new SpeciesDataTraffic();
         private TypeDataTraffic typeDataTraffic = new TypeDataTraffic();
+        private DietDataTraffic dietDataTraffic = new DietDataTraffic();
         private List<Animal> animals = new List<Animal>();
 
         public List<Animal> Animals { get { return animals; } }
@@ -120,6 +121,17 @@ namespace LogicCL.Repository
                 types.Add(new Types(typedto.Id, typedto.Name, typedto.speciesId));
             }
             return types;
+        }
+
+        public List <Diet> GetDietList()
+        {
+            List<DietDTO> dietDTOs = dietDataTraffic.retrieveTypes();
+            List<Diet> diet = new List<Diet>();
+            foreach (DietDTO dietdto in dietDTOs)
+            {
+                diet.Add(new Diet(dietdto.Id, dietdto.Name));
+            }
+            return diet;
         }
 
 

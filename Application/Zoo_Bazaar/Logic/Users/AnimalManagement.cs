@@ -53,6 +53,9 @@ namespace LogicCL.Users
             return typesForSpecies;
         }
 
-
+        public List<Diet> GetDietList()
+        {
+            return Repository.GetDietList();
+        }
     }
 }
