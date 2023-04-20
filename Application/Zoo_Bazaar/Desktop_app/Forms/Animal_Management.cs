@@ -64,33 +64,34 @@ namespace Desktop_app.Forms
                 MessageBox.Show("Success");
                 this.DialogResult = DialogResult.OK;
             }
-
-            AnimalDTO dto = new AnimalDTO(
-            0,
-            TB_NameAdd.Text,
-            DT_BirthDateAdd.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"),
-            TB_BirthPlace.Text,
-            Convert.ToInt32(CB_FatherAdd.Text),
-            Convert.ToInt32(CB_MotherAdd.Text),
-            CB_LocationAdd.Text,
-            CB_DietAdd.Text,
-            CB_SpeciesBoxAdd.Text,
-            CB_TypeBoxAdd.Text,
-            sick,
-            null,
-            DT_DeathAdd.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"),
-            null
-            ); ;
-            //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
-            if (AnimalManagement.RegisterNewAnimal(dto))
-            {
-                MessageBox.Show("Successful");
-            }
-            else
-            {
-                MessageBox.Show("Unsuccessful");
-            }
         }
+
+        //    AnimalDTO dto = new AnimalDTO(
+        //    0,
+        //    TB_NameAdd.Text,
+        //    DT_BirthDateAdd.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"),
+        //    TB_BirthPlace.Text,
+        //    Convert.ToInt32(CB_FatherAdd.Text),
+        //    Convert.ToInt32(CB_MotherAdd.Text),
+        //    CB_LocationAdd.Text,
+        //    CB_DietAdd.Text,
+        //    CB_SpeciesBoxAdd.Text,
+        //    CB_TypeBoxAdd.Text,
+        //    sick,
+        //    null,
+        //    DT_DeathAdd.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"),
+        //    null
+        //    ); ;
+        //    //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
+        //    if (AnimalManagement.RegisterNewAnimal(dto))
+        //    {
+        //        MessageBox.Show("Successful");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Unsuccessful");
+        //    }
+        //}
 
         private void PopulateLocationCombobox()
         {
@@ -137,10 +138,11 @@ namespace Desktop_app.Forms
             CB_TypeBoxAdd.DataSource = types;
             CB_TypeBoxAdd.DisplayMember = "Name";
             CB_TypeBoxAdd.ValueMember = "Id";
+            
             //Populate update Location Comboboxes
             CB_Type1.Items.Clear();
-            CB_Type1.DataSource = null;
-            CB_Type1.DataSource = types;
+            //CB_Type1.DataSource = null;
+            //CB_Type1.DataSource = types;
             CB_Type1.DisplayMember = "Name";
             CB_Type1.ValueMember = "Id";
         }
@@ -215,6 +217,39 @@ namespace Desktop_app.Forms
 
 
             }
+        }
+
+        private void CB_Species1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //get animal object
+
+            
+
+            CB_Type1.Items.Clear();
+
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)CB_Species1.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                CB_Type1.Items.Add(type);
+            }
+            if (CB_Type1.Items.Count != 0)
+            {
+                //                CB_Type1.SelectedValie = animal.type;
+
+                CB_Type1.SelectedIndex = 0;
+            }else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
+        }
+
+        private void CB_Type1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

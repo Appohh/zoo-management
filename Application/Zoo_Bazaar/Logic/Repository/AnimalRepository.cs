@@ -117,7 +117,7 @@ namespace LogicCL.Repository
             List<Types> types = new List<Types>();
             foreach (TypeDTO typedto in typeDTOs)
             {
-                types.Add(new Types(typedto.Id, typedto.Name));
+                types.Add(new Types(typedto.Id, typedto.Name, typedto.speciesId));
             }
             return types;
         }

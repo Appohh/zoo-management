@@ -1,0 +1,11 @@
+20/04/2023
+-----------------------------------------------------
+Specific filter: Delete phone,
+Add Employee id, Name, Job profile
+filter for everyone
+Scheduling website.
+
+for there own schedule. and what days am I working. Also what tasks do I have to do for these days.
+
+30 days holidays. 
+tasks for the whole week.

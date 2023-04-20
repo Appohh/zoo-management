@@ -357,10 +357,11 @@
             // CB_Type1
             // 
             this.CB_Type1.FormattingEnabled = true;
-            this.CB_Type1.Location = new System.Drawing.Point(18, 366);
+            this.CB_Type1.Location = new System.Drawing.Point(18, 367);
             this.CB_Type1.Name = "CB_Type1";
             this.CB_Type1.Size = new System.Drawing.Size(342, 38);
             this.CB_Type1.TabIndex = 30;
+            this.CB_Type1.SelectedIndexChanged += new System.EventHandler(this.CB_Type1_SelectedIndexChanged);
             // 
             // CB_Species1
             // 
@@ -369,6 +370,7 @@
             this.CB_Species1.Name = "CB_Species1";
             this.CB_Species1.Size = new System.Drawing.Size(342, 38);
             this.CB_Species1.TabIndex = 29;
+            this.CB_Species1.SelectedIndexChanged += new System.EventHandler(this.CB_Species1_SelectedIndexChanged);
             // 
             // CB_Location1
             // 

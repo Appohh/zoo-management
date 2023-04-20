@@ -11,15 +11,17 @@ namespace DataCL.DTOs
         public int Id { get; set; }
 
         public string Name { get; set; }
+        public int speciesId { get; set; }
 
         public TypeDTO()
         {
 
         }
-        public TypeDTO(int id, string name)
+        public TypeDTO(int id, string name, int speciesId)
         {
             Id = id;
             Name = name;
+            this.speciesId = speciesId;
         }
     }
 }

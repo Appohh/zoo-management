@@ -11,6 +11,10 @@ namespace LogicCL.AnimalMap
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public Species()
+        {
+            
+        }
         public Species(int id, string name)
         {
             Id = id;

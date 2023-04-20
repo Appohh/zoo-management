@@ -41,5 +41,18 @@ namespace LogicCL.Users
         {
             return Repository.GetTypesList();
         }
+       
+        public List<Types> GetTypesForSpecies(int speciesId)
+        {
+            // Get all types from the database
+            List<Types> allTypes = Repository.GetTypesList();
+
+            // Filter the types to only include those for the specified species ID
+            List<Types> typesForSpecies = allTypes.Where(type => type.speciesId == speciesId).ToList();
+
+            return typesForSpecies;
+        }
+
+
     }
 }

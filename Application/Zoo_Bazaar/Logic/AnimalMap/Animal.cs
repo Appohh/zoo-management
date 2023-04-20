@@ -50,7 +50,6 @@
             Notes = notes;
             DeceasedDate = deathdate;
             ImageUrl = imageUrl;
-
         }
     }
 }

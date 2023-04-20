@@ -36,13 +36,15 @@ namespace DataCL.DTOs
         public string? Deathdate { get; set; }
 
         public string ImageUrl { get; set; }
+        public int speciesId { get; set; }
+
 
         public AnimalDTO()
         {
 
         }
 
-        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl)
+        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl, int speciesId)
         {
             Id = id;
             Name = name;
@@ -58,6 +60,7 @@ namespace DataCL.DTOs
             Notes = notes;
             Deathdate = deathdate;
             ImageUrl = imageUrl;
+            this.speciesId = speciesId;
         }
     }
 }

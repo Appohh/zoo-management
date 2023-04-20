@@ -10,11 +10,17 @@ namespace LogicCL.AnimalMap
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int speciesId { get; set; }
 
-        public Types(int id, string name)
+        public Types()
+        {
+
+        }
+        public Types(int id, string name, int speciesId)
         {
             Id = id;
             Name = name;
+            this.speciesId = speciesId;
         }
 
         public override string ToString()
