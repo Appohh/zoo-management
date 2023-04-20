@@ -1,0 +1,9 @@
+﻿body {
+}
+.schedule {
+    grid-template-areas:
+        "monday tuesday wednesday thursday friday saturday sunday"
+        "monday1 tuesday1 wednesday1 thursday1 friday1 saturday1 sunday1"
+        "monday2 tuesday2 wednesday2 thursday2 friday2 saturday2 sunday2"
+        "monday3 tuesday3 wednesday3 thursday3 friday3 saturday3 sunday3";
+}
