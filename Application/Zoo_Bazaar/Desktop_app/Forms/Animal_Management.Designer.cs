@@ -1198,8 +1198,10 @@
             this.ClientSize = new System.Drawing.Size(1882, 789);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
             this.Name = "Animal_Management";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.tab_welcome.ResumeLayout(false);
             this.tab_welcome.PerformLayout();

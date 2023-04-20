@@ -96,6 +96,8 @@ namespace Desktop_app.Forms
         {
             List<Location> location = AnimalManagement.GetLocationList();
             //Populate add Location Comboboxes
+
+
             CB_LocationAdd.Items.Clear();
             CB_LocationAdd.DataSource = null;
             CB_LocationAdd.DataSource = location;
