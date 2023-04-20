@@ -138,11 +138,13 @@ namespace Desktop_app.Forms
             CB_TypeBoxAdd.DataSource = types;
             CB_TypeBoxAdd.DisplayMember = "Name";
             CB_TypeBoxAdd.ValueMember = "Id";
-            
+
             //Populate update Location Comboboxes
             CB_Type1.Items.Clear();
-            //CB_Type1.DataSource = null;
-            //CB_Type1.DataSource = types;
+            foreach (var type in types)
+            {
+                CB_Type1.Items.Add(new { Id = type.Id, Name = type.Name });
+            }
             CB_Type1.DisplayMember = "Name";
             CB_Type1.ValueMember = "Id";
         }
@@ -166,9 +168,9 @@ namespace Desktop_app.Forms
             string name = TB_name1.Text;
             int location = Convert.ToInt32(CB_Location1.SelectedValue);
             string birthdate = DT_Birthdate.Value.ToString("yyyy-MM-dd");
-            int type = CB_Type1.SelectedIndex;
-            int species = CB_Species1.SelectedIndex;
-            int diet = CB_Diet1.SelectedIndex;
+            var selectedType = (dynamic)CB_Type1.SelectedItem;
+            int type = selectedType.Id;
+            int diet = Convert.ToInt32(CB_Diet1.SelectedValue);
 
             int motherId = Convert.ToInt32(CB_Mother1.SelectedIndex);
             int fatherId = Convert.ToInt32(CB_Father1.SelectedIndex);
@@ -177,7 +179,6 @@ namespace Desktop_app.Forms
 
             //Condition
             int sick = CHB_Sick.Checked ? 1 : 0;
-            string deathdate = CB_DeathDateBox.Value.ToString("yyyy-MM-dd");
 
             if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
             {
@@ -189,7 +190,7 @@ namespace Desktop_app.Forms
                 this.DialogResult = DialogResult.Cancel;
             }
 
-            if (AnimalManagement.Repository.updateAnimalDetails(selectedAnimalId, name, birthdate, birthplace, fatherId, motherId, location, diet, species, type, sick, deathdate))
+            if (AnimalManagement.Repository.updateAnimalDetails(selectedAnimalId, name, birthdate, birthplace, fatherId, motherId, location, diet, type, sick, "NULL"))
             {
                 MessageBox.Show("Success");
                 this.DialogResult = DialogResult.OK;
@@ -255,7 +256,7 @@ namespace Desktop_app.Forms
             }
             if (CB_Type1.Items.Count != 0)
             {
-                //                CB_Type1.SelectedValie = animal.type;
+                //CB_Type1.SelectedValie = animal.type;
 
                 CB_Type1.SelectedIndex = 0;
             }else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }

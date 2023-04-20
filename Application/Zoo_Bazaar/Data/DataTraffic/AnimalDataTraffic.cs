@@ -40,8 +40,8 @@ namespace DataCL.DataTraffic
 
         public bool addAnimal(AnimalDTO animal)
         {
-            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, speciesId, sick, notes, deathdate, type, imageUrl) "+
-            $"VALUES({animal.Name}, {animal.Birthdate}, {animal.BirthPlace}, {animal.FatherId}, {animal.MotherId}, {animal.Location}, {animal.Diet}, {animal.Species}, {animal.Sick}, {animal.Notes}, {animal.Deathdate}, {animal.Type}, {animal.ImageUrl})";
+            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, sick, notes, deathdate, type, imageUrl) "+
+            $"VALUES({animal.Name}, {animal.Birthdate}, {animal.BirthPlace}, {animal.FatherId}, {animal.MotherId}, {animal.Location}, {animal.Diet}, {animal.Sick}, {animal.Notes}, {animal.Deathdate}, {animal.Type}, {animal.ImageUrl})";
             return executeQuery(query) == 0 ? false : true;
         }
 
@@ -51,9 +51,9 @@ namespace DataCL.DataTraffic
             return executeQuery(query) == 0 ? false : true;
         }
 
-        public bool UpdateAnimal(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int species, int type, int sick, string deathdate)
+        public bool UpdateAnimal(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int type, int sick, string deathdate)
         {
-            string query = $"UPDATE Animals SET name='{name}', birthdate='{dob}', birthplace='{birthPlace}', fatherId='{fatherId}', motherId='{motherId}', locationId='{location}', dietId='{diet}', speciesId='{species}', sick='{sick}', deathdate='{deathdate}', type='{type} WHERE id={id}";
+            string query = $"UPDATE Animals SET name='{name}', birthdate={dob}, birthplace='{birthPlace}', fatherId={fatherId}, motherId={motherId}, locationId={location}, dietId={diet}, sick={sick}, deathdate={deathdate}, typeId={type} WHERE id={id}";
             return executeQuery(query) == 0 ? false : true;
 
         }
