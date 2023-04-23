@@ -29,6 +29,18 @@ namespace Desktop_app.Forms
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
+            if(TB_UsernameLogin.Text.Length <= 0)
+            {
+                MessageBox.Show("Please enter Username");
+                return;
+            }
+
+            if (TB_PasswordLogin.Text.Length <= 0)
+            {
+                MessageBox.Show("Please enter Password");
+                return;
+            }
+
             User? loggedInUser = loginService.validateUserCredentials(TB_UsernameLogin.Text, TB_PasswordLogin.Text);
 
             if (loggedInUser != null)
