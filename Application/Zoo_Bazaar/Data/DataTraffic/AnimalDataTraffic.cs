@@ -40,8 +40,8 @@ namespace DataCL.DataTraffic
 
         public bool addAnimal(AnimalDTO animal)
         {
-            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, sick, notes, deathdate, type, imageUrl) "+
-            $"VALUES('{animal.Name}', '{animal.Birthdate}', '{animal.BirthPlace}', 'NULL', 'NULL', {animal.Location}, {animal.Diet}, {animal.Sick}, {animal.Notes}, '{animal.Deathdate}', {animal.Type}, '{animal.ImageUrl}')";
+            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, sick, notes, deathdate, typeId, imageUrl) "+
+            $"VALUES('{animal.Name}', '{animal.Birthdate}', '{animal.BirthPlace}', NULL, NULL, {animal.Location}, {animal.Diet}, {animal.Sick}, 'NULL', '{animal.Deathdate}', {animal.Type}, 'NULL')";
             return executeQuery(query) == 0 ? false : true;
         }
 
