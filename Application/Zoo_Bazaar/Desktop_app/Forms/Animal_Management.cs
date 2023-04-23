@@ -100,6 +100,8 @@ namespace Desktop_app.Forms
 
         private void PopulateTypesCombobox()
         {
+
+            //OverviewTab
             List<Types> types = AnimalManagement.GetTypesList();
             //Populate add Location Comboboxes
             CB_TypeBoxAdd.Items.Clear();
@@ -116,6 +118,23 @@ namespace Desktop_app.Forms
             }
             CB_Type1.DisplayMember = "Name";
             CB_Type1.ValueMember = "Id";
+
+
+
+
+
+            ////AddTab
+            //List<Types> typesAdd = AnimalManagement.GetTypesList();
+           
+
+            ////Populate update Location Comboboxes
+            //CB_TypeBoxAdd.Items.Clear();
+            //foreach (var type in typesAdd)
+            //{
+            //    CB_TypeBoxAdd.Items.Add(new { Id = type.Id, Name = type.Name });
+            //}
+            //CB_TypeBoxAdd.DisplayMember = "Name";
+            //CB_TypeBoxAdd.ValueMember = "Id";
         }
 
         private void PopulateDietCombobox()
@@ -147,7 +166,7 @@ namespace Desktop_app.Forms
 
 
             //Condition
-            int sick = CHB_Sick.Checked ? 1 : 0;
+            int sick = checkBox1.Checked ? 1 : 0;
 
             if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
             {
@@ -194,9 +213,9 @@ namespace Desktop_app.Forms
                 CB_Location1.Text = selectedAnimal.Location;
                 CB_Diet1.Text = selectedAnimal.Diet;
                 CB_Type1.Text = selectedAnimal.Type;
-
+                
                 //Condition
-                if (selectedAnimal.Sick == 0) { CHB_Sick.Checked = false; } else { CHB_Sick.Checked = true; }
+                if (selectedAnimal.Sick == 0) { checkBox1.Checked = false; } else { checkBox1.Checked = true; }
 
 
 
@@ -275,6 +294,32 @@ namespace Desktop_app.Forms
         private void CB_LocationAdd_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CB_SpeciesBoxAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            CB_TypeBoxAdd.Items.Clear();
+
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)CB_SpeciesBoxAdd.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                CB_TypeBoxAdd.Items.Add(type);
+            }
+            if (CB_TypeBoxAdd.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                CB_TypeBoxAdd.SelectedIndex = 0;
+            }
+            else { CB_TypeBoxAdd.SelectedIndex = -1; CB_TypeBoxAdd.Text = ""; }
         }
     }
 }

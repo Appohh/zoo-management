@@ -464,12 +464,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(27, 100);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.checkBox1.Location = new System.Drawing.Point(27, 92);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(162, 34);
-            this.checkBox1.TabIndex = 68;
-            this.checkBox1.Text = "Animal is sick";
+            this.checkBox1.Size = new System.Drawing.Size(165, 34);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "Animal is Sick";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label27
@@ -842,6 +841,7 @@
             this.CB_SpeciesBoxAdd.Name = "CB_SpeciesBoxAdd";
             this.CB_SpeciesBoxAdd.Size = new System.Drawing.Size(289, 28);
             this.CB_SpeciesBoxAdd.TabIndex = 32;
+            this.CB_SpeciesBoxAdd.SelectedIndexChanged += new System.EventHandler(this.CB_SpeciesBoxAdd_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -1303,7 +1303,6 @@
         private TextBox TB_name1;
         private Label label24;
         private GroupBox groupBox8;
-        private CheckBox checkBox1;
         private Label label27;
         private ColumnHeader Spiece;
         private Button BTN_updateAnimal;
@@ -1314,5 +1313,6 @@
         private ComboBox CB_Species1;
         private ComboBox CB_Location1;
         private DateTimePicker DT_Birthdate;
+        private CheckBox checkBox1;
     }
 }
