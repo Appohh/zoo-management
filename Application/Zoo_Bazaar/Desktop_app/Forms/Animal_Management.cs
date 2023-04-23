@@ -59,38 +59,7 @@ namespace Desktop_app.Forms
 
         private void Btn_AddAnimal_Click(object sender, EventArgs e)
         {
-            int sick = CHB_Sick.Checked ? 1 : 0;
-            if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
-            {
-                MessageBox.Show("Success");
-                this.DialogResult = DialogResult.OK;
-            }
-
-            AnimalDTO dto = new AnimalDTO(
-            0,
-            TB_NameAdd.Text,
-            DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
-            TB_BirthPlace.Text,
-            Convert.ToInt32(CB_FatherAdd.Text),
-            Convert.ToInt32(CB_MotherAdd.Text),
-            CB_LocationAdd.SelectedIndex.ToString(),
-            CB_DietAdd.SelectedIndex.ToString(),
-            CB_SpeciesBoxAdd.SelectedIndex.ToString(),
-            CB_TypeBoxAdd.SelectedIndex.ToString(),
-            sick,
-            null,
-            DT_DeathAdd.Value.ToString("yyyy-MM-dd"),
-            null
-            ); ;
-            //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
-            if (AnimalManagement.RegisterNewAnimal(dto))
-            {
-                MessageBox.Show("Successful");
-            }
-            else
-            {
-                MessageBox.Show("Unsuccessful");
-            }
+           
         }
 
         private void PopulateLocationCombobox()
@@ -265,6 +234,47 @@ namespace Desktop_app.Forms
         private void CB_Type1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void Btn_AddAnimal_Click_1(object sender, EventArgs e)
+        {
+            int sick = CHB_Sick.Checked ? 1 : 0;
+            if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
+            {
+                MessageBox.Show("Success");
+                this.DialogResult = DialogResult.OK;
+            }
+
+            AnimalDTO dto = new AnimalDTO(
+            0,
+            TB_NameAdd.Text,
+            DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
+            TB_BirthPlace.Text,
+            null,
+            null,
+            CB_LocationAdd.SelectedValue.ToString(),
+            CB_DietAdd.SelectedValue.ToString(),
+            CB_SpeciesBoxAdd.SelectedValue.ToString(),
+            CB_TypeBoxAdd.SelectedValue.ToString(),
+            sick,
+            null,
+            DT_DeathAdd.Value.ToString("yyyy-MM-dd"),
+            null
+            ); ;
+            //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
+            if (AnimalManagement.RegisterNewAnimal(dto))
+            {
+                MessageBox.Show("Successful");
+            }
+            else
+            {
+                MessageBox.Show("Unsuccessful");
+            }
+        }
+
+        private void CB_LocationAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

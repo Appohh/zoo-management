@@ -575,6 +575,7 @@
             this.Btn_AddAnimal.TabIndex = 84;
             this.Btn_AddAnimal.Text = "Add Animal";
             this.Btn_AddAnimal.UseVisualStyleBackColor = false;
+            this.Btn_AddAnimal.Click += new System.EventHandler(this.Btn_AddAnimal_Click_1);
             // 
             // groupBox5
             // 
@@ -746,12 +747,6 @@
             this.CB_LocationAdd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CB_LocationAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_LocationAdd.FormattingEnabled = true;
-            this.CB_LocationAdd.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.CB_LocationAdd.Location = new System.Drawing.Point(17, 136);
             this.CB_LocationAdd.Name = "CB_LocationAdd";
             this.CB_LocationAdd.Size = new System.Drawing.Size(289, 28);
@@ -801,12 +796,6 @@
             this.CB_TypeBoxAdd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CB_TypeBoxAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_TypeBoxAdd.FormattingEnabled = true;
-            this.CB_TypeBoxAdd.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.CB_TypeBoxAdd.Location = new System.Drawing.Point(16, 267);
             this.CB_TypeBoxAdd.Name = "CB_TypeBoxAdd";
             this.CB_TypeBoxAdd.Size = new System.Drawing.Size(289, 28);
@@ -849,11 +838,6 @@
             this.CB_SpeciesBoxAdd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CB_SpeciesBoxAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_SpeciesBoxAdd.FormattingEnabled = true;
-            this.CB_SpeciesBoxAdd.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.CB_SpeciesBoxAdd.Location = new System.Drawing.Point(16, 337);
             this.CB_SpeciesBoxAdd.Name = "CB_SpeciesBoxAdd";
             this.CB_SpeciesBoxAdd.Size = new System.Drawing.Size(289, 28);
