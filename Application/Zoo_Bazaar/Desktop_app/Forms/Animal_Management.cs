@@ -101,14 +101,22 @@ namespace Desktop_app.Forms
         private void PopulateTypesCombobox()
         {
 
-            //OverviewTab
+           
             List<Types> types = AnimalManagement.GetTypesList();
             //Populate add Location Comboboxes
+
             CB_TypeBoxAdd.Items.Clear();
-            CB_TypeBoxAdd.DataSource = null;
-            CB_TypeBoxAdd.DataSource = types;
+            foreach (var type in types)
+            {
+                CB_TypeBoxAdd.Items.Add(new { Id = type.Id, Name = type.Name });
+            }
             CB_TypeBoxAdd.DisplayMember = "Name";
             CB_TypeBoxAdd.ValueMember = "Id";
+            //CB_TypeBoxAdd.Items.Clear();
+            //CB_TypeBoxAdd.DataSource = null;
+            //CB_TypeBoxAdd.DataSource = types;
+            //CB_TypeBoxAdd.DisplayMember = "Name";
+            //CB_TypeBoxAdd.ValueMember = "Id";
 
             //Populate update Location Comboboxes
             CB_Type1.Items.Clear();
@@ -119,22 +127,6 @@ namespace Desktop_app.Forms
             CB_Type1.DisplayMember = "Name";
             CB_Type1.ValueMember = "Id";
 
-
-
-
-
-            ////AddTab
-            //List<Types> typesAdd = AnimalManagement.GetTypesList();
-           
-
-            ////Populate update Location Comboboxes
-            //CB_TypeBoxAdd.Items.Clear();
-            //foreach (var type in typesAdd)
-            //{
-            //    CB_TypeBoxAdd.Items.Add(new { Id = type.Id, Name = type.Name });
-            //}
-            //CB_TypeBoxAdd.DisplayMember = "Name";
-            //CB_TypeBoxAdd.ValueMember = "Id";
         }
 
         private void PopulateDietCombobox()
@@ -291,10 +283,7 @@ namespace Desktop_app.Forms
             }
         }
 
-        private void CB_LocationAdd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void CB_SpeciesBoxAdd_SelectedIndexChanged(object sender, EventArgs e)
         {
