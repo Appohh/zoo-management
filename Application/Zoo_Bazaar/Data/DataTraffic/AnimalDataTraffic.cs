@@ -53,7 +53,7 @@ namespace DataCL.DataTraffic
 
         public bool UpdateAnimal(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int type, int sick, string deathdate)
         {
-            string query = $"UPDATE Animals SET name='{name}', birthdate={dob}, birthplace='{birthPlace}', fatherId={fatherId}, motherId={motherId}, locationId={location}, dietId={diet}, sick={sick}, deathdate={deathdate}, typeId={type} WHERE id={id}";
+            string query = $"UPDATE Animals SET name='{name}', birthdate='{dob}', birthplace='{birthPlace}', fatherId={fatherId}, motherId={motherId}, locationId={location}, dietId={diet}, sick={sick}, deathdate={deathdate}, typeId={type} WHERE id={id}";
             return executeQuery(query) == 0 ? false : true;
 
         }
