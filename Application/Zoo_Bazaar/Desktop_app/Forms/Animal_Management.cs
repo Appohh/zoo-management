@@ -238,7 +238,7 @@ namespace Desktop_app.Forms
 
         private void Btn_AddAnimal_Click_1(object sender, EventArgs e)
         {
-            int sick = CHB_Sick.Checked ? 1 : 0;
+            int sick = CHB_SickAdd.Checked ? 1 : 0;
             if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
             {
                 MessageBox.Show("Success");
@@ -249,7 +249,7 @@ namespace Desktop_app.Forms
             0,
             TB_NameAdd.Text,
             DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
-            TB_BirthPlace.Text,
+            TB_BirthPlaceAdd.Text,
             null,
             null,
             CB_LocationAdd.SelectedValue.ToString(),
