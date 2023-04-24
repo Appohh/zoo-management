@@ -18,11 +18,10 @@ namespace Desktop_app
     {
         //String stdDetails = "{0,-15}{1,-20}{2,-20}{3,-20}{4,-20}{5,-20}{6,-20}";
         private Zookeeper zookeeper;
-
         private int selectedAnimalId;
-
         public Care_Taker(User loggedInUser)
         {
+            
             zookeeper = (Zookeeper)loggedInUser;
             zookeeper.MakeActive();
             InitializeComponent();
@@ -41,26 +40,34 @@ namespace Desktop_app
             }
         }
 
-        public void FilterAnimal(string location, string name, string species, string type)
+        public void FilterAnimal(string search)
         {
             lv_Animals.Items.Clear();
             foreach (Animal animal in zookeeper.Repository.GetAnimalList().OfType<Animal>().Where(animal => !
-                                                                                                    animal.Location.ToLower().Contains(location.ToLower()) && (animal.Name).ToLower().Contains(name.ToLower()) ||
-                                                                                                    animal.Species.ToLower().Contains(species.ToLower()) ||
-                                                                                                    animal.Location.ToLower().Contains(location.ToLower()) ||
-                                                                                                    animal.Type.ToLower().Contains(type.ToLower())).ToList())
+                                                                                                    animal.Location.ToLower().Contains(search.ToLower()) &&
+                                                                                                    (animal.Name).ToLower().Contains(search.ToLower()) ||
+                                                                                                    animal.Species.ToLower().Contains(search.ToLower()) ||
+                                                                                                    animal.Location.ToLower().Contains(search.ToLower()) 
+                                                                                                    || animal.Type.ToLower().Contains(search.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(animal.Birthdate).ToString("dd-MMMM-yyyy");
-                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Location, animal.Species });
+                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Location,animal.Species });
                 animalInfo.Tag = animal.Id.ToString();
                 lv_Animals.Items.Add(animalInfo);
             }
         }
 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+
             refreshAnimalList();
         }
+
+        
+
+     
 
         private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -68,7 +75,9 @@ namespace Desktop_app
             {
                 List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
 
-                Animal selectedAnimal = animalList.Find(animal => animal.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+                Animal selectedAnimal = animalList.Find(animal =>animal.Id  == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+
+               
 
                 //Animal
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
@@ -76,7 +85,7 @@ namespace Desktop_app
                 TB_BirthDate.Text = DateTime.Parse(selectedAnimal.Birthdate).ToString();
                 TB_Father.Text = selectedAnimal.FatherId.ToString();
                 TB_Mother.Text = selectedAnimal.Mother.ToString();
-                TB_BirthPlace.Text = selectedAnimal.BirthPlace;
+                TB_BirthPlace.Text =selectedAnimal.BirthPlace;
 
                 //Category
                 TB_Species.Text = selectedAnimal.Species;
@@ -87,6 +96,8 @@ namespace Desktop_app
                 //Condition
                 if (selectedAnimal.Sick == 0) { CHB_Sick.Checked = false; } else { CHB_Sick.Checked = true; }
                 TB_Notes.Text = selectedAnimal.Notes;
+               
+                
             }
         }
 
@@ -97,22 +108,28 @@ namespace Desktop_app
 
         private void btn_ViewDetails_Click(object sender, EventArgs e)
         {
+
         }
 
         private void Overview_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btn_search_Animal_Click(object sender, EventArgs e)
         {
-            //FilterAnimal();
+            FilterAnimal(txt_search.Text);
         }
 
         private void btn_ViewDetails_Click_1(object sender, EventArgs e)
         {
+
+
             //Condition
             int Sick = CHB_Sick.Checked ? 1 : 0;
             string Notes = TB_Notes.Text;
+
+
 
             if (zookeeper.Repository.ChangeAnimalSickAndNote(selectedAnimalId, Sick, Notes))
             {
@@ -128,17 +145,7 @@ namespace Desktop_app
 
         private void Care_Taker_Load(object sender, EventArgs e)
         {
-        }
 
-        private void searchBT_Click(object sender, EventArgs e)
-        {
-            //variables
-            var name = nameSearchTB.Text;
-            var location = locationSearchTB.Text;
-            var species = speciesSearchTB.Text;
-            var type = typeSearchTB.Text;
-
-            FilterAnimal(name, location, species, type);
         }
     }
 }

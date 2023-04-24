@@ -15,7 +15,6 @@ using System.Windows.Forms;
 using DataCL.DTOs;
 using LogicCL;
 using LogicCL.AnimalMap;
-using System.Xml.Linq;
 
 namespace Desktop_app.Forms
 {
@@ -23,7 +22,6 @@ namespace Desktop_app.Forms
     {
         private AnimalManagement AnimalManagement;
         private int selectedAnimalId;
-
         public Animal_Management(User loggedInUser)
         {
             AnimalManagement = (AnimalManagement)loggedInUser;
@@ -47,14 +45,10 @@ namespace Desktop_app.Forms
             }
         }
 
-        public void FilterAnimal(string location, string name, string species, string type)
+        public void FilterAnimal(string search)
         {
             lv_Animals.Items.Clear();
-            foreach (Animal animal in AnimalManagement.Repository.GetAnimalList().OfType<Animal>().Where(animal => !
-                                                                                                    animal.Location.ToLower().Contains(location.ToLower()) && (animal.Name).ToLower().Contains(name.ToLower()) ||
-                                                                                                    animal.Species.ToLower().Contains(species.ToLower()) ||
-                                                                                                    animal.Location.ToLower().Contains(location.ToLower()) ||
-                                                                                                    animal.Type.ToLower().Contains(type.ToLower())).ToList())
+            foreach (Animal animal in AnimalManagement.Repository.GetAnimalList().OfType<Animal>().Where(animal => !animal.Species.ToLower().Contains(search) && (animal.Name).ToLower().Contains(search.ToLower()) || animal.Type.ToLower().Contains(search.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(animal.Birthdate).ToString("dd-MMMM-yyyy");
                 ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location });
@@ -65,12 +59,14 @@ namespace Desktop_app.Forms
 
         private void Btn_AddAnimal_Click(object sender, EventArgs e)
         {
+           
         }
 
         private void PopulateLocationCombobox()
         {
             List<Location> location = AnimalManagement.GetLocationList();
             //Populate add Location Comboboxes
+
 
             CB_LocationAdd.Items.Clear();
             CB_LocationAdd.DataSource = null;
@@ -104,6 +100,8 @@ namespace Desktop_app.Forms
 
         private void PopulateTypesCombobox()
         {
+
+           
             List<Types> types = AnimalManagement.GetTypesList();
             //Populate add Location Comboboxes
 
@@ -128,19 +126,20 @@ namespace Desktop_app.Forms
             }
             CB_Type1.DisplayMember = "Name";
             CB_Type1.ValueMember = "Id";
+
         }
 
         private void PopulateDietCombobox()
         {
             List<Diet> diets = AnimalManagement.GetDietList();
-            CB_DietAdd.DataSource = null;
+            CB_DietAdd.DataSource= null;
             CB_DietAdd.DataSource = diets;
             CB_DietAdd.DisplayMember = "Name";
-            CB_DietAdd.ValueMember = "Id";
+            CB_DietAdd.ValueMember= "Id";
 
             CB_Diet1.Items.Clear();
             CB_Diet1.DataSource = diets;
-            CB_Diet1.DisplayMember = "Name";
+            CB_Diet1.DisplayMember= "Name";
             CB_Diet1.ValueMember = "Id";
         }
 
@@ -156,6 +155,7 @@ namespace Desktop_app.Forms
             int motherId = Convert.ToInt32(CB_Mother1.SelectedIndex);
             int fatherId = Convert.ToInt32(CB_Father1.SelectedIndex);
             string birthplace = TB_BirthPlace1.Text;
+
 
             //Condition
             int sick = checkBox1.Checked ? 1 : 0;
@@ -179,13 +179,7 @@ namespace Desktop_app.Forms
 
         private void btn_search_Animal_Click_1(object sender, EventArgs e)
         {
-            //variables
-            var name = nameSearchTB.Text;
-            var location = locationSearchTB.Text;
-            var species = speciesSearchTB.Text;
-            var type = typeSearchTB.Text;
-
-            FilterAnimal(name, location, species, type);
+            FilterAnimal(TB_SearchAnimal.Text);
         }
 
         private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -195,6 +189,8 @@ namespace Desktop_app.Forms
                 List<Animal> animalList = AnimalManagement.Repository.GetAnimalList().OfType<Animal>().ToList();
 
                 Animal selectedAnimal = animalList.Find(animal => animal.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+
+
 
                 //Animal
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
@@ -209,9 +205,12 @@ namespace Desktop_app.Forms
                 CB_Location1.Text = selectedAnimal.Location;
                 CB_Diet1.Text = selectedAnimal.Diet;
                 CB_Type1.Text = selectedAnimal.Type;
-
+                
                 //Condition
                 if (selectedAnimal.Sick == 0) { checkBox1.Checked = false; } else { checkBox1.Checked = true; }
+
+
+
             }
         }
 
@@ -219,7 +218,10 @@ namespace Desktop_app.Forms
         {
             //get animal object
 
+            
+
             CB_Type1.Items.Clear();
+
 
             // Get the selected species ID from the Species combobox
             int selectedSpeciesId = ((Species)CB_Species1.SelectedItem).Id;
@@ -237,12 +239,12 @@ namespace Desktop_app.Forms
                 //CB_Type1.SelectedValie = animal.type;
 
                 CB_Type1.SelectedIndex = 0;
-            }
-            else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
+            }else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
         }
 
         private void CB_Type1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
         }
 
         private void Btn_AddAnimal_Click_1(object sender, EventArgs e)
@@ -281,9 +283,13 @@ namespace Desktop_app.Forms
             }
         }
 
+        
+
         private void CB_SpeciesBoxAdd_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             CB_TypeBoxAdd.Items.Clear();
+
 
             // Get the selected species ID from the Species combobox
             int selectedSpeciesId = ((Species)CB_SpeciesBoxAdd.SelectedItem).Id;
