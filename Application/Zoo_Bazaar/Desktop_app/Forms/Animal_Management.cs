@@ -361,5 +361,10 @@ namespace Desktop_app.Forms
                 typeCB.Text = "";
             }
         }
+
+        private void Gb_Details_employee_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

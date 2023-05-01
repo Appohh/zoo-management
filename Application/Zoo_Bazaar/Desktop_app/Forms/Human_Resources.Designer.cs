@@ -366,60 +366,60 @@
             // 
             this.SpouseBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SpouseBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpouseBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SpouseBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SpouseBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SpouseBoxAddEmployee.Location = new System.Drawing.Point(447, 281);
             this.SpouseBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
-            this.SpouseBoxAddEmployee.Size = new System.Drawing.Size(323, 30);
+            this.SpouseBoxAddEmployee.Size = new System.Drawing.Size(323, 34);
             this.SpouseBoxAddEmployee.TabIndex = 27;
             // 
             // PhoneNumberBoxAddEmployee
             // 
             this.PhoneNumberBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PhoneNumberBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PhoneNumberBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PhoneNumberBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PhoneNumberBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.PhoneNumberBoxAddEmployee.Location = new System.Drawing.Point(33, 88);
             this.PhoneNumberBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.PhoneNumberBoxAddEmployee.Name = "PhoneNumberBoxAddEmployee";
-            this.PhoneNumberBoxAddEmployee.Size = new System.Drawing.Size(339, 30);
+            this.PhoneNumberBoxAddEmployee.Size = new System.Drawing.Size(339, 34);
             this.PhoneNumberBoxAddEmployee.TabIndex = 24;
             // 
             // EmergencyContactBoxAddEmployee
             // 
             this.EmergencyContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.EmergencyContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmergencyContactBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmergencyContactBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmergencyContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.EmergencyContactBoxAddEmployee.Location = new System.Drawing.Point(447, 197);
             this.EmergencyContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EmergencyContactBoxAddEmployee.Name = "EmergencyContactBoxAddEmployee";
-            this.EmergencyContactBoxAddEmployee.Size = new System.Drawing.Size(323, 30);
+            this.EmergencyContactBoxAddEmployee.Size = new System.Drawing.Size(323, 34);
             this.EmergencyContactBoxAddEmployee.TabIndex = 25;
             // 
             // SpouseContactBoxAddEmployee
             // 
             this.SpouseContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SpouseContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpouseContactBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SpouseContactBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SpouseContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SpouseContactBoxAddEmployee.Location = new System.Drawing.Point(32, 282);
             this.SpouseContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
-            this.SpouseContactBoxAddEmployee.Size = new System.Drawing.Size(339, 30);
+            this.SpouseContactBoxAddEmployee.Size = new System.Drawing.Size(339, 34);
             this.SpouseContactBoxAddEmployee.TabIndex = 28;
             // 
             // EmergencyContactNameBoxAddEmployee
             // 
             this.EmergencyContactNameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.EmergencyContactNameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmergencyContactNameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmergencyContactNameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmergencyContactNameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.EmergencyContactNameBoxAddEmployee.Location = new System.Drawing.Point(33, 197);
             this.EmergencyContactNameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EmergencyContactNameBoxAddEmployee.Name = "EmergencyContactNameBoxAddEmployee";
-            this.EmergencyContactNameBoxAddEmployee.Size = new System.Drawing.Size(339, 30);
+            this.EmergencyContactNameBoxAddEmployee.Size = new System.Drawing.Size(339, 34);
             this.EmergencyContactNameBoxAddEmployee.TabIndex = 37;
             // 
             // Gp_Detail_Employees
@@ -506,60 +506,60 @@
             this.BirthDateBoxAddEmployee.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BirthDateBoxAddEmployee.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.BirthDateBoxAddEmployee.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BirthDateBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BirthDateBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BirthDateBoxAddEmployee.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthDateBoxAddEmployee.Location = new System.Drawing.Point(31, 142);
             this.BirthDateBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.BirthDateBoxAddEmployee.Name = "BirthDateBoxAddEmployee";
-            this.BirthDateBoxAddEmployee.Size = new System.Drawing.Size(340, 30);
+            this.BirthDateBoxAddEmployee.Size = new System.Drawing.Size(340, 34);
             this.BirthDateBoxAddEmployee.TabIndex = 68;
             // 
             // SurnameBoxAddEmployee
             // 
             this.SurnameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SurnameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SurnameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SurnameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SurnameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SurnameBoxAddEmployee.Location = new System.Drawing.Point(446, 57);
             this.SurnameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SurnameBoxAddEmployee.Name = "SurnameBoxAddEmployee";
-            this.SurnameBoxAddEmployee.Size = new System.Drawing.Size(323, 30);
+            this.SurnameBoxAddEmployee.Size = new System.Drawing.Size(323, 34);
             this.SurnameBoxAddEmployee.TabIndex = 35;
             // 
             // AdressBoxAddEmployee
             // 
             this.AdressBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.AdressBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AdressBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AdressBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AdressBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.AdressBoxAddEmployee.Location = new System.Drawing.Point(31, 235);
             this.AdressBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.AdressBoxAddEmployee.Name = "AdressBoxAddEmployee";
-            this.AdressBoxAddEmployee.Size = new System.Drawing.Size(738, 30);
+            this.AdressBoxAddEmployee.Size = new System.Drawing.Size(738, 34);
             this.AdressBoxAddEmployee.TabIndex = 22;
             // 
             // NameBoxAddEmployee
             // 
             this.NameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.NameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.NameBoxAddEmployee.Location = new System.Drawing.Point(32, 57);
             this.NameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.NameBoxAddEmployee.Name = "NameBoxAddEmployee";
-            this.NameBoxAddEmployee.Size = new System.Drawing.Size(339, 30);
+            this.NameBoxAddEmployee.Size = new System.Drawing.Size(339, 34);
             this.NameBoxAddEmployee.TabIndex = 18;
             // 
             // EmailBoxAddEmployee
             // 
             this.EmailBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.EmailBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmailBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmailBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.EmailBoxAddEmployee.Location = new System.Drawing.Point(446, 142);
             this.EmailBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EmailBoxAddEmployee.Name = "EmailBoxAddEmployee";
-            this.EmailBoxAddEmployee.Size = new System.Drawing.Size(323, 30);
+            this.EmailBoxAddEmployee.Size = new System.Drawing.Size(323, 34);
             this.EmailBoxAddEmployee.TabIndex = 20;
             // 
             // Gb_Details_employee
@@ -644,61 +644,61 @@
             // cbJob
             // 
             this.cbJob.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbJob.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbJob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbJob.ForeColor = System.Drawing.Color.Black;
             this.cbJob.FormattingEnabled = true;
             this.cbJob.Location = new System.Drawing.Point(18, 341);
             this.cbJob.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.cbJob.Name = "cbJob";
-            this.cbJob.Size = new System.Drawing.Size(289, 31);
+            this.cbJob.Size = new System.Drawing.Size(289, 36);
             this.cbJob.TabIndex = 33;
             // 
             // UsernameBoxAddEmployee
             // 
             this.UsernameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.UsernameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UsernameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UsernameBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UsernameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.UsernameBoxAddEmployee.Location = new System.Drawing.Point(20, 88);
             this.UsernameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.UsernameBoxAddEmployee.Name = "UsernameBoxAddEmployee";
-            this.UsernameBoxAddEmployee.Size = new System.Drawing.Size(289, 30);
+            this.UsernameBoxAddEmployee.Size = new System.Drawing.Size(289, 34);
             this.UsernameBoxAddEmployee.TabIndex = 19;
             // 
             // PasswordBoxAddEmployee
             // 
             this.PasswordBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PasswordBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PasswordBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PasswordBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PasswordBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.PasswordBoxAddEmployee.Location = new System.Drawing.Point(22, 175);
             this.PasswordBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.PasswordBoxAddEmployee.Name = "PasswordBoxAddEmployee";
-            this.PasswordBoxAddEmployee.Size = new System.Drawing.Size(289, 30);
+            this.PasswordBoxAddEmployee.Size = new System.Drawing.Size(289, 34);
             this.PasswordBoxAddEmployee.TabIndex = 21;
             // 
             // ContractBoxAddEmployee
             // 
             this.ContractBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ContractBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ContractBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ContractBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.ContractBoxAddEmployee.FormattingEnabled = true;
             this.ContractBoxAddEmployee.Location = new System.Drawing.Point(16, 429);
             this.ContractBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.ContractBoxAddEmployee.Name = "ContractBoxAddEmployee";
-            this.ContractBoxAddEmployee.Size = new System.Drawing.Size(289, 31);
+            this.ContractBoxAddEmployee.Size = new System.Drawing.Size(289, 36);
             this.ContractBoxAddEmployee.TabIndex = 32;
             // 
             // BSNBoxAddEmployee
             // 
             this.BSNBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BSNBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BSNBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BSNBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BSNBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.BSNBoxAddEmployee.Location = new System.Drawing.Point(18, 259);
             this.BSNBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.BSNBoxAddEmployee.Name = "BSNBoxAddEmployee";
-            this.BSNBoxAddEmployee.Size = new System.Drawing.Size(289, 30);
+            this.BSNBoxAddEmployee.Size = new System.Drawing.Size(289, 34);
             this.BSNBoxAddEmployee.TabIndex = 26;
             // 
             // PictureBoxAddEmployee
@@ -956,18 +956,18 @@
             // 
             // TB_Emregency
             // 
-            this.TB_Emregency.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Emregency.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Emregency.Location = new System.Drawing.Point(21, 236);
             this.TB_Emregency.Name = "TB_Emregency";
-            this.TB_Emregency.Size = new System.Drawing.Size(275, 30);
+            this.TB_Emregency.Size = new System.Drawing.Size(275, 34);
             this.TB_Emregency.TabIndex = 45;
             // 
             // TB_SpouseContact
             // 
-            this.TB_SpouseContact.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_SpouseContact.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_SpouseContact.Location = new System.Drawing.Point(21, 466);
             this.TB_SpouseContact.Name = "TB_SpouseContact";
-            this.TB_SpouseContact.Size = new System.Drawing.Size(271, 30);
+            this.TB_SpouseContact.Size = new System.Drawing.Size(271, 34);
             this.TB_SpouseContact.TabIndex = 44;
             // 
             // label28
@@ -990,10 +990,10 @@
             // 
             // TB_Spouse
             // 
-            this.TB_Spouse.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Spouse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Spouse.Location = new System.Drawing.Point(21, 385);
             this.TB_Spouse.Name = "TB_Spouse";
-            this.TB_Spouse.Size = new System.Drawing.Size(271, 30);
+            this.TB_Spouse.Size = new System.Drawing.Size(271, 34);
             this.TB_Spouse.TabIndex = 41;
             // 
             // label26
@@ -1007,24 +1007,24 @@
             // 
             // TB_Emergencycontact
             // 
-            this.TB_Emergencycontact.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Emergencycontact.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Emergencycontact.Location = new System.Drawing.Point(21, 312);
             this.TB_Emergencycontact.Name = "TB_Emergencycontact";
-            this.TB_Emergencycontact.Size = new System.Drawing.Size(275, 30);
+            this.TB_Emergencycontact.Size = new System.Drawing.Size(275, 34);
             this.TB_Emergencycontact.TabIndex = 39;
             // 
             // TB_ContactName
             // 
-            this.TB_ContactName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TB_ContactName.Location = new System.Drawing.Point(21, 172);
+            this.TB_ContactName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_ContactName.Location = new System.Drawing.Point(21, 158);
             this.TB_ContactName.Name = "TB_ContactName";
-            this.TB_ContactName.Size = new System.Drawing.Size(271, 30);
+            this.TB_ContactName.Size = new System.Drawing.Size(271, 34);
             this.TB_ContactName.TabIndex = 38;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(21, 141);
+            this.label25.Location = new System.Drawing.Point(17, 127);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(141, 28);
             this.label25.TabIndex = 37;
@@ -1033,7 +1033,7 @@
             // lbl_Phonenumber
             // 
             this.lbl_Phonenumber.AutoSize = true;
-            this.lbl_Phonenumber.Location = new System.Drawing.Point(17, 67);
+            this.lbl_Phonenumber.Location = new System.Drawing.Point(17, 47);
             this.lbl_Phonenumber.Name = "lbl_Phonenumber";
             this.lbl_Phonenumber.Size = new System.Drawing.Size(152, 28);
             this.lbl_Phonenumber.TabIndex = 36;
@@ -1041,10 +1041,10 @@
             // 
             // TB_Phone
             // 
-            this.TB_Phone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TB_Phone.Location = new System.Drawing.Point(17, 92);
+            this.TB_Phone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Phone.Location = new System.Drawing.Point(17, 78);
             this.TB_Phone.Name = "TB_Phone";
-            this.TB_Phone.Size = new System.Drawing.Size(275, 30);
+            this.TB_Phone.Size = new System.Drawing.Size(275, 34);
             this.TB_Phone.TabIndex = 35;
             // 
             // groupBox2
@@ -1072,10 +1072,10 @@
             // 
             // TB_Password
             // 
-            this.TB_Password.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Password.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Password.Location = new System.Drawing.Point(21, 136);
             this.TB_Password.Name = "TB_Password";
-            this.TB_Password.Size = new System.Drawing.Size(435, 30);
+            this.TB_Password.Size = new System.Drawing.Size(435, 34);
             this.TB_Password.TabIndex = 76;
             // 
             // label23
@@ -1089,10 +1089,10 @@
             // 
             // TB_Username
             // 
-            this.TB_Username.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Username.Location = new System.Drawing.Point(17, 68);
             this.TB_Username.Name = "TB_Username";
-            this.TB_Username.Size = new System.Drawing.Size(435, 30);
+            this.TB_Username.Size = new System.Drawing.Size(435, 34);
             this.TB_Username.TabIndex = 75;
             // 
             // groupBox1
@@ -1127,20 +1127,20 @@
             // 
             // CB_Contract
             // 
-            this.CB_Contract.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CB_Contract.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Contract.FormattingEnabled = true;
             this.CB_Contract.Location = new System.Drawing.Point(21, 501);
             this.CB_Contract.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CB_Contract.Name = "CB_Contract";
-            this.CB_Contract.Size = new System.Drawing.Size(357, 31);
+            this.CB_Contract.Size = new System.Drawing.Size(357, 36);
             this.CB_Contract.TabIndex = 31;
             // 
             // TB_City
             // 
-            this.TB_City.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_City.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_City.Location = new System.Drawing.Point(242, 144);
             this.TB_City.Name = "TB_City";
-            this.TB_City.Size = new System.Drawing.Size(212, 30);
+            this.TB_City.Size = new System.Drawing.Size(212, 34);
             this.TB_City.TabIndex = 77;
             // 
             // label30
@@ -1155,10 +1155,10 @@
             // 
             // TB_Address
             // 
-            this.TB_Address.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Address.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Address.Location = new System.Drawing.Point(16, 144);
             this.TB_Address.Name = "TB_Address";
-            this.TB_Address.Size = new System.Drawing.Size(212, 30);
+            this.TB_Address.Size = new System.Drawing.Size(212, 34);
             this.TB_Address.TabIndex = 75;
             // 
             // label29
@@ -1182,7 +1182,7 @@
             // lbl_Job
             // 
             this.lbl_Job.AutoSize = true;
-            this.lbl_Job.Location = new System.Drawing.Point(21, 390);
+            this.lbl_Job.Location = new System.Drawing.Point(21, 405);
             this.lbl_Job.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Job.Name = "lbl_Job";
             this.lbl_Job.Size = new System.Drawing.Size(44, 28);
@@ -1191,24 +1191,24 @@
             // 
             // TB_Job
             // 
-            this.TB_Job.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TB_Job.Location = new System.Drawing.Point(21, 421);
+            this.TB_Job.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Job.Location = new System.Drawing.Point(21, 436);
             this.TB_Job.Name = "TB_Job";
-            this.TB_Job.Size = new System.Drawing.Size(361, 30);
+            this.TB_Job.Size = new System.Drawing.Size(361, 34);
             this.TB_Job.TabIndex = 71;
             // 
             // TB_BSN
             // 
-            this.TB_BSN.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TB_BSN.Location = new System.Drawing.Point(17, 353);
+            this.TB_BSN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_BSN.Location = new System.Drawing.Point(18, 368);
             this.TB_BSN.Name = "TB_BSN";
-            this.TB_BSN.Size = new System.Drawing.Size(361, 30);
+            this.TB_BSN.Size = new System.Drawing.Size(361, 34);
             this.TB_BSN.TabIndex = 39;
             // 
             // lbl_BSN
             // 
             this.lbl_BSN.AutoSize = true;
-            this.lbl_BSN.Location = new System.Drawing.Point(21, 322);
+            this.lbl_BSN.Location = new System.Drawing.Point(22, 337);
             this.lbl_BSN.Name = "lbl_BSN";
             this.lbl_BSN.Size = new System.Drawing.Size(50, 28);
             this.lbl_BSN.TabIndex = 40;
@@ -1216,10 +1216,10 @@
             // 
             // TB_Lastname
             // 
-            this.TB_Lastname.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Lastname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Lastname.Location = new System.Drawing.Point(245, 68);
             this.TB_Lastname.Name = "TB_Lastname";
-            this.TB_Lastname.Size = new System.Drawing.Size(211, 30);
+            this.TB_Lastname.Size = new System.Drawing.Size(211, 34);
             this.TB_Lastname.TabIndex = 70;
             // 
             // lbl_firstname
@@ -1236,26 +1236,26 @@
             this.BirthDateBoxHR.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BirthDateBoxHR.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.BirthDateBoxHR.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BirthDateBoxHR.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BirthDateBoxHR.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BirthDateBoxHR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthDateBoxHR.Location = new System.Drawing.Point(21, 281);
+            this.BirthDateBoxHR.Location = new System.Drawing.Point(21, 299);
             this.BirthDateBoxHR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BirthDateBoxHR.Name = "BirthDateBoxHR";
-            this.BirthDateBoxHR.Size = new System.Drawing.Size(361, 30);
+            this.BirthDateBoxHR.Size = new System.Drawing.Size(361, 34);
             this.BirthDateBoxHR.TabIndex = 69;
             // 
             // TB_Firstname
             // 
-            this.TB_Firstname.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_Firstname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Firstname.Location = new System.Drawing.Point(17, 68);
             this.TB_Firstname.Name = "TB_Firstname";
-            this.TB_Firstname.Size = new System.Drawing.Size(211, 30);
+            this.TB_Firstname.Size = new System.Drawing.Size(211, 34);
             this.TB_Firstname.TabIndex = 29;
             // 
             // lbl_birthdate
             // 
             this.lbl_birthdate.AutoSize = true;
-            this.lbl_birthdate.Location = new System.Drawing.Point(21, 249);
+            this.lbl_birthdate.Location = new System.Drawing.Point(22, 267);
             this.lbl_birthdate.Name = "lbl_birthdate";
             this.lbl_birthdate.Size = new System.Drawing.Size(98, 28);
             this.lbl_birthdate.TabIndex = 38;
@@ -1272,10 +1272,10 @@
             // 
             // TB_EmailAddress
             // 
-            this.TB_EmailAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB_EmailAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_EmailAddress.Location = new System.Drawing.Point(18, 216);
             this.TB_EmailAddress.Name = "TB_EmailAddress";
-            this.TB_EmailAddress.Size = new System.Drawing.Size(437, 30);
+            this.TB_EmailAddress.Size = new System.Drawing.Size(437, 34);
             this.TB_EmailAddress.TabIndex = 33;
             // 
             // label21

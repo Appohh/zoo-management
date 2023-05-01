@@ -57,7 +57,6 @@
             this.DT_Birthdate = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.TB_name1 = new System.Windows.Forms.TextBox();
@@ -126,6 +125,8 @@
             this.btn_ViewDetails = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tab_welcome.SuspendLayout();
             this.tab_Overview.SuspendLayout();
@@ -141,6 +142,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Spiece
@@ -265,7 +267,7 @@
             // 
             // BTN_updateAnimal
             // 
-            this.BTN_updateAnimal.BackColor = System.Drawing.Color.Black;
+            this.BTN_updateAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.BTN_updateAnimal.ForeColor = System.Drawing.Color.White;
             this.BTN_updateAnimal.Location = new System.Drawing.Point(532, 528);
             this.BTN_updateAnimal.Name = "BTN_updateAnimal";
@@ -309,7 +311,7 @@
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label23);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox6.Location = new System.Drawing.Point(443, 68);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(309, 288);
@@ -319,25 +321,28 @@
             // 
             // CB_Father1
             // 
+            this.CB_Father1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Father1.FormattingEnabled = true;
             this.CB_Father1.Location = new System.Drawing.Point(21, 148);
             this.CB_Father1.Name = "CB_Father1";
-            this.CB_Father1.Size = new System.Drawing.Size(277, 38);
+            this.CB_Father1.Size = new System.Drawing.Size(277, 36);
             this.CB_Father1.TabIndex = 33;
             // 
             // CB_Mother1
             // 
+            this.CB_Mother1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Mother1.FormattingEnabled = true;
             this.CB_Mother1.Location = new System.Drawing.Point(21, 75);
             this.CB_Mother1.Name = "CB_Mother1";
-            this.CB_Mother1.Size = new System.Drawing.Size(277, 38);
+            this.CB_Mother1.Size = new System.Drawing.Size(277, 36);
             this.CB_Mother1.TabIndex = 32;
             // 
             // TB_BirthPlace1
             // 
+            this.TB_BirthPlace1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_BirthPlace1.Location = new System.Drawing.Point(21, 223);
             this.TB_BirthPlace1.Name = "TB_BirthPlace1";
-            this.TB_BirthPlace1.Size = new System.Drawing.Size(277, 36);
+            this.TB_BirthPlace1.Size = new System.Drawing.Size(277, 34);
             this.TB_BirthPlace1.TabIndex = 27;
             // 
             // label18
@@ -345,7 +350,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(21, 41);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 30);
+            this.label18.Size = new System.Drawing.Size(85, 28);
             this.label18.TabIndex = 6;
             this.label18.Text = "Mother:";
             // 
@@ -354,7 +359,7 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(21, 188);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(114, 30);
+            this.label22.Size = new System.Drawing.Size(109, 28);
             this.label22.TabIndex = 14;
             this.label22.Text = "Birth Place";
             // 
@@ -363,7 +368,7 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(21, 115);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 30);
+            this.label23.Size = new System.Drawing.Size(68, 28);
             this.label23.TabIndex = 16;
             this.label23.Text = "Father";
             // 
@@ -382,7 +387,7 @@
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.TB_name1);
             this.groupBox7.Controls.Add(this.label24);
-            this.groupBox7.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox7.Location = new System.Drawing.Point(18, 68);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(379, 517);
@@ -392,41 +397,46 @@
             // 
             // CB_Diet1
             // 
+            this.CB_Diet1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Diet1.FormattingEnabled = true;
             this.CB_Diet1.Location = new System.Drawing.Point(18, 441);
             this.CB_Diet1.Name = "CB_Diet1";
-            this.CB_Diet1.Size = new System.Drawing.Size(342, 38);
+            this.CB_Diet1.Size = new System.Drawing.Size(342, 36);
             this.CB_Diet1.TabIndex = 31;
             // 
             // CB_Type1
             // 
+            this.CB_Type1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Type1.FormattingEnabled = true;
             this.CB_Type1.Location = new System.Drawing.Point(18, 367);
             this.CB_Type1.Name = "CB_Type1";
-            this.CB_Type1.Size = new System.Drawing.Size(342, 38);
+            this.CB_Type1.Size = new System.Drawing.Size(342, 36);
             this.CB_Type1.TabIndex = 30;
             // 
             // CB_Species1
             // 
+            this.CB_Species1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Species1.FormattingEnabled = true;
             this.CB_Species1.Location = new System.Drawing.Point(18, 292);
             this.CB_Species1.Name = "CB_Species1";
-            this.CB_Species1.Size = new System.Drawing.Size(342, 38);
+            this.CB_Species1.Size = new System.Drawing.Size(342, 36);
             this.CB_Species1.TabIndex = 29;
             // 
             // CB_Location1
             // 
+            this.CB_Location1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_Location1.FormattingEnabled = true;
             this.CB_Location1.Location = new System.Drawing.Point(18, 221);
             this.CB_Location1.Name = "CB_Location1";
-            this.CB_Location1.Size = new System.Drawing.Size(342, 38);
+            this.CB_Location1.Size = new System.Drawing.Size(342, 36);
             this.CB_Location1.TabIndex = 28;
             // 
             // DT_Birthdate
             // 
+            this.DT_Birthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DT_Birthdate.Location = new System.Drawing.Point(18, 148);
             this.DT_Birthdate.Name = "DT_Birthdate";
-            this.DT_Birthdate.Size = new System.Drawing.Size(342, 36);
+            this.DT_Birthdate.Size = new System.Drawing.Size(342, 34);
             this.DT_Birthdate.TabIndex = 27;
             // 
             // label19
@@ -434,7 +444,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(18, 408);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(57, 30);
+            this.label19.Size = new System.Drawing.Size(54, 28);
             this.label19.TabIndex = 8;
             this.label19.Text = "Diet:";
             // 
@@ -443,25 +453,16 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(18, 259);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 30);
+            this.label16.Size = new System.Drawing.Size(85, 28);
             this.label16.TabIndex = 2;
             this.label16.Text = "Species:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 30);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Name:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(18, 187);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(99, 30);
+            this.label20.Size = new System.Drawing.Size(94, 28);
             this.label20.TabIndex = 10;
             this.label20.Text = "Location:";
             // 
@@ -470,15 +471,16 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(18, 333);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 30);
+            this.label15.Size = new System.Drawing.Size(60, 28);
             this.label15.TabIndex = 12;
             this.label15.Text = "Type:";
             // 
             // TB_name1
             // 
+            this.TB_name1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_name1.Location = new System.Drawing.Point(18, 75);
             this.TB_name1.Name = "TB_name1";
-            this.TB_name1.Size = new System.Drawing.Size(342, 36);
+            this.TB_name1.Size = new System.Drawing.Size(342, 34);
             this.TB_name1.TabIndex = 1;
             // 
             // label24
@@ -486,7 +488,7 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(18, 115);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(114, 30);
+            this.label24.Size = new System.Drawing.Size(109, 28);
             this.label24.TabIndex = 4;
             this.label24.Text = "Birth Date:";
             // 
@@ -495,7 +497,7 @@
             this.groupBox8.BackColor = System.Drawing.Color.Transparent;
             this.groupBox8.Controls.Add(this.checkBox1);
             this.groupBox8.Controls.Add(this.label27);
-            this.groupBox8.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.Location = new System.Drawing.Point(443, 362);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(309, 149);
@@ -508,7 +510,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(27, 92);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(165, 34);
+            this.checkBox1.Size = new System.Drawing.Size(159, 32);
             this.checkBox1.TabIndex = 19;
             this.checkBox1.Text = "Animal is Sick";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -518,7 +520,7 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(27, 59);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(81, 30);
+            this.label27.Size = new System.Drawing.Size(77, 28);
             this.label27.TabIndex = 18;
             this.label27.Text = "Health:";
             // 
@@ -600,7 +602,7 @@
             // tab_AddAnimal
             // 
             this.tab_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
-            this.tab_AddAnimal.Controls.Add(this.Btn_AddAnimal);
+            this.tab_AddAnimal.Controls.Add(this.pictureBox1);
             this.tab_AddAnimal.Controls.Add(this.groupBox5);
             this.tab_AddAnimal.Controls.Add(this.groupBox4);
             this.tab_AddAnimal.Controls.Add(this.Gb_Details_employee);
@@ -615,7 +617,7 @@
             // 
             this.Btn_AddAnimal.BackColor = System.Drawing.Color.Black;
             this.Btn_AddAnimal.ForeColor = System.Drawing.Color.White;
-            this.Btn_AddAnimal.Location = new System.Drawing.Point(898, 668);
+            this.Btn_AddAnimal.Location = new System.Drawing.Point(163, 200);
             this.Btn_AddAnimal.Margin = new System.Windows.Forms.Padding(1);
             this.Btn_AddAnimal.Name = "Btn_AddAnimal";
             this.Btn_AddAnimal.Size = new System.Drawing.Size(145, 36);
@@ -626,14 +628,16 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
+            this.groupBox5.Controls.Add(this.Btn_AddAnimal);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.DT_DeathAdd);
             this.groupBox5.Controls.Add(this.CHB_SickAdd);
-            this.groupBox5.Location = new System.Drawing.Point(821, 436);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox5.Location = new System.Drawing.Point(963, 418);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox5.Size = new System.Drawing.Size(326, 222);
+            this.groupBox5.Size = new System.Drawing.Size(326, 251);
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Health status";
@@ -641,10 +645,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 71);
+            this.label5.Location = new System.Drawing.Point(17, 103);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 30);
+            this.label5.Size = new System.Drawing.Size(108, 28);
             this.label5.TabIndex = 75;
             this.label5.Text = "DeathDate";
             // 
@@ -654,21 +658,22 @@
             this.DT_DeathAdd.CalendarMonthBackground = System.Drawing.SystemColors.ButtonFace;
             this.DT_DeathAdd.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.DT_DeathAdd.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DT_DeathAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DT_DeathAdd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_DeathAdd.Location = new System.Drawing.Point(16, 99);
+            this.DT_DeathAdd.Location = new System.Drawing.Point(17, 131);
             this.DT_DeathAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_DeathAdd.Name = "DT_DeathAdd";
-            this.DT_DeathAdd.Size = new System.Drawing.Size(289, 36);
+            this.DT_DeathAdd.Size = new System.Drawing.Size(289, 34);
             this.DT_DeathAdd.TabIndex = 75;
             this.DT_DeathAdd.Value = new System.DateTime(2023, 4, 15, 17, 52, 49, 0);
             // 
             // CHB_SickAdd
             // 
             this.CHB_SickAdd.AutoSize = true;
-            this.CHB_SickAdd.Location = new System.Drawing.Point(17, 39);
+            this.CHB_SickAdd.Location = new System.Drawing.Point(17, 53);
             this.CHB_SickAdd.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.CHB_SickAdd.Name = "CHB_SickAdd";
-            this.CHB_SickAdd.Size = new System.Drawing.Size(162, 34);
+            this.CHB_SickAdd.Size = new System.Drawing.Size(157, 32);
             this.CHB_SickAdd.TabIndex = 69;
             this.CHB_SickAdd.Text = "Animal is sick";
             this.CHB_SickAdd.UseVisualStyleBackColor = true;
@@ -682,9 +687,9 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.TB_BirthPlaceAdd);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(821, 106);
+            this.groupBox4.Location = new System.Drawing.Point(963, 94);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(326, 314);
             this.groupBox4.TabIndex = 81;
@@ -694,6 +699,7 @@
             // CB_FatherAdd
             // 
             this.CB_FatherAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CB_FatherAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_FatherAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_FatherAdd.FormattingEnabled = true;
             this.CB_FatherAdd.Items.AddRange(new object[] {
@@ -701,14 +707,15 @@
             "2",
             "3",
             "4"});
-            this.CB_FatherAdd.Location = new System.Drawing.Point(19, 124);
+            this.CB_FatherAdd.Location = new System.Drawing.Point(19, 147);
             this.CB_FatherAdd.Name = "CB_FatherAdd";
-            this.CB_FatherAdd.Size = new System.Drawing.Size(289, 28);
+            this.CB_FatherAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_FatherAdd.TabIndex = 37;
             // 
             // CB_MotherAdd
             // 
             this.CB_MotherAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CB_MotherAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_MotherAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_MotherAdd.FormattingEnabled = true;
             this.CB_MotherAdd.Items.AddRange(new object[] {
@@ -716,9 +723,9 @@
             "2",
             "3",
             "4"});
-            this.CB_MotherAdd.Location = new System.Drawing.Point(19, 60);
+            this.CB_MotherAdd.Location = new System.Drawing.Point(19, 65);
             this.CB_MotherAdd.Name = "CB_MotherAdd";
-            this.CB_MotherAdd.Size = new System.Drawing.Size(289, 28);
+            this.CB_MotherAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_MotherAdd.TabIndex = 36;
             // 
             // label8
@@ -726,7 +733,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(19, 33);
+            this.label8.Location = new System.Drawing.Point(19, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 25);
             this.label8.TabIndex = 2;
@@ -737,7 +744,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(19, 97);
+            this.label9.Location = new System.Drawing.Point(19, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 25);
             this.label9.TabIndex = 4;
@@ -748,7 +755,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(19, 167);
+            this.label10.Location = new System.Drawing.Point(22, 200);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 25);
             this.label10.TabIndex = 11;
@@ -758,10 +765,11 @@
             // 
             this.TB_BirthPlaceAdd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TB_BirthPlaceAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_BirthPlaceAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_BirthPlaceAdd.ForeColor = System.Drawing.Color.Black;
-            this.TB_BirthPlaceAdd.Location = new System.Drawing.Point(16, 195);
+            this.TB_BirthPlaceAdd.Location = new System.Drawing.Point(19, 228);
             this.TB_BirthPlaceAdd.Name = "TB_BirthPlaceAdd";
-            this.TB_BirthPlaceAdd.Size = new System.Drawing.Size(289, 27);
+            this.TB_BirthPlaceAdd.Size = new System.Drawing.Size(289, 34);
             this.TB_BirthPlaceAdd.TabIndex = 26;
             // 
             // Gb_Details_employee
@@ -779,23 +787,25 @@
             this.Gb_Details_employee.Controls.Add(this.label11);
             this.Gb_Details_employee.Controls.Add(this.label14);
             this.Gb_Details_employee.Controls.Add(this.label13);
-            this.Gb_Details_employee.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Gb_Details_employee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Gb_Details_employee.ForeColor = System.Drawing.Color.Black;
-            this.Gb_Details_employee.Location = new System.Drawing.Point(284, 106);
+            this.Gb_Details_employee.Location = new System.Drawing.Point(496, 88);
             this.Gb_Details_employee.Name = "Gb_Details_employee";
-            this.Gb_Details_employee.Size = new System.Drawing.Size(461, 552);
+            this.Gb_Details_employee.Size = new System.Drawing.Size(461, 581);
             this.Gb_Details_employee.TabIndex = 80;
             this.Gb_Details_employee.TabStop = false;
             this.Gb_Details_employee.Text = "Animal Details";
+            this.Gb_Details_employee.Enter += new System.EventHandler(this.Gb_Details_employee_Enter);
             // 
             // CB_LocationAdd
             // 
             this.CB_LocationAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CB_LocationAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_LocationAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_LocationAdd.FormattingEnabled = true;
-            this.CB_LocationAdd.Location = new System.Drawing.Point(17, 136);
+            this.CB_LocationAdd.Location = new System.Drawing.Point(16, 161);
             this.CB_LocationAdd.Name = "CB_LocationAdd";
-            this.CB_LocationAdd.Size = new System.Drawing.Size(289, 28);
+            this.CB_LocationAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_LocationAdd.TabIndex = 86;
             // 
             // DT_BirthDateAdd
@@ -804,16 +814,18 @@
             this.DT_BirthDateAdd.CalendarMonthBackground = System.Drawing.SystemColors.ButtonFace;
             this.DT_BirthDateAdd.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.DT_BirthDateAdd.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DT_BirthDateAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DT_BirthDateAdd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_BirthDateAdd.Location = new System.Drawing.Point(16, 199);
+            this.DT_BirthDateAdd.Location = new System.Drawing.Point(16, 239);
             this.DT_BirthDateAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_BirthDateAdd.Name = "DT_BirthDateAdd";
-            this.DT_BirthDateAdd.Size = new System.Drawing.Size(289, 27);
+            this.DT_BirthDateAdd.Size = new System.Drawing.Size(289, 34);
             this.DT_BirthDateAdd.TabIndex = 85;
             // 
             // CB_DietAdd
             // 
             this.CB_DietAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CB_DietAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_DietAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_DietAdd.FormattingEnabled = true;
             this.CB_DietAdd.Items.AddRange(new object[] {
@@ -821,9 +833,9 @@
             "2",
             "3",
             "4"});
-            this.CB_DietAdd.Location = new System.Drawing.Point(16, 409);
+            this.CB_DietAdd.Location = new System.Drawing.Point(17, 478);
             this.CB_DietAdd.Name = "CB_DietAdd";
-            this.CB_DietAdd.Size = new System.Drawing.Size(289, 28);
+            this.CB_DietAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_DietAdd.TabIndex = 35;
             // 
             // label4
@@ -831,7 +843,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(16, 383);
+            this.label4.Location = new System.Drawing.Point(17, 452);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 25);
             this.label4.TabIndex = 34;
@@ -840,21 +852,23 @@
             // CB_TypeBoxAdd
             // 
             this.CB_TypeBoxAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CB_TypeBoxAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_TypeBoxAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_TypeBoxAdd.FormattingEnabled = true;
-            this.CB_TypeBoxAdd.Location = new System.Drawing.Point(16, 267);
+            this.CB_TypeBoxAdd.Location = new System.Drawing.Point(17, 323);
             this.CB_TypeBoxAdd.Name = "CB_TypeBoxAdd";
-            this.CB_TypeBoxAdd.Size = new System.Drawing.Size(289, 28);
+            this.CB_TypeBoxAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_TypeBoxAdd.TabIndex = 33;
             // 
             // TB_NameAdd
             // 
             this.TB_NameAdd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TB_NameAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_NameAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_NameAdd.ForeColor = System.Drawing.Color.Black;
-            this.TB_NameAdd.Location = new System.Drawing.Point(16, 60);
+            this.TB_NameAdd.Location = new System.Drawing.Point(17, 85);
             this.TB_NameAdd.Name = "TB_NameAdd";
-            this.TB_NameAdd.Size = new System.Drawing.Size(289, 27);
+            this.TB_NameAdd.Size = new System.Drawing.Size(289, 34);
             this.TB_NameAdd.TabIndex = 19;
             // 
             // label6
@@ -862,7 +876,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(17, 32);
+            this.label6.Location = new System.Drawing.Point(18, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 25);
             this.label6.TabIndex = 2;
@@ -873,7 +887,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(17, 96);
+            this.label7.Location = new System.Drawing.Point(17, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 25);
             this.label7.TabIndex = 4;
@@ -882,11 +896,12 @@
             // CB_SpeciesBoxAdd
             // 
             this.CB_SpeciesBoxAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CB_SpeciesBoxAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_SpeciesBoxAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_SpeciesBoxAdd.FormattingEnabled = true;
-            this.CB_SpeciesBoxAdd.Location = new System.Drawing.Point(16, 337);
+            this.CB_SpeciesBoxAdd.Location = new System.Drawing.Point(17, 395);
             this.CB_SpeciesBoxAdd.Name = "CB_SpeciesBoxAdd";
-            this.CB_SpeciesBoxAdd.Size = new System.Drawing.Size(289, 28);
+            this.CB_SpeciesBoxAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_SpeciesBoxAdd.TabIndex = 32;
             // 
             // label11
@@ -894,7 +909,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(17, 167);
+            this.label11.Location = new System.Drawing.Point(10, 210);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 25);
             this.label11.TabIndex = 11;
@@ -905,7 +920,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(16, 312);
+            this.label14.Location = new System.Drawing.Point(17, 370);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 25);
             this.label14.TabIndex = 14;
@@ -916,7 +931,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(17, 229);
+            this.label13.Location = new System.Drawing.Point(17, 295);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 25);
             this.label13.TabIndex = 13;
@@ -1222,6 +1237,26 @@
             this.PictureBoxAddEmployee.TabIndex = 79;
             this.PictureBoxAddEmployee.TabStop = false;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(18, 41);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(71, 28);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Name:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(260, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 581);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 82;
+            this.pictureBox1.TabStop = false;
+            // 
             // Animal_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1261,6 +1296,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1343,7 +1379,6 @@
         private GroupBox groupBox7;
         private Label label19;
         private Label label16;
-        private Label label17;
         private Label label20;
         private Label label15;
         private TextBox TB_name1;
@@ -1365,5 +1400,7 @@
         private Label label28;
         private Label label30;
         private ComboBox typeCB;
+        private Label label17;
+        private PictureBox pictureBox1;
     }
 }
