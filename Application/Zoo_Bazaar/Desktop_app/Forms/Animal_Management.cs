@@ -50,16 +50,16 @@ namespace Desktop_app.Forms
 
         public void FilterAnimal(string name, string species, string type)
         {
-            string emptySpecies = "";
-            string emptyType = "";
-            lv_Animals.Items.Clear();
-            
-            if (species.ToLower() != "all")
-            {
-                emptySpecies = species;
-            }
+            var animalList = AnimalManagement.Repository.GetAnimalList();
 
-            foreach (Animal animal in AnimalManagement.Repository.GetAnimalList().OfType<Animal>().Where(a => a.Type.ToLower().Contains(type.ToLower()) && (a.Species.ToLower().Contains(species.ToLower()) && (a.Name).ToLower().Contains(name.ToLower()))))
+            var filteredAnimals = animalList
+                .OfType<Animal>()
+                .Where(a =>
+                    (string.IsNullOrEmpty(type) || type.ToLower() == "all" || a.Type.ToLower().Contains(type.ToLower())) &&
+                    (string.IsNullOrEmpty(species) || species.ToLower() == "all" || a.Species.ToLower().Contains(species.ToLower())) &&
+                    (string.IsNullOrEmpty(name) || a.Name.ToLower().Contains(name.ToLower())));
+
+            foreach (Animal animal in filteredAnimals)
             {
                 ListViewItem userInfo = new ListViewItem(new[] { animal.Name, animal.Type, animal.Species, animal.Location });
                 userInfo.Tag = animal.Id.ToString();
@@ -87,64 +87,60 @@ namespace Desktop_app.Forms
 
         private void PopulateSpeciesCombobox()
         {
-            List<Species> species = AnimalManagement.GetSpeciesList();
-            //Populate add Location Comboboxes
-            CB_SpeciesBoxAdd.Items.Clear();
-            CB_SpeciesBoxAdd.DataSource = null;
-            CB_SpeciesBoxAdd.DataSource = species;
-            CB_SpeciesBoxAdd.DisplayMember = "Name";
-            CB_SpeciesBoxAdd.ValueMember = "Id";
-            //Populate update Location Comboboxes
+            List<Species> species1 = AnimalManagement.GetSpeciesList();
+            List<Species> species2 = new List<Species>(species1); // Create a separate list with the same data
+
+            // Add "All" option for species search
+            Species allSpecies = new Species { Id = -1, Name = "All" };
+            species2.Insert(0, allSpecies);
+
+            // Populate CB_Species1 ComboBox
             CB_Species1.Items.Clear();
             CB_Species1.DataSource = null;
-            CB_Species1.DataSource = species;
+            CB_Species1.DataSource = species1;
             CB_Species1.DisplayMember = "Name";
             CB_Species1.ValueMember = "Id";
 
-            //search
+            // Populate speciesCB ComboBox
             speciesCB.Items.Clear();
-            foreach (Species s in species)
-            {
-                speciesCB.Items.Add(new { id = s.Id, name = s.Name });
-            }
-
             speciesCB.DataSource = null;
-            speciesCB.DataSource = species;
-
+            speciesCB.DataSource = species2;
             speciesCB.DisplayMember = "Name";
-            //speciesCB.ValueMember = "Id";
+            speciesCB.ValueMember = "Id";
         }
 
         private void PopulateTypesCombobox()
         {
-            List<Types> types = AnimalManagement.GetTypesList();
-            //Populate Types addComboboxes
-
-            CB_TypeBoxAdd.Items.Clear();
-            foreach (var type in types)
             {
-                CB_TypeBoxAdd.Items.Add(new { Id = type.Id, Name = type.Name });
-            }
-            CB_TypeBoxAdd.DisplayMember = "Name";
-            CB_TypeBoxAdd.ValueMember = "Id";
+                List<Types> types1 = AnimalManagement.GetTypesList();
+                List<Types> types2 = new List<Types>(types1); // Create a separate list with the same data
+                List<Types> types3 = new List<Types>(types1); // Create a separate list with the same data
 
-            //Populate Types updateComboboxes
-            CB_Type1.Items.Clear();
-            foreach (var type in types)
-            {
-                CB_Type1.Items.Add(new { Id = type.Id, Name = type.Name });
-            }
-            CB_Type1.DisplayMember = "Name";
-            CB_Type1.ValueMember = "Id";
+                // Add "All" option for types search
+                Types allTypes = new Types { Id = -1, Name = "All" };
+                types3.Insert(0, allTypes);
 
-            //search
-            typeCB.Items.Clear();
-            foreach (var type in types)
-            {
-                typeCB.Items.Add(new { Id = type.Id, Name = type.Name });
+                // Populate CB_TypeBoxAdd ComboBox
+                CB_TypeBoxAdd.Items.Clear();
+                CB_TypeBoxAdd.DataSource = null;
+                CB_TypeBoxAdd.DataSource = types1;
+                CB_TypeBoxAdd.DisplayMember = "Name";
+                CB_TypeBoxAdd.ValueMember = "Id";
+
+                // Populate CB_Type1 ComboBox
+                CB_Type1.Items.Clear();
+                CB_Type1.DataSource = null;
+                CB_Type1.DataSource = types2;
+                CB_Type1.DisplayMember = "Name";
+                CB_Type1.ValueMember = "Id";
+
+                // Populate typesCB ComboBox
+                typesCB.Items.Clear();
+                typesCB.DataSource = null;
+                typesCB.DataSource = types3;
+                typesCB.DisplayMember = "Name";
+                typesCB.ValueMember = "Id";
             }
-            typeCB.DisplayMember = "Name";
-            typeCB.ValueMember = "Id";
         }
 
         private void PopulateDietCombobox()
@@ -279,7 +275,9 @@ namespace Desktop_app.Forms
         {
             // name = good
             //species and type = not working properly, getting wrong result
-            FilterAnimal(nameTB.Text, speciesCB.Text, typeCB.Text);
+            lv_Animals.Items.Clear();
+            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
+
         }
 
         private void BTN_updateAnimal_Click_1(object sender, EventArgs e)
@@ -313,6 +311,43 @@ namespace Desktop_app.Forms
                 MessageBox.Show("Success");
                 this.DialogResult = DialogResult.OK;
             }
+        }
+
+        private void speciesCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            typesCB.DataSource = null;
+
+            typesCB.Items.Clear();
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)speciesCB.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            if (sender == speciesCB)
+            {
+                Types allTypes = new Types { Id = -1, Name = "All" };
+                typesForSelectedSpecies.Insert(0, allTypes);
+            }
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                typesCB.Items.Add(type);
+            }
+            if (typesCB.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                typesCB.SelectedIndex = 0;
+            }
+            else { typesCB.SelectedIndex = -1; typesCB.Text = ""; }
+        }
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

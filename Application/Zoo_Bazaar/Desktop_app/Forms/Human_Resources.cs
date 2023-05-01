@@ -42,7 +42,6 @@ namespace Desktop_app
             int selected = Int16.Parse(cbbSearchEmpJob.SelectedValue.ToString());
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
-                string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
                 string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
@@ -60,7 +59,7 @@ namespace Desktop_app
             }
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => e.Jobname.ToLower().Contains(jobname.ToLower()) && (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower()) && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
             {
-                string dateFriendly = DateTime.Parse(employee.BirthDate).ToString("dd-MMMM-yyyy");
+
                 string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
@@ -81,27 +80,6 @@ namespace Desktop_app
             {
                 MessageBox.Show("Operation Canceled");
                 add_Employee_Form.Dispose();
-            }
-            this.Show();
-        }
-
-        private void btn_ViewDetails_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
-
-            User selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag));
-
-            Detail_HR detail_HR = new Detail_HR(hr, selectedUser);
-            detail_HR.ShowDialog();
-            if (detail_HR.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show("Yes");
-                detail_HR.Dispose();
-            }
-            else if (detail_HR.DialogResult == DialogResult.Cancel)
-            {
-                detail_HR.Dispose();
             }
             this.Show();
         }
@@ -147,7 +125,6 @@ namespace Desktop_app
 
                 string bsn = TB_BSN.Text;
 
-                string job = TB_Job.Text;
 
                 int contract = Convert.ToInt32(CB_Contract.SelectedIndex);
 

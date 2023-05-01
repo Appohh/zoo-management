@@ -35,7 +35,7 @@
             welcome_txt = new Label();
             tab_Overview = new TabPage();
             label30 = new Label();
-            typeCB = new ComboBox();
+            typesCB = new ComboBox();
             label29 = new Label();
             label28 = new Label();
             artanPanel1 = new ArtanPanel();
@@ -123,6 +123,7 @@
             btn_ViewDetails = new Button();
             label3 = new Label();
             PictureBoxAddEmployee = new PictureBox();
+            Btn_LogOut = new Button();
             tabControl1.SuspendLayout();
             tab_welcome.SuspendLayout();
             tab_Overview.SuspendLayout();
@@ -188,8 +189,9 @@
             // tab_Overview
             // 
             tab_Overview.BackColor = Color.FromArgb(96, 214, 255);
+            tab_Overview.Controls.Add(Btn_LogOut);
             tab_Overview.Controls.Add(label30);
-            tab_Overview.Controls.Add(typeCB);
+            tab_Overview.Controls.Add(typesCB);
             tab_Overview.Controls.Add(label29);
             tab_Overview.Controls.Add(label28);
             tab_Overview.Controls.Add(artanPanel1);
@@ -215,14 +217,14 @@
             label30.TabIndex = 44;
             label30.Text = "Type:";
             // 
-            // typeCB
+            // typesCB
             // 
-            typeCB.FormattingEnabled = true;
-            typeCB.Location = new Point(597, 41);
-            typeCB.Margin = new Padding(3, 2, 3, 2);
-            typeCB.Name = "typeCB";
-            typeCB.Size = new Size(133, 31);
-            typeCB.TabIndex = 43;
+            typesCB.FormattingEnabled = true;
+            typesCB.Location = new Point(597, 41);
+            typesCB.Margin = new Padding(3, 2, 3, 2);
+            typesCB.Name = "typesCB";
+            typesCB.Size = new Size(133, 31);
+            typesCB.TabIndex = 43;
             // 
             // label29
             // 
@@ -621,6 +623,7 @@
             speciesCB.Name = "speciesCB";
             speciesCB.Size = new Size(133, 31);
             speciesCB.TabIndex = 41;
+            speciesCB.SelectedIndexChanged += speciesCB_SelectedIndexChanged;
             // 
             // tab_AddAnimal
             // 
@@ -1219,6 +1222,19 @@
             PictureBoxAddEmployee.TabIndex = 79;
             PictureBoxAddEmployee.TabStop = false;
             // 
+            // Btn_LogOut
+            // 
+            Btn_LogOut.BackColor = Color.FromArgb(221, 66, 76);
+            Btn_LogOut.ForeColor = Color.White;
+            Btn_LogOut.Location = new Point(1487, 16);
+            Btn_LogOut.Margin = new Padding(3, 2, 3, 2);
+            Btn_LogOut.Name = "Btn_LogOut";
+            Btn_LogOut.Size = new Size(118, 32);
+            Btn_LogOut.TabIndex = 31;
+            Btn_LogOut.Text = "Logout";
+            Btn_LogOut.UseVisualStyleBackColor = false;
+            Btn_LogOut.Click += Btn_LogOut_Click;
+            // 
             // Animal_Management
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1354,8 +1370,9 @@
         private ComboBox speciesCB;
         private Label label28;
         private Label label30;
-        private ComboBox typeCB;
+        private ComboBox typesCB;
         private Label label17;
         private PictureBox pictureBox1;
+        private Button Btn_LogOut;
     }
 }
