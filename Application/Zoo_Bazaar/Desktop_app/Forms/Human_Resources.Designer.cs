@@ -112,6 +112,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.TB_Username = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.JobCB = new System.Windows.Forms.ComboBox();
             this.CB_Contract = new System.Windows.Forms.ComboBox();
             this.TB_City = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -119,7 +120,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lbl_Job = new System.Windows.Forms.Label();
-            this.TB_Job = new System.Windows.Forms.TextBox();
             this.TB_BSN = new System.Windows.Forms.TextBox();
             this.lbl_BSN = new System.Windows.Forms.Label();
             this.TB_Lastname = new System.Windows.Forms.TextBox();
@@ -134,6 +134,7 @@
             this.welcome = new System.Windows.Forms.TabPage();
             this.welcome_txt = new System.Windows.Forms.Label();
             this.tabAddEmployee = new System.Windows.Forms.TabControl();
+            this.TBJob = new System.Windows.Forms.TextBox();
             Job = new System.Windows.Forms.ColumnHeader();
             this.Tab_Add_Employee.SuspendLayout();
             this.Gp_Contact_Employee.SuspendLayout();
@@ -1097,6 +1098,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TBJob);
+            this.groupBox1.Controls.Add(this.JobCB);
             this.groupBox1.Controls.Add(this.CB_Contract);
             this.groupBox1.Controls.Add(this.TB_City);
             this.groupBox1.Controls.Add(this.label30);
@@ -1104,7 +1107,6 @@
             this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.lbl_Job);
-            this.groupBox1.Controls.Add(this.TB_Job);
             this.groupBox1.Controls.Add(this.TB_BSN);
             this.groupBox1.Controls.Add(this.lbl_BSN);
             this.groupBox1.Controls.Add(this.TB_Lastname);
@@ -1124,6 +1126,14 @@
             this.groupBox1.TabIndex = 70;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
+            // 
+            // JobCB
+            // 
+            this.JobCB.FormattingEnabled = true;
+            this.JobCB.Location = new System.Drawing.Point(369, 434);
+            this.JobCB.Name = "JobCB";
+            this.JobCB.Size = new System.Drawing.Size(54, 36);
+            this.JobCB.TabIndex = 79;
             // 
             // CB_Contract
             // 
@@ -1188,14 +1198,6 @@
             this.lbl_Job.Size = new System.Drawing.Size(44, 28);
             this.lbl_Job.TabIndex = 72;
             this.lbl_Job.Text = "Job";
-            // 
-            // TB_Job
-            // 
-            this.TB_Job.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TB_Job.Location = new System.Drawing.Point(21, 436);
-            this.TB_Job.Name = "TB_Job";
-            this.TB_Job.Size = new System.Drawing.Size(361, 34);
-            this.TB_Job.TabIndex = 71;
             // 
             // TB_BSN
             // 
@@ -1338,6 +1340,13 @@
             this.tabAddEmployee.Size = new System.Drawing.Size(1909, 1055);
             this.tabAddEmployee.TabIndex = 27;
             // 
+            // TBJob
+            // 
+            this.TBJob.Location = new System.Drawing.Point(22, 441);
+            this.TBJob.Name = "TBJob";
+            this.TBJob.Size = new System.Drawing.Size(341, 34);
+            this.TBJob.TabIndex = 80;
+            // 
             // Human_Resources
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1436,7 +1445,6 @@
         private DateTimePicker BirthDateBoxHR;
         private GroupBox groupBox1;
         private TextBox TB_Lastname;
-        private TextBox TB_Job;
         private Label lbl_Job;
         private GroupBox groupBox2;
         private Label label22;
@@ -1488,5 +1496,7 @@
         private ComboBox ContractBoxAddEmployee;
         private TextBox BSNBoxAddEmployee;
         private Label label7;
+        private ComboBox JobCB;
+        private TextBox TBJob;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using DataCL.DTOs;
 using Desktop_app.Forms;
 using LogicCL;
+using LogicCL.AnimalMap;
+using LogicCL.Repository;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;
@@ -51,20 +53,41 @@ namespace Desktop_app
 
         public void FilterHr(string name, string phone, string job)
         {
-            string jobname = "";
-            lv_Employees.Items.Clear();
-            if (job.ToLower() != "all")
-            {
-                jobname = job;
-            }
-            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => e.Jobname.ToLower().Contains(jobname.ToLower()) && (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower()) && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
-            {
 
+            var employeeList = hr.Repository.GetUserList();
+            var selectedJobName = ((Job)cbbSearchEmpJob.SelectedItem).Name;
+            var filteredEmployees = employeeList
+                .OfType<Employee>()
+                .Where(e =>
+                    (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
+                    (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
+                    (string.IsNullOrEmpty(phone) || e.Phone.ToLower().Contains(phone.ToLower())));
+
+
+
+            foreach (Employee employee in filteredEmployees)
+            {
                 string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName , employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
+            //old
+            //string jobname = "";
+            //lv_Employees.Items.Clear();
+
+            //if (job.ToLower() != "all")
+            //{
+            //    jobname = job;
+            //}
+            //foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower())&& e.Jobname.ToLower().Contains(jobname.ToLower())  && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
+            //{
+
+            //    string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
+            //    ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
+            //    userInfo.Tag = employee.Id.ToString();
+            //    lv_Employees.Items.Add(userInfo);
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -173,7 +196,7 @@ namespace Desktop_app
                 TB_Username.Text = selectedUser.UserName;
                 TB_Password.Text = selectedUser.Password;
                 TB_BSN.Text = selectedUser.BSN;
-                TB_Job.Text = selectedUser.Jobname;
+                TBJob.Text = selectedUser.Jobname;
                 //CB_Contract.Text = Convert.ToString(selectedUser.Contractstatus);
 
                 //Details of employee
@@ -212,6 +235,9 @@ namespace Desktop_app
 
         private void PopulateJobCombobox()
         {
+            
+
+            //old
             List<Job> jobs = hr.GetJobList();
             cbJob.Items.Clear();
             cbJob.DataSource = null;
@@ -226,6 +252,8 @@ namespace Desktop_app
 
         private void PopulateJobSearchCombobox()
         {
+
+
             List<Job> jobs = hr.GetJobList();
             jobs.Add(new Job(0, "All"));
             cbbSearchEmpJob.Items.Clear();
@@ -233,6 +261,7 @@ namespace Desktop_app
             cbbSearchEmpJob.DataSource = jobs;
             cbbSearchEmpJob.DisplayMember = "Name";
             cbbSearchEmpJob.ValueMember = "Id";
+
         }
 
         private void ClearInputAddEmployee()
