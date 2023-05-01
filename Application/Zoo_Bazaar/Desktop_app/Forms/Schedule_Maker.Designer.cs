@@ -28,12 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Schedule_Maker";
+            dtpDate = new DateTimePicker();
+            SuspendLayout();
+            // 
+            // dtpDate
+            // 
+            dtpDate.Location = new Point(338, 244);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(200, 23);
+            dtpDate.TabIndex = 0;
+            dtpDate.ValueChanged += dtpDate_ValueChanged;
+            // 
+            // Schedule_Maker
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dtpDate);
+            Name = "Schedule_Maker";
+            Text = "Schedule_Maker";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DateTimePicker dtpDate;
     }
 }
