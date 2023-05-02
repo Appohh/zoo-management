@@ -14,6 +14,7 @@ namespace LogicCL.Repository
     {
         private UserDataTraffic userDataTraffic = new UserDataTraffic();
         private JobDataTraffic jobDataTraffic = new JobDataTraffic();
+        private ShiftDataTraffic shiftDataTraffic = new ShiftDataTraffic();
         private List<User> users = new List<User>();
 
         public List<User> Users { get { return users; } }
@@ -99,6 +100,27 @@ namespace LogicCL.Repository
         public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus)
         {
            if(userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus)) { refreshUserData(); return true; } else { return false; }
+        }
+
+        public List<Shift> GetShiftsByEmpId(int id)
+        {
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            List<Shift> shiftList = new List<Shift>();
+            foreach(ShiftDTO shift in shiftDTOs)
+            {
+                if (shift.EmpId == id)
+                {
+                    shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date));
+                }            
+            }
+
+            return shiftList;
+        }
+
+        public bool AddShift(ShiftDTO shift)
+        {
+            //constraints to be add later
+            return shiftDataTraffic.AddShift(shift);
         }
 
     }
