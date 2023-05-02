@@ -16,12 +16,16 @@ namespace LogicCL
 
         public string Date { get; set; }
 
-        public Shift(int id, int empId, int type, string date)
+        public int Location { get; set; }
+
+        public Shift(int id, int empId, int type, string date, int location)
         {
             Id = id;
             EmpId = empId;
             Type = type;
             Date = date;
+            Location = location;
+
         }
     }
 }

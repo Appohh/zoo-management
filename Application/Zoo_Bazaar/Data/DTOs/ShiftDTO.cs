@@ -16,17 +16,19 @@ namespace DataCL.DTOs
 
         public string Date { get; set; }
 
+        public int Location { get; set; }
         public ShiftDTO()
         {
 
         }
 
-        public ShiftDTO(int id, int empId, int type, string date)
+        public ShiftDTO(int id, int empId, int type, string date, int location)
         {
             Id = id;
             EmpId = empId;
             Type = type;
             Date = date;
+            Location = location;
         }
     }
 }

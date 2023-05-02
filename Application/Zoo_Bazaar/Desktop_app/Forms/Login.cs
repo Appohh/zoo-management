@@ -67,6 +67,12 @@ namespace Desktop_app.Forms
                     var AnimalManagement = new Animal_Management(loggedInUser);
                     AnimalManagement.Show();
                 }
+                else if (loggedInUser.GetType() == typeof(ScheduleMaker))
+                {
+                    this.Hide();
+                    var AnimalManagement = new Schedule_Maker(loggedInUser);
+                    AnimalManagement.Show();
+                }
 
             }
             else

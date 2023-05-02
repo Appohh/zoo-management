@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Forms\Animal_Management-Oskar.cs" />
+    <Compile Remove="Forms\Animal_Management.Designer-Oskar.cs" />
+    <Compile Remove="Forms\Human_Resources-Oskar.cs" />
+    <Compile Remove="Forms\Human_Resources.Designer-Oskar.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Forms\Animal_Management-Oskar.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Logic\LogicCL.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,6 @@
 ﻿using DataCL.DataTraffic;
 using DataCL.DTOs;
+using LogicCL.AnimalMap;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace LogicCL.Repository
         private UserDataTraffic userDataTraffic = new UserDataTraffic();
         private JobDataTraffic jobDataTraffic = new JobDataTraffic();
         private ShiftDataTraffic shiftDataTraffic = new ShiftDataTraffic();
+        private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
         private List<User> users = new List<User>();
 
         public List<User> Users { get { return users; } }
@@ -66,6 +68,12 @@ namespace LogicCL.Repository
                     User Cleaner = new Cleaner(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(Cleaner);
                 }
+                if (userDto.JobId == 7)
+                {
+                    User ScheduleMaker = new ScheduleMaker(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(ScheduleMaker);
+                }
+
 
 
             }
@@ -98,6 +106,18 @@ namespace LogicCL.Repository
         {
             return Users.Find(user => user.Id == id);
         }        
+
+        public List<Location> GetLocations() 
+        {
+            List<LocationDTO> locationDTOs = locationDataTraffic.retrieveLocation();
+            List<Location> locations = new List<Location>();
+            foreach(LocationDTO locationDTO in locationDTOs)
+            {
+                locations.Add(new Location(locationDTO.Id, locationDTO.Name));
+            }
+            return locations;
+        }
+
         public List<Job> GetJobList()
         {
             List<JobDTO> jobDTOs = jobDataTraffic.retrieveJobs();
@@ -132,7 +152,7 @@ namespace LogicCL.Repository
             {
                 if (shift.EmpId == id)
                 {
-                    shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date));
+                    shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));
                 }            
             }
 
@@ -144,6 +164,71 @@ namespace LogicCL.Repository
             //constraints to be add later
             return shiftDataTraffic.AddShift(shift);
         }
+
+        public List<Employee> GetAvailble(DateTime date)
+        {
+            List<Employee> available = new List<Employee>();
+            foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
+            {
+                int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
+                if (hoursWorkedThisDay >= 8)
+                {
+                    continue;
+                }
+                available.Add(employee);               
+            }
+            return available;
+        }
+
+        private void IsAbsent()
+        {
+
+        }
+
+        private int HoursWorkedThisWeek(int id, DateTime date)
+        {
+            WeekSchedule currentWeek = new WeekSchedule(date);
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            int count = 0;
+            foreach (ShiftDTO shift in shiftDTOs)
+            {
+                if (shift.EmpId == id && currentWeek.Monday <= date && date <= currentWeek.Sunday)
+                {
+                    count++;
+                }
+            }
+            return count * 4;
+        }
+
+        private int HoursWorkedThisDay(int id, DateTime date)
+        {
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            int count = 0;
+            foreach (ShiftDTO shift in shiftDTOs)
+            {
+                if (shift.EmpId == id && shift.Date == date.ToString("yyyy-MM-DD"))
+                {
+                    count++;
+                }
+            }
+            return count * 4;
+        }
+
+        public bool ShiftExisted(int id, DateTime date, int type)
+        {
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            foreach (ShiftDTO shiftDTO in shiftDTOs)
+            {
+                if (shiftDTO.EmpId == id && shiftDTO.Date.Contains(date.ToString("dd/MM/yyyy")) && shiftDTO.Type == type)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+
+        
 
     }
 }

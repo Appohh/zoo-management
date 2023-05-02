@@ -38,7 +38,7 @@ namespace DataCL.DataTraffic
 
         public bool AddShift(ShiftDTO shift)
         {
-            string query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}')";
+            string query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , {shift.Location})";
             return executeQuery(query) == 0 ? false : true;
         }
 
