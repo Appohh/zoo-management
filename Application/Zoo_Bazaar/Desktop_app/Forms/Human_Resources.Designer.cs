@@ -69,15 +69,15 @@
             label32 = new Label();
             label6 = new Label();
             Username = new Label();
-            cbJob = new ComboBox();
+            cbJobAdd = new ComboBox();
             UsernameBoxAddEmployee = new TextBox();
             PasswordBoxAddEmployee = new TextBox();
             ContractBoxAddEmployee = new ComboBox();
             BSNBoxAddEmployee = new TextBox();
             PictureBoxAddEmployee = new PictureBox();
-            label7 = new Label();
-            label20 = new Label();
             Tab_Overview = new TabPage();
+            label7 = new Label();
+            CB_StatusSearch = new ComboBox();
             cbbSearchEmpJob = new ComboBox();
             label37 = new Label();
             label36 = new Label();
@@ -112,7 +112,6 @@
             label23 = new Label();
             TB_Username = new TextBox();
             groupBox1 = new GroupBox();
-            TBJob = new TextBox();
             JobCB = new ComboBox();
             CB_Contract = new ComboBox();
             TB_City = new TextBox();
@@ -257,8 +256,6 @@
             Tab_Add_Employee.Controls.Add(Gp_Detail_Employees);
             Tab_Add_Employee.Controls.Add(Gb_Details_employee);
             Tab_Add_Employee.Controls.Add(PictureBoxAddEmployee);
-            Tab_Add_Employee.Controls.Add(label7);
-            Tab_Add_Employee.Controls.Add(label20);
             Tab_Add_Employee.Location = new Point(4, 32);
             Tab_Add_Employee.Margin = new Padding(1);
             Tab_Add_Employee.Name = "Tab_Add_Employee";
@@ -299,31 +296,31 @@
             label19.Location = new Point(391, 126);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
-            label19.Size = new Size(152, 21);
+            label19.Size = new Size(119, 21);
             label19.TabIndex = 78;
-            label19.Text = "Emergency Contact";
+            label19.Text = "Emergency Tel.";
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(391, 189);
+            label18.Location = new Point(27, 189);
             label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(64, 21);
+            label18.Size = new Size(111, 21);
             label18.TabIndex = 77;
-            label18.Text = "Spouse";
+            label18.Text = "Spouse Name";
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(28, 190);
+            label17.Location = new Point(389, 189);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(125, 21);
+            label17.Size = new Size(92, 21);
             label17.TabIndex = 76;
-            label17.Text = "Spouse Contact";
+            label17.Text = "Spouse Tel.";
             // 
             // label15
             // 
@@ -343,9 +340,9 @@
             label14.Location = new Point(28, 44);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
-            label14.Size = new Size(120, 21);
+            label14.Size = new Size(98, 21);
             label14.TabIndex = 39;
-            label14.Text = "Phone Number";
+            label14.Text = "Tel. Number";
             // 
             // btn_add_employee
             // 
@@ -369,7 +366,7 @@
             SpouseBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
             SpouseBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SpouseBoxAddEmployee.ForeColor = Color.Black;
-            SpouseBoxAddEmployee.Location = new Point(391, 211);
+            SpouseBoxAddEmployee.Location = new Point(28, 212);
             SpouseBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
             SpouseBoxAddEmployee.Size = new Size(283, 29);
@@ -405,7 +402,7 @@
             SpouseContactBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
             SpouseContactBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SpouseContactBoxAddEmployee.ForeColor = Color.Black;
-            SpouseContactBoxAddEmployee.Location = new Point(28, 212);
+            SpouseContactBoxAddEmployee.Location = new Point(391, 212);
             SpouseContactBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
             SpouseContactBoxAddEmployee.Size = new Size(297, 29);
@@ -571,7 +568,7 @@
             Gb_Details_employee.Controls.Add(label32);
             Gb_Details_employee.Controls.Add(label6);
             Gb_Details_employee.Controls.Add(Username);
-            Gb_Details_employee.Controls.Add(cbJob);
+            Gb_Details_employee.Controls.Add(cbJobAdd);
             Gb_Details_employee.Controls.Add(UsernameBoxAddEmployee);
             Gb_Details_employee.Controls.Add(PasswordBoxAddEmployee);
             Gb_Details_employee.Controls.Add(ContractBoxAddEmployee);
@@ -642,17 +639,17 @@
             Username.TabIndex = 34;
             Username.Text = "Username";
             // 
-            // cbJob
+            // cbJobAdd
             // 
-            cbJob.BackColor = SystemColors.ButtonFace;
-            cbJob.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbJob.ForeColor = Color.Black;
-            cbJob.FormattingEnabled = true;
-            cbJob.Location = new Point(16, 256);
-            cbJob.Margin = new Padding(3, 1, 3, 1);
-            cbJob.Name = "cbJob";
-            cbJob.Size = new Size(253, 29);
-            cbJob.TabIndex = 33;
+            cbJobAdd.BackColor = SystemColors.ButtonFace;
+            cbJobAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbJobAdd.ForeColor = Color.Black;
+            cbJobAdd.FormattingEnabled = true;
+            cbJobAdd.Location = new Point(16, 256);
+            cbJobAdd.Margin = new Padding(3, 1, 3, 1);
+            cbJobAdd.Name = "cbJobAdd";
+            cbJobAdd.Size = new Size(253, 29);
+            cbJobAdd.TabIndex = 33;
             // 
             // UsernameBoxAddEmployee
             // 
@@ -715,34 +712,12 @@
             PictureBoxAddEmployee.TabIndex = 73;
             PictureBoxAddEmployee.TabStop = false;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(115, 528);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(77, 20);
-            label7.TabIndex = 4;
-            label7.Text = "Password:";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.ForeColor = SystemColors.ControlLightLight;
-            label20.Location = new Point(1334, 445);
-            label20.Margin = new Padding(4, 0, 4, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(139, 20);
-            label20.TabIndex = 10;
-            label20.Text = "Emergency contact";
-            // 
             // Tab_Overview
             // 
             Tab_Overview.BackColor = Color.FromArgb(96, 214, 255);
             Tab_Overview.BackgroundImageLayout = ImageLayout.Stretch;
+            Tab_Overview.Controls.Add(label7);
+            Tab_Overview.Controls.Add(CB_StatusSearch);
             Tab_Overview.Controls.Add(cbbSearchEmpJob);
             Tab_Overview.Controls.Add(label37);
             Tab_Overview.Controls.Add(label36);
@@ -764,6 +739,24 @@
             Tab_Overview.TabIndex = 0;
             Tab_Overview.Text = "Overview";
             Tab_Overview.Click += Tab_Overview_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(288, 79);
+            label7.Name = "label7";
+            label7.Size = new Size(50, 19);
+            label7.TabIndex = 37;
+            label7.Text = "Status:";
+            // 
+            // CB_StatusSearch
+            // 
+            CB_StatusSearch.FormattingEnabled = true;
+            CB_StatusSearch.Location = new Point(344, 76);
+            CB_StatusSearch.Name = "CB_StatusSearch";
+            CB_StatusSearch.Size = new Size(132, 25);
+            CB_StatusSearch.TabIndex = 36;
             // 
             // cbbSearchEmpJob
             // 
@@ -814,7 +807,7 @@
             // btn_search_Employee
             // 
             btn_search_Employee.ForeColor = Color.Black;
-            btn_search_Employee.Location = new Point(511, 39);
+            btn_search_Employee.Location = new Point(501, 75);
             btn_search_Employee.Margin = new Padding(3, 2, 3, 2);
             btn_search_Employee.Name = "btn_search_Employee";
             btn_search_Employee.Size = new Size(78, 25);
@@ -950,9 +943,9 @@
             label31.AutoSize = true;
             label31.Location = new Point(18, 154);
             label31.Name = "label31";
-            label31.Size = new Size(95, 21);
+            label31.Size = new Size(138, 21);
             label31.TabIndex = 46;
-            label31.Text = "Emergency ";
+            label31.Text = "Emergency Name";
             // 
             // TB_Emregency
             // 
@@ -977,18 +970,18 @@
             label28.AutoSize = true;
             label28.Location = new Point(18, 266);
             label28.Name = "label28";
-            label28.Size = new Size(64, 21);
+            label28.Size = new Size(111, 21);
             label28.TabIndex = 43;
-            label28.Text = "Spouse";
+            label28.Text = "Spouse Name";
             // 
             // label27
             // 
             label27.AutoSize = true;
             label27.Location = new Point(18, 326);
             label27.Name = "label27";
-            label27.Size = new Size(125, 21);
+            label27.Size = new Size(92, 21);
             label27.TabIndex = 42;
-            label27.Text = "Spouse Contact";
+            label27.Text = "Spouse Tel.";
             // 
             // TB_Spouse
             // 
@@ -1004,9 +997,9 @@
             label26.AutoSize = true;
             label26.Location = new Point(18, 211);
             label26.Name = "label26";
-            label26.Size = new Size(152, 21);
+            label26.Size = new Size(119, 21);
             label26.TabIndex = 40;
-            label26.Text = "Emergency Contact";
+            label26.Text = "Emergency Tel.";
             // 
             // TB_Emergencycontact
             // 
@@ -1040,9 +1033,9 @@
             lbl_Phonenumber.AutoSize = true;
             lbl_Phonenumber.Location = new Point(15, 35);
             lbl_Phonenumber.Name = "lbl_Phonenumber";
-            lbl_Phonenumber.Size = new Size(120, 21);
+            lbl_Phonenumber.Size = new Size(98, 21);
             lbl_Phonenumber.TabIndex = 36;
-            lbl_Phonenumber.Text = "Phone Number";
+            lbl_Phonenumber.Text = "Tel. Number";
             // 
             // TB_Phone
             // 
@@ -1090,7 +1083,7 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(18, 28);
+            label23.Location = new Point(18, 25);
             label23.Name = "label23";
             label23.Size = new Size(83, 21);
             label23.TabIndex = 75;
@@ -1099,7 +1092,7 @@
             // TB_Username
             // 
             TB_Username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TB_Username.Location = new Point(15, 51);
+            TB_Username.Location = new Point(19, 48);
             TB_Username.Margin = new Padding(3, 2, 3, 2);
             TB_Username.Name = "TB_Username";
             TB_Username.Size = new Size(381, 29);
@@ -1107,7 +1100,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(TBJob);
             groupBox1.Controls.Add(JobCB);
             groupBox1.Controls.Add(CB_Contract);
             groupBox1.Controls.Add(TB_City);
@@ -1136,21 +1128,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Employee Details";
             // 
-            // TBJob
-            // 
-            TBJob.Location = new Point(19, 331);
-            TBJob.Margin = new Padding(3, 2, 3, 2);
-            TBJob.Name = "TBJob";
-            TBJob.Size = new Size(299, 29);
-            TBJob.TabIndex = 80;
-            // 
             // JobCB
             // 
             JobCB.FormattingEnabled = true;
-            JobCB.Location = new Point(323, 326);
+            JobCB.Location = new Point(16, 324);
             JobCB.Margin = new Padding(3, 2, 3, 2);
             JobCB.Name = "JobCB";
-            JobCB.Size = new Size(48, 29);
+            JobCB.Size = new Size(318, 29);
             JobCB.TabIndex = 79;
             // 
             // CB_Contract
@@ -1158,7 +1142,7 @@
             CB_Contract.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             CB_Contract.FormattingEnabled = true;
             CB_Contract.Location = new Point(18, 376);
-            CB_Contract.Margin = new Padding(2, 2, 2, 2);
+            CB_Contract.Margin = new Padding(2);
             CB_Contract.Name = "CB_Contract";
             CB_Contract.Size = new Size(313, 29);
             CB_Contract.TabIndex = 31;
@@ -1212,7 +1196,7 @@
             // lbl_Job
             // 
             lbl_Job.AutoSize = true;
-            lbl_Job.Location = new Point(18, 304);
+            lbl_Job.Location = new Point(18, 301);
             lbl_Job.Margin = new Padding(1, 0, 1, 0);
             lbl_Job.Name = "lbl_Job";
             lbl_Job.Size = new Size(36, 21);
@@ -1222,7 +1206,7 @@
             // TB_BSN
             // 
             TB_BSN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TB_BSN.Location = new Point(16, 276);
+            TB_BSN.Location = new Point(19, 272);
             TB_BSN.Margin = new Padding(3, 2, 3, 2);
             TB_BSN.Name = "TB_BSN";
             TB_BSN.Size = new Size(316, 29);
@@ -1231,7 +1215,7 @@
             // lbl_BSN
             // 
             lbl_BSN.AutoSize = true;
-            lbl_BSN.Location = new Point(19, 253);
+            lbl_BSN.Location = new Point(18, 249);
             lbl_BSN.Name = "lbl_BSN";
             lbl_BSN.Size = new Size(41, 21);
             lbl_BSN.TabIndex = 40;
@@ -1262,7 +1246,7 @@
             BirthDateBoxHR.CalendarTitleForeColor = SystemColors.ControlLightLight;
             BirthDateBoxHR.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BirthDateBoxHR.Format = DateTimePickerFormat.Short;
-            BirthDateBoxHR.Location = new Point(18, 224);
+            BirthDateBoxHR.Location = new Point(18, 217);
             BirthDateBoxHR.Margin = new Padding(4, 3, 4, 3);
             BirthDateBoxHR.Name = "BirthDateBoxHR";
             BirthDateBoxHR.Size = new Size(316, 29);
@@ -1280,7 +1264,7 @@
             // lbl_birthdate
             // 
             lbl_birthdate.AutoSize = true;
-            lbl_birthdate.Location = new Point(19, 200);
+            lbl_birthdate.Location = new Point(19, 193);
             lbl_birthdate.Name = "lbl_birthdate";
             lbl_birthdate.Size = new Size(79, 21);
             lbl_birthdate.TabIndex = 38;
@@ -1382,7 +1366,6 @@
             Text = "Human_Resources";
             WindowState = FormWindowState.Maximized;
             Tab_Add_Employee.ResumeLayout(false);
-            Tab_Add_Employee.PerformLayout();
             Gp_Contact_Employee.ResumeLayout(false);
             Gp_Contact_Employee.PerformLayout();
             Gp_Detail_Employees.ResumeLayout(false);
@@ -1425,7 +1408,6 @@
         private TextBox PhoneNumberBoxAddEmployee;
         private TextBox EmergencyContactBoxAddEmployee;
         private TextBox SpouseContactBoxAddEmployee;
-        private Label label20;
         private TextBox EmergencyContactNameBoxAddEmployee;
         private GroupBox Gp_Detail_Employees;
         private DateTimePicker BirthDateBoxAddEmployee;
@@ -1507,13 +1489,13 @@
         private Label label32;
         private Label label6;
         private Label Username;
-        private ComboBox cbJob;
+        private ComboBox cbJobAdd;
         private TextBox UsernameBoxAddEmployee;
         private TextBox PasswordBoxAddEmployee;
         private ComboBox ContractBoxAddEmployee;
         private TextBox BSNBoxAddEmployee;
-        private Label label7;
         private ComboBox JobCB;
-        private TextBox TBJob;
+        private Label label7;
+        private ComboBox CB_StatusSearch;
     }
 }

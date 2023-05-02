@@ -358,25 +358,3 @@ namespace Desktop_app.Forms
     }
 }
 
-
-
-//typeCB.Items.Clear();
-
-////error
-//int selectedSpeciesId = ((Species)speciesCB.SelectedItem).Id;
-
-//List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
-
-//foreach (Types type in typesForSelectedSpecies)
-//{
-//    typeCB.Items.Add(type);
-//}
-//if (typeCB.Items.Count != 0)
-//{
-//    typeCB.SelectedIndex = 0;
-//}
-//else
-//{
-//    typeCB.SelectedIndex = -1; ;
-//    typeCB.Text = "";
-//}

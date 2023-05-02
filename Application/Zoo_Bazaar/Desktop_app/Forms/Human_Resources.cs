@@ -31,8 +31,8 @@ namespace Desktop_app
             this.Size = new Size(1521, 910);
 
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
+            PopulateContractCombobox();
             PopulateJobCombobox();
-            PopulateJobSearchCombobox();
 
         }
 
@@ -49,7 +49,7 @@ namespace Desktop_app
             }
         }
 
-        public void FilterHr(string name, string phone, string job)
+        public void FilterHr(string name, string phone, string job, string status)
         {
 
             var employeeList = hr.Repository.GetUserList();
@@ -57,9 +57,10 @@ namespace Desktop_app
             var filteredEmployees = employeeList
                 .OfType<Employee>()
                 .Where(e =>
-                    (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
+                     (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
-                    (string.IsNullOrEmpty(phone) || e.Phone.ToLower().Contains(phone.ToLower())));
+                    (string.IsNullOrEmpty(phone) || e.Phone.ToLower().Contains(phone.ToLower())) &&
+                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Active" && e.Contractstatus == 1)));
 
 
 
@@ -87,7 +88,7 @@ namespace Desktop_app
         private void btn_search_Employee_Click_1(object sender, EventArgs e)
         {
             lv_Employees.Items.Clear();
-            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text);
+            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
         }
 
         private void updateBTHR_Click_1(object sender, EventArgs e)
@@ -106,6 +107,7 @@ namespace Desktop_app
 
                 string bsn = TB_BSN.Text;
 
+                int job = Convert.ToInt32(JobCB.SelectedValue);
 
                 int contract = Convert.ToInt32(CB_Contract.SelectedIndex);
 
@@ -119,7 +121,7 @@ namespace Desktop_app
                 string spouse = TB_Spouse.Text;
                 string spouseContact = TB_SpouseContact.Text;
 
-                if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract))
+                if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job))
                 {
                     MessageBox.Show("Success");
                     this.DialogResult = DialogResult.OK;
@@ -154,7 +156,7 @@ namespace Desktop_app
                 TB_Username.Text = selectedUser.UserName;
                 TB_Password.Text = selectedUser.Password;
                 TB_BSN.Text = selectedUser.BSN;
-                TBJob.Text = selectedUser.Jobname;
+                JobCB.Text = selectedUser.Jobname;
 
                 //Details of employee
                 TB_Firstname.Text = selectedUser.FirstName;
@@ -175,7 +177,7 @@ namespace Desktop_app
 
         private void btn_add_employee_Click(object sender, EventArgs e)
         {
-            int selected = Int16.Parse(cbJob.SelectedValue.ToString());
+            int selected = Int16.Parse(cbJobAdd.SelectedValue.ToString());
             UserDTO dto = new UserDTO(0, NameBoxAddEmployee.Text, SurnameBoxAddEmployee.Text, UsernameBoxAddEmployee.Text, PasswordBoxAddEmployee.Text,
                 PhoneNumberBoxAddEmployee.Text, AdressBoxAddEmployee.Text, AdressBoxAddEmployee.Text, EmailBoxAddEmployee.Text, SpouseBoxAddEmployee.Text,
                 SpouseContactBoxAddEmployee.Text, EmergencyContactNameBoxAddEmployee.Text, EmergencyContactBoxAddEmployee.Text, BirthDateBoxAddEmployee.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxAddEmployee.Text, ContractBoxAddEmployee.SelectedIndex, 0, "", selected, "");
@@ -190,34 +192,55 @@ namespace Desktop_app
             }
         }
 
-        private void PopulateJobCombobox()
+        private void PopulateContractCombobox()
         {
-
-
-            //old
-            List<Job> jobs = hr.GetJobList();
-            cbJob.Items.Clear();
-            cbJob.DataSource = null;
-            cbJob.DataSource = jobs;
-            cbJob.DisplayMember = "Name";
-            cbJob.ValueMember = "Id";
             ContractBoxAddEmployee.DisplayMember = "Key";
             ContractBoxAddEmployee.ValueMember = "Value";
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Active", 1));
+
+            CB_StatusSearch.DisplayMember = "Key";
+            CB_StatusSearch.ValueMember = "Value";
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("All", -1));
+
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Active", 1));
+            CB_StatusSearch.SelectedIndex = 0;
         }
 
-        private void PopulateJobSearchCombobox()
+        private void PopulateJobCombobox()
         {
 
 
-            List<Job> jobs = hr.GetJobList();
-            jobs.Add(new Job(0, "All"));
+            List<Job> jobs1 = hr.GetJobList();
+            List<Job> jobs2 = new List<Job>(jobs1); // Create a separate list with the same data
+            List<Job> jobs3 = new List<Job>(jobs1);
+
+            // Create the "All" Job object and insert it at the first index
+            Job allJob = new Job(0, "All");
+            jobs3.Insert(0, allJob);
+
+            cbJobAdd.Items.Clear();
+            cbJobAdd.DataSource = null;
+            cbJobAdd.DataSource = jobs1;
+            cbJobAdd.DisplayMember = "Name";
+            cbJobAdd.ValueMember = "Id";
+
             cbbSearchEmpJob.Items.Clear();
             cbbSearchEmpJob.DataSource = null;
-            cbbSearchEmpJob.DataSource = jobs;
+            cbbSearchEmpJob.DataSource = jobs3;
             cbbSearchEmpJob.DisplayMember = "Name";
             cbbSearchEmpJob.ValueMember = "Id";
+
+            JobCB.Items.Clear();
+            JobCB.DataSource = null;
+            JobCB.DataSource = jobs2;
+            JobCB.DisplayMember = "Name";
+            JobCB.ValueMember = "Id";
+
+
+
+
 
         }
 
