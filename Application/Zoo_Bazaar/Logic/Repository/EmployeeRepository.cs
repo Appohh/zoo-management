@@ -45,6 +45,17 @@ namespace LogicCL.Repository
                     User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(zookeeper);
                 }
+                if (userDto.JobId == 3) 
+                {
+                    //Veterinary_Technician
+                }
+                if (userDto.JobId == 4)
+                {
+                    User AnimalManagement = new AnimalManagement(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(AnimalManagement);
+                }
+                
+
             }
             users.AddRange(newUsers);
 

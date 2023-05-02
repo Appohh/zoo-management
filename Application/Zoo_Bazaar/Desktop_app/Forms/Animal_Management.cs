@@ -89,22 +89,30 @@ namespace Desktop_app.Forms
         {
             List<Species> species1 = AnimalManagement.GetSpeciesList();
             List<Species> species2 = new List<Species>(species1); // Create a separate list with the same data
+            List<Species> species3 = new List<Species>(species1);
+
 
             // Add "All" option for species search
             Species allSpecies = new Species { Id = -1, Name = "All" };
-            species2.Insert(0, allSpecies);
+            species3.Insert(0, allSpecies);
+
+            CB_SpeciesBoxAdd.Items.Clear();
+            CB_SpeciesBoxAdd.DataSource = null;
+            CB_SpeciesBoxAdd.DataSource = species1;
+            CB_SpeciesBoxAdd.DisplayMember = "Name";
+            CB_SpeciesBoxAdd.ValueMember = "Id";
 
             // Populate CB_Species1 ComboBox
             CB_Species1.Items.Clear();
             CB_Species1.DataSource = null;
-            CB_Species1.DataSource = species1;
+            CB_Species1.DataSource = species2;
             CB_Species1.DisplayMember = "Name";
             CB_Species1.ValueMember = "Id";
 
             // Populate speciesCB ComboBox
             speciesCB.Items.Clear();
             speciesCB.DataSource = null;
-            speciesCB.DataSource = species2;
+            speciesCB.DataSource = species3;
             speciesCB.DisplayMember = "Name";
             speciesCB.ValueMember = "Id";
         }
@@ -155,31 +163,6 @@ namespace Desktop_app.Forms
             CB_Diet1.DataSource = diets;
             CB_Diet1.DisplayMember = "Name";
             CB_Diet1.ValueMember = "Id";
-        }
-
-
-        private void CB_SpeciesBoxAdd_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            CB_TypeBoxAdd.Items.Clear();
-
-            // Get the selected species ID from the Species combobox
-            int selectedSpeciesId = ((Species)CB_SpeciesBoxAdd.SelectedItem).Id;
-
-            // Get the types for the selected species from the database
-            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
-
-            // Add the types to the Types combobox
-            foreach (Types type in typesForSelectedSpecies)
-            {
-                CB_TypeBoxAdd.Items.Add(type);
-            }
-            if (CB_TypeBoxAdd.Items.Count != 0)
-            {
-                //CB_Type1.SelectedValie = animal.type;
-
-                CB_TypeBoxAdd.SelectedIndex = 0;
-            }
-            else { CB_TypeBoxAdd.SelectedIndex = -1; CB_TypeBoxAdd.Text = ""; }
         }
 
 
@@ -345,6 +328,32 @@ namespace Desktop_app.Forms
         private void Btn_LogOut_Click_1(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void CB_SpeciesBoxAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_TypeBoxAdd.DataSource = null;
+
+            CB_TypeBoxAdd.Items.Clear();
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)CB_SpeciesBoxAdd.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                CB_TypeBoxAdd.Items.Add(type);
+            }
+            if (CB_TypeBoxAdd.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                CB_TypeBoxAdd.SelectedIndex = 0;
+            }
+            else { CB_TypeBoxAdd.SelectedIndex = -1; CB_TypeBoxAdd.Text = ""; }
         }
     }
 }

@@ -22,20 +22,18 @@ namespace Desktop_app
         private Employee _employee;
         private int selectedEmployeeId;
 
-        public Human_Resources(User loggedInUser)//needs parameter later
+        public Human_Resources(User loggedInUser)
         {
             hr = (HR)loggedInUser;
             hr.MakeActive();
             InitializeComponent();
 
             this.Size = new Size(1521, 910);
-            //lbx_test.Items.Add(String.Format(stdDetails, "Image", "FirstName", "LastName", "Email", "Job", "Phone", "Status"));
 
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
             PopulateJobCombobox();
             PopulateJobSearchCombobox();
-            //UserLoggedIn.GetList<Employee>();
-            //test
+
         }
 
         private void Refresh()
@@ -68,45 +66,11 @@ namespace Desktop_app
             foreach (Employee employee in filteredEmployees)
             {
                 string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName , employee.Jobname, employee.Phone, contractStatusString });
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
-            //old
-            //string jobname = "";
-            //lv_Employees.Items.Clear();
-
-            //if (job.ToLower() != "all")
-            //{
-            //    jobname = job;
-            //}
-            //foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().Where(e => (e.FirstName + " " + e.LastName).ToLower().Contains(name.ToLower())&& e.Jobname.ToLower().Contains(jobname.ToLower())  && e.Phone.ToLower().Contains(phone.ToLower())).ToList())
-            //{
-
-            //    string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
-            //    ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
-            //    userInfo.Tag = employee.Id.ToString();
-            //    lv_Employees.Items.Add(userInfo);
-            //}
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var add_Employee_Form = new Add_Employee_Form(hr);
-            add_Employee_Form.ShowDialog();
-            if (add_Employee_Form.DialogResult == DialogResult.OK)
-            {
-                add_Employee_Form.Dispose();
-            }
-            else if (add_Employee_Form.DialogResult == DialogResult.Cancel)
-            {
-                MessageBox.Show("Operation Canceled");
-                add_Employee_Form.Dispose();
-            }
-            this.Show();
-        }
-
 
         private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -122,19 +86,13 @@ namespace Desktop_app
 
         private void btn_search_Employee_Click_1(object sender, EventArgs e)
         {
+            lv_Employees.Items.Clear();
             FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text);
         }
 
         private void updateBTHR_Click_1(object sender, EventArgs e)
         {
             {
-                //selected index - please check oskar
-                //int selectedIndex = lv_Employees.SelectedIndices.Count;// unsure
-
-                //acc details
-                string userName = TB_Username.Text;
-                string password = TB_Password.Text;
-
                 //employee details
                 string firstName = TB_Firstname.Text;
                 string lastName = TB_Lastname.Text;
@@ -197,7 +155,6 @@ namespace Desktop_app
                 TB_Password.Text = selectedUser.Password;
                 TB_BSN.Text = selectedUser.BSN;
                 TBJob.Text = selectedUser.Jobname;
-                //CB_Contract.Text = Convert.ToString(selectedUser.Contractstatus);
 
                 //Details of employee
                 TB_Firstname.Text = selectedUser.FirstName;
@@ -235,7 +192,7 @@ namespace Desktop_app
 
         private void PopulateJobCombobox()
         {
-            
+
 
             //old
             List<Job> jobs = hr.GetJobList();
@@ -266,13 +223,13 @@ namespace Desktop_app
 
         private void ClearInputAddEmployee()
         {
-            foreach(Control control in tabAddEmployee.Controls)
+            foreach (Control control in tabAddEmployee.Controls)
             {
                 if (control is TextBox)
                 {
                     (control as TextBox).Text = string.Empty;
                 }
-                if(control is DateTimePicker)
+                if (control is DateTimePicker)
                 {
                     (control as DateTimePicker).Value = DateTime.Now;
                 }
@@ -283,6 +240,11 @@ namespace Desktop_app
         private void button3_Click_1(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void Tab_Overview_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

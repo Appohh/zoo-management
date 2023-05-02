@@ -903,6 +903,7 @@
             CB_SpeciesBoxAdd.Name = "CB_SpeciesBoxAdd";
             CB_SpeciesBoxAdd.Size = new Size(253, 29);
             CB_SpeciesBoxAdd.TabIndex = 32;
+            CB_SpeciesBoxAdd.SelectedIndexChanged += CB_SpeciesBoxAdd_SelectedIndexChanged;
             // 
             // label11
             // 
