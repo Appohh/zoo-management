@@ -46,6 +46,28 @@ namespace LogicCL.Repository
                     User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(zookeeper);
                 }
+                if (userDto.JobId == 3) 
+                {
+                    User VeterinaryTechnician = new VeterinaryTechnician(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(VeterinaryTechnician);
+                }
+                if (userDto.JobId == 4)
+                {
+                    User AnimalManagement = new AnimalManagement(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(AnimalManagement);
+                }
+                if (userDto.JobId == 5)
+                {
+                    User GroundsKeeper = new GroundsKeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(GroundsKeeper);
+                }
+                if (userDto.JobId == 6)
+                {
+                    User Cleaner = new Cleaner(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(Cleaner);
+                }
+
+
             }
             users.AddRange(newUsers);
 
@@ -97,9 +119,9 @@ namespace LogicCL.Repository
             return false;
         }
 
-        public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus)
+        public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job)
         {
-           if(userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus)) { refreshUserData(); return true; } else { return false; }
+           if(userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job)) { refreshUserData(); return true; } else { return false; }
         }
 
         public List<Shift> GetShiftsByEmpId(int id)

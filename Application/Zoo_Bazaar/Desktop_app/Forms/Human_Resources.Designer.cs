@@ -28,129 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ColumnHeader Job;
+            ColumnHeader Job;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Human_Resources));
-            this.lb_more_details = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn_add_employee_HR = new System.Windows.Forms.Button();
-            this.lb_see_more = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Tab_Welcome = new System.Windows.Forms.TabPage();
-            this.txt_Welcome = new System.Windows.Forms.Label();
-            this.Tab_Add_Employee = new System.Windows.Forms.TabPage();
-            this.Gp_Contact_Employee = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btn_add_employee = new System.Windows.Forms.Button();
-            this.SpouseBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.PhoneNumberBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.EmergencyContactBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.SpouseContactBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.EmergencyContactNameBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.Gp_Detail_Employees = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.BirthDateBoxAddEmployee = new System.Windows.Forms.DateTimePicker();
-            this.SurnameBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.AdressBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.NameBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.EmailBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Gb_Details_employee = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Username = new System.Windows.Forms.Label();
-            this.cbJob = new System.Windows.Forms.ComboBox();
-            this.UsernameBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.PasswordBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ContractBoxAddEmployee = new System.Windows.Forms.ComboBox();
-            this.BSNBoxAddEmployee = new System.Windows.Forms.TextBox();
-            this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
-            this.Tab_Overview = new System.Windows.Forms.TabPage();
-            this.cbbSearchEmpJob = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.tbSearchEmpPhone = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.btn_search_Employee = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbSearchEmpName = new System.Windows.Forms.TextBox();
-            this.lv_Employees = new System.Windows.Forms.ListView();
-            this.Namez = new System.Windows.Forms.ColumnHeader();
-            this.Phone = new System.Windows.Forms.ColumnHeader();
-            this.Contract = new System.Windows.Forms.ColumnHeader();
-            this.artanPanel4 = new Desktop_app.ArtanPanel();
-            this.updateBTHR = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.TB_Emregency = new System.Windows.Forms.TextBox();
-            this.TB_SpouseContact = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.TB_Spouse = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.TB_Emergencycontact = new System.Windows.Forms.TextBox();
-            this.TB_ContactName = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lbl_Phonenumber = new System.Windows.Forms.Label();
-            this.TB_Phone = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.TB_Password = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.TB_Username = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CB_Contract = new System.Windows.Forms.ComboBox();
-            this.TB_City = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.TB_Address = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lbl_Job = new System.Windows.Forms.Label();
-            this.TB_Job = new System.Windows.Forms.TextBox();
-            this.TB_BSN = new System.Windows.Forms.TextBox();
-            this.lbl_BSN = new System.Windows.Forms.Label();
-            this.TB_Lastname = new System.Windows.Forms.TextBox();
-            this.lbl_firstname = new System.Windows.Forms.Label();
-            this.BirthDateBoxHR = new System.Windows.Forms.DateTimePicker();
-            this.TB_Firstname = new System.Windows.Forms.TextBox();
-            this.lbl_birthdate = new System.Windows.Forms.Label();
-            this.lbl_lastname = new System.Windows.Forms.Label();
-            this.TB_EmailAddress = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btn_ViewDetails = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.welcome = new System.Windows.Forms.TabPage();
-            this.welcome_txt = new System.Windows.Forms.Label();
-            this.tabAddEmployee = new System.Windows.Forms.TabControl();
-            Job = new System.Windows.Forms.ColumnHeader();
-            this.Tab_Add_Employee.SuspendLayout();
-            this.Gp_Contact_Employee.SuspendLayout();
-            this.Gp_Detail_Employees.SuspendLayout();
-            this.Gb_Details_employee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).BeginInit();
-            this.Tab_Overview.SuspendLayout();
-            this.artanPanel4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.welcome.SuspendLayout();
-            this.tabAddEmployee.SuspendLayout();
-            this.SuspendLayout();
+            lb_more_details = new Label();
+            panel3 = new Panel();
+            label1 = new Label();
+            label4 = new Label();
+            btn_add_employee_HR = new Button();
+            lb_see_more = new Label();
+            label2 = new Label();
+            Tab_Welcome = new TabPage();
+            txt_Welcome = new Label();
+            Tab_Add_Employee = new TabPage();
+            Gp_Contact_Employee = new GroupBox();
+            label19 = new Label();
+            label18 = new Label();
+            label17 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            btn_add_employee = new Button();
+            SpouseBoxAddEmployee = new TextBox();
+            PhoneNumberBoxAddEmployee = new TextBox();
+            EmergencyContactBoxAddEmployee = new TextBox();
+            SpouseContactBoxAddEmployee = new TextBox();
+            EmergencyContactNameBoxAddEmployee = new TextBox();
+            Gp_Detail_Employees = new GroupBox();
+            label34 = new Label();
+            label9 = new Label();
+            label33 = new Label();
+            label16 = new Label();
+            label10 = new Label();
+            BirthDateBoxAddEmployee = new DateTimePicker();
+            SurnameBoxAddEmployee = new TextBox();
+            AdressBoxAddEmployee = new TextBox();
+            NameBoxAddEmployee = new TextBox();
+            EmailBoxAddEmployee = new TextBox();
+            Gb_Details_employee = new GroupBox();
+            label13 = new Label();
+            label11 = new Label();
+            label32 = new Label();
+            label6 = new Label();
+            Username = new Label();
+            cbJobAdd = new ComboBox();
+            UsernameBoxAddEmployee = new TextBox();
+            PasswordBoxAddEmployee = new TextBox();
+            ContractBoxAddEmployee = new ComboBox();
+            BSNBoxAddEmployee = new TextBox();
+            PictureBoxAddEmployee = new PictureBox();
+            Tab_Overview = new TabPage();
+            label7 = new Label();
+            CB_StatusSearch = new ComboBox();
+            cbbSearchEmpJob = new ComboBox();
+            label37 = new Label();
+            label36 = new Label();
+            tbSearchEmpPhone = new TextBox();
+            label35 = new Label();
+            btn_search_Employee = new Button();
+            button3 = new Button();
+            label5 = new Label();
+            tbSearchEmpName = new TextBox();
+            lv_Employees = new ListView();
+            Namez = new ColumnHeader();
+            Phone = new ColumnHeader();
+            Contract = new ColumnHeader();
+            artanPanel4 = new ArtanPanel();
+            updateBTHR = new Button();
+            groupBox3 = new GroupBox();
+            label31 = new Label();
+            TB_Emregency = new TextBox();
+            TB_SpouseContact = new TextBox();
+            label28 = new Label();
+            label27 = new Label();
+            TB_Spouse = new TextBox();
+            label26 = new Label();
+            TB_Emergencycontact = new TextBox();
+            TB_ContactName = new TextBox();
+            label25 = new Label();
+            lbl_Phonenumber = new Label();
+            TB_Phone = new TextBox();
+            groupBox2 = new GroupBox();
+            label24 = new Label();
+            TB_Password = new TextBox();
+            label23 = new Label();
+            TB_Username = new TextBox();
+            groupBox1 = new GroupBox();
+            JobCB = new ComboBox();
+            CB_Contract = new ComboBox();
+            TB_City = new TextBox();
+            label30 = new Label();
+            TB_Address = new TextBox();
+            label29 = new Label();
+            label22 = new Label();
+            lbl_Job = new Label();
+            TB_BSN = new TextBox();
+            lbl_BSN = new Label();
+            TB_Lastname = new TextBox();
+            lbl_firstname = new Label();
+            BirthDateBoxHR = new DateTimePicker();
+            TB_Firstname = new TextBox();
+            lbl_birthdate = new Label();
+            lbl_lastname = new Label();
+            TB_EmailAddress = new TextBox();
+            label21 = new Label();
+            label3 = new Label();
+            welcome = new TabPage();
+            welcome_txt = new Label();
+            tabAddEmployee = new TabControl();
+            Job = new ColumnHeader();
+            Tab_Add_Employee.SuspendLayout();
+            Gp_Contact_Employee.SuspendLayout();
+            Gp_Detail_Employees.SuspendLayout();
+            Gb_Details_employee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).BeginInit();
+            Tab_Overview.SuspendLayout();
+            artanPanel4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            welcome.SuspendLayout();
+            tabAddEmployee.SuspendLayout();
+            SuspendLayout();
             // 
             // Job
             // 
@@ -159,1237 +156,1238 @@
             // 
             // lb_more_details
             // 
-            this.lb_more_details.AutoSize = true;
-            this.lb_more_details.BackColor = System.Drawing.Color.Transparent;
-            this.lb_more_details.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.lb_more_details.ForeColor = System.Drawing.Color.White;
-            this.lb_more_details.Location = new System.Drawing.Point(98, 581);
-            this.lb_more_details.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_more_details.Name = "lb_more_details";
-            this.lb_more_details.Size = new System.Drawing.Size(176, 40);
-            this.lb_more_details.TabIndex = 1;
-            this.lb_more_details.Text = "More details";
+            lb_more_details.AutoSize = true;
+            lb_more_details.BackColor = Color.Transparent;
+            lb_more_details.Font = new Font("Segoe UI", 14.25F, FontStyle.Underline, GraphicsUnit.Point);
+            lb_more_details.ForeColor = Color.White;
+            lb_more_details.Location = new Point(98, 581);
+            lb_more_details.Margin = new Padding(4, 0, 4, 0);
+            lb_more_details.Name = "lb_more_details";
+            lb_more_details.Size = new Size(176, 40);
+            lb_more_details.TabIndex = 1;
+            lb_more_details.Text = "More details";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(40, 130);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(299, 7);
-            this.panel3.TabIndex = 0;
+            panel3.BackColor = Color.White;
+            panel3.Location = new Point(40, 130);
+            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(299, 7);
+            panel3.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 20);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Zoo Bazaar - HR /";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(10, 6);
+            label1.Margin = new Padding(1, 0, 1, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(129, 20);
+            label1.TabIndex = 21;
+            label1.Text = "Zoo Bazaar - HR /";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(146, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Home";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(221, 66, 76);
+            label4.Location = new Point(146, 6);
+            label4.Margin = new Padding(1, 0, 1, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 20);
+            label4.TabIndex = 22;
+            label4.Text = "Home";
             // 
             // btn_add_employee_HR
             // 
-            this.btn_add_employee_HR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.btn_add_employee_HR.Location = new System.Drawing.Point(896, 50);
-            this.btn_add_employee_HR.Name = "btn_add_employee_HR";
-            this.btn_add_employee_HR.Size = new System.Drawing.Size(199, 45);
-            this.btn_add_employee_HR.TabIndex = 0;
-            this.btn_add_employee_HR.Text = "Add new employee";
-            this.btn_add_employee_HR.UseVisualStyleBackColor = false;
+            btn_add_employee_HR.BackColor = Color.FromArgb(221, 66, 76);
+            btn_add_employee_HR.Location = new Point(896, 50);
+            btn_add_employee_HR.Name = "btn_add_employee_HR";
+            btn_add_employee_HR.Size = new Size(199, 45);
+            btn_add_employee_HR.TabIndex = 0;
+            btn_add_employee_HR.Text = "Add new employee";
+            btn_add_employee_HR.UseVisualStyleBackColor = false;
             // 
             // lb_see_more
             // 
-            this.lb_see_more.AutoSize = true;
-            this.lb_see_more.BackColor = System.Drawing.Color.Transparent;
-            this.lb_see_more.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.lb_see_more.ForeColor = System.Drawing.Color.White;
-            this.lb_see_more.Location = new System.Drawing.Point(877, 14);
-            this.lb_see_more.Name = "lb_see_more";
-            this.lb_see_more.Size = new System.Drawing.Size(218, 30);
-            this.lb_see_more.TabIndex = 1;
-            this.lb_see_more.Text = "See more Employees";
+            lb_see_more.AutoSize = true;
+            lb_see_more.BackColor = Color.Transparent;
+            lb_see_more.Font = new Font("Segoe UI", 11F, FontStyle.Underline, GraphicsUnit.Point);
+            lb_see_more.ForeColor = Color.White;
+            lb_see_more.Location = new Point(877, 14);
+            lb_see_more.Name = "lb_see_more";
+            lb_see_more.Size = new Size(218, 30);
+            lb_see_more.TabIndex = 1;
+            lb_see_more.Text = "See more Employees";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(34, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 30);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Welcome ......";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(34, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(140, 30);
+            label2.TabIndex = 2;
+            label2.Text = "Welcome ......";
             // 
             // Tab_Welcome
             // 
-            this.Tab_Welcome.Location = new System.Drawing.Point(0, 0);
-            this.Tab_Welcome.Name = "Tab_Welcome";
-            this.Tab_Welcome.Size = new System.Drawing.Size(200, 100);
-            this.Tab_Welcome.TabIndex = 0;
+            Tab_Welcome.Location = new Point(0, 0);
+            Tab_Welcome.Name = "Tab_Welcome";
+            Tab_Welcome.Size = new Size(200, 100);
+            Tab_Welcome.TabIndex = 0;
             // 
             // txt_Welcome
             // 
-            this.txt_Welcome.Location = new System.Drawing.Point(0, 0);
-            this.txt_Welcome.Name = "txt_Welcome";
-            this.txt_Welcome.Size = new System.Drawing.Size(100, 23);
-            this.txt_Welcome.TabIndex = 0;
+            txt_Welcome.Location = new Point(0, 0);
+            txt_Welcome.Name = "txt_Welcome";
+            txt_Welcome.Size = new Size(100, 23);
+            txt_Welcome.TabIndex = 0;
             // 
             // Tab_Add_Employee
             // 
-            this.Tab_Add_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
-            this.Tab_Add_Employee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Tab_Add_Employee.Controls.Add(this.Gp_Contact_Employee);
-            this.Tab_Add_Employee.Controls.Add(this.Gp_Detail_Employees);
-            this.Tab_Add_Employee.Controls.Add(this.Gb_Details_employee);
-            this.Tab_Add_Employee.Controls.Add(this.PictureBoxAddEmployee);
-            this.Tab_Add_Employee.Location = new System.Drawing.Point(4, 32);
-            this.Tab_Add_Employee.Margin = new System.Windows.Forms.Padding(1);
-            this.Tab_Add_Employee.Name = "Tab_Add_Employee";
-            this.Tab_Add_Employee.Padding = new System.Windows.Forms.Padding(1);
-            this.Tab_Add_Employee.Size = new System.Drawing.Size(1662, 758);
-            this.Tab_Add_Employee.TabIndex = 1;
-            this.Tab_Add_Employee.Text = "Add Employee";
+            Tab_Add_Employee.BackColor = Color.FromArgb(96, 214, 255);
+            Tab_Add_Employee.BackgroundImageLayout = ImageLayout.Stretch;
+            Tab_Add_Employee.Controls.Add(Gp_Contact_Employee);
+            Tab_Add_Employee.Controls.Add(Gp_Detail_Employees);
+            Tab_Add_Employee.Controls.Add(Gb_Details_employee);
+            Tab_Add_Employee.Controls.Add(PictureBoxAddEmployee);
+            Tab_Add_Employee.Location = new Point(4, 32);
+            Tab_Add_Employee.Margin = new Padding(1);
+            Tab_Add_Employee.Name = "Tab_Add_Employee";
+            Tab_Add_Employee.Padding = new Padding(1);
+            Tab_Add_Employee.Size = new Size(1662, 755);
+            Tab_Add_Employee.TabIndex = 1;
+            Tab_Add_Employee.Text = "Add Employee";
             // 
             // Gp_Contact_Employee
             // 
-            this.Gp_Contact_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.Gp_Contact_Employee.Controls.Add(this.label19);
-            this.Gp_Contact_Employee.Controls.Add(this.label18);
-            this.Gp_Contact_Employee.Controls.Add(this.label17);
-            this.Gp_Contact_Employee.Controls.Add(this.label15);
-            this.Gp_Contact_Employee.Controls.Add(this.label14);
-            this.Gp_Contact_Employee.Controls.Add(this.btn_add_employee);
-            this.Gp_Contact_Employee.Controls.Add(this.SpouseBoxAddEmployee);
-            this.Gp_Contact_Employee.Controls.Add(this.PhoneNumberBoxAddEmployee);
-            this.Gp_Contact_Employee.Controls.Add(this.EmergencyContactBoxAddEmployee);
-            this.Gp_Contact_Employee.Controls.Add(this.SpouseContactBoxAddEmployee);
-            this.Gp_Contact_Employee.Controls.Add(this.label20);
-            this.Gp_Contact_Employee.Controls.Add(this.EmergencyContactNameBoxAddEmployee);
-            this.Gp_Contact_Employee.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Gp_Contact_Employee.ForeColor = System.Drawing.Color.Black;
-            this.Gp_Contact_Employee.Location = new System.Drawing.Point(717, 403);
-            this.Gp_Contact_Employee.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.Gp_Contact_Employee.Name = "Gp_Contact_Employee";
-            this.Gp_Contact_Employee.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.Gp_Contact_Employee.Size = new System.Drawing.Size(713, 313);
-            this.Gp_Contact_Employee.TabIndex = 78;
-            this.Gp_Contact_Employee.TabStop = false;
-            this.Gp_Contact_Employee.Text = "Contact";
+            Gp_Contact_Employee.BackColor = Color.FromArgb(255, 209, 159);
+            Gp_Contact_Employee.Controls.Add(label19);
+            Gp_Contact_Employee.Controls.Add(label18);
+            Gp_Contact_Employee.Controls.Add(label17);
+            Gp_Contact_Employee.Controls.Add(label15);
+            Gp_Contact_Employee.Controls.Add(label14);
+            Gp_Contact_Employee.Controls.Add(btn_add_employee);
+            Gp_Contact_Employee.Controls.Add(SpouseBoxAddEmployee);
+            Gp_Contact_Employee.Controls.Add(PhoneNumberBoxAddEmployee);
+            Gp_Contact_Employee.Controls.Add(EmergencyContactBoxAddEmployee);
+            Gp_Contact_Employee.Controls.Add(SpouseContactBoxAddEmployee);
+            Gp_Contact_Employee.Controls.Add(EmergencyContactNameBoxAddEmployee);
+            Gp_Contact_Employee.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Gp_Contact_Employee.ForeColor = Color.Black;
+            Gp_Contact_Employee.Location = new Point(604, 333);
+            Gp_Contact_Employee.Margin = new Padding(4, 2, 4, 2);
+            Gp_Contact_Employee.Name = "Gp_Contact_Employee";
+            Gp_Contact_Employee.Padding = new Padding(3, 1, 3, 1);
+            Gp_Contact_Employee.Size = new Size(713, 388);
+            Gp_Contact_Employee.TabIndex = 78;
+            Gp_Contact_Employee.TabStop = false;
+            Gp_Contact_Employee.Text = "Contact";
             // 
             // label19
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(344, 103);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 15);
-            this.label19.TabIndex = 78;
-            this.label19.Text = "Emergency Contact";
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.Location = new Point(391, 126);
+            label19.Margin = new Padding(2, 0, 2, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(119, 21);
+            label19.TabIndex = 78;
+            label19.Text = "Emergency Tel.";
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(344, 182);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 15);
-            this.label18.TabIndex = 77;
-            this.label18.Text = "Spouse";
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(27, 189);
+            label18.Margin = new Padding(2, 0, 2, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(111, 21);
+            label18.TabIndex = 77;
+            label18.Text = "Spouse Name";
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(24, 182);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 15);
-            this.label17.TabIndex = 76;
-            this.label17.Text = "Spouse Contact";
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(389, 189);
+            label17.Margin = new Padding(2, 0, 2, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(92, 21);
+            label17.TabIndex = 76;
+            label17.Text = "Spouse Tel.";
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(27, 103);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(83, 15);
-            this.label15.TabIndex = 75;
-            this.label15.Text = "Contact Name";
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(29, 126);
+            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(114, 21);
+            label15.TabIndex = 75;
+            label15.Text = "Contact Name";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 28);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 15);
-            this.label14.TabIndex = 39;
-            this.label14.Text = "Phone Number";
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(28, 44);
+            label14.Margin = new Padding(2, 0, 2, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(98, 21);
+            label14.TabIndex = 39;
+            label14.Text = "Tel. Number";
             // 
             // btn_add_employee
             // 
-            this.btn_add_employee.BackColor = System.Drawing.Color.Black;
-            this.btn_add_employee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_add_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_employee.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_add_employee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_add_employee.Location = new System.Drawing.Point(545, 267);
-            this.btn_add_employee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btn_add_employee.Name = "btn_add_employee";
-            this.btn_add_employee.Size = new System.Drawing.Size(139, 29);
-            this.btn_add_employee.TabIndex = 74;
-            this.btn_add_employee.Text = "Add Employee";
-            this.btn_add_employee.UseVisualStyleBackColor = false;
-            this.btn_add_employee.Click += new System.EventHandler(this.btn_add_employee_Click);
+            btn_add_employee.BackColor = Color.FromArgb(221, 66, 76);
+            btn_add_employee.BackgroundImageLayout = ImageLayout.None;
+            btn_add_employee.FlatStyle = FlatStyle.Flat;
+            btn_add_employee.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_add_employee.ForeColor = SystemColors.ControlLightLight;
+            btn_add_employee.Location = new Point(534, 277);
+            btn_add_employee.Margin = new Padding(3, 1, 3, 1);
+            btn_add_employee.Name = "btn_add_employee";
+            btn_add_employee.Size = new Size(139, 29);
+            btn_add_employee.TabIndex = 74;
+            btn_add_employee.Text = "Add Employee";
+            btn_add_employee.UseVisualStyleBackColor = false;
+            btn_add_employee.Click += btn_add_employee_Click;
             // 
             // SpouseBoxAddEmployee
             // 
-            this.SpouseBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.SpouseBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpouseBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.SpouseBoxAddEmployee.Location = new System.Drawing.Point(344, 198);
-            this.SpouseBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
-            this.SpouseBoxAddEmployee.Size = new System.Drawing.Size(283, 23);
-            this.SpouseBoxAddEmployee.TabIndex = 27;
+            SpouseBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            SpouseBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            SpouseBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SpouseBoxAddEmployee.ForeColor = Color.Black;
+            SpouseBoxAddEmployee.Location = new Point(28, 212);
+            SpouseBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
+            SpouseBoxAddEmployee.Size = new Size(283, 29);
+            SpouseBoxAddEmployee.TabIndex = 27;
             // 
             // PhoneNumberBoxAddEmployee
             // 
-            this.PhoneNumberBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.PhoneNumberBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PhoneNumberBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.PhoneNumberBoxAddEmployee.Location = new System.Drawing.Point(27, 45);
-            this.PhoneNumberBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.PhoneNumberBoxAddEmployee.Name = "PhoneNumberBoxAddEmployee";
-            this.PhoneNumberBoxAddEmployee.Size = new System.Drawing.Size(297, 23);
-            this.PhoneNumberBoxAddEmployee.TabIndex = 24;
+            PhoneNumberBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            PhoneNumberBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            PhoneNumberBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            PhoneNumberBoxAddEmployee.ForeColor = Color.Black;
+            PhoneNumberBoxAddEmployee.Location = new Point(29, 66);
+            PhoneNumberBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            PhoneNumberBoxAddEmployee.Name = "PhoneNumberBoxAddEmployee";
+            PhoneNumberBoxAddEmployee.Size = new Size(297, 29);
+            PhoneNumberBoxAddEmployee.TabIndex = 24;
             // 
             // EmergencyContactBoxAddEmployee
             // 
-            this.EmergencyContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmergencyContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmergencyContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.EmergencyContactBoxAddEmployee.Location = new System.Drawing.Point(344, 119);
-            this.EmergencyContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.EmergencyContactBoxAddEmployee.Name = "EmergencyContactBoxAddEmployee";
-            this.EmergencyContactBoxAddEmployee.Size = new System.Drawing.Size(283, 23);
-            this.EmergencyContactBoxAddEmployee.TabIndex = 25;
+            EmergencyContactBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            EmergencyContactBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            EmergencyContactBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            EmergencyContactBoxAddEmployee.ForeColor = Color.Black;
+            EmergencyContactBoxAddEmployee.Location = new Point(391, 148);
+            EmergencyContactBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            EmergencyContactBoxAddEmployee.Name = "EmergencyContactBoxAddEmployee";
+            EmergencyContactBoxAddEmployee.Size = new Size(283, 29);
+            EmergencyContactBoxAddEmployee.TabIndex = 25;
             // 
             // SpouseContactBoxAddEmployee
             // 
-            this.SpouseContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.SpouseContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpouseContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.SpouseContactBoxAddEmployee.Location = new System.Drawing.Point(27, 198);
-            this.SpouseContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
-            this.SpouseContactBoxAddEmployee.Size = new System.Drawing.Size(297, 23);
-            this.SpouseContactBoxAddEmployee.TabIndex = 28;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(433, 120);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(139, 20);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Emergency contact";
+            SpouseContactBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            SpouseContactBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            SpouseContactBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SpouseContactBoxAddEmployee.ForeColor = Color.Black;
+            SpouseContactBoxAddEmployee.Location = new Point(391, 212);
+            SpouseContactBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
+            SpouseContactBoxAddEmployee.Size = new Size(297, 29);
+            SpouseContactBoxAddEmployee.TabIndex = 28;
             // 
             // EmergencyContactNameBoxAddEmployee
             // 
-            this.EmergencyContactNameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmergencyContactNameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmergencyContactNameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.EmergencyContactNameBoxAddEmployee.Location = new System.Drawing.Point(27, 119);
-            this.EmergencyContactNameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.EmergencyContactNameBoxAddEmployee.Name = "EmergencyContactNameBoxAddEmployee";
-            this.EmergencyContactNameBoxAddEmployee.Size = new System.Drawing.Size(297, 23);
-            this.EmergencyContactNameBoxAddEmployee.TabIndex = 37;
+            EmergencyContactNameBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            EmergencyContactNameBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            EmergencyContactNameBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            EmergencyContactNameBoxAddEmployee.ForeColor = Color.Black;
+            EmergencyContactNameBoxAddEmployee.Location = new Point(29, 148);
+            EmergencyContactNameBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            EmergencyContactNameBoxAddEmployee.Name = "EmergencyContactNameBoxAddEmployee";
+            EmergencyContactNameBoxAddEmployee.Size = new Size(297, 29);
+            EmergencyContactNameBoxAddEmployee.TabIndex = 37;
             // 
             // Gp_Detail_Employees
             // 
-            this.Gp_Detail_Employees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.Gp_Detail_Employees.Controls.Add(this.label34);
-            this.Gp_Detail_Employees.Controls.Add(this.label9);
-            this.Gp_Detail_Employees.Controls.Add(this.label33);
-            this.Gp_Detail_Employees.Controls.Add(this.label16);
-            this.Gp_Detail_Employees.Controls.Add(this.label10);
-            this.Gp_Detail_Employees.Controls.Add(this.BirthDateBoxAddEmployee);
-            this.Gp_Detail_Employees.Controls.Add(this.SurnameBoxAddEmployee);
-            this.Gp_Detail_Employees.Controls.Add(this.AdressBoxAddEmployee);
-            this.Gp_Detail_Employees.Controls.Add(this.NameBoxAddEmployee);
-            this.Gp_Detail_Employees.Controls.Add(this.label8);
-            this.Gp_Detail_Employees.Controls.Add(this.EmailBoxAddEmployee);
-            this.Gp_Detail_Employees.Controls.Add(this.label12);
-            this.Gp_Detail_Employees.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Gp_Detail_Employees.ForeColor = System.Drawing.Color.Black;
-            this.Gp_Detail_Employees.Location = new System.Drawing.Point(717, 98);
-            this.Gp_Detail_Employees.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.Gp_Detail_Employees.Name = "Gp_Detail_Employees";
-            this.Gp_Detail_Employees.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.Gp_Detail_Employees.Size = new System.Drawing.Size(713, 217);
-            this.Gp_Detail_Employees.TabIndex = 77;
-            this.Gp_Detail_Employees.TabStop = false;
-            this.Gp_Detail_Employees.Text = "Details of Employee";
+            Gp_Detail_Employees.BackColor = Color.FromArgb(255, 209, 159);
+            Gp_Detail_Employees.Controls.Add(label34);
+            Gp_Detail_Employees.Controls.Add(label9);
+            Gp_Detail_Employees.Controls.Add(label33);
+            Gp_Detail_Employees.Controls.Add(label16);
+            Gp_Detail_Employees.Controls.Add(label10);
+            Gp_Detail_Employees.Controls.Add(BirthDateBoxAddEmployee);
+            Gp_Detail_Employees.Controls.Add(SurnameBoxAddEmployee);
+            Gp_Detail_Employees.Controls.Add(AdressBoxAddEmployee);
+            Gp_Detail_Employees.Controls.Add(NameBoxAddEmployee);
+            Gp_Detail_Employees.Controls.Add(EmailBoxAddEmployee);
+            Gp_Detail_Employees.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Gp_Detail_Employees.ForeColor = Color.Black;
+            Gp_Detail_Employees.Location = new Point(604, 98);
+            Gp_Detail_Employees.Margin = new Padding(4, 2, 4, 2);
+            Gp_Detail_Employees.Name = "Gp_Detail_Employees";
+            Gp_Detail_Employees.Padding = new Padding(3, 1, 3, 1);
+            Gp_Detail_Employees.Size = new Size(713, 232);
+            Gp_Detail_Employees.TabIndex = 77;
+            Gp_Detail_Employees.TabStop = false;
+            Gp_Detail_Employees.Text = "Details of Employee";
             // 
             // label34
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(344, 79);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(36, 15);
-            this.label34.TabIndex = 83;
-            this.label34.Text = "Email";
+            label34.AutoSize = true;
+            label34.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label34.Location = new Point(390, 85);
+            label34.Margin = new Padding(2, 0, 2, 0);
+            label34.Name = "label34";
+            label34.Size = new Size(48, 21);
+            label34.TabIndex = 83;
+            label34.Text = "Email";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 139);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 15);
-            this.label9.TabIndex = 82;
-            this.label9.Text = "Address";
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(32, 154);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(70, 21);
+            label9.TabIndex = 82;
+            label9.Text = "Address";
             // 
             // label33
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(28, 77);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(55, 15);
-            this.label33.TabIndex = 81;
-            this.label33.Text = "Birthdate";
+            label33.AutoSize = true;
+            label33.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label33.Location = new Point(32, 85);
+            label33.Margin = new Padding(2, 0, 2, 0);
+            label33.Name = "label33";
+            label33.Size = new Size(78, 21);
+            label33.TabIndex = 81;
+            label33.Text = "Birthdate";
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(344, 21);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(63, 15);
-            this.label16.TabIndex = 80;
-            this.label16.Text = "Last Name";
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(389, 21);
+            label16.Margin = new Padding(2, 0, 2, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(86, 21);
+            label16.TabIndex = 80;
+            label16.Text = "Last Name";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 21);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 15);
-            this.label10.TabIndex = 79;
-            this.label10.Text = "First Name";
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(27, 21);
+            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(88, 21);
+            label10.TabIndex = 79;
+            label10.Text = "First Name";
             // 
             // BirthDateBoxAddEmployee
             // 
-            this.BirthDateBoxAddEmployee.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BirthDateBoxAddEmployee.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.BirthDateBoxAddEmployee.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BirthDateBoxAddEmployee.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthDateBoxAddEmployee.Location = new System.Drawing.Point(27, 95);
-            this.BirthDateBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.BirthDateBoxAddEmployee.Name = "BirthDateBoxAddEmployee";
-            this.BirthDateBoxAddEmployee.Size = new System.Drawing.Size(297, 23);
-            this.BirthDateBoxAddEmployee.TabIndex = 68;
+            BirthDateBoxAddEmployee.CalendarFont = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            BirthDateBoxAddEmployee.CalendarTitleBackColor = SystemColors.ControlText;
+            BirthDateBoxAddEmployee.CalendarTitleForeColor = SystemColors.ControlLightLight;
+            BirthDateBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BirthDateBoxAddEmployee.Format = DateTimePickerFormat.Short;
+            BirthDateBoxAddEmployee.Location = new Point(27, 106);
+            BirthDateBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            BirthDateBoxAddEmployee.Name = "BirthDateBoxAddEmployee";
+            BirthDateBoxAddEmployee.Size = new Size(298, 29);
+            BirthDateBoxAddEmployee.TabIndex = 68;
             // 
             // SurnameBoxAddEmployee
             // 
-            this.SurnameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.SurnameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SurnameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.SurnameBoxAddEmployee.Location = new System.Drawing.Point(344, 37);
-            this.SurnameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.SurnameBoxAddEmployee.Name = "SurnameBoxAddEmployee";
-            this.SurnameBoxAddEmployee.Size = new System.Drawing.Size(283, 23);
-            this.SurnameBoxAddEmployee.TabIndex = 35;
+            SurnameBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            SurnameBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            SurnameBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SurnameBoxAddEmployee.ForeColor = Color.Black;
+            SurnameBoxAddEmployee.Location = new Point(390, 43);
+            SurnameBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            SurnameBoxAddEmployee.Name = "SurnameBoxAddEmployee";
+            SurnameBoxAddEmployee.Size = new Size(283, 29);
+            SurnameBoxAddEmployee.TabIndex = 35;
             // 
             // AdressBoxAddEmployee
             // 
-            this.AdressBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.AdressBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AdressBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.AdressBoxAddEmployee.Location = new System.Drawing.Point(27, 155);
-            this.AdressBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.AdressBoxAddEmployee.Name = "AdressBoxAddEmployee";
-            this.AdressBoxAddEmployee.Size = new System.Drawing.Size(601, 23);
-            this.AdressBoxAddEmployee.TabIndex = 22;
+            AdressBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            AdressBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            AdressBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AdressBoxAddEmployee.ForeColor = Color.Black;
+            AdressBoxAddEmployee.Location = new Point(27, 176);
+            AdressBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            AdressBoxAddEmployee.Name = "AdressBoxAddEmployee";
+            AdressBoxAddEmployee.Size = new Size(646, 29);
+            AdressBoxAddEmployee.TabIndex = 22;
             // 
             // NameBoxAddEmployee
             // 
-            this.NameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.NameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.NameBoxAddEmployee.Location = new System.Drawing.Point(27, 37);
-            this.NameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.NameBoxAddEmployee.Name = "NameBoxAddEmployee";
-            this.NameBoxAddEmployee.Size = new System.Drawing.Size(297, 23);
-            this.NameBoxAddEmployee.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(28, 92);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 20);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Birth Date:";
+            NameBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            NameBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            NameBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            NameBoxAddEmployee.ForeColor = Color.Black;
+            NameBoxAddEmployee.Location = new Point(28, 43);
+            NameBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            NameBoxAddEmployee.Name = "NameBoxAddEmployee";
+            NameBoxAddEmployee.Size = new Size(297, 29);
+            NameBoxAddEmployee.TabIndex = 18;
             // 
             // EmailBoxAddEmployee
             // 
-            this.EmailBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmailBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.EmailBoxAddEmployee.Location = new System.Drawing.Point(344, 95);
-            this.EmailBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.EmailBoxAddEmployee.Name = "EmailBoxAddEmployee";
-            this.EmailBoxAddEmployee.Size = new System.Drawing.Size(283, 23);
-            this.EmailBoxAddEmployee.TabIndex = 20;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(433, 92);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 20);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Email:";
+            EmailBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            EmailBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            EmailBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            EmailBoxAddEmployee.ForeColor = Color.Black;
+            EmailBoxAddEmployee.Location = new Point(390, 106);
+            EmailBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            EmailBoxAddEmployee.Name = "EmailBoxAddEmployee";
+            EmailBoxAddEmployee.Size = new Size(283, 29);
+            EmailBoxAddEmployee.TabIndex = 20;
             // 
             // Gb_Details_employee
             // 
-            this.Gb_Details_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.Gb_Details_employee.Controls.Add(this.label13);
-            this.Gb_Details_employee.Controls.Add(this.label11);
-            this.Gb_Details_employee.Controls.Add(this.label32);
-            this.Gb_Details_employee.Controls.Add(this.label6);
-            this.Gb_Details_employee.Controls.Add(this.Username);
-            this.Gb_Details_employee.Controls.Add(this.cbJob);
-            this.Gb_Details_employee.Controls.Add(this.UsernameBoxAddEmployee);
-            this.Gb_Details_employee.Controls.Add(this.PasswordBoxAddEmployee);
-            this.Gb_Details_employee.Controls.Add(this.label7);
-            this.Gb_Details_employee.Controls.Add(this.ContractBoxAddEmployee);
-            this.Gb_Details_employee.Controls.Add(this.BSNBoxAddEmployee);
-            this.Gb_Details_employee.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Gb_Details_employee.ForeColor = System.Drawing.Color.Black;
-            this.Gb_Details_employee.Location = new System.Drawing.Point(289, 403);
-            this.Gb_Details_employee.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.Gb_Details_employee.Name = "Gb_Details_employee";
-            this.Gb_Details_employee.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.Gb_Details_employee.Size = new System.Drawing.Size(286, 309);
-            this.Gb_Details_employee.TabIndex = 76;
-            this.Gb_Details_employee.TabStop = false;
-            this.Gb_Details_employee.Text = "Employee Details";
+            Gb_Details_employee.BackColor = Color.FromArgb(255, 209, 159);
+            Gb_Details_employee.Controls.Add(label13);
+            Gb_Details_employee.Controls.Add(label11);
+            Gb_Details_employee.Controls.Add(label32);
+            Gb_Details_employee.Controls.Add(label6);
+            Gb_Details_employee.Controls.Add(Username);
+            Gb_Details_employee.Controls.Add(cbJobAdd);
+            Gb_Details_employee.Controls.Add(UsernameBoxAddEmployee);
+            Gb_Details_employee.Controls.Add(PasswordBoxAddEmployee);
+            Gb_Details_employee.Controls.Add(ContractBoxAddEmployee);
+            Gb_Details_employee.Controls.Add(BSNBoxAddEmployee);
+            Gb_Details_employee.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Gb_Details_employee.ForeColor = Color.Black;
+            Gb_Details_employee.Location = new Point(289, 333);
+            Gb_Details_employee.Margin = new Padding(4, 2, 4, 2);
+            Gb_Details_employee.Name = "Gb_Details_employee";
+            Gb_Details_employee.Padding = new Padding(3, 1, 3, 1);
+            Gb_Details_employee.Size = new Size(306, 388);
+            Gb_Details_employee.TabIndex = 76;
+            Gb_Details_employee.TabStop = false;
+            Gb_Details_employee.Text = "Employee Details";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 237);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 15);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Contract";
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(16, 300);
+            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(73, 21);
+            label13.TabIndex = 38;
+            label13.Text = "Contract";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 183);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 15);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Job";
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(16, 234);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(36, 21);
+            label11.TabIndex = 37;
+            label11.Text = "Job";
             // 
             // label32
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(12, 129);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(30, 15);
-            this.label32.TabIndex = 36;
-            this.label32.Text = "BSN";
+            label32.AutoSize = true;
+            label32.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label32.Location = new Point(16, 172);
+            label32.Margin = new Padding(2, 0, 2, 0);
+            label32.Name = "label32";
+            label32.Size = new Size(41, 21);
+            label32.TabIndex = 36;
+            label32.Text = "BSN";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 77);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 15);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Password";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(18, 110);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(79, 21);
+            label6.TabIndex = 35;
+            label6.Text = "Password";
             // 
             // Username
             // 
-            this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(12, 28);
-            this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(60, 15);
-            this.Username.TabIndex = 34;
-            this.Username.Text = "Username";
+            Username.AutoSize = true;
+            Username.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Username.Location = new Point(16, 44);
+            Username.Margin = new Padding(2, 0, 2, 0);
+            Username.Name = "Username";
+            Username.Size = new Size(83, 21);
+            Username.TabIndex = 34;
+            Username.Text = "Username";
             // 
-            // cbJob
+            // cbJobAdd
             // 
-            this.cbJob.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbJob.ForeColor = System.Drawing.Color.Black;
-            this.cbJob.FormattingEnabled = true;
-            this.cbJob.Location = new System.Drawing.Point(14, 199);
-            this.cbJob.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.cbJob.Name = "cbJob";
-            this.cbJob.Size = new System.Drawing.Size(253, 23);
-            this.cbJob.TabIndex = 33;
+            cbJobAdd.BackColor = SystemColors.ButtonFace;
+            cbJobAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbJobAdd.ForeColor = Color.Black;
+            cbJobAdd.FormattingEnabled = true;
+            cbJobAdd.Location = new Point(16, 256);
+            cbJobAdd.Margin = new Padding(3, 1, 3, 1);
+            cbJobAdd.Name = "cbJobAdd";
+            cbJobAdd.Size = new Size(253, 29);
+            cbJobAdd.TabIndex = 33;
             // 
             // UsernameBoxAddEmployee
             // 
-            this.UsernameBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.UsernameBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UsernameBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.UsernameBoxAddEmployee.Location = new System.Drawing.Point(14, 45);
-            this.UsernameBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.UsernameBoxAddEmployee.Name = "UsernameBoxAddEmployee";
-            this.UsernameBoxAddEmployee.Size = new System.Drawing.Size(253, 23);
-            this.UsernameBoxAddEmployee.TabIndex = 19;
+            UsernameBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            UsernameBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            UsernameBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            UsernameBoxAddEmployee.ForeColor = Color.Black;
+            UsernameBoxAddEmployee.Location = new Point(18, 66);
+            UsernameBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            UsernameBoxAddEmployee.Name = "UsernameBoxAddEmployee";
+            UsernameBoxAddEmployee.Size = new Size(253, 29);
+            UsernameBoxAddEmployee.TabIndex = 19;
             // 
             // PasswordBoxAddEmployee
             // 
-            this.PasswordBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.PasswordBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PasswordBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.PasswordBoxAddEmployee.Location = new System.Drawing.Point(14, 93);
-            this.PasswordBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.PasswordBoxAddEmployee.Name = "PasswordBoxAddEmployee";
-            this.PasswordBoxAddEmployee.Size = new System.Drawing.Size(253, 23);
-            this.PasswordBoxAddEmployee.TabIndex = 21;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(18, 90);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Password:";
+            PasswordBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            PasswordBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            PasswordBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            PasswordBoxAddEmployee.ForeColor = Color.Black;
+            PasswordBoxAddEmployee.Location = new Point(19, 131);
+            PasswordBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            PasswordBoxAddEmployee.Name = "PasswordBoxAddEmployee";
+            PasswordBoxAddEmployee.Size = new Size(253, 29);
+            PasswordBoxAddEmployee.TabIndex = 21;
             // 
             // ContractBoxAddEmployee
             // 
-            this.ContractBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ContractBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.ContractBoxAddEmployee.FormattingEnabled = true;
-            this.ContractBoxAddEmployee.Location = new System.Drawing.Point(14, 253);
-            this.ContractBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.ContractBoxAddEmployee.Name = "ContractBoxAddEmployee";
-            this.ContractBoxAddEmployee.Size = new System.Drawing.Size(253, 23);
-            this.ContractBoxAddEmployee.TabIndex = 32;
+            ContractBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            ContractBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ContractBoxAddEmployee.ForeColor = Color.Black;
+            ContractBoxAddEmployee.FormattingEnabled = true;
+            ContractBoxAddEmployee.Location = new Point(14, 322);
+            ContractBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            ContractBoxAddEmployee.Name = "ContractBoxAddEmployee";
+            ContractBoxAddEmployee.Size = new Size(253, 29);
+            ContractBoxAddEmployee.TabIndex = 32;
             // 
             // BSNBoxAddEmployee
             // 
-            this.BSNBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BSNBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BSNBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.BSNBoxAddEmployee.Location = new System.Drawing.Point(14, 145);
-            this.BSNBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.BSNBoxAddEmployee.Name = "BSNBoxAddEmployee";
-            this.BSNBoxAddEmployee.Size = new System.Drawing.Size(253, 23);
-            this.BSNBoxAddEmployee.TabIndex = 26;
+            BSNBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            BSNBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
+            BSNBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BSNBoxAddEmployee.ForeColor = Color.Black;
+            BSNBoxAddEmployee.Location = new Point(16, 194);
+            BSNBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            BSNBoxAddEmployee.Name = "BSNBoxAddEmployee";
+            BSNBoxAddEmployee.Size = new Size(253, 29);
+            BSNBoxAddEmployee.TabIndex = 26;
             // 
             // PictureBoxAddEmployee
             // 
-            this.PictureBoxAddEmployee.BackColor = System.Drawing.Color.Gray;
-            this.PictureBoxAddEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxAddEmployee.Image")));
-            this.PictureBoxAddEmployee.Location = new System.Drawing.Point(289, 98);
-            this.PictureBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.PictureBoxAddEmployee.Name = "PictureBoxAddEmployee";
-            this.PictureBoxAddEmployee.Size = new System.Drawing.Size(286, 217);
-            this.PictureBoxAddEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxAddEmployee.TabIndex = 73;
-            this.PictureBoxAddEmployee.TabStop = false;
+            PictureBoxAddEmployee.BackColor = Color.Gray;
+            PictureBoxAddEmployee.BackgroundImageLayout = ImageLayout.None;
+            PictureBoxAddEmployee.Image = (Image)resources.GetObject("PictureBoxAddEmployee.Image");
+            PictureBoxAddEmployee.Location = new Point(289, 98);
+            PictureBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
+            PictureBoxAddEmployee.Name = "PictureBoxAddEmployee";
+            PictureBoxAddEmployee.Size = new Size(308, 232);
+            PictureBoxAddEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
+            PictureBoxAddEmployee.TabIndex = 73;
+            PictureBoxAddEmployee.TabStop = false;
             // 
             // Tab_Overview
             // 
-            this.Tab_Overview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
-            this.Tab_Overview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Tab_Overview.Controls.Add(this.cbbSearchEmpJob);
-            this.Tab_Overview.Controls.Add(this.label37);
-            this.Tab_Overview.Controls.Add(this.label36);
-            this.Tab_Overview.Controls.Add(this.tbSearchEmpPhone);
-            this.Tab_Overview.Controls.Add(this.label35);
-            this.Tab_Overview.Controls.Add(this.btn_search_Employee);
-            this.Tab_Overview.Controls.Add(this.button3);
-            this.Tab_Overview.Controls.Add(this.label5);
-            this.Tab_Overview.Controls.Add(this.tbSearchEmpName);
-            this.Tab_Overview.Controls.Add(this.lv_Employees);
-            this.Tab_Overview.Controls.Add(this.artanPanel4);
-            this.Tab_Overview.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Tab_Overview.ForeColor = System.Drawing.Color.White;
-            this.Tab_Overview.Location = new System.Drawing.Point(4, 32);
-            this.Tab_Overview.Margin = new System.Windows.Forms.Padding(1);
-            this.Tab_Overview.Name = "Tab_Overview";
-            this.Tab_Overview.Padding = new System.Windows.Forms.Padding(1);
-            this.Tab_Overview.Size = new System.Drawing.Size(1662, 758);
-            this.Tab_Overview.TabIndex = 0;
-            this.Tab_Overview.Text = "Overview";
+            Tab_Overview.BackColor = Color.FromArgb(96, 214, 255);
+            Tab_Overview.BackgroundImageLayout = ImageLayout.Stretch;
+            Tab_Overview.Controls.Add(label7);
+            Tab_Overview.Controls.Add(CB_StatusSearch);
+            Tab_Overview.Controls.Add(cbbSearchEmpJob);
+            Tab_Overview.Controls.Add(label37);
+            Tab_Overview.Controls.Add(label36);
+            Tab_Overview.Controls.Add(tbSearchEmpPhone);
+            Tab_Overview.Controls.Add(label35);
+            Tab_Overview.Controls.Add(btn_search_Employee);
+            Tab_Overview.Controls.Add(button3);
+            Tab_Overview.Controls.Add(label5);
+            Tab_Overview.Controls.Add(tbSearchEmpName);
+            Tab_Overview.Controls.Add(lv_Employees);
+            Tab_Overview.Controls.Add(artanPanel4);
+            Tab_Overview.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Tab_Overview.ForeColor = Color.White;
+            Tab_Overview.Location = new Point(4, 32);
+            Tab_Overview.Margin = new Padding(1);
+            Tab_Overview.Name = "Tab_Overview";
+            Tab_Overview.Padding = new Padding(1);
+            Tab_Overview.Size = new Size(1662, 755);
+            Tab_Overview.TabIndex = 0;
+            Tab_Overview.Text = "Overview";
+            Tab_Overview.Click += Tab_Overview_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(288, 79);
+            label7.Name = "label7";
+            label7.Size = new Size(50, 19);
+            label7.TabIndex = 37;
+            label7.Text = "Status:";
+            // 
+            // CB_StatusSearch
+            // 
+            CB_StatusSearch.FormattingEnabled = true;
+            CB_StatusSearch.Location = new Point(344, 76);
+            CB_StatusSearch.Name = "CB_StatusSearch";
+            CB_StatusSearch.Size = new Size(132, 25);
+            CB_StatusSearch.TabIndex = 36;
             // 
             // cbbSearchEmpJob
             // 
-            this.cbbSearchEmpJob.FormattingEnabled = true;
-            this.cbbSearchEmpJob.Location = new System.Drawing.Point(344, 40);
-            this.cbbSearchEmpJob.Name = "cbbSearchEmpJob";
-            this.cbbSearchEmpJob.Size = new System.Drawing.Size(132, 25);
-            this.cbbSearchEmpJob.TabIndex = 35;
+            cbbSearchEmpJob.FormattingEnabled = true;
+            cbbSearchEmpJob.Location = new Point(344, 40);
+            cbbSearchEmpJob.Name = "cbbSearchEmpJob";
+            cbbSearchEmpJob.Size = new Size(132, 25);
+            cbbSearchEmpJob.TabIndex = 35;
             // 
             // label37
             // 
-            this.label37.AutoSize = true;
-            this.label37.ForeColor = System.Drawing.Color.Black;
-            this.label37.Location = new System.Drawing.Point(305, 43);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(33, 19);
-            this.label37.TabIndex = 34;
-            this.label37.Text = "Job:";
+            label37.AutoSize = true;
+            label37.ForeColor = Color.Black;
+            label37.Location = new Point(305, 43);
+            label37.Name = "label37";
+            label37.Size = new Size(33, 19);
+            label37.TabIndex = 34;
+            label37.Text = "Job:";
             // 
             // label36
             // 
-            this.label36.AutoSize = true;
-            this.label36.ForeColor = System.Drawing.Color.Black;
-            this.label36.Location = new System.Drawing.Point(52, 79);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(51, 19);
-            this.label36.TabIndex = 33;
-            this.label36.Text = "Phone:";
+            label36.AutoSize = true;
+            label36.ForeColor = Color.Black;
+            label36.Location = new Point(52, 79);
+            label36.Name = "label36";
+            label36.Size = new Size(51, 19);
+            label36.TabIndex = 33;
+            label36.Text = "Phone:";
             // 
             // tbSearchEmpPhone
             // 
-            this.tbSearchEmpPhone.Location = new System.Drawing.Point(115, 76);
-            this.tbSearchEmpPhone.Margin = new System.Windows.Forms.Padding(1);
-            this.tbSearchEmpPhone.Name = "tbSearchEmpPhone";
-            this.tbSearchEmpPhone.Size = new System.Drawing.Size(169, 25);
-            this.tbSearchEmpPhone.TabIndex = 32;
+            tbSearchEmpPhone.Location = new Point(115, 76);
+            tbSearchEmpPhone.Margin = new Padding(1);
+            tbSearchEmpPhone.Name = "tbSearchEmpPhone";
+            tbSearchEmpPhone.Size = new Size(169, 25);
+            tbSearchEmpPhone.TabIndex = 32;
             // 
             // label35
             // 
-            this.label35.AutoSize = true;
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(52, 43);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(48, 19);
-            this.label35.TabIndex = 31;
-            this.label35.Text = "Name:";
+            label35.AutoSize = true;
+            label35.ForeColor = Color.Black;
+            label35.Location = new Point(52, 43);
+            label35.Name = "label35";
+            label35.Size = new Size(48, 19);
+            label35.TabIndex = 31;
+            label35.Text = "Name:";
             // 
             // btn_search_Employee
             // 
-            this.btn_search_Employee.ForeColor = System.Drawing.Color.Black;
-            this.btn_search_Employee.Location = new System.Drawing.Point(511, 39);
-            this.btn_search_Employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_search_Employee.Name = "btn_search_Employee";
-            this.btn_search_Employee.Size = new System.Drawing.Size(78, 25);
-            this.btn_search_Employee.TabIndex = 30;
-            this.btn_search_Employee.Text = "Search";
-            this.btn_search_Employee.UseVisualStyleBackColor = true;
-            this.btn_search_Employee.Click += new System.EventHandler(this.btn_search_Employee_Click_1);
+            btn_search_Employee.ForeColor = Color.Black;
+            btn_search_Employee.Location = new Point(501, 75);
+            btn_search_Employee.Margin = new Padding(3, 2, 3, 2);
+            btn_search_Employee.Name = "btn_search_Employee";
+            btn_search_Employee.Size = new Size(78, 25);
+            btn_search_Employee.TabIndex = 30;
+            btn_search_Employee.Text = "Search";
+            btn_search_Employee.UseVisualStyleBackColor = true;
+            btn_search_Employee.Click += btn_search_Employee_Click_1;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(1441, 49);
-            this.button3.Margin = new System.Windows.Forms.Padding(1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 31);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Logout";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            button3.BackColor = Color.FromArgb(221, 66, 76);
+            button3.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Location = new Point(1441, 49);
+            button3.Margin = new Padding(1);
+            button3.Name = "button3";
+            button3.Size = new Size(148, 37);
+            button3.TabIndex = 28;
+            button3.Text = "Logout";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(52, 6);
-            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 21);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Search Employee";
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(52, 6);
+            label5.Margin = new Padding(1, 0, 1, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(129, 21);
+            label5.TabIndex = 29;
+            label5.Text = "Search Employee";
             // 
             // tbSearchEmpName
             // 
-            this.tbSearchEmpName.Location = new System.Drawing.Point(115, 40);
-            this.tbSearchEmpName.Margin = new System.Windows.Forms.Padding(1);
-            this.tbSearchEmpName.Name = "tbSearchEmpName";
-            this.tbSearchEmpName.Size = new System.Drawing.Size(169, 25);
-            this.tbSearchEmpName.TabIndex = 28;
+            tbSearchEmpName.Location = new Point(115, 40);
+            tbSearchEmpName.Margin = new Padding(1);
+            tbSearchEmpName.Name = "tbSearchEmpName";
+            tbSearchEmpName.Size = new Size(169, 25);
+            tbSearchEmpName.TabIndex = 28;
             // 
             // lv_Employees
             // 
-            this.lv_Employees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.lv_Employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lv_Employees.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Namez,
-            Job,
-            this.Phone,
-            this.Contract});
-            this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lv_Employees.ForeColor = System.Drawing.Color.Black;
-            this.lv_Employees.FullRowSelect = true;
-            this.lv_Employees.Location = new System.Drawing.Point(52, 132);
-            this.lv_Employees.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.lv_Employees.Name = "lv_Employees";
-            this.lv_Employees.Size = new System.Drawing.Size(805, 542);
-            this.lv_Employees.TabIndex = 20;
-            this.lv_Employees.UseCompatibleStateImageBehavior = false;
-            this.lv_Employees.View = System.Windows.Forms.View.Details;
-            this.lv_Employees.SelectedIndexChanged += new System.EventHandler(this.lv_Employees_SelectedIndexChanged);
+            lv_Employees.BackColor = Color.FromArgb(255, 209, 159);
+            lv_Employees.BorderStyle = BorderStyle.None;
+            lv_Employees.Columns.AddRange(new ColumnHeader[] { Namez, Job, Phone, Contract });
+            lv_Employees.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lv_Employees.ForeColor = Color.Black;
+            lv_Employees.FullRowSelect = true;
+            lv_Employees.Location = new Point(52, 120);
+            lv_Employees.Margin = new Padding(4, 3, 4, 3);
+            lv_Employees.Name = "lv_Employees";
+            lv_Employees.Size = new Size(805, 615);
+            lv_Employees.TabIndex = 20;
+            lv_Employees.UseCompatibleStateImageBehavior = false;
+            lv_Employees.View = View.Details;
+            lv_Employees.SelectedIndexChanged += lv_Employees_SelectedIndexChanged;
             // 
             // Namez
             // 
-            this.Namez.Text = "Name";
-            this.Namez.Width = 250;
+            Namez.Text = "Name";
+            Namez.Width = 250;
             // 
             // Phone
             // 
-            this.Phone.Text = "Phone";
-            this.Phone.Width = 300;
+            Phone.Text = "Phone";
+            Phone.Width = 300;
             // 
             // Contract
             // 
-            this.Contract.Text = "Contract-Status";
-            this.Contract.Width = 350;
+            Contract.Text = "Contract-Status";
+            Contract.Width = 350;
             // 
             // artanPanel4
             // 
-            this.artanPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.artanPanel4.BorderRadius = 40;
-            this.artanPanel4.Controls.Add(this.updateBTHR);
-            this.artanPanel4.Controls.Add(this.groupBox3);
-            this.artanPanel4.Controls.Add(this.groupBox2);
-            this.artanPanel4.Controls.Add(this.groupBox1);
-            this.artanPanel4.Controls.Add(this.btn_ViewDetails);
-            this.artanPanel4.Controls.Add(this.label3);
-            this.artanPanel4.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel4.GradientAngle = 90F;
-            this.artanPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.artanPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.artanPanel4.Location = new System.Drawing.Point(888, 124);
-            this.artanPanel4.Margin = new System.Windows.Forms.Padding(1);
-            this.artanPanel4.Name = "artanPanel4";
-            this.artanPanel4.Size = new System.Drawing.Size(775, 563);
-            this.artanPanel4.TabIndex = 26;
+            artanPanel4.BackColor = Color.Transparent;
+            artanPanel4.BorderRadius = 40;
+            artanPanel4.Controls.Add(updateBTHR);
+            artanPanel4.Controls.Add(groupBox3);
+            artanPanel4.Controls.Add(groupBox2);
+            artanPanel4.Controls.Add(groupBox1);
+            artanPanel4.Controls.Add(label3);
+            artanPanel4.ForeColor = Color.Black;
+            artanPanel4.GradientAngle = 90F;
+            artanPanel4.GradientBottomColor = Color.FromArgb(255, 209, 159);
+            artanPanel4.GradientTopColor = Color.FromArgb(255, 209, 159);
+            artanPanel4.Location = new Point(883, 110);
+            artanPanel4.Margin = new Padding(1);
+            artanPanel4.Name = "artanPanel4";
+            artanPanel4.Size = new Size(775, 634);
+            artanPanel4.TabIndex = 26;
             // 
             // updateBTHR
             // 
-            this.updateBTHR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.updateBTHR.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateBTHR.Location = new System.Drawing.Point(565, 512);
-            this.updateBTHR.Margin = new System.Windows.Forms.Padding(1);
-            this.updateBTHR.Name = "updateBTHR";
-            this.updateBTHR.Size = new System.Drawing.Size(148, 31);
-            this.updateBTHR.TabIndex = 31;
-            this.updateBTHR.Text = "Update";
-            this.updateBTHR.UseVisualStyleBackColor = false;
-            this.updateBTHR.Click += new System.EventHandler(this.updateBTHR_Click_1);
+            updateBTHR.BackColor = Color.FromArgb(221, 66, 76);
+            updateBTHR.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            updateBTHR.ForeColor = Color.WhiteSmoke;
+            updateBTHR.Location = new Point(600, 560);
+            updateBTHR.Margin = new Padding(1);
+            updateBTHR.Name = "updateBTHR";
+            updateBTHR.Size = new Size(148, 38);
+            updateBTHR.TabIndex = 31;
+            updateBTHR.Text = "Update";
+            updateBTHR.UseVisualStyleBackColor = false;
+            updateBTHR.Click += updateBTHR_Click_1;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label31);
-            this.groupBox3.Controls.Add(this.TB_Emregency);
-            this.groupBox3.Controls.Add(this.TB_SpouseContact);
-            this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.TB_Spouse);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.TB_Emergencycontact);
-            this.groupBox3.Controls.Add(this.TB_ContactName);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.lbl_Phonenumber);
-            this.groupBox3.Controls.Add(this.TB_Phone);
-            this.groupBox3.Location = new System.Drawing.Point(480, 146);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(377, 323);
-            this.groupBox3.TabIndex = 78;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Contact Details";
+            groupBox3.Controls.Add(label31);
+            groupBox3.Controls.Add(TB_Emregency);
+            groupBox3.Controls.Add(TB_SpouseContact);
+            groupBox3.Controls.Add(label28);
+            groupBox3.Controls.Add(label27);
+            groupBox3.Controls.Add(TB_Spouse);
+            groupBox3.Controls.Add(label26);
+            groupBox3.Controls.Add(TB_Emergencycontact);
+            groupBox3.Controls.Add(TB_ContactName);
+            groupBox3.Controls.Add(label25);
+            groupBox3.Controls.Add(lbl_Phonenumber);
+            groupBox3.Controls.Add(TB_Phone);
+            groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox3.Location = new Point(480, 146);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(377, 404);
+            groupBox3.TabIndex = 78;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Contact Details";
             // 
             // label31
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(18, 134);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(80, 19);
-            this.label31.TabIndex = 46;
-            this.label31.Text = "Emergency ";
+            label31.AutoSize = true;
+            label31.Location = new Point(18, 154);
+            label31.Name = "label31";
+            label31.Size = new Size(138, 21);
+            label31.TabIndex = 46;
+            label31.Text = "Emergency Name";
             // 
             // TB_Emregency
             // 
-            this.TB_Emregency.Location = new System.Drawing.Point(15, 157);
-            this.TB_Emregency.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Emregency.Name = "TB_Emregency";
-            this.TB_Emregency.Size = new System.Drawing.Size(241, 25);
-            this.TB_Emregency.TabIndex = 45;
+            TB_Emregency.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Emregency.Location = new Point(18, 177);
+            TB_Emregency.Margin = new Padding(3, 2, 3, 2);
+            TB_Emregency.Name = "TB_Emregency";
+            TB_Emregency.Size = new Size(241, 29);
+            TB_Emregency.TabIndex = 45;
             // 
             // TB_SpouseContact
             // 
-            this.TB_SpouseContact.Location = new System.Drawing.Point(18, 289);
-            this.TB_SpouseContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_SpouseContact.Name = "TB_SpouseContact";
-            this.TB_SpouseContact.Size = new System.Drawing.Size(238, 25);
-            this.TB_SpouseContact.TabIndex = 44;
+            TB_SpouseContact.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_SpouseContact.Location = new Point(18, 350);
+            TB_SpouseContact.Margin = new Padding(3, 2, 3, 2);
+            TB_SpouseContact.Name = "TB_SpouseContact";
+            TB_SpouseContact.Size = new Size(238, 29);
+            TB_SpouseContact.TabIndex = 44;
             // 
             // label28
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(18, 226);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(53, 19);
-            this.label28.TabIndex = 43;
-            this.label28.Text = "Spouse";
+            label28.AutoSize = true;
+            label28.Location = new Point(18, 266);
+            label28.Name = "label28";
+            label28.Size = new Size(111, 21);
+            label28.TabIndex = 43;
+            label28.Text = "Spouse Name";
             // 
             // label27
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(18, 269);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(105, 19);
-            this.label27.TabIndex = 42;
-            this.label27.Text = "Spouse Contact";
+            label27.AutoSize = true;
+            label27.Location = new Point(18, 326);
+            label27.Name = "label27";
+            label27.Size = new Size(92, 21);
+            label27.TabIndex = 42;
+            label27.Text = "Spouse Tel.";
             // 
             // TB_Spouse
             // 
-            this.TB_Spouse.Location = new System.Drawing.Point(18, 245);
-            this.TB_Spouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Spouse.Name = "TB_Spouse";
-            this.TB_Spouse.Size = new System.Drawing.Size(238, 25);
-            this.TB_Spouse.TabIndex = 41;
+            TB_Spouse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Spouse.Location = new Point(18, 289);
+            TB_Spouse.Margin = new Padding(3, 2, 3, 2);
+            TB_Spouse.Name = "TB_Spouse";
+            TB_Spouse.Size = new Size(238, 29);
+            TB_Spouse.TabIndex = 41;
             // 
             // label26
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(18, 184);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(128, 19);
-            this.label26.TabIndex = 40;
-            this.label26.Text = "Emergency Contact";
+            label26.AutoSize = true;
+            label26.Location = new Point(18, 211);
+            label26.Name = "label26";
+            label26.Size = new Size(119, 21);
+            label26.TabIndex = 40;
+            label26.Text = "Emergency Tel.";
             // 
             // TB_Emergencycontact
             // 
-            this.TB_Emergencycontact.Location = new System.Drawing.Point(15, 203);
-            this.TB_Emergencycontact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Emergencycontact.Name = "TB_Emergencycontact";
-            this.TB_Emergencycontact.Size = new System.Drawing.Size(241, 25);
-            this.TB_Emergencycontact.TabIndex = 39;
+            TB_Emergencycontact.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Emergencycontact.Location = new Point(18, 234);
+            TB_Emergencycontact.Margin = new Padding(3, 2, 3, 2);
+            TB_Emergencycontact.Name = "TB_Emergencycontact";
+            TB_Emergencycontact.Size = new Size(241, 29);
+            TB_Emergencycontact.TabIndex = 39;
             // 
             // TB_ContactName
             // 
-            this.TB_ContactName.Location = new System.Drawing.Point(18, 111);
-            this.TB_ContactName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_ContactName.Name = "TB_ContactName";
-            this.TB_ContactName.Size = new System.Drawing.Size(238, 25);
-            this.TB_ContactName.TabIndex = 38;
+            TB_ContactName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_ContactName.Location = new Point(18, 118);
+            TB_ContactName.Margin = new Padding(3, 2, 3, 2);
+            TB_ContactName.Name = "TB_ContactName";
+            TB_ContactName.Size = new Size(238, 29);
+            TB_ContactName.TabIndex = 38;
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(18, 92);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(97, 19);
-            this.label25.TabIndex = 37;
-            this.label25.Text = "Contact Name";
+            label25.AutoSize = true;
+            label25.Location = new Point(15, 95);
+            label25.Name = "label25";
+            label25.Size = new Size(114, 21);
+            label25.TabIndex = 37;
+            label25.Text = "Contact Name";
             // 
             // lbl_Phonenumber
             // 
-            this.lbl_Phonenumber.AutoSize = true;
-            this.lbl_Phonenumber.Location = new System.Drawing.Point(15, 50);
-            this.lbl_Phonenumber.Name = "lbl_Phonenumber";
-            this.lbl_Phonenumber.Size = new System.Drawing.Size(102, 19);
-            this.lbl_Phonenumber.TabIndex = 36;
-            this.lbl_Phonenumber.Text = "Phone Number";
+            lbl_Phonenumber.AutoSize = true;
+            lbl_Phonenumber.Location = new Point(15, 35);
+            lbl_Phonenumber.Name = "lbl_Phonenumber";
+            lbl_Phonenumber.Size = new Size(98, 21);
+            lbl_Phonenumber.TabIndex = 36;
+            lbl_Phonenumber.Text = "Tel. Number";
             // 
             // TB_Phone
             // 
-            this.TB_Phone.Location = new System.Drawing.Point(15, 69);
-            this.TB_Phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Phone.Name = "TB_Phone";
-            this.TB_Phone.Size = new System.Drawing.Size(241, 25);
-            this.TB_Phone.TabIndex = 35;
+            TB_Phone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Phone.Location = new Point(15, 58);
+            TB_Phone.Margin = new Padding(3, 2, 3, 2);
+            TB_Phone.Name = "TB_Phone";
+            TB_Phone.Size = new Size(241, 29);
+            TB_Phone.TabIndex = 35;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.TB_Password);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.TB_Username);
-            this.groupBox2.Location = new System.Drawing.Point(32, 50);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(354, 131);
-            this.groupBox2.TabIndex = 71;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Account Details";
+            groupBox2.Controls.Add(label24);
+            groupBox2.Controls.Add(TB_Password);
+            groupBox2.Controls.Add(label23);
+            groupBox2.Controls.Add(TB_Username);
+            groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Location = new Point(32, 50);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(354, 142);
+            groupBox2.TabIndex = 71;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Account Details";
             // 
             // label24
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 79);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 19);
-            this.label24.TabIndex = 77;
-            this.label24.Text = "Password";
+            label24.AutoSize = true;
+            label24.Location = new Point(18, 79);
+            label24.Name = "label24";
+            label24.Size = new Size(79, 21);
+            label24.TabIndex = 77;
+            label24.Text = "Password";
             // 
             // TB_Password
             // 
-            this.TB_Password.Location = new System.Drawing.Point(18, 102);
-            this.TB_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Password.Name = "TB_Password";
-            this.TB_Password.Size = new System.Drawing.Size(381, 25);
-            this.TB_Password.TabIndex = 76;
+            TB_Password.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Password.Location = new Point(18, 102);
+            TB_Password.Margin = new Padding(3, 2, 3, 2);
+            TB_Password.Name = "TB_Password";
+            TB_Password.Size = new Size(381, 29);
+            TB_Password.TabIndex = 76;
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(18, 28);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(71, 19);
-            this.label23.TabIndex = 75;
-            this.label23.Text = "Username";
+            label23.AutoSize = true;
+            label23.Location = new Point(18, 25);
+            label23.Name = "label23";
+            label23.Size = new Size(83, 21);
+            label23.TabIndex = 75;
+            label23.Text = "Username";
             // 
             // TB_Username
             // 
-            this.TB_Username.Location = new System.Drawing.Point(18, 51);
-            this.TB_Username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Username.Name = "TB_Username";
-            this.TB_Username.Size = new System.Drawing.Size(381, 25);
-            this.TB_Username.TabIndex = 75;
+            TB_Username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Username.Location = new Point(19, 48);
+            TB_Username.Margin = new Padding(3, 2, 3, 2);
+            TB_Username.Name = "TB_Username";
+            TB_Username.Size = new Size(381, 29);
+            TB_Username.TabIndex = 75;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CB_Contract);
-            this.groupBox1.Controls.Add(this.TB_City);
-            this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Controls.Add(this.TB_Address);
-            this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.lbl_Job);
-            this.groupBox1.Controls.Add(this.TB_Job);
-            this.groupBox1.Controls.Add(this.TB_BSN);
-            this.groupBox1.Controls.Add(this.lbl_BSN);
-            this.groupBox1.Controls.Add(this.TB_Lastname);
-            this.groupBox1.Controls.Add(this.lbl_firstname);
-            this.groupBox1.Controls.Add(this.BirthDateBoxHR);
-            this.groupBox1.Controls.Add(this.TB_Firstname);
-            this.groupBox1.Controls.Add(this.lbl_birthdate);
-            this.groupBox1.Controls.Add(this.lbl_lastname);
-            this.groupBox1.Controls.Add(this.TB_EmailAddress);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Location = new System.Drawing.Point(32, 205);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox1.Size = new System.Drawing.Size(412, 345);
-            this.groupBox1.TabIndex = 70;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Employee Details";
+            groupBox1.Controls.Add(JobCB);
+            groupBox1.Controls.Add(CB_Contract);
+            groupBox1.Controls.Add(TB_City);
+            groupBox1.Controls.Add(label30);
+            groupBox1.Controls.Add(TB_Address);
+            groupBox1.Controls.Add(label29);
+            groupBox1.Controls.Add(label22);
+            groupBox1.Controls.Add(lbl_Job);
+            groupBox1.Controls.Add(TB_BSN);
+            groupBox1.Controls.Add(lbl_BSN);
+            groupBox1.Controls.Add(TB_Lastname);
+            groupBox1.Controls.Add(lbl_firstname);
+            groupBox1.Controls.Add(BirthDateBoxHR);
+            groupBox1.Controls.Add(TB_Firstname);
+            groupBox1.Controls.Add(lbl_birthdate);
+            groupBox1.Controls.Add(lbl_lastname);
+            groupBox1.Controls.Add(TB_EmailAddress);
+            groupBox1.Controls.Add(label21);
+            groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(32, 205);
+            groupBox1.Margin = new Padding(1);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(1);
+            groupBox1.Size = new Size(412, 418);
+            groupBox1.TabIndex = 70;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Employee Details";
+            // 
+            // JobCB
+            // 
+            JobCB.FormattingEnabled = true;
+            JobCB.Location = new Point(16, 324);
+            JobCB.Margin = new Padding(3, 2, 3, 2);
+            JobCB.Name = "JobCB";
+            JobCB.Size = new Size(318, 29);
+            JobCB.TabIndex = 79;
             // 
             // CB_Contract
             // 
-            this.CB_Contract.FormattingEnabled = true;
-            this.CB_Contract.Location = new System.Drawing.Point(18, 316);
-            this.CB_Contract.Margin = new System.Windows.Forms.Padding(2);
-            this.CB_Contract.Name = "CB_Contract";
-            this.CB_Contract.Size = new System.Drawing.Size(313, 25);
-            this.CB_Contract.TabIndex = 31;
+            CB_Contract.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CB_Contract.FormattingEnabled = true;
+            CB_Contract.Location = new Point(18, 376);
+            CB_Contract.Margin = new Padding(2);
+            CB_Contract.Name = "CB_Contract";
+            CB_Contract.Size = new Size(313, 29);
+            CB_Contract.TabIndex = 31;
             // 
             // TB_City
             // 
-            this.TB_City.Location = new System.Drawing.Point(213, 99);
-            this.TB_City.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_City.Name = "TB_City";
-            this.TB_City.Size = new System.Drawing.Size(186, 25);
-            this.TB_City.TabIndex = 77;
+            TB_City.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_City.Location = new Point(212, 108);
+            TB_City.Margin = new Padding(3, 2, 3, 2);
+            TB_City.Name = "TB_City";
+            TB_City.Size = new Size(186, 29);
+            TB_City.TabIndex = 77;
             // 
             // label30
             // 
-            this.label30.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(213, 79);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(30, 19);
-            this.label30.TabIndex = 78;
-            this.label30.Text = "city";
+            label30.AccessibleRole = AccessibleRole.None;
+            label30.AutoSize = true;
+            label30.Location = new Point(212, 88);
+            label30.Name = "label30";
+            label30.Size = new Size(36, 21);
+            label30.TabIndex = 78;
+            label30.Text = "city";
             // 
             // TB_Address
             // 
-            this.TB_Address.Location = new System.Drawing.Point(15, 99);
-            this.TB_Address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Address.Name = "TB_Address";
-            this.TB_Address.Size = new System.Drawing.Size(186, 25);
-            this.TB_Address.TabIndex = 75;
+            TB_Address.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Address.Location = new Point(14, 108);
+            TB_Address.Margin = new Padding(3, 2, 3, 2);
+            TB_Address.Name = "TB_Address";
+            TB_Address.Size = new Size(186, 29);
+            TB_Address.TabIndex = 75;
             // 
             // label29
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 76);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(58, 19);
-            this.label29.TabIndex = 76;
-            this.label29.Text = "Address";
+            label29.AutoSize = true;
+            label29.Location = new Point(14, 85);
+            label29.Name = "label29";
+            label29.Size = new Size(70, 21);
+            label29.TabIndex = 76;
+            label29.Text = "Address";
             // 
             // label22
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 295);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 19);
-            this.label22.TabIndex = 74;
-            this.label22.Text = "Contract";
+            label22.AutoSize = true;
+            label22.Location = new Point(15, 355);
+            label22.Name = "label22";
+            label22.Size = new Size(73, 21);
+            label22.TabIndex = 74;
+            label22.Text = "Contract";
             // 
             // lbl_Job
             // 
-            this.lbl_Job.AutoSize = true;
-            this.lbl_Job.Location = new System.Drawing.Point(15, 253);
-            this.lbl_Job.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbl_Job.Name = "lbl_Job";
-            this.lbl_Job.Size = new System.Drawing.Size(30, 19);
-            this.lbl_Job.TabIndex = 72;
-            this.lbl_Job.Text = "Job";
-            // 
-            // TB_Job
-            // 
-            this.TB_Job.Location = new System.Drawing.Point(15, 272);
-            this.TB_Job.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Job.Name = "TB_Job";
-            this.TB_Job.Size = new System.Drawing.Size(316, 25);
-            this.TB_Job.TabIndex = 71;
+            lbl_Job.AutoSize = true;
+            lbl_Job.Location = new Point(18, 301);
+            lbl_Job.Margin = new Padding(1, 0, 1, 0);
+            lbl_Job.Name = "lbl_Job";
+            lbl_Job.Size = new Size(36, 21);
+            lbl_Job.TabIndex = 72;
+            lbl_Job.Text = "Job";
             // 
             // TB_BSN
             // 
-            this.TB_BSN.Location = new System.Drawing.Point(15, 230);
-            this.TB_BSN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_BSN.Name = "TB_BSN";
-            this.TB_BSN.Size = new System.Drawing.Size(316, 25);
-            this.TB_BSN.TabIndex = 39;
+            TB_BSN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_BSN.Location = new Point(19, 272);
+            TB_BSN.Margin = new Padding(3, 2, 3, 2);
+            TB_BSN.Name = "TB_BSN";
+            TB_BSN.Size = new Size(316, 29);
+            TB_BSN.TabIndex = 39;
             // 
             // lbl_BSN
             // 
-            this.lbl_BSN.AutoSize = true;
-            this.lbl_BSN.Location = new System.Drawing.Point(15, 211);
-            this.lbl_BSN.Name = "lbl_BSN";
-            this.lbl_BSN.Size = new System.Drawing.Size(34, 19);
-            this.lbl_BSN.TabIndex = 40;
-            this.lbl_BSN.Text = "BSN";
+            lbl_BSN.AutoSize = true;
+            lbl_BSN.Location = new Point(18, 249);
+            lbl_BSN.Name = "lbl_BSN";
+            lbl_BSN.Size = new Size(41, 21);
+            lbl_BSN.TabIndex = 40;
+            lbl_BSN.Text = "BSN";
             // 
             // TB_Lastname
             // 
-            this.TB_Lastname.Location = new System.Drawing.Point(214, 51);
-            this.TB_Lastname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Lastname.Name = "TB_Lastname";
-            this.TB_Lastname.Size = new System.Drawing.Size(185, 25);
-            this.TB_Lastname.TabIndex = 70;
+            TB_Lastname.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Lastname.Location = new Point(214, 51);
+            TB_Lastname.Margin = new Padding(3, 2, 3, 2);
+            TB_Lastname.Name = "TB_Lastname";
+            TB_Lastname.Size = new Size(185, 29);
+            TB_Lastname.TabIndex = 70;
             // 
             // lbl_firstname
             // 
-            this.lbl_firstname.AutoSize = true;
-            this.lbl_firstname.Location = new System.Drawing.Point(15, 28);
-            this.lbl_firstname.Name = "lbl_firstname";
-            this.lbl_firstname.Size = new System.Drawing.Size(69, 19);
-            this.lbl_firstname.TabIndex = 28;
-            this.lbl_firstname.Text = "Firstname";
+            lbl_firstname.AutoSize = true;
+            lbl_firstname.Location = new Point(15, 28);
+            lbl_firstname.Name = "lbl_firstname";
+            lbl_firstname.Size = new Size(81, 21);
+            lbl_firstname.TabIndex = 28;
+            lbl_firstname.Text = "Firstname";
             // 
             // BirthDateBoxHR
             // 
-            this.BirthDateBoxHR.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BirthDateBoxHR.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.BirthDateBoxHR.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BirthDateBoxHR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthDateBoxHR.Location = new System.Drawing.Point(15, 188);
-            this.BirthDateBoxHR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BirthDateBoxHR.Name = "BirthDateBoxHR";
-            this.BirthDateBoxHR.Size = new System.Drawing.Size(316, 25);
-            this.BirthDateBoxHR.TabIndex = 69;
+            BirthDateBoxHR.CalendarFont = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            BirthDateBoxHR.CalendarTitleBackColor = SystemColors.ControlText;
+            BirthDateBoxHR.CalendarTitleForeColor = SystemColors.ControlLightLight;
+            BirthDateBoxHR.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BirthDateBoxHR.Format = DateTimePickerFormat.Short;
+            BirthDateBoxHR.Location = new Point(18, 217);
+            BirthDateBoxHR.Margin = new Padding(4, 3, 4, 3);
+            BirthDateBoxHR.Name = "BirthDateBoxHR";
+            BirthDateBoxHR.Size = new Size(316, 29);
+            BirthDateBoxHR.TabIndex = 69;
             // 
             // TB_Firstname
             // 
-            this.TB_Firstname.Location = new System.Drawing.Point(15, 51);
-            this.TB_Firstname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_Firstname.Name = "TB_Firstname";
-            this.TB_Firstname.Size = new System.Drawing.Size(185, 25);
-            this.TB_Firstname.TabIndex = 29;
+            TB_Firstname.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_Firstname.Location = new Point(15, 51);
+            TB_Firstname.Margin = new Padding(3, 2, 3, 2);
+            TB_Firstname.Name = "TB_Firstname";
+            TB_Firstname.Size = new Size(185, 29);
+            TB_Firstname.TabIndex = 29;
             // 
             // lbl_birthdate
             // 
-            this.lbl_birthdate.AutoSize = true;
-            this.lbl_birthdate.Location = new System.Drawing.Point(15, 168);
-            this.lbl_birthdate.Name = "lbl_birthdate";
-            this.lbl_birthdate.Size = new System.Drawing.Size(67, 19);
-            this.lbl_birthdate.TabIndex = 38;
-            this.lbl_birthdate.Text = "BirthDate";
+            lbl_birthdate.AutoSize = true;
+            lbl_birthdate.Location = new Point(19, 193);
+            lbl_birthdate.Name = "lbl_birthdate";
+            lbl_birthdate.Size = new Size(79, 21);
+            lbl_birthdate.TabIndex = 38;
+            lbl_birthdate.Text = "BirthDate";
             // 
             // lbl_lastname
             // 
-            this.lbl_lastname.AutoSize = true;
-            this.lbl_lastname.Location = new System.Drawing.Point(214, 28);
-            this.lbl_lastname.Name = "lbl_lastname";
-            this.lbl_lastname.Size = new System.Drawing.Size(68, 19);
-            this.lbl_lastname.TabIndex = 30;
-            this.lbl_lastname.Text = "Lastname";
+            lbl_lastname.AutoSize = true;
+            lbl_lastname.Location = new Point(214, 28);
+            lbl_lastname.Name = "lbl_lastname";
+            lbl_lastname.Size = new Size(79, 21);
+            lbl_lastname.TabIndex = 30;
+            lbl_lastname.Text = "Lastname";
             // 
             // TB_EmailAddress
             // 
-            this.TB_EmailAddress.Location = new System.Drawing.Point(15, 145);
-            this.TB_EmailAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_EmailAddress.Name = "TB_EmailAddress";
-            this.TB_EmailAddress.Size = new System.Drawing.Size(383, 25);
-            this.TB_EmailAddress.TabIndex = 33;
+            TB_EmailAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TB_EmailAddress.Location = new Point(16, 162);
+            TB_EmailAddress.Margin = new Padding(3, 2, 3, 2);
+            TB_EmailAddress.Name = "TB_EmailAddress";
+            TB_EmailAddress.Size = new Size(383, 29);
+            TB_EmailAddress.TabIndex = 33;
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 122);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(92, 19);
-            this.label21.TabIndex = 34;
-            this.label21.Text = "Email address";
-            // 
-            // btn_ViewDetails
-            // 
-            this.btn_ViewDetails.BackColor = System.Drawing.Color.Black;
-            this.btn_ViewDetails.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ViewDetails.ForeColor = System.Drawing.Color.White;
-            this.btn_ViewDetails.Location = new System.Drawing.Point(370, 625);
-            this.btn_ViewDetails.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_ViewDetails.Name = "btn_ViewDetails";
-            this.btn_ViewDetails.Size = new System.Drawing.Size(202, 41);
-            this.btn_ViewDetails.TabIndex = 0;
-            this.btn_ViewDetails.Text = "Update";
-            this.btn_ViewDetails.UseVisualStyleBackColor = false;
+            label21.AutoSize = true;
+            label21.Location = new Point(16, 140);
+            label21.Name = "label21";
+            label21.Size = new Size(109, 21);
+            label21.TabIndex = 34;
+            label21.Text = "Email address";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(316, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 30);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Employee Information";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 16F, FontStyle.Underline, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(316, 15);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(228, 30);
+            label3.TabIndex = 27;
+            label3.Text = "Employee Information";
             // 
             // welcome
             // 
-            this.welcome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("welcome.BackgroundImage")));
-            this.welcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.welcome.Controls.Add(this.welcome_txt);
-            this.welcome.Location = new System.Drawing.Point(4, 32);
-            this.welcome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.welcome.Name = "welcome";
-            this.welcome.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.welcome.Size = new System.Drawing.Size(1662, 758);
-            this.welcome.TabIndex = 3;
-            this.welcome.Text = "Welcome";
-            this.welcome.UseVisualStyleBackColor = true;
+            welcome.BackgroundImage = (Image)resources.GetObject("welcome.BackgroundImage");
+            welcome.BackgroundImageLayout = ImageLayout.Stretch;
+            welcome.Controls.Add(welcome_txt);
+            welcome.Location = new Point(4, 32);
+            welcome.Margin = new Padding(3, 2, 3, 2);
+            welcome.Name = "welcome";
+            welcome.Padding = new Padding(3, 2, 3, 2);
+            welcome.Size = new Size(1662, 755);
+            welcome.TabIndex = 3;
+            welcome.Text = "Welcome";
+            welcome.UseVisualStyleBackColor = true;
             // 
             // welcome_txt
             // 
-            this.welcome_txt.AutoSize = true;
-            this.welcome_txt.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.welcome_txt.ForeColor = System.Drawing.Color.Maroon;
-            this.welcome_txt.Location = new System.Drawing.Point(545, 155);
-            this.welcome_txt.Name = "welcome_txt";
-            this.welcome_txt.Size = new System.Drawing.Size(300, 86);
-            this.welcome_txt.TabIndex = 0;
-            this.welcome_txt.Text = "Welcome";
+            welcome_txt.AutoSize = true;
+            welcome_txt.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            welcome_txt.ForeColor = Color.Maroon;
+            welcome_txt.Location = new Point(545, 155);
+            welcome_txt.Name = "welcome_txt";
+            welcome_txt.Size = new Size(300, 86);
+            welcome_txt.TabIndex = 0;
+            welcome_txt.Text = "Welcome";
             // 
             // tabAddEmployee
             // 
-            this.tabAddEmployee.Controls.Add(this.welcome);
-            this.tabAddEmployee.Controls.Add(this.Tab_Overview);
-            this.tabAddEmployee.Controls.Add(this.Tab_Add_Employee);
-            this.tabAddEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabAddEmployee.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabAddEmployee.Location = new System.Drawing.Point(0, 0);
-            this.tabAddEmployee.Margin = new System.Windows.Forms.Padding(1);
-            this.tabAddEmployee.Name = "tabAddEmployee";
-            this.tabAddEmployee.SelectedIndex = 0;
-            this.tabAddEmployee.Size = new System.Drawing.Size(1670, 794);
-            this.tabAddEmployee.TabIndex = 27;
+            tabAddEmployee.Controls.Add(welcome);
+            tabAddEmployee.Controls.Add(Tab_Overview);
+            tabAddEmployee.Controls.Add(Tab_Add_Employee);
+            tabAddEmployee.Dock = DockStyle.Fill;
+            tabAddEmployee.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            tabAddEmployee.Location = new Point(0, 0);
+            tabAddEmployee.Margin = new Padding(1);
+            tabAddEmployee.Name = "tabAddEmployee";
+            tabAddEmployee.SelectedIndex = 0;
+            tabAddEmployee.Size = new Size(1670, 791);
+            tabAddEmployee.TabIndex = 27;
             // 
             // Human_Resources
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1670, 794);
-            this.Controls.Add(this.tabAddEmployee);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.Name = "Human_Resources";
-            this.Text = "Human_Resources";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Tab_Add_Employee.ResumeLayout(false);
-            this.Gp_Contact_Employee.ResumeLayout(false);
-            this.Gp_Contact_Employee.PerformLayout();
-            this.Gp_Detail_Employees.ResumeLayout(false);
-            this.Gp_Detail_Employees.PerformLayout();
-            this.Gb_Details_employee.ResumeLayout(false);
-            this.Gb_Details_employee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAddEmployee)).EndInit();
-            this.Tab_Overview.ResumeLayout(false);
-            this.Tab_Overview.PerformLayout();
-            this.artanPanel4.ResumeLayout(false);
-            this.artanPanel4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.welcome.ResumeLayout(false);
-            this.welcome.PerformLayout();
-            this.tabAddEmployee.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            BackColor = Color.SteelBlue;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1670, 791);
+            Controls.Add(tabAddEmployee);
+            Controls.Add(label4);
+            Controls.Add(label1);
+            DoubleBuffered = true;
+            Margin = new Padding(4, 1, 4, 1);
+            Name = "Human_Resources";
+            Text = "Human_Resources";
+            WindowState = FormWindowState.Maximized;
+            Tab_Add_Employee.ResumeLayout(false);
+            Gp_Contact_Employee.ResumeLayout(false);
+            Gp_Contact_Employee.PerformLayout();
+            Gp_Detail_Employees.ResumeLayout(false);
+            Gp_Detail_Employees.PerformLayout();
+            Gb_Details_employee.ResumeLayout(false);
+            Gb_Details_employee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).EndInit();
+            Tab_Overview.ResumeLayout(false);
+            Tab_Overview.PerformLayout();
+            artanPanel4.ResumeLayout(false);
+            artanPanel4.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            welcome.ResumeLayout(false);
+            welcome.PerformLayout();
+            tabAddEmployee.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1410,23 +1408,13 @@
         private TextBox PhoneNumberBoxAddEmployee;
         private TextBox EmergencyContactBoxAddEmployee;
         private TextBox SpouseContactBoxAddEmployee;
-        private Label label20;
         private TextBox EmergencyContactNameBoxAddEmployee;
         private GroupBox Gp_Detail_Employees;
         private DateTimePicker BirthDateBoxAddEmployee;
         private TextBox SurnameBoxAddEmployee;
         private TextBox AdressBoxAddEmployee;
         private TextBox NameBoxAddEmployee;
-        private Label label8;
         private TextBox EmailBoxAddEmployee;
-        private Label label12;
-        private GroupBox Gb_Details_employee;
-        private ComboBox cbJob;
-        private TextBox UsernameBoxAddEmployee;
-        private TextBox PasswordBoxAddEmployee;
-        private Label label7;
-        private ComboBox ContractBoxAddEmployee;
-        private TextBox BSNBoxAddEmployee;
         private PictureBox PictureBoxAddEmployee;
         private TabPage Tab_Overview;
         private Button btn_search_Employee;
@@ -1439,7 +1427,6 @@
         private ColumnHeader Contract;
         private ArtanPanel artanPanel4;
         private Label lbEmployeeName;
-        private Button btn_ViewDetails;
         private Label label3;
         private TabPage welcome;
         private Label welcome_txt;
@@ -1457,7 +1444,6 @@
         private DateTimePicker BirthDateBoxHR;
         private GroupBox groupBox1;
         private TextBox TB_Lastname;
-        private TextBox TB_Job;
         private Label lbl_Job;
         private GroupBox groupBox2;
         private Label label22;
@@ -1481,11 +1467,6 @@
         private Label label30;
         private Label label31;
         private TextBox TB_Emregency;
-        private Label label6;
-        private Label Username;
-        private Label label32;
-        private Label label11;
-        private Label label13;
         private Label label14;
         private Label label15;
         private Label label17;
@@ -1502,5 +1483,19 @@
         private Label label36;
         private TextBox tbSearchEmpPhone;
         private Label label35;
+        private GroupBox Gb_Details_employee;
+        private Label label13;
+        private Label label11;
+        private Label label32;
+        private Label label6;
+        private Label Username;
+        private ComboBox cbJobAdd;
+        private TextBox UsernameBoxAddEmployee;
+        private TextBox PasswordBoxAddEmployee;
+        private ComboBox ContractBoxAddEmployee;
+        private TextBox BSNBoxAddEmployee;
+        private ComboBox JobCB;
+        private Label label7;
+        private ComboBox CB_StatusSearch;
     }
 }

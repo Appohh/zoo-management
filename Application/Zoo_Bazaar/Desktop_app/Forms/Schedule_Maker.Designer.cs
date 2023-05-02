@@ -1,0 +1,57 @@
+﻿namespace Desktop_app.Forms
+{
+    partial class Schedule_Maker
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            dtpDate = new DateTimePicker();
+            SuspendLayout();
+            // 
+            // dtpDate
+            // 
+            dtpDate.Location = new Point(338, 244);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(200, 23);
+            dtpDate.TabIndex = 0;
+            dtpDate.ValueChanged += dtpDate_ValueChanged;
+            // 
+            // Schedule_Maker
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dtpDate);
+            Name = "Schedule_Maker";
+            Text = "Schedule_Maker";
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private DateTimePicker dtpDate;
+    }
+}

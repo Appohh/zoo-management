@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicCL", "Logic\LogicCL.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataCL", "Data\DataCL.csproj", "{2FFF061F-F36F-438E-BA2B-C45B565EEC48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zoobazaar-desktop", "Desktop_app\Zoobazaar-desktop.csproj", "{947D3DF0-6A23-419E-A17C-80ADD3D5FEBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desktop_app", "Desktop_app\Desktop_app.csproj", "{947D3DF0-6A23-419E-A17C-80ADD3D5FEBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
