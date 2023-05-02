@@ -222,6 +222,7 @@ namespace Desktop_app.Forms
 
         private void CB_Species1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            CB_Type1.DataSource = null;
             //get animal object
 
             CB_Type1.Items.Clear();
