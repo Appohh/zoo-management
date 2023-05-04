@@ -11,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,7 +34,6 @@ namespace Desktop_app
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
             PopulateContractCombobox();
             PopulateJobCombobox();
-
         }
 
         private void Refresh()
@@ -51,7 +51,6 @@ namespace Desktop_app
 
         public void FilterHr(string name, string phone, string job, string status)
         {
-
             var employeeList = hr.Repository.GetUserList();
             var selectedJobName = ((Job)cbbSearchEmpJob.SelectedItem).Name;
             var filteredEmployees = employeeList
@@ -61,8 +60,6 @@ namespace Desktop_app
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
                     (string.IsNullOrEmpty(phone) || e.Phone.ToLower().Contains(phone.ToLower())) &&
                     (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Active" && e.Contractstatus == 1)));
-
-
 
             foreach (Employee employee in filteredEmployees)
             {
@@ -93,50 +90,110 @@ namespace Desktop_app
 
         private void updateBTHR_Click_1(object sender, EventArgs e)
         {
+            //employee details
+            string firstName = TB_Firstname.Text;
+            string lastName = TB_Lastname.Text;
+
+            string address = TB_Address.Text;
+            string city = TB_City.Text;
+
+            string emailAddress = TB_EmailAddress.Text;
+
+            string birthDate = BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+            string bsn = TB_BSN.Text;
+
+            int job = Convert.ToInt32(JobCB.SelectedValue);
+
+            int contract = Convert.ToInt32(CB_Contract.SelectedIndex);
+
+            //contact details
+            string phoneNumber = TB_Phone.Text;
+            string contactName = TB_ContactName.Text;
+
+            string emergency = TB_Emregency.Text;
+            string emergencyContact = TB_Emergencycontact.Text;
+
+            string spouse = TB_Spouse.Text;
+            string spouseContact = TB_SpouseContact.Text;
+
+            // Validate input data
+            List<string> errors = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(firstName))
             {
-                //employee details
-                string firstName = TB_Firstname.Text;
-                string lastName = TB_Lastname.Text;
+                errors.Add("Please enter first name.");
+            }
 
-                string address = TB_Address.Text;
-                string city = TB_City.Text;
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                errors.Add("Please enter last name.");
+            }
 
-                string emailAddress = TB_EmailAddress.Text;
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                errors.Add("Please enter address.");
+            }
 
-                string birthDate = BirthDateBoxHR.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            if (string.IsNullOrWhiteSpace(city))
+            {
+                errors.Add("Please enter city.");
+            }
 
-                string bsn = TB_BSN.Text;
+            if (string.IsNullOrWhiteSpace(emailAddress))
+            {
+                errors.Add("Please enter email address.");
+            }
+            else if (!emailAddress.Contains("@"))
+            {
+                errors.Add("Please enter a valid email address.");
+            }
 
-                int job = Convert.ToInt32(JobCB.SelectedValue);
+            if (string.IsNullOrWhiteSpace(bsn))
+            {
+                errors.Add("Please enter BSN.");
+            }
+            else if (!int.TryParse(bsn, out int bsnNumber) || bsnNumber <= 0)
+            {
+                errors.Add("Please enter a valid BSN number.");
+            }
 
-                int contract = Convert.ToInt32(CB_Contract.SelectedIndex);
+            if (!int.TryParse(phoneNumber, out int phone) || phone <= 0)
+            {
+                errors.Add("Please enter a valid phone number.");
+            }
 
-                //contact details
-                string phoneNumber = TB_Phone.Text;
-                string contactName = TB_ContactName.Text;
+            if (job <= 0)
+            {
+                errors.Add("Please select a job.");
+            }
 
-                string emergency = TB_Emregency.Text;
-                string emergencyContact = TB_Emergencycontact.Text;
+            if (contract < 0)
+            {
+                errors.Add("Please select a contract.");
+            }
 
-                string spouse = TB_Spouse.Text;
-                string spouseContact = TB_SpouseContact.Text;
+            if (errors.Count > 0)
+            {
+                MessageBox.Show(string.Join("\n", errors), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job))
-                {
-                    MessageBox.Show("Success");
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("Oops something went wrong, please contact an administrator");
-                    this.DialogResult = DialogResult.Cancel;
-                }
+            // Call the repository to update the employee details
+            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job))
+            {
+                MessageBox.Show($"You have Updated the Employee {firstName} {lastName}");
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Oops something went wrong, please contact an administrator");
+                this.DialogResult = DialogResult.Cancel;
             }
         }
 
         private void lv_Employees_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (lv_Employees.SelectedItems.Count > 0)
             {
                 List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
@@ -177,13 +234,127 @@ namespace Desktop_app
 
         private void btn_add_employee_Click(object sender, EventArgs e)
         {
-            int selected = Int16.Parse(cbJobAdd.SelectedValue.ToString());
-            UserDTO dto = new UserDTO(0, NameBoxAddEmployee.Text, SurnameBoxAddEmployee.Text, UsernameBoxAddEmployee.Text, PasswordBoxAddEmployee.Text,
-                PhoneNumberBoxAddEmployee.Text, AdressBoxAddEmployee.Text, AdressBoxAddEmployee.Text, EmailBoxAddEmployee.Text, SpouseBoxAddEmployee.Text,
-                SpouseContactBoxAddEmployee.Text, EmergencyContactNameBoxAddEmployee.Text, EmergencyContactBoxAddEmployee.Text, BirthDateBoxAddEmployee.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), BSNBoxAddEmployee.Text, ContractBoxAddEmployee.SelectedIndex, 0, "", selected, "");
+            //variables
+            var firstName = NameBoxAddEmployee.Text;
+            var lastName = SurnameBoxAddEmployee.Text;
+
+            var userName = UsernameBoxAddEmployee.Text;
+            var password = PasswordBoxAddEmployee.Text;
+
+            var phoneNumber = PhoneNumberBoxAddEmployee.Text;
+            var address = AdressBoxAddEmployee.Text;
+            var city = cityAddEmployeeTB.Text;
+            var email = EmailBoxAddEmployee.Text;
+
+            string? spouseName = SpouseBoxAddEmployee.Text;
+            string? spouseNumber = SpouseContactBoxAddEmployee.Text;
+
+            var emergencyName = EmergencyContactNameBoxAddEmployee.Text;
+            var emergencyNumber = EmergencyContactBoxAddEmployee.Text;
+
+            var birthdate = BirthDateBoxAddEmployee.Value;
+
+            var bsn = BSNBoxAddEmployee.Text;
+
+            var contractStatus = ContractBoxAddEmployee.SelectedIndex;
+
+            var contractType = 0;
+
+            var image = "";
+
+            var role = Int16.Parse(cbJobAdd.SelectedValue.ToString());
+
+            var jobName = "";
+
+            List<string> errors = new List<string>();
+
+            //error handling
+            if (string.IsNullOrWhiteSpace(firstName))
+            {
+                errors.Add("First name cannot be empty.");
+            }
+
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                errors.Add("Last name cannot be empty.");
+            }
+
+            if (string.IsNullOrWhiteSpace(userName))
+            {
+                errors.Add("Username cannot be empty.");
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                errors.Add("Password cannot be empty.");
+            }
+
+            if (string.IsNullOrWhiteSpace(phoneNumber))
+            {
+                errors.Add("Phone number cannot be empty.");
+            }
+            else if (!Regex.IsMatch(phoneNumber, @"^[0-9]+$"))
+            {
+                errors.Add("Phone number can only contain numbers.");
+            }
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                errors.Add("Email cannot be empty.");
+            }
+            else if (!Regex.IsMatch(email, @"^.+@.+\..+$"))
+            {
+                errors.Add("Email is not in a valid format.");
+            }
+
+            if (!string.IsNullOrEmpty(spouseName))
+            {
+                SpouseContactBoxAddEmployee.ReadOnly = false;
+                SpouseContactBoxAddEmployee.BackColor = Color.White;
+            }
+            else
+            {
+                SpouseContactBoxAddEmployee.ReadOnly = true;
+                SpouseContactBoxAddEmployee.BackColor = Color.Gray;
+            }
+
+            if (!string.IsNullOrEmpty(spouseNumber) && !Regex.IsMatch(spouseNumber, @"^[0-9]+$"))
+            {
+                errors.Add("Spouse contact number can only contain numbers.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(emergencyNumber) && !Regex.IsMatch(emergencyNumber, @"^[0-9]+$"))
+            {
+                errors.Add("Emergency contact number can only contain numbers.");
+            }
+
+            if (string.IsNullOrWhiteSpace(bsn))
+            {
+                errors.Add("BSN cannot be empty.");
+            }
+            else if (!Regex.IsMatch(bsn, @"^[0-9]+$"))
+            {
+                errors.Add("BSN  number can only contain numbers.");
+            }
+
+            if (birthdate > DateTime.Now.AddYears(-18))
+            {
+                errors.Add("Employee must be at least 18 years old.");
+            }
+
+            if (errors.Count > 0)
+            {
+                MessageBox.Show(string.Join("\n", errors), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            UserDTO dto = new UserDTO(id: 0, firstname: firstName, lastname: lastName, username: userName, password: password,
+                phone: phoneNumber, address: address, city: city, email: email, spouseName: spouseName, spousePhone: spouseNumber,
+                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName);
+
             if (hr.RegisterNewEmployee(dto))
             {
-                MessageBox.Show("Successful");
+                MessageBox.Show($"You have succesfully added the employee {NameBoxAddEmployee.Text} {SurnameBoxAddEmployee.Text}");
                 ClearInputAddEmployee();
             }
             else
@@ -210,8 +381,6 @@ namespace Desktop_app
 
         private void PopulateJobCombobox()
         {
-
-
             List<Job> jobs1 = hr.GetJobList();
             List<Job> jobs2 = new List<Job>(jobs1); // Create a separate list with the same data
             List<Job> jobs3 = new List<Job>(jobs1);
@@ -237,11 +406,6 @@ namespace Desktop_app
             JobCB.DataSource = jobs2;
             JobCB.DisplayMember = "Name";
             JobCB.ValueMember = "Id";
-
-
-
-
-
         }
 
         private void ClearInputAddEmployee()
@@ -256,7 +420,6 @@ namespace Desktop_app
                 {
                     (control as DateTimePicker).Value = DateTime.Now;
                 }
-
             }
         }
 
@@ -267,7 +430,21 @@ namespace Desktop_app
 
         private void Tab_Overview_Click(object sender, EventArgs e)
         {
+        }
 
+        //spouse name and number
+        private void SpouseBoxAddEmployee_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(SpouseBoxAddEmployee.Text))
+            {
+                SpouseContactBoxAddEmployee.ReadOnly = false;
+                SpouseContactBoxAddEmployee.BackColor = Color.White;
+            }
+            else
+            {
+                SpouseContactBoxAddEmployee.ReadOnly = true;
+                SpouseContactBoxAddEmployee.BackColor = Color.Gray;
+            }
         }
     }
 }

@@ -53,6 +53,8 @@
             SpouseContactBoxAddEmployee = new TextBox();
             EmergencyContactNameBoxAddEmployee = new TextBox();
             Gp_Detail_Employees = new GroupBox();
+            cityAddEmployeeTB = new TextBox();
+            label8 = new Label();
             label34 = new Label();
             label9 = new Label();
             label33 = new Label();
@@ -280,11 +282,11 @@
             Gp_Contact_Employee.Controls.Add(EmergencyContactNameBoxAddEmployee);
             Gp_Contact_Employee.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Gp_Contact_Employee.ForeColor = Color.Black;
-            Gp_Contact_Employee.Location = new Point(604, 333);
+            Gp_Contact_Employee.Location = new Point(604, 377);
             Gp_Contact_Employee.Margin = new Padding(4, 2, 4, 2);
             Gp_Contact_Employee.Name = "Gp_Contact_Employee";
             Gp_Contact_Employee.Padding = new Padding(3, 1, 3, 1);
-            Gp_Contact_Employee.Size = new Size(713, 388);
+            Gp_Contact_Employee.Size = new Size(713, 344);
             Gp_Contact_Employee.TabIndex = 78;
             Gp_Contact_Employee.TabStop = false;
             Gp_Contact_Employee.Text = "Contact";
@@ -329,9 +331,9 @@
             label15.Location = new Point(29, 126);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(114, 21);
+            label15.Size = new Size(138, 21);
             label15.TabIndex = 75;
-            label15.Text = "Contact Name";
+            label15.Text = "Emergency Name";
             // 
             // label14
             // 
@@ -371,6 +373,7 @@
             SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
             SpouseBoxAddEmployee.Size = new Size(283, 29);
             SpouseBoxAddEmployee.TabIndex = 27;
+            SpouseBoxAddEmployee.TextChanged += SpouseBoxAddEmployee_TextChanged;
             // 
             // PhoneNumberBoxAddEmployee
             // 
@@ -398,13 +401,14 @@
             // 
             // SpouseContactBoxAddEmployee
             // 
-            SpouseContactBoxAddEmployee.BackColor = SystemColors.ButtonFace;
+            SpouseContactBoxAddEmployee.BackColor = SystemColors.ButtonShadow;
             SpouseContactBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
             SpouseContactBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SpouseContactBoxAddEmployee.ForeColor = Color.Black;
             SpouseContactBoxAddEmployee.Location = new Point(391, 212);
             SpouseContactBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
+            SpouseContactBoxAddEmployee.ReadOnly = true;
             SpouseContactBoxAddEmployee.Size = new Size(297, 29);
             SpouseContactBoxAddEmployee.TabIndex = 28;
             // 
@@ -423,6 +427,8 @@
             // Gp_Detail_Employees
             // 
             Gp_Detail_Employees.BackColor = Color.FromArgb(255, 209, 159);
+            Gp_Detail_Employees.Controls.Add(cityAddEmployeeTB);
+            Gp_Detail_Employees.Controls.Add(label8);
             Gp_Detail_Employees.Controls.Add(label34);
             Gp_Detail_Employees.Controls.Add(label9);
             Gp_Detail_Employees.Controls.Add(label33);
@@ -439,10 +445,33 @@
             Gp_Detail_Employees.Margin = new Padding(4, 2, 4, 2);
             Gp_Detail_Employees.Name = "Gp_Detail_Employees";
             Gp_Detail_Employees.Padding = new Padding(3, 1, 3, 1);
-            Gp_Detail_Employees.Size = new Size(713, 232);
+            Gp_Detail_Employees.Size = new Size(713, 275);
             Gp_Detail_Employees.TabIndex = 77;
             Gp_Detail_Employees.TabStop = false;
             Gp_Detail_Employees.Text = "Details of Employee";
+            // 
+            // cityAddEmployeeTB
+            // 
+            cityAddEmployeeTB.BackColor = SystemColors.ButtonFace;
+            cityAddEmployeeTB.BorderStyle = BorderStyle.FixedSingle;
+            cityAddEmployeeTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cityAddEmployeeTB.ForeColor = Color.Black;
+            cityAddEmployeeTB.Location = new Point(27, 233);
+            cityAddEmployeeTB.Margin = new Padding(3, 1, 3, 1);
+            cityAddEmployeeTB.Name = "cityAddEmployeeTB";
+            cityAddEmployeeTB.Size = new Size(646, 29);
+            cityAddEmployeeTB.TabIndex = 85;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(27, 211);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(38, 21);
+            label8.TabIndex = 84;
+            label8.Text = "City";
             // 
             // label34
             // 
@@ -459,7 +488,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(32, 154);
+            label9.Location = new Point(27, 154);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(70, 21);
@@ -1073,11 +1102,13 @@
             // 
             // TB_Password
             // 
+            TB_Password.BackColor = SystemColors.ControlDark;
             TB_Password.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TB_Password.Location = new Point(18, 102);
             TB_Password.Margin = new Padding(3, 2, 3, 2);
             TB_Password.Name = "TB_Password";
-            TB_Password.Size = new Size(381, 29);
+            TB_Password.ReadOnly = true;
+            TB_Password.Size = new Size(313, 29);
             TB_Password.TabIndex = 76;
             // 
             // label23
@@ -1091,11 +1122,13 @@
             // 
             // TB_Username
             // 
+            TB_Username.BackColor = SystemColors.ButtonShadow;
             TB_Username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TB_Username.Location = new Point(19, 48);
             TB_Username.Margin = new Padding(3, 2, 3, 2);
             TB_Username.Name = "TB_Username";
-            TB_Username.Size = new Size(381, 29);
+            TB_Username.ReadOnly = true;
+            TB_Username.Size = new Size(312, 29);
             TB_Username.TabIndex = 75;
             // 
             // groupBox1
@@ -1497,5 +1530,7 @@
         private ComboBox JobCB;
         private Label label7;
         private ComboBox CB_StatusSearch;
+        private TextBox cityAddEmployeeTB;
+        private Label label8;
     }
 }

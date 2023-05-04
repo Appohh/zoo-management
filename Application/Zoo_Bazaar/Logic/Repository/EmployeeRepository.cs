@@ -19,12 +19,14 @@ namespace LogicCL.Repository
         private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
         private List<User> users = new List<User>();
 
-        public List<User> Users { get { return users; } }
+        public List<User> Users
+        { get { return users; } }
 
-        public EmployeeRepository() 
+        public EmployeeRepository()
         {
             refreshUserData();
         }
+
         private void refreshUserData()
         {
             List<UserDTO> usersDTOs = new List<UserDTO>();
@@ -48,7 +50,7 @@ namespace LogicCL.Repository
                     User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(zookeeper);
                 }
-                if (userDto.JobId == 3) 
+                if (userDto.JobId == 3)
                 {
                     User VeterinaryTechnician = new VeterinaryTechnician(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(VeterinaryTechnician);
@@ -73,12 +75,8 @@ namespace LogicCL.Repository
                     User ScheduleMaker = new ScheduleMaker(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(ScheduleMaker);
                 }
-
-
-
             }
             users.AddRange(newUsers);
-
         }
 
         public List<User> GetUserList([Optional] Type type, [Optional] List<Type> types)
@@ -87,14 +85,12 @@ namespace LogicCL.Repository
             List<User> filteredUsers = new List<User>();
             if (types != null)
             {
-
                 filteredUsers.AddRange(Users.Where(user => types.Contains(user.GetType())));
                 return filteredUsers;
             }
 
             if (type != null)
             {
-
                 filteredUsers.AddRange(Users.Where(user => type == user.GetType()));
                 return filteredUsers;
             }
@@ -105,13 +101,13 @@ namespace LogicCL.Repository
         public User? getUserById(int id)
         {
             return Users.Find(user => user.Id == id);
-        }        
+        }
 
-        public List<Location> GetLocations() 
+        public List<Location> GetLocations()
         {
             List<LocationDTO> locationDTOs = locationDataTraffic.retrieveLocation();
             List<Location> locations = new List<Location>();
-            foreach(LocationDTO locationDTO in locationDTOs)
+            foreach (LocationDTO locationDTO in locationDTOs)
             {
                 locations.Add(new Location(locationDTO.Id, locationDTO.Name));
             }
@@ -122,7 +118,7 @@ namespace LogicCL.Repository
         {
             List<JobDTO> jobDTOs = jobDataTraffic.retrieveJobs();
             List<Job> jobs = new List<Job>();
-            foreach(JobDTO jobDTO in jobDTOs)
+            foreach (JobDTO jobDTO in jobDTOs)
             {
                 jobs.Add(new Job(jobDTO.Id, jobDTO.Name));
             }
@@ -141,19 +137,26 @@ namespace LogicCL.Repository
 
         public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job)
         {
-           if(userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job)) { refreshUserData(); return true; } else { return false; }
+            if (userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job))
+            {
+                refreshUserData(); return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<Shift> GetShiftsByEmpId(int id)
         {
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
             List<Shift> shiftList = new List<Shift>();
-            foreach(ShiftDTO shift in shiftDTOs)
+            foreach (ShiftDTO shift in shiftDTOs)
             {
                 if (shift.EmpId == id)
                 {
                     shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));
-                }            
+                }
             }
 
             return shiftList;
@@ -175,14 +178,13 @@ namespace LogicCL.Repository
                 {
                     continue;
                 }
-                available.Add(employee);               
+                available.Add(employee);
             }
             return available;
         }
 
         private void IsAbsent()
         {
-
         }
 
         private int HoursWorkedThisWeek(int id, DateTime date)
@@ -226,9 +228,5 @@ namespace LogicCL.Repository
             }
             return false;
         }
-        
-
-        
-
     }
 }
