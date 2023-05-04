@@ -124,6 +124,7 @@
             btn_ViewDetails = new Button();
             label3 = new Label();
             PictureBoxAddEmployee = new PictureBox();
+            button2 = new Button();
             tabControl1.SuspendLayout();
             tab_welcome.SuspendLayout();
             tab_Overview.SuspendLayout();
@@ -644,6 +645,7 @@
             // tab_AddAnimal
             // 
             tab_AddAnimal.BackColor = Color.FromArgb(96, 214, 255);
+            tab_AddAnimal.Controls.Add(button2);
             tab_AddAnimal.Controls.Add(Btn_AddAnimal);
             tab_AddAnimal.Controls.Add(pictureBox1);
             tab_AddAnimal.Controls.Add(groupBox4);
@@ -1238,6 +1240,19 @@
             PictureBoxAddEmployee.TabIndex = 79;
             PictureBoxAddEmployee.TabStop = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(221, 66, 76);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1430, 30);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 32);
+            button2.TabIndex = 85;
+            button2.Text = "Logout";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Animal_Management
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1377,5 +1392,6 @@
         private Label label17;
         private PictureBox pictureBox1;
         private Button Btn_LogOut;
+        private Button button2;
     }
 }

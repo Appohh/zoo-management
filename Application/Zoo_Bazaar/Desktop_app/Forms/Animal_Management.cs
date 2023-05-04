@@ -47,7 +47,6 @@ namespace Desktop_app.Forms
             }
         }
 
-
         public void FilterAnimal(string name, string species, string type)
         {
             var animalList = AnimalManagement.Repository.GetAnimalList();
@@ -90,7 +89,6 @@ namespace Desktop_app.Forms
             List<Species> species1 = AnimalManagement.GetSpeciesList();
             List<Species> species2 = new List<Species>(species1); // Create a separate list with the same data
             List<Species> species3 = new List<Species>(species1);
-
 
             // Add "All" option for species search
             Species allSpecies = new Species { Id = -1, Name = "All" };
@@ -165,7 +163,6 @@ namespace Desktop_app.Forms
             CB_Diet1.ValueMember = "Id";
         }
 
-
         private void btn_search_Animal_Click_1(object sender, EventArgs e)
         {
             // name = good
@@ -176,6 +173,8 @@ namespace Desktop_app.Forms
 
         private void BTN_updateAnimal_Click(object sender, EventArgs e)
         {
+            List<string> errors = new List<string>();
+
             string name = TB_name1.Text;
             int location = Convert.ToInt32(CB_Location1.SelectedValue);
             string birthdate = DT_Birthdate.Value.ToString("yyyy-MM-dd");
@@ -190,6 +189,47 @@ namespace Desktop_app.Forms
             //Condition
             int sick = checkBox1.Checked ? 1 : 0;
 
+            if (!string.IsNullOrEmpty(name))
+            {
+                if (name.Length > 15)
+                {
+                    errors.Add("Animal name cannot exceed 15 characters.");
+                }
+            }
+            else
+            {
+                errors.Add("Animal name cannot be empty.");
+            }
+
+            if (location < 1 || location > 100)
+            {
+                errors.Add("Location ID must be between 1 and 100.");
+            }
+
+            if (string.IsNullOrEmpty(birthdate))
+            {
+                errors.Add("Birthdate cannot be empty.");
+            }
+
+            if (!string.IsNullOrEmpty(birthplace))
+            {
+                if (birthplace.Length > 15)
+                {
+                    errors.Add("Birthplace cannot exceed 15 characters.");
+                }
+            }
+
+            if (errors.Count > 0)
+            {
+                string errorMessage = "Error(s):" + Environment.NewLine;
+                foreach (string error in errors)
+                {
+                    errorMessage += "- " + error + Environment.NewLine;
+                }
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (AnimalManagement.Repository.ChangeAnimalSickAndNote(selectedAnimalId, sick))
             {
                 this.DialogResult = DialogResult.OK;
@@ -202,8 +242,13 @@ namespace Desktop_app.Forms
 
             if (AnimalManagement.Repository.updateAnimalDetails(selectedAnimalId, name, birthdate, birthplace, fatherId, motherId, location, diet, type, sick, "NULL"))
             {
-                MessageBox.Show("Success");
+                MessageBox.Show($"Success, you have updated the animal {name}");
                 this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Oops something went wrong, please contact an administrator");
+                this.DialogResult = DialogResult.Cancel;
             }
         }
 
@@ -266,6 +311,7 @@ namespace Desktop_app.Forms
             else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
         }
 
+        //not working
         private void Btn_AddAnimal_Click(object sender, EventArgs e)
         {
             var selectedType = (dynamic)CB_TypeBoxAdd.SelectedItem;
@@ -355,6 +401,10 @@ namespace Desktop_app.Forms
             }
             else { CB_TypeBoxAdd.SelectedIndex = -1; CB_TypeBoxAdd.Text = ""; }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
-

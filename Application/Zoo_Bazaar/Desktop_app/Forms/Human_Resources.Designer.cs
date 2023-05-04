@@ -136,6 +136,7 @@
             welcome = new TabPage();
             welcome_txt = new Label();
             tabAddEmployee = new TabControl();
+            button1 = new Button();
             Job = new ColumnHeader();
             Tab_Add_Employee.SuspendLayout();
             Gp_Contact_Employee.SuspendLayout();
@@ -254,6 +255,7 @@
             // 
             Tab_Add_Employee.BackColor = Color.FromArgb(96, 214, 255);
             Tab_Add_Employee.BackgroundImageLayout = ImageLayout.Stretch;
+            Tab_Add_Employee.Controls.Add(button1);
             Tab_Add_Employee.Controls.Add(Gp_Contact_Employee);
             Tab_Add_Employee.Controls.Add(Gp_Detail_Employees);
             Tab_Add_Employee.Controls.Add(Gb_Details_employee);
@@ -1382,6 +1384,19 @@
             tabAddEmployee.Size = new Size(1670, 791);
             tabAddEmployee.TabIndex = 27;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(221, 66, 76);
+            button1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(1434, 34);
+            button1.Margin = new Padding(1);
+            button1.Name = "button1";
+            button1.Size = new Size(148, 37);
+            button1.TabIndex = 79;
+            button1.Text = "Logout";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Human_Resources
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1532,5 +1547,6 @@
         private ComboBox CB_StatusSearch;
         private TextBox cityAddEmployeeTB;
         private Label label8;
+        private Button button1;
     }
 }
