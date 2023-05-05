@@ -58,5 +58,10 @@ namespace LogicCL.Users
         {
             return Repository.GetDietList();
         }
+
+        public List<Gender> GetGenderList()
+        {
+            return Repository.GetGenderList();
+        }
     }
 }

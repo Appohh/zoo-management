@@ -17,6 +17,7 @@ namespace LogicCL.Repository
         private SpeciesDataTraffic speciesDataTraffic = new SpeciesDataTraffic();
         private TypeDataTraffic typeDataTraffic = new TypeDataTraffic();
         private DietDataTraffic dietDataTraffic = new DietDataTraffic();
+        private GenderDataTraffic genderDataTraffic = new GenderDataTraffic();
         private List<Animal> animals = new List<Animal>();
 
         public List<Animal> Animals { get { return animals; } }
@@ -42,7 +43,7 @@ namespace LogicCL.Repository
             {
 
                 //Diet dietOfThisAnimal = animals.where(diet => animal.dietid = dietId)
-                Animal animal = new Animal(animalDto.Id, animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.Location, animalDto.Diet, animalDto.Species, animalDto.Type, animalDto.Sick, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl);
+                Animal animal = new Animal(animalDto.Id, animalDto.Name, animalDto.Birthdate, animalDto.BirthPlace, animalDto.FatherId, animalDto.MotherId, animalDto.Location, animalDto.Diet, animalDto.Species, animalDto.Type, animalDto.Sick, animalDto.Notes, animalDto.Deathdate, animalDto.ImageUrl, animalDto.Gender);
                 newAnimals.Add(animal);
             }
             animals.AddRange(newAnimals);
@@ -134,6 +135,16 @@ namespace LogicCL.Repository
             return diet;
         }
 
+        public List<Gender> GetGenderList()
+        {
+            List<GenderDTO> genderDTOs = genderDataTraffic.retrieveGender();
+            List<Gender> gender = new List<Gender>();
+            foreach (GenderDTO genderDTO in genderDTOs)
+            {
+                gender.Add(new Gender(genderDTO.Id, genderDTO.Name));
+            }
+            return gender;
+        }
 
 
     }

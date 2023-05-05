@@ -30,11 +30,12 @@
         public string? DeceasedDate { get; set; }
 
         public string ImageUrl { get; set; }
+        public string gender { get; set; }
 
 
 
 
-        public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string type, int sick, string notes, string? deathdate, string imageUrl)
+        public Animal(int id, string name, string birthdate, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string type, int sick, string notes, string? deathdate, string imageUrl, string gender)
         {
             Id = id;
             Name = name;
@@ -50,6 +51,7 @@
             Notes = notes;
             DeceasedDate = deathdate;
             ImageUrl = imageUrl;
+            this.gender = gender;
         }
     }
 }

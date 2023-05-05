@@ -143,7 +143,7 @@ namespace Desktop_app
 
             if (zookeeper.Repository.ChangeAnimalSickAndNote(selectedAnimalId, Sick, Notes))
             {
-                MessageBox.Show($"Success, you have made an update fir the animal {name}");
+                MessageBox.Show($"Success, you have made an update for the animal {name}");
                 this.DialogResult = DialogResult.OK;
             }
             else

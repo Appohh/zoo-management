@@ -33,6 +33,7 @@ namespace Desktop_app.Forms
             PopulateSpeciesCombobox();
             PopulateTypesCombobox();
             PopulateDietCombobox();
+            PopulateGenderCombobox();
             this.Size = new Size(1521, 910);
         }
 
@@ -161,6 +162,15 @@ namespace Desktop_app.Forms
             CB_Diet1.DataSource = diets;
             CB_Diet1.DisplayMember = "Name";
             CB_Diet1.ValueMember = "Id";
+        }
+
+        private void PopulateGenderCombobox()
+        {
+            List<Gender> genders = AnimalManagement.GetGenderList();
+            CB_GenderAdd.DataSource = null;
+            CB_GenderAdd.DataSource = genders;
+            CB_GenderAdd.DisplayMember = "Name";
+            CB_GenderAdd.ValueMember = "Id";
         }
 
         private void btn_search_Animal_Click_1(object sender, EventArgs e)
@@ -331,7 +341,8 @@ namespace Desktop_app.Forms
             0,
             null,
             null,
-            null
+            null,
+            CB_GenderAdd.SelectedValue.ToString()
             ); ;
             //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
             if (AnimalManagement.RegisterNewAnimal(dto))
@@ -359,6 +370,7 @@ namespace Desktop_app.Forms
                 CB_Father1.Text = selectedAnimal.FatherId.ToString();
                 CB_Mother1.Text = selectedAnimal.Mother.ToString();
                 TB_BirthPlace1.Text = selectedAnimal.BirthPlace;
+                txt_Gender.Text = selectedAnimal.gender;
 
                 //Category
                 CB_Species1.Text = selectedAnimal.Species;

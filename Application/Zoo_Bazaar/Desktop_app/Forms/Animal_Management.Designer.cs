@@ -44,6 +44,8 @@
             button1 = new Button();
             label12 = new Label();
             groupBox6 = new GroupBox();
+            txt_Gender = new TextBox();
+            label5 = new Label();
             CB_Father1 = new ComboBox();
             CB_Mother1 = new ComboBox();
             TB_BirthPlace1 = new TextBox();
@@ -75,9 +77,12 @@
             Location = new ColumnHeader();
             speciesCB = new ComboBox();
             tab_AddAnimal = new TabPage();
+            button2 = new Button();
             Btn_AddAnimal = new Button();
             pictureBox1 = new PictureBox();
             groupBox4 = new GroupBox();
+            CB_GenderAdd = new ComboBox();
+            lbl_Gender = new Label();
             CB_FatherAdd = new ComboBox();
             CB_MotherAdd = new ComboBox();
             label8 = new Label();
@@ -124,7 +129,6 @@
             btn_ViewDetails = new Button();
             label3 = new Label();
             PictureBoxAddEmployee = new PictureBox();
-            button2 = new Button();
             tabControl1.SuspendLayout();
             tab_welcome.SuspendLayout();
             tab_Overview.SuspendLayout();
@@ -285,7 +289,7 @@
             // 
             BTN_updateAnimal.BackColor = Color.FromArgb(221, 66, 76);
             BTN_updateAnimal.ForeColor = Color.White;
-            BTN_updateAnimal.Location = new Point(466, 396);
+            BTN_updateAnimal.Location = new Point(460, 407);
             BTN_updateAnimal.Margin = new Padding(3, 2, 3, 2);
             BTN_updateAnimal.Name = "BTN_updateAnimal";
             BTN_updateAnimal.Size = new Size(118, 32);
@@ -323,6 +327,8 @@
             // groupBox6
             // 
             groupBox6.BackColor = Color.Transparent;
+            groupBox6.Controls.Add(txt_Gender);
+            groupBox6.Controls.Add(label5);
             groupBox6.Controls.Add(CB_Father1);
             groupBox6.Controls.Add(CB_Mother1);
             groupBox6.Controls.Add(TB_BirthPlace1);
@@ -334,10 +340,30 @@
             groupBox6.Margin = new Padding(3, 2, 3, 2);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(3, 2, 3, 2);
-            groupBox6.Size = new Size(270, 216);
+            groupBox6.Size = new Size(270, 270);
             groupBox6.TabIndex = 27;
             groupBox6.TabStop = false;
             groupBox6.Text = "Extra details";
+            // 
+            // txt_Gender
+            // 
+            txt_Gender.Enabled = false;
+            txt_Gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Gender.Location = new Point(18, 221);
+            txt_Gender.Margin = new Padding(3, 2, 3, 2);
+            txt_Gender.Name = "txt_Gender";
+            txt_Gender.ReadOnly = true;
+            txt_Gender.Size = new Size(243, 29);
+            txt_Gender.TabIndex = 35;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(18, 198);
+            label5.Name = "label5";
+            label5.Size = new Size(64, 21);
+            label5.TabIndex = 34;
+            label5.Text = "Gender";
             // 
             // CB_Father1
             // 
@@ -539,11 +565,11 @@
             groupBox8.Controls.Add(checkBox1);
             groupBox8.Controls.Add(label27);
             groupBox8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox8.Location = new Point(388, 272);
+            groupBox8.Location = new Point(388, 325);
             groupBox8.Margin = new Padding(3, 2, 3, 2);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(3, 2, 3, 2);
-            groupBox8.Size = new Size(270, 112);
+            groupBox8.Size = new Size(270, 79);
             groupBox8.TabIndex = 24;
             groupBox8.TabStop = false;
             groupBox8.Text = "Condition";
@@ -551,7 +577,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(24, 69);
+            checkBox1.Location = new Point(24, 47);
             checkBox1.Margin = new Padding(3, 2, 3, 2);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(127, 25);
@@ -562,7 +588,7 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(24, 44);
+            label27.Location = new Point(24, 24);
             label27.Name = "label27";
             label27.Size = new Size(62, 21);
             label27.TabIndex = 18;
@@ -657,11 +683,24 @@
             tab_AddAnimal.TabIndex = 2;
             tab_AddAnimal.Text = "Add Animal";
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(221, 66, 76);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1430, 30);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 32);
+            button2.TabIndex = 85;
+            button2.Text = "Logout";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Btn_AddAnimal
             // 
             Btn_AddAnimal.BackColor = Color.Black;
             Btn_AddAnimal.ForeColor = Color.White;
-            Btn_AddAnimal.Location = new Point(820, 386);
+            Btn_AddAnimal.Location = new Point(820, 405);
             Btn_AddAnimal.Margin = new Padding(1);
             Btn_AddAnimal.Name = "Btn_AddAnimal";
             Btn_AddAnimal.Size = new Size(127, 38);
@@ -685,6 +724,8 @@
             // groupBox4
             // 
             groupBox4.BackColor = Color.FromArgb(255, 209, 159);
+            groupBox4.Controls.Add(CB_GenderAdd);
+            groupBox4.Controls.Add(lbl_Gender);
             groupBox4.Controls.Add(CB_FatherAdd);
             groupBox4.Controls.Add(CB_MotherAdd);
             groupBox4.Controls.Add(label8);
@@ -697,10 +738,29 @@
             groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(3, 2, 3, 2);
-            groupBox4.Size = new Size(285, 264);
+            groupBox4.Size = new Size(285, 283);
             groupBox4.TabIndex = 81;
             groupBox4.TabStop = false;
             groupBox4.Text = "Extra Details";
+            // 
+            // CB_GenderAdd
+            // 
+            CB_GenderAdd.FormattingEnabled = true;
+            CB_GenderAdd.Location = new Point(17, 236);
+            CB_GenderAdd.Name = "CB_GenderAdd";
+            CB_GenderAdd.Size = new Size(251, 29);
+            CB_GenderAdd.TabIndex = 39;
+            // 
+            // lbl_Gender
+            // 
+            lbl_Gender.AutoSize = true;
+            lbl_Gender.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Gender.ForeColor = Color.Black;
+            lbl_Gender.Location = new Point(17, 213);
+            lbl_Gender.Name = "lbl_Gender";
+            lbl_Gender.Size = new Size(59, 20);
+            lbl_Gender.TabIndex = 38;
+            lbl_Gender.Text = "Gender";
             // 
             // CB_FatherAdd
             // 
@@ -1240,19 +1300,6 @@
             PictureBoxAddEmployee.TabIndex = 79;
             PictureBoxAddEmployee.TabStop = false;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(221, 66, 76);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(1430, 30);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 32);
-            button2.TabIndex = 85;
-            button2.Text = "Logout";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // Animal_Management
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1353,7 +1400,6 @@
         private ComboBox CB_MotherAdd;
         private Label label8;
         private Label label9;
-        private Label label10;
         private TextBox TB_BirthPlaceAdd;
         private ComboBox CB_DietAdd;
         private DateTimePicker DT_BirthDateAdd;
@@ -1393,5 +1439,10 @@
         private PictureBox pictureBox1;
         private Button Btn_LogOut;
         private Button button2;
+        private Label lbl_Gender;
+        private Label label10;
+        private ComboBox CB_GenderAdd;
+        private TextBox txt_Gender;
+        private Label label5;
     }
 }

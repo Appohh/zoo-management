@@ -17,7 +17,7 @@ namespace DataCL.DataTraffic
         {
             get
             { 
-                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], Locations.name AS location, Locations.id AS locationId, Diet.name AS diet, Diet.id AS dietId, Species.name AS species, Species.id AS speciesId, Type.name AS type, Type.id AS typeId, Gender.Id AS genderId, Gender.Name AS gender, [notes], [deathdate], [imageUrl] FROM Animals INNER JOIN Gender ON Gender.id = Animals.genderId INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Type ON Animals.typeId = Type.id INNER JOIN Species ON Species.id = Type.speciesId";
+                return "SELECT Animals.id, Animals.name, [birthdate], [birthplace], [fatherId], [motherId], Locations.name AS location, Locations.id AS locationId, Diet.name AS diet, Diet.id AS dietId, Species.name AS species, Species.id AS speciesId, Type.name AS type, Type.id AS typeId, Gender.Id AS genderId, Gender.Name AS gender, [sick], [notes], [deathdate], [imageUrl] FROM Animals INNER JOIN Gender ON Gender.id = Animals.genderId INNER JOIN Locations ON Animals.locationId = Locations.id INNER JOIN Diet ON Animals.dietId = Diet.id INNER JOIN Type ON Animals.typeId = Type.id INNER JOIN Species ON Species.id = Type.speciesId";
             }
         }
 
@@ -40,8 +40,8 @@ namespace DataCL.DataTraffic
 
         public bool addAnimal(AnimalDTO animal)
         {
-            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, sick, notes, deathdate, typeId, imageUrl) "+
-            $"VALUES('{animal.Name}', '{animal.Birthdate}', '{animal.BirthPlace}', NULL, NULL, {animal.Location}, {animal.Diet}, {animal.Sick}, 'NULL', '{animal.Deathdate}', {animal.Type}, 'NULL')";
+            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, sick, notes, deathdate, typeId, imageUrl, genderId) "+
+            $"VALUES('{animal.Name}', '{animal.Birthdate}', '{animal.BirthPlace}', NULL, NULL, {animal.Location}, {animal.Diet}, {animal.Sick}, 'NULL', '{animal.Deathdate}', {animal.Type}, 'NULL', {animal.Gender})";
             return executeQuery(query) == 0 ? false : true;
         }
 
