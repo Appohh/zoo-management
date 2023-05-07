@@ -1,6 +1,8 @@
 ﻿using DataCL.DataTraffic;
 using DataCL.DTOs;
 using LogicCL.AnimalMap;
+using LogicCL.Users;
+using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,8 @@ namespace LogicCL.Repository
         private TypeDataTraffic typeDataTraffic = new TypeDataTraffic();
         private DietDataTraffic dietDataTraffic = new DietDataTraffic();
         private GenderDataTraffic genderDataTraffic = new GenderDataTraffic();
+        private FatherDataTraffic fatherDataTraffic = new FatherDataTraffic();
+        private MotherDataTraffic motherDataTraffic = new MotherDataTraffic();
         private List<Animal> animals = new List<Animal>();
 
         public List<Animal> Animals { get { return animals; } }
@@ -144,6 +148,10 @@ namespace LogicCL.Repository
                 gender.Add(new Gender(genderDTO.Id, genderDTO.Name));
             }
             return gender;
+        }
+        public List<Animal> GetMaleAnimals()
+        {
+            return Animals.FindAll(animal => animal.gender == "Male");
         }
 
 

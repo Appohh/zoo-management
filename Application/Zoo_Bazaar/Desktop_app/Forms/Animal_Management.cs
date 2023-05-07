@@ -34,6 +34,7 @@ namespace Desktop_app.Forms
             PopulateTypesCombobox();
             PopulateDietCombobox();
             PopulateGenderCombobox();
+            PopulateFatherCombobox();
             this.Size = new Size(1521, 910);
         }
 
@@ -171,6 +172,14 @@ namespace Desktop_app.Forms
             CB_GenderAdd.DataSource = genders;
             CB_GenderAdd.DisplayMember = "Name";
             CB_GenderAdd.ValueMember = "Id";
+        }
+        private void PopulateFatherCombobox()
+        {
+            List<Animal>animals = AnimalManagement.GetMales();
+            CB_Father1.DataSource = null;
+            CB_Father1.DataSource = animals;
+            CB_Father1.DisplayMember = "Name";
+            CB_Father1.ValueMember = "Id";
         }
 
         private void btn_search_Animal_Click_1(object sender, EventArgs e)
