@@ -72,7 +72,7 @@ namespace Desktop_app.Forms
         private void btnLoadShiftData_Click(object sender, EventArgs e)
         {
             selected = available.Find(e => e.Id == Convert.ToInt32(lv_Employees.SelectedItems[0].Tag));
-            lbSelectedEmp.Text += $" {selected.FirstName + selected.LastName}";
+            lbSelectedEmp.Text = $"Employee: {selected.FirstName + selected.LastName}";
             List<Shift> shifts = scheduleMaker.Repository.GetShiftsByEmpId(selected.Id);           
             shiftDGV.DataSource = shifts;
             shiftDGV.Invalidate();
@@ -92,7 +92,11 @@ namespace Desktop_app.Forms
             {
                 DateTime date = dtPickerShift.Value;
                 int id = Convert.ToInt32(lv_Employees.SelectedItems[0].Tag);
-                if (!scheduleMaker.Repository.ShiftExisted(id, date, cbbShiftType.SelectedIndex))
+                if (scheduleMaker.Repository.HoursWorkedThisDay(id, date) >= 8)
+                {
+                    MessageBox.Show("Maximum shift amount reached");
+                }
+                else if (!scheduleMaker.Repository.ShiftExisted(id, date, cbbShiftType.SelectedIndex))
                 {
                     ShiftDTO shift = new ShiftDTO();
                     shift.EmpId = id;
@@ -117,6 +121,7 @@ namespace Desktop_app.Forms
                 {
                     MessageBox.Show("Shift Already Existed");
                 }
+                
             }
             else
             {

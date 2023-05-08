@@ -174,11 +174,11 @@ namespace LogicCL.Repository
             foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
             {
                 int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
-                if (hoursWorkedThisDay >= 8)
+                if (hoursWorkedThisDay < 8)
                 {
-                    continue;
+                    available.Add(employee);
                 }
-                available.Add(employee);
+                
             }
             return available;
         }
@@ -187,7 +187,7 @@ namespace LogicCL.Repository
         {
         }
 
-        private int HoursWorkedThisWeek(int id, DateTime date)
+        public int HoursWorkedThisWeek(int id, DateTime date)
         {
             WeekSchedule currentWeek = new WeekSchedule(date);
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
@@ -202,13 +202,13 @@ namespace LogicCL.Repository
             return count * 4;
         }
 
-        private int HoursWorkedThisDay(int id, DateTime date)
+        public int HoursWorkedThisDay(int id, DateTime date)
         {
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
             int count = 0;
             foreach (ShiftDTO shift in shiftDTOs)
             {
-                if (shift.EmpId == id && shift.Date == date.ToString("yyyy-MM-DD"))
+                if (shift.EmpId == id && shift.Date.Contains(date.ToString("dd/MM/yyyy")))
                 {
                     count++;
                 }
