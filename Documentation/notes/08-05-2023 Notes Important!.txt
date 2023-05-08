@@ -1,0 +1,42 @@
+08/05/2023 Notes
+---------------------------------------
+Process Report
+Remove waterfall reflection
+update process report
+
+---------------------------------------
+
+test report
+Receive it today!!
+
+---------------------------------------
+
+Presentation
+First make sure that you know what is in your database.
+Practice the data.
+Make sure that visual studio isnt visable. Executable.
+Demonstrate something together. 1 is typing, 1 is speaking.
+Include the client, welcome, Presentation is towards the client
+Use 2 laptops. 1 Presentation, 1 Executable.
+
+1. Convince your client: We made it like this, client asked this
+2. Show the solution we created
+3. Questions, feedback
+
+---------------------------------------
+display
+color picker to make the colortheme clear.
+Also set it in the minutes
+
+---------------------------------------
+Schedule
+Employees has amount of hours a week
+Need a week overview
+Changes in the schedule does have impact on other employees. 
+(For example A need to work at 12 pm. but get rescheduled to 3pm ((the 12pm is open again.)))
+Create departments/parts
+Each parts need an amount of employees.
+
+Ask client if the user wants to see other employees scheduled for that week/job
+Employees need to reach their contract hours
+---------------------------------------
