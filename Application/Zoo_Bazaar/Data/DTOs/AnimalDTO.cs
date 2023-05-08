@@ -17,9 +17,9 @@ namespace DataCL.DTOs
 
         public string BirthPlace { get; set; }
 
-        public int? FatherId { get; set; }
+        public string? FatherId { get; set; }
 
-        public int? MotherId { get; set; }
+        public string? MotherId { get; set; }
 
         public string Location { get; set; }
 
@@ -44,7 +44,7 @@ namespace DataCL.DTOs
 
         }
 
-        public AnimalDTO(int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl, string gender)
+        public AnimalDTO(int id, string name, string dob, string birthPlace, string? fatherId, string? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl, string gender)
         {
             Id = id;
             Name = name;

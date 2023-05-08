@@ -67,5 +67,9 @@ namespace LogicCL.Users
         {
             return Repository.GetMaleAnimals();
         }
+        public List<Animal> GetFemales()
+        {
+            return Repository.GetFemaleAnimals();
+        }
     }
 }

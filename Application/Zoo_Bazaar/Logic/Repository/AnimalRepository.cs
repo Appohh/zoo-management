@@ -90,7 +90,7 @@ namespace LogicCL.Repository
             return false;
         }
 
-        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, int fatherId, int motherId, int location, int diet, int type, int sick, string deathdate)
+        public bool updateAnimalDetails(int id, string name, string dob, string birthPlace, string fatherId, string motherId, int location, int diet, int type, int sick, string deathdate)
         {
             if (animalDataTraffic.UpdateAnimal(id, name, dob, birthPlace, fatherId, motherId, location, diet, type, sick, deathdate)) { refreshAnimalData(); return true; } else { return false; }
         }
@@ -152,6 +152,10 @@ namespace LogicCL.Repository
         public List<Animal> GetMaleAnimals()
         {
             return Animals.FindAll(animal => animal.gender == "Male");
+        }
+        public List<Animal> GetFemaleAnimals()
+        {
+            return Animals.FindAll(animal => animal.gender == "Female");
         }
 
 

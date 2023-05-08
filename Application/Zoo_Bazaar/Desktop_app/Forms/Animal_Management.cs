@@ -35,6 +35,7 @@ namespace Desktop_app.Forms
             PopulateDietCombobox();
             PopulateGenderCombobox();
             PopulateFatherCombobox();
+            PopulateMotherCombobox();
             this.Size = new Size(1521, 910);
         }
 
@@ -179,7 +180,15 @@ namespace Desktop_app.Forms
             CB_Father1.DataSource = null;
             CB_Father1.DataSource = animals;
             CB_Father1.DisplayMember = "Name";
-            CB_Father1.ValueMember = "Id";
+            CB_Father1.ValueMember = "Name";
+        }
+        private void PopulateMotherCombobox()
+        {
+            List<Animal> animals = AnimalManagement.GetFemales();
+            CB_Mother1.DataSource = null;
+            CB_Mother1.DataSource = animals;
+            CB_Mother1.DisplayMember = "Name";
+            CB_Mother1.ValueMember = "Name";
         }
 
         private void btn_search_Animal_Click_1(object sender, EventArgs e)
@@ -201,8 +210,9 @@ namespace Desktop_app.Forms
             int type = selectedType.Id;
             int diet = Convert.ToInt32(CB_Diet1.SelectedValue);
 
-            int motherId = Convert.ToInt32(CB_Mother1.SelectedIndex);
-            int fatherId = Convert.ToInt32(CB_Father1.SelectedIndex);
+            string motherId = CB_Mother1.SelectedValue.ToString();
+            
+            string fatherId = CB_Father1.SelectedValue.ToString();
             string birthplace = TB_BirthPlace1.Text;
 
             //Condition
@@ -376,8 +386,8 @@ namespace Desktop_app.Forms
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
                 TB_name1.Text = selectedAnimal.Name;
                 DT_Birthdate.Value = DateTime.Parse(selectedAnimal.Birthdate);
-                CB_Father1.Text = selectedAnimal.FatherId.ToString();
-                CB_Mother1.Text = selectedAnimal.Mother.ToString();
+                CB_Father1.Text = selectedAnimal.FatherId;
+                CB_Mother1.Text = selectedAnimal.Mother;
                 TB_BirthPlace1.Text = selectedAnimal.BirthPlace;
                 txt_Gender.Text = selectedAnimal.gender;
 
