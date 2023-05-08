@@ -54,6 +54,28 @@ namespace LogicCL.Users
             return typesForSpecies;
         }
 
+        public List<Animal> GetMaleAnimalsByType(string type)
+        {
+            // Get all animals from the database
+            List<Animal> allAnimals = Repository.GetAnimalList();
+
+            // Filter the animals to only include those with the specified type ID and male gender
+            List<Animal> maleAnimalsByType = allAnimals.Where(animal => animal.Type == type && animal.gender == "Male").ToList();
+
+            return maleAnimalsByType;
+        }
+
+        public List<Animal> GetFemaleAnimalsByType(string type)
+        {
+            // Get all animals from the database
+            List<Animal> allAnimals = Repository.GetAnimalList();
+
+            // Filter the animals to only include those with the specified type ID and male gender
+            List<Animal> femaleAnimalsByType = allAnimals.Where(animal => animal.Type == type && animal.gender == "Female").ToList();
+
+            return femaleAnimalsByType;
+        }
+
         public List<Diet> GetDietList()
         {
             return Repository.GetDietList();
