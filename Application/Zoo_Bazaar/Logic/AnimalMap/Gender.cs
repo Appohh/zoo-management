@@ -11,6 +11,7 @@ namespace LogicCL.AnimalMap
         public int Id { get; set; }
         public string Name { get; set; }
 
+
         public Gender()
         {
 
