@@ -472,5 +472,10 @@ namespace Desktop_app.Forms
             lv_Animals.Items.Clear();
             FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
         }
+
+        private void Logout_BTN_Add_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
