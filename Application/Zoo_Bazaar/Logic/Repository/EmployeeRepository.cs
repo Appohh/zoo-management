@@ -17,6 +17,8 @@ namespace LogicCL.Repository
         private JobDataTraffic jobDataTraffic = new JobDataTraffic();
         private ShiftDataTraffic shiftDataTraffic = new ShiftDataTraffic();
         private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
+        private AbsenceDataTraffic absenceDataTraffic = new AbsenceDataTraffic();
+        private AbsenceTypeDataTraffic absenceTypeDataTraffic = new AbsenceTypeDataTraffic();
         private List<User> users = new List<User>();
 
         public List<User> Users
@@ -241,6 +243,40 @@ namespace LogicCL.Repository
                 }
             }
             return false;
+        }
+
+        public List<Absence> GetAllAbsences()
+        {
+            List<AbsenceDTO> absenceDTOs = absenceDataTraffic.retrieveAbsence();
+            List<Absence> absences= new List<Absence>();
+            foreach (AbsenceDTO absenceDTO in absenceDTOs) 
+            {
+                absences.Add(new Absence(absenceDTO.employeeId, absenceDTO.startdate, absenceDTO.enddate, absenceDTO.type));
+            }
+            return absences;
+        }
+
+        public bool changeEmployeeAbsence(int employeeid, string startDate, string endDate, int type)
+        {
+            if (absenceDataTraffic.UpdateAbsence(employeeid, startDate, endDate, type))
+            {
+                refreshUserData(); return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List <AbsenceType> GetAbsenceTypes() 
+        {
+            List<AbsenceTypeDTO> absenceTypeDTOs = absenceTypeDataTraffic.retrieveAbsence();
+            List<AbsenceType> absencesTypes = new List<AbsenceType>();
+            foreach (AbsenceTypeDTO absenceTyeDTO in absenceTypeDTOs)
+            {
+                absencesTypes.Add(new AbsenceType(absenceTyeDTO.Id, absenceTyeDTO.Type));
+            }
+            return absencesTypes;
         }
     }
 }

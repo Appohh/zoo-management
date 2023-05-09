@@ -34,6 +34,7 @@ namespace Desktop_app
             welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName}";
             PopulateContractCombobox();
             PopulateJobCombobox();
+            PopulateAbsenceCombobox();
         }
 
         private void Refresh()
@@ -71,12 +72,31 @@ namespace Desktop_app
                 lv_Employees.Items.Add(userInfo);
             }
         }
+        public void FilterHrAbsence(string name, string job)
+        {
+            var employeeList = hr.Repository.GetUserList();
+            var selectedJobName = ((Job)CB_Absence_Job.SelectedItem).Name;
+            var filteredEmployees = employeeList
+                .OfType<Employee>()
+                .Where(e =>
+                     (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
+                    (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()));
 
-        
+            foreach (Employee employee in filteredEmployees)
+            {
+                string contractStatusString = "";
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
+                userInfo.Tag = employee.Id.ToString();
+                lv_Scheduling.Items.Add(userInfo);
+            }
+        }
 
-        
-        
-         
+
+
+
+
+
 
         private void PopulateContractCombobox()
         {
@@ -103,10 +123,12 @@ namespace Desktop_app
             List<Job> jobs1 = hr.GetJobList();
             List<Job> jobs2 = new List<Job>(jobs1); // Create a separate list with the same data
             List<Job> jobs3 = new List<Job>(jobs1);
+            List<Job> jobs4 = new List<Job>(jobs1);
 
             // Create the "All" Job object and insert it at the first index
             Job allJob = new Job(0, "All");
             jobs3.Insert(0, allJob);
+            jobs4.Insert(0, allJob);
 
             cbJobAdd.Items.Clear();
             cbJobAdd.DataSource = null;
@@ -125,6 +147,22 @@ namespace Desktop_app
             JobCB.DataSource = jobs2;
             JobCB.DisplayMember = "Name";
             JobCB.ValueMember = "Id";
+
+            CB_Absence_Job.Items.Clear();
+            CB_Absence_Job.DataSource = null;
+            CB_Absence_Job.DataSource = jobs4;
+            CB_Absence_Job.DisplayMember = "Name";
+            CB_Absence_Job.ValueMember = "Id";
+        }
+
+        private void PopulateAbsenceCombobox()
+        {
+            List<AbsenceType> absence = hr.Repository.GetAbsenceTypes();
+            TB_Absence_ReasonAbsence.Items.Clear();
+            TB_Absence_ReasonAbsence.DataSource = null;
+            TB_Absence_ReasonAbsence.DataSource = absence;
+            TB_Absence_ReasonAbsence.DisplayMember = "Type";
+            TB_Absence_ReasonAbsence.ValueMember = "Id";
         }
 
         private void ClearInputAddEmployee()
@@ -458,6 +496,101 @@ namespace Desktop_app
             {
                 SpouseContactBoxAddEmployee.ReadOnly = true;
                 SpouseContactBoxAddEmployee.BackColor = Color.Gray;
+            }
+        }
+
+
+        //Scheduling
+        private void btn_absence_search_Click(object sender, EventArgs e)
+        {
+            lv_Scheduling.Items.Clear();
+            FilterHrAbsence(TB_Absence_Name.Text, CB_Absence_Job.Text);
+        }
+
+        private void lv_Scheduling_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_Scheduling.SelectedItems.Count > 0)
+            {
+                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+
+                List<Absence> absences = hr.Repository.GetAllAbsences().OfType<Absence>().ToList();
+                Absence selectedAbsence = absences.Find(absence => absence.employeeId == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+
+                if (selectedUser != null)
+                {
+                    TB_Absence_FirstName.Text = selectedUser.FirstName;
+                    TB_Absence_LastName.Text = selectedUser.LastName;
+                    TB_Absence_PhoneNumber.Text = selectedUser.Phone;
+                }
+                else
+                {
+                    MessageBox.Show("No user found with the selected id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (selectedAbsence != null)
+                {
+                    TB_Absence_StartDate.Value = DateTime.Parse(selectedAbsence.startdate);
+                    TB_Absence_EndDate.Value = DateTime.Parse(selectedAbsence.enddate);
+
+                    if (selectedAbsence.Type != null)
+                    {
+                        if (TB_Absence_ReasonAbsence.Items.Cast<AbsenceType>().Any(item => item.Id == selectedAbsence.Type))
+                        {
+                            TB_Absence_ReasonAbsence.SelectedValue = selectedAbsence.Type;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"No absence type found with id {selectedAbsence.Type}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The selected absence has a null type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No absence found with the selected id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btn_absence_update_Click(object sender, EventArgs e)
+        {
+            if (lv_Scheduling.SelectedItems.Count > 0)
+            {
+                // Get selected user and absence
+                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+                List<Absence> absences = hr.Repository.GetAllAbsences().OfType<Absence>().ToList();
+                Absence selectedAbsence = absences.Find(absences => absences.employeeId == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+
+                if (selectedUser != null && selectedAbsence != null)
+                {
+                    string startDate = TB_Absence_StartDate.Value.ToString("yyyy-MM-dd");
+                    string endDate = TB_Absence_EndDate.Value.ToString("yyyy-MM-dd"); 
+                    int type = Convert.ToInt32((TB_Absence_ReasonAbsence.SelectedValue)); 
+
+                    bool isUpdated = hr.Repository.changeEmployeeAbsence(selectedUser.Id, startDate, endDate, type);
+                    if (isUpdated)
+                    {
+                        MessageBox.Show("Absence updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update absence. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a valid absence to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an absence from the list to update.", "No absence selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
