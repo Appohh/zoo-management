@@ -72,25 +72,90 @@ namespace Desktop_app
             }
         }
 
-        private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
+        
+
+        
+        
+         
+
+        private void PopulateContractCombobox()
         {
-            if (lv_Employees.SelectedItems.Count > 0)
+            ContractBoxAddEmployee.DisplayMember = "Key";
+            ContractBoxAddEmployee.ValueMember = "Value";
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+
+
+            CB_StatusSearch.DisplayMember = "Key";
+            CB_StatusSearch.ValueMember = "Value";
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("All", -1));
+
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+
+            CB_StatusSearch.SelectedIndex = 0;
+        }
+
+        private void PopulateJobCombobox()
+        {
+            List<Job> jobs1 = hr.GetJobList();
+            List<Job> jobs2 = new List<Job>(jobs1); // Create a separate list with the same data
+            List<Job> jobs3 = new List<Job>(jobs1);
+
+            // Create the "All" Job object and insert it at the first index
+            Job allJob = new Job(0, "All");
+            jobs3.Insert(0, allJob);
+
+            cbJobAdd.Items.Clear();
+            cbJobAdd.DataSource = null;
+            cbJobAdd.DataSource = jobs1;
+            cbJobAdd.DisplayMember = "Name";
+            cbJobAdd.ValueMember = "Id";
+
+            cbbSearchEmpJob.Items.Clear();
+            cbbSearchEmpJob.DataSource = null;
+            cbbSearchEmpJob.DataSource = jobs3;
+            cbbSearchEmpJob.DisplayMember = "Name";
+            cbbSearchEmpJob.ValueMember = "Id";
+
+            JobCB.Items.Clear();
+            JobCB.DataSource = null;
+            JobCB.DataSource = jobs2;
+            JobCB.DisplayMember = "Name";
+            JobCB.ValueMember = "Id";
+        }
+
+        private void ClearInputAddEmployee()
+        {
+            foreach (Control control in tabAddEmployee.Controls)
             {
-                lbEmployeeName.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
-            }
-            else
-            {
-                lbEmployeeName.Text = "";
+                if (control is TextBox)
+                {
+                    (control as TextBox).Text = string.Empty;
+                }
+                if (control is DateTimePicker)
+                {
+                    (control as DateTimePicker).Value = DateTime.Now;
+                }
             }
         }
 
-        private void btn_search_Employee_Click_1(object sender, EventArgs e)
+        
+
+
+        //Overview
+
+        
+
+        private void btn_search_Employee_Click(object sender, EventArgs e)
         {
             lv_Employees.Items.Clear();
             FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
         }
 
-        private void updateBTHR_Click_1(object sender, EventArgs e)
+        private void updateBTHR_Click(object sender, EventArgs e)
         {
             //employee details
             string firstName = TB_Firstname.Text;
@@ -194,7 +259,7 @@ namespace Desktop_app
             }
         }
 
-        private void lv_Employees_SelectedIndexChanged(object sender, EventArgs e)
+        private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (lv_Employees.SelectedItems.Count > 0)
             {
@@ -236,7 +301,17 @@ namespace Desktop_app
             }
         }
 
-        private void btn_add_employee_Click(object sender, EventArgs e)
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+
+
+
+        //AddEmployee
+
+        private void btn_add_employee_Click_1(object sender, EventArgs e)
         {
             //variables
             var firstName = NameBoxAddEmployee.Text;
@@ -367,81 +442,12 @@ namespace Desktop_app
             }
         }
 
-        private void PopulateContractCombobox()
-        {
-            ContractBoxAddEmployee.DisplayMember = "Key";
-            ContractBoxAddEmployee.ValueMember = "Value";
-            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
-            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
-
-
-            CB_StatusSearch.DisplayMember = "Key";
-            CB_StatusSearch.ValueMember = "Value";
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("All", -1));
-
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
-
-            CB_StatusSearch.SelectedIndex = 0;
-        }
-
-        private void PopulateJobCombobox()
-        {
-            List<Job> jobs1 = hr.GetJobList();
-            List<Job> jobs2 = new List<Job>(jobs1); // Create a separate list with the same data
-            List<Job> jobs3 = new List<Job>(jobs1);
-
-            // Create the "All" Job object and insert it at the first index
-            Job allJob = new Job(0, "All");
-            jobs3.Insert(0, allJob);
-
-            cbJobAdd.Items.Clear();
-            cbJobAdd.DataSource = null;
-            cbJobAdd.DataSource = jobs1;
-            cbJobAdd.DisplayMember = "Name";
-            cbJobAdd.ValueMember = "Id";
-
-            cbbSearchEmpJob.Items.Clear();
-            cbbSearchEmpJob.DataSource = null;
-            cbbSearchEmpJob.DataSource = jobs3;
-            cbbSearchEmpJob.DisplayMember = "Name";
-            cbbSearchEmpJob.ValueMember = "Id";
-
-            JobCB.Items.Clear();
-            JobCB.DataSource = null;
-            JobCB.DataSource = jobs2;
-            JobCB.DisplayMember = "Name";
-            JobCB.ValueMember = "Id";
-        }
-
-        private void ClearInputAddEmployee()
-        {
-            foreach (Control control in tabAddEmployee.Controls)
-            {
-                if (control is TextBox)
-                {
-                    (control as TextBox).Text = string.Empty;
-                }
-                if (control is DateTimePicker)
-                {
-                    (control as DateTimePicker).Value = DateTime.Now;
-                }
-            }
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Restart();
         }
 
-        private void Tab_Overview_Click(object sender, EventArgs e)
-        {
-        }
-
-        //spouse name and number
-        private void SpouseBoxAddEmployee_TextChanged(object sender, EventArgs e)
+        private void SpouseBoxAddEmployee_TextChanged_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(SpouseBoxAddEmployee.Text))
             {
@@ -453,11 +459,6 @@ namespace Desktop_app
                 SpouseContactBoxAddEmployee.ReadOnly = true;
                 SpouseContactBoxAddEmployee.BackColor = Color.Gray;
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
         }
     }
 }
