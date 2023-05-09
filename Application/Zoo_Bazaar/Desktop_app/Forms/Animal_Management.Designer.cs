@@ -129,6 +129,7 @@
             this.btn_ViewDetails = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
+            this.Logout_BTN_Add = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_welcome.SuspendLayout();
             this.tab_Overview.SuspendLayout();
@@ -654,9 +655,9 @@
             // 
             // tab_AddAnimal
             // 
-            this.tab_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.tab_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(78)))), ((int)(((byte)(64)))));
+            this.tab_AddAnimal.Controls.Add(this.Logout_BTN_Add);
             this.tab_AddAnimal.Controls.Add(this.button2);
-            this.tab_AddAnimal.Controls.Add(this.Btn_AddAnimal);
             this.tab_AddAnimal.Controls.Add(this.pictureBox1);
             this.tab_AddAnimal.Controls.Add(this.groupBox4);
             this.tab_AddAnimal.Controls.Add(this.Gb_Details_employee);
@@ -680,9 +681,9 @@
             // 
             // Btn_AddAnimal
             // 
-            this.Btn_AddAnimal.BackColor = System.Drawing.Color.Black;
+            this.Btn_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.Btn_AddAnimal.ForeColor = System.Drawing.Color.White;
-            this.Btn_AddAnimal.Location = new System.Drawing.Point(937, 540);
+            this.Btn_AddAnimal.Location = new System.Drawing.Point(177, 473);
             this.Btn_AddAnimal.Margin = new System.Windows.Forms.Padding(1);
             this.Btn_AddAnimal.Name = "Btn_AddAnimal";
             this.Btn_AddAnimal.Size = new System.Drawing.Size(145, 51);
@@ -695,7 +696,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(261, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(180, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 551);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -704,8 +705,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
             this.groupBox4.Controls.Add(this.CB_GenderAdd);
+            this.groupBox4.Controls.Add(this.Btn_AddAnimal);
             this.groupBox4.Controls.Add(this.lbl_Gender);
             this.groupBox4.Controls.Add(this.CB_FatherAdd);
             this.groupBox4.Controls.Add(this.CB_MotherAdd);
@@ -715,9 +717,9 @@
             this.groupBox4.Controls.Add(this.TB_BirthPlaceAdd);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(847, 133);
+            this.groupBox4.Location = new System.Drawing.Point(847, 88);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(326, 377);
+            this.groupBox4.Size = new System.Drawing.Size(414, 552);
             this.groupBox4.TabIndex = 81;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Extra Details";
@@ -725,7 +727,7 @@
             // CB_GenderAdd
             // 
             this.CB_GenderAdd.FormattingEnabled = true;
-            this.CB_GenderAdd.Location = new System.Drawing.Point(19, 315);
+            this.CB_GenderAdd.Location = new System.Drawing.Point(66, 332);
             this.CB_GenderAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CB_GenderAdd.Name = "CB_GenderAdd";
             this.CB_GenderAdd.Size = new System.Drawing.Size(286, 36);
@@ -736,7 +738,7 @@
             this.lbl_Gender.AutoSize = true;
             this.lbl_Gender.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Gender.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Gender.Location = new System.Drawing.Point(19, 284);
+            this.lbl_Gender.Location = new System.Drawing.Point(66, 301);
             this.lbl_Gender.Name = "lbl_Gender";
             this.lbl_Gender.Size = new System.Drawing.Size(74, 25);
             this.lbl_Gender.TabIndex = 38;
@@ -753,7 +755,7 @@
             "2",
             "3",
             "4"});
-            this.CB_FatherAdd.Location = new System.Drawing.Point(19, 147);
+            this.CB_FatherAdd.Location = new System.Drawing.Point(66, 164);
             this.CB_FatherAdd.Name = "CB_FatherAdd";
             this.CB_FatherAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_FatherAdd.TabIndex = 37;
@@ -769,7 +771,7 @@
             "2",
             "3",
             "4"});
-            this.CB_MotherAdd.Location = new System.Drawing.Point(19, 65);
+            this.CB_MotherAdd.Location = new System.Drawing.Point(66, 82);
             this.CB_MotherAdd.Name = "CB_MotherAdd";
             this.CB_MotherAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_MotherAdd.TabIndex = 36;
@@ -779,7 +781,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(19, 37);
+            this.label8.Location = new System.Drawing.Point(66, 54);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 25);
             this.label8.TabIndex = 2;
@@ -790,7 +792,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(19, 120);
+            this.label9.Location = new System.Drawing.Point(66, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 25);
             this.label9.TabIndex = 4;
@@ -801,7 +803,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(22, 200);
+            this.label10.Location = new System.Drawing.Point(69, 217);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 25);
             this.label10.TabIndex = 11;
@@ -813,14 +815,14 @@
             this.TB_BirthPlaceAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_BirthPlaceAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_BirthPlaceAdd.ForeColor = System.Drawing.Color.Black;
-            this.TB_BirthPlaceAdd.Location = new System.Drawing.Point(19, 228);
+            this.TB_BirthPlaceAdd.Location = new System.Drawing.Point(66, 245);
             this.TB_BirthPlaceAdd.Name = "TB_BirthPlaceAdd";
             this.TB_BirthPlaceAdd.Size = new System.Drawing.Size(289, 34);
             this.TB_BirthPlaceAdd.TabIndex = 26;
             // 
             // Gb_Details_employee
             // 
-            this.Gb_Details_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
+            this.Gb_Details_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
             this.Gb_Details_employee.Controls.Add(this.CB_LocationAdd);
             this.Gb_Details_employee.Controls.Add(this.DT_BirthDateAdd);
             this.Gb_Details_employee.Controls.Add(this.CB_DietAdd);
@@ -835,9 +837,9 @@
             this.Gb_Details_employee.Controls.Add(this.label13);
             this.Gb_Details_employee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Gb_Details_employee.ForeColor = System.Drawing.Color.Black;
-            this.Gb_Details_employee.Location = new System.Drawing.Point(496, 88);
+            this.Gb_Details_employee.Location = new System.Drawing.Point(419, 88);
             this.Gb_Details_employee.Name = "Gb_Details_employee";
-            this.Gb_Details_employee.Size = new System.Drawing.Size(328, 551);
+            this.Gb_Details_employee.Size = new System.Drawing.Size(405, 551);
             this.Gb_Details_employee.TabIndex = 80;
             this.Gb_Details_employee.TabStop = false;
             this.Gb_Details_employee.Text = "Animal Details";
@@ -848,7 +850,7 @@
             this.CB_LocationAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_LocationAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_LocationAdd.FormattingEnabled = true;
-            this.CB_LocationAdd.Location = new System.Drawing.Point(16, 161);
+            this.CB_LocationAdd.Location = new System.Drawing.Point(58, 160);
             this.CB_LocationAdd.Name = "CB_LocationAdd";
             this.CB_LocationAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_LocationAdd.TabIndex = 86;
@@ -861,7 +863,7 @@
             this.DT_BirthDateAdd.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DT_BirthDateAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DT_BirthDateAdd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_BirthDateAdd.Location = new System.Drawing.Point(16, 239);
+            this.DT_BirthDateAdd.Location = new System.Drawing.Point(58, 238);
             this.DT_BirthDateAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_BirthDateAdd.Name = "DT_BirthDateAdd";
             this.DT_BirthDateAdd.Size = new System.Drawing.Size(289, 34);
@@ -878,7 +880,7 @@
             "2",
             "3",
             "4"});
-            this.CB_DietAdd.Location = new System.Drawing.Point(16, 481);
+            this.CB_DietAdd.Location = new System.Drawing.Point(58, 480);
             this.CB_DietAdd.Name = "CB_DietAdd";
             this.CB_DietAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_DietAdd.TabIndex = 35;
@@ -888,7 +890,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(17, 452);
+            this.label4.Location = new System.Drawing.Point(59, 451);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 25);
             this.label4.TabIndex = 34;
@@ -900,7 +902,7 @@
             this.CB_TypeBoxAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_TypeBoxAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_TypeBoxAdd.FormattingEnabled = true;
-            this.CB_TypeBoxAdd.Location = new System.Drawing.Point(16, 400);
+            this.CB_TypeBoxAdd.Location = new System.Drawing.Point(58, 399);
             this.CB_TypeBoxAdd.Name = "CB_TypeBoxAdd";
             this.CB_TypeBoxAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_TypeBoxAdd.TabIndex = 33;
@@ -911,7 +913,7 @@
             this.TB_NameAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NameAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_NameAdd.ForeColor = System.Drawing.Color.Black;
-            this.TB_NameAdd.Location = new System.Drawing.Point(17, 85);
+            this.TB_NameAdd.Location = new System.Drawing.Point(59, 84);
             this.TB_NameAdd.Name = "TB_NameAdd";
             this.TB_NameAdd.Size = new System.Drawing.Size(289, 34);
             this.TB_NameAdd.TabIndex = 19;
@@ -921,7 +923,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(18, 57);
+            this.label6.Location = new System.Drawing.Point(60, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 25);
             this.label6.TabIndex = 2;
@@ -932,7 +934,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(17, 133);
+            this.label7.Location = new System.Drawing.Point(59, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 25);
             this.label7.TabIndex = 4;
@@ -944,7 +946,7 @@
             this.CB_SpeciesBoxAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CB_SpeciesBoxAdd.ForeColor = System.Drawing.Color.Black;
             this.CB_SpeciesBoxAdd.FormattingEnabled = true;
-            this.CB_SpeciesBoxAdd.Location = new System.Drawing.Point(17, 329);
+            this.CB_SpeciesBoxAdd.Location = new System.Drawing.Point(59, 328);
             this.CB_SpeciesBoxAdd.Name = "CB_SpeciesBoxAdd";
             this.CB_SpeciesBoxAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_SpeciesBoxAdd.TabIndex = 32;
@@ -955,7 +957,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(10, 211);
+            this.label11.Location = new System.Drawing.Point(52, 210);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 25);
             this.label11.TabIndex = 11;
@@ -966,7 +968,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(10, 300);
+            this.label14.Location = new System.Drawing.Point(52, 299);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 25);
             this.label14.TabIndex = 14;
@@ -977,7 +979,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(10, 371);
+            this.label13.Location = new System.Drawing.Point(52, 370);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 25);
             this.label13.TabIndex = 13;
@@ -1283,6 +1285,19 @@
             this.PictureBoxAddEmployee.TabIndex = 79;
             this.PictureBoxAddEmployee.TabStop = false;
             // 
+            // Logout_BTN_Add
+            // 
+            this.Logout_BTN_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.Logout_BTN_Add.ForeColor = System.Drawing.Color.White;
+            this.Logout_BTN_Add.Location = new System.Drawing.Point(1116, 13);
+            this.Logout_BTN_Add.Margin = new System.Windows.Forms.Padding(1);
+            this.Logout_BTN_Add.Name = "Logout_BTN_Add";
+            this.Logout_BTN_Add.Size = new System.Drawing.Size(145, 51);
+            this.Logout_BTN_Add.TabIndex = 85;
+            this.Logout_BTN_Add.Text = "Logout";
+            this.Logout_BTN_Add.UseVisualStyleBackColor = false;
+            this.Logout_BTN_Add.Click += new System.EventHandler(this.Logout_BTN_Add_Click);
+            // 
             // Animal_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1428,5 +1443,6 @@
         private ComboBox CB_GenderAdd;
         private TextBox txt_Gender;
         private Label label5;
+        private Button Logout_BTN_Add;
     }
 }
