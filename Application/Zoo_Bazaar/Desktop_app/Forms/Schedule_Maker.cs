@@ -33,6 +33,7 @@ namespace Desktop_app.Forms
             currentWeekSchedule = new WeekSchedule(DateTime.Now);
             weekNum.Text = currentWeekSchedule.Week.ToString();
             lblTimeRange.Text = $"{currentWeekSchedule.Monday.ToShortDateString()} - {currentWeekSchedule.Sunday.ToShortDateString()}";
+            PanelSetup();
             DrawSchedule();
         }
 
@@ -83,7 +84,7 @@ namespace Desktop_app.Forms
         {
             List<Control> shiftPanels = new List<Control>();
 
-            foreach (Control control in this.Controls)
+            foreach (Control control in tabPageSchedule.Controls)
             {
                 if (control is FlowLayoutPanel)
                 {
