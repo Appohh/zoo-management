@@ -137,6 +137,34 @@
             this.welcome = new System.Windows.Forms.TabPage();
             this.welcome_txt = new System.Windows.Forms.Label();
             this.tabAddEmployee = new System.Windows.Forms.TabControl();
+            this.Tab_Scheduling = new System.Windows.Forms.TabPage();
+            this.btn_absence_search = new System.Windows.Forms.Button();
+            this.btn_absence_logout = new System.Windows.Forms.Button();
+            this.artanPanel1 = new Desktop_app.ArtanPanel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.TB_Absence_Date = new System.Windows.Forms.DateTimePicker();
+            this.TB_Absence_ReasonAbsence = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.TB_Absence_PhoneNumber = new System.Windows.Forms.TextBox();
+            this.TB_Absence_FirstName = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.TB_Absence_LastName = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.btn_absence_update = new System.Windows.Forms.Button();
+            this.label56 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lv_Animals = new System.Windows.Forms.ListView();
+            this.Name = new System.Windows.Forms.ColumnHeader();
+            this.JobAbsence = new System.Windows.Forms.ColumnHeader();
+            this.PhoneNumber = new System.Windows.Forms.ColumnHeader();
+            this.ContractStatus = new System.Windows.Forms.ColumnHeader();
             Job = new System.Windows.Forms.ColumnHeader();
             this.Tab_Add_Employee.SuspendLayout();
             this.Gp_Contact_Employee.SuspendLayout();
@@ -150,6 +178,10 @@
             this.groupBox1.SuspendLayout();
             this.welcome.SuspendLayout();
             this.tabAddEmployee.SuspendLayout();
+            this.Tab_Scheduling.SuspendLayout();
+            this.artanPanel1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Job
@@ -855,6 +887,7 @@
             this.btn_search_Employee.TabIndex = 30;
             this.btn_search_Employee.Text = "Search";
             this.btn_search_Employee.UseVisualStyleBackColor = true;
+            
             // 
             // button3
             // 
@@ -900,7 +933,7 @@
             this.lv_Employees.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lv_Employees.ForeColor = System.Drawing.Color.Black;
             this.lv_Employees.FullRowSelect = true;
-            this.lv_Employees.Location = new System.Drawing.Point(59, 160);
+            this.lv_Employees.Location = new System.Drawing.Point(43, 167);
             this.lv_Employees.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lv_Employees.Name = "lv_Employees";
             this.lv_Employees.Size = new System.Drawing.Size(920, 820);
@@ -1346,7 +1379,7 @@
             this.welcome.Controls.Add(this.welcome_txt);
             this.welcome.Location = new System.Drawing.Point(4, 39);
             this.welcome.Name = "welcome";
-            this.welcome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.welcome.Padding = new System.Windows.Forms.Padding(3);
             this.welcome.Size = new System.Drawing.Size(1901, 1012);
             this.welcome.TabIndex = 3;
             this.welcome.Text = "Welcome";
@@ -1368,6 +1401,7 @@
             this.tabAddEmployee.Controls.Add(this.welcome);
             this.tabAddEmployee.Controls.Add(this.Tab_Overview);
             this.tabAddEmployee.Controls.Add(this.Tab_Add_Employee);
+            this.tabAddEmployee.Controls.Add(this.Tab_Scheduling);
             this.tabAddEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabAddEmployee.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabAddEmployee.Location = new System.Drawing.Point(0, 0);
@@ -1376,6 +1410,301 @@
             this.tabAddEmployee.SelectedIndex = 0;
             this.tabAddEmployee.Size = new System.Drawing.Size(1909, 1055);
             this.tabAddEmployee.TabIndex = 27;
+            // 
+            // Tab_Scheduling
+            // 
+            this.Tab_Scheduling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(78)))), ((int)(((byte)(64)))));
+            this.Tab_Scheduling.Controls.Add(this.btn_absence_search);
+            this.Tab_Scheduling.Controls.Add(this.btn_absence_logout);
+            this.Tab_Scheduling.Controls.Add(this.artanPanel1);
+            this.Tab_Scheduling.Controls.Add(this.comboBox1);
+            this.Tab_Scheduling.Controls.Add(this.label12);
+            this.Tab_Scheduling.Controls.Add(this.label20);
+            this.Tab_Scheduling.Controls.Add(this.label38);
+            this.Tab_Scheduling.Controls.Add(this.textBox1);
+            this.Tab_Scheduling.Controls.Add(this.lv_Animals);
+            this.Tab_Scheduling.Location = new System.Drawing.Point(4, 39);
+            this.Tab_Scheduling.Name = "Tab_Scheduling";
+            this.Tab_Scheduling.Padding = new System.Windows.Forms.Padding(3);
+            this.Tab_Scheduling.Size = new System.Drawing.Size(1901, 1012);
+            this.Tab_Scheduling.TabIndex = 4;
+            this.Tab_Scheduling.Text = "Scheduling";
+            // 
+            // btn_absence_search
+            // 
+            this.btn_absence_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_absence_search.Location = new System.Drawing.Point(571, 86);
+            this.btn_absence_search.Name = "btn_absence_search";
+            this.btn_absence_search.Size = new System.Drawing.Size(94, 35);
+            this.btn_absence_search.TabIndex = 43;
+            this.btn_absence_search.Text = "Search";
+            this.btn_absence_search.UseVisualStyleBackColor = true;
+            // 
+            // btn_absence_logout
+            // 
+            this.btn_absence_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btn_absence_logout.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_absence_logout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_absence_logout.Location = new System.Drawing.Point(1543, 67);
+            this.btn_absence_logout.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_absence_logout.Name = "btn_absence_logout";
+            this.btn_absence_logout.Size = new System.Drawing.Size(169, 49);
+            this.btn_absence_logout.TabIndex = 42;
+            this.btn_absence_logout.Text = "Logout";
+            this.btn_absence_logout.UseVisualStyleBackColor = false;
+            // 
+            // artanPanel1
+            // 
+            this.artanPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(157)))), ((int)(((byte)(149)))));
+            this.artanPanel1.BorderRadius = 40;
+            this.artanPanel1.Controls.Add(this.groupBox5);
+            this.artanPanel1.Controls.Add(this.groupBox4);
+            this.artanPanel1.Controls.Add(this.btn_absence_update);
+            this.artanPanel1.Controls.Add(this.label56);
+            this.artanPanel1.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel1.GradientAngle = 90F;
+            this.artanPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.artanPanel1.Location = new System.Drawing.Point(1009, 161);
+            this.artanPanel1.Margin = new System.Windows.Forms.Padding(1);
+            this.artanPanel1.Name = "artanPanel1";
+            this.artanPanel1.Size = new System.Drawing.Size(886, 845);
+            this.artanPanel1.TabIndex = 41;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.groupBox5.Controls.Add(this.TB_Absence_Date);
+            this.groupBox5.Controls.Add(this.TB_Absence_ReasonAbsence);
+            this.groupBox5.Controls.Add(this.label40);
+            this.groupBox5.Controls.Add(this.label39);
+            this.groupBox5.Location = new System.Drawing.Point(49, 388);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(639, 324);
+            this.groupBox5.TabIndex = 77;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Absence";
+            // 
+            // TB_Absence_Date
+            // 
+            this.TB_Absence_Date.Location = new System.Drawing.Point(53, 105);
+            this.TB_Absence_Date.Name = "TB_Absence_Date";
+            this.TB_Absence_Date.Size = new System.Drawing.Size(371, 36);
+            this.TB_Absence_Date.TabIndex = 73;
+            // 
+            // TB_Absence_ReasonAbsence
+            // 
+            this.TB_Absence_ReasonAbsence.FormattingEnabled = true;
+            this.TB_Absence_ReasonAbsence.Location = new System.Drawing.Point(55, 216);
+            this.TB_Absence_ReasonAbsence.Name = "TB_Absence_ReasonAbsence";
+            this.TB_Absence_ReasonAbsence.Size = new System.Drawing.Size(371, 38);
+            this.TB_Absence_ReasonAbsence.TabIndex = 71;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.label40.Location = new System.Drawing.Point(53, 72);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(63, 30);
+            this.label40.TabIndex = 75;
+            this.label40.Text = "Date:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.label39.Location = new System.Drawing.Point(53, 183);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(198, 30);
+            this.label39.TabIndex = 72;
+            this.label39.Text = "Reason of absence:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.groupBox4.Controls.Add(this.TB_Absence_PhoneNumber);
+            this.groupBox4.Controls.Add(this.TB_Absence_FirstName);
+            this.groupBox4.Controls.Add(this.label41);
+            this.groupBox4.Controls.Add(this.label52);
+            this.groupBox4.Controls.Add(this.TB_Absence_LastName);
+            this.groupBox4.Controls.Add(this.label54);
+            this.groupBox4.Location = new System.Drawing.Point(49, 99);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(639, 263);
+            this.groupBox4.TabIndex = 76;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Details";
+            // 
+            // TB_Absence_PhoneNumber
+            // 
+            this.TB_Absence_PhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Absence_PhoneNumber.Location = new System.Drawing.Point(57, 185);
+            this.TB_Absence_PhoneNumber.Name = "TB_Absence_PhoneNumber";
+            this.TB_Absence_PhoneNumber.Size = new System.Drawing.Size(503, 34);
+            this.TB_Absence_PhoneNumber.TabIndex = 78;
+            // 
+            // TB_Absence_FirstName
+            // 
+            this.TB_Absence_FirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Absence_FirstName.Location = new System.Drawing.Point(55, 98);
+            this.TB_Absence_FirstName.Name = "TB_Absence_FirstName";
+            this.TB_Absence_FirstName.Size = new System.Drawing.Size(234, 34);
+            this.TB_Absence_FirstName.TabIndex = 29;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.label41.Location = new System.Drawing.Point(55, 152);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(165, 30);
+            this.label41.TabIndex = 77;
+            this.label41.Text = "Phone Number:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.label52.Location = new System.Drawing.Point(53, 65);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(112, 30);
+            this.label52.TabIndex = 28;
+            this.label52.Text = "Firstname:";
+            // 
+            // TB_Absence_LastName
+            // 
+            this.TB_Absence_LastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Absence_LastName.Location = new System.Drawing.Point(344, 98);
+            this.TB_Absence_LastName.Name = "TB_Absence_LastName";
+            this.TB_Absence_LastName.Size = new System.Drawing.Size(216, 34);
+            this.TB_Absence_LastName.TabIndex = 74;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.label54.Location = new System.Drawing.Point(344, 65);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(109, 30);
+            this.label54.TabIndex = 30;
+            this.label54.Text = "Lastname:";
+            // 
+            // btn_absence_update
+            // 
+            this.btn_absence_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btn_absence_update.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_absence_update.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_absence_update.Location = new System.Drawing.Point(668, 759);
+            this.btn_absence_update.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_absence_update.Name = "btn_absence_update";
+            this.btn_absence_update.Size = new System.Drawing.Size(169, 51);
+            this.btn_absence_update.TabIndex = 31;
+            this.btn_absence_update.Text = "Update";
+            this.btn_absence_update.UseVisualStyleBackColor = false;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.BackColor = System.Drawing.Color.Transparent;
+            this.label56.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label56.ForeColor = System.Drawing.Color.Black;
+            this.label56.Location = new System.Drawing.Point(361, 20);
+            this.label56.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(280, 37);
+            this.label56.TabIndex = 27;
+            this.label56.Text = "Employee Information";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(374, 83);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(150, 38);
+            this.comboBox1.TabIndex = 40;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(316, 86);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 30);
+            this.label12.TabIndex = 39;
+            this.label12.Text = "Job:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(26, 86);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(76, 30);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "Name:";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label38.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label38.Location = new System.Drawing.Point(26, 37);
+            this.label38.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(160, 28);
+            this.label38.TabIndex = 37;
+            this.label38.Text = "Search Employee";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(98, 82);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(193, 36);
+            this.textBox1.TabIndex = 36;
+            // 
+            // lv_Animals
+            // 
+            this.lv_Animals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.lv_Animals.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_Animals.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Name,
+            this.JobAbsence,
+            this.PhoneNumber,
+            this.ContractStatus});
+            this.lv_Animals.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lv_Animals.ForeColor = System.Drawing.Color.Black;
+            this.lv_Animals.FullRowSelect = true;
+            this.lv_Animals.Location = new System.Drawing.Point(26, 170);
+            this.lv_Animals.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lv_Animals.Name = "lv_Animals";
+            this.lv_Animals.Size = new System.Drawing.Size(920, 833);
+            this.lv_Animals.TabIndex = 22;
+            this.lv_Animals.UseCompatibleStateImageBehavior = false;
+            this.lv_Animals.View = System.Windows.Forms.View.Details;
+            // 
+            // Name
+            // 
+            this.Name.Text = "Name";
+            this.Name.Width = 250;
+            // 
+            // JobAbsence
+            // 
+            this.JobAbsence.Text = "Job";
+            this.JobAbsence.Width = 250;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.Text = "Phone Number";
+            this.PhoneNumber.Width = 350;
+            // 
+            // ContractStatus
+            // 
+            this.ContractStatus.Text = "Contract Status";
+            this.ContractStatus.Width = 300;
             // 
             // Human_Resources
             // 
@@ -1414,6 +1743,14 @@
             this.welcome.ResumeLayout(false);
             this.welcome.PerformLayout();
             this.tabAddEmployee.ResumeLayout(false);
+            this.Tab_Scheduling.ResumeLayout(false);
+            this.Tab_Scheduling.PerformLayout();
+            this.artanPanel1.ResumeLayout(false);
+            this.artanPanel1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1529,5 +1866,33 @@
         private TextBox cityAddEmployeeTB;
         private Label label8;
         private Button button1;
+        private TabPage Tab_Scheduling;
+        private ListView lv_Animals;
+        private ColumnHeader Name;
+        private ColumnHeader JobAbsence;
+        private ColumnHeader PhoneNumber;
+        private ColumnHeader ContractStatus;
+        private ArtanPanel artanPanel1;
+        private GroupBox groupBox5;
+        private GroupBox groupBox4;
+        private TextBox TB_Absence_PhoneNumber;
+        private TextBox TB_Absence_FirstName;
+        private Label label41;
+        private Label label52;
+        private TextBox TB_Absence_LastName;
+        private Label label54;
+        private Label label40;
+        private DateTimePicker TB_Absence_Date;
+        private Label label39;
+        private ComboBox TB_Absence_ReasonAbsence;
+        private Button btn_absence_update;
+        private Label label56;
+        private ComboBox comboBox1;
+        private Label label12;
+        private Label label20;
+        private Label label38;
+        private TextBox textBox1;
+        private Button btn_absence_logout;
+        private Button btn_absence_search;
     }
 }

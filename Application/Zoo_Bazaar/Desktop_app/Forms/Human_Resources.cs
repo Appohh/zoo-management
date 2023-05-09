@@ -72,17 +72,7 @@ namespace Desktop_app
             }
         }
 
-        private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (lv_Employees.SelectedItems.Count > 0)
-            {
-                lbEmployeeName.Text = lv_Employees.SelectedItems[0].SubItems[0].Text;
-            }
-            else
-            {
-                lbEmployeeName.Text = "";
-            }
-        }
+        
 
         private void btn_search_Employee_Click_1(object sender, EventArgs e)
         {
@@ -458,6 +448,15 @@ namespace Desktop_app
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+
+        //Overview
+
+        private void btn_search_Employee_Click_2(object sender, EventArgs e)
+        {
+            lv_Employees.Items.Clear();
+            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
         }
     }
 }
