@@ -188,18 +188,204 @@ namespace Desktop_app.Forms
             CB_Mother1.DataSource = null;
             CB_Mother1.DataSource = animals;
             CB_Mother1.DisplayMember = "Name";
-            CB_Mother1.ValueMember = "Name";
+            CB_Mother1.ValueMember = "Id";
         }
 
-        private void btn_search_Animal_Click_1(object sender, EventArgs e)
+        private void CB_Type1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // name = good
-            //species and type = not working properly, getting wrong result
-            lv_Animals.Items.Clear();
-            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
+            CB_Father1.DataSource = null;
+
+            CB_Father1.Items.Clear();
+
+            if (CB_Type1.SelectedItem != null)
+            {
+                string selectedType = ((Types)CB_Type1.SelectedItem).Name;
+
+                List<Animal> typesForSelectedSpecies = AnimalManagement.GetMaleAnimalsByType(selectedType);
+
+                foreach (Animal Maleanimal in typesForSelectedSpecies)
+                {
+                    CB_Father1.Items.Add(Maleanimal.Name);
+                }
+                if (CB_Father1.Items.Count != 0)
+                {
+                    CB_Father1.SelectedIndex = 0;
+                }
+                else { CB_Father1.SelectedIndex = -1; CB_Father1.Text = ""; }
+
+
+            //----------------------------------------------//
+
+                CB_Mother1.DataSource = null;
+
+                CB_Mother1.Items.Clear();
+
+                List<Animal> FemaleForSelectedType = AnimalManagement.GetFemaleAnimalsByType(selectedType);
+
+                foreach (Animal Femaleanimal in FemaleForSelectedType)
+                {
+                    CB_Mother1.Items.Add(Femaleanimal.Name);
+                }
+                if (CB_Mother1.Items.Count != 0)
+                {
+                    CB_Mother1.SelectedIndex = 0;
+                }
+                else { CB_Mother1.SelectedIndex = -1; CB_Mother1.Text = ""; }
+            }
         }
 
-        private void BTN_updateAnimal_Click(object sender, EventArgs e)
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void CB_SpeciesBoxAdd_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            CB_TypeBoxAdd.DataSource = null;
+
+            CB_TypeBoxAdd.Items.Clear();
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)CB_SpeciesBoxAdd.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                CB_TypeBoxAdd.Items.Add(type);
+            }
+            if (CB_TypeBoxAdd.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                CB_TypeBoxAdd.SelectedIndex = 0;
+            }
+            else { CB_TypeBoxAdd.SelectedIndex = -1; CB_TypeBoxAdd.Text = ""; }
+        }
+
+        private void Btn_AddAnimal_Click_1(object sender, EventArgs e)
+        {
+            var selectedType = (dynamic)CB_TypeBoxAdd.SelectedItem;
+            int type = selectedType.Id;
+
+            AnimalDTO dto = new AnimalDTO(
+            0,
+            TB_NameAdd.Text,
+            DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
+            TB_BirthPlaceAdd.Text,
+            null,
+            null,
+            CB_LocationAdd.SelectedValue.ToString(),
+            CB_DietAdd.SelectedValue.ToString(),
+            CB_SpeciesBoxAdd.SelectedValue.ToString(),
+            type.ToString(),
+            0,
+            null,
+            null,
+            null,
+            CB_GenderAdd.SelectedValue.ToString()
+            ); ;
+            //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
+            if (AnimalManagement.RegisterNewAnimal(dto))
+            {
+                MessageBox.Show("Successful");
+            }
+            else
+            {
+                MessageBox.Show("Unsuccessful");
+            }
+        }
+
+        private void CB_Species1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            CB_Type1.DataSource = null;
+            //get animal object
+
+            CB_Type1.Items.Clear();
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)CB_Species1.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                CB_Type1.Items.Add(type);
+            }
+            if (CB_Type1.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                CB_Type1.SelectedIndex = 0;
+            }
+            else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
+        }
+
+        private void speciesCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            typesCB.DataSource = null;
+
+            typesCB.Items.Clear();
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)speciesCB.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
+
+            if (sender == speciesCB)
+            {
+                Types allTypes = new Types { Id = -1, Name = "All" };
+                typesForSelectedSpecies.Insert(0, allTypes);
+            }
+
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                typesCB.Items.Add(type);
+            }
+            if (typesCB.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                typesCB.SelectedIndex = 0;
+            }
+            else { typesCB.SelectedIndex = -1; typesCB.Text = ""; }
+        }
+
+        private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_Animals.SelectedItems.Count > 0)
+            {
+                List<Animal> animalList = AnimalManagement.Repository.GetAnimalList().OfType<Animal>().ToList();
+
+                Animal selectedAnimal = animalList.Find(animal => animal.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
+
+                //Animal
+                selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
+                TB_name1.Text = selectedAnimal.Name;
+                DT_Birthdate.Value = DateTime.Parse(selectedAnimal.Birthdate);
+                CB_Father1.Text = selectedAnimal.FatherId;
+                CB_Mother1.Text = selectedAnimal.Mother;
+                TB_BirthPlace1.Text = selectedAnimal.BirthPlace;
+                txt_Gender.Text = selectedAnimal.gender;
+
+                //Category
+                CB_Species1.Text = selectedAnimal.Species;
+                CB_Location1.Text = selectedAnimal.Location;
+                CB_Diet1.Text = selectedAnimal.Diet;
+                CB_Type1.Text = selectedAnimal.Type;
+
+                //Condition
+                if (selectedAnimal.Sick == 0) { checkBox1.Checked = false; } else { checkBox1.Checked = true; }
+            }
+        }
+
+        private void BTN_updateAnimal_Click_1(object sender, EventArgs e)
         {
             List<string> errors = new List<string>();
 
@@ -211,7 +397,7 @@ namespace Desktop_app.Forms
             int diet = Convert.ToInt32(CB_Diet1.SelectedValue);
 
             string motherId = CB_Mother1.SelectedValue.ToString();
-            
+
             string fatherId = CB_Father1.SelectedValue.ToString();
             string birthplace = TB_BirthPlace1.Text;
 
@@ -281,161 +467,10 @@ namespace Desktop_app.Forms
             }
         }
 
-        private void speciesCB_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void btn_search_Animal_Click(object sender, EventArgs e)
         {
-            typesCB.DataSource = null;
-
-            typesCB.Items.Clear();
-
-            // Get the selected species ID from the Species combobox
-            int selectedSpeciesId = ((Species)speciesCB.SelectedItem).Id;
-
-            // Get the types for the selected species from the database
-            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
-
-            if (sender == speciesCB)
-            {
-                Types allTypes = new Types { Id = -1, Name = "All" };
-                typesForSelectedSpecies.Insert(0, allTypes);
-            }
-
-            // Add the types to the Types combobox
-            foreach (Types type in typesForSelectedSpecies)
-            {
-                typesCB.Items.Add(type);
-            }
-            if (typesCB.Items.Count != 0)
-            {
-                //CB_Type1.SelectedValie = animal.type;
-
-                typesCB.SelectedIndex = 0;
-            }
-            else { typesCB.SelectedIndex = -1; typesCB.Text = ""; }
-        }
-
-        private void CB_Species1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CB_Type1.DataSource = null;
-            //get animal object
-
-            CB_Type1.Items.Clear();
-
-            // Get the selected species ID from the Species combobox
-            int selectedSpeciesId = ((Species)CB_Species1.SelectedItem).Id;
-
-            // Get the types for the selected species from the database
-            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
-
-            // Add the types to the Types combobox
-            foreach (Types type in typesForSelectedSpecies)
-            {
-                CB_Type1.Items.Add(type);
-            }
-            if (CB_Type1.Items.Count != 0)
-            {
-                //CB_Type1.SelectedValie = animal.type;
-
-                CB_Type1.SelectedIndex = 0;
-            }
-            else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
-        }
-
-        //not working
-        private void Btn_AddAnimal_Click(object sender, EventArgs e)
-        {
-            var selectedType = (dynamic)CB_TypeBoxAdd.SelectedItem;
-            int type = selectedType.Id;
-
-            AnimalDTO dto = new AnimalDTO(
-            0,
-            TB_NameAdd.Text,
-            DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
-            TB_BirthPlaceAdd.Text,
-            null,
-            null,
-            CB_LocationAdd.SelectedValue.ToString(),
-            CB_DietAdd.SelectedValue.ToString(),
-            CB_SpeciesBoxAdd.SelectedValue.ToString(),
-            type.ToString(),
-            0,
-            null,
-            null,
-            null,
-            CB_GenderAdd.SelectedValue.ToString()
-            ); ;
-            //int id, string name, string dob, string birthPlace, int? fatherId, int? motherId, string location, string diet, string species, string? type, int sick, string? notes, string? deathdate, string imageUrl
-            if (AnimalManagement.RegisterNewAnimal(dto))
-            {
-                MessageBox.Show("Successful");
-            }
-            else
-            {
-                MessageBox.Show("Unsuccessful");
-            }
-        }
-
-        private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (lv_Animals.SelectedItems.Count > 0)
-            {
-                List<Animal> animalList = AnimalManagement.Repository.GetAnimalList().OfType<Animal>().ToList();
-
-                Animal selectedAnimal = animalList.Find(animal => animal.Id == Convert.ToInt32(lv_Animals.SelectedItems[0].Tag));
-
-                //Animal
-                selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
-                TB_name1.Text = selectedAnimal.Name;
-                DT_Birthdate.Value = DateTime.Parse(selectedAnimal.Birthdate);
-                CB_Father1.Text = selectedAnimal.FatherId;
-                CB_Mother1.Text = selectedAnimal.Mother;
-                TB_BirthPlace1.Text = selectedAnimal.BirthPlace;
-                txt_Gender.Text = selectedAnimal.gender;
-
-                //Category
-                CB_Species1.Text = selectedAnimal.Species;
-                CB_Location1.Text = selectedAnimal.Location;
-                CB_Diet1.Text = selectedAnimal.Diet;
-                CB_Type1.Text = selectedAnimal.Type;
-
-                //Condition
-                if (selectedAnimal.Sick == 0) { checkBox1.Checked = false; } else { checkBox1.Checked = true; }
-            }
-        }
-
-        private void Btn_LogOut_Click_1(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
-        private void CB_SpeciesBoxAdd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CB_TypeBoxAdd.DataSource = null;
-
-            CB_TypeBoxAdd.Items.Clear();
-
-            // Get the selected species ID from the Species combobox
-            int selectedSpeciesId = ((Species)CB_SpeciesBoxAdd.SelectedItem).Id;
-
-            // Get the types for the selected species from the database
-            List<Types> typesForSelectedSpecies = AnimalManagement.GetTypesForSpecies(selectedSpeciesId);
-
-            // Add the types to the Types combobox
-            foreach (Types type in typesForSelectedSpecies)
-            {
-                CB_TypeBoxAdd.Items.Add(type);
-            }
-            if (CB_TypeBoxAdd.Items.Count != 0)
-            {
-                //CB_Type1.SelectedValie = animal.type;
-
-                CB_TypeBoxAdd.SelectedIndex = 0;
-            }
-            else { CB_TypeBoxAdd.SelectedIndex = -1; CB_TypeBoxAdd.Text = ""; }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
+            lv_Animals.Items.Clear();
+            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
         }
     }
 }

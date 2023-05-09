@@ -3,25 +3,93 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Zoo_Bazaar</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Zoo_Bazaar.styles.css" asp-append-version="true" />
+    <link href="~/css/stylesheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>@ViewData["Title"] - Zoo Bazaar</title>
 </head>
 <body>
+    <div class="mainwrap">
 
-    <div class="container">
-        <main role="main" class="pb-3">
+
+        <!-- Navigation -->
+        <div class="nav">
+            <ul>
+                <li style="font-weight:800"><a class="logo" asp-page="/Index">Zoobazaar</a></li>
+
+                @if (ViewData.ContainsKey("ActiveLink")
+                && (string)ViewData["ActiveLink"] == "account")
+                {
+                    if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li><a class="active" asp-page="/Account">Account</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="active" asp-page="/Login">Login</a></li>
+                    }
+                }
+                else
+                {
+                    if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li><a asp-page="/Account">Account</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-page="/Login">Login</a></li>
+                    }
+                }
+
+                @if (ViewData.ContainsKey("ActiveLink")
+                && (string)ViewData["ActiveLink"] == "schedule")
+                {
+                    if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li><a class="active" asp-page="/Schedule">My schedule</a></li>
+                    }
+                }
+                else
+                {
+                    if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li><a asp-page="/Schedule">Account</a></li>
+                    }
+
+                }
+               
+            </ul>
+        </div>
+        <!-- main center container -->
+
             @RenderBody()
-        </main>
+
+
+        <!-- footer -->
+        <div class="foot">
+            <div class="foot-left">
+                <h2>Follow us on social media!</h2>
+                <ul>
+                    <li><a href="#" class="fa fa-instagram"></a></li>
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                </ul>
+            </div>
+            <div class="foot-right">
+                <h2>Contact</h2>
+                <h3>Rachelsmolen 1, 5612 MA</h3>
+                <h3>Eindhoven, The Netherlands</h3>
+            </div>
+        </div>
+
+
     </div>
-
-
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="~/js/functions.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+
+
 </body>
-</html>
