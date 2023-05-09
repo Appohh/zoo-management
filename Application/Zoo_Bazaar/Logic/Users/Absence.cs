@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataCL.DTOs
+namespace LogicCL.Users
 {
-    public class AbsenceDTO
+    public class Absence
     {
         public int employeeId { get; private set; }
         public string? startdate { get; private set; }
-        public string? enddate { get; private set; }
+        public string? enddate { get; private set;}
         public int? type { get; private set; }
 
-        public AbsenceDTO() { }
-
-        public AbsenceDTO(int employeeId, string? startdate, string? enddate, int? type)
+        public Absence(int employeeId, string? startdate, string? enddate, int? type)
         {
             this.employeeId = employeeId;
             this.startdate = startdate;

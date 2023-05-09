@@ -142,7 +142,9 @@
             this.btn_absence_logout = new System.Windows.Forms.Button();
             this.artanPanel1 = new Desktop_app.ArtanPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.TB_Absence_Date = new System.Windows.Forms.DateTimePicker();
+            this.TB_Absence_EndDate = new System.Windows.Forms.DateTimePicker();
+            this.label42 = new System.Windows.Forms.Label();
+            this.TB_Absence_StartDate = new System.Windows.Forms.DateTimePicker();
             this.TB_Absence_ReasonAbsence = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -1433,7 +1435,7 @@
             this.Tab_Scheduling.Padding = new System.Windows.Forms.Padding(3);
             this.Tab_Scheduling.Size = new System.Drawing.Size(1901, 1012);
             this.Tab_Scheduling.TabIndex = 4;
-            this.Tab_Scheduling.Text = "Scheduling";
+            this.Tab_Scheduling.Text = "Absence";
             // 
             // btn_absence_search
             // 
@@ -1480,7 +1482,9 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
-            this.groupBox5.Controls.Add(this.TB_Absence_Date);
+            this.groupBox5.Controls.Add(this.TB_Absence_EndDate);
+            this.groupBox5.Controls.Add(this.label42);
+            this.groupBox5.Controls.Add(this.TB_Absence_StartDate);
             this.groupBox5.Controls.Add(this.TB_Absence_ReasonAbsence);
             this.groupBox5.Controls.Add(this.label40);
             this.groupBox5.Controls.Add(this.label39);
@@ -1491,12 +1495,32 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Absence";
             // 
-            // TB_Absence_Date
+            // TB_Absence_EndDate
             // 
-            this.TB_Absence_Date.Location = new System.Drawing.Point(53, 105);
-            this.TB_Absence_Date.Name = "TB_Absence_Date";
-            this.TB_Absence_Date.Size = new System.Drawing.Size(371, 36);
-            this.TB_Absence_Date.TabIndex = 73;
+            this.TB_Absence_EndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TB_Absence_EndDate.Location = new System.Drawing.Point(346, 105);
+            this.TB_Absence_EndDate.Name = "TB_Absence_EndDate";
+            this.TB_Absence_EndDate.Size = new System.Drawing.Size(246, 36);
+            this.TB_Absence_EndDate.TabIndex = 77;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.label42.Location = new System.Drawing.Point(387, 72);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(99, 30);
+            this.label42.TabIndex = 76;
+            this.label42.Text = "EndDate:";
+            // 
+            // TB_Absence_StartDate
+            // 
+            this.TB_Absence_StartDate.CustomFormat = ".";
+            this.TB_Absence_StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TB_Absence_StartDate.Location = new System.Drawing.Point(53, 105);
+            this.TB_Absence_StartDate.Name = "TB_Absence_StartDate";
+            this.TB_Absence_StartDate.Size = new System.Drawing.Size(246, 36);
+            this.TB_Absence_StartDate.TabIndex = 73;
             // 
             // TB_Absence_ReasonAbsence
             // 
@@ -1512,9 +1536,9 @@
             this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
             this.label40.Location = new System.Drawing.Point(53, 72);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(63, 30);
+            this.label40.Size = new System.Drawing.Size(107, 30);
             this.label40.TabIndex = 75;
-            this.label40.Text = "Date:";
+            this.label40.Text = "StartDate:";
             // 
             // label39
             // 
@@ -1544,17 +1568,21 @@
             // 
             // TB_Absence_PhoneNumber
             // 
+            this.TB_Absence_PhoneNumber.Enabled = false;
             this.TB_Absence_PhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Absence_PhoneNumber.Location = new System.Drawing.Point(57, 185);
             this.TB_Absence_PhoneNumber.Name = "TB_Absence_PhoneNumber";
+            this.TB_Absence_PhoneNumber.ReadOnly = true;
             this.TB_Absence_PhoneNumber.Size = new System.Drawing.Size(503, 34);
             this.TB_Absence_PhoneNumber.TabIndex = 78;
             // 
             // TB_Absence_FirstName
             // 
+            this.TB_Absence_FirstName.Enabled = false;
             this.TB_Absence_FirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Absence_FirstName.Location = new System.Drawing.Point(55, 98);
             this.TB_Absence_FirstName.Name = "TB_Absence_FirstName";
+            this.TB_Absence_FirstName.ReadOnly = true;
             this.TB_Absence_FirstName.Size = new System.Drawing.Size(234, 34);
             this.TB_Absence_FirstName.TabIndex = 29;
             // 
@@ -1580,9 +1608,11 @@
             // 
             // TB_Absence_LastName
             // 
+            this.TB_Absence_LastName.Enabled = false;
             this.TB_Absence_LastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TB_Absence_LastName.Location = new System.Drawing.Point(344, 98);
             this.TB_Absence_LastName.Name = "TB_Absence_LastName";
+            this.TB_Absence_LastName.ReadOnly = true;
             this.TB_Absence_LastName.Size = new System.Drawing.Size(216, 34);
             this.TB_Absence_LastName.TabIndex = 74;
             // 
@@ -1608,6 +1638,7 @@
             this.btn_absence_update.TabIndex = 31;
             this.btn_absence_update.Text = "Update";
             this.btn_absence_update.UseVisualStyleBackColor = false;
+            this.btn_absence_update.Click += new System.EventHandler(this.btn_absence_update_Click);
             // 
             // label56
             // 
@@ -1726,7 +1757,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            
+            this.Name = "Human_Resources";
             this.Text = "Human_Resources";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Tab_Add_Employee.ResumeLayout(false);
@@ -1889,7 +1920,7 @@
         private TextBox TB_Absence_LastName;
         private Label label54;
         private Label label40;
-        private DateTimePicker TB_Absence_Date;
+        private DateTimePicker TB_Absence_StartDate;
         private Label label39;
         private ComboBox TB_Absence_ReasonAbsence;
         private Button btn_absence_update;
@@ -1901,5 +1932,7 @@
         private TextBox TB_Absence_Name;
         private Button btn_absence_logout;
         private Button btn_absence_search;
+        private DateTimePicker TB_Absence_EndDate;
+        private Label label42;
     }
 }

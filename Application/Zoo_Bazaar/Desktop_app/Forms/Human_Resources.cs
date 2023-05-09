@@ -504,16 +504,59 @@ namespace Desktop_app
 
                 Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
 
+                List<Absence> absences = hr.Repository.GetAllAbsences().OfType<Absence>().ToList();
 
+                Absence selectedAbsence = absences.Find(absences => absences.employeeId == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
 
                 //Employee Details
                 TB_Absence_FirstName.Text = selectedUser.FirstName;
                 TB_Absence_LastName.Text = selectedUser.LastName;
                 TB_Absence_PhoneNumber.Text = selectedUser.Phone;
+                if (selectedAbsence != null)
+                {
+                    TB_Absence_StartDate.Value = DateTime.Parse(selectedAbsence.startdate);
+                    TB_Absence_EndDate.Value = DateTime.Parse(selectedAbsence.enddate);
+                    TB_Absence_ReasonAbsence.Text = selectedAbsence.type.ToString();
+                }
                 
-                
-
             }
          }
+
+        private void btn_absence_update_Click(object sender, EventArgs e)
+        {
+            if (lv_Scheduling.SelectedItems.Count > 0)
+            {
+                // Get selected user and absence
+                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+                List<Absence> absences = hr.Repository.GetAllAbsences().OfType<Absence>().ToList();
+                Absence selectedAbsence = absences.Find(absences => absences.employeeId == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+
+                if (selectedUser != null && selectedAbsence != null)
+                {
+                    string startDate = TB_Absence_StartDate.Value.ToString("yyyy-MM-dd");
+                    string endDate = TB_Absence_EndDate.Value.ToString("yyyy-MM-dd"); 
+                    int type = int.Parse(TB_Absence_ReasonAbsence.Text); 
+
+                    bool isUpdated = hr.Repository.changeEmployeeAbsence(selectedUser.Id, startDate, endDate, type);
+                    if (isUpdated)
+                    {
+                        MessageBox.Show("Absence updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update absence. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a valid absence to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an absence from the list to update.", "No absence selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

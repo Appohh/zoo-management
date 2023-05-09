@@ -8,13 +8,13 @@ using DataCL.DTOs;
 
 namespace DataCL.DataTraffic
 {
-    public class AbsenceDataTraffic:DataHandler
+    public class AbsenceDataTraffic: DataHandler
     {
         protected override string cmd
         {
             get
             {
-                return "SELECT * from Abscence;";
+                return "SELECT * from Absence;";
             }
         }
 
@@ -35,10 +35,9 @@ namespace DataCL.DataTraffic
             return absences;
         }
 
-        
-        public bool UpdateAbsence(int employeeId, string type)
+        public bool UpdateAbsence(int employeeId, string startdate, string enddate, int type)
         {
-            string query = $"";
+            string query = $"Update Absence SET startdate='{startdate}', enddate='{enddate}', type={type} WHERE employeeId={employeeId}";
             return executeQuery(query) == 0 ? false : true;
         }
     }
