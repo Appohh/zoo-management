@@ -199,8 +199,10 @@ namespace LogicCL.Repository
         {
         }
 
+
         public int HoursWorkedThisWeek(int id, DateTime date)
         {
+            //for example part-time: 12, full-time: 24 check contractStatus 0: inactive, 1:part-time, 2:fulltime
             WeekSchedule currentWeek = new WeekSchedule(date);
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
             int count = 0;
