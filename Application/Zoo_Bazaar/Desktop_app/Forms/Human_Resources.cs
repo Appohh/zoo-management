@@ -71,12 +71,31 @@ namespace Desktop_app
                 lv_Employees.Items.Add(userInfo);
             }
         }
+        public void FilterHrAbsence(string name, string job)
+        {
+            var employeeList = hr.Repository.GetUserList();
+            var selectedJobName = ((Job)CB_Absence_Job.SelectedItem).Name;
+            var filteredEmployees = employeeList
+                .OfType<Employee>()
+                .Where(e =>
+                     (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
+                    (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()));
 
-        
+            foreach (Employee employee in filteredEmployees)
+            {
+                string contractStatusString = "";
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
+                userInfo.Tag = employee.Id.ToString();
+                lv_Scheduling.Items.Add(userInfo);
+            }
+        }
 
-        
-        
-         
+
+
+
+
+
 
         private void PopulateContractCombobox()
         {
@@ -103,10 +122,12 @@ namespace Desktop_app
             List<Job> jobs1 = hr.GetJobList();
             List<Job> jobs2 = new List<Job>(jobs1); // Create a separate list with the same data
             List<Job> jobs3 = new List<Job>(jobs1);
+            List<Job> jobs4 = new List<Job>(jobs1);
 
             // Create the "All" Job object and insert it at the first index
             Job allJob = new Job(0, "All");
             jobs3.Insert(0, allJob);
+            jobs4.Insert(0, allJob);
 
             cbJobAdd.Items.Clear();
             cbJobAdd.DataSource = null;
@@ -125,6 +146,12 @@ namespace Desktop_app
             JobCB.DataSource = jobs2;
             JobCB.DisplayMember = "Name";
             JobCB.ValueMember = "Id";
+
+            CB_Absence_Job.Items.Clear();
+            CB_Absence_Job.DataSource = null;
+            CB_Absence_Job.DataSource = jobs4;
+            CB_Absence_Job.DisplayMember = "Name";
+            CB_Absence_Job.ValueMember = "Id";
         }
 
         private void ClearInputAddEmployee()
@@ -460,5 +487,33 @@ namespace Desktop_app
                 SpouseContactBoxAddEmployee.BackColor = Color.Gray;
             }
         }
+
+
+        //Scheduling
+        private void btn_absence_search_Click(object sender, EventArgs e)
+        {
+            lv_Scheduling.Items.Clear();
+            FilterHrAbsence(TB_Absence_Name.Text, CB_Absence_Job.Text);
+        }
+
+        private void lv_Scheduling_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_Scheduling.SelectedItems.Count > 0)
+            {
+                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+
+                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+
+
+
+                //Employee Details
+                TB_Absence_FirstName.Text = selectedUser.FirstName;
+                TB_Absence_LastName.Text = selectedUser.LastName;
+                TB_Absence_PhoneNumber.Text = selectedUser.Phone;
+                
+                
+
+            }
+         }
     }
 }

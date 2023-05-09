@@ -155,12 +155,12 @@
             this.label54 = new System.Windows.Forms.Label();
             this.btn_absence_update = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CB_Absence_Job = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lv_Animals = new System.Windows.Forms.ListView();
+            this.TB_Absence_Name = new System.Windows.Forms.TextBox();
+            this.lv_Scheduling = new System.Windows.Forms.ListView();
             this.Name = new System.Windows.Forms.ColumnHeader();
             this.JobAbsence = new System.Windows.Forms.ColumnHeader();
             this.PhoneNumber = new System.Windows.Forms.ColumnHeader();
@@ -1422,12 +1422,12 @@
             this.Tab_Scheduling.Controls.Add(this.btn_absence_search);
             this.Tab_Scheduling.Controls.Add(this.btn_absence_logout);
             this.Tab_Scheduling.Controls.Add(this.artanPanel1);
-            this.Tab_Scheduling.Controls.Add(this.comboBox1);
+            this.Tab_Scheduling.Controls.Add(this.CB_Absence_Job);
             this.Tab_Scheduling.Controls.Add(this.label12);
             this.Tab_Scheduling.Controls.Add(this.label20);
             this.Tab_Scheduling.Controls.Add(this.label38);
-            this.Tab_Scheduling.Controls.Add(this.textBox1);
-            this.Tab_Scheduling.Controls.Add(this.lv_Animals);
+            this.Tab_Scheduling.Controls.Add(this.TB_Absence_Name);
+            this.Tab_Scheduling.Controls.Add(this.lv_Scheduling);
             this.Tab_Scheduling.Location = new System.Drawing.Point(4, 39);
             this.Tab_Scheduling.Name = "Tab_Scheduling";
             this.Tab_Scheduling.Padding = new System.Windows.Forms.Padding(3);
@@ -1444,6 +1444,7 @@
             this.btn_absence_search.TabIndex = 43;
             this.btn_absence_search.Text = "Search";
             this.btn_absence_search.UseVisualStyleBackColor = true;
+            this.btn_absence_search.Click += new System.EventHandler(this.btn_absence_search_Click);
             // 
             // btn_absence_logout
             // 
@@ -1621,14 +1622,14 @@
             this.label56.TabIndex = 27;
             this.label56.Text = "Employee Information";
             // 
-            // comboBox1
+            // CB_Absence_Job
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(374, 83);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 38);
-            this.comboBox1.TabIndex = 40;
+            this.CB_Absence_Job.FormattingEnabled = true;
+            this.CB_Absence_Job.Location = new System.Drawing.Point(374, 83);
+            this.CB_Absence_Job.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CB_Absence_Job.Name = "CB_Absence_Job";
+            this.CB_Absence_Job.Size = new System.Drawing.Size(165, 38);
+            this.CB_Absence_Job.TabIndex = 40;
             // 
             // label12
             // 
@@ -1663,33 +1664,34 @@
             this.label38.TabIndex = 37;
             this.label38.Text = "Search Employee";
             // 
-            // textBox1
+            // TB_Absence_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 82);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 36);
-            this.textBox1.TabIndex = 36;
+            this.TB_Absence_Name.Location = new System.Drawing.Point(98, 82);
+            this.TB_Absence_Name.Margin = new System.Windows.Forms.Padding(1);
+            this.TB_Absence_Name.Name = "TB_Absence_Name";
+            this.TB_Absence_Name.Size = new System.Drawing.Size(193, 36);
+            this.TB_Absence_Name.TabIndex = 36;
             // 
-            // lv_Animals
+            // lv_Scheduling
             // 
-            this.lv_Animals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
-            this.lv_Animals.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lv_Animals.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lv_Scheduling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.lv_Scheduling.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_Scheduling.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Name,
             this.JobAbsence,
             this.PhoneNumber,
             this.ContractStatus});
-            this.lv_Animals.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lv_Animals.ForeColor = System.Drawing.Color.Black;
-            this.lv_Animals.FullRowSelect = true;
-            this.lv_Animals.Location = new System.Drawing.Point(26, 170);
-            this.lv_Animals.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lv_Animals.Name = "lv_Animals";
-            this.lv_Animals.Size = new System.Drawing.Size(920, 833);
-            this.lv_Animals.TabIndex = 22;
-            this.lv_Animals.UseCompatibleStateImageBehavior = false;
-            this.lv_Animals.View = System.Windows.Forms.View.Details;
+            this.lv_Scheduling.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lv_Scheduling.ForeColor = System.Drawing.Color.Black;
+            this.lv_Scheduling.FullRowSelect = true;
+            this.lv_Scheduling.Location = new System.Drawing.Point(26, 170);
+            this.lv_Scheduling.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lv_Scheduling.Name = "lv_Scheduling";
+            this.lv_Scheduling.Size = new System.Drawing.Size(920, 833);
+            this.lv_Scheduling.TabIndex = 22;
+            this.lv_Scheduling.UseCompatibleStateImageBehavior = false;
+            this.lv_Scheduling.View = System.Windows.Forms.View.Details;
+            this.lv_Scheduling.SelectedIndexChanged += new System.EventHandler(this.lv_Scheduling_SelectedIndexChanged);
             // 
             // Name
             // 
@@ -1872,7 +1874,7 @@
         private Label label8;
         private Button button1;
         private TabPage Tab_Scheduling;
-        private ListView lv_Animals;
+        private ListView lv_Scheduling;
         private ColumnHeader Name;
         private ColumnHeader JobAbsence;
         private ColumnHeader PhoneNumber;
@@ -1892,11 +1894,11 @@
         private ComboBox TB_Absence_ReasonAbsence;
         private Button btn_absence_update;
         private Label label56;
-        private ComboBox comboBox1;
+        private ComboBox CB_Absence_Job;
         private Label label12;
         private Label label20;
         private Label label38;
-        private TextBox textBox1;
+        private TextBox TB_Absence_Name;
         private Button btn_absence_logout;
         private Button btn_absence_search;
     }
