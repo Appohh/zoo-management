@@ -42,7 +42,8 @@ namespace Desktop_app
             int selected = Int16.Parse(cbbSearchEmpJob.SelectedValue.ToString());
             foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
             {
-                string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
+                string contractStatusString = "";
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
@@ -59,11 +60,12 @@ namespace Desktop_app
                      (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
                     (string.IsNullOrEmpty(phone) || e.Phone.ToLower().Contains(phone.ToLower())) &&
-                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Active" && e.Contractstatus == 1)));
+                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Parttime" && e.Contractstatus == 1) || (status == "Fulltime" && e.Contractstatus == 2)));
 
             foreach (Employee employee in filteredEmployees)
             {
-                string contractStatusString = employee.Contractstatus == 0 ? "inactive" : "active";
+                string contractStatusString = "";
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if(employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
@@ -205,7 +207,9 @@ namespace Desktop_app
                 CB_Contract.DisplayMember = "Key";
                 CB_Contract.ValueMember = "Value";
                 CB_Contract.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-                CB_Contract.Items.Add(new KeyValuePair<string, int>("Active", 1));
+                CB_Contract.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
+                CB_Contract.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+
                 CB_Contract.SelectedIndex = selectedUser.Contractstatus;
 
                 //Employee Details
@@ -368,14 +372,18 @@ namespace Desktop_app
             ContractBoxAddEmployee.DisplayMember = "Key";
             ContractBoxAddEmployee.ValueMember = "Value";
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Active", 1));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+
 
             CB_StatusSearch.DisplayMember = "Key";
             CB_StatusSearch.ValueMember = "Value";
             CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("All", -1));
 
             CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Active", 1));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+
             CB_StatusSearch.SelectedIndex = 0;
         }
 
