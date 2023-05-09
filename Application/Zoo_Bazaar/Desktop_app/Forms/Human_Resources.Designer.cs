@@ -87,7 +87,7 @@
             this.tbSearchEmpPhone = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.btn_search_Employee = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tbSearchEmpName = new System.Windows.Forms.TextBox();
             this.lv_Employees = new System.Windows.Forms.ListView();
@@ -311,6 +311,7 @@
             this.button1.TabIndex = 79;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Gp_Contact_Employee
             // 
@@ -406,6 +407,7 @@
             this.btn_add_employee.TabIndex = 74;
             this.btn_add_employee.Text = "Add Employee";
             this.btn_add_employee.UseVisualStyleBackColor = false;
+            this.btn_add_employee.Click += new System.EventHandler(this.btn_add_employee_Click_1);
             // 
             // SpouseBoxAddEmployee
             // 
@@ -418,6 +420,7 @@
             this.SpouseBoxAddEmployee.Name = "SpouseBoxAddEmployee";
             this.SpouseBoxAddEmployee.Size = new System.Drawing.Size(323, 34);
             this.SpouseBoxAddEmployee.TabIndex = 27;
+            this.SpouseBoxAddEmployee.TextChanged += new System.EventHandler(this.SpouseBoxAddEmployee_TextChanged_1);
             // 
             // PhoneNumberBoxAddEmployee
             // 
@@ -445,14 +448,13 @@
             // 
             // SpouseContactBoxAddEmployee
             // 
-            this.SpouseContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.SpouseContactBoxAddEmployee.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.SpouseContactBoxAddEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SpouseContactBoxAddEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SpouseContactBoxAddEmployee.ForeColor = System.Drawing.Color.Black;
             this.SpouseContactBoxAddEmployee.Location = new System.Drawing.Point(447, 283);
             this.SpouseContactBoxAddEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.SpouseContactBoxAddEmployee.Name = "SpouseContactBoxAddEmployee";
-            this.SpouseContactBoxAddEmployee.ReadOnly = true;
             this.SpouseContactBoxAddEmployee.Size = new System.Drawing.Size(339, 34);
             this.SpouseContactBoxAddEmployee.TabIndex = 28;
             // 
@@ -797,7 +799,7 @@
             this.Tab_Overview.Controls.Add(this.tbSearchEmpPhone);
             this.Tab_Overview.Controls.Add(this.label35);
             this.Tab_Overview.Controls.Add(this.btn_search_Employee);
-            this.Tab_Overview.Controls.Add(this.button3);
+            this.Tab_Overview.Controls.Add(this.btn_Logout);
             this.Tab_Overview.Controls.Add(this.label5);
             this.Tab_Overview.Controls.Add(this.tbSearchEmpName);
             this.Tab_Overview.Controls.Add(this.lv_Employees);
@@ -887,19 +889,20 @@
             this.btn_search_Employee.TabIndex = 30;
             this.btn_search_Employee.Text = "Search";
             this.btn_search_Employee.UseVisualStyleBackColor = true;
-            
+            this.btn_search_Employee.Click += new System.EventHandler(this.btn_search_Employee_Click);
             // 
-            // button3
+            // btn_Logout
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(1647, 65);
-            this.button3.Margin = new System.Windows.Forms.Padding(1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 49);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Logout";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.btn_Logout.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Logout.Location = new System.Drawing.Point(1647, 65);
+            this.btn_Logout.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(169, 49);
+            this.btn_Logout.TabIndex = 28;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // label5
             // 
@@ -940,6 +943,7 @@
             this.lv_Employees.TabIndex = 20;
             this.lv_Employees.UseCompatibleStateImageBehavior = false;
             this.lv_Employees.View = System.Windows.Forms.View.Details;
+            this.lv_Employees.SelectedIndexChanged += new System.EventHandler(this.lv_Employees_SelectedIndexChanged_1);
             // 
             // Namez
             // 
@@ -987,6 +991,7 @@
             this.updateBTHR.TabIndex = 31;
             this.updateBTHR.Text = "Update";
             this.updateBTHR.UseVisualStyleBackColor = false;
+            this.updateBTHR.Click += new System.EventHandler(this.updateBTHR_Click);
             // 
             // groupBox3
             // 
@@ -1719,7 +1724,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.Name = "Human_Resources";
+            
             this.Text = "Human_Resources";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Tab_Add_Employee.ResumeLayout(false);
@@ -1784,7 +1789,7 @@
         private PictureBox PictureBoxAddEmployee;
         private TabPage Tab_Overview;
         private Button btn_search_Employee;
-        private Button button3;
+        private Button btn_Logout;
         private Label label5;
         private TextBox tbSearchEmpName;
         private ListView lv_Employees;
