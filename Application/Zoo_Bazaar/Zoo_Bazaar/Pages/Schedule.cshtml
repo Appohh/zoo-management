@@ -15,44 +15,84 @@
     <h2 class="day">Saturday</h2>
     <h2 class="day">Sunday</h2>
 
-    <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mod-1" style="grid-area:monday1">Monday1</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-1" style="grid-area:tuesday1">Tuesday1</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")we-1" style="grid-area:wednesday1">Wednesday1</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")th-1" style="grid-area:thursday1">Thursday1</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")fr-1" style="grid-area:friday1">Friday1</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")sa-1" style="grid-area:saturday1">Saturday1</div>
-    <div id="@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")su-1" style="grid-area:sunday1">Sunday1</div>
+    <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mo-0" style="grid-area:monday0">@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")</div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-0" style="grid-area:tuesday0">@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")</div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")we-0" style="grid-area:wednesday0">@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")</div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")th-0" style="grid-area:thursday0">@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")</div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")fr-0" style="grid-area:friday0">@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")</div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")sa-0" style="grid-area:saturday0">@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")</div>
+    <div id="@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")su-0" style="grid-area:sunday0">@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")</div>
 
-    <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mo-2" style="grid-area:monday2">Monday2</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-2" style="grid-area:tuesday2">Tuesday2</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")we-2" style="grid-area:wednesday2">Wednesday2</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")th-2" style="grid-area:thursday2">Thursday2</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")fr-2" style="grid-area:friday2">Friday2</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")sa-2" style="grid-area:saturday2">Saturday2</div>
-    <div id="@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")su-2" style="grid-area:sunday2">Sunday2</div>
+    <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mo-1" style="grid-area:monday1"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-1" style="grid-area:tuesday1"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")we-1" style="grid-area:wednesday1"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")th-1" style="grid-area:thursday1"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")fr-1" style="grid-area:friday1"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")sa-1" style="grid-area:saturday1"></div>
+    <div id="@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")su-1" style="grid-area:sunday1"></div>
 
-    <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mo-3" style="grid-area:monday3">Monday3</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-3" style="grid-area:tuesday3">Tuesday3</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")we-3" style="grid-area:wednesday3">Wednesday3</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")th-3" style="grid-area:thursday3">Thursday3</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")fr-3" style="grid-area:friday3">Friday3</div>
-    <div id="@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")sa-3" style="grid-area:saturday3">Saturday3</div>
-    <div id="@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")su-3" style="grid-area:sunday3">Sunday3</div>
+    <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mo-2" style="grid-area:monday2"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-2" style="grid-area:tuesday2"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(2).ToString("dd-MM-yyyy")we-2" style="grid-area:wednesday2"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(3).ToString("dd-MM-yyyy")th-2" style="grid-area:thursday2"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(4).ToString("dd-MM-yyyy")fr-2" style="grid-area:friday2"></div>
+    <div id="@Model.currentWeekSchedule.Monday.AddDays(5).ToString("dd-MM-yyyy")sa-2" style="grid-area:saturday2"></div>
+    <div id="@Model.currentWeekSchedule.Sunday.ToString("dd-MM-yyyy")su-2" style="grid-area:sunday2"></div>
 </div>
 
 
 
 
 <script>
+    
+    console.log(@Model.scheduleJson);
 
-    var scheduleShifts = JSON.parse(@Model.scheduleJson);
+    var scheduleShifts = JSON.parse(JSON.stringify(@Model.scheduleJson));
     console.log(scheduleShifts);
-    for(var shift in scheduleShifts){
-        console.log(shift);
+    for(var shifting in scheduleShifts){
+
+        var shift = scheduleShifts[shifting];
+
+        var dateParts = shift.Date.split('-');
+        var day = parseInt(dateParts[0], 10);
+        var month = parseInt(dateParts[1], 10);
+        var year = parseInt(dateParts[2].split(' ')[0], 10);
+
+        var dateRetrieved = new Date(year, month - 1, day);
+
+        var options = { weekday: 'short' };
+        var dayOfWeek = dateRetrieved.toLocaleDateString('en-US', options).slice(0, 2) + "-";
+        console.log(dayOfWeek);
+
+        var day = dateRetrieved.getDate();
+        var month = dateRetrieved.getMonth() + 1; // Months are zero-based, so adding 1
+        var year = dateRetrieved.getFullYear();
+
+        // Format the date components
+        var formattedDate = (day < 10 ? '0' : '') + day + '-' + (month < 10 ? '0' : '') + month + '-' + year;
+        console.log(formattedDate);
+        var elementToUse; 
+        var type = shift.Type; 
+
+ 
+        elementToUse = document.getElementById(formattedDate + dayOfWeek.toLowerCase() + type);
+        console.log(elementToUse);
+
+        if(elementToUse != null){
+
+            var childElement = document.createElement('div');
+            childElement.className = "Event";
+            childElement.textContent = '';
+            
+            elementToUse.appendChild(childElement);
+        }
+
+
+
+
     }
 
-    var x = new Date().toLocaleDateString('en-GB');
-    var y = x.split('/').join('-');
+  
 
     //document.getElementById("day").innerHTML = y.toString();
 

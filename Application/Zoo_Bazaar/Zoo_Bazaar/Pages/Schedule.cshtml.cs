@@ -1,6 +1,7 @@
 using LogicCL;
 using LogicCL.Repository;
 using LogicCL.Users;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
@@ -14,7 +15,13 @@ namespace Zoo_Bazaar.Pages
 
         public WeekSchedule currentWeekSchedule;
         public List<Shift> loggedEmployeeShifts { get; set; }
-        public string scheduleJson = "";
+        public dynamic scheduleJson = "";
+
+        private JsonSerializerSettings settings = new JsonSerializerSettings
+        {
+            //Type hinting
+            TypeNameHandling = TypeNameHandling.Auto
+        };
 
         public ScheduleModel() {
             _employeeRepository = new EmployeeRepository();
@@ -37,9 +44,9 @@ namespace Zoo_Bazaar.Pages
             }
 
             if (LoggedEmployee == null) { return; }
-
             loggedEmployeeShifts = _employeeRepository.GetShiftsByEmpId(LoggedEmployee.Id);
-            scheduleJson = JsonConvert.SerializeObject(loggedEmployeeShifts);
+            string json = JsonConvert.SerializeObject(loggedEmployeeShifts, settings);
+            scheduleJson = new HtmlString(json);
         }
     }
 }
