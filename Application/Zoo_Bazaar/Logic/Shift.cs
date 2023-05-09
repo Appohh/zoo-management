@@ -27,5 +27,7 @@ namespace LogicCL
             Location = location;
 
         }
+
+        public Shift() { }
     }
 }

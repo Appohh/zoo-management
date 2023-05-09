@@ -162,6 +162,18 @@ namespace LogicCL.Repository
             return shiftList;
         }
 
+        public List<Shift> GetAllShifts()
+        {
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            List<Shift> shiftList = new List<Shift>();
+            foreach (ShiftDTO shift in shiftDTOs)
+            {             
+                shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));               
+            }
+
+            return shiftList;
+        }
+
         public bool AddShift(ShiftDTO shift)
         {
             //constraints to be add later
