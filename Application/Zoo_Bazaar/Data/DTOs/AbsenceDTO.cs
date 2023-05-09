@@ -11,11 +11,11 @@ namespace DataCL.DTOs
         public int employeeId { get; private set; }
         public string? startdate { get; private set; }
         public string? enddate { get; private set; }
-        public int? type { get; private set; }
+        public int type { get; private set; }
 
         public AbsenceDTO() { }
 
-        public AbsenceDTO(int employeeId, string? startdate, string? enddate, int? type)
+        public AbsenceDTO(int employeeId, string? startdate, string? enddate, int type)
         {
             this.employeeId = employeeId;
             this.startdate = startdate;

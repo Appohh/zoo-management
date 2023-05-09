@@ -18,6 +18,7 @@ namespace LogicCL.Repository
         private ShiftDataTraffic shiftDataTraffic = new ShiftDataTraffic();
         private LocationDataTraffic locationDataTraffic = new LocationDataTraffic();
         private AbsenceDataTraffic absenceDataTraffic = new AbsenceDataTraffic();
+        private AbsenceTypeDataTraffic absenceTypeDataTraffic = new AbsenceTypeDataTraffic();
         private List<User> users = new List<User>();
 
         public List<User> Users
@@ -265,6 +266,17 @@ namespace LogicCL.Repository
             {
                 return false;
             }
+        }
+
+        public List <AbsenceType> GetAbsenceTypes() 
+        {
+            List<AbsenceTypeDTO> absenceTypeDTOs = absenceTypeDataTraffic.retrieveAbsence();
+            List<AbsenceType> absencesTypes = new List<AbsenceType>();
+            foreach (AbsenceTypeDTO absenceTyeDTO in absenceTypeDTOs)
+            {
+                absencesTypes.Add(new AbsenceType(absenceTyeDTO.Id, absenceTyeDTO.Type));
+            }
+            return absencesTypes;
         }
     }
 }

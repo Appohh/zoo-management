@@ -11,14 +11,14 @@ namespace LogicCL.Users
         public int employeeId { get; private set; }
         public string? startdate { get; private set; }
         public string? enddate { get; private set;}
-        public int? type { get; private set; }
+        public int? Type { get; private set; }
 
         public Absence(int employeeId, string? startdate, string? enddate, int? type)
         {
             this.employeeId = employeeId;
             this.startdate = startdate;
             this.enddate = enddate;
-            this.type = type;
+            this.Type = type;
         }
     }
 }
