@@ -188,7 +188,7 @@ namespace Desktop_app.Forms
             CB_Mother1.DataSource = null;
             CB_Mother1.DataSource = animals;
             CB_Mother1.DisplayMember = "Name";
-            CB_Mother1.ValueMember = "Name";
+            CB_Mother1.ValueMember = "Id";
         }
 
         private void btn_search_Animal_Click_1(object sender, EventArgs e)

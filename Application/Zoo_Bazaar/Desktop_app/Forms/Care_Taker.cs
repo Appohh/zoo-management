@@ -52,18 +52,14 @@ namespace Desktop_app
                                                                                                     || animal.Type.ToLower().Contains(search.ToLower())).ToList())
             {
                 string dateFriendly = DateTime.Parse(animal.Birthdate).ToString("dd-MMMM-yyyy");
-                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Location, animal.Species });
+                ListViewItem animalInfo = new ListViewItem(new[] { animal.Name, dateFriendly, animal.Type, animal.Location, animal.Species });
                 animalInfo.Tag = animal.Id.ToString();
                 lv_Animals.Items.Add(animalInfo);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            refreshAnimalList();
-        }
-
-        private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
+   
+        private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lv_Animals.SelectedItems.Count > 0)
             {
@@ -74,11 +70,11 @@ namespace Desktop_app
                 //Animal
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
                 TB_Name.Text = selectedAnimal.Name;
-                TB_BirthDate.Text = DateTime.Parse(selectedAnimal.Birthdate).ToString();
-                TB_Father.Text = selectedAnimal.FatherId.ToString();
-                TB_Mother.Text = selectedAnimal.Mother.ToString();
+                TB_BirthDate.Text = DateTime.Parse(selectedAnimal.Birthdate).ToString("dd/MM/yyyy");
+                TB_Father.Text = selectedAnimal.FatherId;
+                TB_Mother.Text = selectedAnimal.Mother;
                 TB_BirthPlace.Text = selectedAnimal.BirthPlace;
-
+                TB_Gender.Text = selectedAnimal.gender;
                 //Category
                 TB_Species.Text = selectedAnimal.Species;
                 TB_Location.Text = selectedAnimal.Location;
@@ -99,25 +95,7 @@ namespace Desktop_app
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
-        private void btn_ViewDetails_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Overview_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btn_search_Animal_Click(object sender, EventArgs e)
-        {
-            FilterAnimal(txt_search.Text);
-        }
-
-        private void btn_ViewDetails_Click_1(object sender, EventArgs e)
+        private void btn_ViewDetails_Click_2(object sender, EventArgs e)
         {
             //editable variables
             int Sick = CHB_Sick.Checked ? 1 : 0;
@@ -153,8 +131,14 @@ namespace Desktop_app
             }
         }
 
-        private void Care_Taker_Load(object sender, EventArgs e)
+        private void btn_search_Animal_Click_1(object sender, EventArgs e)
         {
+            FilterAnimal(txt_search.Text);
+        }
+
+        private void Logout_BTN_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
