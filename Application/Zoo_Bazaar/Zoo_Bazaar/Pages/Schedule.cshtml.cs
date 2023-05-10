@@ -1,6 +1,7 @@
 using LogicCL;
 using LogicCL.Repository;
 using LogicCL.Users;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,6 +9,7 @@ using Newtonsoft.Json;
 
 namespace Zoo_Bazaar.Pages
 {
+    [Authorize]
     public class ScheduleModel : PageModel
     {
         public User? LoggedEmployee { get; set; }

@@ -52,7 +52,7 @@
                 {
                     if (User?.Identity?.IsAuthenticated ?? false)
                     {
-                        <li><a asp-page="/Schedule">Account</a></li>
+                        <li><a asp-page="/Schedule">My schedule</a></li>
                     }
 
                 }
@@ -60,9 +60,9 @@
             </ul>
         </div>
         <!-- main center container -->
-
+        <div class="mainCenter">
             @RenderBody()
-
+        </div>
 
         <!-- footer -->
         <div class="foot">

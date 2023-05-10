@@ -36,6 +36,12 @@ body {
     }
 }
 
+.mainCenter {
+    grid-column: 1 / 4;
+    min-height: 62vh;
+    margin: 40px;
+}
+
 .schedule {
     grid-template-areas:
         "monday tuesday wednesday thursday friday saturday sunday"
@@ -47,11 +53,13 @@ body {
     display: grid;
     padding: 40px;
     background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: radial-gradient(circle, rgb(63 94 251 / 7%) 0%, rgb(34 31 32 / 64%) 100%);
+    max-width: 80vw;
+    margin: auto;
 }
 
 .Event {
-    background: #00ffa1;
+    background: #e2f9f6bd;
     padding: 21px;
     border-radius: 19px;
     min-height: 70px;
@@ -64,7 +72,6 @@ body {
 }
 
 
-/*Main html template grid*/
 .mainwrap {
     min-height: 100vh;
     position: relative;
@@ -78,7 +85,6 @@ body {
     overflow: hidden;
 }
 
-/*Navigation*/
 .nav {
     display: grid;
     grid-column-start: nav;
@@ -120,7 +126,6 @@ li a:hover:not(.active, .logo, .fa) {
 
 
 
-/*Footer*/
 .foot {
     display: grid;
     background: rgba(27, 27, 27, 1);
@@ -160,16 +165,16 @@ li a:hover:not(.active, .logo, .fa) {
     opacity: 0.7;
 }
 
-/*form*/
 .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #afafaf63;
     padding: 20px;
     grid-column-start: 1;
     margin: auto;
     width: 80%;
     z-index: 2;
     grid-column-end: 5;
+    max-width: 50vw;
 }
 
 input[type=text], input[type=email], input[type=password], input[type="date" i], select, textarea {
