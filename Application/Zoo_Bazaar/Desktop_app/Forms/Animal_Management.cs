@@ -29,6 +29,7 @@ namespace Desktop_app.Forms
             AnimalManagement = (AnimalManagement)loggedInUser;
             AnimalManagement.MakeActive();
             InitializeComponent();
+            welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName} ";
             PopulateLocationCombobox();
             PopulateGenderCombobox();
             PopulateFatherCombobox();
@@ -181,6 +182,12 @@ namespace Desktop_app.Forms
             CB_Father1.DataSource = animals;
             CB_Father1.DisplayMember = "Name";
             CB_Father1.ValueMember = "Id";
+
+            
+            CB_FatherAdd.DataSource = null;
+            CB_FatherAdd.DataSource = animals;
+            CB_FatherAdd.DisplayMember = "Name";
+            CB_FatherAdd.ValueMember = "Id";
         }
         private void PopulateMotherCombobox()
         {
@@ -189,6 +196,12 @@ namespace Desktop_app.Forms
             CB_Mother1.DataSource = animals;
             CB_Mother1.DisplayMember = "Name";
             CB_Mother1.ValueMember = "Id";
+
+           
+            CB_MotherAdd.DataSource = null;
+            CB_MotherAdd.DataSource = animals;
+            CB_MotherAdd.DisplayMember = "Name";
+            CB_MotherAdd.ValueMember = "Id";
         }
 
         private void CB_Type1_SelectedIndexChanged(object sender, EventArgs e)
@@ -266,8 +279,8 @@ namespace Desktop_app.Forms
             TB_NameAdd.Text,
             DT_BirthDateAdd.Value.ToString("yyyy-MM-dd"),
             TB_BirthPlaceAdd.Text,
-            null,
-            null,
+            CB_FatherAdd.Text,
+            CB_MotherAdd.Text,
             CB_LocationAdd.SelectedValue.ToString(),
             CB_DietAdd.SelectedValue.ToString(),
             CB_SpeciesBoxAdd.SelectedValue.ToString(),
@@ -454,6 +467,7 @@ namespace Desktop_app.Forms
                 MessageBox.Show("Oops something went wrong, please contact an administrator");
                 this.DialogResult = DialogResult.Cancel;
             }
+            refreshAnimalList();
         }
 
         private void btn_search_Animal_Click(object sender, EventArgs e)
@@ -465,6 +479,40 @@ namespace Desktop_app.Forms
         private void Logout_BTN_Add_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void CB_TypeBoxAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_FatherAdd.DataSource = null;
+
+            CB_FatherAdd.Items.Clear();
+
+            if (CB_TypeBoxAdd.SelectedItem != null)
+            {
+                string selectedType = ((Types)CB_TypeBoxAdd.SelectedItem).Name;
+                string selectedName = (TB_NameAdd.Text);
+
+                List<Animal> typesForSelectedSpecies = AnimalManagement.GetMaleAnimalsByType(selectedType, selectedName);
+
+                foreach (Animal Maleanimal in typesForSelectedSpecies)
+                {
+                    CB_FatherAdd.Items.Add(Maleanimal.Name);
+                }
+
+
+                //----------------------------------------------//
+
+                CB_MotherAdd.DataSource = null;
+
+                CB_MotherAdd.Items.Clear();
+
+                List<Animal> FemaleForSelectedType = AnimalManagement.GetFemaleAnimalsByType(selectedType, selectedName);
+
+                foreach (Animal Femaleanimal in FemaleForSelectedType)
+                {
+                    CB_MotherAdd.Items.Add(Femaleanimal.Name);
+                }
+            }
         }
     }
 }

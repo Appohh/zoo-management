@@ -129,6 +129,7 @@ namespace Desktop_app
                 MessageBox.Show("Oops something went wrong, please contact an administrator");
                 this.DialogResult = DialogResult.Cancel;
             }
+            refreshAnimalList();
         }
 
         private void btn_search_Animal_Click_1(object sender, EventArgs e)

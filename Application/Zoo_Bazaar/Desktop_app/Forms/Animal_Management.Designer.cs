@@ -77,11 +77,11 @@
             this.Location = new System.Windows.Forms.ColumnHeader();
             this.speciesCB = new System.Windows.Forms.ComboBox();
             this.tab_AddAnimal = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Btn_AddAnimal = new System.Windows.Forms.Button();
+            this.Logout_BTN_Add = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.CB_GenderAdd = new System.Windows.Forms.ComboBox();
+            this.Btn_AddAnimal = new System.Windows.Forms.Button();
             this.lbl_Gender = new System.Windows.Forms.Label();
             this.CB_FatherAdd = new System.Windows.Forms.ComboBox();
             this.CB_MotherAdd = new System.Windows.Forms.ComboBox();
@@ -129,7 +129,6 @@
             this.btn_ViewDetails = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PictureBoxAddEmployee = new System.Windows.Forms.PictureBox();
-            this.Logout_BTN_Add = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_welcome.SuspendLayout();
             this.tab_Overview.SuspendLayout();
@@ -657,7 +656,6 @@
             // 
             this.tab_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(78)))), ((int)(((byte)(64)))));
             this.tab_AddAnimal.Controls.Add(this.Logout_BTN_Add);
-            this.tab_AddAnimal.Controls.Add(this.button2);
             this.tab_AddAnimal.Controls.Add(this.pictureBox1);
             this.tab_AddAnimal.Controls.Add(this.groupBox4);
             this.tab_AddAnimal.Controls.Add(this.Gb_Details_employee);
@@ -668,35 +666,24 @@
             this.tab_AddAnimal.TabIndex = 2;
             this.tab_AddAnimal.Text = "Add Animal";
             // 
-            // button2
+            // Logout_BTN_Add
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1634, 40);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 43);
-            this.button2.TabIndex = 85;
-            this.button2.Text = "Logout";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // Btn_AddAnimal
-            // 
-            this.Btn_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.Btn_AddAnimal.ForeColor = System.Drawing.Color.White;
-            this.Btn_AddAnimal.Location = new System.Drawing.Point(177, 473);
-            this.Btn_AddAnimal.Margin = new System.Windows.Forms.Padding(1);
-            this.Btn_AddAnimal.Name = "Btn_AddAnimal";
-            this.Btn_AddAnimal.Size = new System.Drawing.Size(145, 51);
-            this.Btn_AddAnimal.TabIndex = 84;
-            this.Btn_AddAnimal.Text = "Add Animal";
-            this.Btn_AddAnimal.UseVisualStyleBackColor = false;
-            this.Btn_AddAnimal.Click += new System.EventHandler(this.Btn_AddAnimal_Click_1);
+            this.Logout_BTN_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.Logout_BTN_Add.ForeColor = System.Drawing.Color.White;
+            this.Logout_BTN_Add.Location = new System.Drawing.Point(1451, 28);
+            this.Logout_BTN_Add.Margin = new System.Windows.Forms.Padding(1);
+            this.Logout_BTN_Add.Name = "Logout_BTN_Add";
+            this.Logout_BTN_Add.Size = new System.Drawing.Size(145, 51);
+            this.Logout_BTN_Add.TabIndex = 85;
+            this.Logout_BTN_Add.Text = "Logout";
+            this.Logout_BTN_Add.UseVisualStyleBackColor = false;
+            this.Logout_BTN_Add.Click += new System.EventHandler(this.Logout_BTN_Add_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(180, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(515, 103);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 551);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -717,7 +704,7 @@
             this.groupBox4.Controls.Add(this.TB_BirthPlaceAdd);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(847, 88);
+            this.groupBox4.Location = new System.Drawing.Point(1182, 103);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(414, 552);
             this.groupBox4.TabIndex = 81;
@@ -732,6 +719,19 @@
             this.CB_GenderAdd.Name = "CB_GenderAdd";
             this.CB_GenderAdd.Size = new System.Drawing.Size(286, 36);
             this.CB_GenderAdd.TabIndex = 39;
+            // 
+            // Btn_AddAnimal
+            // 
+            this.Btn_AddAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
+            this.Btn_AddAnimal.ForeColor = System.Drawing.Color.White;
+            this.Btn_AddAnimal.Location = new System.Drawing.Point(177, 473);
+            this.Btn_AddAnimal.Margin = new System.Windows.Forms.Padding(1);
+            this.Btn_AddAnimal.Name = "Btn_AddAnimal";
+            this.Btn_AddAnimal.Size = new System.Drawing.Size(145, 51);
+            this.Btn_AddAnimal.TabIndex = 84;
+            this.Btn_AddAnimal.Text = "Add Animal";
+            this.Btn_AddAnimal.UseVisualStyleBackColor = false;
+            this.Btn_AddAnimal.Click += new System.EventHandler(this.Btn_AddAnimal_Click_1);
             // 
             // lbl_Gender
             // 
@@ -837,7 +837,7 @@
             this.Gb_Details_employee.Controls.Add(this.label13);
             this.Gb_Details_employee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Gb_Details_employee.ForeColor = System.Drawing.Color.Black;
-            this.Gb_Details_employee.Location = new System.Drawing.Point(419, 88);
+            this.Gb_Details_employee.Location = new System.Drawing.Point(754, 103);
             this.Gb_Details_employee.Name = "Gb_Details_employee";
             this.Gb_Details_employee.Size = new System.Drawing.Size(405, 551);
             this.Gb_Details_employee.TabIndex = 80;
@@ -906,6 +906,7 @@
             this.CB_TypeBoxAdd.Name = "CB_TypeBoxAdd";
             this.CB_TypeBoxAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_TypeBoxAdd.TabIndex = 33;
+            this.CB_TypeBoxAdd.SelectedIndexChanged += new System.EventHandler(this.CB_TypeBoxAdd_SelectedIndexChanged);
             // 
             // TB_NameAdd
             // 
@@ -1285,19 +1286,6 @@
             this.PictureBoxAddEmployee.TabIndex = 79;
             this.PictureBoxAddEmployee.TabStop = false;
             // 
-            // Logout_BTN_Add
-            // 
-            this.Logout_BTN_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
-            this.Logout_BTN_Add.ForeColor = System.Drawing.Color.White;
-            this.Logout_BTN_Add.Location = new System.Drawing.Point(1116, 13);
-            this.Logout_BTN_Add.Margin = new System.Windows.Forms.Padding(1);
-            this.Logout_BTN_Add.Name = "Logout_BTN_Add";
-            this.Logout_BTN_Add.Size = new System.Drawing.Size(145, 51);
-            this.Logout_BTN_Add.TabIndex = 85;
-            this.Logout_BTN_Add.Text = "Logout";
-            this.Logout_BTN_Add.UseVisualStyleBackColor = false;
-            this.Logout_BTN_Add.Click += new System.EventHandler(this.Logout_BTN_Add_Click);
-            // 
             // Animal_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1437,7 +1425,6 @@
         private Label label17;
         private PictureBox pictureBox1;
         private Button Btn_LogOut;
-        private Button button2;
         private Label lbl_Gender;
         private Label label10;
         private ComboBox CB_GenderAdd;
