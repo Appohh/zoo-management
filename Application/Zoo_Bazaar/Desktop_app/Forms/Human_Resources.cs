@@ -40,15 +40,14 @@ namespace Desktop_app
         private void Refresh()
         {
             lv_Employees.Items.Clear();
-            int selected = Int16.Parse(cbbSearchEmpJob.SelectedValue.ToString());
-            foreach (Employee employee in hr.Repository.GetUserList().OfType<Employee>().ToList())
-            {
-                string contractStatusString = "";
-                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName + " " + employee.LastName, employee.Jobname, employee.Phone, contractStatusString });
-                userInfo.Tag = employee.Id.ToString();
-                lv_Employees.Items.Add(userInfo);
-            }
+            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
+           
+            
+        }
+        private void RefreshAbsence()
+        {
+            lv_Scheduling.Items.Clear();
+            FilterHrAbsence(TB_Absence_Name.Text, CB_Absence_Job.Text);
         }
 
         public void FilterHr(string name, string phone, string job, string status)
@@ -557,7 +556,7 @@ namespace Desktop_app
                     MessageBox.Show("No absence found with the selected id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            Refresh();
+            
         }
 
         private void btn_absence_update_Click(object sender, EventArgs e)
@@ -595,6 +594,7 @@ namespace Desktop_app
             {
                 MessageBox.Show("Please select an absence from the list to update.", "No absence selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            RefreshAbsence();
         }
 
         private void btn_absence_logout_Click(object sender, EventArgs e)
