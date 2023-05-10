@@ -4,7 +4,11 @@
     
 }
 
-<h1>Schedule</h1>
+<h1 style="margin: 20px;
+    border-bottom: 6px solid;
+    text-align: center;">
+    Schedule
+</h1>
 
 <div class="schedule">
     <h2 class="day">Monday</h2>
@@ -80,9 +84,14 @@
 
         if(elementToUse != null){
 
+            var location_ = "";
+            if (shift.Location != null || shift.Location != "") {
+                location_ = shift.Location;
+            }
+
             var childElement = document.createElement('div');
             childElement.className = "Event";
-            childElement.textContent = '';
+            childElement.textContent = "";
             
             elementToUse.appendChild(childElement);
         }
