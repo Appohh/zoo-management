@@ -267,10 +267,7 @@ namespace Desktop_app.Forms
 
         private void datePicker_ValueChanged(object sender, EventArgs e)
         {
-            if (currentWeekSchedule.Monday <= datePicker.Value && datePicker.Value <= currentWeekSchedule.Sunday)
-            {
-                return;
-            }
+          
             DrawSchedule();
         }
         private void DrawSchedule()
