@@ -47,8 +47,8 @@ namespace DataCL.DataTraffic
 
         public bool AddUser(UserDTO user)
         {
-            string query = $"INSERT INTO Employees (firstname, lastname, username, password, phone, address, city, email, emergencyName, emergencyPhone, birthdate, bsn, imageUrl, contractStatus, jobId) " +
-                $"VALUES ('{user.Firstname}', '{user.Lastname}', '{user.Username}', '{user.Password}', '{user.Phone}', '{user.Address}', '{user.City}', '{user.Email}', '{user.EmergencyName}', '{user.EmergencyPhone}', '{user.Birthdate}', '{user.BSN}', '{user.ImageUrl}', '{user.ContractStatus}', '{user.JobId}' );";
+            string query = $"INSERT INTO Employees (firstname, lastname, username, password, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, imageUrl, contractStatus, jobId) " +
+                $"VALUES ('{user.Firstname}', '{user.Lastname}', '{user.Username}', '{user.Password}', '{user.Phone}', '{user.Address}', '{user.City}', '{user.Email}', '{user.SpouseName}', '{user.SpousePhone}', '{user.EmergencyName}', '{user.EmergencyPhone}', '{user.Birthdate}', '{user.BSN}', '{user.ImageUrl}', '{user.ContractStatus}', '{user.JobId}' );";
             return executeQuery(query) == 0 ? false : true;
         }
 

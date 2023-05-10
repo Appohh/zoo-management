@@ -275,9 +275,9 @@ namespace LogicCL.Repository
             return absences;
         }
 
-        public bool changeEmployeeAbsence(int employeeid, string startDate, string endDate, int type)
+        public bool AddEmployeeAbsence(int employeeid, string startDate, string endDate, int type)
         {
-            if (absenceDataTraffic.UpdateAbsence(employeeid, startDate, endDate, type))
+            if (absenceDataTraffic.AddAbsence(employeeid, startDate, endDate, type))
             {
                 refreshUserData(); return true;
             }

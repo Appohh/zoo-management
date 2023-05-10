@@ -35,9 +35,18 @@ namespace DataCL.DataTraffic
             return absences;
         }
 
-        public bool UpdateAbsence(int employeeId, string startdate, string enddate, int type)
+        public bool AddAbsence(int employeeId, string startdate, string enddate, int type)
         {
-            string query = $"Update Absence SET startdate='{startdate}', enddate='{enddate}', type={type} WHERE employeeId={employeeId}";
+            string query = $"Insert INTO Absence (employeeId, startDate, endDate, type)" +
+            $"VALUES({employeeId},'{startdate}','{enddate}',{type})"; 
+
+            return executeQuery(query) == 0 ? false : true;
+        }
+
+        public bool addAnimal(AnimalDTO animal)
+        {
+            string query = $"INSERT INTO Animals (name, birthdate, birthplace, fatherId, motherId, locationId, dietId, sick, notes, deathdate, typeId, imageUrl, genderId) " +
+            $"VALUES('{animal.Name}', '{animal.Birthdate}', '{animal.BirthPlace}', '{animal.FatherId}', '{animal.MotherId}', {animal.Location}, {animal.Diet}, {animal.Sick}, 'NULL', '{animal.Deathdate}', {animal.Type}, 'NULL', {animal.Gender})";
             return executeQuery(query) == 0 ? false : true;
         }
     }
