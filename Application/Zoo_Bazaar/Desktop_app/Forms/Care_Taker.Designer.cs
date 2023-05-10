@@ -127,7 +127,7 @@
             // 
             // Overview
             // 
-            this.Overview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.Overview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(78)))), ((int)(((byte)(64)))));
             this.Overview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Overview.Controls.Add(this.artanPanel1);
             this.Overview.Controls.Add(this.btn_search_Animal);
@@ -153,8 +153,8 @@
             this.artanPanel1.Controls.Add(this.groupBox3);
             this.artanPanel1.ForeColor = System.Drawing.Color.Black;
             this.artanPanel1.GradientAngle = 90F;
-            this.artanPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
-            this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
+            this.artanPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
+            this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
             this.artanPanel1.Location = new System.Drawing.Point(997, 129);
             this.artanPanel1.Name = "artanPanel1";
             this.artanPanel1.Size = new System.Drawing.Size(774, 752);
@@ -476,6 +476,7 @@
             // 
             this.Logout_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.Logout_BTN.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Logout_BTN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Logout_BTN.Location = new System.Drawing.Point(1583, 59);
             this.Logout_BTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Logout_BTN.Name = "Logout_BTN";
@@ -490,7 +491,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(37, 43);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -508,7 +509,7 @@
             // 
             // lv_Animals
             // 
-            this.lv_Animals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(159)))));
+            this.lv_Animals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(156)))), ((int)(((byte)(159)))));
             this.lv_Animals.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lv_Animals.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Namez,
@@ -560,7 +561,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(143)))), ((int)(((byte)(132)))));
             this.ClientSize = new System.Drawing.Size(1832, 928);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);

@@ -295,6 +295,8 @@ namespace Desktop_app
                 MessageBox.Show("Oops something went wrong, please contact an administrator");
                 this.DialogResult = DialogResult.Cancel;
             }
+            Refresh();
+            
         }
 
         private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -555,6 +557,7 @@ namespace Desktop_app
                     MessageBox.Show("No absence found with the selected id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            Refresh();
         }
 
         private void btn_absence_update_Click(object sender, EventArgs e)
@@ -592,6 +595,11 @@ namespace Desktop_app
             {
                 MessageBox.Show("Please select an absence from the list to update.", "No absence selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btn_absence_logout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

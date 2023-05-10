@@ -29,6 +29,7 @@ namespace Desktop_app.Forms
             AnimalManagement = (AnimalManagement)loggedInUser;
             AnimalManagement.MakeActive();
             InitializeComponent();
+            welcome_txt.Text = $"Welcome {loggedInUser.FirstName} {loggedInUser.LastName} ";
             PopulateLocationCombobox();
             PopulateGenderCombobox();
             PopulateFatherCombobox();
@@ -454,6 +455,7 @@ namespace Desktop_app.Forms
                 MessageBox.Show("Oops something went wrong, please contact an administrator");
                 this.DialogResult = DialogResult.Cancel;
             }
+            refreshAnimalList();
         }
 
         private void btn_search_Animal_Click(object sender, EventArgs e)

@@ -306,6 +306,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(66)))), ((int)(((byte)(76)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(1639, 45);
             this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
@@ -1460,6 +1461,7 @@
             this.btn_absence_logout.TabIndex = 42;
             this.btn_absence_logout.Text = "Logout";
             this.btn_absence_logout.UseVisualStyleBackColor = false;
+            this.btn_absence_logout.Click += new System.EventHandler(this.btn_absence_logout_Click);
             // 
             // artanPanel1
             // 
@@ -1757,6 +1759,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.Name = "Human_Resources";
             this.Text = "Human_Resources";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Tab_Add_Employee.ResumeLayout(false);
