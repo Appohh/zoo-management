@@ -30,12 +30,12 @@ namespace Desktop_app.Forms
             AnimalManagement.MakeActive();
             InitializeComponent();
             PopulateLocationCombobox();
-            PopulateSpeciesCombobox();
-            PopulateTypesCombobox();
-            PopulateDietCombobox();
             PopulateGenderCombobox();
             PopulateFatherCombobox();
             PopulateMotherCombobox();
+            PopulateSpeciesCombobox();
+            PopulateTypesCombobox();
+            PopulateDietCombobox();
             this.Size = new Size(1521, 910);
         }
 
@@ -180,7 +180,7 @@ namespace Desktop_app.Forms
             CB_Father1.DataSource = null;
             CB_Father1.DataSource = animals;
             CB_Father1.DisplayMember = "Name";
-            CB_Father1.ValueMember = "Name";
+            CB_Father1.ValueMember = "Id";
         }
         private void PopulateMotherCombobox()
         {
@@ -200,18 +200,14 @@ namespace Desktop_app.Forms
             if (CB_Type1.SelectedItem != null)
             {
                 string selectedType = ((Types)CB_Type1.SelectedItem).Name;
-
-                List<Animal> typesForSelectedSpecies = AnimalManagement.GetMaleAnimalsByType(selectedType);
+                string selectedName = (TB_name1.Text);
+                 
+                List<Animal> typesForSelectedSpecies = AnimalManagement.GetMaleAnimalsByType(selectedType, selectedName);
 
                 foreach (Animal Maleanimal in typesForSelectedSpecies)
                 {
                     CB_Father1.Items.Add(Maleanimal.Name);
                 }
-                if (CB_Father1.Items.Count != 0)
-                {
-                    CB_Father1.SelectedIndex = 0;
-                }
-                else { CB_Father1.SelectedIndex = -1; CB_Father1.Text = ""; }
 
 
             //----------------------------------------------//
@@ -220,17 +216,12 @@ namespace Desktop_app.Forms
 
                 CB_Mother1.Items.Clear();
 
-                List<Animal> FemaleForSelectedType = AnimalManagement.GetFemaleAnimalsByType(selectedType);
+                List<Animal> FemaleForSelectedType = AnimalManagement.GetFemaleAnimalsByType(selectedType, selectedName);
 
                 foreach (Animal Femaleanimal in FemaleForSelectedType)
                 {
                     CB_Mother1.Items.Add(Femaleanimal.Name);
                 }
-                if (CB_Mother1.Items.Count != 0)
-                {
-                    CB_Mother1.SelectedIndex = 0;
-                }
-                else { CB_Mother1.SelectedIndex = -1; CB_Mother1.Text = ""; }
             }
         }
 
@@ -318,8 +309,6 @@ namespace Desktop_app.Forms
             }
             if (CB_Type1.Items.Count != 0)
             {
-                //CB_Type1.SelectedValie = animal.type;
-
                 CB_Type1.SelectedIndex = 0;
             }
             else { CB_Type1.SelectedIndex = -1; CB_Type1.Text = ""; }
@@ -369,8 +358,8 @@ namespace Desktop_app.Forms
                 selectedAnimalId = Convert.ToInt32(lv_Animals.SelectedItems[0].Tag);
                 TB_name1.Text = selectedAnimal.Name;
                 DT_Birthdate.Value = DateTime.Parse(selectedAnimal.Birthdate);
-                CB_Father1.Text = selectedAnimal.FatherId;
-                CB_Mother1.Text = selectedAnimal.Mother;
+                CB_Father1.Text = selectedAnimal.FatherId; // <-- change here
+                CB_Mother1.Text = selectedAnimal.Mother; // <-- change here
                 TB_BirthPlace1.Text = selectedAnimal.BirthPlace;
                 txt_Gender.Text = selectedAnimal.gender;
 
@@ -396,9 +385,9 @@ namespace Desktop_app.Forms
             int type = selectedType.Id;
             int diet = Convert.ToInt32(CB_Diet1.SelectedValue);
 
-            string motherId = CB_Mother1.SelectedValue.ToString();
+            string motherId = CB_Mother1.Text;
 
-            string fatherId = CB_Father1.SelectedValue.ToString();
+            string fatherId = CB_Father1.Text;
             string birthplace = TB_BirthPlace1.Text;
 
             //Condition
