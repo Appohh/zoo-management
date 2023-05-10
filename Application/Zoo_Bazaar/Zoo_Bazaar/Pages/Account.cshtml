@@ -1,0 +1,11 @@
+﻿@page
+@model Zoo_Bazaar.Pages.AccountModel
+@{
+    ViewData["Title"] = "Account";
+    ViewData["ActiveLink"] = "account";
+}
+<h1>Hello, <br /> @User.Identity.Name</h1>
+
+<form method="post">
+    <input type="submit" value="Log out" asp-page-handler="LogOut" />
+</form>
