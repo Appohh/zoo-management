@@ -47,6 +47,14 @@ namespace Zoo_Bazaar.Pages
 
             if (LoggedEmployee == null) { return; }
             loggedEmployeeShifts = _employeeRepository.GetShiftsByEmpId(LoggedEmployee.Id);
+
+            foreach(Shift shift in loggedEmployeeShifts)
+            {
+                DateTime date;
+                date = DateTime.Parse(shift.Date);
+                shift.Date = date.ToString("dd-MM-yyyy");
+            }
+
             string json = JsonConvert.SerializeObject(loggedEmployeeShifts, settings);
             scheduleJson = new HtmlString(json);
         }
