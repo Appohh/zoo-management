@@ -43,12 +43,8 @@ namespace Desktop_app.Forms
         private void refreshAnimalList()
         {
             lv_Animals.Items.Clear();
-            foreach (Animal animal in AnimalManagement.Repository.GetAnimalList())
-            {
-                var animalInfo = new ListViewItem(new[] { animal.Name, animal.Type, animal.Species, animal.Location });
-                animalInfo.Tag = animal.Id.ToString();
-                lv_Animals.Items.Add(animalInfo);
-            }
+           
+            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
         }
 
         public void FilterAnimal(string name, string species, string type)
