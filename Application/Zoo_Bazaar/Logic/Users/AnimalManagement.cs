@@ -45,33 +45,34 @@ namespace LogicCL.Users
        
         public List<Types> GetTypesForSpecies(int speciesId)
         {
-            // Get all types from the database
+
             List<Types> allTypes = Repository.GetTypesList();
 
-            // Filter the types to only include those for the specified species ID
             List<Types> typesForSpecies = allTypes.Where(type => type.speciesId == speciesId).ToList();
 
             return typesForSpecies;
         }
 
-        public List<Animal> GetMaleAnimalsByType(string type)
+        public List<Animal> GetMaleAnimalsByType(string type, string selectedAnimalName)
         {
-            // Get all animals from the database
+
             List<Animal> allAnimals = Repository.GetAnimalList();
 
-            // Filter the animals to only include those with the specified type ID and male gender
-            List<Animal> maleAnimalsByType = allAnimals.Where(animal => animal.Type == type && animal.gender == "Male").ToList();
+
+            List<Animal> maleAnimalsByType = allAnimals
+            .Where(animal => animal.Type == type && animal.gender == "Male" && animal.Name != selectedAnimalName)
+            .ToList();
 
             return maleAnimalsByType;
         }
 
-        public List<Animal> GetFemaleAnimalsByType(string type)
+        public List<Animal> GetFemaleAnimalsByType(string type, string selectedAnimalName)
         {
-            // Get all animals from the database
             List<Animal> allAnimals = Repository.GetAnimalList();
 
-            // Filter the animals to only include those with the specified type ID and male gender
-            List<Animal> femaleAnimalsByType = allAnimals.Where(animal => animal.Type == type && animal.gender == "Female").ToList();
+            List<Animal> femaleAnimalsByType = allAnimals
+            .Where(animal => animal.Type == type && animal.gender == "Female" && animal.Name != selectedAnimalName)
+            .ToList();
 
             return femaleAnimalsByType;
         }
