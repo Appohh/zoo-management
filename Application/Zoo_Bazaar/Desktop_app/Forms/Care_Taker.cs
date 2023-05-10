@@ -94,7 +94,7 @@ namespace Desktop_app
             speciesCB.ValueMember = "Id";
         }
 
-        
+
         private void btn_search_Animal_Click(object sender, EventArgs e)
         {
             lv_Animals.Items.Clear();
@@ -204,6 +204,11 @@ namespace Desktop_app
                 this.DialogResult = DialogResult.Cancel;
             }
             refreshAnimalList();
+        }
+
+        private void Logout_BTN_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
