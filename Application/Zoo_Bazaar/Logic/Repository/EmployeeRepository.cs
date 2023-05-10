@@ -182,11 +182,17 @@ namespace LogicCL.Repository
             return shiftDataTraffic.AddShift(shift);
         }
 
+        public bool RemoveShift(Shift shift)
+        {
+            return shiftDataTraffic.RemoveShift(shift.Id);
+        }
+
         public List<Employee> GetAvailble(DateTime date)
         {
             List<Employee> available = new List<Employee>();
+            
             foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
-            {
+            {               
                 int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
                 if (hoursWorkedThisDay < 8)
                 {
@@ -197,8 +203,18 @@ namespace LogicCL.Repository
             return available;
         }
 
-        private void IsAbsent()
+        private bool IsAbsent(int id, DateTime date)
         {
+            List<Absence> absences = GetAllAbsences();
+            Absence absence = absences.Find(x => x.employeeId == id);
+            if (absence != null)
+            {
+                if (date >= DateTime.Parse(absence.startdate) && date <= DateTime.Parse(absence.enddate))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
 

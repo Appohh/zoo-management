@@ -51,7 +51,6 @@
             this.satD = new System.Windows.Forms.FlowLayoutPanel();
             this.cbEmps = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.friN = new System.Windows.Forms.FlowLayoutPanel();
@@ -138,7 +137,6 @@
             this.tabPageSchedule.Controls.Add(this.satD);
             this.tabPageSchedule.Controls.Add(this.cbEmps);
             this.tabPageSchedule.Controls.Add(this.button2);
-            this.tabPageSchedule.Controls.Add(this.label9);
             this.tabPageSchedule.Controls.Add(this.label8);
             this.tabPageSchedule.Controls.Add(this.label7);
             this.tabPageSchedule.Controls.Add(this.friN);
@@ -314,15 +312,6 @@
             this.button2.TabIndex = 77;
             this.button2.Text = "Generate Schedule";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(345, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 15);
-            this.label9.TabIndex = 76;
-            this.label9.Text = "Department: Electronics";
             // 
             // label8
             // 
@@ -558,7 +547,6 @@
         private FlowLayoutPanel satD;
         private ComboBox cbEmps;
         private Button button2;
-        private Label label9;
         private Label label8;
         private Label label7;
         private FlowLayoutPanel friN;
