@@ -10,10 +10,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Desktop_app
 {
@@ -41,8 +45,8 @@ namespace Desktop_app
         {
             lv_Employees.Items.Clear();
             FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
-           
-            
+
+
         }
         private void RefreshAbsence()
         {
@@ -65,7 +69,7 @@ namespace Desktop_app
             foreach (Employee employee in filteredEmployees)
             {
                 string contractStatusString = "";
-                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if(employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
@@ -179,12 +183,12 @@ namespace Desktop_app
             }
         }
 
-        
+
 
 
         //Overview
 
-        
+
 
         private void btn_search_Employee_Click(object sender, EventArgs e)
         {
@@ -213,7 +217,6 @@ namespace Desktop_app
 
             //contact details
             string phoneNumber = TB_Phone.Text;
-            string contactName = TB_ContactName.Text;
 
             string emergency = TB_Emregency.Text;
             string emergencyContact = TB_Emergencycontact.Text;
@@ -295,7 +298,7 @@ namespace Desktop_app
                 this.DialogResult = DialogResult.Cancel;
             }
             Refresh();
-            
+
         }
 
         private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -342,7 +345,7 @@ namespace Desktop_app
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
         }
 
 
@@ -411,7 +414,7 @@ namespace Desktop_app
             {
                 errors.Add("Phone number cannot be empty.");
             }
-            else if (!Regex.IsMatch(phoneNumber, @"^[0-9]+$"))
+            else if (!Regex.IsMatch(phoneNumber, @"^[0-9\-]+$"))
             {
                 errors.Add("Phone number can only contain numbers.");
             }
@@ -436,12 +439,12 @@ namespace Desktop_app
                 SpouseContactBoxAddEmployee.BackColor = Color.Gray;
             }
 
-            if (!string.IsNullOrEmpty(spouseNumber) && !Regex.IsMatch(spouseNumber, @"^[0-9]+$"))
+            if (!string.IsNullOrEmpty(spouseNumber) && !Regex.IsMatch(spouseNumber, @"^[0-9\-]+$"))
             {
                 errors.Add("Spouse contact number can only contain numbers.");
             }
 
-            if (!string.IsNullOrWhiteSpace(emergencyNumber) && !Regex.IsMatch(emergencyNumber, @"^[0-9]+$"))
+            if (!string.IsNullOrWhiteSpace(emergencyNumber) && !Regex.IsMatch(emergencyNumber, @"^[0-9\-]+$"))
             {
                 errors.Add("Emergency contact number can only contain numbers.");
             }
@@ -483,7 +486,7 @@ namespace Desktop_app
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
         }
 
         private void SpouseBoxAddEmployee_TextChanged_1(object sender, EventArgs e)
@@ -515,91 +518,41 @@ namespace Desktop_app
                 List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
                 Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
 
-                List<Absence> absences = hr.Repository.GetAllAbsences().OfType<Absence>().ToList();
-                Absence selectedAbsence = absences.Find(absence => absence.employeeId == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
-
                 if (selectedUser != null)
                 {
                     TB_Absence_FirstName.Text = selectedUser.FirstName;
                     TB_Absence_LastName.Text = selectedUser.LastName;
                     TB_Absence_PhoneNumber.Text = selectedUser.Phone;
                 }
-                else
-                {
-                    MessageBox.Show("No user found with the selected id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (selectedAbsence != null)
-                {
-                    TB_Absence_StartDate.Value = DateTime.Parse(selectedAbsence.startdate);
-                    TB_Absence_EndDate.Value = DateTime.Parse(selectedAbsence.enddate);
-
-                    if (selectedAbsence.Type != null)
-                    {
-                        if (TB_Absence_ReasonAbsence.Items.Cast<AbsenceType>().Any(item => item.Id == selectedAbsence.Type))
-                        {
-                            TB_Absence_ReasonAbsence.SelectedValue = selectedAbsence.Type;
-                        }
-                        else
-                        {
-                            MessageBox.Show($"No absence type found with id {selectedAbsence.Type}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("The selected absence has a null type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No absence found with the selected id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-            
         }
 
-        private void btn_absence_update_Click(object sender, EventArgs e)
-        {
-            if (lv_Scheduling.SelectedItems.Count > 0)
-            {
-                // Get selected user and absence
-                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
-                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
-                List<Absence> absences = hr.Repository.GetAllAbsences().OfType<Absence>().ToList();
-                Absence selectedAbsence = absences.Find(absences => absences.employeeId == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
-
-                if (selectedUser != null && selectedAbsence != null)
-                {
-                    string startDate = TB_Absence_StartDate.Value.ToString("yyyy-MM-dd");
-                    string endDate = TB_Absence_EndDate.Value.ToString("yyyy-MM-dd"); 
-                    int type = Convert.ToInt32((TB_Absence_ReasonAbsence.SelectedValue)); 
-
-                    bool isUpdated = hr.Repository.changeEmployeeAbsence(selectedUser.Id, startDate, endDate, type);
-                    if (isUpdated)
-                    {
-                        MessageBox.Show("Absence updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to update absence. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please select a valid absence to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select an absence from the list to update.", "No absence selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            RefreshAbsence();
-        }
 
         private void btn_absence_logout_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
+        }
+
+        private void btn_absence_Add_Click_1(object sender, EventArgs e)
+        {
+            if (lv_Scheduling.SelectedItems.Count > 0)
+            {
+                List<Employee> employeeList = hr.Repository.GetUserList().OfType<Employee>().ToList();
+                Employee selectedUser = employeeList.Find(employee => employee.Id == Convert.ToInt32(lv_Scheduling.SelectedItems[0].Tag));
+                if (selectedUser != null)
+                {
+                    if (hr.Repository.AddEmployeeAbsence(selectedUser.Id, TB_Absence_StartDate.Value.ToString("yyyy-MM-dd"), TB_Absence_EndDate.Value.ToString("yyyy-MM-dd"), Convert.ToInt32(TB_Absence_ReasonAbsence.SelectedValue)) == true)
+                    {
+                        MessageBox.Show("Absence for employee successfully added.");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Oops, something went wrong.");
+                        return;
+                    }
+                }
+            }
         }
     }
 }
