@@ -36,12 +36,13 @@ namespace Desktop_app
         private void refreshAnimalList()
         {
             lv_Animals.Items.Clear();
-            foreach (Animal animal in zookeeper.Repository.GetAnimalList())
-            {
-                var animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location, animal.BirthPlace });
-                animalInfo.Tag = animal.Id.ToString();
-                lv_Animals.Items.Add(animalInfo);
-            }
+            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
+            //foreach (Animal animal in zookeeper.Repository.GetAnimalList())
+            //{
+            //    var animalInfo = new ListViewItem(new[] { animal.Name, animal.Birthdate, animal.Type, animal.Species, animal.Location, animal.BirthPlace });
+            //    animalInfo.Tag = animal.Id.ToString();
+            //    lv_Animals.Items.Add(animalInfo);
+            //}
         }
 
         public void FilterAnimal(string name, string species, string type)
@@ -69,7 +70,8 @@ namespace Desktop_app
         public void PopulateTypeCombobox()
         {
             List<Types> types = zookeeper.GetTypesList();
-
+            Types allTypes = new Types { Id = -1, Name = "All" };
+            types.Insert(0, allTypes);
             // Populate typesCB ComboBox
             typesCB.Items.Clear();
             typesCB.DataSource = null;
@@ -81,6 +83,9 @@ namespace Desktop_app
         public void PopulateSpeciesCombobox()
         {
             List<Species> species = zookeeper.GetSpeciesList();
+
+            Species allSpecies = new Species { Id = -1, Name = "All" };
+            species.Insert(0, allSpecies);
             // Populate speciesCB ComboBox
             speciesCB.Items.Clear();
             speciesCB.DataSource = null;
@@ -89,8 +94,47 @@ namespace Desktop_app
             speciesCB.ValueMember = "Id";
         }
 
-        private void lv_Animals_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void btn_search_Animal_Click(object sender, EventArgs e)
         {
+            lv_Animals.Items.Clear();
+            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
+        }
+
+        private void speciesCB_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            typesCB.DataSource = null;
+
+            typesCB.Items.Clear();
+
+            // Get the selected species ID from the Species combobox
+            int selectedSpeciesId = ((Species)speciesCB.SelectedItem).Id;
+
+            // Get the types for the selected species from the database
+            List<Types> typesForSelectedSpecies = zookeeper.GetTypesForSpecies(selectedSpeciesId);
+
+            if (sender == speciesCB)
+            {
+                Types allTypes = new Types { Id = -1, Name = "All" };
+                typesForSelectedSpecies.Insert(0, allTypes);
+            }
+            // Add the types to the Types combobox
+            foreach (Types type in typesForSelectedSpecies)
+            {
+                typesCB.Items.Add(type);
+            }
+            if (typesCB.Items.Count != 0)
+            {
+                //CB_Type1.SelectedValie = animal.type;
+
+                typesCB.SelectedIndex = 0;
+            }
+            else { typesCB.SelectedIndex = -1; typesCB.Text = ""; }
+        }
+
+        private void lv_Animals_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
             if (lv_Animals.SelectedItems.Count > 0)
             {
                 List<Animal> animalList = zookeeper.Repository.GetAnimalList().OfType<Animal>().ToList();
@@ -125,87 +169,7 @@ namespace Desktop_app
             }
         }
 
-        private void btn_ViewDetails_Click_2(object sender, EventArgs e)
-        {
-            //editable variables
-            int Sick = CHB_Sick.Checked ? 1 : 0;
-            string Notes = TB_Notes.Text;
-
-            //uneditable variables
-            var name = TB_Name.Text;
-
-            List<string> errors = new List<string>();
-
-            // Validate input
-            if (string.IsNullOrEmpty(Notes))
-            {
-                errors.Add("Please enter notes.");
-            }
-
-            // Check for errors
-            if (errors.Count > 0)
-            {
-                MessageBox.Show(string.Join("\n", errors));
-                return;
-            }
-
-            if (zookeeper.Repository.ChangeAnimalSickAndNote(selectedAnimalId, Sick, Notes))
-            {
-                MessageBox.Show($"Success, you have made an update for the animal {name}");
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                MessageBox.Show("Oops something went wrong, please contact an administrator");
-                this.DialogResult = DialogResult.Cancel;
-            }
-            refreshAnimalList();
-        }
-
-        private void btn_search_Animal_Click_1(object sender, EventArgs e)
-        {
-            lv_Animals.Items.Clear();
-            FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
-        }
-
-        private void Logout_BTN_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
-        private void speciesCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            typesCB.DataSource = null;
-
-            typesCB.Items.Clear();
-
-            // Get the selected species ID from the Species combobox
-            int selectedSpeciesId = ((Species)speciesCB.SelectedItem).Id;
-
-            // Get the types for the selected species from the database
-            List<Types> typesForSelectedSpecies = zookeeper.GetTypesForSpecies(selectedSpeciesId);
-
-            if (sender == speciesCB)
-            {
-                Types allTypes = new Types { Id = -1, Name = "All" };
-                typesForSelectedSpecies.Insert(0, allTypes);
-            }
-
-            // Add the types to the Types combobox
-            foreach (Types type in typesForSelectedSpecies)
-            {
-                typesCB.Items.Add(type);
-            }
-            if (typesCB.Items.Count != 0)
-            {
-                //CB_Type1.SelectedValie = animal.type;
-
-                typesCB.SelectedIndex = 0;
-            }
-            else { typesCB.SelectedIndex = -1; typesCB.Text = ""; }
-        }
-
-        private void btn_ViewDetails_Click(object sender, EventArgs e)
+        private void btn_ViewDetails_Click_1(object sender, EventArgs e)
         {
             //editable variables
             int Sick = CHB_Sick.Checked ? 1 : 0;
