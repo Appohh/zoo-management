@@ -38,13 +38,22 @@ namespace DataCL.DataTraffic
 
         public bool AddShift(ShiftDTO shift)
         {
-            string query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , {shift.Location})";
+            string query = "";
+            if (shift.Location == 0)
+            {
+                query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , null)";
+            }
+            else
+            {
+                query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , {shift.Location})";
+            }
             return executeQuery(query) == 0 ? false : true;
         }
 
-        public void RemoveShift()
+        public bool RemoveShift(int id)
         {
-
+            string query = $"DELETE FROM Shift WHERE id = {id}";
+            return executeQuery(query) == 0 ? false : true;
         }
     }
 }

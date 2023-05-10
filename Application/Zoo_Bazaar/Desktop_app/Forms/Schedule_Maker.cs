@@ -23,7 +23,7 @@ namespace Desktop_app.Forms
         private List<Employee> available;
         private Employee selected;
         private WeekSchedule currentWeekSchedule;
-
+        private List<Location> locations;
         public Schedule_Maker(User loggedInUser)
         {
             scheduleMaker = (ScheduleMaker)loggedInUser;
@@ -65,7 +65,7 @@ namespace Desktop_app.Forms
         private void PopulateComboboxes()
         {
            
-            List<Location> locations = scheduleMaker.Repository.GetLocations();
+            locations = scheduleMaker.Repository.GetLocations();
             cbbShiftLocation.Items.Clear();
             cbbShiftLocation.DataSource = null;
             cbbShiftLocation.DataSource = locations;
@@ -312,9 +312,33 @@ namespace Desktop_app.Forms
         private void OnShiftPanelClick(object sender, EventArgs e)
         {
             CustomPanel p = sender as CustomPanel;
-
-            ShiftInfo info = new ShiftInfo(p.Shift);
-            info.Show();
+            string name = p.Name;
+            string location = "";
+            if (p.Shift.Location != 0)
+            {
+                location = locations.Find(x => x.Id == p.Shift.Location).Name;
+            }
+            else
+            {
+                location = "No location Found";
+            }
+            ShiftInfo info = new ShiftInfo(name, location);
+            switch (info.ShowDialog())
+            {
+                case DialogResult.OK:
+                    if (scheduleMaker.Repository.RemoveShift(p.Shift))
+                    {
+                        MessageBox.Show("Shift Removed");
+                        DrawSchedule();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    break;
+               default:
+                    break;
+            }            
         }
 
         private void btnAssignShift_Click(object sender, EventArgs e)
@@ -333,26 +357,16 @@ namespace Desktop_app.Forms
                     shift.Date = date.ToString("yyyy-MM-dd");
                     shift.Type = cbbShiftType.SelectedIndex;
 
-                    if (cbbShiftLocation.Enabled = true)
+                    if (selected.Jobname.Contains("caretaker"))
                     {
                         shift.Location = Int16.Parse(cbbShiftLocation.SelectedValue.ToString());
                     }
 
                     if (scheduleMaker.Repository.AddShift(shift))
                     {
-                        Shift newShift = new Shift();
-                        newShift.EmpId = shift.EmpId;
-                        newShift.Date = shift.Date;
-                        newShift.Type = shift.Type; 
-                        newShift.Location = shift.Location;
-                        CustomPanel p = new CustomPanel(newShift);
-                        Employee emp = (Employee)scheduleMaker.Repository.getUserById(newShift.EmpId);
-                        p.Name = emp.FirstName + " " + emp.LastName;
-                        p.Size = new Size(monD.Width - 10, 25);
-                        p.Click += OnShiftPanelClick;
-                        p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.Black, 5, 5); };
-                        DrawShiftPanel(p);
+                        
                         MessageBox.Show("Ok");
+                        DrawSchedule();
                     }
                     else
                     {
