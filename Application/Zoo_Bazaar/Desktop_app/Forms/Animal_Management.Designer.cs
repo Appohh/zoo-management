@@ -906,6 +906,7 @@
             this.CB_TypeBoxAdd.Name = "CB_TypeBoxAdd";
             this.CB_TypeBoxAdd.Size = new System.Drawing.Size(289, 36);
             this.CB_TypeBoxAdd.TabIndex = 33;
+            this.CB_TypeBoxAdd.SelectedIndexChanged += new System.EventHandler(this.CB_TypeBoxAdd_SelectedIndexChanged);
             // 
             // TB_NameAdd
             // 
