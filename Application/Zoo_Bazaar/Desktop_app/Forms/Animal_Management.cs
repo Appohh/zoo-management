@@ -121,36 +121,34 @@ namespace Desktop_app.Forms
 
         private void PopulateTypesCombobox()
         {
-            {
-                List<Types> types1 = AnimalManagement.GetTypesList();
-                List<Types> types2 = new List<Types>(types1); // Create a separate list with the same data
-                List<Types> types3 = new List<Types>(types1); // Create a separate list with the same data
+            List<Types> types1 = AnimalManagement.GetTypesList();
+            List<Types> types2 = new List<Types>(types1); // Create a separate list with the same data
+            List<Types> types3 = new List<Types>(types1); // Create a separate list with the same data
 
-                // Add "All" option for types search
-                Types allTypes = new Types { Id = -1, Name = "All" };
-                types3.Insert(0, allTypes);
+            // Add "All" option for types search
+            Types allTypes = new Types { Id = -1, Name = "All" };
+            types3.Insert(0, allTypes);
 
-                // Populate CB_TypeBoxAdd ComboBox
-                CB_TypeBoxAdd.Items.Clear();
-                CB_TypeBoxAdd.DataSource = null;
-                CB_TypeBoxAdd.DataSource = types1;
-                CB_TypeBoxAdd.DisplayMember = "Name";
-                CB_TypeBoxAdd.ValueMember = "Id";
+            // Populate CB_TypeBoxAdd ComboBox
+            CB_TypeBoxAdd.Items.Clear();
+            CB_TypeBoxAdd.DataSource = null;
+            CB_TypeBoxAdd.DataSource = types1;
+            CB_TypeBoxAdd.DisplayMember = "Name";
+            CB_TypeBoxAdd.ValueMember = "Id";
 
-                // Populate CB_Type1 ComboBox
-                CB_Type1.Items.Clear();
-                CB_Type1.DataSource = null;
-                CB_Type1.DataSource = types2;
-                CB_Type1.DisplayMember = "Name";
-                CB_Type1.ValueMember = "Id";
+            // Populate CB_Type1 ComboBox
+            CB_Type1.Items.Clear();
+            CB_Type1.DataSource = null;
+            CB_Type1.DataSource = types2;
+            CB_Type1.DisplayMember = "Name";
+            CB_Type1.ValueMember = "Id";
 
-                // Populate typesCB ComboBox
-                typesCB.Items.Clear();
-                typesCB.DataSource = null;
-                typesCB.DataSource = types3;
-                typesCB.DisplayMember = "Name";
-                typesCB.ValueMember = "Id";
-            }
+            // Populate typesCB ComboBox
+            typesCB.Items.Clear();
+            typesCB.DataSource = null;
+            typesCB.DataSource = types3;
+            typesCB.DisplayMember = "Name";
+            typesCB.ValueMember = "Id";
         }
 
         private void PopulateDietCombobox()
@@ -175,20 +173,21 @@ namespace Desktop_app.Forms
             CB_GenderAdd.DisplayMember = "Name";
             CB_GenderAdd.ValueMember = "Id";
         }
+
         private void PopulateFatherCombobox()
         {
-            List<Animal>animals = AnimalManagement.GetMales();
+            List<Animal> animals = AnimalManagement.GetMales();
             CB_Father1.DataSource = null;
             CB_Father1.DataSource = animals;
             CB_Father1.DisplayMember = "Name";
             CB_Father1.ValueMember = "Id";
 
-            
             CB_FatherAdd.DataSource = null;
             CB_FatherAdd.DataSource = animals;
             CB_FatherAdd.DisplayMember = "Name";
             CB_FatherAdd.ValueMember = "Id";
         }
+
         private void PopulateMotherCombobox()
         {
             List<Animal> animals = AnimalManagement.GetFemales();
@@ -197,7 +196,6 @@ namespace Desktop_app.Forms
             CB_Mother1.DisplayMember = "Name";
             CB_Mother1.ValueMember = "Id";
 
-           
             CB_MotherAdd.DataSource = null;
             CB_MotherAdd.DataSource = animals;
             CB_MotherAdd.DisplayMember = "Name";
@@ -214,7 +212,7 @@ namespace Desktop_app.Forms
             {
                 string selectedType = ((Types)CB_Type1.SelectedItem).Name;
                 string selectedName = (TB_name1.Text);
-                 
+
                 List<Animal> typesForSelectedSpecies = AnimalManagement.GetMaleAnimalsByType(selectedType, selectedName);
 
                 foreach (Animal Maleanimal in typesForSelectedSpecies)
@@ -222,8 +220,7 @@ namespace Desktop_app.Forms
                     CB_Father1.Items.Add(Maleanimal.Name);
                 }
 
-
-            //----------------------------------------------//
+                //----------------------------------------------//
 
                 CB_Mother1.DataSource = null;
 
@@ -498,7 +495,6 @@ namespace Desktop_app.Forms
                 {
                     CB_FatherAdd.Items.Add(Maleanimal.Name);
                 }
-
 
                 //----------------------------------------------//
 

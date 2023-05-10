@@ -26,5 +26,26 @@ namespace LogicCL.Users
         {
             if (Repository.ChangeAnimalSickAndNote(selectedAnimal.Id, sick, note)) { return true; } else { return false; }
         }
+
+        //lists
+        public List<Species> GetSpeciesList()
+        {
+            return Repository.GetSpeciesList();
+        }
+
+        public List<Types> GetTypesList()
+        {
+            return Repository.GetTypesList();
+        }
+
+        //filter CB
+        public List<Types> GetTypesForSpecies(int speciesId)
+        {
+            List<Types> allTypes = Repository.GetTypesList();
+
+            List<Types> typesForSpecies = allTypes.Where(type => type.speciesId == speciesId).ToList();
+
+            return typesForSpecies;
+        }
     }
 }
