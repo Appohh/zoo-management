@@ -213,7 +213,7 @@ namespace Desktop_app.Forms
                         wedD.Invalidate();
                         break;
                     }
-                    if (p.Shift.Type == 0)
+                    if (p.Shift.Type == 1)
                     {
                         wedA.Controls.Add(p);
                         wedA.Controls.SetChildIndex(p, 0);
@@ -270,6 +270,7 @@ namespace Desktop_app.Forms
           
             DrawSchedule();
         }
+
         private void DrawSchedule()
         {
             currentWeekSchedule = new WeekSchedule(datePicker.Value);
@@ -405,6 +406,11 @@ namespace Desktop_app.Forms
             {
                 cbbShiftLocation.Enabled = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

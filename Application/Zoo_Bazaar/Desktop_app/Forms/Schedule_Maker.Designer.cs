@@ -75,6 +75,7 @@
             this.monD = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAssignShift = new System.Windows.Forms.Button();
             this.shiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControlSchedule.SuspendLayout();
             this.Welcome.SuspendLayout();
             this.tabPageSchedule.SuspendLayout();
@@ -87,10 +88,10 @@
             this.tabControlSchedule.Controls.Add(this.tabPageSchedule);
             this.tabControlSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlSchedule.Location = new System.Drawing.Point(0, 0);
-            this.tabControlSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControlSchedule.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.tabControlSchedule.Name = "tabControlSchedule";
             this.tabControlSchedule.SelectedIndex = 0;
-            this.tabControlSchedule.Size = new System.Drawing.Size(1431, 790);
+            this.tabControlSchedule.Size = new System.Drawing.Size(2658, 1685);
             this.tabControlSchedule.TabIndex = 1;
             // 
             // Welcome
@@ -98,10 +99,10 @@
             this.Welcome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Welcome.BackgroundImage")));
             this.Welcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Welcome.Controls.Add(this.welcome_txt);
-            this.Welcome.Location = new System.Drawing.Point(4, 24);
-            this.Welcome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Welcome.Location = new System.Drawing.Point(8, 46);
+            this.Welcome.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Welcome.Name = "Welcome";
-            this.Welcome.Size = new System.Drawing.Size(1423, 762);
+            this.Welcome.Size = new System.Drawing.Size(2642, 1631);
             this.Welcome.TabIndex = 3;
             this.Welcome.Text = "Welcome";
             this.Welcome.UseVisualStyleBackColor = true;
@@ -111,15 +112,16 @@
             this.welcome_txt.AutoSize = true;
             this.welcome_txt.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.welcome_txt.ForeColor = System.Drawing.Color.Maroon;
-            this.welcome_txt.Location = new System.Drawing.Point(578, 120);
-            this.welcome_txt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.welcome_txt.Location = new System.Drawing.Point(1073, 256);
+            this.welcome_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.welcome_txt.Name = "welcome_txt";
-            this.welcome_txt.Size = new System.Drawing.Size(300, 86);
+            this.welcome_txt.Size = new System.Drawing.Size(596, 170);
             this.welcome_txt.TabIndex = 1;
             this.welcome_txt.Text = "Welcome";
             // 
             // tabPageSchedule
             // 
+            this.tabPageSchedule.Controls.Add(this.button1);
             this.tabPageSchedule.Controls.Add(this.datePicker);
             this.tabPageSchedule.Controls.Add(this.label2);
             this.tabPageSchedule.Controls.Add(this.label3);
@@ -160,155 +162,172 @@
             this.tabPageSchedule.Controls.Add(this.tueD);
             this.tabPageSchedule.Controls.Add(this.monD);
             this.tabPageSchedule.Controls.Add(this.btnAssignShift);
-            this.tabPageSchedule.Location = new System.Drawing.Point(4, 24);
-            this.tabPageSchedule.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPageSchedule.Location = new System.Drawing.Point(8, 46);
+            this.tabPageSchedule.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPageSchedule.Name = "tabPageSchedule";
-            this.tabPageSchedule.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPageSchedule.Size = new System.Drawing.Size(1423, 762);
+            this.tabPageSchedule.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tabPageSchedule.Size = new System.Drawing.Size(2642, 1631);
             this.tabPageSchedule.TabIndex = 5;
             this.tabPageSchedule.Text = "Schedule";
             this.tabPageSchedule.UseVisualStyleBackColor = true;
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(48, 119);
+            this.datePicker.Location = new System.Drawing.Point(89, 254);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(200, 23);
+            this.datePicker.Size = new System.Drawing.Size(368, 39);
             this.datePicker.TabIndex = 92;
             this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 211);
+            this.label2.Location = new System.Drawing.Point(89, 450);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 15);
+            this.label2.Size = new System.Drawing.Size(70, 32);
             this.label2.TabIndex = 54;
             this.label2.Text = "Type:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 264);
+            this.label3.Location = new System.Drawing.Point(89, 563);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.Size = new System.Drawing.Size(109, 32);
             this.label3.TabIndex = 91;
             this.label3.Text = "Location:";
             // 
             // cbbShiftType
             // 
             this.cbbShiftType.FormattingEnabled = true;
-            this.cbbShiftType.Location = new System.Drawing.Point(48, 229);
+            this.cbbShiftType.Location = new System.Drawing.Point(89, 489);
+            this.cbbShiftType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbbShiftType.Name = "cbbShiftType";
-            this.cbbShiftType.Size = new System.Drawing.Size(121, 23);
+            this.cbbShiftType.Size = new System.Drawing.Size(221, 40);
             this.cbbShiftType.TabIndex = 53;
             // 
             // cbbShiftLocation
             // 
             this.cbbShiftLocation.FormattingEnabled = true;
-            this.cbbShiftLocation.Location = new System.Drawing.Point(48, 282);
+            this.cbbShiftLocation.Location = new System.Drawing.Point(89, 602);
+            this.cbbShiftLocation.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbbShiftLocation.Name = "cbbShiftLocation";
-            this.cbbShiftLocation.Size = new System.Drawing.Size(121, 23);
+            this.cbbShiftLocation.Size = new System.Drawing.Size(221, 40);
             this.cbbShiftLocation.TabIndex = 90;
             // 
             // lblTimeRange
             // 
             this.lblTimeRange.AutoSize = true;
-            this.lblTimeRange.Location = new System.Drawing.Point(736, 31);
+            this.lblTimeRange.Location = new System.Drawing.Point(1367, 66);
+            this.lblTimeRange.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTimeRange.Name = "lblTimeRange";
-            this.lblTimeRange.Size = new System.Drawing.Size(44, 15);
+            this.lblTimeRange.Size = new System.Drawing.Size(91, 32);
             this.lblTimeRange.TabIndex = 89;
             this.lblTimeRange.Text = "label12";
             // 
             // weekNum
             // 
             this.weekNum.AutoSize = true;
-            this.weekNum.Location = new System.Drawing.Point(698, 31);
+            this.weekNum.Location = new System.Drawing.Point(1296, 66);
+            this.weekNum.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.weekNum.Name = "weekNum";
-            this.weekNum.Size = new System.Drawing.Size(32, 15);
+            this.weekNum.Size = new System.Drawing.Size(63, 32);
             this.weekNum.TabIndex = 88;
             this.weekNum.Text = "num";
             // 
             // sunN
             // 
             this.sunN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sunN.Location = new System.Drawing.Point(1158, 475);
+            this.sunN.Location = new System.Drawing.Point(2151, 1013);
+            this.sunN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sunN.Name = "sunN";
-            this.sunN.Size = new System.Drawing.Size(130, 173);
+            this.sunN.Size = new System.Drawing.Size(240, 367);
             this.sunN.TabIndex = 87;
             // 
             // sunA
             // 
             this.sunA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sunA.Location = new System.Drawing.Point(1158, 297);
+            this.sunA.Location = new System.Drawing.Point(2151, 634);
+            this.sunA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sunA.Name = "sunA";
-            this.sunA.Size = new System.Drawing.Size(130, 173);
+            this.sunA.Size = new System.Drawing.Size(240, 367);
             this.sunA.TabIndex = 86;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1198, 89);
+            this.label11.Location = new System.Drawing.Point(2225, 190);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 15);
+            this.label11.Size = new System.Drawing.Size(103, 32);
             this.label11.TabIndex = 85;
             this.label11.Text = "SUNDAY";
             // 
             // sunD
             // 
             this.sunD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sunD.Location = new System.Drawing.Point(1158, 119);
+            this.sunD.Location = new System.Drawing.Point(2151, 254);
+            this.sunD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sunD.Name = "sunD";
-            this.sunD.Size = new System.Drawing.Size(130, 173);
+            this.sunD.Size = new System.Drawing.Size(240, 367);
             this.sunD.TabIndex = 84;
             // 
             // satN
             // 
             this.satN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.satN.Location = new System.Drawing.Point(1021, 475);
+            this.satN.Location = new System.Drawing.Point(1896, 1013);
+            this.satN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.satN.Name = "satN";
-            this.satN.Size = new System.Drawing.Size(130, 173);
+            this.satN.Size = new System.Drawing.Size(240, 367);
             this.satN.TabIndex = 83;
             // 
             // satA
             // 
             this.satA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.satA.Location = new System.Drawing.Point(1021, 297);
+            this.satA.Location = new System.Drawing.Point(1896, 634);
+            this.satA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.satA.Name = "satA";
-            this.satA.Size = new System.Drawing.Size(130, 173);
+            this.satA.Size = new System.Drawing.Size(240, 367);
             this.satA.TabIndex = 82;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1061, 89);
+            this.label10.Location = new System.Drawing.Point(1970, 190);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 15);
+            this.label10.Size = new System.Drawing.Size(125, 32);
             this.label10.TabIndex = 81;
             this.label10.Text = "SATURDAY";
             // 
             // satD
             // 
             this.satD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.satD.Location = new System.Drawing.Point(1021, 119);
+            this.satD.Location = new System.Drawing.Point(1896, 254);
+            this.satD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.satD.Name = "satD";
-            this.satD.Size = new System.Drawing.Size(130, 173);
+            this.satD.Size = new System.Drawing.Size(240, 367);
             this.satD.TabIndex = 80;
             // 
             // cbEmps
             // 
             this.cbEmps.FormattingEnabled = true;
-            this.cbEmps.Location = new System.Drawing.Point(48, 176);
+            this.cbEmps.Location = new System.Drawing.Point(89, 375);
+            this.cbEmps.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbEmps.Name = "cbEmps";
-            this.cbEmps.Size = new System.Drawing.Size(157, 23);
+            this.cbEmps.Size = new System.Drawing.Size(288, 40);
             this.cbEmps.TabIndex = 78;
             this.cbEmps.SelectedIndexChanged += new System.EventHandler(this.cbEmps_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(48, 625);
+            this.button2.Location = new System.Drawing.Point(89, 1333);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 23);
+            this.button2.Size = new System.Drawing.Size(245, 49);
             this.button2.TabIndex = 77;
             this.button2.Text = "Generate Schedule";
             this.button2.UseVisualStyleBackColor = true;
@@ -316,191 +335,214 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(662, 31);
+            this.label8.Location = new System.Drawing.Point(1229, 66);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 15);
+            this.label8.Size = new System.Drawing.Size(78, 32);
             this.label8.TabIndex = 75;
             this.label8.Text = "Week:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 158);
+            this.label7.Location = new System.Drawing.Point(89, 337);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 15);
+            this.label7.Size = new System.Drawing.Size(232, 32);
             this.label7.TabIndex = 74;
             this.label7.Text = "Available Employees";
             // 
             // friN
             // 
             this.friN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.friN.Location = new System.Drawing.Point(885, 475);
+            this.friN.Location = new System.Drawing.Point(1644, 1013);
+            this.friN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.friN.Name = "friN";
-            this.friN.Size = new System.Drawing.Size(130, 173);
+            this.friN.Size = new System.Drawing.Size(240, 367);
             this.friN.TabIndex = 73;
             // 
             // thuN
             // 
             this.thuN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thuN.Location = new System.Drawing.Point(750, 475);
+            this.thuN.Location = new System.Drawing.Point(1393, 1013);
+            this.thuN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.thuN.Name = "thuN";
-            this.thuN.Size = new System.Drawing.Size(130, 173);
+            this.thuN.Size = new System.Drawing.Size(240, 367);
             this.thuN.TabIndex = 72;
             // 
             // wedN
             // 
             this.wedN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wedN.Location = new System.Drawing.Point(615, 475);
+            this.wedN.Location = new System.Drawing.Point(1142, 1013);
+            this.wedN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.wedN.Name = "wedN";
-            this.wedN.Size = new System.Drawing.Size(130, 173);
+            this.wedN.Size = new System.Drawing.Size(240, 367);
             this.wedN.TabIndex = 71;
             // 
             // tueN
             // 
             this.tueN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tueN.Location = new System.Drawing.Point(480, 475);
+            this.tueN.Location = new System.Drawing.Point(891, 1013);
+            this.tueN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tueN.Name = "tueN";
-            this.tueN.Size = new System.Drawing.Size(130, 173);
+            this.tueN.Size = new System.Drawing.Size(240, 367);
             this.tueN.TabIndex = 70;
             // 
             // monN
             // 
             this.monN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monN.Location = new System.Drawing.Point(345, 475);
+            this.monN.Location = new System.Drawing.Point(641, 1013);
+            this.monN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.monN.Name = "monN";
-            this.monN.Size = new System.Drawing.Size(130, 173);
+            this.monN.Size = new System.Drawing.Size(240, 367);
             this.monN.TabIndex = 69;
             // 
             // friA
             // 
             this.friA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.friA.Location = new System.Drawing.Point(885, 297);
+            this.friA.Location = new System.Drawing.Point(1644, 634);
+            this.friA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.friA.Name = "friA";
-            this.friA.Size = new System.Drawing.Size(130, 173);
+            this.friA.Size = new System.Drawing.Size(240, 367);
             this.friA.TabIndex = 68;
             // 
             // thuA
             // 
             this.thuA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thuA.Location = new System.Drawing.Point(750, 297);
+            this.thuA.Location = new System.Drawing.Point(1393, 634);
+            this.thuA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.thuA.Name = "thuA";
-            this.thuA.Size = new System.Drawing.Size(130, 173);
+            this.thuA.Size = new System.Drawing.Size(240, 367);
             this.thuA.TabIndex = 67;
             // 
             // wedA
             // 
             this.wedA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wedA.Location = new System.Drawing.Point(615, 297);
+            this.wedA.Location = new System.Drawing.Point(1142, 634);
+            this.wedA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.wedA.Name = "wedA";
-            this.wedA.Size = new System.Drawing.Size(130, 173);
+            this.wedA.Size = new System.Drawing.Size(240, 367);
             this.wedA.TabIndex = 66;
             // 
             // tueA
             // 
             this.tueA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tueA.Location = new System.Drawing.Point(480, 297);
+            this.tueA.Location = new System.Drawing.Point(891, 634);
+            this.tueA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tueA.Name = "tueA";
-            this.tueA.Size = new System.Drawing.Size(130, 173);
+            this.tueA.Size = new System.Drawing.Size(240, 367);
             this.tueA.TabIndex = 65;
             // 
             // monA
             // 
             this.monA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monA.Location = new System.Drawing.Point(345, 297);
+            this.monA.Location = new System.Drawing.Point(641, 634);
+            this.monA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.monA.Name = "monA";
-            this.monA.Size = new System.Drawing.Size(130, 173);
+            this.monA.Size = new System.Drawing.Size(240, 367);
             this.monA.TabIndex = 64;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(925, 89);
+            this.label6.Location = new System.Drawing.Point(1718, 190);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 15);
+            this.label6.Size = new System.Drawing.Size(88, 32);
             this.label6.TabIndex = 63;
             this.label6.Text = "FRIDAY";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(785, 89);
+            this.label5.Location = new System.Drawing.Point(1458, 190);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 15);
+            this.label5.Size = new System.Drawing.Size(129, 32);
             this.label5.TabIndex = 62;
             this.label5.Text = "THURSDAY";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(643, 89);
+            this.label4.Location = new System.Drawing.Point(1194, 190);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.Size = new System.Drawing.Size(150, 32);
             this.label4.TabIndex = 61;
             this.label4.Text = "WEDNESDAY";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(514, 89);
+            this.label12.Location = new System.Drawing.Point(955, 190);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 15);
+            this.label12.Size = new System.Drawing.Size(110, 32);
             this.label12.TabIndex = 60;
             this.label12.Text = "TUESDAY";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(379, 89);
+            this.label13.Location = new System.Drawing.Point(704, 190);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 15);
+            this.label13.Size = new System.Drawing.Size(114, 32);
             this.label13.TabIndex = 59;
             this.label13.Text = "MONDAY";
             // 
             // friD
             // 
             this.friD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.friD.Location = new System.Drawing.Point(885, 119);
+            this.friD.Location = new System.Drawing.Point(1644, 254);
+            this.friD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.friD.Name = "friD";
-            this.friD.Size = new System.Drawing.Size(130, 173);
+            this.friD.Size = new System.Drawing.Size(240, 367);
             this.friD.TabIndex = 58;
             // 
             // thuD
             // 
             this.thuD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thuD.Location = new System.Drawing.Point(750, 119);
+            this.thuD.Location = new System.Drawing.Point(1393, 254);
+            this.thuD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.thuD.Name = "thuD";
-            this.thuD.Size = new System.Drawing.Size(130, 173);
+            this.thuD.Size = new System.Drawing.Size(240, 367);
             this.thuD.TabIndex = 57;
             // 
             // wedD
             // 
             this.wedD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wedD.Location = new System.Drawing.Point(615, 119);
+            this.wedD.Location = new System.Drawing.Point(1142, 254);
+            this.wedD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.wedD.Name = "wedD";
-            this.wedD.Size = new System.Drawing.Size(130, 173);
+            this.wedD.Size = new System.Drawing.Size(240, 367);
             this.wedD.TabIndex = 56;
             // 
             // tueD
             // 
             this.tueD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tueD.Location = new System.Drawing.Point(480, 119);
+            this.tueD.Location = new System.Drawing.Point(891, 254);
+            this.tueD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tueD.Name = "tueD";
-            this.tueD.Size = new System.Drawing.Size(130, 173);
+            this.tueD.Size = new System.Drawing.Size(240, 367);
             this.tueD.TabIndex = 55;
             // 
             // monD
             // 
             this.monD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monD.Location = new System.Drawing.Point(345, 119);
+            this.monD.Location = new System.Drawing.Point(641, 254);
+            this.monD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.monD.Name = "monD";
-            this.monD.Size = new System.Drawing.Size(130, 173);
+            this.monD.Size = new System.Drawing.Size(240, 367);
             this.monD.TabIndex = 54;
             // 
             // btnAssignShift
             // 
-            this.btnAssignShift.Location = new System.Drawing.Point(69, 327);
+            this.btnAssignShift.Location = new System.Drawing.Point(128, 698);
+            this.btnAssignShift.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAssignShift.Name = "btnAssignShift";
-            this.btnAssignShift.Size = new System.Drawing.Size(75, 23);
+            this.btnAssignShift.Size = new System.Drawing.Size(139, 49);
             this.btnAssignShift.TabIndex = 53;
             this.btnAssignShift.Text = "Assign";
             this.btnAssignShift.UseVisualStyleBackColor = true;
@@ -510,12 +552,23 @@
             // 
             this.shiftBindingSource.DataSource = typeof(LogicCL.Shift);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(2304, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 46);
+            this.button1.TabIndex = 93;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Schedule_Maker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1431, 790);
+            this.ClientSize = new System.Drawing.Size(2658, 1685);
             this.Controls.Add(this.tabControlSchedule);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Schedule_Maker";
             this.Text = "Schedule_Maker";
             this.tabControlSchedule.ResumeLayout(false);
@@ -575,5 +628,6 @@
         private Label label2;
         private ComboBox cbbShiftType;
         private DateTimePicker datePicker;
+        private Button button1;
     }
 }
