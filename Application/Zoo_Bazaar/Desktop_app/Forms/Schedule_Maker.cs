@@ -289,10 +289,11 @@ namespace Desktop_app.Forms
             List<Shift> thisWeekShift = new List<Shift>();
             foreach (Shift shift in shifts)
             {
-                if (DateTime.Parse(shift.Date).Date >= currentWeekSchedule.Monday && DateTime.Parse(shift.Date) <= currentWeekSchedule.Sunday)
+                if (DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Monday) >= 0 && DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Sunday) <=0)
                 {
                     thisWeekShift.Add(shift);
                 }
+       
             }
 
             foreach (Shift shift in thisWeekShift)

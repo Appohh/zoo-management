@@ -17,8 +17,8 @@ namespace LogicCL
 
         public WeekSchedule(DateTime date)
         {
-            Monday = new GregorianCalendar().AddDays(date, -((int)date.DayOfWeek) + 1);
-            Sunday = Monday.AddDays(6);
+            Monday = new GregorianCalendar().AddDays(date, -((int)date.DayOfWeek) + 1).Date.Add(new TimeSpan(0, 0, 0));
+            Sunday = Monday.AddDays(6).Date.Add(new TimeSpan(23, 59, 59));
             Week = CalculateWeekNumber(date);
         }
 
