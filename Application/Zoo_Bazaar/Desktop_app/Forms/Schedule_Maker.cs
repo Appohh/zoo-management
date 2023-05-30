@@ -300,7 +300,7 @@ namespace Desktop_app.Forms
                 CustomPanel p = new CustomPanel(shift);
                 Employee emp = (Employee)scheduleMaker.Repository.getUserById(shift.EmpId);
                 p.Name = emp.FirstName + " " + emp.LastName;
-                p.Size = new Size(monD.Width - 10, 25);
+                p.Size = new Size(monD.Width - 10, 50);
                 p.Click += OnShiftPanelClick;
                 p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.Black, 5, 5); };
                 DrawShiftPanel(p);
