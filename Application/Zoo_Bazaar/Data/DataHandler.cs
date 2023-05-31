@@ -68,6 +68,32 @@ namespace DataCL
             }
         }
 
+        public DataTable ReadDataQuery(string query)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = (SqlConnection)con;
+                    command.CommandText = query;
+                    var data = command.ExecuteReader();
+                    dt.Load(data);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
     }
 
 }

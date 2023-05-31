@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,10 +20,18 @@ namespace DataCL.DataTraffic
             }
         }
 
-        public List<ShiftDTO> GetShiftsByEmpType(JobDTO dto)
+        public List<ShiftDTO> GetShiftsByEmpJob(int jobid)
         {
-            //string query "";
-            throw new NotImplementedException();
+            string query = $"SELECT Shift.id ,Shift.empid, shift.type, shift.date, Shift.location, Jobs.name FROM Shift INNER JOIN Employees ON shift.empid = Employees.id INNER JOIN Jobs ON Employees.jobId = Jobs.id WHERE Employees.jobId = {jobid};";
+
+            List<ShiftDTO> shifts = new List<ShiftDTO>();
+            DataTable table = ReadDataQuery(query);
+            foreach (DataRow dr in table.Rows)
+            {
+                shifts.Add(DataConvertingMethods.ConvertDataRowToObject<ShiftDTO>(dr));
+            }
+
+            return shifts;
         }
 
         public List<ShiftDTO> GetShiftsByEmpId(int id)

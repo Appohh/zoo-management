@@ -1,6 +1,7 @@
 ﻿using DataCL.DTOs;
 using LogicCL;
 using LogicCL.AnimalMap;
+using LogicCL.Repository;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Desktop_app.Forms
         public Schedule_Maker(User loggedInUser)
         {
             scheduleMaker = (ScheduleMaker)loggedInUser;
-            scheduleMaker.MakeActive();          
+            scheduleMaker.MakeActive();
             InitializeComponent();
             PopulateComboboxes();
             currentWeekSchedule = new WeekSchedule(DateTime.Now);
@@ -40,7 +41,7 @@ namespace Desktop_app.Forms
         private void dtpDate_ValueChanged(object sender, EventArgs e)
         {
             //ADD
-            
+
             //(lists of data should be up to date everytime)
 
             //foreach employee
@@ -60,11 +61,11 @@ namespace Desktop_app.Forms
         }
 
 
-        
+
 
         private void PopulateComboboxes()
         {
-           
+
             locations = scheduleMaker.Repository.GetLocations();
             cbbShiftLocation.Items.Clear();
             cbbShiftLocation.DataSource = null;
@@ -78,6 +79,16 @@ namespace Desktop_app.Forms
             cbbShiftType.Items.Add(new KeyValuePair<string, int>("Afternoon", 1));
             cbbShiftType.Items.Add(new KeyValuePair<string, int>("Night", 2));
             cbbShiftType.SelectedIndex = 0;
+
+
+            List <Job>jobs = scheduleMaker.Repository.GetJobList();
+            Job None = new Job(-1, "None");
+            jobs.Insert(0, None);
+            CB_GetShiftByJob.Items.Clear();
+            CB_GetShiftByJob.DataSource = null;
+            CB_GetShiftByJob.DataSource = jobs;
+            CB_GetShiftByJob.DisplayMember = "Name";
+            CB_GetShiftByJob.ValueMember = "Id";
         }
 
         private void PanelSetup()
@@ -267,7 +278,7 @@ namespace Desktop_app.Forms
 
         private void datePicker_ValueChanged(object sender, EventArgs e)
         {
-          
+
             DrawSchedule();
         }
 
@@ -290,11 +301,11 @@ namespace Desktop_app.Forms
             List<Shift> thisWeekShift = new List<Shift>();
             foreach (Shift shift in shifts)
             {
-                if (DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Monday) >= 0 && DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Sunday) <=0)
+                if (DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Monday) >= 0 && DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Sunday) <= 0)
                 {
                     thisWeekShift.Add(shift);
                 }
-       
+
             }
 
             foreach (Shift shift in thisWeekShift)
@@ -336,9 +347,9 @@ namespace Desktop_app.Forms
                         MessageBox.Show("Error");
                     }
                     break;
-               default:
+                default:
                     break;
-            }            
+            }
         }
 
         private void btnAssignShift_Click(object sender, EventArgs e)
@@ -364,7 +375,7 @@ namespace Desktop_app.Forms
 
                     if (scheduleMaker.Repository.AddShift(shift))
                     {
-                        
+
                         MessageBox.Show("Ok");
                         DrawSchedule();
                     }
@@ -384,8 +395,8 @@ namespace Desktop_app.Forms
                 MessageBox.Show("Please select an employee");
             }
 
-            
-            
+
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -399,7 +410,7 @@ namespace Desktop_app.Forms
             {
                 return;
             }
-            selected = (Employee) cbEmps.SelectedValue;
+            selected = (Employee)cbEmps.SelectedValue;
             if (selected.Jobname.ToLower().Contains("caretaker"))
             {
                 cbbShiftLocation.Enabled = true;
@@ -413,6 +424,14 @@ namespace Desktop_app.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void Btn_GetShiftByJob_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(CB_GetShiftByJob.SelectedValue) != -1)
+            {
+                scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
+            }
         }
     }
 }

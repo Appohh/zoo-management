@@ -29,6 +29,8 @@ namespace LogicCL.Repository
             refreshUserData();
         }
 
+
+
         private void refreshUserData()
         {
             List<UserDTO> usersDTOs = new List<UserDTO>();
@@ -161,6 +163,17 @@ namespace LogicCL.Repository
                 }
             }
 
+            return shiftList;
+        }
+
+        public List<Shift> GetShiftByJob(int id)
+        {
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpJob(id);
+            List <Shift> shiftList = new List<Shift>();
+            foreach (ShiftDTO shift in shiftDTOs)
+            {
+                shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));
+            }
             return shiftList;
         }
 
