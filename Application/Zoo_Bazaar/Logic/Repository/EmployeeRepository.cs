@@ -5,6 +5,7 @@ using LogicCL.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -220,7 +221,31 @@ namespace LogicCL.Repository
             return available;
         }
 
-        private bool IsAbsent(int id, DateTime date)
+		public List<Employee> GetAvailableByJob(DateTime date, string jobname)
+		{
+			List<Employee> available = new List<Employee>();
+
+			foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
+			{
+                if (employee.Jobname != jobname)
+                {
+                    continue;
+                }
+				if (IsAbsent(employee.Id, date))
+				{
+					continue;
+				}
+				int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
+				if (hoursWorkedThisDay < 8)
+				{
+					available.Add(employee);
+				}
+
+			}
+			return available;
+		}
+
+		private bool IsAbsent(int id, DateTime date)
         {
             List<Absence> absences = GetAllAbsences().FindAll(x => date >= DateTime.Parse(x.startdate) && date <= DateTime.Parse(x.enddate));
             foreach (var item in absences)

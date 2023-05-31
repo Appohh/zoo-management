@@ -25,6 +25,7 @@ namespace Desktop_app.Forms
         private Employee selected;
         private WeekSchedule currentWeekSchedule;
         private List<Location> locations;
+        public List<Shift> CurrentWeekShifts { get; set; }
         public Schedule_Maker(User loggedInUser)
         {
             scheduleMaker = (ScheduleMaker)loggedInUser;
@@ -32,10 +33,11 @@ namespace Desktop_app.Forms
             InitializeComponent();
             PopulateComboboxes();
             currentWeekSchedule = new WeekSchedule(DateTime.Now);
-            weekNum.Text = currentWeekSchedule.Week.ToString();
+            CurrentWeekShifts = new List<Shift>();
+
+			weekNum.Text = currentWeekSchedule.Week.ToString();
             lblTimeRange.Text = $"{currentWeekSchedule.Monday.ToShortDateString()} - {currentWeekSchedule.Sunday.ToShortDateString()}";
             PanelSetup();
-            DrawSchedule();
         }
 
         private void dtpDate_ValueChanged(object sender, EventArgs e)
@@ -89,6 +91,8 @@ namespace Desktop_app.Forms
             CB_GetShiftByJob.DataSource = jobs;
             CB_GetShiftByJob.DisplayMember = "Name";
             CB_GetShiftByJob.ValueMember = "Id";
+
+            
         }
 
         private void PanelSetup()
@@ -278,9 +282,9 @@ namespace Desktop_app.Forms
 
         private void datePicker_ValueChanged(object sender, EventArgs e)
         {
+			DrawSchedule();
 
-            DrawSchedule();
-        }
+		}
 
         private void DrawSchedule()
         {
@@ -291,15 +295,14 @@ namespace Desktop_app.Forms
             //get the date and get all the available employees
             DateTime date = datePicker.Value;
 
-            available = scheduleMaker.Repository.GetAvailble(date);
-
+            available = scheduleMaker.Repository.GetAvailableByJob(date, CB_GetShiftByJob.Text);
+            
             cbEmps.DataSource = null;
             cbEmps.DataSource = available;
             cbEmps.DisplayMember = "LastName";
 
-            List<Shift> shifts = scheduleMaker.Repository.GetAllShifts();
             List<Shift> thisWeekShift = new List<Shift>();
-            foreach (Shift shift in shifts)
+            foreach (Shift shift in CurrentWeekShifts)
             {
                 if (DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Monday) >= 0 && DateTime.Compare(DateTime.Parse(shift.Date).Date, currentWeekSchedule.Sunday) <= 0)
                 {
@@ -340,7 +343,8 @@ namespace Desktop_app.Forms
                     if (scheduleMaker.Repository.RemoveShift(p.Shift))
                     {
                         MessageBox.Show("Shift Removed");
-                        DrawSchedule();
+						CurrentWeekShifts = scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
+						DrawSchedule();
                     }
                     else
                     {
@@ -377,7 +381,8 @@ namespace Desktop_app.Forms
                     {
 
                         MessageBox.Show("Ok");
-                        DrawSchedule();
+						CurrentWeekShifts = scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
+						DrawSchedule();
                     }
                     else
                     {
@@ -429,9 +434,11 @@ namespace Desktop_app.Forms
         private void Btn_GetShiftByJob_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(CB_GetShiftByJob.SelectedValue) != -1)
-            {
-                scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
-            }
+            {   
+                CurrentWeekShifts = scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
+                DrawSchedule();
+			}
+
         }
     }
 }
