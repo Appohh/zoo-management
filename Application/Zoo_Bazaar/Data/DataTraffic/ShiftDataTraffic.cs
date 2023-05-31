@@ -20,6 +20,7 @@ namespace DataCL.DataTraffic
 
         public List<ShiftDTO> GetShiftsByEmpType(JobDTO dto)
         {
+            //string query "";
             throw new NotImplementedException();
         }
 
