@@ -277,10 +277,11 @@ namespace Desktop_app.Forms
             weekNum.Text = currentWeekSchedule.Week.ToString();
             lblTimeRange.Text = $"{currentWeekSchedule.Monday.ToShortDateString()} - {currentWeekSchedule.Sunday.ToShortDateString()}";
             ClearAllPanels();
-
+            //get the date and get all the available employees
             DateTime date = datePicker.Value;
 
             available = scheduleMaker.Repository.GetAvailble(date);
+
             cbEmps.DataSource = null;
             cbEmps.DataSource = available;
             cbEmps.DisplayMember = "LastName";
