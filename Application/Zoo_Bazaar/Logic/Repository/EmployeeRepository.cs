@@ -80,6 +80,11 @@ namespace LogicCL.Repository
                     User ScheduleMaker = new ScheduleMaker(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
                     newUsers.Add(ScheduleMaker);
                 }
+                if (userDto.JobId == 8)
+                {
+                    User TicketSales = new TicketSales(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    newUsers.Add(TicketSales);
+                }
             }
             users.AddRange(newUsers);
         }
