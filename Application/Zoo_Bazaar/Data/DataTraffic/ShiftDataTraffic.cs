@@ -18,6 +18,16 @@ namespace DataCL.DataTraffic
             }
         }
 
+        public List<ShiftDTO> GetShiftsByEmpType(JobDTO dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ShiftDTO> GetShiftsByEmpId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ShiftDTO> GetAllShifts()
         {
 

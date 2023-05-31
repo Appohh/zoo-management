@@ -297,5 +297,7 @@ namespace LogicCL.Repository
             }
             return absencesTypes;
         }
+
+        
     }
 }
