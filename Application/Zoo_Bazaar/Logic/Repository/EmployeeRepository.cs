@@ -406,11 +406,16 @@ namespace LogicCL.Repository
 
 
 
+        public void GenerateSchedule(DateOnly start, DateOnly end, int job)
+        {
 
 
+        }
 
-
-
+        private void AutoSchedule()
+        {
+            List<Shift> existingShifts;
+        }
 
 
         public Dictionary<Employee, List<ShiftDTO>> CreateSchedule(DateTime date, string jobName)

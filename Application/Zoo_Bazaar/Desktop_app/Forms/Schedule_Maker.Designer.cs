@@ -34,6 +34,7 @@
             this.Welcome = new System.Windows.Forms.TabPage();
             this.welcome_txt = new System.Windows.Forms.Label();
             this.tabPageSchedule = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.CB_Job_AutomaticScheduling = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.monD = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAssignShift = new System.Windows.Forms.Button();
             this.shiftBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label15 = new System.Windows.Forms.Label();
             this.tabControlSchedule.SuspendLayout();
             this.Welcome.SuspendLayout();
             this.tabPageSchedule.SuspendLayout();
@@ -96,9 +96,10 @@
             this.tabControlSchedule.Controls.Add(this.tabPageSchedule);
             this.tabControlSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlSchedule.Location = new System.Drawing.Point(0, 0);
+            this.tabControlSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControlSchedule.Name = "tabControlSchedule";
             this.tabControlSchedule.SelectedIndex = 0;
-            this.tabControlSchedule.Size = new System.Drawing.Size(1598, 959);
+            this.tabControlSchedule.Size = new System.Drawing.Size(1398, 719);
             this.tabControlSchedule.TabIndex = 1;
             // 
             // Welcome
@@ -106,9 +107,10 @@
             this.Welcome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Welcome.BackgroundImage")));
             this.Welcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Welcome.Controls.Add(this.welcome_txt);
-            this.Welcome.Location = new System.Drawing.Point(4, 29);
+            this.Welcome.Location = new System.Drawing.Point(4, 24);
+            this.Welcome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Welcome.Name = "Welcome";
-            this.Welcome.Size = new System.Drawing.Size(1590, 926);
+            this.Welcome.Size = new System.Drawing.Size(1390, 691);
             this.Welcome.TabIndex = 3;
             this.Welcome.Text = "Welcome";
             this.Welcome.UseVisualStyleBackColor = true;
@@ -118,10 +120,10 @@
             this.welcome_txt.AutoSize = true;
             this.welcome_txt.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.welcome_txt.ForeColor = System.Drawing.Color.Maroon;
-            this.welcome_txt.Location = new System.Drawing.Point(661, 160);
+            this.welcome_txt.Location = new System.Drawing.Point(578, 120);
             this.welcome_txt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.welcome_txt.Name = "welcome_txt";
-            this.welcome_txt.Size = new System.Drawing.Size(373, 106);
+            this.welcome_txt.Size = new System.Drawing.Size(300, 86);
             this.welcome_txt.TabIndex = 1;
             this.welcome_txt.Text = "Welcome";
             // 
@@ -176,67 +178,74 @@
             this.tabPageSchedule.Controls.Add(this.tueD);
             this.tabPageSchedule.Controls.Add(this.monD);
             this.tabPageSchedule.Controls.Add(this.btnAssignShift);
-            this.tabPageSchedule.Location = new System.Drawing.Point(4, 29);
+            this.tabPageSchedule.Location = new System.Drawing.Point(4, 24);
             this.tabPageSchedule.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabPageSchedule.Name = "tabPageSchedule";
             this.tabPageSchedule.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPageSchedule.Size = new System.Drawing.Size(1590, 926);
+            this.tabPageSchedule.Size = new System.Drawing.Size(1390, 691);
             this.tabPageSchedule.TabIndex = 5;
             this.tabPageSchedule.Text = "Schedule";
             this.tabPageSchedule.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(48, 40);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(134, 21);
+            this.label15.TabIndex = 101;
+            this.label15.Text = "Manual Schedule";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(51, 698);
+            this.label14.Location = new System.Drawing.Point(45, 524);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 20);
+            this.label14.Size = new System.Drawing.Size(70, 15);
             this.label14.TabIndex = 100;
             this.label14.Text = "Department";
             // 
             // CB_Job_AutomaticScheduling
             // 
             this.CB_Job_AutomaticScheduling.FormattingEnabled = true;
-            this.CB_Job_AutomaticScheduling.Location = new System.Drawing.Point(51, 722);
-            this.CB_Job_AutomaticScheduling.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CB_Job_AutomaticScheduling.Location = new System.Drawing.Point(45, 542);
             this.CB_Job_AutomaticScheduling.Name = "CB_Job_AutomaticScheduling";
-            this.CB_Job_AutomaticScheduling.Size = new System.Drawing.Size(151, 28);
+            this.CB_Job_AutomaticScheduling.Size = new System.Drawing.Size(133, 23);
             this.CB_Job_AutomaticScheduling.TabIndex = 99;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(55, 606);
+            this.label9.Location = new System.Drawing.Point(48, 454);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
+            this.label9.Size = new System.Drawing.Size(39, 15);
             this.label9.TabIndex = 98;
             this.label9.Text = "Week:";
             // 
             // CB_Week
             // 
             this.CB_Week.FormattingEnabled = true;
-            this.CB_Week.Location = new System.Drawing.Point(51, 633);
-            this.CB_Week.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CB_Week.Location = new System.Drawing.Point(45, 475);
             this.CB_Week.Name = "CB_Week";
-            this.CB_Week.Size = new System.Drawing.Size(179, 28);
+            this.CB_Week.Size = new System.Drawing.Size(157, 23);
             this.CB_Week.TabIndex = 97;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(51, 555);
+            this.label1.Location = new System.Drawing.Point(45, 416);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 28);
+            this.label1.Size = new System.Drawing.Size(157, 21);
             this.label1.TabIndex = 96;
             this.label1.Text = "Automatic Schedule";
             // 
             // Btn_GetShiftByJob
             // 
-            this.Btn_GetShiftByJob.Location = new System.Drawing.Point(210, 118);
-            this.Btn_GetShiftByJob.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_GetShiftByJob.Location = new System.Drawing.Point(184, 88);
             this.Btn_GetShiftByJob.Name = "Btn_GetShiftByJob";
-            this.Btn_GetShiftByJob.Size = new System.Drawing.Size(105, 31);
+            this.Btn_GetShiftByJob.Size = new System.Drawing.Size(92, 23);
             this.Btn_GetShiftByJob.TabIndex = 95;
             this.Btn_GetShiftByJob.Text = "See schedule";
             this.Btn_GetShiftByJob.UseVisualStyleBackColor = true;
@@ -245,18 +254,17 @@
             // CB_GetShiftByJob
             // 
             this.CB_GetShiftByJob.FormattingEnabled = true;
-            this.CB_GetShiftByJob.Location = new System.Drawing.Point(51, 119);
-            this.CB_GetShiftByJob.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CB_GetShiftByJob.Location = new System.Drawing.Point(45, 89);
             this.CB_GetShiftByJob.Name = "CB_GetShiftByJob";
-            this.CB_GetShiftByJob.Size = new System.Drawing.Size(151, 28);
+            this.CB_GetShiftByJob.Size = new System.Drawing.Size(133, 23);
             this.CB_GetShiftByJob.TabIndex = 94;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1418, 20);
+            this.button1.Location = new System.Drawing.Point(1241, 15);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 29);
+            this.button1.Size = new System.Drawing.Size(81, 22);
             this.button1.TabIndex = 93;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = true;
@@ -264,10 +272,9 @@
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(55, 191);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.datePicker.Location = new System.Drawing.Point(48, 143);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(228, 27);
+            this.datePicker.Size = new System.Drawing.Size(200, 23);
             this.datePicker.TabIndex = 92;
             this.datePicker.Value = new System.DateTime(2023, 6, 14, 16, 21, 31, 0);
             this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
@@ -275,375 +282,339 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 243);
+            this.label2.Location = new System.Drawing.Point(48, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.Size = new System.Drawing.Size(34, 15);
             this.label2.TabIndex = 54;
             this.label2.Text = "Type:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 384);
+            this.label3.Location = new System.Drawing.Point(48, 288);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.Size = new System.Drawing.Size(56, 15);
             this.label3.TabIndex = 91;
             this.label3.Text = "Location:";
             // 
             // cbbShiftType
             // 
             this.cbbShiftType.FormattingEnabled = true;
-            this.cbbShiftType.Location = new System.Drawing.Point(55, 267);
-            this.cbbShiftType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbbShiftType.Location = new System.Drawing.Point(48, 200);
             this.cbbShiftType.Name = "cbbShiftType";
-            this.cbbShiftType.Size = new System.Drawing.Size(138, 28);
+            this.cbbShiftType.Size = new System.Drawing.Size(121, 23);
             this.cbbShiftType.TabIndex = 53;
             // 
             // cbbShiftLocation
             // 
             this.cbbShiftLocation.FormattingEnabled = true;
-            this.cbbShiftLocation.Location = new System.Drawing.Point(55, 408);
-            this.cbbShiftLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbbShiftLocation.Location = new System.Drawing.Point(48, 306);
             this.cbbShiftLocation.Name = "cbbShiftLocation";
-            this.cbbShiftLocation.Size = new System.Drawing.Size(138, 28);
+            this.cbbShiftLocation.Size = new System.Drawing.Size(121, 23);
             this.cbbShiftLocation.TabIndex = 90;
             // 
             // lblTimeRange
             // 
             this.lblTimeRange.AutoSize = true;
-            this.lblTimeRange.Location = new System.Drawing.Point(841, 41);
+            this.lblTimeRange.Location = new System.Drawing.Point(736, 31);
             this.lblTimeRange.Name = "lblTimeRange";
-            this.lblTimeRange.Size = new System.Drawing.Size(58, 20);
+            this.lblTimeRange.Size = new System.Drawing.Size(44, 15);
             this.lblTimeRange.TabIndex = 89;
             this.lblTimeRange.Text = "label12";
             // 
             // weekNum
             // 
             this.weekNum.AutoSize = true;
-            this.weekNum.Location = new System.Drawing.Point(798, 41);
+            this.weekNum.Location = new System.Drawing.Point(698, 31);
             this.weekNum.Name = "weekNum";
-            this.weekNum.Size = new System.Drawing.Size(38, 20);
+            this.weekNum.Size = new System.Drawing.Size(32, 15);
             this.weekNum.TabIndex = 88;
             this.weekNum.Text = "num";
             // 
             // sunN
             // 
             this.sunN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sunN.Location = new System.Drawing.Point(1323, 633);
-            this.sunN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sunN.Location = new System.Drawing.Point(1158, 475);
             this.sunN.Name = "sunN";
-            this.sunN.Size = new System.Drawing.Size(148, 230);
+            this.sunN.Size = new System.Drawing.Size(130, 173);
             this.sunN.TabIndex = 87;
             // 
             // sunA
             // 
             this.sunA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sunA.Location = new System.Drawing.Point(1323, 396);
-            this.sunA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sunA.Location = new System.Drawing.Point(1158, 297);
             this.sunA.Name = "sunA";
-            this.sunA.Size = new System.Drawing.Size(148, 230);
+            this.sunA.Size = new System.Drawing.Size(130, 173);
             this.sunA.TabIndex = 86;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1369, 119);
+            this.label11.Location = new System.Drawing.Point(1198, 89);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 20);
+            this.label11.Size = new System.Drawing.Size(52, 15);
             this.label11.TabIndex = 85;
             this.label11.Text = "SUNDAY";
             // 
             // sunD
             // 
             this.sunD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sunD.Location = new System.Drawing.Point(1323, 159);
-            this.sunD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sunD.Location = new System.Drawing.Point(1158, 119);
             this.sunD.Name = "sunD";
-            this.sunD.Size = new System.Drawing.Size(148, 230);
+            this.sunD.Size = new System.Drawing.Size(130, 173);
             this.sunD.TabIndex = 84;
             // 
             // satN
             // 
             this.satN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.satN.Location = new System.Drawing.Point(1167, 633);
-            this.satN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.satN.Location = new System.Drawing.Point(1021, 475);
             this.satN.Name = "satN";
-            this.satN.Size = new System.Drawing.Size(148, 230);
+            this.satN.Size = new System.Drawing.Size(130, 173);
             this.satN.TabIndex = 83;
             // 
             // satA
             // 
             this.satA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.satA.Location = new System.Drawing.Point(1167, 396);
-            this.satA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.satA.Location = new System.Drawing.Point(1021, 297);
             this.satA.Name = "satA";
-            this.satA.Size = new System.Drawing.Size(148, 230);
+            this.satA.Size = new System.Drawing.Size(130, 173);
             this.satA.TabIndex = 82;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1213, 119);
+            this.label10.Location = new System.Drawing.Point(1061, 89);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 20);
+            this.label10.Size = new System.Drawing.Size(63, 15);
             this.label10.TabIndex = 81;
             this.label10.Text = "SATURDAY";
             // 
             // satD
             // 
             this.satD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.satD.Location = new System.Drawing.Point(1167, 159);
-            this.satD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.satD.Location = new System.Drawing.Point(1021, 119);
             this.satD.Name = "satD";
-            this.satD.Size = new System.Drawing.Size(148, 230);
+            this.satD.Size = new System.Drawing.Size(130, 173);
             this.satD.TabIndex = 80;
             // 
             // cbEmps
             // 
             this.cbEmps.FormattingEnabled = true;
-            this.cbEmps.Location = new System.Drawing.Point(55, 339);
-            this.cbEmps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbEmps.Location = new System.Drawing.Point(48, 254);
             this.cbEmps.Name = "cbEmps";
-            this.cbEmps.Size = new System.Drawing.Size(179, 28);
+            this.cbEmps.Size = new System.Drawing.Size(157, 23);
             this.cbEmps.TabIndex = 78;
             this.cbEmps.SelectedIndexChanged += new System.EventHandler(this.cbEmps_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(51, 793);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(45, 595);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 31);
+            this.button2.Size = new System.Drawing.Size(132, 23);
             this.button2.TabIndex = 77;
             this.button2.Text = "Generate Schedule";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(757, 41);
+            this.label8.Location = new System.Drawing.Point(662, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
+            this.label8.Size = new System.Drawing.Size(39, 15);
             this.label8.TabIndex = 75;
             this.label8.Text = "Week:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(55, 315);
+            this.label7.Location = new System.Drawing.Point(48, 236);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 20);
+            this.label7.Size = new System.Drawing.Size(115, 15);
             this.label7.TabIndex = 74;
             this.label7.Text = "Available Employees";
             // 
             // friN
             // 
             this.friN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.friN.Location = new System.Drawing.Point(1011, 633);
-            this.friN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.friN.Location = new System.Drawing.Point(885, 475);
             this.friN.Name = "friN";
-            this.friN.Size = new System.Drawing.Size(148, 230);
+            this.friN.Size = new System.Drawing.Size(130, 173);
             this.friN.TabIndex = 73;
             // 
             // thuN
             // 
             this.thuN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thuN.Location = new System.Drawing.Point(857, 633);
-            this.thuN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.thuN.Location = new System.Drawing.Point(750, 475);
             this.thuN.Name = "thuN";
-            this.thuN.Size = new System.Drawing.Size(148, 230);
+            this.thuN.Size = new System.Drawing.Size(130, 173);
             this.thuN.TabIndex = 72;
             // 
             // wedN
             // 
             this.wedN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wedN.Location = new System.Drawing.Point(703, 633);
-            this.wedN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.wedN.Location = new System.Drawing.Point(615, 475);
             this.wedN.Name = "wedN";
-            this.wedN.Size = new System.Drawing.Size(148, 230);
+            this.wedN.Size = new System.Drawing.Size(130, 173);
             this.wedN.TabIndex = 71;
             // 
             // tueN
             // 
             this.tueN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tueN.Location = new System.Drawing.Point(549, 633);
-            this.tueN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tueN.Location = new System.Drawing.Point(480, 475);
             this.tueN.Name = "tueN";
-            this.tueN.Size = new System.Drawing.Size(148, 230);
+            this.tueN.Size = new System.Drawing.Size(130, 173);
             this.tueN.TabIndex = 70;
             // 
             // monN
             // 
             this.monN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monN.Location = new System.Drawing.Point(394, 633);
-            this.monN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.monN.Location = new System.Drawing.Point(345, 475);
             this.monN.Name = "monN";
-            this.monN.Size = new System.Drawing.Size(148, 230);
+            this.monN.Size = new System.Drawing.Size(130, 173);
             this.monN.TabIndex = 69;
             // 
             // friA
             // 
             this.friA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.friA.Location = new System.Drawing.Point(1011, 396);
-            this.friA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.friA.Location = new System.Drawing.Point(885, 297);
             this.friA.Name = "friA";
-            this.friA.Size = new System.Drawing.Size(148, 230);
+            this.friA.Size = new System.Drawing.Size(130, 173);
             this.friA.TabIndex = 68;
             // 
             // thuA
             // 
             this.thuA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thuA.Location = new System.Drawing.Point(857, 396);
-            this.thuA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.thuA.Location = new System.Drawing.Point(750, 297);
             this.thuA.Name = "thuA";
-            this.thuA.Size = new System.Drawing.Size(148, 230);
+            this.thuA.Size = new System.Drawing.Size(130, 173);
             this.thuA.TabIndex = 67;
             // 
             // wedA
             // 
             this.wedA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wedA.Location = new System.Drawing.Point(703, 396);
-            this.wedA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.wedA.Location = new System.Drawing.Point(615, 297);
             this.wedA.Name = "wedA";
-            this.wedA.Size = new System.Drawing.Size(148, 230);
+            this.wedA.Size = new System.Drawing.Size(130, 173);
             this.wedA.TabIndex = 66;
             // 
             // tueA
             // 
             this.tueA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tueA.Location = new System.Drawing.Point(549, 396);
-            this.tueA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tueA.Location = new System.Drawing.Point(480, 297);
             this.tueA.Name = "tueA";
-            this.tueA.Size = new System.Drawing.Size(148, 230);
+            this.tueA.Size = new System.Drawing.Size(130, 173);
             this.tueA.TabIndex = 65;
             // 
             // monA
             // 
             this.monA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monA.Location = new System.Drawing.Point(394, 396);
-            this.monA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.monA.Location = new System.Drawing.Point(345, 297);
             this.monA.Name = "monA";
-            this.monA.Size = new System.Drawing.Size(148, 230);
+            this.monA.Size = new System.Drawing.Size(130, 173);
             this.monA.TabIndex = 64;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1057, 119);
+            this.label6.Location = new System.Drawing.Point(925, 89);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.Size = new System.Drawing.Size(45, 15);
             this.label6.TabIndex = 63;
             this.label6.Text = "FRIDAY";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(897, 119);
+            this.label5.Location = new System.Drawing.Point(785, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
+            this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 62;
             this.label5.Text = "THURSDAY";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(735, 119);
+            this.label4.Location = new System.Drawing.Point(643, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.Size = new System.Drawing.Size(75, 15);
             this.label4.TabIndex = 61;
             this.label4.Text = "WEDNESDAY";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(587, 119);
+            this.label12.Location = new System.Drawing.Point(514, 89);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 20);
+            this.label12.Size = new System.Drawing.Size(55, 15);
             this.label12.TabIndex = 60;
             this.label12.Text = "TUESDAY";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(433, 119);
+            this.label13.Location = new System.Drawing.Point(379, 89);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 20);
+            this.label13.Size = new System.Drawing.Size(58, 15);
             this.label13.TabIndex = 59;
             this.label13.Text = "MONDAY";
             // 
             // friD
             // 
             this.friD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.friD.Location = new System.Drawing.Point(1011, 159);
-            this.friD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.friD.Location = new System.Drawing.Point(885, 119);
             this.friD.Name = "friD";
-            this.friD.Size = new System.Drawing.Size(148, 230);
+            this.friD.Size = new System.Drawing.Size(130, 173);
             this.friD.TabIndex = 58;
             // 
             // thuD
             // 
             this.thuD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thuD.Location = new System.Drawing.Point(857, 159);
-            this.thuD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.thuD.Location = new System.Drawing.Point(750, 119);
             this.thuD.Name = "thuD";
-            this.thuD.Size = new System.Drawing.Size(148, 230);
+            this.thuD.Size = new System.Drawing.Size(130, 173);
             this.thuD.TabIndex = 57;
             // 
             // wedD
             // 
             this.wedD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wedD.Location = new System.Drawing.Point(703, 159);
-            this.wedD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.wedD.Location = new System.Drawing.Point(615, 119);
             this.wedD.Name = "wedD";
-            this.wedD.Size = new System.Drawing.Size(148, 230);
+            this.wedD.Size = new System.Drawing.Size(130, 173);
             this.wedD.TabIndex = 56;
             // 
             // tueD
             // 
             this.tueD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tueD.Location = new System.Drawing.Point(549, 159);
-            this.tueD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tueD.Location = new System.Drawing.Point(480, 119);
             this.tueD.Name = "tueD";
-            this.tueD.Size = new System.Drawing.Size(148, 230);
+            this.tueD.Size = new System.Drawing.Size(130, 173);
             this.tueD.TabIndex = 55;
             // 
             // monD
             // 
             this.monD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monD.Location = new System.Drawing.Point(394, 159);
-            this.monD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.monD.Location = new System.Drawing.Point(345, 119);
             this.monD.Name = "monD";
-            this.monD.Size = new System.Drawing.Size(148, 230);
+            this.monD.Size = new System.Drawing.Size(130, 173);
             this.monD.TabIndex = 54;
             // 
             // btnAssignShift
             // 
-            this.btnAssignShift.Location = new System.Drawing.Point(79, 468);
-            this.btnAssignShift.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAssignShift.Location = new System.Drawing.Point(69, 351);
             this.btnAssignShift.Name = "btnAssignShift";
-            this.btnAssignShift.Size = new System.Drawing.Size(86, 31);
+            this.btnAssignShift.Size = new System.Drawing.Size(75, 23);
             this.btnAssignShift.TabIndex = 53;
             this.btnAssignShift.Text = "Assign";
             this.btnAssignShift.UseVisualStyleBackColor = true;
             this.btnAssignShift.Click += new System.EventHandler(this.btnAssignShift_Click);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(55, 53);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(168, 28);
-            this.label15.TabIndex = 101;
-            this.label15.Text = "Manual Schedule";
-            // 
             // Schedule_Maker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1598, 959);
+            this.ClientSize = new System.Drawing.Size(1398, 719);
             this.Controls.Add(this.tabControlSchedule);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Schedule_Maker";
             this.Text = "Schedule_Maker";
             this.tabControlSchedule.ResumeLayout(false);
