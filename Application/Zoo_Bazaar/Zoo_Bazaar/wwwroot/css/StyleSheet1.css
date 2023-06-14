@@ -1,0 +1,87 @@
+﻿* {
+    font-family: 'Anton';
+    color: #ede8e8;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    position: fixed;
+    align-items: center;
+    width: -webkit-fill-available;
+    z-index: 4;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    grid-column: 3 / 8;
+    border-bottom: 2px solid rgba(255,255,255,.4);
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+}
+
+.nav li a:hover:not(.active) {
+   /* background-color: #111;*/
+}
+
+.nav .active {
+    /*background-color: #04AA6D;*/
+}
+
+#logo {
+    width: 46px;
+    font-size: 27px;
+    grid-column: 2;
+    text-shadow: 2px 2px black;
+}
+
+
+.hero {
+    height: 70vh;
+}
+
+.hero-caption {
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    top: 42%;
+    bottom: auto;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.hero-caption h2 {
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+}
+
+.hero-vid {
+    height: fit-content;
+    width: -webkit-fill-available;
+}
+
+.btn-orange {
+    background-color: #e84d0e !important;
+    border-color: #e84d0e !important;
+    text-shadow: 2px 2px black;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 6px;
+    border-radius: 5px;
+}
