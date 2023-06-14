@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Collections.Specialized.BitVector32;
 
 namespace DataCL.DataTraffic
 {
@@ -36,8 +37,19 @@ namespace DataCL.DataTraffic
 
         public List<ShiftDTO> GetShiftsByEmpId(int id)
         {
-            throw new NotImplementedException();
-        }
+            string query = $"SELECT Shift.id ,Shift.empid, shift.type, shift.date, Shift.location FROM Shift WHERE Shift.empid = {id};";
+			
+            List<ShiftDTO> shifts = new List<ShiftDTO>();
+
+			DataTable table = ReadDataQuery(query);
+
+			foreach (DataRow dr in table.Rows)
+			{
+				shifts.Add(DataConvertingMethods.ConvertDataRowToObject<ShiftDTO>(dr));
+			}
+
+			return shifts;
+		}
 
         public List<ShiftDTO> GetAllShifts()
         {

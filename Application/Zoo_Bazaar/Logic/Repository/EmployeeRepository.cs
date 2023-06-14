@@ -206,62 +206,59 @@ namespace LogicCL.Repository
             return shiftDataTraffic.RemoveShift(shift.Id);
         }
 
-        public List<Employee> GetAvailble(DateTime date)
-        {
-            List<Employee> available = new List<Employee>();
+        //public List<Employee> GetAvailble(DateTime date)
+        //{
+        //    List<Employee> available = new List<Employee>();
             
-            foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
-            {             
-                if (IsAbsent(employee.Id, date))
-                {
-                    continue;
-                }
-                int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
-                if (hoursWorkedThisDay < 8)
-                {
-                    available.Add(employee);
-                }
+        //    foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
+        //    {             
+        //        if (IsAbsent(employee.Id, date))
+        //        {
+        //            continue;
+        //        }
+        //        int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
+        //        if (hoursWorkedThisDay < 8)
+        //        {
+        //            available.Add(employee);
+        //        }
                 
-            }
-            return available;
-        }
-
+        //    }
+        //    return available;
+        //}
 		public List<Employee> GetAvailableByJob(DateTime date, string jobname)
 		{
-			List<Employee> available = new List<Employee>();
+			List<UserDTO> userDTOs = userDataTraffic.GetAvailableByJobId(date, jobname);
+			List<Employee> availableEmployees = new List<Employee>();
 
-			foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
+			if (userDTOs != null)
 			{
-                if (employee.Jobname != jobname)
-                {
-                    continue;
-                }
-				if (IsAbsent(employee.Id, date))
+				refreshUserData();
+				foreach (UserDTO userDTO in userDTOs)
 				{
-					continue;
-				}
-				int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, date);
-				if (hoursWorkedThisDay < 8)
-				{
-					available.Add(employee);
-				}
+					Employee correspondingEmployee = users.Find(u => u.Id == userDTO.Id) as Employee;
 
+					if (correspondingEmployee != null)
+					{
+						availableEmployees.Add(correspondingEmployee);
+					}
+				}
 			}
-			return available;
+
+			return availableEmployees;
 		}
 
-		private bool IsAbsent(int id, DateTime date)
-        {
-            List<Absence> absences = GetAllAbsences().FindAll(x => date >= DateTime.Parse(x.startdate) && date <= DateTime.Parse(x.enddate));
-            foreach (var item in absences)
-            {
-                if (item.employeeId == id)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+		//private bool IsAbsent(int id, DateTime date)
+  //      {
+  //          List<Absence> absences = GetAllAbsences().FindAll(x => date >= DateTime.Parse(x.startdate) && date <= DateTime.Parse(x.enddate));
+  //          foreach (var item in absences)
+  //          {
+  //              if (item.employeeId == id)
+  //              {
+  //                  return true;
+  //              }
+  //          }
+  //          return false;
+  //      }
 
 
         public int HoursWorkedThisWeek(int id, DateTime date)
@@ -282,15 +279,15 @@ namespace LogicCL.Repository
 
         public int HoursWorkedThisDay(int id, DateTime date)
         {
-            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpId(id);
             int count = 0;
             foreach (ShiftDTO shift in shiftDTOs)
             {
-                if (shift.EmpId == id && shift.Date.Contains(date.ToString("dd/MM/yyyy")))
-                {
-                    count++;
-                }
-            }
+				//if (shift.EmpId == id && shift.Date == date.Date)
+				//{
+				//	count++;
+				//}
+			}
             return count * 4;
         }
 
@@ -299,7 +296,7 @@ namespace LogicCL.Repository
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
             foreach (ShiftDTO shiftDTO in shiftDTOs)
             {
-                if (shiftDTO.EmpId == id && shiftDTO.Date.Contains(date.ToString("dd/MM/yyyy")) && shiftDTO.Type == type)
+                if (shiftDTO.EmpId == id && shiftDTO.Date.Contains(date.ToString("dd-MM-yyyy")) && shiftDTO.Type == type)
                 {
                     return true;
                 }

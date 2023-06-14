@@ -57,5 +57,20 @@ namespace DataCL.DataTraffic
             string query = $"UPDATE Employees SET firstname='{firstname}', lastname='{lastname}',phone='{phone}', address='{address}',city='{city}', email='{email}',spouseName='{spouseName}', spousePhone='{spousePhone}',emergencyName='{emergencyName}', emergencyPhone='{emergencyPhone}',birthdate='{birthdate}', bsn='{bsn}',contractStatus={contractStatus}, jobId={job} WHERE Id={employeeid}";
             return executeQuery(query) == 0 ? false : true;
         }
+
+        public List<UserDTO> GetAvailableByJobId(DateTime date, string jobName)
+        {
+            string query = @$";WITH EmpHours AS (SELECT s.empid, COUNT(s.id) * 4 as HoursWorked FROM Shift s WHERE CAST(s.date AS DATE) = CAST('{date.ToString("yyyy-MM-dd")}' AS DATE) GROUP BY s.empid ) SELECT e.*, j.name AS JobName FROM Employees e LEFT JOIN Absence a ON e.Id = a.employeeId AND '{date.ToString("yyyy-MM-dd")}' BETWEEN a.startDate AND a.endDate INNER JOIN Jobs j ON e.jobId = j.id LEFT JOIN EmpHours eh ON e.Id = eh.empid WHERE j.name = '{jobName}' AND a.employeeId IS NULL AND ((e.contractStatus = 2 AND (eh.HoursWorked < 8 OR eh.HoursWorked IS NULL)) OR (e.contractStatus = 1 AND (eh.HoursWorked < 4 OR eh.HoursWorked IS NULL)));";
+            List<UserDTO> Users = new List<UserDTO>();
+
+            DataTable table = ReadDataQuery(query);
+
+            if (table == null) { return null; }
+            foreach (DataRow dr in table.Rows)
+            {
+                Users.Add(DataConvertingMethods.ConvertDataRowToObject<UserDTO>(dr));
+            }
+            return Users;
+        }
     }
 }
