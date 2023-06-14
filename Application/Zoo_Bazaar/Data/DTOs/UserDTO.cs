@@ -29,13 +29,13 @@ namespace DataCL.DTOs
         public int JobId { get; set; }
         public string Jobname { get; set; }
 
-
+        public int Salary { get; set; }
         public UserDTO()
         {
 
         }
 
-        public UserDTO(int id, string firstname, string lastname, string username, string password, string phone, string address, string city, string email, string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bSN, int contractStatus, int? contactType, string imageUrl, int role, string jobname)
+        public UserDTO(int id, string firstname, string lastname, string username, string password, string phone, string address, string city, string email, string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bSN, int contractStatus, int? contactType, string imageUrl, int role, string jobname, int salary)
         {
             Id = id;
             Firstname = firstname;
@@ -57,6 +57,7 @@ namespace DataCL.DTOs
             ImageUrl = imageUrl;
             JobId = role;
             Jobname = jobname;
+            Salary = salary;
         }
     }
 }
