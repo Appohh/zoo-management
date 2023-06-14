@@ -30,8 +30,6 @@ namespace LogicCL.Repository
             refreshUserData();
         }
 
-
-
         private void refreshUserData()
         {
             List<UserDTO> usersDTOs = new List<UserDTO>();
@@ -47,42 +45,42 @@ namespace LogicCL.Repository
             {
                 if (userDto.JobId == 1)
                 {
-                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(hr);
                 }
                 if (userDto.JobId == 2)
                 {
-                    User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User zookeeper = new Zookeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(zookeeper);
                 }
                 if (userDto.JobId == 3)
                 {
-                    User VeterinaryTechnician = new VeterinaryTechnician(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User VeterinaryTechnician = new VeterinaryTechnician(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(VeterinaryTechnician);
                 }
                 if (userDto.JobId == 4)
                 {
-                    User AnimalManagement = new AnimalManagement(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User AnimalManagement = new AnimalManagement(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(AnimalManagement);
                 }
                 if (userDto.JobId == 5)
                 {
-                    User GroundsKeeper = new GroundsKeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User GroundsKeeper = new GroundsKeeper(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(GroundsKeeper);
                 }
                 if (userDto.JobId == 6)
                 {
-                    User Cleaner = new Cleaner(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User Cleaner = new Cleaner(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(Cleaner);
                 }
                 if (userDto.JobId == 7)
                 {
-                    User ScheduleMaker = new ScheduleMaker(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User ScheduleMaker = new ScheduleMaker(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(ScheduleMaker);
                 }
                 if (userDto.JobId == 8)
                 {
-                    User TicketSales = new TicketSales(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname);
+                    User TicketSales = new TicketSales(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary);
                     newUsers.Add(TicketSales);
                 }
             }
@@ -145,9 +143,9 @@ namespace LogicCL.Repository
             return false;
         }
 
-        public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job)
+        public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job, int salary)
         {
-            if (userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job))
+            if (userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job, salary))
             {
                 refreshUserData(); return true;
             }
@@ -175,7 +173,7 @@ namespace LogicCL.Repository
         public List<Shift> GetShiftByJob(int id)
         {
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpJob(id);
-            List <Shift> shiftList = new List<Shift>();
+            List<Shift> shiftList = new List<Shift>();
             foreach (ShiftDTO shift in shiftDTOs)
             {
                 shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));
@@ -188,8 +186,8 @@ namespace LogicCL.Repository
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
             List<Shift> shiftList = new List<Shift>();
             foreach (ShiftDTO shift in shiftDTOs)
-            {             
-                shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));               
+            {
+                shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));
             }
 
             return shiftList;
@@ -209,9 +207,9 @@ namespace LogicCL.Repository
         //public List<Employee> GetAvailble(DateTime date)
         //{
         //    List<Employee> available = new List<Employee>();
-            
+
         //    foreach (Employee employee in GetUserList().OfType<Employee>().ToList())
-        //    {             
+        //    {
         //        if (IsAbsent(employee.Id, date))
         //        {
         //            continue;
@@ -221,45 +219,44 @@ namespace LogicCL.Repository
         //        {
         //            available.Add(employee);
         //        }
-                
+
         //    }
         //    return available;
         //}
-		public List<Employee> GetAvailableByJob(DateTime date, string jobname)
-		{
-			List<UserDTO> userDTOs = userDataTraffic.GetAvailableByJobId(date, jobname);
-			List<Employee> availableEmployees = new List<Employee>();
+        public List<Employee> GetAvailableByJob(DateTime date, string jobname)
+        {
+            List<UserDTO> userDTOs = userDataTraffic.GetAvailableByJobId(date, jobname);
+            List<Employee> availableEmployees = new List<Employee>();
 
-			if (userDTOs != null)
-			{
-				refreshUserData();
-				foreach (UserDTO userDTO in userDTOs)
-				{
-					Employee correspondingEmployee = users.Find(u => u.Id == userDTO.Id) as Employee;
+            if (userDTOs != null)
+            {
+                refreshUserData();
+                foreach (UserDTO userDTO in userDTOs)
+                {
+                    Employee correspondingEmployee = users.Find(u => u.Id == userDTO.Id) as Employee;
 
-					if (correspondingEmployee != null)
-					{
-						availableEmployees.Add(correspondingEmployee);
-					}
-				}
-			}
+                    if (correspondingEmployee != null)
+                    {
+                        availableEmployees.Add(correspondingEmployee);
+                    }
+                }
+            }
 
-			return availableEmployees;
-		}
+            return availableEmployees;
+        }
 
-		//private bool IsAbsent(int id, DateTime date)
-  //      {
-  //          List<Absence> absences = GetAllAbsences().FindAll(x => date >= DateTime.Parse(x.startdate) && date <= DateTime.Parse(x.enddate));
-  //          foreach (var item in absences)
-  //          {
-  //              if (item.employeeId == id)
-  //              {
-  //                  return true;
-  //              }
-  //          }
-  //          return false;
-  //      }
-
+        //private bool IsAbsent(int id, DateTime date)
+        //      {
+        //          List<Absence> absences = GetAllAbsences().FindAll(x => date >= DateTime.Parse(x.startdate) && date <= DateTime.Parse(x.enddate));
+        //          foreach (var item in absences)
+        //          {
+        //              if (item.employeeId == id)
+        //              {
+        //                  return true;
+        //              }
+        //          }
+        //          return false;
+        //      }
 
         public int HoursWorkedThisWeek(int id, DateTime date)
         {
@@ -277,87 +274,87 @@ namespace LogicCL.Repository
             return count * 4;
         }
 
-		public int HoursWorkedThisMonth(int id, DateTime date)
-		{
-			List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpId(id);
-			int count = 0;
-			foreach (ShiftDTO shift in shiftDTOs)
-			{
-				DateTime shiftDate = DateTime.Parse(shift.Date);
-
-				if (shift.EmpId == id && shiftDate.Month == date.Month && shiftDate.Year == date.Year)
-				{
-					count++;
-				}
-			}
-			return count * 4;
-		}
-
-		public int HoursWorkedThisDay(int id, DateTime date)
+        public int HoursWorkedThisMonth(int id, DateTime date)
         {
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpId(id);
             int count = 0;
             foreach (ShiftDTO shift in shiftDTOs)
             {
-				DateTime shiftDate = DateTime.Parse(shift.Date);
+                DateTime shiftDate = DateTime.Parse(shift.Date);
 
-				if (shift.EmpId == id && shiftDate.Date == date.Date)
-				{
-					count++;
-				}
-			}
+                if (shift.EmpId == id && shiftDate.Month == date.Month && shiftDate.Year == date.Year)
+                {
+                    count++;
+                }
+            }
             return count * 4;
         }
 
-		//public Dictionary<Employee, List<ShiftDTO>> CreateSchedule(DateTime date, string jobName)
-		//{
-		//	// Dictionary to store the schedule. Key is an employee, value is a list of shifts for the week.
-		//	Dictionary<Employee, List<ShiftDTO>> schedule = new Dictionary<Employee, List<ShiftDTO>>();
+        public int HoursWorkedThisDay(int id, DateTime date)
+        {
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpId(id);
+            int count = 0;
+            foreach (ShiftDTO shift in shiftDTOs)
+            {
+                DateTime shiftDate = DateTime.Parse(shift.Date);
 
-		//	// Get all available employees.
-		//	List<Employee> employees = GetAvailableByJob(date, jobName);
+                if (shift.EmpId == id && shiftDate.Date == date.Date)
+                {
+                    count++;
+                }
+            }
+            return count * 4;
+        }
 
-		//	// Loop over each day of the week.
-		//	for (int i = 0; i < 7; i++)
-		//	{
-		//		// Calculate the current date.
-		//		DateTime currentDate = date.AddDays(i);
+        //public Dictionary<Employee, List<ShiftDTO>> CreateSchedule(DateTime date, string jobName)
+        //{
+        //	// Dictionary to store the schedule. Key is an employee, value is a list of shifts for the week.
+        //	Dictionary<Employee, List<ShiftDTO>> schedule = new Dictionary<Employee, List<ShiftDTO>>();
 
-		//		// Order employees based on the total number of hours they've worked this week so far.
-		//		// The one with the least hours gets priority.
-		//		employees = employees.OrderBy(emp => HoursWorkedThisWeek(emp.Id, currentDate)).ToList();
+        //	// Get all available employees.
+        //	List<Employee> employees = GetAvailableByJob(date, jobName);
 
-		//		// Try to assign a shift to each employee.
-		//		foreach (Employee employee in employees)
-		//		{
-		//			int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
-		//			int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
+        //	// Loop over each day of the week.
+        //	for (int i = 0; i < 7; i++)
+        //	{
+        //		// Calculate the current date.
+        //		DateTime currentDate = date.AddDays(i);
 
-		//			// Check if the employee is available to work a shift on the current date.
-		//			// In this example, it's assumed that a shift is 4 hours long and an employee cannot work more than 8 hours a day or 40 hours a week.
-		//			if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek < 40)
-		//			{
-		//				// If the employee is available, create a new shift and add it to the schedule.
-		//				ShiftDTO shift = new ShiftDTO
-		//				{
-		//					EmpId = employee.Id,
-		//					Date = currentDate.ToString("yyyy-MM-dd") // Assumes that ShiftDTO.Date is a string in "yyyy-MM-dd" format.
-		//				};
+        //		// Order employees based on the total number of hours they've worked this week so far.
+        //		// The one with the least hours gets priority.
+        //		employees = employees.OrderBy(emp => HoursWorkedThisWeek(emp.Id, currentDate)).ToList();
 
-		//				if (!schedule.ContainsKey(employee))
-		//				{
-		//					schedule[employee] = new List<ShiftDTO>();
-		//				}
+        //		// Try to assign a shift to each employee.
+        //		foreach (Employee employee in employees)
+        //		{
+        //			int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
+        //			int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
 
-		//				schedule[employee].Add(shift);
-		//			}
-		//		}
-		//	}
+        //			// Check if the employee is available to work a shift on the current date.
+        //			// In this example, it's assumed that a shift is 4 hours long and an employee cannot work more than 8 hours a day or 40 hours a week.
+        //			if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek < 40)
+        //			{
+        //				// If the employee is available, create a new shift and add it to the schedule.
+        //				ShiftDTO shift = new ShiftDTO
+        //				{
+        //					EmpId = employee.Id,
+        //					Date = currentDate.ToString("yyyy-MM-dd") // Assumes that ShiftDTO.Date is a string in "yyyy-MM-dd" format.
+        //				};
 
-		//	return schedule;
-		//}
+        //				if (!schedule.ContainsKey(employee))
+        //				{
+        //					schedule[employee] = new List<ShiftDTO>();
+        //				}
 
-		public bool ShiftExisted(int id, DateTime date, int type)
+        //				schedule[employee].Add(shift);
+        //			}
+        //		}
+        //	}
+
+        //	return schedule;
+        //}
+
+        public bool ShiftExisted(int id, DateTime date, int type)
         {
             List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
             foreach (ShiftDTO shiftDTO in shiftDTOs)
@@ -373,8 +370,8 @@ namespace LogicCL.Repository
         public List<Absence> GetAllAbsences()
         {
             List<AbsenceDTO> absenceDTOs = absenceDataTraffic.retrieveAbsence();
-            List<Absence> absences= new List<Absence>();
-            foreach (AbsenceDTO absenceDTO in absenceDTOs) 
+            List<Absence> absences = new List<Absence>();
+            foreach (AbsenceDTO absenceDTO in absenceDTOs)
             {
                 absences.Add(new Absence(absenceDTO.employeeId, absenceDTO.startdate, absenceDTO.enddate, absenceDTO.type));
             }
@@ -393,7 +390,7 @@ namespace LogicCL.Repository
             }
         }
 
-        public List <AbsenceType> GetAbsenceTypes() 
+        public List<AbsenceType> GetAbsenceTypes()
         {
             List<AbsenceTypeDTO> absenceTypeDTOs = absenceTypeDataTraffic.retrieveAbsence();
             List<AbsenceType> absencesTypes = new List<AbsenceType>();
@@ -404,19 +401,14 @@ namespace LogicCL.Repository
             return absencesTypes;
         }
 
-
-
         public void GenerateSchedule(DateOnly start, DateOnly end, int job)
         {
-
-
         }
 
         private void AutoSchedule()
         {
             List<Shift> existingShifts;
         }
-
 
         public Dictionary<Employee, List<ShiftDTO>> CreateSchedule(DateTime date, string jobName)
         {
@@ -465,14 +457,5 @@ namespace LogicCL.Repository
 
             return schedule;
         }
-
-
-
-
-
-
-
-
-
     }
 }

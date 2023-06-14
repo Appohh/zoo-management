@@ -67,6 +67,8 @@
             NameBoxAddEmployee = new TextBox();
             EmailBoxAddEmployee = new TextBox();
             Gb_Details_employee = new GroupBox();
+            salaryAddEmployeeNUD = new NumericUpDown();
+            label43 = new Label();
             label13 = new Label();
             label11 = new Label();
             label32 = new Label();
@@ -94,9 +96,9 @@
             Contract = new ColumnHeader();
             artanPanel4 = new ArtanPanel();
             groupBox6 = new GroupBox();
+            salaryUpdateUserNUD = new NumericUpDown();
             hoursPerWeekTB = new TextBox();
             label36 = new Label();
-            salaryTB = new TextBox();
             label25 = new Label();
             CB_Contract = new ComboBox();
             label22 = new Label();
@@ -173,10 +175,12 @@
             Gp_Contact_Employee.SuspendLayout();
             Gp_Detail_Employees.SuspendLayout();
             Gb_Details_employee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)salaryAddEmployeeNUD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).BeginInit();
             Tab_Overview.SuspendLayout();
             artanPanel4.SuspendLayout();
             groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)salaryUpdateUserNUD).BeginInit();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -643,6 +647,8 @@
             // Gb_Details_employee
             // 
             Gb_Details_employee.BackColor = Color.FromArgb(164, 156, 159);
+            Gb_Details_employee.Controls.Add(salaryAddEmployeeNUD);
+            Gb_Details_employee.Controls.Add(label43);
             Gb_Details_employee.Controls.Add(label13);
             Gb_Details_employee.Controls.Add(label11);
             Gb_Details_employee.Controls.Add(label32);
@@ -664,11 +670,30 @@
             Gb_Details_employee.TabStop = false;
             Gb_Details_employee.Text = "Employee Details";
             // 
+            // salaryAddEmployeeNUD
+            // 
+            salaryAddEmployeeNUD.Location = new Point(19, 349);
+            salaryAddEmployeeNUD.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            salaryAddEmployeeNUD.Name = "salaryAddEmployeeNUD";
+            salaryAddEmployeeNUD.Size = new Size(248, 23);
+            salaryAddEmployeeNUD.TabIndex = 82;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label43.Location = new Point(16, 325);
+            label43.Margin = new Padding(2, 0, 2, 0);
+            label43.Name = "label43";
+            label43.Size = new Size(54, 21);
+            label43.TabIndex = 81;
+            label43.Text = "Salary";
+            // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(16, 300);
+            label13.Location = new Point(16, 269);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new Size(73, 21);
@@ -679,7 +704,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(16, 234);
+            label11.Location = new Point(16, 203);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(36, 21);
@@ -690,7 +715,7 @@
             // 
             label32.AutoSize = true;
             label32.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label32.Location = new Point(16, 172);
+            label32.Location = new Point(16, 149);
             label32.Margin = new Padding(2, 0, 2, 0);
             label32.Name = "label32";
             label32.Size = new Size(41, 21);
@@ -701,7 +726,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(18, 110);
+            label6.Location = new Point(18, 87);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new Size(79, 21);
@@ -712,7 +737,7 @@
             // 
             Username.AutoSize = true;
             Username.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Username.Location = new Point(16, 44);
+            Username.Location = new Point(16, 21);
             Username.Margin = new Padding(2, 0, 2, 0);
             Username.Name = "Username";
             Username.Size = new Size(83, 21);
@@ -725,7 +750,7 @@
             cbJobAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbJobAdd.ForeColor = Color.Black;
             cbJobAdd.FormattingEnabled = true;
-            cbJobAdd.Location = new Point(16, 256);
+            cbJobAdd.Location = new Point(16, 225);
             cbJobAdd.Margin = new Padding(3, 1, 3, 1);
             cbJobAdd.Name = "cbJobAdd";
             cbJobAdd.Size = new Size(253, 29);
@@ -737,7 +762,7 @@
             UsernameBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
             UsernameBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             UsernameBoxAddEmployee.ForeColor = Color.Black;
-            UsernameBoxAddEmployee.Location = new Point(18, 66);
+            UsernameBoxAddEmployee.Location = new Point(18, 43);
             UsernameBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             UsernameBoxAddEmployee.Name = "UsernameBoxAddEmployee";
             UsernameBoxAddEmployee.Size = new Size(253, 29);
@@ -749,7 +774,7 @@
             PasswordBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
             PasswordBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PasswordBoxAddEmployee.ForeColor = Color.Black;
-            PasswordBoxAddEmployee.Location = new Point(19, 131);
+            PasswordBoxAddEmployee.Location = new Point(19, 108);
             PasswordBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             PasswordBoxAddEmployee.Name = "PasswordBoxAddEmployee";
             PasswordBoxAddEmployee.Size = new Size(253, 29);
@@ -761,7 +786,7 @@
             ContractBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ContractBoxAddEmployee.ForeColor = Color.Black;
             ContractBoxAddEmployee.FormattingEnabled = true;
-            ContractBoxAddEmployee.Location = new Point(14, 322);
+            ContractBoxAddEmployee.Location = new Point(14, 291);
             ContractBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             ContractBoxAddEmployee.Name = "ContractBoxAddEmployee";
             ContractBoxAddEmployee.Size = new Size(253, 29);
@@ -773,7 +798,7 @@
             BSNBoxAddEmployee.BorderStyle = BorderStyle.FixedSingle;
             BSNBoxAddEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BSNBoxAddEmployee.ForeColor = Color.Black;
-            BSNBoxAddEmployee.Location = new Point(16, 194);
+            BSNBoxAddEmployee.Location = new Point(16, 171);
             BSNBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
             BSNBoxAddEmployee.Name = "BSNBoxAddEmployee";
             BSNBoxAddEmployee.Size = new Size(253, 29);
@@ -962,9 +987,9 @@
             // groupBox6
             // 
             groupBox6.BackColor = Color.FromArgb(164, 156, 159);
+            groupBox6.Controls.Add(salaryUpdateUserNUD);
             groupBox6.Controls.Add(hoursPerWeekTB);
             groupBox6.Controls.Add(label36);
-            groupBox6.Controls.Add(salaryTB);
             groupBox6.Controls.Add(label25);
             groupBox6.Controls.Add(CB_Contract);
             groupBox6.Controls.Add(label22);
@@ -977,6 +1002,14 @@
             groupBox6.TabIndex = 78;
             groupBox6.TabStop = false;
             groupBox6.Text = "Contract Details";
+            // 
+            // salaryUpdateUserNUD
+            // 
+            salaryUpdateUserNUD.Location = new Point(15, 102);
+            salaryUpdateUserNUD.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            salaryUpdateUserNUD.Name = "salaryUpdateUserNUD";
+            salaryUpdateUserNUD.Size = new Size(154, 29);
+            salaryUpdateUserNUD.TabIndex = 81;
             // 
             // hoursPerWeekTB
             // 
@@ -997,17 +1030,6 @@
             label36.Size = new Size(115, 21);
             label36.TabIndex = 79;
             label36.Text = "Hours / Week:";
-            // 
-            // salaryTB
-            // 
-            salaryTB.BackColor = SystemColors.ButtonShadow;
-            salaryTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            salaryTB.Location = new Point(15, 102);
-            salaryTB.Margin = new Padding(3, 2, 3, 2);
-            salaryTB.Name = "salaryTB";
-            salaryTB.ReadOnly = true;
-            salaryTB.Size = new Size(151, 29);
-            salaryTB.TabIndex = 78;
             // 
             // label25
             // 
@@ -1802,7 +1824,7 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Margin = new Padding(4, 1, 4, 1);
-            //Name = "Human_Resources";
+           // Name = "Human_Resources";
             Text = "Human_Resources";
             WindowState = FormWindowState.Maximized;
             Tab_Add_Employee.ResumeLayout(false);
@@ -1812,6 +1834,7 @@
             Gp_Detail_Employees.PerformLayout();
             Gb_Details_employee.ResumeLayout(false);
             Gb_Details_employee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)salaryAddEmployeeNUD).EndInit();
             ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).EndInit();
             Tab_Overview.ResumeLayout(false);
             Tab_Overview.PerformLayout();
@@ -1819,6 +1842,7 @@
             artanPanel4.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)salaryUpdateUserNUD).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -1977,9 +2001,11 @@
         private DateTimePicker TB_Absence_EndDate;
         private Label label42;
         private GroupBox groupBox6;
-        private TextBox salaryTB;
         private Label label25;
         private TextBox hoursPerWeekTB;
         private Label label36;
+        private Label label43;
+        private NumericUpDown salaryAddEmployeeNUD;
+        private NumericUpDown salaryUpdateUserNUD;
     }
 }

@@ -212,6 +212,8 @@ namespace Desktop_app
             string spouse = TB_Spouse.Text;
             string spouseContact = TB_SpouseContact.Text;
 
+            int salary = (int)salaryUpdateUserNUD.Value;
+
             // Validate input data
             List<string> errors = new List<string>();
 
@@ -275,7 +277,7 @@ namespace Desktop_app
             }
 
             // Call the repository to update the employee details
-            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job))
+            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary))
             {
                 MessageBox.Show($"You have Updated the Employee {firstName} {lastName}");
                 this.DialogResult = DialogResult.OK;
@@ -307,6 +309,7 @@ namespace Desktop_app
                 CB_Contract.SelectedIndex = selectedUser.Contractstatus;
 
                 //Employee Details
+                //Employee Details
                 selectedEmployeeId = Convert.ToInt32(lv_Employees.SelectedItems[0].Tag);
                 TB_Username.Text = selectedUser.UserName;
                 TB_Password.Text = selectedUser.Password;
@@ -327,6 +330,8 @@ namespace Desktop_app
                 TB_Emregency.Text = selectedUser.EmergencyPhone;
                 TB_Spouse.Text = selectedUser.SpouseName;
                 TB_SpouseContact.Text = selectedUser.SpousePhone;
+
+                salaryUpdateUserNUD.Value = selectedUser.Salary;
             }
         }
 
@@ -370,6 +375,8 @@ namespace Desktop_app
             var role = Int16.Parse(cbJobAdd.SelectedValue.ToString());
 
             var jobName = "";
+
+            var salary = (int)salaryAddEmployeeNUD.Value;
 
             List<string> errors = new List<string>();
 
@@ -455,7 +462,7 @@ namespace Desktop_app
 
             UserDTO dto = new UserDTO(id: 0, firstname: firstName, lastname: lastName, username: userName, password: password,
                 phone: phoneNumber, address: address, city: city, email: email, spouseName: spouseName, spousePhone: spouseNumber,
-                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName);
+                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName, salary);
 
             if (hr.RegisterNewEmployee(dto))
             {
@@ -542,17 +549,14 @@ namespace Desktop_app
             if (CB_Contract.Text == "Fulltime")
             {
                 hoursPerWeekTB.Text = "40 hrs";
-                salaryTB.Text = "€ 1500";
             }
             else if (CB_Contract.Text == "Parttime")
             {
                 hoursPerWeekTB.Text = "12 hrs";
-                salaryTB.Text = "€ 800";
             }
             else
             {
                 hoursPerWeekTB.Text = "0 hrs";
-                salaryTB.Text = "€ 200";
             }
         }
     }

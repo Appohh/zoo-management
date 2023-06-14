@@ -13,7 +13,7 @@ namespace LogicCL.Users
     {
         public AnimalRepository Repository { get; private set; }
 
-        public AnimalManagement(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city, jobname)
+        public AnimalManagement(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city, jobname, salary)
         {
             Repository = new AnimalRepository();
         }
@@ -33,19 +33,18 @@ namespace LogicCL.Users
             return Repository.GetLocationList();
         }
 
-        public List <Species> GetSpeciesList()
+        public List<Species> GetSpeciesList()
         {
             return Repository.GetSpeciesList();
         }
 
-        public List <Types> GetTypesList()
+        public List<Types> GetTypesList()
         {
             return Repository.GetTypesList();
         }
-       
+
         public List<Types> GetTypesForSpecies(int speciesId)
         {
-
             List<Types> allTypes = Repository.GetTypesList();
 
             List<Types> typesForSpecies = allTypes.Where(type => type.speciesId == speciesId).ToList();
@@ -55,9 +54,7 @@ namespace LogicCL.Users
 
         public List<Animal> GetMaleAnimalsByType(string type, string selectedAnimalName)
         {
-
             List<Animal> allAnimals = Repository.GetAnimalList();
-
 
             List<Animal> maleAnimalsByType = allAnimals
             .Where(animal => animal.Type == type && animal.gender == "Male" && animal.Name != selectedAnimalName)
@@ -86,10 +83,12 @@ namespace LogicCL.Users
         {
             return Repository.GetGenderList();
         }
+
         public List<Animal> GetMales()
         {
             return Repository.GetMaleAnimals();
         }
+
         public List<Animal> GetFemales()
         {
             return Repository.GetFemaleAnimals();
