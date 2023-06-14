@@ -265,7 +265,7 @@ namespace LogicCL.Repository
         {
             //for example part-time: 12, full-time: 24 check contractStatus 0: inactive, 1:part-time, 2:fulltime
             WeekSchedule currentWeek = new WeekSchedule(date);
-            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetAllShifts();
+            List<ShiftDTO> shiftDTOs = shiftDataTraffic.GetShiftsByEmpId(id);
             int count = 0;
             foreach (ShiftDTO shift in shiftDTOs)
             {
@@ -283,10 +283,12 @@ namespace LogicCL.Repository
             int count = 0;
             foreach (ShiftDTO shift in shiftDTOs)
             {
-				//if (shift.EmpId == id && shift.Date == date.Date)
-				//{
-				//	count++;
-				//}
+				DateTime shiftDate = DateTime.Parse(shift.Date);
+
+				if (shift.EmpId == id && shiftDate.Date == date.Date)
+				{
+					count++;
+				}
 			}
             return count * 4;
         }
