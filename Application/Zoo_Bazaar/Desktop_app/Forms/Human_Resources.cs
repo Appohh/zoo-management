@@ -44,17 +44,16 @@ namespace Desktop_app
         private void Refresh()
         {
             lv_Employees.Items.Clear();
-            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
-
-
+            FilterHr(tbSearchEmpName.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
         }
+
         private void RefreshAbsence()
         {
             lv_Scheduling.Items.Clear();
             FilterHrAbsence(TB_Absence_Name.Text, CB_Absence_Job.Text);
         }
 
-        public void FilterHr(string name, string phone, string job, string status)
+        public void FilterHr(string name, string job, string status)
         {
             var employeeList = hr.Repository.GetUserList();
             var selectedJobName = ((Job)cbbSearchEmpJob.SelectedItem).Name;
@@ -63,7 +62,7 @@ namespace Desktop_app
                 .Where(e =>
                      (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
-                    (string.IsNullOrEmpty(phone) || e.Phone.ToLower().Contains(phone.ToLower())) &&
+                    //phone removed
                     (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Parttime" && e.Contractstatus == 1) || (status == "Fulltime" && e.Contractstatus == 2)));
 
             foreach (Employee employee in filteredEmployees)
@@ -75,6 +74,7 @@ namespace Desktop_app
                 lv_Employees.Items.Add(userInfo);
             }
         }
+
         public void FilterHrAbsence(string name, string job)
         {
             var employeeList = hr.Repository.GetUserList();
@@ -95,12 +95,6 @@ namespace Desktop_app
             }
         }
 
-
-
-
-
-
-
         private void PopulateContractCombobox()
         {
             ContractBoxAddEmployee.DisplayMember = "Key";
@@ -108,7 +102,6 @@ namespace Desktop_app
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
-
 
             CB_StatusSearch.DisplayMember = "Key";
             CB_StatusSearch.ValueMember = "Value";
@@ -183,17 +176,12 @@ namespace Desktop_app
             }
         }
 
-
-
-
         //Overview
-
-
 
         private void btn_search_Employee_Click(object sender, EventArgs e)
         {
             lv_Employees.Items.Clear();
-            FilterHr(tbSearchEmpName.Text, tbSearchEmpPhone.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
+            FilterHr(tbSearchEmpName.Text, cbbSearchEmpJob.Text, CB_StatusSearch.Text);
         }
 
         private void updateBTHR_Click(object sender, EventArgs e)
@@ -298,7 +286,6 @@ namespace Desktop_app
                 this.DialogResult = DialogResult.Cancel;
             }
             Refresh();
-
         }
 
         private void lv_Employees_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -347,9 +334,6 @@ namespace Desktop_app
         {
             System.Windows.Forms.Application.Restart();
         }
-
-
-
 
         //AddEmployee
 
@@ -503,7 +487,6 @@ namespace Desktop_app
             }
         }
 
-
         //Scheduling
         private void btn_absence_search_Click(object sender, EventArgs e)
         {
@@ -526,7 +509,6 @@ namespace Desktop_app
                 }
             }
         }
-
 
         private void btn_absence_logout_Click(object sender, EventArgs e)
         {
@@ -552,6 +534,25 @@ namespace Desktop_app
                         return;
                     }
                 }
+            }
+        }
+
+        private void CB_Contract_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CB_Contract.Text == "Fulltime")
+            {
+                hoursPerWeekTB.Text = "40 hrs";
+                salaryTB.Text = "€ 1500";
+            }
+            else if (CB_Contract.Text == "Parttime")
+            {
+                hoursPerWeekTB.Text = "12 hrs";
+                salaryTB.Text = "€ 800";
+            }
+            else
+            {
+                hoursPerWeekTB.Text = "0 hrs";
+                salaryTB.Text = "€ 200";
             }
         }
     }
