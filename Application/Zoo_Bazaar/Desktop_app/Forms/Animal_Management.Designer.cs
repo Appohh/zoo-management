@@ -66,7 +66,6 @@
             TB_name1 = new TextBox();
             label24 = new Label();
             groupBox8 = new GroupBox();
-            checkBox1 = new CheckBox();
             label27 = new Label();
             btn_search_Animal = new Button();
             lbl_SearchAnimal = new Label();
@@ -129,6 +128,7 @@
             btn_ViewDetails = new Button();
             label3 = new Label();
             PictureBoxAddEmployee = new PictureBox();
+            healthTB = new TextBox();
             tabControl1.SuspendLayout();
             tab_welcome.SuspendLayout();
             tab_Overview.SuspendLayout();
@@ -159,7 +159,7 @@
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             tabControl1.Location = new Point(0, 0);
-            tabControl1.Margin = new Padding(2, 2, 2, 2);
+            tabControl1.Margin = new Padding(2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1647, 592);
@@ -171,9 +171,9 @@
             tab_welcome.BackgroundImageLayout = ImageLayout.Stretch;
             tab_welcome.Controls.Add(welcome_txt);
             tab_welcome.Location = new Point(4, 32);
-            tab_welcome.Margin = new Padding(2, 2, 2, 2);
+            tab_welcome.Margin = new Padding(2);
             tab_welcome.Name = "tab_welcome";
-            tab_welcome.Padding = new Padding(2, 2, 2, 2);
+            tab_welcome.Padding = new Padding(2);
             tab_welcome.Size = new Size(1639, 556);
             tab_welcome.TabIndex = 0;
             tab_welcome.Text = "Welcome";
@@ -206,9 +206,9 @@
             tab_Overview.Controls.Add(lv_Animals);
             tab_Overview.Controls.Add(speciesCB);
             tab_Overview.Location = new Point(4, 32);
-            tab_Overview.Margin = new Padding(2, 2, 2, 2);
+            tab_Overview.Margin = new Padding(2);
             tab_Overview.Name = "tab_Overview";
-            tab_Overview.Padding = new Padding(2, 2, 2, 2);
+            tab_Overview.Padding = new Padding(2);
             tab_Overview.Size = new Size(1639, 556);
             tab_Overview.TabIndex = 1;
             tab_Overview.Text = "Overview";
@@ -304,7 +304,7 @@
             button1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(300, 515);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(161, 35);
             button1.TabIndex = 29;
@@ -563,33 +563,22 @@
             // groupBox8
             // 
             groupBox8.BackColor = Color.Transparent;
-            groupBox8.Controls.Add(checkBox1);
+            groupBox8.Controls.Add(healthTB);
             groupBox8.Controls.Add(label27);
             groupBox8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox8.Location = new Point(388, 325);
             groupBox8.Margin = new Padding(3, 2, 3, 2);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(3, 2, 3, 2);
-            groupBox8.Size = new Size(270, 79);
+            groupBox8.Size = new Size(270, 60);
             groupBox8.TabIndex = 24;
             groupBox8.TabStop = false;
             groupBox8.Text = "Condition";
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(24, 47);
-            checkBox1.Margin = new Padding(3, 2, 3, 2);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(127, 25);
-            checkBox1.TabIndex = 19;
-            checkBox1.Text = "Animal is Sick";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(24, 24);
+            label27.Location = new Point(20, 27);
             label27.Name = "label27";
             label27.Size = new Size(62, 21);
             label27.TabIndex = 18;
@@ -599,7 +588,7 @@
             // 
             btn_search_Animal.ForeColor = Color.Black;
             btn_search_Animal.Location = new Point(774, 41);
-            btn_search_Animal.Margin = new Padding(2, 2, 2, 2);
+            btn_search_Animal.Margin = new Padding(2);
             btn_search_Animal.Name = "btn_search_Animal";
             btn_search_Animal.Size = new Size(78, 31);
             btn_search_Animal.TabIndex = 33;
@@ -677,7 +666,7 @@
             tab_AddAnimal.Controls.Add(groupBox4);
             tab_AddAnimal.Controls.Add(Gb_Details_employee);
             tab_AddAnimal.Location = new Point(4, 32);
-            tab_AddAnimal.Margin = new Padding(2, 2, 2, 2);
+            tab_AddAnimal.Margin = new Padding(2);
             tab_AddAnimal.Name = "tab_AddAnimal";
             tab_AddAnimal.Size = new Size(1639, 556);
             tab_AddAnimal.TabIndex = 2;
@@ -1302,6 +1291,17 @@
             PictureBoxAddEmployee.TabIndex = 79;
             PictureBoxAddEmployee.TabStop = false;
             // 
+            // healthTB
+            // 
+            healthTB.BackColor = SystemColors.ControlDark;
+            healthTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            healthTB.Location = new Point(88, 24);
+            healthTB.Margin = new Padding(3, 2, 3, 2);
+            healthTB.Name = "healthTB";
+            healthTB.ReadOnly = true;
+            healthTB.Size = new Size(173, 29);
+            healthTB.TabIndex = 32;
+            // 
             // Animal_Management
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1309,10 +1309,10 @@
             BackColor = Color.FromArgb(158, 143, 132);
             ClientSize = new Size(1647, 592);
             Controls.Add(tabControl1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximizeBox = false;
             Name = "Animal_Management";
-            Text = "Form1";
+            Text = "Animal Management";
             WindowState = FormWindowState.Maximized;
             tabControl1.ResumeLayout(false);
             tab_welcome.ResumeLayout(false);
@@ -1431,7 +1431,6 @@
         private ComboBox CB_Species1;
         private ComboBox CB_Location1;
         private DateTimePicker DT_Birthdate;
-        private CheckBox checkBox1;
         private Label label29;
         private ComboBox speciesCB;
         private Label label28;
@@ -1446,5 +1445,6 @@
         private TextBox txt_Gender;
         private Label label5;
         private Button Logout_BTN_Add;
+        private TextBox healthTB;
     }
 }

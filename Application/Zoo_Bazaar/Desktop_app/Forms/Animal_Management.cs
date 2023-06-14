@@ -43,7 +43,7 @@ namespace Desktop_app.Forms
         private void refreshAnimalList()
         {
             lv_Animals.Items.Clear();
-           
+
             FilterAnimal(nameTB.Text, speciesCB.Text, typesCB.Text);
         }
 
@@ -376,7 +376,14 @@ namespace Desktop_app.Forms
                 CB_Type1.Text = selectedAnimal.Type;
 
                 //Condition
-                if (selectedAnimal.Sick == 0) { checkBox1.Checked = false; } else { checkBox1.Checked = true; }
+                if (selectedAnimal.Sick == 0)
+                {
+                    healthTB.Text = "Healthy";
+                }
+                else
+                {
+                    healthTB.Text = "Sick";
+                }
             }
         }
 
@@ -397,7 +404,18 @@ namespace Desktop_app.Forms
             string birthplace = TB_BirthPlace1.Text;
 
             //Condition
-            int sick = checkBox1.Checked ? 1 : 0;
+
+            int sick;
+
+            //sick status
+            if (healthTB.Text == "Healthy")
+            {
+                sick = 0;
+            }
+            else
+            {
+                sick = 1;
+            }
 
             if (!string.IsNullOrEmpty(name))
             {
