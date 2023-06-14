@@ -404,6 +404,70 @@ namespace LogicCL.Repository
             return absencesTypes;
         }
 
-        
+
+
+
+
+
+
+
+
+
+        public Dictionary<Employee, List<ShiftDTO>> CreateSchedule(DateTime date, string jobName)
+        {
+            // Dictionary to store the schedule. Key is an employee, value is a list of shifts for the week.
+            Dictionary<Employee, List<ShiftDTO>> schedule = new Dictionary<Employee, List<ShiftDTO>>();
+
+            // Get all available employees.
+            List<Employee> employees = GetAvailableByJob(date, jobName);
+
+            // Loop over each day of the week.
+            for (int i = 0; i < 7; i++)
+            {
+                // Calculate the current date.
+                DateTime currentDate = date.AddDays(i);
+
+                // Order employees based on the total number of hours they've worked this week so far.
+                // The one with the least hours gets priority.
+                employees = employees.OrderBy(emp => HoursWorkedThisWeek(emp.Id, currentDate)).ToList();
+
+                // Try to assign a shift to each employee.
+                foreach (Employee employee in employees)
+                {
+                    int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
+                    int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
+
+                    // Check if the employee is available to work a shift on the current date.
+                    // In this example, it's assumed that a shift is 4 hours long and an employee cannot work more than 8 hours a day or 40 hours a week.
+                    if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek < 40)
+                    {
+                        // If the employee is available, create a new shift and add it to the schedule.
+                        ShiftDTO shift = new ShiftDTO
+                        {
+                            EmpId = employee.Id,
+                            Date = currentDate.ToString("yyyy-MM-dd") // Assumes that ShiftDTO.Date is a string in "yyyy-MM-dd" format.
+                        };
+
+                        if (!schedule.ContainsKey(employee))
+                        {
+                            schedule[employee] = new List<ShiftDTO>();
+                        }
+
+                        schedule[employee].Add(shift);
+                    }
+                }
+            }
+
+            return schedule;
+        }
+
+
+
+
+
+
+
+
+
     }
 }
