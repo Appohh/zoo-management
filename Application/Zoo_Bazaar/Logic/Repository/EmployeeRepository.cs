@@ -257,6 +257,7 @@ namespace LogicCL.Repository
         //          }
         //          return false;
         //      }
+        //
 
         public int HoursWorkedThisWeek(int id, DateTime date)
         {
