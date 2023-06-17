@@ -69,7 +69,7 @@ namespace Desktop_app
             {
                 string contractStatusString = "";
                 if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.LastName, employee.Jobname, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
