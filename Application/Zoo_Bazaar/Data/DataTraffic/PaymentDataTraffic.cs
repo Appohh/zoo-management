@@ -50,11 +50,11 @@ namespace DataCL.DataTraffic
         }
         public bool AddPayments(PaymentDTO payment)
         {
-            string ticketIds = string.Join(",", payment.TicketIDs.Select(id => id.ToString()));
+            string ticketIds = string.Join(",", payment.TicketIDs);
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("Price", payment.TotalPrice));
             string query = $"INSERT INTO Payment (Id, TicketID, Name, Email,PhoneNumbwe,TotalPrice) " +
-                $"VALUES ({payment.Id}, @ticketIds, '{payment.Email}', '{payment.Name}','{payment.PhoneNumber}', @Price);";
+                $"VALUES ({payment.Id}, '{ticketIds}', '{payment.Email}', '{payment.Name}','{payment.PhoneNumber}', @Price);";
             return executeQuery(query,parameters.ToArray()) == 0 ? false : true;
         }
     }

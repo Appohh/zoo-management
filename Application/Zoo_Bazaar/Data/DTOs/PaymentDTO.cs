@@ -9,7 +9,7 @@ namespace DataCL.DTOs
     public class PaymentDTO
     {
         public int Id { get; private set; }
-        public List<int> TicketIDs { get; private set; }
+        public List<string> TicketIDs { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
         public string PhoneNumber { get; private set; }
@@ -21,7 +21,7 @@ namespace DataCL.DTOs
 
         }
 
-        public PaymentDTO(int id, List<int> ticketIds, string name, string email, string phonenumber, decimal totalprice)
+        public PaymentDTO(int id, List<string> ticketIds, string name, string email, string phonenumber, decimal totalprice)
         {
             Id = id;
             TicketIDs = ticketIds;
