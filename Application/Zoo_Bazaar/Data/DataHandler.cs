@@ -48,6 +48,11 @@ namespace DataCL
 
         public int executeQuery(string query)
         {
+            return executeQuery(query, null);
+        }
+        public int executeQuery(string query, SqlParameter[]? sqlParameters)
+        {
+
             try
             {
                 con.Open();
@@ -55,6 +60,10 @@ namespace DataCL
                 {
                     command.Connection = (SqlConnection)con;
                     command.CommandText = query;
+                    if (sqlParameters != null)
+                    {
+                        command.Parameters.AddRange(sqlParameters);
+                    }
                     return command.ExecuteNonQuery();
                 }
             }
@@ -64,7 +73,11 @@ namespace DataCL
             }
             finally
             {
-                con.Close();
+                if (con != null)
+                {
+                    con.Close();
+                }
+
             }
         }
 
