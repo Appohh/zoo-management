@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ColumnHeader Job;
+            ColumnHeader lastName;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Human_Resources));
             lb_more_details = new Label();
             panel3 = new Panel();
@@ -91,9 +91,9 @@
             label5 = new Label();
             tbSearchEmpName = new TextBox();
             lv_Employees = new ListView();
-            Namez = new ColumnHeader();
-            Phone = new ColumnHeader();
-            Contract = new ColumnHeader();
+            firstName = new ColumnHeader();
+            job = new ColumnHeader();
+            contract = new ColumnHeader();
             artanPanel4 = new ArtanPanel();
             groupBox6 = new GroupBox();
             salaryUpdateUserNUD = new NumericUpDown();
@@ -170,7 +170,7 @@
             JobAbsence = new ColumnHeader();
             PhoneNumber = new ColumnHeader();
             ContractStatus = new ColumnHeader();
-            Job = new ColumnHeader();
+            lastName = new ColumnHeader();
             Tab_Add_Employee.SuspendLayout();
             Gp_Contact_Employee.SuspendLayout();
             Gp_Detail_Employees.SuspendLayout();
@@ -192,10 +192,10 @@
             groupBox4.SuspendLayout();
             SuspendLayout();
             // 
-            // Job
+            // lastName
             // 
-            Job.Text = "Job";
-            Job.Width = 250;
+            lastName.Text = "Last Name";
+            lastName.Width = 250;
             // 
             // lb_more_details
             // 
@@ -937,7 +937,7 @@
             // 
             lv_Employees.BackColor = Color.FromArgb(164, 156, 159);
             lv_Employees.BorderStyle = BorderStyle.None;
-            lv_Employees.Columns.AddRange(new ColumnHeader[] { Namez, Job, Phone, Contract });
+            lv_Employees.Columns.AddRange(new ColumnHeader[] { firstName, lastName, job, contract });
             lv_Employees.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             lv_Employees.ForeColor = Color.Black;
             lv_Employees.FullRowSelect = true;
@@ -950,20 +950,20 @@
             lv_Employees.View = View.Details;
             lv_Employees.SelectedIndexChanged += lv_Employees_SelectedIndexChanged_1;
             // 
-            // Namez
+            // firstName
             // 
-            Namez.Text = "Name";
-            Namez.Width = 250;
+            firstName.Text = "First Name";
+            firstName.Width = 250;
             // 
-            // Phone
+            // job
             // 
-            Phone.Text = "Phone";
-            Phone.Width = 300;
+            job.Text = "Job";
+            job.Width = 150;
             // 
-            // Contract
+            // contract
             // 
-            Contract.Text = "Contract-Status";
-            Contract.Width = 350;
+            contract.Text = "Contract-Status";
+            contract.Width = 150;
             // 
             // artanPanel4
             // 
@@ -1824,7 +1824,7 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Margin = new Padding(4, 1, 4, 1);
-           // Name = "Human_Resources";
+            //Name = "Human_Resources";
             Text = "Human_Resources";
             WindowState = FormWindowState.Maximized;
             Tab_Add_Employee.ResumeLayout(false);
@@ -1896,9 +1896,9 @@
         private Label label5;
         private TextBox tbSearchEmpName;
         private ListView lv_Employees;
-        private ColumnHeader Namez;
-        private ColumnHeader Phone;
-        private ColumnHeader Contract;
+        private ColumnHeader firstName;
+        private ColumnHeader job;
+        private ColumnHeader contract;
         private ArtanPanel artanPanel4;
         private Label lbEmployeeName;
         private Label label3;

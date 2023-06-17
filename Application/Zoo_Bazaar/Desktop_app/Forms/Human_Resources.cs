@@ -63,13 +63,13 @@ namespace Desktop_app
                      (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
                     //phone removed
-                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Parttime" && e.Contractstatus == 1) || (status == "Fulltime" && e.Contractstatus == 2)));
+                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Part Time" && e.Contractstatus == 1) || (status == "Full Time" && e.Contractstatus == 2)));
 
             foreach (Employee employee in filteredEmployees)
             {
                 string contractStatusString = "";
-                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Part Time"; } else if (employee.Contractstatus == 2) { contractStatusString = "Full Time"; }
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.LastName, employee.Jobname, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
