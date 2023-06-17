@@ -10,10 +10,11 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace LogicCL.Users
 {
-    public class GroundsKeeper :Employee
+    public class GroundsKeeper : Employee
     {
         public AnimalRepository Repository { get; private set; }
-        public GroundsKeeper(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city, jobname,salary)
+
+        public GroundsKeeper(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary, int workingHours) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city, jobname, salary, workingHours)
         {
             Repository = new AnimalRepository();
         }
@@ -22,6 +23,5 @@ namespace LogicCL.Users
         {
             Repository = new AnimalRepository();
         }
-
     }
 }

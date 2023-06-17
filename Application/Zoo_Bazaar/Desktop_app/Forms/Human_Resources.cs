@@ -63,13 +63,13 @@ namespace Desktop_app
                      (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
                     //phone removed
-                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Part Time" && e.Contractstatus == 1) || (status == "Full Time" && e.Contractstatus == 2)));
+                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Parttime" && e.Contractstatus == 1) || (status == "Fulltime" && e.Contractstatus == 2)));
 
             foreach (Employee employee in filteredEmployees)
             {
                 string contractStatusString = "";
-                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Part Time"; } else if (employee.Contractstatus == 2) { contractStatusString = "Full Time"; }
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.LastName, employee.Jobname, contractStatusString });
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
@@ -212,7 +212,9 @@ namespace Desktop_app
             string spouse = TB_Spouse.Text;
             string spouseContact = TB_SpouseContact.Text;
 
+            //additional
             int salary = (int)salaryUpdateUserNUD.Value;
+            int workingHours = (int)workingHoursNUDOverVIew.Value;
 
             // Validate input data
             List<string> errors = new List<string>();
@@ -277,7 +279,7 @@ namespace Desktop_app
             }
 
             // Call the repository to update the employee details
-            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary))
+            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary, workingHours))
             {
                 MessageBox.Show($"You have Updated the Employee {firstName} {lastName}");
                 this.DialogResult = DialogResult.OK;
@@ -332,6 +334,7 @@ namespace Desktop_app
                 TB_SpouseContact.Text = selectedUser.SpousePhone;
 
                 salaryUpdateUserNUD.Value = selectedUser.Salary;
+                workingHoursNUDOverVIew.Value = selectedUser.WorkingHours;
             }
         }
 
@@ -376,7 +379,9 @@ namespace Desktop_app
 
             var jobName = "";
 
+            //additional
             var salary = (int)salaryAddEmployeeNUD.Value;
+            var workingHours = (int)workingHoursAddEmployeeNUD.Value;
 
             List<string> errors = new List<string>();
 
@@ -462,7 +467,7 @@ namespace Desktop_app
 
             UserDTO dto = new UserDTO(id: 0, firstname: firstName, lastname: lastName, username: userName, password: password,
                 phone: phoneNumber, address: address, city: city, email: email, spouseName: spouseName, spousePhone: spouseNumber,
-                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName, salary);
+                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName, salary, workingHours);
 
             if (hr.RegisterNewEmployee(dto))
             {
@@ -544,19 +549,19 @@ namespace Desktop_app
             }
         }
 
-        private void CB_Contract_SelectedIndexChanged(object sender, EventArgs e)
+        private void ContractBoxAddEmployee_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CB_Contract.Text == "Fulltime")
+            if (ContractBoxAddEmployee.Text == "Fulltime")
             {
-                hoursPerWeekTB.Text = "40 hrs";
+                workingHoursAddEmployeeNUD.Value = 40;
             }
-            else if (CB_Contract.Text == "Parttime")
+            else if (ContractBoxAddEmployee.Text == "Parttime")
             {
-                hoursPerWeekTB.Text = "12 hrs";
+                workingHoursAddEmployeeNUD.Value = 12;
             }
             else
             {
-                hoursPerWeekTB.Text = "0 hrs";
+                workingHoursAddEmployeeNUD.Value = 0;
             }
         }
     }
