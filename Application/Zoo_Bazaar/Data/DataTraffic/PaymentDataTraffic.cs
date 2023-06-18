@@ -57,7 +57,7 @@ namespace DataCL.DataTraffic
             //return collection of DTOs
             return payments;
         }
-        public bool AddPayments(PaymentDTO payment)
+        public bool AddPayments(PaymentDTO payment, List <int> ticketIds)
         {
 			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice) OUTPUT INSERTED.Id " +
 						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)});";
