@@ -343,8 +343,9 @@ namespace Desktop_app
             System.Windows.Forms.Application.Restart();
         }
 
-        //AddEmployee
+        //managing salary
 
+        //AddEmployee
         private void btn_add_employee_Click_1(object sender, EventArgs e)
         {
             //variables
@@ -549,19 +550,101 @@ namespace Desktop_app
             }
         }
 
-        private void ContractBoxAddEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        //base(part time) - x1
+        //full time - x2
+        private void SalaryCalc(int baseSalary)
         {
             if (ContractBoxAddEmployee.Text == "Full Time")
             {
+                //working hours
                 workingHoursAddEmployeeNUD.Value = 40;
+
+                //salary
+                salaryAddEmployeeNUD.Value = baseSalary * 4;
             }
             else if (ContractBoxAddEmployee.Text == "Part Time")
             {
+                //working hours
                 workingHoursAddEmployeeNUD.Value = 12;
+
+                //salary
+                salaryAddEmployeeNUD.Value = baseSalary * 2;
             }
             else
             {
+                //working hours
                 workingHoursAddEmployeeNUD.Value = 0;
+                //salary
+                salaryAddEmployeeNUD.Value = baseSalary;
+            }
+        }
+
+        private void ContractBoxAddEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (true)
+            {
+                //HR
+                case bool _ when cbJobAdd.Text == "HR":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //CareTaker
+                case bool _ when cbJobAdd.Text == "Caretaker":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Veterinary_Technician
+                case bool _ when cbJobAdd.Text == "Veterinary_Technician":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //AnimalManagment
+                case bool _ when cbJobAdd.Text == "AnimalManagment":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Groundskeeper
+                case bool _ when cbJobAdd.Text == "Groundskeeper":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Cleaner
+                case bool _ when cbJobAdd.Text == "Cleaner":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //ScheduleMaker
+                case bool _ when cbJobAdd.Text == "ScheduleMaker":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //TicketSales
+                case bool _ when cbJobAdd.Text == "TicketSales":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Customer
+                case bool _ when cbJobAdd.Text == "Customer":
+
+                    SalaryCalc(12);
+
+                    break;
             }
         }
     }
