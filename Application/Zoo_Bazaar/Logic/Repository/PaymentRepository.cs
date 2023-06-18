@@ -69,23 +69,10 @@ namespace LogicCL.Repository
 			return payments;
 		}
 
-		public List<int> GetTicketIdsByPaymentId(int id)
+
+		public bool addPayment(PaymentDTO payment, Dictionary<int, int> ticketCounts)
 		{
-			List<Payment> payments = GetPaymentById(id);
-			List<int> ticketIds = new List<int>();
-
-			foreach (Payment payment in payments)
-			{
-				ticketIds.Add(payment.TicketID);
-			}
-
-			return ticketIds;
-		}
-
-		public bool addPayment(PaymentDTO payment, List<int> ticketIds)
-		{
-			ticketIds = GetTicketIdsByPaymentId(payment.Id);
-			if (paymentDataTraffic.AddPayments(payment, ticketIds))
+			if (paymentDataTraffic.addPayment(payment, ticketCounts))
 			{
 				return true;
 			};

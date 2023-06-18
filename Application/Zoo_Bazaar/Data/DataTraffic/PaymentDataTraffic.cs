@@ -4,13 +4,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using DataCL.DTOs;
 
 namespace DataCL.DataTraffic
 {
-    public class PaymentDataTraffic:DataHandler
+    public class PaymentDataTraffic : DataHandler
     {
         protected override string cmd
         {
@@ -20,26 +21,26 @@ namespace DataCL.DataTraffic
             }
         }
 
-        public List <PaymentDTO> GetPaymentById(int id)
+        public List<PaymentDTO> GetPaymentById(int id)
         {
             string query = $@"SELECT P.*, PT.Count, PT.TicketID FROM Payment P INNER JOIN PaymentTicket PT ON P.Id = PT.PaymentID INNER JOIN Tickets T ON PT.TicketID = T.Id WHERE p.Id = {id};";
 
 
-	        List<PaymentDTO> Payments = new List<PaymentDTO>();
-			DataTable dt = base.ReadDataQuery(query);
+            List<PaymentDTO> Payments = new List<PaymentDTO>();
+            DataTable dt = base.ReadDataQuery(query);
 
-			if (dt.Rows.Count > 0)
-			{
-				foreach (DataRow dr in dt.Rows)
-				{
-					PaymentDTO payment = DataConvertingMethods.ConvertDataRowToObject<PaymentDTO>(dr);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    PaymentDTO payment = DataConvertingMethods.ConvertDataRowToObject<PaymentDTO>(dr);
                     Payments.Add(payment);
-				}
-				return Payments;
-			}
-			else { return null; }
-			
-           
+                }
+                return Payments;
+            }
+            else { return null; }
+
+
         }
         public List<PaymentDTO> RetrieveAllPayment()
         {
@@ -57,8 +58,8 @@ namespace DataCL.DataTraffic
             //return collection of DTOs
             return payments;
         }
-        public bool AddPayments(PaymentDTO payment, List <int> ticketIds)
-        {
+		public bool addPayment(PaymentDTO payment, Dictionary<int, int> ticketCounts)
+		{
 			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice) OUTPUT INSERTED.Id " +
 						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)});";
 
@@ -66,16 +67,19 @@ namespace DataCL.DataTraffic
 
 			if (paymentID > 0)
 			{
-				foreach (int ticketID in ticketIds)
+				foreach (KeyValuePair<int, int> ticketCount in ticketCounts)
 				{
-					query = $"INSERT INTO PaymentTickets (PaymentID, TicketID, Count) " +
-							$"VALUES ({paymentID}, {ticketID}, {payment.Count});";
+					int ticketId = ticketCount.Key;
+					int count = ticketCount.Value;
+
+					query = $"INSERT INTO PaymentTicket (PaymentID, TicketID, Count) " +
+							$"VALUES ({paymentID}, {ticketId}, {count});";
 
 					executeQuery(query);
 				}
+				return true;
 			}
-
-			return paymentID > 0;
+			else { return false; }
 		}
-    }
+	}
 }
