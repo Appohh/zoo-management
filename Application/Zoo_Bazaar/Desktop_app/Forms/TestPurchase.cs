@@ -39,9 +39,15 @@ namespace Desktop_app.Forms
 
 			ticketCounts.Add(8, quantityBabies);
 			ticketCounts.Add(9, quantityKids); 
-			ticketCounts.Add(10, quantityAdults); 
+			ticketCounts.Add(10, quantityAdults);
 
-			PaymentDTO paymentDTO = new PaymentDTO(0, 0, 0, name, email, phoneNumber, totalPrice);
+			int totalTicketCount = quantityBabies + quantityKids + quantityAdults;
+
+			PaymentDTO paymentDTO = new PaymentDTO(paymentId, 0, 0, name, email, phoneNumber, totalPrice);
+
+			paymentRepository.ApplyDiscount(paymentDTO, totalTicketCount, "test");
+
+			
 
 			// Check if the payment was added successfully
 			if (paymentRepository.addPayment(paymentDTO, ticketCounts))

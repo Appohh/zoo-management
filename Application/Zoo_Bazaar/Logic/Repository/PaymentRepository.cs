@@ -15,37 +15,37 @@ namespace LogicCL.Repository
 		decimal ticketPrice;
 		decimal totalPrice;
         private PaymentDataTraffic paymentDataTraffic = new PaymentDataTraffic();
-  //      public Payment ApplyDiscount(Payment payment, string code)
-		//{
+		public PaymentDTO ApplyDiscount(PaymentDTO payment, int totalcount ,string code)
+		{
 
-  //          ticketPrice = tickets.Price;
-		//	totalPrice = payment.TotalPrice;
-  //          if (payment.TicketIDs.Count <= 20)
-		//	{
-		//		if (tickets.Name == "TicketBabys")
-		//		{
-		//			//Change ticketprice 
-		//		}
-		//		else if (tickets.Name == "TicketKids")
-		//		{
+			ticketPrice = tickets.Price;
+			totalPrice = payment.TotalPrice;
+			if (totalcount <= 20)
+			{
+				if (tickets.Name == "TicketBabys")
+				{
+					//Change ticketprice 
+				}
+				else if (tickets.Name == "TicketKids")
+				{
 
-  //                  ticketPrice = 23;
-		//		}
-		//		else if (tickets.Name == "TicketsAdults")
-		//		{
-  //                  ticketPrice = 24.50M;
-		//		}
-		//		//calculate new totalprice
-		//	}
-		
-		//	if (discount.Code == code)
-		//	{
-		//		totalPrice = totalPrice - 5M;
-		//	}
+					ticketPrice = 23;
+				}
+				else if (tickets.Name == "TicketsAdults")
+				{
+					ticketPrice = 24.50M;
+				}
+				//calculate new totalprice
+			}
 
-		//	return payment;
+			if (discount.Code == code)
+			{
+				totalPrice = totalPrice - 5M;
+			}
 
-		//}
+			return payment;
+
+		}
 
 		public List <Payment> retrievePayments()
 		{
@@ -60,7 +60,7 @@ namespace LogicCL.Repository
 
 		public List <Payment> GetPaymentById(int id)
 		{
-			List<PaymentDTO> paymentDTOs = paymentDataTraffic.GetPaymentById(1);
+			List<PaymentDTO> paymentDTOs = paymentDataTraffic.GetPaymentById(id);
 			List<Payment> payments = new List<Payment>();
 			foreach (PaymentDTO paymentDTO in paymentDTOs)
 			{
@@ -78,5 +78,16 @@ namespace LogicCL.Repository
 			};
 			return false;
 		}
+
+		//public int CalculateTotalCount(int paymentId)
+		//{
+		//	List<Payment> payments = GetPaymentById(paymentId);
+		//	int totalCount = 0;
+		//	foreach (Payment payment in payments)
+		//	{
+		//		totalCount += payment.Count; 
+		//	}
+		//	return totalCount;
+		//}
 	}
 }
