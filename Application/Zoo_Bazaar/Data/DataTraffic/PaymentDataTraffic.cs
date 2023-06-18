@@ -66,11 +66,13 @@ namespace DataCL.DataTraffic
 
 			if (paymentID > 0)
 			{
-				// Insert TicketID associated with this Payment into the PaymentTickets table
-				query = $"INSERT INTO PaymentTickets (PaymentID, TicketID, Count) " +
-						$"VALUES ({paymentID}, {payment.TicketID}, {payment.Count});";
+				foreach (int ticketID in ticketIds)
+				{
+					query = $"INSERT INTO PaymentTickets (PaymentID, TicketID) " +
+							$"VALUES ({paymentID}, {ticketID});";
 
-				executeQuery(query);
+					executeQuery(query);
+				}
 			}
 
 			return paymentID > 0;
