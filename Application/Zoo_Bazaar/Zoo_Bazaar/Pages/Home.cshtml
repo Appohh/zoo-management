@@ -9,20 +9,20 @@
 
 </head>
 
-<div class="nav">
+<div class="nav" id="nav">
     <h2 id="logo">Zoo Bazaar</h2>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li style="float:right"><a class="active" href="#about">About</a></li>
+      <li style="float:right"><a class="active" href="#about">Tickets</a></li>
     </ul>
 </div>
 
 
 <div class="hero">
     <video class="hero-vid" autoplay muted>
-        <source src="~/videos/zoobazaar-promo1.mp4" type="video/mp4" />
+        <source src="~/videos/zoobzr-promo_resized.mp4" type="video/mp4" />
     </video>
     <div class="hero-caption">
         <h2>The elephants area will be expanded!</h2>
@@ -30,16 +30,63 @@
             <a class="btn-orange" href="#discover">Discover more</a>
         </p>
     </div>
+    <div class="hero-cta-wrap">
+        <div class="cta-txt">
+            <h4 class="ticket-title">Stay or go out for a day??</h4><p>Explore our natural wonders now with added discounts.</p>
+        </div>
+        <div class="cta-btns">
+            <a href="#" class="cta-btn-stay btn-green">Staying<span>Check all summer deals</span></a>
+            <a href="#" class="cta-btn-tickets btn-orange">Daytickets <span>Online with discount</span></a>
+        </div>
+    </div>
 </div>
 
 <div class="main">
+
     <section class="land-1">
+        <h2 id="land-1-title">Discover our nature</h2>
         <div class="pic-link-wrap">
-            <img src="~/images/zb_elphants.jpg" />
-            <img src="~/images/zb_hotel.jpg" />
-            <img src="~/images/zb_lake.jpg" />
-            <img src="~/images/zb_safari.jpg" />
+            <div class="pic-link-pic">
+                <img src="~/images/zb_elphants.jpg" />
+                <h2>Go on safari</h2>
+            </div>
+            <div class="pic-link-pic">
+                <img src="~/images/zb_hotel.jpg" />
+                <h2>Safari Hotel</h2>
+            </div>
+            <div class="pic-link-pic">
+                <img src="~/images/zb_lake.jpg" />
+                <h2>Lake Resort</h2>
+            </div>
+            <div class="pic-link-pic">
+                <img src="~/images/zb_safari.jpg" />
+                <h2>Safari Resort</h2>
+            </div>
         </div>
+    </section>
+
+    <section class="trailer">
+
+        <div class="text-trailer-wrap">
+            <div class="text-trailer-text">
+                <h3>Special overnight stay at the Safari Hotel</h3>
+
+                <p>Discover the new Safari Hotel at Zoo Bazaar and spend the night in the heart of the savannah. Experience the most exciting adventures on safari and fall asleep surrounded by wild animals. Unwind in luxury and watch the sunrise from the savannah. Enjoy a morning cup of coffee on your private terrace while zebras, giraffes, and rhinos pass by.&nbsp;</p>
+
+                <p><a class="btn btn-green" href="#">Read more</a></p>
+            </div>
+
+            <div class="text-trailer-trailer">
+                <video controls="controls">
+                    <source src="~/videos/zoobzr-promo.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <img src="/images/zoobazaar-blueprint.png" style="width: -webkit-fill-available;">
     </section>
 
 
@@ -47,3 +94,16 @@
 
 
 </div>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos === 0) {
+            document.getElementById("nav").style.background = "unset";
+        } else {
+            document.getElementById("nav").style.background = "#596831";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
