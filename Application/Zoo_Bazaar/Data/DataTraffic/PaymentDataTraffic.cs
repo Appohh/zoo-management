@@ -57,7 +57,7 @@ namespace DataCL.DataTraffic
             //return collection of DTOs
             return payments;
         }
-        public bool AddPayments(PaymentDTO payment)
+        public bool AddPayments(PaymentDTO payment, List <int> ticketIds)
         {
 			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice) OUTPUT INSERTED.Id " +
 						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)});";
@@ -66,11 +66,13 @@ namespace DataCL.DataTraffic
 
 			if (paymentID > 0)
 			{
-				// Insert TicketID associated with this Payment into the PaymentTickets table
-				query = $"INSERT INTO PaymentTickets (PaymentID, TicketID, Count) " +
-						$"VALUES ({paymentID}, {payment.TicketID}, {payment.Count});";
+				foreach (int ticketID in ticketIds)
+				{
+					query = $"INSERT INTO PaymentTickets (PaymentID, TicketID, Count) " +
+							$"VALUES ({paymentID}, {ticketID}, {payment.Count});";
 
-				executeQuery(query);
+					executeQuery(query);
+				}
 			}
 
 			return paymentID > 0;
