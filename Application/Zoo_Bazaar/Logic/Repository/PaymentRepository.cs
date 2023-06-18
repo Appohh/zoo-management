@@ -68,5 +68,13 @@ namespace LogicCL.Repository
 			}
 			return payments;
 		}
+		public bool AddPayments(PaymentDTO payment)
+		{
+            if (paymentDataTraffic.AddPayments(payment))
+            {
+                return true;
+            };
+            return false;
+        }
 	}
 }
