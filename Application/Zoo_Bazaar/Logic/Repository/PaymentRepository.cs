@@ -38,10 +38,15 @@ namespace LogicCL.Repository
 		
 			if (discount.Code == code)
 			{
-				totalPrice = totalPrice-5M;
+				totalPrice = totalPrice - 5M;
 			}
 
 			return payment;
+
+		}
+
+		public List <Payment> retrieveData()
+		{
 
 		}
 	}
