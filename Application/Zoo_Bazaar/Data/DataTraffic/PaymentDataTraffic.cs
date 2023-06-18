@@ -68,8 +68,8 @@ namespace DataCL.DataTraffic
 			{
 				foreach (int ticketID in ticketIds)
 				{
-					query = $"INSERT INTO PaymentTickets (PaymentID, TicketID) " +
-							$"VALUES ({paymentID}, {ticketID});";
+					query = $"INSERT INTO PaymentTickets (PaymentID, TicketID, Count) " +
+							$"VALUES ({paymentID}, {ticketID}, {payment.Count});";
 
 					executeQuery(query);
 				}
