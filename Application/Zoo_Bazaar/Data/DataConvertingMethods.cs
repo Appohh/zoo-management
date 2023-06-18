@@ -34,7 +34,11 @@ namespace DataCL
                         {
                             prop.SetValue(obj, Convert.ToString(value));
                         }
-                    }
+                        else if (prop.PropertyType == typeof(decimal))
+                        {
+                            prop.SetValue(obj, Convert.ToDecimal(value));
+                        }
+					}
                 }
             }
 

@@ -11,10 +11,11 @@ namespace LogicCL.Users
     {
         public AnimalRepository Repository { get; private set; }
 
-        public VeterinaryTechnician(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city, jobname, salary)
+        public VeterinaryTechnician(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary, int workingHours) : base(spouseName, spousePhone, emergencyName, emergencyPhone, bSN, contractstatus, image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city, jobname, salary, workingHours)
         {
             Repository = new AnimalRepository();
         }
+
         public void MakeActive()
         {
             Repository = new AnimalRepository();
