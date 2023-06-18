@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataCL.DataTraffic;
+using DataCL.DTOs;
 
 namespace LogicCL.Repository
 {
@@ -12,8 +14,8 @@ namespace LogicCL.Repository
 		private Ticket tickets;
 		decimal ticketPrice;
 		decimal totalPrice;
-
-		public Payment ApplyDiscount(Payment payment, string code)
+        private PaymentDataTraffic paymentDataTraffic = new PaymentDataTraffic();
+        public Payment ApplyDiscount(Payment payment, string code)
 		{
 
             ticketPrice = tickets.Price;
@@ -45,9 +47,15 @@ namespace LogicCL.Repository
 
 		}
 
-		public List <Payment> retrieveData()
+		public List <Payment> retrievePayments()
 		{
-
-		}
+            List<PaymentDTO> paymentDTOs = paymentDataTraffic.RetrieveAllPayment();
+            List<Payment> payments = new List<Payment>();
+            foreach (PaymentDTO paymentDTO in paymentDTOs)
+            {
+                payments.Add(new Payment(paymentDTO.Id ,paymentDTO.TicketIDs,paymentDTO.Name,paymentDTO.Email, paymentDTO.PhoneNumber,paymentDTO.TotalPrice));
+            }
+            return payments;
+        }
 	}
 }
