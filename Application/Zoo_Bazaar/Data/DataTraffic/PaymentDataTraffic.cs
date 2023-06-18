@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,22 +16,30 @@ namespace DataCL.DataTraffic
         {
             get
             {
-                return "select * from Payment";
+                return "SELECT P.*, PT.Count, PT.TicketID FROM Payment P INNER JOIN PaymentTicket PT ON P.Id = PT.PaymentID INNER JOIN Tickets T ON PT.TicketID = T.Id;";
             }
         }
 
-        public PaymentDTO GetPaymentById(int id)
+        public List <PaymentDTO> GetPaymentById(int id)
         {
-            DataTable table = base.ReadData();
-            foreach (DataRow dr in table.Rows)
-            {
-                PaymentDTO payment = DataConvertingMethods.ConvertDataRowToObject<PaymentDTO>(dr);
-                if (payment.Id == id)
-                {
-                    return payment;
-                }
-            }
-            return null; // or throw an exception indicating the ticket was not found
+            string query = $@"SELECT P.*, PT.Count, PT.TicketID FROM Payment P INNER JOIN PaymentTicket PT ON P.Id = PT.PaymentID INNER JOIN Tickets T ON PT.TicketID = T.Id WHERE p.Id = {id};";
+
+
+	        List<PaymentDTO> Payments = new List<PaymentDTO>();
+			DataTable dt = base.ReadDataQuery(query);
+
+			if (dt.Rows.Count > 0)
+			{
+				foreach (DataRow dr in dt.Rows)
+				{
+					PaymentDTO payment = DataConvertingMethods.ConvertDataRowToObject<PaymentDTO>(dr);
+                    Payments.Add(payment);
+				}
+				return Payments;
+			}
+			else { return null; }
+			
+           
         }
         public List<PaymentDTO> RetrieveAllPayment()
         {
@@ -50,12 +59,21 @@ namespace DataCL.DataTraffic
         }
         public bool AddPayments(PaymentDTO payment)
         {
-            string ticketIds = string.Join(",", payment.TicketIDs);
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("Price", payment.TotalPrice));
-            string query = $"INSERT INTO Payment (Id, TicketID, Name, Email,PhoneNumbwe,TotalPrice) " +
-                $"VALUES ({payment.Id}, '{ticketIds}', '{payment.Email}', '{payment.Name}','{payment.PhoneNumber}', @Price);";
-            return executeQuery(query,parameters.ToArray()) == 0 ? false : true;
-        }
+			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice) OUTPUT INSERTED.Id " +
+						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)});";
+
+			int paymentID = executeIdScalar(query);
+
+			if (paymentID > 0)
+			{
+				// Insert TicketID associated with this Payment into the PaymentTickets table
+				query = $"INSERT INTO PaymentTickets (PaymentID, TicketID, Count) " +
+						$"VALUES ({paymentID}, {payment.TicketID}, {payment.Count});";
+
+				executeQuery(query);
+			}
+
+			return paymentID > 0;
+		}
     }
 }

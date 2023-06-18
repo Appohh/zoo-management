@@ -81,7 +81,30 @@ namespace DataCL
             }
         }
 
-        public DataTable ReadDataQuery(string query)
+        public int executeIdScalar(string query)
+        {
+            try
+            {
+                con.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = (SqlConnection)con;
+                    command.CommandText = query;
+                    int newId = (int)command.ExecuteScalar();
+
+                    return newId;
+                }
+            }
+            catch { return 0; }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+		public DataTable ReadDataQuery(string query)
         {
             DataTable dt = new DataTable();
             try

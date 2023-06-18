@@ -15,37 +15,37 @@ namespace LogicCL.Repository
 		decimal ticketPrice;
 		decimal totalPrice;
         private PaymentDataTraffic paymentDataTraffic = new PaymentDataTraffic();
-        public Payment ApplyDiscount(Payment payment, string code)
-		{
+  //      public Payment ApplyDiscount(Payment payment, string code)
+		//{
 
-            ticketPrice = tickets.Price;
-			totalPrice = payment.TotalPrice;
-            if (payment.TicketIDs.Count <= 20)
-			{
-				if (tickets.Name == "TicketBabys")
-				{
-					//Change ticketprice 
-				}
-				else if (tickets.Name == "TicketKids")
-				{
+  //          ticketPrice = tickets.Price;
+		//	totalPrice = payment.TotalPrice;
+  //          if (payment.TicketIDs.Count <= 20)
+		//	{
+		//		if (tickets.Name == "TicketBabys")
+		//		{
+		//			//Change ticketprice 
+		//		}
+		//		else if (tickets.Name == "TicketKids")
+		//		{
 
-                    ticketPrice = 23;
-				}
-				else if (tickets.Name == "TicketsAdults")
-				{
-                    ticketPrice = 24.50M;
-				}
-				//calculate new totalprice
-			}
+  //                  ticketPrice = 23;
+		//		}
+		//		else if (tickets.Name == "TicketsAdults")
+		//		{
+  //                  ticketPrice = 24.50M;
+		//		}
+		//		//calculate new totalprice
+		//	}
 		
-			if (discount.Code == code)
-			{
-				totalPrice = totalPrice - 5M;
-			}
+		//	if (discount.Code == code)
+		//	{
+		//		totalPrice = totalPrice - 5M;
+		//	}
 
-			return payment;
+		//	return payment;
 
-		}
+		//}
 
 		public List <Payment> retrievePayments()
 		{
@@ -53,9 +53,20 @@ namespace LogicCL.Repository
             List<Payment> payments = new List<Payment>();
             foreach (PaymentDTO paymentDTO in paymentDTOs)
             {
-                payments.Add(new Payment(paymentDTO.Id ,paymentDTO.TicketIDs,paymentDTO.Name,paymentDTO.Email, paymentDTO.PhoneNumber,paymentDTO.TotalPrice));
+                payments.Add(new Payment(paymentDTO.Id ,paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name,paymentDTO.Email, paymentDTO.PhoneNumber,paymentDTO.TotalPrice));
             }
             return payments;
         }
+
+		public List <Payment> GetPaymentById(int id)
+		{
+			List<PaymentDTO> paymentDTOs = paymentDataTraffic.GetPaymentById(1);
+			List<Payment> payments = new List<Payment>();
+			foreach (PaymentDTO paymentDTO in paymentDTOs)
+			{
+				payments.Add(new Payment(paymentDTO.Id, paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name, paymentDTO.Email, paymentDTO.PhoneNumber, paymentDTO.TotalPrice));
+			}
+			return payments;
+		}
 	}
 }

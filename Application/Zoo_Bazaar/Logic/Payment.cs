@@ -9,7 +9,8 @@ namespace LogicCL
     public class Payment
     {
         public int Id { get; private set; }
-        public List <string> TicketIDs { get; private set; }
+        public int TicketID { get; private set; }
+        public int Count { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
         public string PhoneNumber { get; private set; }
@@ -21,10 +22,11 @@ namespace LogicCL
 
         }
 
-        public Payment (int id, List <string> ticketIds, string name, string email, string phonenumber, decimal totalprice)
+        public Payment (int id, int ticketId, int count, string name, string email, string phonenumber, decimal totalprice)
         {
             Id = id;
-            TicketIDs = ticketIds;
+            TicketID = ticketId;
+            Count = count;
             Name = name;
             Email = email;
             PhoneNumber = phonenumber;
