@@ -1,0 +1,60 @@
+﻿<head>
+    <link href="~/css/stylesheet1.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+
+</head>
+
+<div class="nav" id="nav">
+    <h2 id="logo">Zoo Bazaar</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li style="float:right"><a class="active" href="#about">Tickets</a></li>
+    </ul>
+</div>
+
+
+<div class="hero">
+    <video class="hero-vid" autoplay muted>
+        <source src="~/videos/zoobzr-promo_resized.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-caption">
+        <h2>The elephants area will be expanded!</h2>
+        <p>
+            <a class="btn-orange" href="#discover">Discover more</a>
+        </p>
+    </div>
+    <div class="hero-cta-wrap">
+        <div class="cta-txt">
+            <h4 class="ticket-title">Stay or go out for a day??</h4><p>Explore our natural wonders now with added discounts.</p>
+        </div>
+        <div class="cta-btns">
+            <a href="#" class="cta-btn-stay btn-green">Staying<span>Check all summer deals</span></a>
+            <a href="#" class="cta-btn-tickets btn-orange">Daytickets <span>Online with discount</span></a>
+        </div>
+    </div>
+</div>
+
+<div class="main">
+
+
+    @RenderBody()
+
+</div>
+
+
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos === 0) {
+            document.getElementById("nav").style.background = "unset";
+        } else {
+            document.getElementById("nav").style.background = "#596831";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+@await RenderSectionAsync("Scripts", required: false)

@@ -215,3 +215,23 @@ h4.ticket-title {
     font-family: sofia-pro,Century Gothic,sans-serif;
     color: black;
 }
+
+.ticket {
+    background: rgb(246, 241, 230);
+    width: 491px;
+    height: 161px;
+    padding: 15px;
+    margin: 20px;
+}
+
+.ticket h1, .ticket h2, .ticket h3, .ticket a, .ticket input[type="number"] {
+    color: black;
+    font-family: sofia-pro, "Century Gothic", sans-serif;
+    font-weight: 100;
+}
+
+.qnty-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

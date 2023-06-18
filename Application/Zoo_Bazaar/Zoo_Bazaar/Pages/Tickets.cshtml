@@ -1,0 +1,92 @@
+﻿@page
+@model Zoo_Bazaar.Pages.TicketsModel
+@{
+    Layout = null;
+}
+
+<head>
+    <link href="~/css/stylesheet1.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+
+</head>
+
+<div class="nav" id="nav">
+    <h2 id="logo">Zoo Bazaar</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li style="float:right"><a class="active" href="#about">Tickets</a></li>
+    </ul>
+</div>
+
+
+<div class="hero">
+    <video class="hero-vid" autoplay muted>
+        <source src="~/videos/zoobzr-promo_resized.mp4" type="video/mp4" />
+    </video>
+</div>
+
+<div class="main">
+    <section class="sec-tickets">
+
+        <div class="ticket-container">
+            <div class="ticket">
+                <h2>
+                    Ticket Safaripark vanaf 10 jaar
+                </h2>
+                <h3>
+                    Bezoekers vanaf 10 jaar krijgen met dit ticket toegang
+                </h3>
+                <div class="qnty-price">
+                    <input type="number" />
+                    <h2>$26,65</h2>
+                </div>
+            </div>
+
+            <div class="ticket">
+                <h2>
+                    Ticket Safaripark vanaf 10 jaar
+                </h2>
+                <h3>
+                    Bezoekers vanaf 10 jaar krijgen met dit ticket toegang
+                </h3>
+                <div class="qnty-price">
+                    <input type="number" />
+                    <h2>$26,65</h2>
+                </div>
+            </div>
+
+            <div class="ticket">
+                <h2>
+                    Ticket Safaripark vanaf 10 jaar
+                </h2>
+                <h3>
+                    Bezoekers vanaf 10 jaar krijgen met dit ticket toegang
+                </h3>
+                <div class="qnty-price">
+                    <input type="number" />
+                    <h2>$26,65</h2>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+</div>
+
+
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos === 0) {
+            document.getElementById("nav").style.background = "unset";
+        } else {
+            document.getElementById("nav").style.background = "#596831";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
