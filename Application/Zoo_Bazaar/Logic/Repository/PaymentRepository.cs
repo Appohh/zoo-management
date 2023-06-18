@@ -15,36 +15,44 @@ namespace LogicCL.Repository
 		decimal ticketPrice;
 		decimal totalPrice;
         private PaymentDataTraffic paymentDataTraffic = new PaymentDataTraffic();
-		public PaymentDTO ApplyDiscount(PaymentDTO payment, int totalcount ,string code)
+		private TicketDataTraffic ticketDataTraffic = new TicketDataTraffic();
+		private DiscountDataTraffic DiscountDataTraffic = new DiscountDataTraffic();
+		public PaymentDTO ApplyDiscount(PaymentDTO payment, Dictionary<int, int> ticketCounts, string code)
 		{
+			decimal discountAmount = 0.0M;
+			List<Ticket> tickets = GetTickets();
+			List<Discount> discountcodes = GetDiscount();
+			decimal totalPrice = payment.TotalPrice;
+			int totalCount = ticketCounts.Values.Sum();
 
-			ticketPrice = tickets.Price;
-			totalPrice = payment.TotalPrice;
-			if (totalcount <= 20)
+			if (totalCount > 20)
 			{
-				if (tickets.Name == "TicketBabys")
+				foreach (var ticketCount in ticketCounts)
 				{
-					//Change ticketprice 
-				}
-				else if (tickets.Name == "TicketKids")
-				{
+					Ticket currentTicket = tickets.First(t => t.Id == ticketCount.Key);
 
-					ticketPrice = 23;
+					decimal discountedPrice = currentTicket.Price;
+					if (currentTicket.Name == "TicketKid")
+					{
+						discountedPrice = 23;
+					}
+					else if (currentTicket.Name == "TicketAdult")
+					{
+						discountedPrice = 24.50M;
+					}
+					discountAmount += (currentTicket.Price - discountedPrice) * ticketCount.Value;
 				}
-				else if (tickets.Name == "TicketsAdults")
-				{
-					ticketPrice = 24.50M;
-				}
-				//calculate new totalprice
 			}
 
-			if (discount.Code == code)
+			Discount appliedDiscount = discountcodes.FirstOrDefault(d => d.Code == code);
+
+			if (appliedDiscount != null)
 			{
-				totalPrice = totalPrice - 5M;
+				discountAmount += 5; 
 			}
 
+			payment.TotalPrice -= discountAmount;
 			return payment;
-
 		}
 
 		public List <Payment> retrievePayments()
@@ -77,6 +85,28 @@ namespace LogicCL.Repository
 				return true;
 			};
 			return false;
+		}
+
+		public List <Ticket> GetTickets()
+		{
+			List<TicketDTO> ticketDTOs = ticketDataTraffic.retrieveTickets();
+			List<Ticket> tickets = new List<Ticket>();
+			foreach (TicketDTO ticketDTO in ticketDTOs)
+			{
+				tickets.Add(new Ticket(ticketDTO.Id, ticketDTO.Name, ticketDTO.Price));
+			}
+			return tickets;
+		}
+
+		public List<Discount> GetDiscount()
+		{
+			List<DiscountDTO> discountDTOs = DiscountDataTraffic.retrieveDiscount();
+			List<Discount> Discounts = new List<Discount>();
+			foreach (DiscountDTO diccountDTO in discountDTOs)
+			{
+				Discounts.Add(new Discount(diccountDTO.Id, diccountDTO.Code));
+			}
+			return Discounts;
 		}
 
 		//public int CalculateTotalCount(int paymentId)
