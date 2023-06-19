@@ -117,7 +117,7 @@ namespace LogicCL.Repository
             List<Location> locations = new List<Location>();
             foreach (LocationDTO locationDTO in locationDTOs)
             {
-                locations.Add(new Location(locationDTO.Id, locationDTO.Name));
+                locations.Add(new Location(locationDTO.Id, locationDTO.Name, locationDTO.Count));
             }
             return locations;
         }
