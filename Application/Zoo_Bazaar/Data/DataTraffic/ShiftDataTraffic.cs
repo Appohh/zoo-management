@@ -1,5 +1,6 @@
 ﻿using DataCL.DTOs;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -51,21 +52,20 @@ namespace DataCL.DataTraffic
 			return shifts;
 		}
 
-        public List<ShiftDTO> GetDepartmentShiftByDate(DateTime id)
+        public List<ShiftDTO> GetDepartmentShiftByDate(DateTime start, DateTime end, int jobid)
         {
-            string query = $"SELECT Shift.id ,Shift.empid, shift.type, shift.date, Shift.location FROM Shift WHERE Shift.empid = {id};";
-			
+
+            string query = $"SELECT Shift.id ,Shift.empid, shift.type, shift.date, Shift.location, Jobs.name FROM Shift INNER JOIN Employees ON shift.empid = Employees.id INNER JOIN Jobs ON Employees.jobId = Jobs.id WHERE Employees.jobId = {jobid} AND shift.Date >= '{start.ToString("yyyy-MM-dd")}' AND shift.date <= '{end.ToString("yyyy-MM-dd")}' ";
+
             List<ShiftDTO> shifts = new List<ShiftDTO>();
+            DataTable table = ReadDataQuery(query);
+            foreach (DataRow dr in table.Rows)
+            {
+                shifts.Add(DataConvertingMethods.ConvertDataRowToObject<ShiftDTO>(dr));
+            }
 
-			DataTable table = ReadDataQuery(query);
-
-			foreach (DataRow dr in table.Rows)
-			{
-				shifts.Add(DataConvertingMethods.ConvertDataRowToObject<ShiftDTO>(dr));
-			}
-
-			return shifts;
-		}
+            return shifts;
+        }
 
         public List<ShiftDTO> GetAllShifts()
         {
@@ -97,6 +97,14 @@ namespace DataCL.DataTraffic
                 query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , {shift.Location})";
             }
             return executeQuery(query) == 0 ? false : true;
+        }
+
+        public bool AddMultipleShift(List<ShiftDTO> dtos)
+        {
+            string values = string.Join(", ", dtos.Select(obj => $"({obj.EmpId}, {obj.Type}, '{obj.Date}', null)"));
+            string query = $"INSERT INTO Shift VALUES {values}";
+
+            return executeQuery(query) > 0 ? false : true;
         }
 
         public bool RemoveShift(int id)

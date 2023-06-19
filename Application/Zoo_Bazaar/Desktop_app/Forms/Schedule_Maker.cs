@@ -25,6 +25,7 @@ namespace Desktop_app.Forms
 		private Employee selected;
 		private WeekSchedule currentWeekSchedule;
 		private List<Location> locations;
+		private ScheduleFactory scheduleFactory;
 		public List<Shift> CurrentWeekShifts { get; set; }
 		public Schedule_Maker(User loggedInUser)
 		{
@@ -34,6 +35,7 @@ namespace Desktop_app.Forms
 			PopulateComboboxes();
 			currentWeekSchedule = new WeekSchedule(DateTime.Now);
 			CurrentWeekShifts = new List<Shift>();
+			scheduleFactory = new ScheduleFactory();
 
 			weekNum.Text = currentWeekSchedule.Week.ToString();
 			lblTimeRange.Text = $"{currentWeekSchedule.Monday.ToShortDateString()} - {currentWeekSchedule.Sunday.ToShortDateString()}";
@@ -318,7 +320,7 @@ namespace Desktop_app.Forms
 				p.Name = emp.FirstName + " " + emp.LastName;
 				p.Size = new Size(monD.Width - 10, 50);
 				p.Click += OnShiftPanelClick;
-				p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.Black, 5, 5); };
+				p.Paint += (ss, ee) =>{ ee.Graphics.DrawString(p.Name, Font, Brushes.Black, 5, 5); };
 				DrawShiftPanel(p);
 			}
 		}
@@ -443,7 +445,8 @@ namespace Desktop_app.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-			
+			scheduleFactory.GenerateSchedule(new WeekSchedule(datePicker.Value), CB_GetShiftByJob.SelectedItem as Job);
+
         }
 		
 		
