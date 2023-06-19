@@ -17,9 +17,12 @@ namespace LogicCL.Users
         public int Contractstatus { get; set; } //needs custom set for name with if's
         public string Jobname { get; set; }
 
+        //additional
         public int Salary { get; set; }
 
-        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city)
+        public int WorkingHours { get; set; }
+
+        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary, int workingHours) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city)
         {
             SpouseName = spouseName;
             SpousePhone = spousePhone;
@@ -29,6 +32,7 @@ namespace LogicCL.Users
             Contractstatus = contractstatus;
             Jobname = jobname;
             Salary = salary;
+            WorkingHours = workingHours;
         }
     }
 }

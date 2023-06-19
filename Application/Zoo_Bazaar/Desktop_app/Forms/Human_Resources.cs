@@ -63,13 +63,13 @@ namespace Desktop_app
                      (string.IsNullOrEmpty(name) || e.FirstName.ToLower().Contains(name.ToLower())) &&
                     (selectedJobName == "All" || e.Jobname.ToLower() == selectedJobName.ToLower()) &&
                     //phone removed
-                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Parttime" && e.Contractstatus == 1) || (status == "Fulltime" && e.Contractstatus == 2)));
+                    (status == "All" || (status == "Inactive" && e.Contractstatus == 0) || (status == "Part Time" && e.Contractstatus == 1) || (status == "Full Time" && e.Contractstatus == 2)));
 
             foreach (Employee employee in filteredEmployees)
             {
                 string contractStatusString = "";
-                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
-                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Part Time"; } else if (employee.Contractstatus == 2) { contractStatusString = "Full Time"; }
+                ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.LastName, employee.Jobname, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Employees.Items.Add(userInfo);
             }
@@ -88,7 +88,7 @@ namespace Desktop_app
             foreach (Employee employee in filteredEmployees)
             {
                 string contractStatusString = "";
-                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Parttime"; } else if (employee.Contractstatus == 2) { contractStatusString = "Fulltime"; }
+                if (employee.Contractstatus == 0) { contractStatusString = "Inactive"; } else if (employee.Contractstatus == 1) { contractStatusString = "Part Time"; } else if (employee.Contractstatus == 2) { contractStatusString = "Full Time"; }
                 ListViewItem userInfo = new ListViewItem(new[] { employee.FirstName, employee.Jobname, employee.Phone, contractStatusString });
                 userInfo.Tag = employee.Id.ToString();
                 lv_Scheduling.Items.Add(userInfo);
@@ -100,16 +100,16 @@ namespace Desktop_app
             ContractBoxAddEmployee.DisplayMember = "Key";
             ContractBoxAddEmployee.ValueMember = "Value";
             ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
-            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Part Time", 1));
+            ContractBoxAddEmployee.Items.Add(new KeyValuePair<string, int>("Full Time", 2));
 
             CB_StatusSearch.DisplayMember = "Key";
             CB_StatusSearch.ValueMember = "Value";
             CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("All", -1));
 
             CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
-            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Part Time", 1));
+            CB_StatusSearch.Items.Add(new KeyValuePair<string, int>("Full Time", 2));
 
             CB_StatusSearch.SelectedIndex = 0;
         }
@@ -212,7 +212,9 @@ namespace Desktop_app
             string spouse = TB_Spouse.Text;
             string spouseContact = TB_SpouseContact.Text;
 
+            //additional
             int salary = (int)salaryUpdateUserNUD.Value;
+            int workingHours = (int)workingHoursNUDOverVIew.Value;
 
             // Validate input data
             List<string> errors = new List<string>();
@@ -277,7 +279,7 @@ namespace Desktop_app
             }
 
             // Call the repository to update the employee details
-            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary))
+            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary, workingHours))
             {
                 MessageBox.Show($"You have Updated the Employee {firstName} {lastName}");
                 this.DialogResult = DialogResult.OK;
@@ -303,8 +305,8 @@ namespace Desktop_app
                 CB_Contract.DisplayMember = "Key";
                 CB_Contract.ValueMember = "Value";
                 CB_Contract.Items.Add(new KeyValuePair<string, int>("Inactive", 0));
-                CB_Contract.Items.Add(new KeyValuePair<string, int>("Parttime", 1));
-                CB_Contract.Items.Add(new KeyValuePair<string, int>("Fulltime", 2));
+                CB_Contract.Items.Add(new KeyValuePair<string, int>("Part Time", 1));
+                CB_Contract.Items.Add(new KeyValuePair<string, int>("Full Time", 2));
 
                 CB_Contract.SelectedIndex = selectedUser.Contractstatus;
 
@@ -332,6 +334,7 @@ namespace Desktop_app
                 TB_SpouseContact.Text = selectedUser.SpousePhone;
 
                 salaryUpdateUserNUD.Value = selectedUser.Salary;
+                workingHoursNUDOverVIew.Value = selectedUser.WorkingHours;
             }
         }
 
@@ -340,8 +343,9 @@ namespace Desktop_app
             System.Windows.Forms.Application.Restart();
         }
 
-        //AddEmployee
+        //managing salary
 
+        //AddEmployee
         private void btn_add_employee_Click_1(object sender, EventArgs e)
         {
             //variables
@@ -376,7 +380,9 @@ namespace Desktop_app
 
             var jobName = "";
 
+            //additional
             var salary = (int)salaryAddEmployeeNUD.Value;
+            var workingHours = (int)workingHoursAddEmployeeNUD.Value;
 
             List<string> errors = new List<string>();
 
@@ -462,7 +468,7 @@ namespace Desktop_app
 
             UserDTO dto = new UserDTO(id: 0, firstname: firstName, lastname: lastName, username: userName, password: password,
                 phone: phoneNumber, address: address, city: city, email: email, spouseName: spouseName, spousePhone: spouseNumber,
-                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName, salary);
+                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName, salary, workingHours);
 
             if (hr.RegisterNewEmployee(dto))
             {
@@ -544,19 +550,101 @@ namespace Desktop_app
             }
         }
 
-        private void CB_Contract_SelectedIndexChanged(object sender, EventArgs e)
+        //base(part time) - x1
+        //full time - x2
+        private void SalaryCalc(int baseSalary)
         {
-            if (CB_Contract.Text == "Fulltime")
+            if (ContractBoxAddEmployee.Text == "Full Time")
             {
-                hoursPerWeekTB.Text = "40 hrs";
+                //working hours
+                workingHoursAddEmployeeNUD.Value = 40;
+
+                //salary
+                salaryAddEmployeeNUD.Value = baseSalary * 4;
             }
-            else if (CB_Contract.Text == "Parttime")
+            else if (ContractBoxAddEmployee.Text == "Part Time")
             {
-                hoursPerWeekTB.Text = "12 hrs";
+                //working hours
+                workingHoursAddEmployeeNUD.Value = 12;
+
+                //salary
+                salaryAddEmployeeNUD.Value = baseSalary * 2;
             }
             else
             {
-                hoursPerWeekTB.Text = "0 hrs";
+                //working hours
+                workingHoursAddEmployeeNUD.Value = 0;
+                //salary
+                salaryAddEmployeeNUD.Value = baseSalary;
+            }
+        }
+
+        private void ContractBoxAddEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (true)
+            {
+                //HR
+                case bool _ when cbJobAdd.Text == "HR":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //CareTaker
+                case bool _ when cbJobAdd.Text == "Caretaker":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Veterinary_Technician
+                case bool _ when cbJobAdd.Text == "Veterinary_Technician":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //AnimalManagment
+                case bool _ when cbJobAdd.Text == "AnimalManagment":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Groundskeeper
+                case bool _ when cbJobAdd.Text == "Groundskeeper":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Cleaner
+                case bool _ when cbJobAdd.Text == "Cleaner":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //ScheduleMaker
+                case bool _ when cbJobAdd.Text == "ScheduleMaker":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //TicketSales
+                case bool _ when cbJobAdd.Text == "TicketSales":
+
+                    SalaryCalc(12);
+
+                    break;
+
+                //Customer
+                case bool _ when cbJobAdd.Text == "Customer":
+
+                    SalaryCalc(12);
+
+                    break;
             }
         }
     }

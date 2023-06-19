@@ -48,6 +48,11 @@ namespace DataCL
 
         public int executeQuery(string query)
         {
+            return executeQuery(query, null);
+        }
+        public int executeQuery(string query, SqlParameter[]? sqlParameters)
+        {
+
             try
             {
                 con.Open();
@@ -55,6 +60,10 @@ namespace DataCL
                 {
                     command.Connection = (SqlConnection)con;
                     command.CommandText = query;
+                    if (sqlParameters != null)
+                    {
+                        command.Parameters.AddRange(sqlParameters);
+                    }
                     return command.ExecuteNonQuery();
                 }
             }
@@ -64,11 +73,38 @@ namespace DataCL
             }
             finally
             {
+                if (con != null)
+                {
+                    con.Close();
+                }
+
+            }
+        }
+
+        public int executeIdScalar(string query)
+        {
+            try
+            {
+                con.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = (SqlConnection)con;
+                    command.CommandText = query;
+                    int newId = (int)command.ExecuteScalar();
+
+                    return newId;
+                }
+            }
+            catch { return 0; }
+
+            finally
+            {
                 con.Close();
             }
         }
 
-        public DataTable ReadDataQuery(string query)
+
+		public DataTable ReadDataQuery(string query)
         {
             DataTable dt = new DataTable();
             try
