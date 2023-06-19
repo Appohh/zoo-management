@@ -3,14 +3,33 @@
     color: #ede8e8;
 }
 
+body {
+    position: relative;
+}
+
+p {
+    font-family: sofia-pro,Century Gothic,sans-serif;
+}
+
+section {
+    margin: 15px 0px 20px 0px;
+}
+
 .nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     position: fixed;
+    top: 0px;
+    left: 0;
     align-items: center;
     width: -webkit-fill-available;
     z-index: 4;
+    height: 109px;
+    border-radius: 0px 0px 11px 11px;
+    transition: background 1.5s;
+    align-items: start;
 }
+
 
 .nav ul {
     list-style-type: none;
@@ -31,7 +50,7 @@
     padding: 14px 16px;
     text-decoration: none;
     text-transform: uppercase;
-    text-shadow: 2px 2px black;
+    text-shadow: 3px 3px 13px black;
 }
 
 .nav li a:hover:not(.active) {
@@ -47,28 +66,64 @@
     font-size: 27px;
     grid-column: 2;
     text-shadow: 2px 2px black;
+    margin: auto;
 }
 
 
 .hero {
-    height: 70vh;
+  /*  height: 62vh; */
+    position: relative;
 }
 
 .hero-caption {
     position: absolute;
     width: 50%;
     text-align: center;
-    top: 42%;
-    bottom: auto;
+    top: 100px;
     left: 50%;
     right: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%);
 }
 
 .hero-caption h2 {
     font-size: 48px;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px 6px black;
 }
+
+.hero-cta-wrap {
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    bottom: 0;
+    display: flex;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    background: #f0ead9;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 28px;
+}
+
+.cta-btns {
+    display: flex;
+    gap: 29px;
+}
+
+.cta-btns a, span {
+    text-transform: none !important;
+    white-space: nowrap;
+}
+
+
+a.cta-btn-stay span {
+    display: block;
+}
+
+a.cta-btn-tickets span {
+    display: block;
+}
+
 
 .hero-vid {
     height: fit-content;
@@ -78,10 +133,105 @@
 .btn-orange {
     background-color: #e84d0e !important;
     border-color: #e84d0e !important;
-    text-shadow: 2px 2px black;
+    /*text-shadow: 2px 2px black;*/
     text-decoration: none;
     cursor: pointer;
     text-transform: uppercase;
     padding: 6px;
     border-radius: 5px;
+}
+
+#land-1-title {
+    text-align: center;
+    color: black;
+    font-family: sofia-pro,Century Gothic,sans-serif;
+    margin: 0px 0px 14px 0px;
+    font-size: 47px;
+    text-shadow: 1px 1px burlywood;
+}
+
+.pic-link-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.pic-link-wrap img {
+    position: relative;
+    width: inherit;
+}
+
+.pic-link-wrap img:hover {
+    opacity: 55%;
+    transition: opacity 1s;
+}
+
+
+
+
+
+.pic-link-pic {
+    position: relative;
+    width: 370px;
+}
+
+.pic-link-pic h2 {
+    position: absolute;
+    bottom: 0px;
+    text-shadow: 2px 3px 10px black;
+    left: 13px;
+    font-size: 30px;
+}
+
+.text-trailer-wrap {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text-trailer-text {
+    width: 490px;
+}
+
+.text-trailer-text h3, p {
+    color: black;
+}
+
+.text-trailer-trailer video {
+    width: 540px;
+}
+
+.btn-green {
+    background-color: #596831 !important;
+    border-color: #596831 !important;
+   /* text-shadow: 2px 2px black; */
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+h4.ticket-title {
+    font-family: sofia-pro,Century Gothic,sans-serif;
+    color: black;
+}
+
+.ticket {
+    background: rgb(246, 241, 230);
+    width: 491px;
+    height: 161px;
+    padding: 15px;
+    margin: 20px;
+}
+
+.ticket h1, .ticket h2, .ticket h3, .ticket a, .ticket input[type="number"] {
+    color: black;
+    font-family: sofia-pro, "Century Gothic", sans-serif;
+    font-weight: 100;
+}
+
+.qnty-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
