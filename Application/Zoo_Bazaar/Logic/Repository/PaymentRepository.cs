@@ -93,7 +93,7 @@ namespace LogicCL.Repository
 			List<Ticket> tickets = new List<Ticket>();
 			foreach (TicketDTO ticketDTO in ticketDTOs)
 			{
-				tickets.Add(new Ticket(ticketDTO.Id, ticketDTO.Name, ticketDTO.Price));
+				tickets.Add(new Ticket(ticketDTO.Id, ticketDTO.Name, ticketDTO.Price,ticketDTO.Description));
 			}
 			return tickets;
 		}
