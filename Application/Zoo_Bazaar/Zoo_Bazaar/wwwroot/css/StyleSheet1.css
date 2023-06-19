@@ -235,3 +235,40 @@ h4.ticket-title {
     justify-content: space-between;
     align-items: center;
 }
+
+.cart-container * {
+    color: black;
+    font-family: sofia-pro, "Century Gothic", sans-serif;
+    font-weight: 100;
+}
+
+section.sec-tickets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cart-container {
+    grid-column: 4 / 6;
+    width: auto;
+    padding: 10px;
+    background: rgb(164, 138, 118);
+}
+
+.cart-price {
+    margin-top: 100%;
+    background: rgb(252, 206, 76);
+    outline: dashed;
+    font-size: 26px;
+    outline-offset: 5px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 28px;
+}
+
+.cart-qnty-price {
+    display: flex;
+    gap: 46px;
+}
