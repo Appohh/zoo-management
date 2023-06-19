@@ -1,4 +1,5 @@
 ﻿@page
+@using LogicCL
 @model Zoo_Bazaar.Pages.TicketsModel
 @{
     Layout = null;
@@ -31,50 +32,46 @@
     <section class="sec-tickets">
 
         <div class="ticket-container">
-            <div class="ticket">
-                <h2>
-                    Ticket Safaripark vanaf 10 jaar
-                </h2>
-                <h3>
-                    Bezoekers vanaf 10 jaar krijgen met dit ticket toegang
-                </h3>
-                <div class="qnty-price">
-                    <input type="number" />
-                    <h2>$26,65</h2>
+
+            @foreach (Ticket ticket in Model.tickets)
+            {
+                <div class="ticket">
+                    <h2>
+                        @ticket.Name
+                    </h2>
+                    <h3>
+                        @ticket.Description
+                    </h3>
+                    <div class="qnty-price">
+                        <input type="number" />
+                        <h2>$@ticket.Price.ToString("N0")</h2>
+                    </div>
                 </div>
+            }
+           
+
+          
+        </div>
+
+
+        <div class="cart-container">
+            <div class="cart-item">
+                <h3>A ticket</h3>
+                <h3>4</h3>
+                <h3>$12.50</h3>
             </div>
 
-            <div class="ticket">
-                <h2>
-                    Ticket Safaripark vanaf 10 jaar
-                </h2>
-                <h3>
-                    Bezoekers vanaf 10 jaar krijgen met dit ticket toegang
-                </h3>
-                <div class="qnty-price">
-                    <input type="number" />
-                    <h2>$26,65</h2>
-                </div>
-            </div>
-
-            <div class="ticket">
-                <h2>
-                    Ticket Safaripark vanaf 10 jaar
-                </h2>
-                <h3>
-                    Bezoekers vanaf 10 jaar krijgen met dit ticket toegang
-                </h3>
-                <div class="qnty-price">
-                    <input type="number" />
-                    <h2>$26,65</h2>
-                </div>
+            <div class="cart-price">
+                <h2>$324,43</h2>
             </div>
         </div>
 
 
     </section>
-
 </div>
+
+
+
 
 
 
