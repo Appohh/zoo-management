@@ -2,6 +2,7 @@ using LogicCL;
 using LogicCL.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 
 namespace Zoo_Bazaar.Pages
 {
@@ -27,6 +28,10 @@ namespace Zoo_Bazaar.Pages
         public IActionResult OnPostCheckout()
         {
 
+            if (string.IsNullOrEmpty(Order.Name)) { return Redirect("/Error"); }
+            if (string.IsNullOrEmpty(Order.PhoneNumber)) { return Redirect("/Error"); }
+            if (string.IsNullOrEmpty(Order.Email)) { return Redirect("/Error"); }
+
             List<Tuple<int, int>> tickets_ = new List<Tuple<int, int>>();
 
 
@@ -40,12 +45,21 @@ namespace Zoo_Bazaar.Pages
                 else continue;
             }
 
+            if(tickets_.Count < 1)
+            {
+                return Redirect("/Error");
+            }
+
             Order.Tickets = tickets_;
 
 
 
+            //serialize order object
+            var json = JsonConvert.SerializeObject(Order);
 
-            return Page();
+            TempData["Order"] = json;
+
+            return Redirect("/Tickets1");
 
         }
     }
