@@ -58,10 +58,15 @@ namespace DataCL.DataTraffic
             //return collection of DTOs
             return payments;
         }
+        public bool PayPayment(int id, int paid)
+        {
+            string query = $"UPDATE Payment SET Paid={paid} WHERE Id = {id} ";
+            return executeQuery(query) == 0 ? false : true;
+        }
 		public bool addPayment(PaymentDTO payment, Dictionary<int, int> ticketCounts)
 		{
-			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice) OUTPUT INSERTED.Id " +
-						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)});";
+			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice,Paid) OUTPUT INSERTED.Id " +
+						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)}, {0});";
 
 			int paymentID = executeIdScalar(query);
 

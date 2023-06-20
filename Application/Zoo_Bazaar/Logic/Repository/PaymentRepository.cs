@@ -61,7 +61,7 @@ namespace LogicCL.Repository
             List<Payment> payments = new List<Payment>();
             foreach (PaymentDTO paymentDTO in paymentDTOs)
             {
-                payments.Add(new Payment(paymentDTO.Id ,paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name,paymentDTO.Email, paymentDTO.PhoneNumber,paymentDTO.TotalPrice));
+                payments.Add(new Payment(paymentDTO.Id ,paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name,paymentDTO.Email, paymentDTO.PhoneNumber,paymentDTO.TotalPrice,paymentDTO.Paid));
             }
             return payments;
         }
@@ -72,7 +72,7 @@ namespace LogicCL.Repository
 			List<Payment> payments = new List<Payment>();
 			foreach (PaymentDTO paymentDTO in paymentDTOs)
 			{
-				payments.Add(new Payment(paymentDTO.Id, paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name, paymentDTO.Email, paymentDTO.PhoneNumber, paymentDTO.TotalPrice));
+				payments.Add(new Payment(paymentDTO.Id, paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name, paymentDTO.Email, paymentDTO.PhoneNumber, paymentDTO.TotalPrice, paymentDTO.Paid));
 			}
 			return payments;
 		}
@@ -86,7 +86,10 @@ namespace LogicCL.Repository
 			};
 			return false;
 		}
-
+		public bool PayPayment(int id, int paid)
+		{
+			return paymentDataTraffic.PayPayment(id, paid);
+		}
 		public List <Ticket> GetTickets()
 		{
 			List<TicketDTO> ticketDTOs = ticketDataTraffic.retrieveTickets();

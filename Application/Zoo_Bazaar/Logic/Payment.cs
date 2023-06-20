@@ -15,14 +15,14 @@ namespace LogicCL
         public string Email { get; private set; }
         public string PhoneNumber { get; private set; }
         public decimal TotalPrice { get; private set; }
-
+        public int Paid { get; private set; }
 
         public Payment()
         {
 
         }
 
-        public Payment (int id, int ticketId, int count, string name, string email, string phonenumber, decimal totalprice)
+        public Payment (int id, int ticketId, int count, string name, string email, string phonenumber, decimal totalprice, int paid)
         {
             Id = id;
             TicketID = ticketId;
@@ -31,6 +31,7 @@ namespace LogicCL
             Email = email;
             PhoneNumber = phonenumber;
             TotalPrice = totalprice;
+            Paid = paid;
         }
     }
 }

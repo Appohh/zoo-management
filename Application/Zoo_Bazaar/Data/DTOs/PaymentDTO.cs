@@ -16,13 +16,13 @@ namespace DataCL.DTOs
 		public string PhoneNumber { get; private set; }
 		public decimal TotalPrice { get; set; }
 
-
+		public int Paid { get; set; }
 		public PaymentDTO()
 		{
 
 		}
 
-		public PaymentDTO(int id, int ticketId, int count, string name, string email, string phonenumber, decimal totalprice)
+		public PaymentDTO(int id, int ticketId, int count, string name, string email, string phonenumber, decimal totalprice, int paid)
 		{
 			Id = id;
 			TicketID = ticketId;
@@ -31,6 +31,7 @@ namespace DataCL.DTOs
 			Email = email;
 			PhoneNumber = phonenumber;
 			TotalPrice = totalprice;
+			Paid = paid;
 		}
 	}
 }
