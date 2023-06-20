@@ -21,32 +21,40 @@ namespace DataCL.DataTraffic
             }
         }
 
-        public List<PaymentDTO> GetPaymentById(int id)
-        {
-            string query = $@"SELECT P.*, PT.Count, PT.TicketID FROM Payment P INNER JOIN PaymentTicket PT ON P.Id = PT.PaymentID INNER JOIN Tickets T ON PT.TicketID = T.Id WHERE p.Id = {id};";
+		public List<OrderDTO> GetOrdersByPaymentId(int id)
+		{
+			string query = $@"SELECT * FROM Payment WHERE Id = {id};";
 
+			DataTable dt = base.ReadDataQuery(query);
+			List<OrderDTO> orders = new List<OrderDTO>();
 
-            List<PaymentDTO> Payments = new List<PaymentDTO>();
-            DataTable dt = base.ReadDataQuery(query);
+			if (dt.Rows.Count > 0)
+			{
+				foreach (DataRow dr in dt.Rows)
+				{
+					OrderDTO order = DataConvertingMethods.ConvertDataRowToObject<OrderDTO>(dr);
 
-            if (dt.Rows.Count > 0)
-            {
-                foreach (DataRow dr in dt.Rows)
-                {
-                    PaymentDTO payment = DataConvertingMethods.ConvertDataRowToObject<PaymentDTO>(dr);
-                    Payments.Add(payment);
-                }
-                return Payments;
-            }
-            else { return null; }
+					// Fetch tickets for this order
+					string ticketQuery = $@"SELECT PT.Count, PT.TicketID FROM PaymentTicket PT WHERE PT.PaymentID = {order.Id};";
+					DataTable dtTickets = base.ReadDataQuery(ticketQuery);
 
+					// Process Tickets
+					order.Tickets = new List<Tuple<int, int>>();
+					foreach (DataRow ticketRow in dtTickets.Rows)
+					{
+						int ticketId = Convert.ToInt32(ticketRow["TicketID"]);
+						int count = Convert.ToInt32(ticketRow["Count"]);
+						order.Tickets.Add(new Tuple<int, int>(ticketId, count));
+					}
 
-        }
+					orders.Add(order);
+				}
+			}
 
+			return orders.Count > 0 ? orders : null;
+		}
 
-
-
-        public List<PaymentDTO> RetrieveAllPayment()
+		public List<PaymentDTO> RetrieveAllPayment()
         {
             List<PaymentDTO> payments = new List<PaymentDTO>();
 
@@ -67,19 +75,19 @@ namespace DataCL.DataTraffic
             string query = $"UPDATE Payment SET Paid={paid} WHERE Id = {id} ";
             return executeQuery(query) == 0 ? false : true;
         }
-		public bool addPayment(PaymentDTO payment, Dictionary<int, int> ticketCounts)
+		public bool addPayment(OrderDTO order)
 		{
 			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice,Paid) OUTPUT INSERTED.Id " +
-						   $"VALUES ('{payment.Name}','{payment.Email}','{payment.PhoneNumber}', {payment.TotalPrice.ToString(CultureInfo.InvariantCulture)}, {0});";
+						   $"VALUES ('{order.Name}','{order.Email}','{order.PhoneNumber}', {order.TotalPrice?.ToString(CultureInfo.InvariantCulture)}, {0});";
 
 			int paymentID = executeIdScalar(query);
 
 			if (paymentID > 0)
 			{
-				foreach (KeyValuePair<int, int> ticketCount in ticketCounts)
+				foreach (Tuple <int, int> items in order.Tickets)
 				{
-					int ticketId = ticketCount.Key;
-					int count = ticketCount.Value;
+					int ticketId = items.Item1;
+					int count = items.Item2;
 
 					query = $"INSERT INTO PaymentTicket (PaymentID, TicketID, Count) " +
 							$"VALUES ({paymentID}, {ticketId}, {count});";

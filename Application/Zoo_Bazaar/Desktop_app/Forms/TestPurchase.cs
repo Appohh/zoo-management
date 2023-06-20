@@ -15,7 +15,7 @@ namespace Desktop_app.Forms
 {
     public partial class TestPurchase : Form
     {
-        private Payment payment;
+        private Order order;
         private PaymentRepository paymentRepository;
         private int paymentId;
         public TestPurchase()
@@ -24,60 +24,55 @@ namespace Desktop_app.Forms
             this.paymentRepository = new PaymentRepository();
         }
 
-        private void btn_buy_Click(object sender, EventArgs e)
+		private void btn_buy_Click(object sender, EventArgs e)
+		{
+			string name = "John Doe";
+			string email = "john.doe@example.com";
+			string phoneNumber = "1234567890";
+			decimal totalPrice = 0.0M;
+
+			OrderDTO order = new OrderDTO();
+			order.Tickets = new List<Tuple<int, int>>();
+
+			order.Tickets.Add(new Tuple<int, int>(8, Convert.ToInt32(TB_BabyTicket.Value)));
+			order.Tickets.Add(new Tuple<int, int>(9, Convert.ToInt32(TB_KidTicket.Value)));
+			order.Tickets.Add(new Tuple<int, int>(10, Convert.ToInt32(TB_AdultTicket.Value)));
+
+			// Calculate the total price of all tickets
+			foreach (Tuple<int, int> ticket in order.Tickets)
+			{
+				int ticketId = ticket.Item1;
+				int count = ticket.Item2;
+
+				// Get the ticket price for the current ticket ID
+				decimal ticketPrice = GetTicketPrice(ticketId); 
+
+				// Calculate the subtotal price for the current ticket type
+				decimal subtotalPrice = ticketPrice * count;
+
+				// Add the subtotal price to the total price
+				totalPrice += subtotalPrice;
+			}
+
+			order.Name = name;
+			order.Email = email;
+			order.PhoneNumber = phoneNumber;
+			order.TotalPrice = totalPrice;
+
+			paymentRepository.ApplyDiscount(order, "test");
+			if (paymentRepository.addPayment(order)) 
+			{
+				// The payment was added successfully, you can handle it here
+				// For example, show a confirmation message to the user
+			}
+			else
+			{
+				// The payment was not added, you can handle the error here
+				// For example, show an error message to the user
+			}
+		}
+		private decimal GetTicketPrice(int ticketId)
         {
-            string name = "John Doe";
-            string email = "john.doe@example.com";
-            string phoneNumber = "1234567890";
-            decimal totalPrice = 0.0M; // Initialize total price to 0
-
-            int quantityBabies = Convert.ToInt32(TB_BabyTicket.Value);
-            int quantityKids = Convert.ToInt32(TB_KidTicket.Value);
-            int quantityAdults = Convert.ToInt32(TB_AdultTicket.Value);
-
-            Dictionary<int, int> ticketCounts = new Dictionary<int, int>();
-
-            ticketCounts.Add(8, quantityBabies);
-            ticketCounts.Add(9, quantityKids);
-            ticketCounts.Add(10, quantityAdults);
-
-            // Calculate the total price of all tickets
-            foreach (KeyValuePair<int, int> ticketCount in ticketCounts)
-            {
-                int ticketId = ticketCount.Key;
-                int count = ticketCount.Value;
-
-                // Get the ticket price for the current ticket ID
-                decimal ticketPrice = GetTicketPrice(ticketId);
-
-                // Calculate the subtotal price for the current ticket type
-                decimal subtotalPrice = ticketPrice * count;
-
-                // Add the subtotal price to the total price
-                totalPrice += subtotalPrice;
-            }
-
-            PaymentDTO paymentDTO = new PaymentDTO(paymentId, 0, 0, name, email, phoneNumber, totalPrice);
-
-            paymentRepository.ApplyDiscount(paymentDTO, ticketCounts, "test");
-
-            // Check if the payment was added successfully
-            if (paymentRepository.addPayment(paymentDTO, ticketCounts))
-            {
-                // The payment was added successfully, you can handle it here
-                // For example, show a confirmation message to the user
-            }
-            else
-            {
-                // The payment was not added, you can handle the error here
-                // For example, show an error message to the user
-            }
-        }
-        private decimal GetTicketPrice(int ticketId)
-        {
-            // Retrieve the ticket price from the database or any other source
-            // You can implement the logic to fetch the ticket price based on the provided ticketId
-            // For now, this method returns a fixed price based on the ticket ID for demonstration purposes
             switch (ticketId)
             {
                 case 8: // Ticket for babies

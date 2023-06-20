@@ -17,19 +17,23 @@ namespace LogicCL.Repository
         private PaymentDataTraffic paymentDataTraffic = new PaymentDataTraffic();
 		private TicketDataTraffic ticketDataTraffic = new TicketDataTraffic();
 		private DiscountDataTraffic DiscountDataTraffic = new DiscountDataTraffic();
-		public PaymentDTO ApplyDiscount(PaymentDTO payment, Dictionary<int, int> ticketCounts, string code)
+		public OrderDTO ApplyDiscount(OrderDTO order, string code)
 		{
 			decimal discountAmount = 0.0M;
 			List<Ticket> tickets = GetTickets();
 			List<Discount> discountcodes = GetDiscount();
-			decimal totalPrice = payment.TotalPrice;
-			int totalCount = ticketCounts.Values.Sum();
-
-			if (totalCount > 20)
+			decimal? totalPrice = order.TotalPrice;
+			int Ticketcounts = 0;
+			foreach (Tuple <int,int> ticket in order.Tickets) 
 			{
-				foreach (var ticketCount in ticketCounts)
+				Ticketcounts += ticket.Item2;
+			}
+
+			if (Ticketcounts > 20)
+			{
+				foreach (var ticketCount in order.Tickets)
 				{
-					Ticket currentTicket = tickets.First(t => t.Id == ticketCount.Key);
+					Ticket currentTicket = tickets.First(t => t.Id == ticketCount.Item1);
 
 					decimal discountedPrice = currentTicket.Price;
 					if (currentTicket.Name == "TicketKid")
@@ -40,7 +44,7 @@ namespace LogicCL.Repository
 					{
 						discountedPrice = 24.50M;
 					}
-					discountAmount += (currentTicket.Price - discountedPrice) * ticketCount.Value;
+					discountAmount += (currentTicket.Price - discountedPrice) * ticketCount.Item2;
 				}
 			}
 
@@ -51,8 +55,8 @@ namespace LogicCL.Repository
 				discountAmount += 5; 
 			}
 
-			payment.TotalPrice -= discountAmount;
-			return payment;
+			order.TotalPrice -= discountAmount;
+			return order;
 		}
 
 		public List <Payment> retrievePayments()
@@ -66,21 +70,21 @@ namespace LogicCL.Repository
             return payments;
         }
 
-		public List <Payment> GetPaymentById(int id)
+		public List <Order> GetPaymentById(int id)
 		{
-			List<PaymentDTO> paymentDTOs = paymentDataTraffic.GetPaymentById(id);
-			List<Payment> payments = new List<Payment>();
-			foreach (PaymentDTO paymentDTO in paymentDTOs)
+			List<OrderDTO> orderDTOs = paymentDataTraffic.GetOrdersByPaymentId(id);
+			List<Order> orders = new List<Order>();
+			foreach (OrderDTO orderDTO in orderDTOs)
 			{
-				payments.Add(new Payment(paymentDTO.Id, paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name, paymentDTO.Email, paymentDTO.PhoneNumber, paymentDTO.TotalPrice, paymentDTO.Paid));
+				orders.Add(new Order(orderDTO.Id, orderDTO.Tickets, orderDTO.Name, orderDTO.Email, orderDTO.PhoneNumber, orderDTO.TotalPrice, orderDTO.Paid));
 			}
-			return payments;
+			return orders;
 		}
 
 
-		public bool addPayment(PaymentDTO payment, Dictionary<int, int> ticketCounts)
+		public bool addPayment(OrderDTO order)
 		{
-			if (paymentDataTraffic.addPayment(payment, ticketCounts))
+			if (paymentDataTraffic.addPayment(order))
 			{
 				return true;
 			};

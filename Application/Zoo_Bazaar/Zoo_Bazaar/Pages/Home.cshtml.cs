@@ -11,7 +11,7 @@ namespace Zoo_Bazaar.Pages
         Payment payment;
         public void OnGet()
         {
-            paymentRepository.retrievePayments();
+            paymentRepository.GetPaymentById(11);
         }
     }
 }

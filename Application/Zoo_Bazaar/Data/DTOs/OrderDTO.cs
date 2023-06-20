@@ -8,7 +8,7 @@ namespace DataCL.DTOs
 {
     public class OrderDTO
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public List<Tuple<int, int>> Tickets { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -16,7 +16,7 @@ namespace DataCL.DTOs
         public decimal? TotalPrice { get; set; }
         public int Paid { get; set; }
 
-        public OrderDTO(int? id, List<Tuple<int, int>> tickets, string name, string email, string phoneNumber, decimal? totalPrice, int paid)
+        public OrderDTO(int id, List<Tuple<int, int>> tickets, string name, string email, string phoneNumber, decimal? totalPrice, int paid)
         {
             Id = id;
             Tickets = tickets;
