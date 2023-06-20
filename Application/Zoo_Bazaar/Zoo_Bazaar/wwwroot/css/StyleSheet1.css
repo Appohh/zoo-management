@@ -254,16 +254,18 @@ section.sec-tickets {
 .cart-container {
     grid-column: 4 / 7;
     width: auto;
-    padding: 10px;
+    padding: 17px;
     background: rgb(164, 138, 118);
+    display: grid;
+    border-radius: 5px;
 }
 
 .cart-price {
-    margin-top: 100%;
     background: rgb(252, 206, 76);
     outline: dashed;
     font-size: 26px;
     height: 60px;
+    margin-bottom: 13px;
     display: flex;
     outline-offset: 5px;
     align-items: center;
@@ -306,4 +308,24 @@ section.sec-tickets {
 .address-container input.btn-green {
     color: white;
     font-weight: 700;
+}
+
+.cart-discount {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.cart-discount input {
+    width: 100%;
+    padding: 5px;
+    margin: 3px;
+    color: white;
+}
+
+#GoPayBtn {
+    width: 209px;
+    font-size: 22px;
+    position: absolute;
+    bottom: 0;
 }

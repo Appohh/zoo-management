@@ -32,46 +32,55 @@
     <section class="sec-tickets">
 
         <div class="ticket-container">
-
-            @foreach (Ticket ticket in Model.tickets)
-            {
-                <div class="ticket">
+            <div class="ticket" style="height: 186px !important;">
                     <h2>
-                        @ticket.Name
+                        Personal information:
                     </h2>
                     <h3>
-                        @ticket.Description
+                        Name: @Model.Order.Name
+                    </h3>
+                    <h3>
+                        Email: @Model.Order.Email
+                    </h3>
+                    <h3>
+                        Phone: @Model.Order.PhoneNumber
                     </h3>
                     <div class="qnty-price">
-                        <input type="number" />
-                        <h2>$@ticket.Price.ToString("N0")</h2>
                     </div>
-                    </div>
-            }
-           
-
+                    </div>  
           
+                    <form method="post" asp-page-handler="GoPayment" class="GoPay">
+                        <input type="submit" value="Pay with creditcard" class="btn-green" id="GoPayBtn"/>
+                    </form>
         </div>
 
-
         <div class="cart-container">
-            <div class="cart-item">
-                <h3>Name</h3>
-                <div class="cart-qnty-price">
-                    <h3>Quantity</h3>
-                    <h3>Price</h3>
+            <div class="cart-item-container">
+                <div class="cart-item">
+                    <h3>Name</h3>
+                    <div class="cart-qnty-price">
+                        <h3>Quantity</h3>
+                        <h3>Price</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="cart-item">
-                <h3>A ticket</h3>
-                <div class="cart-qnty-price">
-                    <h3>4</h3>
-                    <h3>$12.50</h3>
+                @foreach (Tuple<Ticket, int> item in Model.tickets)
+                {
+                    <div class="cart-item">
+                        <h3>@item.Item1.Name</h3>
+                        <div class="cart-qnty-price">
+                            <h3>@item.Item2</h3>
+                            <h3>$@item.Item1.Price.ToString("N0")</h3>
+                        </div>
+                    </div>
+                }
                 </div>
+            <div class="cart-discount">
+                <input type="text" style="color:black;">
+                <input type="submit" value="Apply discount" class="btn-orange">
             </div>
 
             <div class="cart-price">
-                <h2>Total: $324,43</h2>
+                <h2>Total: $@Model.Total.Value.ToString("N0")</h2>
             </div>
         </div>
 

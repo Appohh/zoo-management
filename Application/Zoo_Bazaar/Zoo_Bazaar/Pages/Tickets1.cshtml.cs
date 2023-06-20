@@ -13,12 +13,15 @@ namespace Zoo_Bazaar.Pages
 
         public Order? Order { get; set; }
 
-        public List<Ticket>? tickets { get; set; }
+        public List<Tuple<Ticket, int>>? tickets { get; set; }
+
+        public decimal? Total;
 
 
         public Tickets1Model()
         {
             paymentRepository = new PaymentRepository();
+            Total = null;
             
         }
 
@@ -32,9 +35,7 @@ namespace Zoo_Bazaar.Pages
             }
 
             return Page();
-            
 
-            
 
         }
 
@@ -48,15 +49,30 @@ namespace Zoo_Bazaar.Pages
             else { return Redirect("/Tickets"); }
 
             List<Ticket>? tickets = new List<Ticket>();
-            this.tickets = new List<Ticket>();
+            this.tickets = new List<Tuple<Ticket, int>>();
             tickets = paymentRepository.GetTickets();
 
             foreach (Tuple<int, int> ticket in Order.Tickets)
             {
-                this.tickets.Add(tickets.Find(t => t.Id == ticket.Item1));
+                this.tickets.Add(Tuple.Create(tickets.Find(t => t.Id == ticket.Item1), ticket.Item2));
             }
 
+            CalculateTotal();
+
+
             return null;
+        }
+
+        public void CalculateTotal()
+        {
+            decimal total = 0;
+
+            foreach(Tuple<Ticket, int> item in tickets)
+            {
+                total += item.Item2 * item.Item1.Price;
+            }
+
+            Total = total;
         }
     }
 }
