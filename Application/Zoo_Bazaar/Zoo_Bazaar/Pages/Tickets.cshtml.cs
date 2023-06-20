@@ -29,7 +29,6 @@ namespace Zoo_Bazaar.Pages
 
             List<Tuple<int, int>> tickets_ = new List<Tuple<int, int>>();
 
-            int count = tickets_.Sum(t => t.Item2);
 
             foreach (string key in Request.Form.Keys)
             {

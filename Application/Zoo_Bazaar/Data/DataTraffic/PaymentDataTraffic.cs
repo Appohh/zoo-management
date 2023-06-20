@@ -42,6 +42,10 @@ namespace DataCL.DataTraffic
 
 
         }
+
+
+
+
         public List<PaymentDTO> RetrieveAllPayment()
         {
             List<PaymentDTO> payments = new List<PaymentDTO>();

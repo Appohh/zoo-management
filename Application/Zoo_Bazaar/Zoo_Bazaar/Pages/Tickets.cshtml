@@ -30,7 +30,7 @@
 
 <div class="main">
     <section class="sec-tickets">
-        <form method="post" asp-page-handler="Checkout">
+        <form method="post" asp-page-handler="Checkout" class="chk-info">
         <div class="ticket-container">
 
             @foreach (Ticket ticket in Model.tickets)
@@ -74,7 +74,7 @@
          
 
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Continue to payment" class="btn-green">
             </>
         </div>
         </form>

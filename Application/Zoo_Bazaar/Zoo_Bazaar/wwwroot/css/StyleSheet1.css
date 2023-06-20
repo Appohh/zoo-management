@@ -280,3 +280,30 @@ section.sec-tickets {
     display: flex;
     gap: 46px;
 }
+
+.chk-info {
+    display: grid;
+    grid-column: 1 / 8;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.address-container {
+    grid-column: 4 / 7;
+}
+
+.chk-info .address-container input {
+    width: 100%;
+    margin: 8px;
+    padding: 14px;
+}
+
+.chk-info * {
+    color: black;
+    font-family: sofia-pro, "Century Gothic", sans-serif;
+    font-weight: 100;
+}
+
+.address-container input.btn-green {
+    color: white;
+    font-weight: 700;
+}
