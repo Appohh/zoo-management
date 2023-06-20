@@ -59,13 +59,13 @@ namespace LogicCL.Repository
 			return order;
 		}
 
-		public List <Payment> retrievePayments()
+		public List <Order> retrieveOrders()
 		{
-            List<PaymentDTO> paymentDTOs = paymentDataTraffic.RetrieveAllPayment();
-            List<Payment> payments = new List<Payment>();
-            foreach (PaymentDTO paymentDTO in paymentDTOs)
+            List<OrderDTO> orderDTOs = paymentDataTraffic.RetrieveAllOrders();
+            List<Order> payments = new List<Order>();
+            foreach (OrderDTO orderDTO in orderDTOs)
             {
-                payments.Add(new Payment(paymentDTO.Id ,paymentDTO.TicketID, paymentDTO.Count, paymentDTO.Name,paymentDTO.Email, paymentDTO.PhoneNumber,paymentDTO.TotalPrice,paymentDTO.Paid));
+                payments.Add(new Order(orderDTO.Id , orderDTO.Tickets, orderDTO.Name, orderDTO.Email, orderDTO.PhoneNumber, orderDTO.TotalPrice, orderDTO.Paid));
             }
             return payments;
         }

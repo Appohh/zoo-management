@@ -54,9 +54,9 @@ namespace DataCL.DataTraffic
 			return orders.Count > 0 ? orders : null;
 		}
 
-		public List<PaymentDTO> RetrieveAllPayment()
+		public List<OrderDTO> RetrieveAllOrders()
         {
-            List<PaymentDTO> payments = new List<PaymentDTO>();
+            List<OrderDTO> payments = new List<OrderDTO>();
 
             //get datatable of queried data
             DataTable table = ReadData();
@@ -64,7 +64,7 @@ namespace DataCL.DataTraffic
             //itterate trough all datarows, validate and convert to DTOs
             foreach (DataRow dr in table.Rows)
             {
-                payments.Add(DataConvertingMethods.ConvertDataRowToObject<PaymentDTO>(dr));
+                payments.Add(DataConvertingMethods.ConvertDataRowToObject<OrderDTO>(dr));
             }
 
             //return collection of DTOs
