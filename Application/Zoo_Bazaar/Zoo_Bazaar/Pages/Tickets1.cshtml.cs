@@ -5,15 +5,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Zoo_Bazaar.Pages
 {
-    public class TicketsModel : PageModel
+    public class Tickets1Model : PageModel
     {
         private PaymentRepository? paymentRepository { get; set; }
         public List<Ticket>? tickets { get; set; }
 
-        [BindProperty]
-        public Payment Order { get; set; }
 
-        public TicketsModel()
+        public Tickets1Model()
         {
             paymentRepository = new PaymentRepository();
             tickets = paymentRepository.GetTickets();
