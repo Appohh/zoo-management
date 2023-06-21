@@ -98,6 +98,7 @@ namespace LogicCL.Repository
 
 		public bool addPayment(OrderDTO order)
 		{
+
 			if (paymentDataTraffic.addPayment(order))
 			{
 				return true;

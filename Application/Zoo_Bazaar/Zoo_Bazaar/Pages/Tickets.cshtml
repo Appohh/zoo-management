@@ -44,14 +44,12 @@
                     </h3>
                     <div class="qnty-price">
                             @{string a = "row" + ticket.Id.ToString();}
-                        <input value="0" type="number" name="@a" />
-                        <h2>$@ticket.Price.ToString("N0")</h2>
+                            <input value="0" type="number" name="@a" min="0" />
+                        <h2>@ticket.Price.ToString("C")</h2>
                     </div>
-                    </div>
+                </div>
             }
-           
-
-          
+ 
         </div>
 
 

@@ -69,7 +69,7 @@
                         <h3>@item.Item1.Name</h3>
                         <div class="cart-qnty-price">
                             <h3>@item.Item2</h3>
-                            <h3>$@item.Item1.Price.ToString("N0")</h3>
+                            <h3>@item.Item1.Price.ToString("C")</h3>
                         </div>
                     </div>
                 }
@@ -80,7 +80,16 @@
             </form>
 
             <div class="cart-price">
-                <h2>Total: $@Model.Total.Value.ToString("N0")</h2>
+                @{
+                    if (Model.TotalPriceWithoutDiscount > Model.Total)
+                    {
+                        <span>Price:</span>
+                        <span style="text-decoration: line-through;">@Model.TotalPriceWithoutDiscount.Value.ToString("C")</span>
+                        <span>New Price:</span>
+                        <span>@Model.Total.Value.ToString("C") </span>
+                    }
+                }
+                <h2>Total: @Model.Total.Value.ToString("C")</h2>
             </div>
         </div>
 

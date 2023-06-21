@@ -10,8 +10,8 @@ namespace Zoo_Bazaar.Pages
     public class Tickets1Model : PageModel
     {
         private PaymentRepository? paymentRepository { get; set; }
-
-        public Order? Order { get; set; }
+        public decimal? TotalPriceWithoutDiscount;
+		public Order? Order { get; set; }
 
         public List<Tuple<Ticket, int>>? tickets { get; set; }
 
@@ -119,6 +119,7 @@ namespace Zoo_Bazaar.Pages
             paymentRepository.ApplyDiscount(Order, null);
             
             Total = Order.TotalPrice;
+            TotalPriceWithoutDiscount = total;
         }
         public void CalculateTotalWithCode()
         {
@@ -132,7 +133,10 @@ namespace Zoo_Bazaar.Pages
             paymentRepository.ApplyDiscount(Order, CouponCode);
 
             Total = Order.TotalPrice;
+            TotalPriceWithoutDiscount = total;
         }
+
+        
 
         private void SaveOrder()
         {
