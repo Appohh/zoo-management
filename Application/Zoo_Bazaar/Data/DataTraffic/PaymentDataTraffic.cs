@@ -78,7 +78,7 @@ namespace DataCL.DataTraffic
 		public bool addPayment(OrderDTO order)
 		{
 			string query = $"INSERT INTO Payment (Name, Email, PhoneNumber, TotalPrice,Paid,Discount) OUTPUT INSERTED.Id " +
-						   $"VALUES ('{order.Name}','{order.Email}','{order.PhoneNumber}', {order.TotalPrice?.ToString(CultureInfo.InvariantCulture)}, {0},{order.Discount.ToString(CultureInfo.InvariantCulture)});";
+						   $"VALUES ('{order.Name}','{order.Email}','{order.PhoneNumber}', {order.TotalPrice?.ToString(CultureInfo.InvariantCulture)}, {1},{order.Discount.ToString(CultureInfo.InvariantCulture)});";
 
 			int paymentID = executeIdScalar(query);
 

@@ -38,7 +38,7 @@ namespace Zoo_Bazaar.Pages
             {
                 return prep;
             }
-
+            SaveOrder();
             return Page();
 
 
@@ -47,6 +47,22 @@ namespace Zoo_Bazaar.Pages
 
         public IActionResult OnPostGoPayment()
         {
+            var order = TempData["Order"];
+            if (order != null)
+            {
+                Order = JsonConvert.DeserializeObject<Order>(order.ToString());
+            }
+            else { return Redirect("/Tickets"); }
+
+            List<Ticket>? tickets = new List<Ticket>();
+            this.tickets = new List<Tuple<Ticket, int>>();
+            tickets = paymentRepository.GetTickets();
+
+            foreach (Tuple<int, int> ticket in Order.Tickets)
+            {
+                this.tickets.Add(Tuple.Create(tickets.Find(t => t.Id == ticket.Item1), ticket.Item2));
+            }
+            SaveOrder();
             return Redirect("/PayCC");
         }
 

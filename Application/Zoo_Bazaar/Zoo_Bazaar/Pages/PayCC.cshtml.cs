@@ -27,7 +27,7 @@ namespace Beamer_shop.Pages
             {
                 return prep;
             }
-
+            SaveOrder();
             return Page();
         }
 
@@ -42,10 +42,11 @@ namespace Beamer_shop.Pages
 
             //PUT EVERYTHING FROM ORDER IN DB HERE
 
-            if (true) //succes
+            if (paymentRepository.addPayment(Order)) //succes
             {
                 //Mail tickets
 
+                SendMail();
                 return Redirect("/index"); //can make a page with succes text
             }
             else//not succes
@@ -82,7 +83,13 @@ namespace Beamer_shop.Pages
                 Tickets.Add(Tuple.Create(tickets.Find(t => t.Id == ticket.Item1), ticket.Item2));
             }
         }
+        private void SaveOrder()
+        {
+            //serialize order object
+            var json = JsonConvert.SerializeObject(Order);
 
+            TempData["Order"] = json;
+        }
 
         private void SendMail()
         {
@@ -100,7 +107,7 @@ namespace Beamer_shop.Pages
 
 
             var fromAddress = "mr.pushkinini@gmail.com";
-            var toAddress = "alpay2001@live.nl";
+            var toAddress = Order.Email; 
             var subject = "Zoobazaar tickets for order: #" + Order.Id.ToString();
             var body = description;
 
