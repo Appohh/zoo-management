@@ -1,0 +1,36 @@
+﻿@page
+@model Zoo_Bazaar.Pages.SendMailModel
+@{
+}
+@{
+    var fromAddress = "mr.pushkinini@gmail.com";
+    var toAddress = "alpay2001@live.nl";
+    var subject = "Hello from C# Razor";
+    var body = "This is the email body.";
+
+    var smtpHost = "smtp-relay.sendinblue.com";
+    var smtpPort = 587;
+    var smtpUsername = "mr.pushkinini@gmail.com";
+    var smtpPassword = "tpcwFx28Uv3LhzCS";
+
+    using (var message = new System.Net.Mail.MailMessage(fromAddress, toAddress))
+    {
+        message.Subject = subject;
+        message.Body = body;
+
+        using (var smtpClient = new System.Net.Mail.SmtpClient(smtpHost, smtpPort))
+        {
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new System.Net.NetworkCredential(smtpUsername, smtpPassword);
+            smtpClient.EnableSsl = true;
+
+            try
+            {
+                smtpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+    }
+}
