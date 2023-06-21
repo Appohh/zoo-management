@@ -17,7 +17,7 @@ namespace LogicCL.Repository
         private PaymentDataTraffic paymentDataTraffic = new PaymentDataTraffic();
 		private TicketDataTraffic ticketDataTraffic = new TicketDataTraffic();
 		private DiscountDataTraffic DiscountDataTraffic = new DiscountDataTraffic();
-		public OrderDTO ApplyDiscount(OrderDTO order, string code)
+		public Order ApplyDiscount(Order order, string? code)
 		{
 			decimal discountAmount = 0.0M;
 			List<Ticket> tickets = GetTickets();
@@ -56,16 +56,30 @@ namespace LogicCL.Repository
 			}
 
 			order.TotalPrice -= discountAmount;
+			order.Discount = discountAmount;
 			return order;
 		}
 
-		public List <Order> retrieveOrders()
+  //      public Order ApplyCode(string code)
+		//{
+  //          decimal discountAmount = 0.0M;
+  //          List<Discount> discountcodes = GetDiscount();
+  //          Discount appliedDiscount = discountcodes.FirstOrDefault(d => d.Code == code);
+
+  //          if (appliedDiscount != null)
+  //          {
+  //              discountAmount += 5;
+  //          }
+  //      }
+
+
+        public List <Order> retrieveOrders()
 		{
             List<OrderDTO> orderDTOs = paymentDataTraffic.RetrieveAllOrders();
             List<Order> payments = new List<Order>();
             foreach (OrderDTO orderDTO in orderDTOs)
             {
-                payments.Add(new Order(orderDTO.Id , orderDTO.Tickets, orderDTO.Name, orderDTO.Email, orderDTO.PhoneNumber, orderDTO.TotalPrice, orderDTO.Paid));
+                payments.Add(new Order(orderDTO.Id , orderDTO.Tickets, orderDTO.Name, orderDTO.Email, orderDTO.PhoneNumber, orderDTO.TotalPrice, orderDTO.Paid,orderDTO.Discount));
             }
             return payments;
         }
@@ -76,7 +90,7 @@ namespace LogicCL.Repository
 			List<Order> orders = new List<Order>();
 			foreach (OrderDTO orderDTO in orderDTOs)
 			{
-				orders.Add(new Order(orderDTO.Id, orderDTO.Tickets, orderDTO.Name, orderDTO.Email, orderDTO.PhoneNumber, orderDTO.TotalPrice, orderDTO.Paid));
+				orders.Add(new Order(orderDTO.Id, orderDTO.Tickets, orderDTO.Name, orderDTO.Email, orderDTO.PhoneNumber, orderDTO.TotalPrice, orderDTO.Paid,orderDTO.Discount));
 			}
 			return orders;
 		}

@@ -16,7 +16,8 @@ namespace LogicCL
         public decimal? TotalPrice { get; set; }
         public int Paid { get; set; }
 
-		public Order(int id, List<Tuple<int, int>> tickets, string name, string email, string phoneNumber, decimal? totalPrice, int paid)
+		public decimal Discount { get; set; }
+		public Order(int id, List<Tuple<int, int>> tickets, string name, string email, string phoneNumber, decimal? totalPrice, int paid,decimal discount)
 		{
 			Id = id;
 			Tickets = tickets;
@@ -25,6 +26,7 @@ namespace LogicCL
 			PhoneNumber = phoneNumber;
 			TotalPrice = totalPrice;
 			Paid = paid;
+			Discount = discount;
 		}
 		public Order()
 		{

@@ -17,7 +17,8 @@ namespace Zoo_Bazaar.Pages
 
         public decimal? Total;
 
-        public string? CouponCode { get; set; }
+        [BindProperty]
+        public string CouponCode { get; set; }
 
         public decimal? Discounted { get; set; }
 
@@ -51,15 +52,30 @@ namespace Zoo_Bazaar.Pages
 
         public IActionResult OnPostApplyDiscount()
         {
-            if(Order == null) { return Redirect("/Tickets"); }
+            var order = TempData["Order"];
+            if (order != null)
+            {
+                Order = JsonConvert.DeserializeObject<Order>(order.ToString());
+            }
+            else { return Redirect("/Tickets"); }
+
+            List<Ticket>? tickets = new List<Ticket>();
+            this.tickets = new List<Tuple<Ticket, int>>();
+            tickets = paymentRepository.GetTickets();
+
+            foreach (Tuple<int, int> ticket in Order.Tickets)
+            {
+                this.tickets.Add(Tuple.Create(tickets.Find(t => t.Id == ticket.Item1), ticket.Item2));
+            }
+            if (Order == null) { return Redirect("/Tickets"); }
 
             if (string.IsNullOrEmpty(CouponCode))
             {
                 SaveOrder();
                 return Page();
             }
-
-            //  Order DiscountedOrder = paymentRepository.ApplyDiscount()
+            CalculateTotalWithCode();
+            SaveOrder();
             return Page();
 
         }
@@ -86,7 +102,7 @@ namespace Zoo_Bazaar.Pages
             }
 
             CalculateTotal();
-
+            SaveOrder();
 
             return null;
         }
@@ -99,8 +115,23 @@ namespace Zoo_Bazaar.Pages
             {
                 total += item.Item2 * item.Item1.Price;
             }
+            Order.TotalPrice = total;
+            paymentRepository.ApplyDiscount(Order, null);
+            
+            Total = Order.TotalPrice;
+        }
+        public void CalculateTotalWithCode()
+        {
+            decimal total = 0;
 
-            Total = total;
+            foreach (Tuple<Ticket, int> item in tickets)
+            {
+                total += item.Item2 * item.Item1.Price;
+            }
+            Order.TotalPrice = total;
+            paymentRepository.ApplyDiscount(Order, CouponCode);
+
+            Total = Order.TotalPrice;
         }
 
         private void SaveOrder()

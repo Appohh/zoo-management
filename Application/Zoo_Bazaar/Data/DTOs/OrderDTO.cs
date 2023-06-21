@@ -15,8 +15,8 @@ namespace DataCL.DTOs
         public string PhoneNumber { get; set; }
         public decimal? TotalPrice { get; set; }
         public int Paid { get; set; }
-
-        public OrderDTO(int id, List<Tuple<int, int>> tickets, string name, string email, string phoneNumber, decimal? totalPrice, int paid)
+        public decimal Discount { get; set; }
+        public OrderDTO(int id, List<Tuple<int, int>> tickets, string name, string email, string phoneNumber, decimal? totalPrice, int paid, decimal discount)
         {
             Id = id;
             Tickets = tickets;
@@ -25,6 +25,7 @@ namespace DataCL.DTOs
             PhoneNumber = phoneNumber;
             TotalPrice = totalPrice;
             Paid = paid;
+            Discount = discount;
         }
         public OrderDTO()
         {
