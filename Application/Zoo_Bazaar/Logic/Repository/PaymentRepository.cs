@@ -84,10 +84,10 @@ namespace LogicCL.Repository
 		}
 
 
-		public bool addPayment(OrderDTO order)
+		public bool addPayment(Order order)
 		{
-
-			if (paymentDataTraffic.addPayment(order))
+			OrderDTO orderDTO = new OrderDTO(order.Id, order.Tickets, order.Name, order.Email, order.PhoneNumber, order.TotalPrice, order.Paid, order.Discount);
+			if (paymentDataTraffic.addPayment(orderDTO))
 			{
 				return true;
 			};
