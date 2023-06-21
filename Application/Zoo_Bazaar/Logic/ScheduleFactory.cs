@@ -3,6 +3,7 @@ using DataCL.DTOs;
 using LogicCL.Users;
 using System;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace LogicCL
             List<ShiftDTO> existingShifts = shiftDataTraffic.GetDepartmentShiftByDate(week.Monday, week.Sunday, job.Id);
 
             Random rand = new Random();
-
+            
             for (int i = 0; i < 7; i++)
             {
                 DateTime currentDate = week.Monday.AddDays(i);
@@ -39,30 +40,62 @@ namespace LogicCL
 
                 employees = employees.OrderBy(emp => HoursWorkedThisWeek(emp.Id, currentDate)).ToList();
 
-                foreach (var employee in employees)
+                if (job.Name != "Caretaker")
                 {
-                    int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
-                    int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
-
-                    if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 40 - 4)
+                    foreach (var employee in employees)
                     {
-                        bool exists = true;
-                        ShiftDTO shift = new ShiftDTO();
+                        int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
 
-                        while (exists)
+                        if (hoursWorkedThisWeek <= 40 - 4)
                         {
-                            shift.EmpId = employee.Id;
-                            shift.Date = currentDate.ToString("yyyy-MM-dd");
-                            shift.Type = rand.Next(0, 3);
+                            bool exists = true;
+                            ShiftDTO shift = new ShiftDTO();
+
+                            while (exists)
+                            {
+                                shift.EmpId = employee.Id;
+                                shift.Date = currentDate.ToString("yyyy-MM-dd");
+                                shift.Type = rand.Next(0, 3);
 
 
-                            exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date);
+                                exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date);
+                            }
+
+                            schedule.Add(shift);
                         }
-
-                        schedule.Add(shift);
                     }
                 }
+                else
+                {
+                    foreach (var employee in employees)
+                    {
+                        int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
+
+                        if (hoursWorkedThisWeek <= 40 - 4)
+                        {
+                            bool exists = true;
+                            ShiftDTO shift = new ShiftDTO();
+
+                            while (exists)
+                            {
+                                shift.EmpId = employee.Id;
+                                shift.Date = currentDate.ToString("yyyy-MM-dd");
+                                shift.Type = rand.Next(0, 3);
+                                shift.Location = rand.Next(1, 12);
+
+                                exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date && s.Location == shift.Location);
+                            }
+
+                            schedule.Add(shift);
+                        }
+                    }
+
+                }
+                
             }
+
+            
+
 
 
             return shiftDataTraffic.AddMultipleShift(schedule);

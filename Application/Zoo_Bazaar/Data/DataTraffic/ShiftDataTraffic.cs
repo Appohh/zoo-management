@@ -101,7 +101,7 @@ namespace DataCL.DataTraffic
 
         public bool AddMultipleShift(List<ShiftDTO> dtos)
         {
-            string values = string.Join(", ", dtos.Select(obj => $"({obj.EmpId}, {obj.Type}, '{obj.Date}', null)"));
+            string values = string.Join(", ", dtos.Select(obj => $"({obj.EmpId}, {obj.Type}, '{obj.Date}', {(obj.Location.HasValue ? obj.Location.Value.ToString() : "NULL")})"));
             string query = $"INSERT INTO Shift VALUES {values}";
 
             return executeQuery(query) > 0 ? false : true;
