@@ -290,8 +290,6 @@ namespace Desktop_app
                 imageBytes = stream.ToArray();
             }
 
-            //string images = Encoding.UTF8.GetString(imageBytes);
-
             // Call the repository to update the employee details
             if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary, workingHours, imageBytes))
             {
@@ -400,8 +398,6 @@ namespace Desktop_app
 
             var contractType = 0;
 
-            var image = new byte[0];
-
             var role = Int16.Parse(cbJobAdd.SelectedValue.ToString());
 
             var jobName = "";
@@ -492,9 +488,19 @@ namespace Desktop_app
                 return;
             }
 
+            //Image
+
+            byte[] imageBytes;
+
+            using (var stream = new MemoryStream())
+            {
+                addPB.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                imageBytes = stream.ToArray();
+            }
+
             UserDTO dto = new UserDTO(id: 0, firstname: firstName, lastname: lastName, username: userName, password: password,
                 phone: phoneNumber, address: address, city: city, email: email, spouseName: spouseName, spousePhone: spouseNumber,
-                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: image, role, jobname: jobName, salary, workingHours);
+                emergencyName: emergencyName, emergencyPhone: emergencyNumber, birthdate: birthdate.ToString("yyyy-MM-dd HH:mm:ss.fff"), bSN: bsn, contractStatus: contractStatus, contactType: contractType, imageUrl: imageBytes, role, jobname: jobName, salary, workingHours);
 
             if (hr.RegisterNewEmployee(dto))
             {
@@ -607,6 +613,20 @@ namespace Desktop_app
                 string filename = openFileDialog.FileName;
                 System.Drawing.Image image = System.Drawing.Image.FromFile(filename);
                 overViewPB.Image = image;
+            }
+        }
+
+        private void uploadpicBT_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filename = openFileDialog.FileName;
+                System.Drawing.Image image = System.Drawing.Image.FromFile(filename);
+                addPB.Image = image;
             }
         }
     }

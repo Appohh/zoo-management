@@ -40,6 +40,8 @@
             Tab_Welcome = new TabPage();
             txt_Welcome = new Label();
             Tab_Add_Employee = new TabPage();
+            uploadpicBT = new Button();
+            addPB = new PictureBox();
             button1 = new Button();
             Gp_Contact_Employee = new GroupBox();
             label19 = new Label();
@@ -81,7 +83,6 @@
             PasswordBoxAddEmployee = new TextBox();
             ContractBoxAddEmployee = new ComboBox();
             BSNBoxAddEmployee = new TextBox();
-            PictureBoxAddEmployee = new PictureBox();
             Tab_Overview = new TabPage();
             label7 = new Label();
             CB_StatusSearch = new ComboBox();
@@ -176,12 +177,12 @@
             ContractStatus = new ColumnHeader();
             lastName = new ColumnHeader();
             Tab_Add_Employee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addPB).BeginInit();
             Gp_Contact_Employee.SuspendLayout();
             Gp_Detail_Employees.SuspendLayout();
             Gb_Details_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)workingHoursAddEmployeeNUD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)salaryAddEmployeeNUD).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).BeginInit();
             Tab_Overview.SuspendLayout();
             artanPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)overViewPB).BeginInit();
@@ -302,11 +303,12 @@
             // 
             Tab_Add_Employee.BackColor = Color.FromArgb(94, 78, 64);
             Tab_Add_Employee.BackgroundImageLayout = ImageLayout.Stretch;
+            Tab_Add_Employee.Controls.Add(uploadpicBT);
+            Tab_Add_Employee.Controls.Add(addPB);
             Tab_Add_Employee.Controls.Add(button1);
             Tab_Add_Employee.Controls.Add(Gp_Contact_Employee);
             Tab_Add_Employee.Controls.Add(Gp_Detail_Employees);
             Tab_Add_Employee.Controls.Add(Gb_Details_employee);
-            Tab_Add_Employee.Controls.Add(PictureBoxAddEmployee);
             Tab_Add_Employee.Location = new Point(4, 32);
             Tab_Add_Employee.Margin = new Padding(1);
             Tab_Add_Employee.Name = "Tab_Add_Employee";
@@ -314,6 +316,26 @@
             Tab_Add_Employee.Size = new Size(1662, 755);
             Tab_Add_Employee.TabIndex = 1;
             Tab_Add_Employee.Text = "Add Employee";
+            // 
+            // uploadpicBT
+            // 
+            uploadpicBT.Location = new Point(387, 215);
+            uploadpicBT.Name = "uploadpicBT";
+            uploadpicBT.Size = new Size(149, 30);
+            uploadpicBT.TabIndex = 81;
+            uploadpicBT.Text = "Upload Picture";
+            uploadpicBT.UseVisualStyleBackColor = true;
+            uploadpicBT.Click += uploadpicBT_Click;
+            // 
+            // addPB
+            // 
+            addPB.Image = Properties.Resources._360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv;
+            addPB.Location = new Point(374, 34);
+            addPB.Name = "addPB";
+            addPB.Size = new Size(175, 175);
+            addPB.SizeMode = PictureBoxSizeMode.StretchImage;
+            addPB.TabIndex = 80;
+            addPB.TabStop = false;
             // 
             // button1
             // 
@@ -671,11 +693,11 @@
             Gb_Details_employee.Controls.Add(BSNBoxAddEmployee);
             Gb_Details_employee.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Gb_Details_employee.ForeColor = Color.Black;
-            Gb_Details_employee.Location = new Point(305, 269);
+            Gb_Details_employee.Location = new Point(305, 267);
             Gb_Details_employee.Margin = new Padding(4, 2, 4, 2);
             Gb_Details_employee.Name = "Gb_Details_employee";
             Gb_Details_employee.Padding = new Padding(3, 1, 3, 1);
-            Gb_Details_employee.Size = new Size(306, 434);
+            Gb_Details_employee.Size = new Size(306, 436);
             Gb_Details_employee.TabIndex = 76;
             Gb_Details_employee.TabStop = false;
             Gb_Details_employee.Text = "Employee Details";
@@ -833,19 +855,6 @@
             BSNBoxAddEmployee.Name = "BSNBoxAddEmployee";
             BSNBoxAddEmployee.Size = new Size(253, 29);
             BSNBoxAddEmployee.TabIndex = 26;
-            // 
-            // PictureBoxAddEmployee
-            // 
-            PictureBoxAddEmployee.BackColor = Color.Gray;
-            PictureBoxAddEmployee.BackgroundImageLayout = ImageLayout.None;
-            PictureBoxAddEmployee.Image = (Image)resources.GetObject("PictureBoxAddEmployee.Image");
-            PictureBoxAddEmployee.Location = new Point(305, 34);
-            PictureBoxAddEmployee.Margin = new Padding(3, 1, 3, 1);
-            PictureBoxAddEmployee.Name = "PictureBoxAddEmployee";
-            PictureBoxAddEmployee.Size = new Size(308, 232);
-            PictureBoxAddEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
-            PictureBoxAddEmployee.TabIndex = 73;
-            PictureBoxAddEmployee.TabStop = false;
             // 
             // Tab_Overview
             // 
@@ -1020,7 +1029,7 @@
             // 
             uploadPictureBT.Location = new Point(808, 319);
             uploadPictureBT.Name = "uploadPictureBT";
-            uploadPictureBT.Size = new Size(145, 23);
+            uploadPictureBT.Size = new Size(145, 41);
             uploadPictureBT.TabIndex = 80;
             uploadPictureBT.Text = "Upload New Picture";
             uploadPictureBT.UseVisualStyleBackColor = true;
@@ -1872,10 +1881,11 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Margin = new Padding(4, 1, 4, 1);
-            //Name = "Human_Resources";
+           // Name = "Human_Resources";
             Text = "Human_Resources";
             WindowState = FormWindowState.Maximized;
             Tab_Add_Employee.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)addPB).EndInit();
             Gp_Contact_Employee.ResumeLayout(false);
             Gp_Contact_Employee.PerformLayout();
             Gp_Detail_Employees.ResumeLayout(false);
@@ -1884,7 +1894,6 @@
             Gb_Details_employee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)workingHoursAddEmployeeNUD).EndInit();
             ((System.ComponentModel.ISupportInitialize)salaryAddEmployeeNUD).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).EndInit();
             Tab_Overview.ResumeLayout(false);
             Tab_Overview.PerformLayout();
             artanPanel4.ResumeLayout(false);
@@ -1940,7 +1949,6 @@
         private TextBox AdressBoxAddEmployee;
         private TextBox NameBoxAddEmployee;
         private TextBox EmailBoxAddEmployee;
-        private PictureBox PictureBoxAddEmployee;
         private TabPage Tab_Overview;
         private Button btn_search_Employee;
         private Button btn_Logout;
@@ -2062,5 +2070,7 @@
         private NumericUpDown workingHoursNUDOverVIew;
         private Button uploadPictureBT;
         private PictureBox overViewPB;
+        private PictureBox addPB;
+        private Button uploadpicBT;
     }
 }

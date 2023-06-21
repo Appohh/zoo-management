@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DataCL.DataTraffic
 {
@@ -49,7 +50,7 @@ namespace DataCL.DataTraffic
         public bool AddUser(UserDTO user)
         {
             string query = $"INSERT INTO Employees (firstname, lastname, username, password, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, imageUrl, contractStatus, jobId, Salary, workingHours) " +
-                $"VALUES ('{user.Firstname}', '{user.Lastname}', '{user.Username}', '{user.Password}', '{user.Phone}', '{user.Address}', '{user.City}', '{user.Email}', '{user.SpouseName}', '{user.SpousePhone}', '{user.EmergencyName}', '{user.EmergencyPhone}', '{user.Birthdate}', '{user.BSN}', '{user.ImageUrl}', '{user.ContractStatus}', '{user.JobId}', '{user.Salary}', '{user.WorkingHours}' );";
+                $"VALUES ('{user.Firstname}', '{user.Lastname}', '{user.Username}', '{user.Password}', '{user.Phone}', '{user.Address}', '{user.City}', '{user.Email}', '{user.SpouseName}', '{user.SpousePhone}', '{user.EmergencyName}', '{user.EmergencyPhone}', '{user.Birthdate}', '{user.BSN}', 0x{BitConverter.ToString(user.ImageUrl).Replace("-", "")} , '{user.ContractStatus}', '{user.JobId}', '{user.Salary}', '{user.WorkingHours}' );";
             return executeQuery(query) == 0 ? false : true;
         }
 

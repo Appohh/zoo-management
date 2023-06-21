@@ -176,7 +176,7 @@
 			btn_buy.TabIndex = 14;
 			btn_buy.Text = "buy";
 			btn_buy.UseVisualStyleBackColor = true;
-			btn_buy.Click += btn_buy_Click;
+			//btn_buy.Click += btn_buy_Click;
 			// 
 			// TestPurchase
 			// 
