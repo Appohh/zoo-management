@@ -29,7 +29,7 @@ namespace Desktop_app.Forms
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
-            if(TB_UsernameLogin.Text.Length <= 0)
+            if (TB_UsernameLogin.Text.Length <= 0)
             {
                 MessageBox.Show("Please enter Username");
                 return;
@@ -61,7 +61,7 @@ namespace Desktop_app.Forms
                     HR_form.Show();
                 }
 
-                else if (loggedInUser.GetType() ==typeof(AnimalManagement))
+                else if (loggedInUser.GetType() == typeof(AnimalManagement))
                 {
                     this.Hide();
                     var AnimalManagement = new Animal_Management(loggedInUser);

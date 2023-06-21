@@ -60,18 +60,6 @@ namespace LogicCL.Repository
 			return order;
 		}
 
-  //      public Order ApplyCode(string code)
-		//{
-  //          decimal discountAmount = 0.0M;
-  //          List<Discount> discountcodes = GetDiscount();
-  //          Discount appliedDiscount = discountcodes.FirstOrDefault(d => d.Code == code);
-
-  //          if (appliedDiscount != null)
-  //          {
-  //              discountAmount += 5;
-  //          }
-  //      }
-
 
         public List <Order> retrieveOrders()
 		{
