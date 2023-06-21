@@ -93,28 +93,34 @@ namespace Beamer_shop.Pages
 
         private void SendMail()
         {
+            Random random = new Random();
+            int rndm = random.Next(1, 999);
 
             getTickets();
             string description = "Hello, " + Order.Name + "\r\n\r\n" + "Here are your tickets: \r\n\r\n";
 
             foreach(Tuple<Ticket, int> ticket in Tickets)
             {
-                string a = ticket.Item1.Id.ToString() + " " + ticket.Item1.Name + ticket.Item2.ToString() + "\r\n\r\n";
+
+                Random random1 = new Random();
+                int rndm1 = random1.Next(10000, 30000);
+
+                string a = "QR: " + rndm1.ToString() + " " + ticket.Item1.Name + " " + ticket.Item2.ToString() + "\r\n\r\n";
                 description += a;
             }
 
             description += "\r\n\r\n\r\n\r\n Thank you for ordering, \r\n\r\nZooBazaar";
 
 
-            var fromAddress = "mr.pushkinini@gmail.com";
+            var fromAddress = "zoobazaar_service@outlook.com";
             var toAddress = Order.Email; 
-            var subject = "Zoobazaar tickets for order: #" + Order.Id.ToString();
+            var subject = "Zoobazaar tickets for order: # " + rndm.ToString();
             var body = description;
 
             var smtpHost = "smtp-relay.sendinblue.com";
             var smtpPort = 587;
-            var smtpUsername = "mr.pushkinini@gmail.com";
-            var smtpPassword = "tpcwFx28Uv3LhzCS";
+            var smtpUsername = "zoobazaar_service@outlook.com";
+            var smtpPassword = "LjtQUhO6skyrgAW2";
 
             using (var message = new System.Net.Mail.MailMessage(fromAddress, toAddress))
             {

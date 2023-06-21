@@ -338,3 +338,18 @@ section.sec-tickets {
     position: absolute;
     bottom: 0;
 }
+
+.footr {
+    background-color: rgb(164, 138, 118);
+    padding: 2rem;
+    display: flex;
+    gap: 28px;
+    color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.footr h2 {
+    float: right;
+    margin-left: auto;
+}
+

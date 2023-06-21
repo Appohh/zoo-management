@@ -83,13 +83,17 @@
                 @{
                     if (Model.TotalPriceWithoutDiscount > Model.Total)
                     {
-                        <span>Price:</span>
-                        <span style="text-decoration: line-through;">@Model.TotalPriceWithoutDiscount.Value.ToString("C")</span>
-                        <span>New Price:</span>
-                        <span>@Model.Total.Value.ToString("C") </span>
+
+                            <h2>Total: @Model.Total.Value.ToString("C")</h2>
+
+                            <h2 style="text-decoration: line-through;color:red;">@Model.TotalPriceWithoutDiscount.Value.ToString("C")</h2>
+
+
+                    } else{
+                        <h2>Total: @Model.Total.Value.ToString("C")</h2>
+
                     }
                 }
-                <h2>Total: @Model.Total.Value.ToString("C")</h2>
             </div>
         </div>
 
