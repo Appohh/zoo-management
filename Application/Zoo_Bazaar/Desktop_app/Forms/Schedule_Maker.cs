@@ -330,7 +330,7 @@ namespace Desktop_app.Forms
 			CustomPanel p = sender as CustomPanel;
 			string name = p.Name;
 			string location = "";
-			if (p.Shift.Location != 0)
+			if (p.Shift.Location != null)
 			{
 				location = locations.Find(x => x.Id == p.Shift.Location).Name;
 			}
@@ -374,7 +374,7 @@ namespace Desktop_app.Forms
 					shift.Date = date.ToString("yyyy-MM-dd");
 					shift.Type = cbbShiftType.SelectedIndex;
 
-					if (selected.Jobname.Contains("caretaker"))
+					if (selected.Jobname.Contains("Caretaker"))
 					{
 						shift.Location = Int16.Parse(cbbShiftLocation.SelectedValue.ToString());
 					}

@@ -35,10 +35,6 @@
             this.welcome_txt = new System.Windows.Forms.Label();
             this.tabPageSchedule = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.CB_Job_AutomaticScheduling = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CB_Week = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_GetShiftByJob = new System.Windows.Forms.Button();
             this.CB_GetShiftByJob = new System.Windows.Forms.ComboBox();
@@ -130,10 +126,6 @@
             // tabPageSchedule
             // 
             this.tabPageSchedule.Controls.Add(this.label15);
-            this.tabPageSchedule.Controls.Add(this.label14);
-            this.tabPageSchedule.Controls.Add(this.CB_Job_AutomaticScheduling);
-            this.tabPageSchedule.Controls.Add(this.label9);
-            this.tabPageSchedule.Controls.Add(this.CB_Week);
             this.tabPageSchedule.Controls.Add(this.label1);
             this.tabPageSchedule.Controls.Add(this.Btn_GetShiftByJob);
             this.tabPageSchedule.Controls.Add(this.CB_GetShiftByJob);
@@ -197,45 +189,11 @@
             this.label15.TabIndex = 101;
             this.label15.Text = "Manual Schedule";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(45, 524);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 15);
-            this.label14.TabIndex = 100;
-            this.label14.Text = "Department";
-            // 
-            // CB_Job_AutomaticScheduling
-            // 
-            this.CB_Job_AutomaticScheduling.FormattingEnabled = true;
-            this.CB_Job_AutomaticScheduling.Location = new System.Drawing.Point(45, 542);
-            this.CB_Job_AutomaticScheduling.Name = "CB_Job_AutomaticScheduling";
-            this.CB_Job_AutomaticScheduling.Size = new System.Drawing.Size(133, 23);
-            this.CB_Job_AutomaticScheduling.TabIndex = 99;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 454);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 15);
-            this.label9.TabIndex = 98;
-            this.label9.Text = "Week:";
-            // 
-            // CB_Week
-            // 
-            this.CB_Week.FormattingEnabled = true;
-            this.CB_Week.Location = new System.Drawing.Point(45, 475);
-            this.CB_Week.Name = "CB_Week";
-            this.CB_Week.Size = new System.Drawing.Size(157, 23);
-            this.CB_Week.TabIndex = 97;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(45, 416);
+            this.label1.Location = new System.Drawing.Point(48, 549);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 21);
             this.label1.TabIndex = 96;
@@ -677,10 +635,6 @@
 		private Button button1;
 		private Button Btn_GetShiftByJob;
 		private ComboBox CB_GetShiftByJob;
-		private Label label14;
-		private ComboBox CB_Job_AutomaticScheduling;
-		private Label label9;
-		private ComboBox CB_Week;
 		private Label label1;
         private Label label15;
     }
