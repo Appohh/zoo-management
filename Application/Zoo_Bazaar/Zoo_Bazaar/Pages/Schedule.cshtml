@@ -11,13 +11,18 @@
 </h1>
 
 <div class="schedule">
-    <h2 class="day">Monday</h2>
-    <h2 class="day">Tuesday</h2>
-    <h2 class="day">Wednesday</h2>
-    <h2 class="day">Thursday</h2>
-    <h2 class="day">Friday</h2>
-    <h2 class="day">Saturday</h2>
-    <h2 class="day">Sunday</h2>
+    <h2 class="day" style="grid-area:monday;">Monday</h2>
+    <h2 class="day" style="grid-area:tuesday;">Tuesday</h2>
+    <h2 class="day" style="grid-area:wednesday;">Wednesday</h2>
+    <h2 class="day" style="grid-area:thursday;">Thursday</h2>
+    <h2 class="day" style="grid-area:friday;">Friday</h2>
+    <h2 class="day" style="grid-area:saturday;">Saturday</h2>
+    <h2 class="day" style="grid-area:sunday;">Sunday</h2>
+
+    <h2 style="grid-area:shift0;">Morning</h2>
+    <h2 style="grid-area:shift1;">Afternoon</h2>
+    <h2 style="grid-area:shift2;">Evening</h2>
+
 
     <div id="@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")mo-0" style="grid-area:monday0">@Model.currentWeekSchedule.Monday.ToString("dd-MM-yyyy")</div>
     <div id="@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")tu-0" style="grid-area:tuesday0">@Model.currentWeekSchedule.Monday.AddDays(1).ToString("dd-MM-yyyy")</div>

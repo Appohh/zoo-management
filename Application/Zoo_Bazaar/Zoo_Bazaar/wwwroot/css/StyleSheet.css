@@ -48,10 +48,10 @@ body {
 
 .schedule {
     grid-template-areas:
-        "monday tuesday wednesday thursday friday saturday sunday"
-        "monday0 tuesday0 wednesday0 thursday0 friday0 saturday0 sunday0"
-        "monday1 tuesday1 wednesday1 thursday1 friday1 saturday1 sunday1"
-        "monday2 tuesday2 wednesday2 thursday2 friday2 saturday2 sunday2";
+        "shift monday tuesday wednesday thursday friday saturday sunday"
+        "shift0 monday0 tuesday0 wednesday0 thursday0 friday0 saturday0 sunday0"
+        "shift1 monday1 tuesday1 wednesday1 thursday1 friday1 saturday1 sunday1"
+        "shift2 monday2 tuesday2 wednesday2 thursday2 friday2 saturday2 sunday2";
     gap: 5px;
     border-radius: 30px;
     display: grid;

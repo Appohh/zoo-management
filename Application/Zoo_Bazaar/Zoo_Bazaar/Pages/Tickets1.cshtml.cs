@@ -46,7 +46,7 @@ namespace Zoo_Bazaar.Pages
 
         public IActionResult OnPostGoPayment()
         {
-            return Page();
+            return Redirect("/PayCC");
         }
 
         public IActionResult OnPostApplyDiscount()
@@ -58,8 +58,9 @@ namespace Zoo_Bazaar.Pages
                 SaveOrder();
                 return Page();
             }
-            
-            Order DiscountedOrder = paymentRepository.ApplyDiscount()
+
+            //  Order DiscountedOrder = paymentRepository.ApplyDiscount()
+            return Page();
 
         }
 

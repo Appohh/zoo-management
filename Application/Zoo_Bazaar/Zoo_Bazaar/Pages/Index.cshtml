@@ -1,7 +1,59 @@
 ﻿@page
-@model IndexModel
+@model Zoo_Bazaar.Pages.HomeModel
 @{
-    ViewData["Title"] = "Home page";
+    Layout = "layout1";
 }
 
-<h1>Welcome to the webpage of Zoobazaar.</h1>
+
+    <section class="land-1">
+        <h2 id="land-1-title">Discover our nature</h2>
+        <div class="pic-link-wrap">
+            <div class="pic-link-pic">
+                <img src="~/images/zb_elphants.jpg" />
+                <h2>Go on safari</h2>
+            </div>
+            <div class="pic-link-pic">
+                <img src="~/images/zb_hotel.jpg" />
+                <h2>Safari Hotel</h2>
+            </div>
+            <div class="pic-link-pic">
+                <img src="~/images/zb_lake.jpg" />
+                <h2>Lake Resort</h2>
+            </div>
+            <div class="pic-link-pic">
+                <img src="~/images/zb_safari.jpg" />
+                <h2>Safari Resort</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="trailer">
+
+        <div class="text-trailer-wrap">
+            <div class="text-trailer-text">
+                <h3>Special overnight stay at the Safari Hotel</h3>
+
+                <p>Discover the new Safari Hotel at Zoo Bazaar and spend the night in the heart of the savannah. Experience the most exciting adventures on safari and fall asleep surrounded by wild animals. Unwind in luxury and watch the sunrise from the savannah. Enjoy a morning cup of coffee on your private terrace while zebras, giraffes, and rhinos pass by.&nbsp;</p>
+
+                <p><a class="btn btn-green" href="#">Read more</a></p>
+            </div>
+
+            <div class="text-trailer-trailer">
+                <video controls="controls">
+                    <source src="~/videos/zoobzr-promo.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <img src="/images/zoobazaar-blueprint.png" style="width: -webkit-fill-available;">
+    </section>
+
+
+
+
+
+</div>
+

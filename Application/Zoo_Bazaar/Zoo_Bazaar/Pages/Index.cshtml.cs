@@ -1,20 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using LogicCL;
+using LogicCL.Repository;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Zoo_Bazaar.Pages
 {
-	public class IndexModel : PageModel
-	{
-		private readonly ILogger<IndexModel> _logger;
-
-		public IndexModel(ILogger<IndexModel> logger)
-		{
-			_logger = logger;
-		}
-
-		public void OnGet()
-		{
-
-		}
-	}
+    public class HomeModel : PageModel
+    {
+        PaymentRepository paymentRepository = new PaymentRepository();
+        Payment payment;
+        public void OnGet()
+        {
+            paymentRepository.GetPaymentById(11);
+        }
+    }
 }

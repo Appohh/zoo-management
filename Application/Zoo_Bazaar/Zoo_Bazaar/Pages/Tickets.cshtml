@@ -14,10 +14,10 @@
 <div class="nav" id="nav">
     <h2 id="logo">Zoo Bazaar</h2>
     <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="/Index">Home</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li style="float:right"><a class="active" href="#about">Tickets</a></li>
+        <li style="float:right;"><a class="active btn-orange" style="height: 31px;" href="/Tickets">Tickets</a></li>
     </ul>
 </div>
 
@@ -44,7 +44,7 @@
                     </h3>
                     <div class="qnty-price">
                             @{string a = "row" + ticket.Id.ToString();}
-                        <input type="number" name="@a" />
+                        <input value="0" type="number" name="@a" />
                         <h2>$@ticket.Price.ToString("N0")</h2>
                     </div>
                     </div>
@@ -85,6 +85,9 @@
 
 
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
 
 
 <script>
