@@ -17,6 +17,10 @@ namespace Zoo_Bazaar.Pages
 
         public decimal? Total;
 
+        public string? CouponCode { get; set; }
+
+        public decimal? Discounted { get; set; }
+
 
         public Tickets1Model()
         {
@@ -38,6 +42,29 @@ namespace Zoo_Bazaar.Pages
 
 
         }
+
+
+        public IActionResult OnPostGoPayment()
+        {
+            return Page();
+        }
+
+        public IActionResult OnPostApplyDiscount()
+        {
+            if(Order == null) { return Redirect("/Tickets"); }
+
+            if (string.IsNullOrEmpty(CouponCode))
+            {
+                SaveOrder();
+                return Page();
+            }
+            
+            Order DiscountedOrder = paymentRepository.ApplyDiscount()
+
+        }
+
+
+
 
         public IActionResult Setup()
         {
@@ -73,6 +100,14 @@ namespace Zoo_Bazaar.Pages
             }
 
             Total = total;
+        }
+
+        private void SaveOrder()
+        {
+            //serialize order object
+            var json = JsonConvert.SerializeObject(Order);
+
+            TempData["Order"] = json;
         }
     }
 }

@@ -74,10 +74,10 @@
                     </div>
                 }
                 </div>
-            <div class="cart-discount">
-                <input type="text" style="color:black;">
+            <form method="post" asp-page-handler="ApplyDiscount" class="cart-discount">
+                <input type="text" asp-for="CouponCode" style="color:black;">
                 <input type="submit" value="Apply discount" class="btn-orange">
-            </div>
+            </form>
 
             <div class="cart-price">
                 <h2>Total: $@Model.Total.Value.ToString("N0")</h2>
