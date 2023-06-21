@@ -22,7 +22,7 @@ namespace LogicCL.Users
 
         public int WorkingHours { get; set; }
 
-        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, string image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary, int workingHours) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city)
+        protected Employee(string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string bSN, int contractstatus, byte[] image, int id, string firstName, string lastname, string userName, string password, string email, string phone, string birthDate, string address, string city, string jobname, int salary, int workingHours) : base(image, id, firstName, lastname, userName, password, email, phone, birthDate, address, city)
         {
             SpouseName = spouseName;
             SpousePhone = spousePhone;

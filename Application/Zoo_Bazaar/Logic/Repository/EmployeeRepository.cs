@@ -45,7 +45,7 @@ namespace LogicCL.Repository
             {
                 if (userDto.JobId == 1)
                 {
-                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary, userDto.WorkingHours);
+                    User hr = new HR(userDto.SpouseName, userDto.SpousePhone, userDto.EmergencyName, userDto.EmergencyPhone, userDto.BSN, userDto.ContractStatus, image: userDto.ImageUrl, userDto.Id, userDto.Firstname, userDto.Lastname, userDto.Username, userDto.Password, userDto.Email, userDto.Phone, userDto.Birthdate, userDto.Address, userDto.City, userDto.Jobname, userDto.Salary, userDto.WorkingHours);
                     newUsers.Add(hr);
                 }
                 if (userDto.JobId == 2)
@@ -143,9 +143,9 @@ namespace LogicCL.Repository
             return false;
         }
 
-        public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job, int salary, int workingHours)
+        public bool changeEmployeeDetails(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job, int salary, int workingHours, byte[] image)
         {
-            if (userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job, salary, workingHours))
+            if (userDataTraffic.UpdateEmployee(employeeid, firstname, lastname, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, contractStatus, job, salary, workingHours, image))
             {
                 refreshUserData(); return true;
             }
@@ -353,7 +353,6 @@ namespace LogicCL.Repository
             }
             return absencesTypes;
         }
-
 
         public Dictionary<Employee, List<ShiftDTO>> CreateSchedule(DateTime date, string jobName)
         {

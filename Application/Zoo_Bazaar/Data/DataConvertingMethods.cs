@@ -23,7 +23,7 @@ namespace DataCL
                 {
                     //get value of row member
                     var value = row[prop.Name];
-                    //if val not null, check datatype and set the value of prop. Null stays null (dto must accept null)
+
                     if (value != DBNull.Value)
                     {
                         if (prop.PropertyType == typeof(int))
@@ -38,14 +38,28 @@ namespace DataCL
                         {
                             prop.SetValue(obj, Convert.ToDecimal(value));
                         }
-					}
+                        //maybe here
+                        else if (prop.PropertyType == typeof(byte[]))
+                        {
+                            if (value is byte[] binaryValue)
+                            {
+                                prop.SetValue(obj, binaryValue);
+                            }
+                            else
+                            {
+                                if (value is string stringValue)
+                                {
+                                    byte[] byteArrayValue = Convert.FromBase64String(stringValue);
+                                    prop.SetValue(obj, byteArrayValue);
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
             //return datarow converted to object
             return obj;
         }
-
-
     }
 }

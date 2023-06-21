@@ -18,7 +18,7 @@ namespace DataCL.DataTraffic
         {
             get
             {
-                return "SELECT Employees.id ,[firstname] ,[lastname] ,[username] ,[password] ,[phone] ,[address] ,[city] ,[email] ,[spouseName] ,[spousePhone] ,[emergencyName] ,[emergencyPhone] ,[birthdate] ,[bsn] ,[imageUrl] ,[contractStatus] ,[contractType] ,[jobId], Jobs.name as 'jobname', Salary, workingHours FROM Employees INNER JOIN Jobs on Employees.jobId = Jobs.id";
+                return "SELECT Employees.id ,[firstname] ,[lastname] ,[username] ,[password] ,[phone] ,[address] ,[city] ,[email] ,[spouseName] ,[spousePhone] ,[emergencyName] ,[emergencyPhone] ,[birthdate] ,[bsn] ,imageUrl ,[contractStatus] ,[contractType] ,[jobId], Jobs.name as 'jobname', Salary, workingHours FROM Employees INNER JOIN Jobs on Employees.jobId = Jobs.id";
             }
         }
 
@@ -45,6 +45,7 @@ namespace DataCL.DataTraffic
         {
         }
 
+        //do this
         public bool AddUser(UserDTO user)
         {
             string query = $"INSERT INTO Employees (firstname, lastname, username, password, phone, address, city, email, spouseName, spousePhone, emergencyName, emergencyPhone, birthdate, bsn, imageUrl, contractStatus, jobId, Salary, workingHours) " +
@@ -52,9 +53,9 @@ namespace DataCL.DataTraffic
             return executeQuery(query) == 0 ? false : true;
         }
 
-        public bool UpdateEmployee(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job, int salary, int workingHours)
+        public bool UpdateEmployee(int employeeid, string firstname, string lastname, string phone, string address, string city, string email, string spouseName, string spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bsn, int contractStatus, int job, int salary, int workingHours, byte[] image)
         {
-            string query = $"UPDATE Employees SET firstname='{firstname}', lastname='{lastname}',phone='{phone}', address='{address}',city='{city}', email='{email}',spouseName='{spouseName}', spousePhone='{spousePhone}',emergencyName='{emergencyName}', emergencyPhone='{emergencyPhone}',birthdate='{birthdate}', bsn='{bsn}',contractStatus={contractStatus}, jobId={job}, Salary = {salary}, workingHours = {workingHours} WHERE Id={employeeid}";
+            string query = $"UPDATE Employees SET firstname='{firstname}', lastname='{lastname}',phone='{phone}', address='{address}',city='{city}', email='{email}',spouseName='{spouseName}', spousePhone='{spousePhone}',emergencyName='{emergencyName}', emergencyPhone='{emergencyPhone}',birthdate='{birthdate}', bsn='{bsn}',contractStatus={contractStatus}, jobId={job}, Salary = {salary}, workingHours = {workingHours}, imageUrl = 0x{BitConverter.ToString(image).Replace("-", "")} WHERE Id={employeeid}";
             return executeQuery(query) == 0 ? false : true;
         }
 

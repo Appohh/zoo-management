@@ -9,7 +9,8 @@ namespace LogicCL.Users
     public abstract class User
     {
         //needs to be redone and must match database names and order
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -21,7 +22,7 @@ namespace LogicCL.Users
         public string address { get; set; }
         public string City { get; set; }
 
-        protected User(string image, int id, string firstName, string lastName, string userName, string password, string email, string phone, string birthDate, string address, string city)
+        protected User(byte[] image, int id, string firstName, string lastName, string userName, string password, string email, string phone, string birthDate, string address, string city)
         {
             Image = image;
             Id = id;
@@ -34,6 +35,7 @@ namespace LogicCL.Users
             BirthDate = birthDate;
             this.address = address;
             City = city;
+            Image = image;
         }
     }
 }

@@ -19,6 +19,8 @@ using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+using System.Drawing;
+
 namespace Desktop_app
 {
     public partial class Human_Resources : Form
@@ -278,8 +280,20 @@ namespace Desktop_app
                 return;
             }
 
+            //Image
+
+            byte[] imageBytes;
+
+            using (var stream = new MemoryStream())
+            {
+                overViewPB.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                imageBytes = stream.ToArray();
+            }
+
+            //string images = Encoding.UTF8.GetString(imageBytes);
+
             // Call the repository to update the employee details
-            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary, workingHours))
+            if (hr.Repository.changeEmployeeDetails(selectedEmployeeId, firstName, lastName, phoneNumber, address, city, emailAddress, spouse, spouseContact, emergency, emergencyContact, birthDate, bsn, contract, job, salary, workingHours, imageBytes))
             {
                 MessageBox.Show($"You have Updated the Employee {firstName} {lastName}");
                 this.DialogResult = DialogResult.OK;
@@ -311,7 +325,6 @@ namespace Desktop_app
                 CB_Contract.SelectedIndex = selectedUser.Contractstatus;
 
                 //Employee Details
-                //Employee Details
                 selectedEmployeeId = Convert.ToInt32(lv_Employees.SelectedItems[0].Tag);
                 TB_Username.Text = selectedUser.UserName;
                 TB_Password.Text = selectedUser.Password;
@@ -335,6 +348,19 @@ namespace Desktop_app
 
                 salaryUpdateUserNUD.Value = selectedUser.Salary;
                 workingHoursNUDOverVIew.Value = selectedUser.WorkingHours;
+
+                loadImage(selectedUser);
+            }
+        }
+
+        public void loadImage(User selectedUser)
+        {
+            System.Drawing.Image imagez;
+            using (MemoryStream stream = new MemoryStream(selectedUser.Image))
+            {
+                imagez = System.Drawing.Image.FromStream(stream);
+
+                overViewPB.Image = imagez;
             }
         }
 
@@ -374,7 +400,7 @@ namespace Desktop_app
 
             var contractType = 0;
 
-            var image = "";
+            var image = new byte[0];
 
             var role = Int16.Parse(cbJobAdd.SelectedValue.ToString());
 
@@ -566,6 +592,21 @@ namespace Desktop_app
             {
                 //working hours
                 workingHoursAddEmployeeNUD.Value = 0;
+            }
+        }
+
+        //picture
+        private void uploadPictureBT_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filename = openFileDialog.FileName;
+                System.Drawing.Image image = System.Drawing.Image.FromFile(filename);
+                overViewPB.Image = image;
             }
         }
     }

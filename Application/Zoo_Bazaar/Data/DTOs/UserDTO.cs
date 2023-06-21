@@ -25,7 +25,7 @@ namespace DataCL.DTOs
         public string BSN { get; set; }
         public int ContractStatus { get; set; }
         public int? ContactType { get; set; }
-        public string ImageUrl { get; set; }
+        public byte[] ImageUrl { get; set; }
         public int JobId { get; set; }
         public string Jobname { get; set; }
 
@@ -38,7 +38,7 @@ namespace DataCL.DTOs
         {
         }
 
-        public UserDTO(int id, string firstname, string lastname, string username, string password, string phone, string address, string city, string email, string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bSN, int contractStatus, int? contactType, string imageUrl, int role, string jobname, int salary, int workingHours)
+        public UserDTO(int id, string firstname, string lastname, string username, string password, string phone, string address, string city, string email, string? spouseName, string? spousePhone, string emergencyName, string emergencyPhone, string birthdate, string bSN, int contractStatus, int? contactType, byte[] imageUrl, int role, string jobname, int salary, int workingHours)
         {
             Id = id;
             Firstname = firstname;

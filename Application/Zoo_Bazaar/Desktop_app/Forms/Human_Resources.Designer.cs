@@ -97,6 +97,8 @@
             job = new ColumnHeader();
             contract = new ColumnHeader();
             artanPanel4 = new ArtanPanel();
+            uploadPictureBT = new Button();
+            overViewPB = new PictureBox();
             groupBox6 = new GroupBox();
             workingHoursNUDOverVIew = new NumericUpDown();
             salaryUpdateUserNUD = new NumericUpDown();
@@ -182,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)PictureBoxAddEmployee).BeginInit();
             Tab_Overview.SuspendLayout();
             artanPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)overViewPB).BeginInit();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)workingHoursNUDOverVIew).BeginInit();
             ((System.ComponentModel.ISupportInitialize)salaryUpdateUserNUD).BeginInit();
@@ -199,7 +202,7 @@
             // lastName
             // 
             lastName.Text = "Last Name";
-            lastName.Width = 250;
+            lastName.Width = 150;
             // 
             // lb_more_details
             // 
@@ -971,7 +974,7 @@
             lv_Employees.Location = new Point(38, 125);
             lv_Employees.Margin = new Padding(4, 3, 4, 3);
             lv_Employees.Name = "lv_Employees";
-            lv_Employees.Size = new Size(805, 615);
+            lv_Employees.Size = new Size(602, 615);
             lv_Employees.TabIndex = 20;
             lv_Employees.UseCompatibleStateImageBehavior = false;
             lv_Employees.View = View.Details;
@@ -980,7 +983,7 @@
             // firstName
             // 
             firstName.Text = "First Name";
-            firstName.Width = 250;
+            firstName.Width = 150;
             // 
             // job
             // 
@@ -996,6 +999,8 @@
             // 
             artanPanel4.BackColor = Color.FromArgb(160, 157, 149);
             artanPanel4.BorderRadius = 40;
+            artanPanel4.Controls.Add(uploadPictureBT);
+            artanPanel4.Controls.Add(overViewPB);
             artanPanel4.Controls.Add(groupBox6);
             artanPanel4.Controls.Add(groupBox3);
             artanPanel4.Controls.Add(groupBox2);
@@ -1005,11 +1010,31 @@
             artanPanel4.GradientAngle = 90F;
             artanPanel4.GradientBottomColor = Color.FromArgb(164, 156, 159);
             artanPanel4.GradientTopColor = Color.FromArgb(164, 156, 159);
-            artanPanel4.Location = new Point(883, 110);
+            artanPanel4.Location = new Point(645, 110);
             artanPanel4.Margin = new Padding(1);
             artanPanel4.Name = "artanPanel4";
-            artanPanel4.Size = new Size(775, 634);
+            artanPanel4.Size = new Size(1013, 634);
             artanPanel4.TabIndex = 26;
+            // 
+            // uploadPictureBT
+            // 
+            uploadPictureBT.Location = new Point(808, 319);
+            uploadPictureBT.Name = "uploadPictureBT";
+            uploadPictureBT.Size = new Size(145, 23);
+            uploadPictureBT.TabIndex = 80;
+            uploadPictureBT.Text = "Upload New Picture";
+            uploadPictureBT.UseVisualStyleBackColor = true;
+            uploadPictureBT.Click += uploadPictureBT_Click;
+            // 
+            // overViewPB
+            // 
+            overViewPB.Image = Properties.Resources._360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv;
+            overViewPB.Location = new Point(784, 75);
+            overViewPB.Name = "overViewPB";
+            overViewPB.Size = new Size(200, 200);
+            overViewPB.SizeMode = PictureBoxSizeMode.StretchImage;
+            overViewPB.TabIndex = 79;
+            overViewPB.TabStop = false;
             // 
             // groupBox6
             // 
@@ -1025,7 +1050,7 @@
             groupBox6.Margin = new Padding(3, 2, 3, 2);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(3, 2, 3, 2);
-            groupBox6.Size = new Size(345, 142);
+            groupBox6.Size = new Size(325, 142);
             groupBox6.TabIndex = 78;
             groupBox6.TabStop = false;
             groupBox6.Text = "Contract Details";
@@ -1102,7 +1127,7 @@
             groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(3, 2, 3, 2);
-            groupBox3.Size = new Size(297, 417);
+            groupBox3.Size = new Size(277, 417);
             groupBox3.TabIndex = 78;
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact Details";
@@ -1847,7 +1872,7 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Margin = new Padding(4, 1, 4, 1);
-           // Name = "Human_Resources";
+            //Name = "Human_Resources";
             Text = "Human_Resources";
             WindowState = FormWindowState.Maximized;
             Tab_Add_Employee.ResumeLayout(false);
@@ -1864,6 +1889,7 @@
             Tab_Overview.PerformLayout();
             artanPanel4.ResumeLayout(false);
             artanPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)overViewPB).EndInit();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)workingHoursNUDOverVIew).EndInit();
@@ -2034,5 +2060,7 @@
         private NumericUpDown workingHoursAddEmployeeNUD;
         private Label label44;
         private NumericUpDown workingHoursNUDOverVIew;
+        private Button uploadPictureBT;
+        private PictureBox overViewPB;
     }
 }
