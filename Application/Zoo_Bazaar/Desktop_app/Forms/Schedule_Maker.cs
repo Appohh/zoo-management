@@ -345,7 +345,7 @@ namespace Desktop_app.Forms
 					if (scheduleMaker.Repository.RemoveShift(p.Shift))
 					{
 						MessageBox.Show("Shift Removed");
-						CurrentWeekShifts = scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
+						CurrentWeekShifts = scheduleMaker.Repository.GetDepartmentShiftsByDate(new WeekSchedule(datePicker.Value), CB_GetShiftByJob.SelectedItem as Job);
 						DrawSchedule();
 					}
 					else
@@ -383,8 +383,8 @@ namespace Desktop_app.Forms
 					{
 
 						MessageBox.Show("Ok");
-						CurrentWeekShifts = scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
-						DrawSchedule();
+                        CurrentWeekShifts = scheduleMaker.Repository.GetDepartmentShiftsByDate(new WeekSchedule(datePicker.Value), CB_GetShiftByJob.SelectedItem as Job);
+                        DrawSchedule();
 					}
 					else
 					{
@@ -437,8 +437,8 @@ namespace Desktop_app.Forms
 		{
 			if (Convert.ToInt32(CB_GetShiftByJob.SelectedValue) != -1)
 			{
-				CurrentWeekShifts = scheduleMaker.Repository.GetShiftByJob(Convert.ToInt32(CB_GetShiftByJob.SelectedValue));
-				DrawSchedule();
+                CurrentWeekShifts = scheduleMaker.Repository.GetDepartmentShiftsByDate(new WeekSchedule(datePicker.Value), CB_GetShiftByJob.SelectedItem as Job);
+                DrawSchedule();
 			}
 
 		}

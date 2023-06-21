@@ -38,15 +38,15 @@ namespace LogicCL
                 DateTime currentDate = week.Monday.AddDays(i);
                 List<UserDTO> employees = userDataTraffic.GetAvailableByJobId(currentDate, job.Name);
 
-                employees = employees.OrderBy(emp => HoursWorkedThisWeek(emp.Id, currentDate)).ToList();
+                employees = employees.OrderBy(emp => HoursWorkedThisMonth(emp.Id, currentDate)).ToList();
 
                 if (job.Name != "Caretaker")
                 {
                     foreach (var employee in employees)
                     {
                         int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
-
-                        if (hoursWorkedThisWeek <= 40 - 4)
+                        int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
+                        if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 36)
                         {
                             bool exists = true;
                             ShiftDTO shift = new ShiftDTO();
@@ -70,8 +70,8 @@ namespace LogicCL
                     foreach (var employee in employees)
                     {
                         int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
-
-                        if (hoursWorkedThisWeek <= 40 - 4)
+                        int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
+                        if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 36)
                         {
                             bool exists = true;
                             ShiftDTO shift = new ShiftDTO();

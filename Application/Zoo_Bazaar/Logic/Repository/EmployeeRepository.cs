@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace LogicCL.Repository
@@ -176,6 +177,7 @@ namespace LogicCL.Repository
             List<Shift> shiftList = new List<Shift>();
             foreach (ShiftDTO shift in shiftDTOs)
             {
+               
                 shiftList.Add(new Shift(shift.Id, shift.EmpId, shift.Type, shift.Date, shift.Location));
             }
             return shiftList;
@@ -243,6 +245,19 @@ namespace LogicCL.Repository
             }
 
             return availableEmployees;
+        }
+
+        public List<Shift> GetDepartmentShiftsByDate(WeekSchedule week, Job job)
+        {
+            List<Shift> result = new List<Shift>();
+            List<ShiftDTO> dtos = shiftDataTraffic.GetDepartmentShiftByDate(week.Monday, week.Sunday, job.Id);
+
+            foreach (ShiftDTO dto in dtos)
+            {
+                result.Add(new Shift(dto.Id, dto.EmpId, dto.Type, dto.Date, dto.Location));
+            }
+            return result;
+
         }
 
         //private bool IsAbsent(int id, DateTime date)
