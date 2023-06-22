@@ -39,58 +39,155 @@ namespace LogicCL
                 List<UserDTO> employees = userDataTraffic.GetAvailableByJobId(currentDate, job.Name);
 
                 employees = employees.OrderBy(emp => HoursWorkedThisMonth(emp.Id, currentDate)).ToList();
-
-                if (job.Name != "Caretaker")
+                if (employees.Count > 0)
                 {
-                    foreach (var employee in employees)
+                    if (job.Name != "Caretaker")
                     {
-                        int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
-                        int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
-                        if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 36)
+                        int dayCount = existingShifts.Count(x => x.Type == 0 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")));
+                        int afternoonCount = existingShifts.Count(x => x.Type == 1 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")));
+                        int nightCount = existingShifts.Count(x => x.Type == 2 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")));
+
+                        for (int j = 0; j < 9; j++)
                         {
-                            bool exists = true;
-                            ShiftDTO shift = new ShiftDTO();
-
-                            while (exists)
+                            if (j >= 0 && j < employees.Count)
                             {
-                                shift.EmpId = employee.Id;
-                                shift.Date = currentDate.ToString("yyyy-MM-dd");
-                                shift.Type = rand.Next(0, 3);
+                                int hoursWorkedThisDay = existingShifts.Count(x => x.EmpId == employees[j].Id && x.Date.Contains(currentDate.ToString("dd/MM/yyyy"))) * 4;
+                                int hoursWorkedThisWeek = existingShifts.Count(x => x.EmpId == employees[j].Id) * 4;
 
+                                if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 36)
+                                {
+                                    bool exists = true;
+                                    ShiftDTO shift = new ShiftDTO();
 
-                                exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date);
+                                    while (exists)
+                                    {
+                                        
+                                        if (dayCount < 3)
+                                        {
+                                            shift.Type = 0;
+                                            dayCount++;
+                                        }
+                                        else if (afternoonCount < 3)
+                                        {
+                                            shift.Type = 1;
+                                            afternoonCount++;
+                                        }
+                                        else if (nightCount < 3)
+                                        {
+                                            shift.Type = 2;
+                                            nightCount++;
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+
+                                        shift.EmpId = employees[j].Id;
+                                        shift.Date = currentDate.ToString("yyyy-MM-dd");
+                                        shift.Location = 0;
+
+                                        exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date);
+                                    }
+                                    if (shift.EmpId != 0 && shift.Date != string.Empty)
+                                    {
+                                        existingShifts.Add(shift);
+                                        schedule.Add(shift);
+                                    }
+                                    
+                                }
                             }
 
-                            schedule.Add(shift);
+                            
                         }
+
                     }
-                }
-                else
-                {
-                    foreach (var employee in employees)
+                    else
                     {
-                        int hoursWorkedThisWeek = HoursWorkedThisWeek(employee.Id, currentDate);
-                        int hoursWorkedThisDay = HoursWorkedThisDay(employee.Id, currentDate);
-                        if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 36)
+                        int dayCount = existingShifts.Count(x => x.Type == 0 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")));
+
+                        int afternoonCount = existingShifts.Count(x => x.Type == 1 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")));
+                        int nightCount = existingShifts.Count(x => x.Type == 2 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")));
+
+                        int aquaticCount = existingShifts.Count(x => x.Type == 1 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")) && x.Location == 1);
+                        int desertCount = existingShifts.Count(x => x.Type == 1 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")) && x.Location == 2);
+                        int grasslandCount = existingShifts.Count(x => x.Type == 1 && x.Date.Contains(currentDate.ToString("dd/MM/yyyy")) && x.Location == 3);
+
+                        for (int j = 0; j < 9; j++)
                         {
-                            bool exists = true;
-                            ShiftDTO shift = new ShiftDTO();
-
-                            while (exists)
+                            if (j >= 0 && j < employees.Count)
                             {
-                                shift.EmpId = employee.Id;
-                                shift.Date = currentDate.ToString("yyyy-MM-dd");
-                                shift.Type = rand.Next(0, 3);
-                                shift.Location = rand.Next(1, 12);
+                                int hoursWorkedThisDay = existingShifts.Count(x => x.EmpId == employees[j].Id && x.Date.Contains(currentDate.ToString("dd/MM/yyyy"))) * 4;
+                                int hoursWorkedThisWeek = existingShifts.Count(x => x.EmpId == employees[j].Id) * 4;
 
-                                exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date && s.Location == shift.Location);
+                                if (hoursWorkedThisDay < 8 && hoursWorkedThisWeek <= 36)
+                                {
+                                    bool exists = true;
+                                    ShiftDTO shift = new ShiftDTO();
+
+                                    while (exists)
+                                    {
+                                        if (dayCount < 3)
+                                        {
+                                            shift.Type = 0;
+                                            dayCount++;
+                                        }
+                                        else if (afternoonCount < 3)
+                                        {
+                                            shift.Type = 1;
+                                            afternoonCount++;
+                                        }
+                                        else if (nightCount < 3)
+                                        {
+                                            shift.Type = 2;
+                                            nightCount++;
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+
+                                        if (aquaticCount < 1)
+                                        {
+                                            shift.Location = 1;
+                                            aquaticCount++;
+                                        }
+                                        else if (desertCount < 4)
+                                        {
+                                            shift.Location = 2;
+                                            desertCount++;
+                                        }
+                                        else if(grasslandCount < 4)
+                                        {
+                                            shift.Location = 3;
+                                            grasslandCount++;
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+
+                                        shift.EmpId = employees[j].Id;
+                                        shift.Date = currentDate.ToString("yyyy-MM-dd");
+
+
+                                        exists = existingShifts.Any(s => s.EmpId == shift.EmpId && s.Type == shift.Type && s.Date == shift.Date);
+                                    }
+                                    if (shift.EmpId != 0 && shift.Date != string.Empty)
+                                    {
+                                        existingShifts.Add(shift);
+                                        schedule.Add(shift);
+                                    }
+                                }
                             }
 
-                            schedule.Add(shift);
-                        }
-                    }
 
+                        }
+
+                    }
                 }
+
+                
+                
                 
             }
 

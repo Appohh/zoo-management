@@ -330,7 +330,7 @@ namespace Desktop_app.Forms
 			CustomPanel p = sender as CustomPanel;
 			string name = p.Name;
 			string location = "";
-			if (p.Shift.Location != null)
+			if (p.Shift.Location != 0)
 			{
 				location = locations.Find(x => x.Id == p.Shift.Location).Name;
 			}
@@ -378,7 +378,10 @@ namespace Desktop_app.Forms
 					{
 						shift.Location = Int16.Parse(cbbShiftLocation.SelectedValue.ToString());
 					}
-
+					else
+					{
+						shift.Location = 0;
+					}
 					if (scheduleMaker.Repository.AddShift(shift))
 					{
 

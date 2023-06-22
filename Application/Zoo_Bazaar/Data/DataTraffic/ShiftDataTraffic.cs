@@ -55,7 +55,7 @@ namespace DataCL.DataTraffic
         public List<ShiftDTO> GetDepartmentShiftByDate(DateTime start, DateTime end, int jobid)
         {
 
-            string query = $"SELECT Shift.id ,Shift.empid, shift.type, shift.date, Shift.location, Jobs.name FROM Shift INNER JOIN Employees ON shift.empid = Employees.id INNER JOIN Jobs ON Employees.jobId = Jobs.id WHERE Employees.jobId = {jobid} AND shift.Date >= '{start.ToString("yyyy-MM-dd")}' AND shift.date <= '{end.ToString("yyyy-MM-dd")}' ";
+            string query = $"SELECT Shift.id ,Shift.empid, Shift.type, Shift.date, Shift.location FROM Shift INNER JOIN Employees ON Shift.empid = Employees.id INNER JOIN Jobs ON Employees.jobId = Jobs.id WHERE Employees.jobId = {jobid} AND shift.Date >= '{start.ToString("yyyy-MM-dd")}' AND shift.date <= '{end.ToString("yyyy-MM-dd")}' ";
 
             List<ShiftDTO> shifts = new List<ShiftDTO>();
             DataTable table = ReadDataQuery(query);
@@ -87,21 +87,14 @@ namespace DataCL.DataTraffic
 
         public bool AddShift(ShiftDTO shift)
         {
-            string query = "";
-            if (shift.Location == 0)
-            {
-                query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , null)";
-            }
-            else
-            {
-                query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , {shift.Location})";
-            }
+            string query = $"INSERT INTO Shift Values ({shift.EmpId}, {shift.Type}, '{shift.Date}' , {shift.Location})";
+            
             return executeQuery(query) == 0 ? false : true;
         }
 
         public bool AddMultipleShift(List<ShiftDTO> dtos)
         {
-            string values = string.Join(", ", dtos.Select(obj => $"({obj.EmpId}, {obj.Type}, '{obj.Date}', {(obj.Location.HasValue ? obj.Location.Value.ToString() : "NULL")})"));
+            string values = string.Join(", ", dtos.Select(obj => $"({obj.EmpId}, {obj.Type}, '{obj.Date}', {obj.Location})"));
             string query = $"INSERT INTO Shift VALUES {values}";
 
             return executeQuery(query) > 0 ? false : true;
